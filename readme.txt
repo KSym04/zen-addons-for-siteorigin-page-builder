@@ -14,11 +14,8 @@ Ultimate collection of functional, professional and intuitive widgets extension 
 The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
 
 = Widget Features =
-* Spacer
-- Create empty space between elements.
-
-* Simple Accordion
-- Create vertically stacked list of items.
+* Spacer, create empty space between elements.
+* Simple Accordion, create vertically stacked list of items.
 
 Once you enable the extension widget, you’ll be able to use it anywhere standard widgets are used. You can manage your widgets by going to Plugins > SiteOrigin Widgets in your WordPress admin backend.
 
