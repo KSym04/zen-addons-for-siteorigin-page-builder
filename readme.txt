@@ -1,6 +1,6 @@
 === Zen Addons for SiteOrigin Page Builder ===
 Contributors: ksym04
-Tags: zas, zen, addons, siteorigin, zaso, widgets, form, repeater, content, page, builder
+Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 3.6.0
 Tested up to: 4.8.3
 Stable tag: 1.0.1
