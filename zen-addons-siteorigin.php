@@ -1,17 +1,16 @@
 <?php
 /*
 Plugin Name: Zen Addons for SiteOrigin Page Builder
-Description: Ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
-Version: 1.0.0
+Description: An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
+Version: 1.0.1
+Author: DopeThemes
+Author URI: http://www.dopethemes.com/
+Plugin URI: http://www.dopethemes.com/downloads/zen-addons-siteorigin/
+Copyright: DopeThemes
 Text Domain: zaso
 Domain Path: /lang
-Author: DopeThemes
-Copyright: DopeThemes
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Author URI: http://wordpress.dopethemes.com
-Plugin URI: http://wordpress.dopethemes.com/zen-addons-siteorigin/
-Domain Path: /lang
+License URI: license.txt
 */
 
 if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -22,7 +21,7 @@ if( !class_exists('zen_addons_siteorigin') ) :
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.0.0';
+	var $version = '1.0.1';
 
 	/*
 	*  __construct
@@ -111,7 +110,7 @@ class zen_addons_siteorigin {
 	function register_styles() {
 
 		// register
-		wp_register_style( 'zen-addons-base', ZASO_BASE_DIR . 'assets/css/main.min.css', array(), ZASO_VERSION );
+		wp_register_style( 'zen-addons-base', ZASO_BASE_DIR . 'assets/css/main.css', array(), ZASO_VERSION );
 
 		// init
 		wp_enqueue_style( 'zen-addons-base' );
@@ -129,7 +128,7 @@ class zen_addons_siteorigin {
 	function register_scripts() {
 
 		// register
-		wp_register_script( 'zen-addons-base', ZASO_BASE_DIR . 'assets/js/main.min.js', array('jquery'), ZASO_VERSION );
+		wp_register_script( 'zen-addons-base', ZASO_BASE_DIR . 'assets/js/main.js', array('jquery'), ZASO_VERSION );
 
 		// init
 		wp_enqueue_script( 'zen-addons-base' );

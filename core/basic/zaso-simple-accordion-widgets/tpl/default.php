@@ -1,17 +1,18 @@
 <?php
 /**
- * [ZASO] Accordion Template
+ * [ZASO] Simple Accordion Template
  * @since 1.0.0
  */
-?>
 
-<dl class="zaso-simple-accordion <?php echo $instance['extra_class']; ?>">
-    <?php foreach ($instance['accordion'] as $a ) : ?>
+$zaso_accordion_extra_id = ( ! empty( $instance['extra_id'] ) ) ? $instance['extra_id'] : ''; ?>
+
+<dl <?php printf( 'id="%s"', $zaso_accordion_extra_id ); ?> class="zaso-simple-accordion <?php echo $instance['extra_class']; ?>">
+    <?php foreach ( $instance['accordion'] as $a ) : ?>
         <dt class="zaso-simple-accordion__title">
-            <a href="#"><?php echo $a['accordion_field_title']; ?></a>
+          <?php echo $a['accordion_field_title']; ?>
         </dt>
-        <dd class="zaso-simple-accordion__content">
-            <p><?php echo $a['accordion_field_content']; ?></p>
+        <dd class="zaso-simple-accordion__content <?php echo $a['accordion_field_state']; ?>">
+          <?php echo $a['accordion_field_content']; ?>
         </dd>
     <?php endforeach; ?>
 </dl>

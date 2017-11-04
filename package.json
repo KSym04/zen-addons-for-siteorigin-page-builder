@@ -1,18 +1,18 @@
 {
-  "name": "zen-addons-siteorigin",
-  "version": "1.0.0",
-  "description": "=== Zen Addons for SiteOrigin Page Builder ===\r Contributors: ksym04\r Tags: zas, zen, addons, siteorigin, widgets, form, repeater, content, page, builder\r Requires at least: 3.6.0\r Tested up to: 4.9.0\r Stable tag: 4.4.11\r License: GPLv2 or later\r License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "name": "zen-addons-for-siteorigin-page-builder",
+  "version": "1.0.1",
+  "description": "=== Zen Addons for SiteOrigin Page Builder ===\r Contributors: ksym04\r Tags: zas, zen, addons, siteorigin, zaso, widgets, form, repeater, content, page, builder\r Requires at least: 3.6.0\r Tested up to: 4.8.3\r Stable tag: 1.0.1\r License: GPLv2 or later\r License URI: license.txt",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://pkvillanueva@bitbucket.org/KSym04/zen-addons-siteorigin.git"
+    "url": "git+https://github.com/KSym04/zen-addons-for-siteorigin-page-builder.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/KSym04/zen-addons-siteorigin#readme",
+  "homepage": "https://github.com/KSym04/zen-addons-for-siteorigin-page-builder",
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "browser-sync": "^2.18.13",

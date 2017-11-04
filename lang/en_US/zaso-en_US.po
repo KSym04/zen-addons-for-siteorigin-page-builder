@@ -1,0 +1,207 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zen Addons for SiteOrigin Page Builder\n"
+"POT-Creation-Date: 2017-11-04 21:56+0800\n"
+"PO-Revision-Date: 2017-11-04 21:58+0800\n"
+"Last-Translator: \n"
+"Language-Team: DopeThemes <hello@dopethemes.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:19
+msgid "ZASO - Simple Accordion"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:21
+msgid "Create a vertically stacked list of items."
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:29
+msgid "Accordion List"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:30
+msgid "Single Item"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:39
+msgid "Accordion Title"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:43
+msgid "Accordion Content"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:48
+msgid "Accordion Initial State"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:50
+msgid "Close"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:51
+msgid "Open"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:58
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:35
+msgid "Extra ID"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:59
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:36
+msgid "Add an extra ID."
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:63
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:40
+msgid "Extra Class"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:64
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:41
+msgid "Add an extra class for styling overrides."
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:68
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:45
+msgid "Design"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:73
+msgid "Headings"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:78
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:170
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:50
+msgid "Background Color"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:83
+msgid "Background Hover Color"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:88
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:175
+msgid "Font Color"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:93
+msgid "Font Weight"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:96
+msgid "100"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:97
+msgid "200"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:98
+msgid "300"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:99
+msgid "400 - Normal"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:100
+msgid "500"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:101
+msgid "600"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:102
+msgid "700 - Bold"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:103
+msgid "800"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:104
+msgid "900"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:109
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:185
+msgid "Margin"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:114
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:141
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:190
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:217
+msgid "Top"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:119
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:146
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:195
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:222
+msgid "Right"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:124
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:151
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:200
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:227
+msgid "Bottom"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:129
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:156
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:205
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:232
+msgid "Left"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:136
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:212
+msgid "Padding"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:165
+msgid "Panels"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:180
+msgid "Font Size"
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:19
+msgid "ZASO - Spacer"
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:21
+msgid "Create an empty space between elements."
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:30
+msgid "Height"
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:31
+msgid "Set empty space height."
+msgstr ""
+
+#: core/widgets.php:20
+msgid "ZASO Widgets"
+msgstr ""
+
+#: zen-addons-siteorigin.php:64
+msgid "Zen Addons for SiteOrigin"
+msgstr ""
