@@ -2,26 +2,44 @@
 /*
 Plugin Name: Zen Addons for SiteOrigin Page Builder
 Description: An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
-Version: 1.0.1
+Version: 1.0.2
 Author: DopeThemes
 Author URI: http://www.dopethemes.com/
 Plugin URI: http://www.dopethemes.com/downloads/zen-addons-siteorigin/
 Copyright: DopeThemes
 Text Domain: zaso
 Domain Path: /lang
-License: GPLv2 or later
+License: GPL2+
 License URI: license.txt
 */
 
-if( !defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+/*
+    Copyright DopeThemes
 
-if( !class_exists('zen_addons_siteorigin') ) :
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
+*/
+
+if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+if( ! class_exists('zen_addons_siteorigin') ) :
 
 
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.0.1';
+	var $version = '1.0.2';
 
 	/*
 	*  __construct
@@ -157,7 +175,7 @@ function zen_addons_siteorigin() {
 
 	global $zen_addons_siteorigin;
 
-	if( !isset($zen_addons_siteorigin) ) {
+	if( ! isset($zen_addons_siteorigin) ) {
 
 		$zen_addons_siteorigin = new zen_addons_siteorigin();
 

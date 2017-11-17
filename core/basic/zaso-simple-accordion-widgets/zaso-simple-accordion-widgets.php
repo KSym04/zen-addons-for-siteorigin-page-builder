@@ -2,73 +2,65 @@
 /**
  * Widget Name: ZASO - Simple Accordion
  * Widget ID: zen-addons-siteorigin-simple-accordion
- * Description: Create a vertically stacked list of items.
+ * Description: Create a vertically stacked list of items or single panel.
  * Author: DopeThemes
  * Author URI: http://www.dopethemes.com/
  */
 
-if( !class_exists( 'Zen_Addons_SiteOrigin_Simple_Accordion_Widget' ) ) :
+if( ! class_exists( 'Zen_Addons_SiteOrigin_Simple_Accordion_Widget' ) ) :
 
 
 class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 
 	function __construct() {
 
-		parent::__construct(
-			'zen-addons-siteorigin-simple-accordion',
-			__( 'ZASO - Simple Accordion', 'zaso' ),
-			array(
-				'description'   => __( 'Create a vertically stacked list of items.', 'zaso' ),
-				'help'          => 'http://www.dopethemes.com/',
-				'panels_groups' => array('zaso-plugin-widgets')
-			),
-			array(),
-			array(
-				'accordion' => array(
-					'type' => 'repeater',
-					'label' => __( 'Accordion List' , 'zaso' ),
-					'item_name'  => __( 'Single Item', 'zaso' ),
-					'item_label' => array(
-						'selector'      => "[name*='accordion_field_title']",
-						'update_event'  => 'change',
-						'value_method'  => 'val'
+		// ZASO field array
+		$zaso_simple_accordion_field_array = array(
+			'accordion' => array(
+				'type' => 'repeater',
+				'label' => __( 'Accordion List' , 'zaso' ),
+				'item_name'  => __( 'Single Item', 'zaso' ),
+				'item_label' => array(
+					'selector'      => "[name*='accordion_field_title']",
+					'update_event'  => 'change',
+					'value_method'  => 'val'
+				),
+				'fields' => array(
+					'accordion_field_title' => array(
+						'type'  => 'text',
+						'label' => __( 'Accordion Title' , 'zaso' )
 					),
-					'fields' => array(
-						'accordion_field_title' => array(
-							'type'  => 'text',
-							'label' => __( 'Accordion Title' , 'zaso' )
-						),
-						'accordion_field_content' => array(
-							'type'  => 'tinymce',
-							'label' => __( 'Accordion Content' , 'zaso' ),
-							'row'   => 20
-						),
-						'accordion_field_state' => array(
-							'type'    => 'select',
-							'label'   => __( 'Accordion Initial State' , 'zaso' ),
-							'options' => array(
-								'zaso-simple-accordion--close' => __( 'Close', 'zaso' ),
-								'zaso-simple-accordion--open'  => __( 'Open', 'zaso' ),
-							)
-						),
-					)
-				),
-				'extra_id' => array(
-					'type'  => 'text',
-					'label' => __( 'Extra ID', 'zaso' ),
-					'description'	=> __( 'Add an extra ID.', 'zaso' ),
-				),
-				'extra_class' => array(
-					'type'  => 'text',
-					'label' => __( 'Extra Class', 'zaso' ),
-					'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
-				),
-				'design' => array(
-					'type' =>  'section',
-					'label' => __( 'Design', 'zaso' ),
-					'hide' => true,
-					'fields' => array(
-						'heading' => array(
+					'accordion_field_content' => array(
+						'type'  => 'tinymce',
+						'label' => __( 'Accordion Content' , 'zaso' ),
+						'row'   => 20
+					),
+					'accordion_field_state' => array(
+						'type'    => 'select',
+						'label'   => __( 'Accordion Initial State' , 'zaso' ),
+						'options' => array(
+							'zaso-simple-accordion--close' => __( 'Close', 'zaso' ),
+							'zaso-simple-accordion--open'  => __( 'Open', 'zaso' ),
+						)
+					),
+				)
+			),
+			'extra_id' => array(
+				'type'  => 'text',
+				'label' => __( 'Extra ID', 'zaso' ),
+				'description'	=> __( 'Add an extra ID.', 'zaso' ),
+			),
+			'extra_class' => array(
+				'type'  => 'text',
+				'label' => __( 'Extra Class', 'zaso' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+			),
+			'design' => array(
+				'type' =>  'section',
+				'label' => __( 'Design', 'zaso' ),
+				'hide' => true,
+				'fields' => array(
+					'heading' => array(
 							'type' => 'section',
 							'label' => __( 'Headings', 'zaso' ),
 							'hide' => true,
@@ -88,6 +80,11 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 									'label'   => __( 'Font Color', 'zaso' ),
 									'default' => '#333333',
 								),
+								'title_font_color_hover' => array(
+									'type'    => 'color',
+									'label'   => __( 'Font Color Hover', 'zaso' ),
+									'default' => '#333333',
+								),
 								'title_font_weight' => array(
 									'type'    => 'select',
 									'label'   => __( 'Font Weight', 'zaso' ),
@@ -102,6 +99,16 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 										'700'  => __( '700 - Bold', 'zaso' ),
 										'800'  => __( '800', 'zaso' ),
 										'900'  => __( '900', 'zaso' )
+									)
+								),
+								'title_text_align' => array(
+									'type'    => 'select',
+									'label'   => __( 'Text Align', 'zaso' ),
+									'default' => 'left',
+									'options' => array(
+										'left'   => __( 'Left', 'zaso' ),
+										'center' => __( 'Center', 'zaso' ),
+										'right'  => __( 'Right', 'zaso' )
 									)
 								),
 								'title_margin' => array(
@@ -159,8 +166,8 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 									),
 								),
 							),
-						),
-						'panels' => array(
+					),
+					'panels' => array(
 							'type' => 'section',
 							'label' => __( 'Panels', 'zaso' ),
 							'hide' => true,
@@ -235,10 +242,24 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 									),
 								),
 							),
-						),
 					),
 				),
 			),
+		);
+
+		// add filter
+		$zaso_simple_accordion_fields = apply_filters( 'zaso_simple_accordion_fields', $zaso_simple_accordion_field_array );
+
+		parent::__construct(
+			'zen-addons-siteorigin-simple-accordion',
+			__( 'ZASO - Simple Accordion', 'zaso' ),
+			array(
+				'description'   => __( 'Create a vertically stacked list of items or single panel.', 'zaso' ),
+				'help'          => 'http://www.dopethemes.com/',
+				'panels_groups' => array( 'zaso-plugin-widgets' )
+			),
+			array(),
+			$zaso_simple_accordion_fields,
 			ZASO_WIDGET_BASIC_DIR
 		);
 
@@ -246,39 +267,49 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 
 	function get_less_variables( $instance ) {
 
+		// variable pointers
 		$design = $instance['design'];
-		return array(
+		$heading = $design['heading'];
+		$heading_margin = $heading['title_margin'];
+		$heading_padding = $heading['title_padding'];
+		$panels = $design['panels'];
+		$panels_margin = $panels['content_margin'];
+		$panels_padding = $panels['content_padding'];
+
+		return apply_filters( 'zaso_simple_accordion_less_variables', array(
 			// accordion title vars
-			'title_background_color' => $design['heading']['title_background_color'],
-			'title_background_color_hover' => $design['heading']['title_background_color_hover'],
-			'title_font_color' => $design['heading']['title_font_color'],
-			'title_font_weight' => $design['heading']['title_font_weight'],
-			'title_margin' => sprintf( '%s %s %s %s',
-				$design['heading']['title_margin']['top'],
-				$design['heading']['title_margin']['right'],
-				$design['heading']['title_margin']['bottom'],
-				$design['heading']['title_margin']['left'] ),
-			'title_padding' => sprintf( '%s %s %s %s',
-				$design['heading']['title_padding']['top'],
-				$design['heading']['title_padding']['right'],
-				$design['heading']['title_padding']['bottom'],
-				$design['heading']['title_padding']['left'] ),
+			'title_background_color' => $heading['title_background_color'],
+			'title_background_color_hover' => $heading['title_background_color_hover'],
+			'title_font_color' => $heading['title_font_color'],
+			'title_font_color_hover' => $heading['title_font_color_hover'],
+			'title_font_weight' => $heading['title_font_weight'],
+			'title_text_align' => $heading['title_text_align'],
+			'title_margin' => sprintf( '%1$s %2$s %3$s %4$s',
+				$heading_margin['top'],
+				$heading_margin['right'],
+				$heading_margin['bottom'],
+				$heading_margin['left'] ),
+			'title_padding' => sprintf( '%1$s %2$s %3$s %4$s',
+				$heading_padding['top'],
+				$heading_padding['right'],
+				$heading_padding['bottom'],
+				$heading_padding['left'] ),
 
 			// accordion content vars
-			'content_background_color' => $design['panels']['content_background_color'],
-			'content_font_size' => $design['panels']['content_font_size'],
-			'content_font_color' => $design['panels']['content_font_color'],
-			'content_margin' => sprintf( '%s %s %s %s',
-				$design['panels']['content_margin']['top'],
-				$design['panels']['content_margin']['right'],
-				$design['panels']['content_margin']['bottom'],
-				$design['panels']['content_margin']['left'] ),
-			'content_padding' => sprintf( '%s %s %s %s',
-				$design['panels']['content_padding']['top'],
-				$design['panels']['content_padding']['right'],
-				$design['panels']['content_padding']['bottom'],
-				$design['panels']['content_padding']['left'] ),
-		);
+			'content_background_color' => $panels['content_background_color'],
+			'content_font_size' => $panels['content_font_size'],
+			'content_font_color' => $panels['content_font_color'],
+			'content_margin' => sprintf( '%1$s %2$s %3$s %4$s',
+				$panels_margin['top'],
+				$panels_margin['right'],
+				$panels_margin['bottom'],
+				$panels_margin['left'] ),
+			'content_padding' => sprintf( '%1$s %2$s %3$s %4$s',
+				$panels_padding['top'],
+				$panels_padding['right'],
+				$panels_padding['bottom'],
+				$panels_padding['left'] ),
+		) );
 
 	}
 

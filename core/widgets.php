@@ -2,7 +2,7 @@
 /**
  * Widgets - Basic
  *
- * @package 
+ * @package Zen Addons for SiteOrigin Page Builder
  * @since 1.0.0
  */
 

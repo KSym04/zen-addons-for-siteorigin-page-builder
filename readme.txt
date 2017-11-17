@@ -1,10 +1,10 @@
 === Zen Addons for SiteOrigin Page Builder ===
 Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
-Requires at least: 3.6.0
-Tested up to: 4.8.3
-Stable tag: 1.0.1
-License: GPLv2 or later
+Requires at least: 4.4
+Tested up to: 4.9
+Stable tag: 1.0.2
+License: GPL2+
 License URI: license.txt
 
 An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
@@ -15,31 +15,49 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 
 = Widget Features =
 * Spacer, create an empty space between elements.
-* Simple Accordion, create a vertically stacked list of items.
+* Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
+* Basic Tabs, create a multiple panels contained in a single window.
+
+= Other Features =
+* Neatly build semantic HTML
+* Highly accessible widgets with best ARIA practices
+* SEO friendly widgets
 
 Once you enable the extension widget, you’ll be able to use it anywhere standard widgets are used. You can manage your widgets by going to Plugins > SiteOrigin Widgets in your WordPress admin backend.
 
+Lastly, We recommend to activate only the widgets you needed.
+
+Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin extension.
+
+= Language Support =
+
+* English (en_US)
 
 == Installation ==
 
 1. Upload the `zen-addons-site-origin` directory to the `/wp-content/plugins/` directory via FTP
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. To enable the widgets activate on 'Plugins > SiteOrigin Widgets'
+3. Enjoy
 
-Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin extension.
+== Frequently Asked Questions ==
 
+= How to activate your widgets? =
+
+To enable our ZASO widgets, please activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
+
+= 1.0.2 =
+* New: Added new widget 'Basic Tabs'
+* New: Added field and less variable filters
+* Tweak: Improved spacer and accordion accessibility
+
 = 1.0.1 =
-* Added simple accordion design panel
-* Added spacer design panel
-* Added field 'Extra ID' on widgets
-* Fixed minor issue
-* Added en_US language file
+* New: Added simple accordion design panel
+* New: Added spacer design panel
+* New: Added field 'Extra ID' on widgets
+* New: Added en_US language file
+* Fix: Minor issues
 
 = 1.0.0 =
-* Initial Release
-
-
-== Language Support ==
-- English
+* Birthday: Initial Release

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zen Addons for SiteOrigin Page Builder\n"
-"POT-Creation-Date: 2017-11-04 21:56+0800\n"
-"PO-Revision-Date: 2017-11-04 21:58+0800\n"
+"POT-Creation-Date: 2017-11-17 18:04+0800\n"
+"PO-Revision-Date: 2017-11-17 18:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: DopeThemes <hello@dopethemes.com>\n"
 "Language: en_US\n"
@@ -16,192 +16,295 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:19
-msgid "ZASO - Simple Accordion"
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:21
+msgid "Title"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:21
-msgid "Create a vertically stacked list of items."
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:25
+msgid "Tab List"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:29
-msgid "Accordion List"
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:26
+msgid "Single Tab"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:30
-msgid "Single Item"
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:35
+msgid "Tab Title"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:39
-msgid "Accordion Title"
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:39
+msgid "Tab Content"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:43
-msgid "Accordion Content"
-msgstr ""
-
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:48
-msgid "Accordion Initial State"
-msgstr ""
-
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:46
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:50
-msgid "Close"
-msgstr ""
-
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:51
-msgid "Open"
-msgstr ""
-
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:58
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:35
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:27
 msgid "Extra ID"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:59
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:36
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:47
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:51
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:28
 msgid "Add an extra ID."
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:63
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:40
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:51
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:55
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:32
 msgid "Extra Class"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:64
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:41
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:52
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:56
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:33
 msgid "Add an extra class for styling overrides."
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:68
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:45
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:56
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:60
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:37
 msgid "Design"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:73
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:61
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:65
 msgid "Headings"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:78
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:170
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:50
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:66
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:189
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:70
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:177
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:42
 msgid "Background Color"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:83
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:71
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:75
 msgid "Background Hover Color"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:88
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:175
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:76
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:194
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:80
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:182
 msgid "Font Color"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:93
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:81
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:85
+msgid "Font Color Hover"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:86
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:90
 msgid "Font Weight"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:96
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:89
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:105
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:93
 msgid "100"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:97
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:90
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:106
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:94
 msgid "200"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:98
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:91
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:107
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:95
 msgid "300"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:99
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:92
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:108
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:96
 msgid "400 - Normal"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:100
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:93
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:109
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:97
 msgid "500"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:101
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:94
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:110
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:98
 msgid "600"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:102
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:95
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:111
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:99
 msgid "700 - Bold"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:103
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:96
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:112
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:100
 msgid "800"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:104
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:97
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:113
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:101
 msgid "900"
 msgstr ""
 
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:102
+msgid "Font Weight Hover"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:118
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:106
+msgid "Text Align"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:121
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:148
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:175
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:224
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:251
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:109
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:185
-msgid "Margin"
-msgstr ""
-
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:114
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:141
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:190
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:217
-msgid "Top"
-msgstr ""
-
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:119
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:146
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:195
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:222
-msgid "Right"
-msgstr ""
-
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:124
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:151
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:200
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:227
-msgid "Bottom"
-msgstr ""
-
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:129
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:156
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:205
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:232
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:136
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:163
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:212
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:239
 msgid "Left"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:136
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:212
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:122
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:110
+msgid "Center"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:123
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:138
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:165
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:214
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:241
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:111
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:126
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:153
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:202
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:229
+msgid "Right"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:128
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:204
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:116
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:192
+msgid "Margin"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:133
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:160
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:209
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:236
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:121
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:148
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:197
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:224
+msgid "Top"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:143
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:170
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:219
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:246
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:131
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:158
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:207
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:234
+msgid "Bottom"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:155
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:231
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:143
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:219
 msgid "Padding"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:165
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:184
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:172
 msgid "Panels"
 msgstr ""
 
-#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:180
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:199
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:187
 msgid "Font Size"
 msgstr ""
 
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:19
-msgid "ZASO - Spacer"
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:267
+msgid "ZASO - Basic Tabs"
 msgstr ""
 
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:21
-msgid "Create an empty space between elements."
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:269
+msgid "Create a multiple panels contained in a single window."
 msgstr ""
 
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:30
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:21
+msgid "Accordion List"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:22
+msgid "Single Item"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:31
+msgid "Accordion Title"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:35
+msgid "Accordion Content"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:40
+msgid "Accordion Initial State"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:42
+msgid "Close"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:43
+msgid "Open"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:255
+msgid "ZASO - Simple Accordion"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:257
+msgid "Create a vertically stacked list of items or single panel."
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:22
 msgid "Height"
 msgstr ""
 
-#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:31
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:23
 msgid "Set empty space height."
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:54
+msgid "ZASO - Spacer"
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:56
+msgid "Create an empty space between elements."
 msgstr ""
 
 #: core/widgets.php:20
 msgid "ZASO Widgets"
 msgstr ""
 
-#: zen-addons-siteorigin.php:64
+#: zen-addons-siteorigin.php:82
 msgid "Zen Addons for SiteOrigin"
 msgstr ""
