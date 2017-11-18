@@ -3,7 +3,7 @@ Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
 Tested up to: 4.9
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPL2+
 License URI: license.txt
 
@@ -16,16 +16,17 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 = Widget Features =
 * Spacer, create an empty space between elements.
 * Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
-* Basic Tabs, create a multiple panels contained in a single window.
+* Basic Tabs, create multiple panels contained in a single window.
+* Alert Box, create contextual feedback and flexible alert messages.
 
 = Other Features =
-* Neatly build semantic HTML
+* Neatly structured semantic HTML
 * Highly accessible widgets with best ARIA practices
 * SEO friendly widgets
 
 Once you enable the extension widget, you’ll be able to use it anywhere standard widgets are used. You can manage your widgets by going to Plugins > SiteOrigin Widgets in your WordPress admin backend.
 
-Lastly, We recommend to activate only the widgets you needed.
+Lastly, We recommend activating only the widgets you needed.
 
 Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin extension.
 
@@ -46,6 +47,10 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 To enable our ZASO widgets, please activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
+
+= 1.0.3 =
+* New: Added new widget 'Alert Box'
+* Tweak: Minor default CSS improvements
 
 = 1.0.2 =
 * New: Added new widget 'Basic Tabs'

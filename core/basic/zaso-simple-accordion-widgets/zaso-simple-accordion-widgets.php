@@ -232,7 +232,7 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 										'bottom' => array(
 											'type' => 'measurement',
 											'label' => __( 'Bottom', 'zaso' ),
-											'default' => '0.5em'
+											'default' => '1em'
 										),
 										'left' => array(
 											'type' => 'measurement',

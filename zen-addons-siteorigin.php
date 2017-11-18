@@ -2,7 +2,7 @@
 /*
 Plugin Name: Zen Addons for SiteOrigin Page Builder
 Description: An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
-Version: 1.0.2
+Version: 1.0.3
 Author: DopeThemes
 Author URI: http://www.dopethemes.com/
 Plugin URI: http://www.dopethemes.com/downloads/zen-addons-siteorigin/
@@ -39,7 +39,7 @@ if( ! class_exists('zen_addons_siteorigin') ) :
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.0.2';
+	var $version = '1.0.3';
 
 	/*
 	*  __construct

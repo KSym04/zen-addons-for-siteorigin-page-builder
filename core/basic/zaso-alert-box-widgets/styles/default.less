@@ -1,0 +1,56 @@
+@reset_margin: 0;
+@reset_padding: 0;
+
+@message_background_color: default;
+@message_font_color: default;
+@message_font_size: default;
+@message_margin: default;
+@message_padding: default;
+@message_border_width: default;
+@message_border_radius: default;
+@message_border_style: default;
+@message_border_color: default;
+
+.zaso-alert-box {
+  @reset_margin: 0;
+  @reset_padding: 0;
+
+  &__messagebox {
+    position: relative;
+    background-color: @message_background_color;
+    margin: @message_margin;
+    padding: @message_padding;
+    border-width: @message_border_width;
+    border-radius: @message_border_radius;
+    border-style: @message_border_style;
+    border-color: @message_border_color;
+    color: @message_font_color;
+    font-size: @message_font_size;
+  }
+
+  &__messagebox p {
+    padding: @reset_padding;
+    margin: 0 0 1em;
+  }
+
+  &__messagebox p:last-child,
+  &__messagebox p:last-of-type {
+    margin-bottom: @reset_margin;
+  }
+
+  &__closebtn {
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+    opacity: 0.8;
+    color: @message_font_color;
+    background-color: transparent;
+    padding: @reset_margin;
+    margin: @reset_padding;
+  }
+
+  &__closebtn:hover {
+    opacity: 1;
+    background-color: transparent;
+  }
+}
