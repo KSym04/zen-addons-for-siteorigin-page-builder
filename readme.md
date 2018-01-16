@@ -76,15 +76,6 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 ### 1.0.4 ###
 Added new widgets - Icon, Icon Group, Video.
 
-### 1.0.3 ###
-Added new widget - Alert Box.
-
-### 1.0.2 ###
-Added new widget - 'Basic Tabs.
-
-### 1.0.0 ###
-Nothing fancy.
-
 ## Translations ##
 
 * English (en_US)
