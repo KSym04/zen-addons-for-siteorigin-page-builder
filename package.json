@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/KSym04/zen-addons-for-siteorigin-page-builder.git"
   },
-  "author": "",
+  "author": "KSym04",
   "license": "GPL2",
   "homepage": "https://github.com/KSym04/zen-addons-for-siteorigin-page-builder",
   "devDependencies": {
