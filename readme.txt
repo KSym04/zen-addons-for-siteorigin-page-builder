@@ -2,8 +2,8 @@
 Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
-Tested up to: 4.9
-Stable tag: 1.0.3
+Tested up to: 4.9.1
+Stable tag: 1.0.4
 License: GPL2+
 License URI: license.txt
 
@@ -18,6 +18,9 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
 * Basic Tabs, create multiple panels contained in a single window.
 * Alert Box, create contextual feedback and flexible alert messages.
+* Icon, set single icon on popular iconic font or upload your custom icon.
+* Icon Group, set group of icon.
+* Video, add video from YouTube, Vimeo or another provider.
 
 = Other Features =
 * Neatly structured semantic HTML
@@ -30,7 +33,7 @@ Lastly, We recommend activating only the widgets you needed.
 
 Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin extension.
 
-= Language Support =
+== Translations ==
 
 * English (en_US)
 
@@ -48,13 +51,18 @@ To enable our ZASO widgets, please activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
 
+= 1.0.4 =
+* New: Added new widget 'Icon'
+* New: Added new widget 'Icon Group'
+* New: Added new widget 'Video'
+
 = 1.0.3 =
 * New: Added new widget 'Alert Box'
 * Tweak: Minor default CSS improvements
 
 = 1.0.2 =
 * New: Added new widget 'Basic Tabs'
-* New: Added field and less variable filters
+* New: Added field and LESS variable filters
 * Tweak: Improved spacer and accordion accessibility
 
 = 1.0.1 =
@@ -66,3 +74,17 @@ To enable our ZASO widgets, please activate it on 'Plugins > SiteOrigin Widgets'
 
 = 1.0.0 =
 * Birthday: Initial Release
+
+== Upgrade Notice ==
+
+= 1.0.4 =
+Added new widgets - Icon, Icon Group, Video.
+
+= 1.0.3 =
+Added new widget - Alert Box.
+
+= 1.0.2 =
+Added new widget - 'Basic Tabs.
+
+= 1.0.0 =
+Nothing fancy.

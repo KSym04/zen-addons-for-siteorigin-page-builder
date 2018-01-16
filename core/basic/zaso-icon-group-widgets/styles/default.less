@@ -1,0 +1,26 @@
+@color: #000000;
+@size: 1rem;
+@alignment: center;
+
+.zaso-icon-group {
+
+  &__media {
+    display: inline-block;
+  }
+
+  &__text {
+    text-align: @alignment;
+    display: inline-block;
+  }
+
+  &__text span,
+  &__text a span {
+    display: inline-block;
+    color: @color !important;
+
+    & when ( isnumber( @size ) ) {
+      font-size: @size !important;
+    }
+  }
+
+}
