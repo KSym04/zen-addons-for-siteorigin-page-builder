@@ -2,4 +2,3 @@
 /vendor/
 /bower_components/
 package-lock.json
-composer.json
