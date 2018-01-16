@@ -1,17 +1,12 @@
 # Zen Addons for SiteOrigin Page Builder #
-**Contributors:** ksym04
-
-**Tags:** zaso, widgets, siteorigin, addons, page builder
-
-**Requires at least:** 4.4
-
-**Tested up to:** 4.9.1
-
-**Stable tag:** 1.0.4
-
-**License:** GPL2+
-
-**License URI:** license.txt
+[![Build Status](https://travis-ci.org/KSym04/zen-addons-for-siteorigin-page-builder.svg?branch=master)](https://travis-ci.org/KSym04/zen-addons-for-siteorigin-page-builder)
+**Contributors:** ksym04  
+**Tags:** zaso, widgets, siteorigin, addons, page builder  
+**Requires at least:** 4.4  
+**Tested up to:** 4.9.1  
+**Stable tag:** 1.0.4  
+**License:** GPL2+  
+**License URI:** license.txt  
 
 An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
 
