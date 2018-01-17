@@ -29,27 +29,17 @@ class Zen_Addons_SiteOrigin_Icon_Widget extends SiteOrigin_Widget {
 			),
 			'color' => array(
 				'type'  => 'color',
-				'label' => __( 'Color', 'zaso' ),
+				'label' => __( 'Icon Color', 'zaso' ),
 				'default' => '#000000'
 			),
 			'size' => array(
 				'type'  => 'measurement',
-				'label' => __( 'Size', 'zaso' ),
+				'label' => __( 'Icon Size', 'zaso' ),
 				'default' => '1rem'
-			),
-			'alignment' => array(
-				'type'  => 'select',
-				'label' => __( 'Alignment', 'zaso' ),
-				'default' => 'left',
-				'options' => array(
-					'left' => __( 'Left', 'zaso' ),
-					'center' => __( 'Center', 'zaso' ),
-					'right' => __( 'Right', 'zaso' ),
-				)
 			),
 			'url' => array(
 				'type'  => 'link',
-				'label' => __( 'Destination URL', 'zaso' ),
+				'label' => __( 'Icon Destination URL', 'zaso' ),
 			),
 			'new_window' => array(
 				'type'    => 'checkbox',
@@ -58,7 +48,17 @@ class Zen_Addons_SiteOrigin_Icon_Widget extends SiteOrigin_Widget {
 			),
 			'icon_text' => array(
 				'type'    => 'tinymce',
-				'label'   => __( 'Text', 'zaso' ),
+				'label'   => __( 'Icon Text', 'zaso' ),
+			),
+			'icon_text_color' => array(
+				'type'  => 'color',
+				'label' => __( 'Icon Text Color', 'zaso' ),
+				'default' => '#000000'
+			),
+			'icon_text_size' => array(
+				'type'  => 'measurement',
+				'label' => __( 'Icon Text Size', 'zaso' ),
+				'default' => '1rem'
 			),
 			'extra_id' => array(
 				'type' 		  => 'text',
@@ -93,9 +93,10 @@ class Zen_Addons_SiteOrigin_Icon_Widget extends SiteOrigin_Widget {
 	function get_less_variables( $instance ) {
 
 		return apply_filters( 'zaso_icon_less_variables', array(
-			'color'    => $instance['color'],
-			'alignment'=> $instance['alignment'],
-			'size'     => $instance['size']
+			'color'  => $instance['color'],
+			'size'   => $instance['size'],
+			'icon_text_color'  => $instance['icon_text_color'],
+			'icon_text_size'  => $instance['icon_text_size']
 		));
 
 	}

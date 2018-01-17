@@ -28,9 +28,19 @@ $allow
         </div>
 
         <?php if ( ! empty( $icon_text ) ) : ?>
+
             <div class="zaso-icon__text">
-                <?php echo nl2br( wp_kses_post( $icon_text ) ); ?>
+                <?php if ( ! empty( $url ) ) : ?>
+                    <a href="<?php echo sow_esc_url( $url ) ?>" <?php if ( ! empty( $new_window ) ) echo 'target="_blank" rel="noopener noreferrer"'; ?>>
+                <?php endif; ?>
+
+                        <?php echo nl2br( wp_kses_post( $icon_text ) ); ?>
+
+                <?php if ( ! empty( $url ) ) : ?>
+                    </a>
+                <?php endif; ?>
             </div>
+
         <?php endif; ?>
 
     </div>
