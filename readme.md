@@ -20,7 +20,6 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Basic Tabs, create multiple panels contained in a single window.
 * Alert Box, create contextual feedback and flexible alert messages.
 * Icon, set single icon on popular iconic font or upload your custom icon.
-* Icon Group, set group of icon.
 * Video, add video from YouTube, Vimeo or another provider.
 
 **Other Features**
@@ -50,7 +49,6 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 
 ### 1.0.4 ###
 * New: Added new widget 'Icon'
-* New: Added new widget 'Icon Group'
 * New: Added new widget 'Video'
 
 ### 1.0.3 ###
@@ -75,7 +73,7 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 ## Upgrade Notice ##
 
 ### 1.0.4 ###
-Added new widgets - Icon, Icon Group, Video.
+Added new widgets - Icon, Video.
 
 ## Translations ##
 

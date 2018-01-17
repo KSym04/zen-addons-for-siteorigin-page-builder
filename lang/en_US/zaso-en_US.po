@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zen Addons for SiteOrigin Page Builder\n"
-"POT-Creation-Date: 2018-01-16 16:53+0800\n"
-"PO-Revision-Date: 2018-01-16 16:53+0800\n"
+"POT-Creation-Date: 2018-01-17 11:27+0800\n"
+"PO-Revision-Date: 2018-01-17 11:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: DopeThemes <hello@dopethemes.com>\n"
 "Language: en_US\n"
@@ -45,7 +45,6 @@ msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:34
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:46
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:81
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:65
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:50
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:27
@@ -55,7 +54,6 @@ msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:35
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:47
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:82
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:66
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:51
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:28
@@ -65,7 +63,6 @@ msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:39
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:51
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:86
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:70
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:55
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:32
@@ -75,7 +72,6 @@ msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:40
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:52
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:87
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:71
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:56
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:33
@@ -145,8 +141,6 @@ msgstr ""
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:165
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:214
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:241
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:61
-#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:47
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:111
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:126
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:153
@@ -175,8 +169,6 @@ msgstr ""
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:175
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:224
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:251
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:59
-#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:45
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:109
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:136
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:163
@@ -286,7 +278,6 @@ msgid "Create contextual feedback and flexible alert messages."
 msgstr ""
 
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:21
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:21
 msgid "Title"
 msgstr ""
 
@@ -390,8 +381,6 @@ msgid "Text Align"
 msgstr ""
 
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:122
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:60
-#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:46
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:110
 msgid "Center"
 msgstr ""
@@ -409,65 +398,44 @@ msgstr ""
 msgid "Create multiple panels contained in a single window."
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:25
-msgid "Icon List"
-msgstr ""
-
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:26
-msgid "Item"
-msgstr ""
-
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:35
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:21
 msgid "Icon"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:39
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:25
 msgid "Custom Icon"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:40
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:26
 msgid "Override \"Icon\", Upload your custom icon here."
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:46
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:32
-msgid "Color"
+msgid "Icon Color"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:51
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:37
-msgid "Size"
+msgid "Icon Size"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:56
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:42
-msgid "Alignment"
+msgid "Icon Destination URL"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:66
-#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:52
-msgid "Destination URL"
-msgstr ""
-
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:71
-#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:57
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:47
 msgid "Open in a new window"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:75
-#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:61
-msgid "Text"
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:51
+msgid "Icon Text"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:96
-msgid "ZASO - Icon Group"
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:55
+msgid "Icon Text Color"
 msgstr ""
 
-#: core/basic/zaso-icon-group-widgets/zaso-icon-group-widgets.php:98
-msgid "Set group of icon."
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:60
+msgid "Icon Text Size"
 msgstr ""
 
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:80
