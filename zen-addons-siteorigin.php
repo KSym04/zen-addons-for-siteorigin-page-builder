@@ -31,7 +31,9 @@ License URI: license.txt
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
 */
 
-if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if( ! class_exists('zen_addons_siteorigin') ) :
 
@@ -106,9 +108,9 @@ class zen_addons_siteorigin {
 		// set text domain
 		load_textdomain( 'zaso', ZASO_BASE_PATH . 'lang/zaso-' . get_locale() . '.mo' );
 
-		// scripts and styles
-		add_action( 'init',	array($this, 'register_styles') );
-		add_action( 'init',	array($this, 'register_scripts') );
+		// scripts and styles (temporary removal)
+		//add_action( 'init',	array($this, 'register_styles') );
+		//add_action( 'init',	array($this, 'register_scripts') );
 
 		// includes
 		include( 'core/helpers.php' );

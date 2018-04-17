@@ -6,7 +6,7 @@ language: php
 notifications:
   email:
     on_success: never
-    on_failure: change
+    on_failure: never
 
 branches:
   only:
@@ -19,11 +19,15 @@ cache:
 
 matrix:
   include:
+    - php: 7.2
+      env: WP_VERSION=latest
     - php: 7.1
       env: WP_VERSION=latest
     - php: 7.0
       env: WP_VERSION=latest
     - php: 5.6
+      env: WP_VERSION=latest
+    - php: 5.5
       env: WP_VERSION=latest
     - php: 5.4
       env: WP_VERSION=latest
