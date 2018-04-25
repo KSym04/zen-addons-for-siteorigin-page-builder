@@ -55,30 +55,24 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 
 ## Changelog ##
 
-### 1.0.4 ###
+### 1.0.4 - Jan 17, 2018 ###
 
 * New: Added new widget 'Icon'
 * New: Added new widget 'Video'
 
-### 1.0.3 ###
+### 1.0.3 - Nov 19, 2017 ###
 
 * New: Added new widget 'Alert Box'
-* Tweak: Minor default CSS improvements
-
-### 1.0.2 ###
-
 * New: Added new widget 'Basic Tabs'
 * New: Added field and LESS variable filters
-* Tweak: Improved spacer and accordion accessibility
-
-### 1.0.1 ###
-
 * New: Added simple accordion design panel
 * New: Added spacer design panel
 * New: Added field 'Extra ID' on widgets
 * New: Added en_US language file
+* Tweak: Minor default CSS improvements
+* Tweak: Improved spacer and accordion accessibility
 * Fix: Minor issues
 
-### 1.0.0 ###
+### 1.0.1 - Nov 18, 2017 ###
 
 * Birthday: Initial Release
