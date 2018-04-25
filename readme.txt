@@ -2,10 +2,10 @@
 Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
-Tested up to: 4.9.1
+Tested up to: 4.9.5
 Stable tag: 1.0.4
-License: GPL2+
-License URI: license.txt
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
 
@@ -43,6 +43,10 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 = How to activate your widgets? =
 
 To enable our ZASO widgets, please activate it on 'Plugins > SiteOrigin Widgets'
+
+== Translations ==
+
+* English (en_US)
 
 == Changelog ==
 
@@ -82,7 +86,3 @@ Added new widget - 'Basic Tabs.
 
 = 1.0.0 =
 Nothing fancy.
-
-== Translations ==
-
-* English (en_US)

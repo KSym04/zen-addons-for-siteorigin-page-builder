@@ -1,12 +1,14 @@
 # Zen Addons for SiteOrigin Page Builder #
-[![Build Status](https://travis-ci.org/KSym04/zen-addons-for-siteorigin-page-builder.svg?branch=master)](https://travis-ci.org/KSym04/zen-addons-for-siteorigin-page-builder)  
-**Contributors:** ksym04  
-**Tags:** zaso, widgets, siteorigin, addons, page builder  
-**Requires at least:** 4.4  
-**Tested up to:** 4.9.1  
-**Stable tag:** 1.0.4  
-**License:** GPL2+  
-**License URI:** license.txt  
+
+[![Build Status](https://travis-ci.org/KSym04/zen-addons-for-siteorigin-page-builder.svg?branch=master)](https://travis-ci.org/KSym04/zen-addons-for-siteorigin-page-builder)
+
+**Contributors:** ksym04\
+**Tags:** zaso, widgets, siteorigin, addons, page builder\
+**Requires at least:** 4.4\
+**Tested up to:** 4.9.5\
+**Stable tag:** 1.0.4\
+**License:** GPLv3\
+**License URI:** [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
 
 An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
 
@@ -14,7 +16,8 @@ An ultimate collection of functional, professional and intuitive widgets extensi
 
 The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
 
-**Widget Features**
+** Widget Features **
+
 * Spacer, create an empty space between elements.
 * Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
 * Basic Tabs, create multiple panels contained in a single window.
@@ -22,7 +25,8 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Icon, set single icon on popular iconic font or upload your custom icon.
 * Video, add video from YouTube, Vimeo or another provider.
 
-**Other Features**
+** Other Features **
+
 * Neatly structured semantic HTML
 * Highly accessible widgets with best ARIA practices
 * SEO friendly widgets
@@ -41,26 +45,34 @@ Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin e
 
 ## Frequently Asked Questions ##
 
-### How to activate your widgets? ###
+### How to activate your widgets ###
 
 To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets'`
+
+## Translations ##
+
+* English (en_US)
 
 ## Changelog ##
 
 ### 1.0.4 ###
+
 * New: Added new widget 'Icon'
 * New: Added new widget 'Video'
 
 ### 1.0.3 ###
+
 * New: Added new widget 'Alert Box'
 * Tweak: Minor default CSS improvements
 
 ### 1.0.2 ###
+
 * New: Added new widget 'Basic Tabs'
 * New: Added field and LESS variable filters
 * Tweak: Improved spacer and accordion accessibility
 
 ### 1.0.1 ###
+
 * New: Added simple accordion design panel
 * New: Added spacer design panel
 * New: Added field 'Extra ID' on widgets
@@ -68,13 +80,5 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 * Fix: Minor issues
 
 ### 1.0.0 ###
+
 * Birthday: Initial Release
-
-## Upgrade Notice ##
-
-### 1.0.4 ###
-Added new widgets - Icon, Video.
-
-## Translations ##
-
-* English (en_US)
