@@ -6,9 +6,7 @@
  * @since 1.0.0
  */
 
-if( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Create widgets group tab

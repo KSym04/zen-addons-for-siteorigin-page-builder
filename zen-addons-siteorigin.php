@@ -2,10 +2,10 @@
 /*
 Plugin Name: Zen Addons for SiteOrigin Page Builder
 Description: An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
-Version: 1.0.4
+Version: 1.0.5
 Author: DopeThemes
-Author URI: http://www.dopethemes.com/
-Plugin URI: http://www.dopethemes.com/downloads/zen-addons-siteorigin/
+Author URI: https://www.dopethemes.com/
+Plugin URI: https://www.dopethemes.com/downloads/zen-addons-siteorigin/
 Copyright: DopeThemes
 Text Domain: zaso
 Domain Path: /lang
@@ -31,9 +31,7 @@ License URI: license.txt
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
 */
 
-if( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if( ! class_exists('zen_addons_siteorigin') ) :
 
@@ -41,7 +39,7 @@ if( ! class_exists('zen_addons_siteorigin') ) :
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.0.4';
+	var $version = '1.0.5';
 
 	/*
 	*  __construct
@@ -108,9 +106,9 @@ class zen_addons_siteorigin {
 		// set text domain
 		load_textdomain( 'zaso', ZASO_BASE_PATH . 'lang/zaso-' . get_locale() . '.mo' );
 
-		// scripts and styles (temporary removal)
-		//add_action( 'init',	array($this, 'register_styles') );
-		//add_action( 'init',	array($this, 'register_scripts') );
+		// scripts and styles
+		add_action( 'init',	array($this, 'register_styles') );
+		add_action( 'init',	array($this, 'register_scripts') );
 
 		// includes
 		include( 'core/helpers.php' );
