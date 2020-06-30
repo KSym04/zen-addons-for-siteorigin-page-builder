@@ -4,7 +4,7 @@ Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
 Tested up to: 5.4
 Stable tag: 1.0.5
-License: GPL2+
+License: GPLv3
 License URI: license.txt
 
 An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.

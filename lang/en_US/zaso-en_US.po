@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zen Addons for SiteOrigin Page Builder\n"
-"POT-Creation-Date: 2018-01-17 11:27+0800\n"
-"PO-Revision-Date: 2018-01-17 11:27+0800\n"
+"POT-Creation-Date: 2020-07-01 01:06+0800\n"
+"PO-Revision-Date: 2020-07-01 01:06+0800\n"
 "Last-Translator: \n"
 "Language-Team: DopeThemes <hello@dopethemes.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -45,37 +45,45 @@ msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:34
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:46
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:65
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:65
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:50
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:27
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:49
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:39
 msgid "Extra ID"
 msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:35
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:47
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:66
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:66
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:51
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:28
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:50
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:40
 msgid "Add an extra ID."
 msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:39
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:51
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:70
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:70
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:55
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:32
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:54
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:44
 msgid "Extra Class"
 msgstr ""
 
 #: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:40
 #: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:52
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:71
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:71
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:56
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:33
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:55
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:45
 msgid "Add an extra class for styling overrides."
 msgstr ""
 
@@ -398,50 +406,62 @@ msgstr ""
 msgid "Create multiple panels contained in a single window."
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:21
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:21
 msgid "Icon"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:25
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:25
 msgid "Custom Icon"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:26
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:26
 msgid "Override \"Icon\", Upload your custom icon here."
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:32
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:32
 msgid "Icon Color"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:37
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:37
 msgid "Icon Size"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:42
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:42
 msgid "Icon Destination URL"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:47
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:47
 msgid "Open in a new window"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:51
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:51
 msgid "Icon Text"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:55
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:55
 msgid "Icon Text Color"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:60
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:60
 msgid "Icon Text Size"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:80
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:80
 msgid "ZASO - Icon"
 msgstr ""
 
+#: core/basic/zaso-icon-group-widgets/zaso-icon-widgets.php:82
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:82
 msgid "Set single icon on popular iconic font or upload your custom icon."
 msgstr ""
@@ -521,6 +541,18 @@ msgstr ""
 
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:66
 msgid "Add video from YouTube, Vimeo or another provider."
+msgstr ""
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:34
+msgid "Widget Sidebar"
+msgstr ""
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:54
+msgid "ZASO - Widgetized"
+msgstr ""
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:56
+msgid "Get widget sidebar."
 msgstr ""
 
 #: core/widgets.php:20
