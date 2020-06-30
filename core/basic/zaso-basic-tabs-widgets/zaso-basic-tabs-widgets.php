@@ -4,7 +4,7 @@
  * Widget ID: zen-addons-siteorigin-basic-tabs
  * Description: Create multiple panels contained in a single window.
  * Author: DopeThemes
- * Author URI: http://www.dopethemes.com/
+ * Author URI: https://www.dopethemes.com/
  */
 
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Basic_Tabs_Widget' ) ) :
@@ -267,7 +267,7 @@ class Zen_Addons_SiteOrigin_Basic_Tabs_Widget extends SiteOrigin_Widget {
 			__( 'ZASO - Basic Tabs', 'zaso' ),
 			array(
 				'description'   => __( 'Create multiple panels contained in a single window.', 'zaso' ),
-				'help'          => 'http://www.dopethemes.com/',
+				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),
 			array(),

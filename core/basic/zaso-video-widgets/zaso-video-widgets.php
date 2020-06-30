@@ -4,7 +4,7 @@
  * Widget ID: zen-addons-siteorigin-video
  * Description: Add video from YouTube, Vimeo or another provider.
  * Author: DopeThemes
- * Author URI: http://www.dopethemes.com/
+ * Author URI: https://www.dopethemes.com/
  */
 
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Video_Widget' ) ) :
@@ -64,7 +64,7 @@ class Zen_Addons_SiteOrigin_Video_Widget extends SiteOrigin_Widget {
 			__( 'ZASO - Video', 'zaso' ),
 			array(
 				'description'   => __( 'Add video from YouTube, Vimeo or another provider.', 'zaso' ),
-				'help'          => 'http://www.dopethemes.com/',
+				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),
 			array(),

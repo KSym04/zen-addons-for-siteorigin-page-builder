@@ -4,7 +4,7 @@
  * Widget ID: zen-addons-siteorigin-alert-box
  * Description: Create contextual feedback and flexible alert messages.
  * Author: DopeThemes
- * Author URI: http://www.dopethemes.com/
+ * Author URI: https://www.dopethemes.com/
  */
 
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Alert_Box_Widget' ) ) :
@@ -201,7 +201,7 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 			__( 'ZASO - Alert Box', 'zaso' ),
 			array(
 				'description'   => __( 'Create contextual feedback and flexible alert messages.', 'zaso' ),
-				'help'          => 'http://www.dopethemes.com/',
+				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),
 			array(),

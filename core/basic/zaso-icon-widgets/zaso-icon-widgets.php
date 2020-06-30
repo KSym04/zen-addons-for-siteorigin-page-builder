@@ -4,7 +4,7 @@
  * Widget ID: zen-addons-siteorigin-icon
  * Description: Set single icon on popular iconic font or upload your custom icon.
  * Author: DopeThemes
- * Author URI: http://www.dopethemes.com/
+ * Author URI: https://www.dopethemes.com/
  */
 
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Icon_Widget' ) ) :
@@ -80,7 +80,7 @@ class Zen_Addons_SiteOrigin_Icon_Widget extends SiteOrigin_Widget {
 			__( 'ZASO - Icon', 'zaso' ),
 			array(
 				'description' 	=> __( 'Set single icon on popular iconic font or upload your custom icon.', 'zaso' ),
-				'help' 			=> 'http://www.dopethemes.com/',
+				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),
 			array(),

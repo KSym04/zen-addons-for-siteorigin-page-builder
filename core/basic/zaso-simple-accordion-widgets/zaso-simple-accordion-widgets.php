@@ -4,7 +4,7 @@
  * Widget ID: zen-addons-siteorigin-simple-accordion
  * Description: Create a vertically stacked list of items or single panel.
  * Author: DopeThemes
- * Author URI: http://www.dopethemes.com/
+ * Author URI: https://www.dopethemes.com/
  */
 
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Simple_Accordion_Widget' ) ) :
@@ -255,7 +255,7 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 			__( 'ZASO - Simple Accordion', 'zaso' ),
 			array(
 				'description'   => __( 'Create a vertically stacked list of items or single panel.', 'zaso' ),
-				'help'          => 'http://www.dopethemes.com/',
+				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),
 			array(),

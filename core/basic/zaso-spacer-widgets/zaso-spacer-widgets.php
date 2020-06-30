@@ -4,7 +4,7 @@
  * Widget ID: zen-addons-siteorigin-spacer
  * Description: Create an empty space between elements.
  * Author: DopeThemes
- * Author URI: http://www.dopethemes.com/
+ * Author URI: https://www.dopethemes.com/
  */
 
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Spacer_Widget' ) ) :
@@ -54,7 +54,7 @@ class Zen_Addons_SiteOrigin_Spacer_Widget extends SiteOrigin_Widget {
 			__( 'ZASO - Spacer', 'zaso' ),
 			array(
 				'description' 	=> __( 'Create an empty space between elements.', 'zaso' ),
-				'help' 			=> 'http://www.dopethemes.com/',
+				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),
 			array(),

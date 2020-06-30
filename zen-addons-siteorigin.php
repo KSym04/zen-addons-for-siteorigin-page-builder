@@ -9,7 +9,7 @@ Plugin URI: https://www.dopethemes.com/downloads/zen-addons-siteorigin/
 Copyright: DopeThemes
 Text Domain: zaso
 Domain Path: /lang
-License: GPL2+
+License: GPLv3
 License URI: license.txt
 */
 
