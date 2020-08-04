@@ -9,9 +9,9 @@
 $zaso_aria_level = count( $instance['accordion'] );
 $zaso_aria_control = 1; ?>
 
-<dl <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-simple-accordion <?php echo $instance['extra_class']; ?>" role="presentation">
+<dl <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-simple-accordion <?php echo $instance['extra_class']; ?> <?php echo $instance['accordion_settings']; ?>" role="presentation">
   <?php foreach ( $instance['accordion'] as $a ) : ?>
-    <dt class="zaso-simple-accordion__title" role="heading" aria-level="<?php echo $zaso_aria_level; ?>">
+    <dt class="zaso-simple-accordion__title <?php echo ($a['accordion_field_state'] == 'zaso-simple-accordion--open') ? 'activate' : ''; ?>" role="heading" aria-level="<?php echo $zaso_aria_level; ?>">
       <button aria-expanded="true" aria-controls="zacc-controls-<?php echo $zaso_aria_control; ?>" id="zacc-id-<?php echo $zaso_aria_control; ?>" type="button">
         <span class="zacc-title"><?php echo $a['accordion_field_title']; ?></span>
       </button>

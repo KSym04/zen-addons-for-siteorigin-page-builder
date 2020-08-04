@@ -3,8 +3,8 @@
 **Contributors:** ksym04  
 **Tags:** zaso, widgets, siteorigin, addons, page builder  
 **Requires at least:** 4.4  
-**Tested up to:** 5.4  
-**Stable tag:** 1.0.5  
+**Tested up to:** 5.5  
+**Stable tag:** 1.0.6  
 **License:** GPLv3  
 **License URI:** license.txt  
 
@@ -47,6 +47,9 @@ Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin e
 To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
+
+### 1.0.6 ###
+* Tweak: Accordion minor improvements
 
 ### 1.0.5 ###
 * New: Added new widget 'Widgetized'

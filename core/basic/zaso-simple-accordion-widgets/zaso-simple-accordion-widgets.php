@@ -44,7 +44,16 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 						)
 					),
 				)
-			),
+            ),
+            'accordion_settings' => array(
+                'type'    => 'select',
+                'label'   => __( 'Settings', 'zaso' ),
+                'default' => '700',
+                'options' => array(
+                    'multiple_open'  => __( 'Allow Multiple Open', 'zaso' ),
+                    'single_open'  => __( 'Single Open Only', 'zaso' )
+                )
+            ),
 			'extra_id' => array(
 				'type'  => 'text',
 				'label' => __( 'Extra ID', 'zaso' ),
