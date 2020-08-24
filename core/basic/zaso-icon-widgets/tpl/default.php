@@ -5,7 +5,6 @@
  * @package Zen Addons for SiteOrigin Page Builder
  * @since 1.0.4
  */
-$allow
 ?>
 
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-icon <?php echo $instance['extra_class']; ?>">

@@ -21,6 +21,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Alert Box, create contextual feedback and flexible alert messages.
 * Icon, set single icon on popular iconic font or upload your custom icon.
 * Video, add video from YouTube, Vimeo or another provider.
+* YouTube Video Lightbox, pop-up lightbox for YouTube videos.
 * Widgetized, get widget sidebar.
 
 **Other Features**
@@ -49,6 +50,7 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 ## Changelog ##
 
 ### 1.0.6 ###
+* New: Added new widget 'YouTube Video Lightbox'
 * Tweak: Accordion minor improvements
 
 ### 1.0.5 ###
@@ -79,8 +81,8 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 
 ## Upgrade Notice ##
 
-### 1.0.5 ###
-Added new widget - Widgetized.
+### 1.0.6 ###
+Added new widget - YouTube Video Lightbox.
 
 ## Translations ##
 
