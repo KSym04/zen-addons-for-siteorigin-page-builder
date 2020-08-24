@@ -5,6 +5,7 @@
 
   a {
     position: relative;
+    display: inline-block;
   }
 
   &__playbutton {
@@ -18,4 +19,8 @@
 
 .lity {
   z-index: 999999;
+
+  &-iframe-container {
+    overflow: initial;
+  }
 }

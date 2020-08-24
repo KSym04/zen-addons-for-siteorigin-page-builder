@@ -5,6 +5,7 @@
 }
 .zaso-youtube-lightbox a {
   position: relative;
+  display: inline-block;
 }
 .zaso-youtube-lightbox__playbutton {
   position: absolute;
@@ -16,6 +17,9 @@
 
 .lity {
   z-index: 999999;
+}
+.lity-iframe-container {
+  overflow: initial;
 }
 
 /*# sourceMappingURL=style.css.map */
