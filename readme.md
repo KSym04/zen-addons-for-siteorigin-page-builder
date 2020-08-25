@@ -14,9 +14,9 @@ An ultimate collection of functional, professional and intuitive widgets extensi
 
 The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
 
-#### Builder Framework Compatibility ####
-- Page Builder by SiteOrigin version: 2.11.2
-- SiteOrigin Widgets Bundle version: 1.17.6
+### Builder Framework Compatibility ###
+**Page Builder by SiteOrigin version:** 2.11.2  
+**SiteOrigin Widgets Bundle version:** 1.17.6  
 
 **Widget Features**
 * Spacer, create an empty space between elements.
