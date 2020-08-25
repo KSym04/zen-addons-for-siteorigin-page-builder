@@ -51,7 +51,7 @@ Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin e
 
 ### How to activate your widgets? ###
 
-Please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets'`
+First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
 
