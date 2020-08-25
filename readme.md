@@ -41,7 +41,7 @@ Lastly, We recommend activating only the widgets you needed.
 
 Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin extension.  
 
-##### Open-Source project made this widget plugin possible: jQuery, slick, lity #####
+_Other open-source projects made this widget plugin possible: jQuery, slick, lity_
 
 ## Installation ##
 
