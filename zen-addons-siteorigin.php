@@ -2,7 +2,7 @@
 /*
 Plugin Name: Zen Addons for SiteOrigin Page Builder
 Description: An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
-Version: 1.0.6
+Version: 1.0.7
 Author: DopeThemes
 Author URI: https://www.dopethemes.com/
 Plugin URI: https://www.dopethemes.com/downloads/zen-addons-siteorigin/
@@ -33,13 +33,13 @@ License URI: license.txt
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if( ! class_exists('zen_addons_siteorigin') ) :
+if( ! class_exists( 'zen_addons_siteorigin' ) ) :
 
 
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.0.6';
+	var $version = '1.0.7';
 
 	/*
 	*  __construct
@@ -107,8 +107,8 @@ class zen_addons_siteorigin {
 		load_textdomain( 'zaso', ZASO_BASE_PATH . 'lang/zaso-' . get_locale() . '.mo' );
 
 		// scripts and styles
-		add_action( 'init',	array($this, 'register_styles') );
-		add_action( 'init',	array($this, 'register_scripts') );
+		add_action( 'init',	array( $this, 'register_styles' ) );
+		add_action( 'init',	array( $this, 'register_scripts' ) );
 
 		// includes
 		include( 'core/helpers.php' );
@@ -118,7 +118,7 @@ class zen_addons_siteorigin {
 	}
 
 	/*
-	*  register_styles
+	*  register_styles (temporary disabled)
 	*
 	*  @type	function
 	*  @date	09/24/17
@@ -128,15 +128,15 @@ class zen_addons_siteorigin {
 	function register_styles() {
 
 		// register
-		wp_register_style( 'zen-addons-base', ZASO_BASE_DIR . 'assets/css/main.css', array(), ZASO_VERSION );
+		//wp_register_style( 'zen-addons-base', ZASO_BASE_DIR . 'assets/css/main.css', array(), ZASO_VERSION );
 
 		// init
-		wp_enqueue_style( 'zen-addons-base' );
+		//wp_enqueue_style( 'zen-addons-base' );
 
 	}
 
 	/*
-	*  register_scripts
+	*  register_scripts (temporary disabled)
 	*
 	*  @type	function
 	*  @date	09/24/17
@@ -146,10 +146,10 @@ class zen_addons_siteorigin {
 	function register_scripts() {
 
 		// register
-		wp_register_script( 'zen-addons-base', ZASO_BASE_DIR . 'assets/js/main.js', array('jquery'), ZASO_VERSION );
+		//wp_register_script( 'zen-addons-base', ZASO_BASE_DIR . 'assets/js/main.js', array( 'jquery' ), ZASO_VERSION );
 
 		// init
-		wp_enqueue_script( 'zen-addons-base' );
+		//wp_enqueue_script( 'zen-addons-base' );
 
 	}
 
@@ -175,7 +175,7 @@ function zen_addons_siteorigin() {
 
 	global $zen_addons_siteorigin;
 
-	if( ! isset($zen_addons_siteorigin) ) {
+	if( ! isset( $zen_addons_siteorigin ) ) {
 
 		$zen_addons_siteorigin = new zen_addons_siteorigin();
 

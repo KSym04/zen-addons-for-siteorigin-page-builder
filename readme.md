@@ -4,7 +4,7 @@
 **Tags:** zaso, widgets, siteorigin, addons, page builder  
 **Requires at least:** 4.4  
 **Tested up to:** 5.5  
-**Stable tag:** 1.0.6  
+**Stable tag:** 1.0.7  
 **License:** GPLv3  
 **License URI:** license.txt  
 
@@ -14,6 +14,10 @@ An ultimate collection of functional, professional and intuitive widgets extensi
 
 The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
 
+### Builder Framework Compatibility ###
+Page Builder by SiteOrigin version: 2.11.2
+SiteOrigin Widgets Bundle version: 1.17.6
+
 **Widget Features**
 * Spacer, create an empty space between elements.
 * Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
@@ -22,6 +26,8 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Icon, set single icon on popular iconic font or upload your custom icon.
 * Video, add video from YouTube, Vimeo or another provider.
 * YouTube Video Lightbox, pop-up lightbox for YouTube videos.
+* Vimeo Video Lightbox, pop-up lightbox for Vimeo videos.
+* Contact Form 7, display CF7 forms.
 * Widgetized, get widget sidebar.
 
 **Other Features**
@@ -45,9 +51,13 @@ Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin e
 
 ### How to activate your widgets? ###
 
-To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets'`
+Please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
+
+### 1.0.7 ###
+* New: Added new widget 'Contact Form 7'
+* Tweak: Minor improvements
 
 ### 1.0.6 ###
 * New: Added new widget 'YouTube Video Lightbox'
@@ -81,8 +91,9 @@ To enable our ZASO widgets, please activate it on `'Plugins > SiteOrigin Widgets
 
 ## Upgrade Notice ##
 
-### 1.0.6 ###
-Added new widget - YouTube Video Lightbox.
+### 1.0.7 ###
+Added new widget - Vimeo Lightbox.
+Added new widget - Contact Form 7.
 
 ## Translations ##
 

@@ -3,7 +3,7 @@ Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
 Tested up to: 5.5
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3
 License URI: license.txt
 
@@ -22,7 +22,6 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Video, add video from YouTube, Vimeo or another provider.
 * YouTube Video Lightbox, pop-up lightbox for YouTube videos.
 * Widgetized, get widget sidebar.
-
 
 = Other Features =
 * Neatly structured semantic HTML
