@@ -41,6 +41,10 @@ Lastly, We recommend activating only the widgets you needed.
 
 Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin extension.
 
+**Other Open-Source project made this widget plugin possible**
+* jQuery
+* lity
+
 ## Installation ##
 
 1. Upload the `zen-addons-site-origin` directory to the `/wp-content/plugins/` directory via FTP
