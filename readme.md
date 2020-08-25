@@ -39,7 +39,7 @@ Once you enable the extension widget, you’ll be able to use it anywhere standa
 
 Lastly, We recommend activating only the widgets you needed.
 
-Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin extension.
+Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin extension.  
 
 ##### Open-Source project made this widget plugin possible #####
 * jQuery, slick, lity
@@ -96,7 +96,7 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 ## Upgrade Notice ##
 
 ### 1.0.7 ###
-Added new widget - Vimeo Video Lightbox.
+Added new widget - Vimeo Video Lightbox.  
 Added new widget - Contact Form 7.
 
 ## Translations ##
