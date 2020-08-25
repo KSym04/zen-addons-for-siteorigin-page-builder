@@ -56,6 +56,7 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 ## Changelog ##
 
 ### 1.0.7 ###
+* New: Added new widget 'Vimeo Video Lightbox'
 * New: Added new widget 'Contact Form 7'
 * Tweak: Minor improvements
 
@@ -92,7 +93,7 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 ## Upgrade Notice ##
 
 ### 1.0.7 ###
-Added new widget - Vimeo Lightbox.
+Added new widget - Vimeo Video Lightbox.
 Added new widget - Contact Form 7.
 
 ## Translations ##
