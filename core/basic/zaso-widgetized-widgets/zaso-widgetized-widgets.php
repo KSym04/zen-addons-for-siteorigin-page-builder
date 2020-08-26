@@ -15,7 +15,6 @@ class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
 	function __construct() {
 
         $all_sidebars = array();
-        $sidebar_id_options = array();
         $sidebars_widgets = get_option( 'sidebars_widgets', array() );
 
         if( $sidebars_widgets ) {

@@ -28,7 +28,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Video, add video from YouTube, Vimeo or another provider.
 * YouTube Video Lightbox, pop-up lightbox for YouTube videos.
 * Vimeo Video Lightbox, pop-up lightbox for Vimeo videos.
-* Contact Form 7, display CF7 forms.
+* Contact Form 7, display CF7 form.
 * Widgetized, get widget sidebar.
 
 **Other Features**
