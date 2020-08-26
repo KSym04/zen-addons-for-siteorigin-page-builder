@@ -1,16 +1,16 @@
 <?php
 /**
- * Widget Name: ZASO - Widgetized
- * Widget ID: zen-addons-siteorigin-widgetized
- * Description: Get widget sidebar.
+ * Widget Name: ZASO - Contact Form 7
+ * Widget ID: zen-addons-siteorigin-contact-form-7
+ * Description: Display CF7 forms.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */
 
-if( ! class_exists( 'Zen_Addons_SiteOrigin_Widgetized_Widget' ) ) :
+if( ! class_exists( 'Zen_Addons_SiteOrigin_Contact_Form_7_Widget' ) ) :
 
 
-class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
+class Zen_Addons_SiteOrigin_Contact_Form_7_Widget extends SiteOrigin_Widget {
 
 	function __construct() {
 
@@ -27,8 +27,8 @@ class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
             }
         }
         
-		// ZASO field array.
-		$zaso_widgetized_field_array = array(
+		// ZASO field array
+		$zaso_icon_field_array = array(
 			'sidebar_id' => array(
                 'type' => 'select',
                 'label' => __( 'Widget Sidebar', 'zaso' ),
@@ -47,18 +47,18 @@ class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
 		);
 
 		// add filter
-		$zaso_widgetized_fields = apply_filters( 'zaso_widgetized_fields', $zaso_widgetized_field_array );
+		$zaso_icon_fields = apply_filters( 'zaso_icon_fields', $zaso_icon_field_array );
 
 		parent::__construct(
-			'zen-addons-siteorigin-widgetized',
-			__( 'ZASO - Widgetized', 'zaso' ),
+			'zen-addons-siteorigin-contact-form-7',
+			__( 'ZASO - Contact Form 7', 'zaso' ),
 			array(
 				'description' 	=> __( 'Get widget sidebar.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),
 			array(),
-			$zaso_widgetized_fields,
+			$zaso_icon_fields,
 			ZASO_WIDGET_BASIC_DIR
 		);
 
@@ -67,14 +67,14 @@ class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
 	function get_template_variables( $instance, $args ) {
 
 		// return the goodies.
-		return apply_filters( 'zaso_widgetized_template_variables', array(
+		return apply_filters( 'zaso_contact_form_7_template_variables', array(
 			'sidebar_id' => $instance['sidebar_id']
 		));
 
 	}
 
 }
-siteorigin_widget_register( 'zen-addons-siteorigin-widgetized', __FILE__, 'Zen_Addons_SiteOrigin_Widgetized_Widget' );
+siteorigin_widget_register( 'zen-addons-siteorigin-contact-form-7', __FILE__, 'Zen_Addons_SiteOrigin_Contact_Form_7_Widget' );
 
 
 endif;
