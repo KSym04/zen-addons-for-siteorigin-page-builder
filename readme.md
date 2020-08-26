@@ -8,7 +8,7 @@
 **License:** GPLv3  
 **License URI:** license.txt  
 
-An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
+Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple but flexible and useful.
 
 ## Description ##
 

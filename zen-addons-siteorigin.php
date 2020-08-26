@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Zen Addons for SiteOrigin Page Builder
-Description: An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
+Description: Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple but flexible and useful.
 Version: 1.0.7
 Author: DopeThemes
 Author URI: https://www.dopethemes.com/
@@ -47,13 +47,12 @@ class zen_addons_siteorigin {
 	*  A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once
 	*
 	*  @type	function
-	*  @date	09/24/17
+	*  @date	09/24/2017
 	*  @since	1.0.0
 	*
 	*  @param	N/A
 	*  @return	N/A
 	*/
-
 	function __construct() {
 
 		/* Do nothing here */
@@ -66,23 +65,22 @@ class zen_addons_siteorigin {
 	*  The real constructor to initialize Zen Addons for SiteOrigin
 	*
 	*  @type	function
-	*  @date	09/24/17
+	*  @date	09/24/2017
 	*  @since	1.0.0
 	*
 	*  @param	N/A
 	*  @return	N/A
 	*/
-
 	function initialize() {
 
-		// vars
+		// Vars.
 		$this->settings = array(
 
-			// info
+			// Information.
 			'name' 		=> __( 'Zen Addons for SiteOrigin', 'zaso' ),
 			'version' 	=> $this->version,
 
-			// path
+			// Path.
 			'file' 		=> __FILE__,
 			'basename' 	=> plugin_basename( __FILE__ ),
 			'path' 		=> plugin_dir_path( __FILE__ ),
@@ -90,7 +88,7 @@ class zen_addons_siteorigin {
 
 		);
 
-		// defines
+		// Defines.
 		define( 'ZASO_VERSION', $this->version );
 
 		define( 'ZASO_BASE_DIR', $this->settings['dir'] );
@@ -103,28 +101,29 @@ class zen_addons_siteorigin {
 		define( 'ZASO_LIBRARY_PATH', $this->settings['path'] . 'core/lib/' );
 		define( 'ZASO_WIDGET_BASIC_PATH', $this->settings['path'] . 'core/basic/' );
 
-		// set text domain
+		// Set text domain.
 		load_textdomain( 'zaso', ZASO_BASE_PATH . 'lang/zaso-' . get_locale() . '.mo' );
 
-		// scripts and styles
+		// Scripts and styles.
 		add_action( 'init',	array( $this, 'register_styles' ) );
 		add_action( 'init',	array( $this, 'register_scripts' ) );
 
-		// includes
+		// Includes.
 		include( 'core/helpers.php' );
 		include( 'core/widgets.php' );
 		include( 'core/shortcodes.php' );
 
+		// Plugin action links.
+		add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
 	}
 
 	/*
 	*  register_styles (temporary disabled)
 	*
 	*  @type	function
-	*  @date	09/24/17
+	*  @date	09/24/2017
 	*  @since	1.0.0
 	*/
-
 	function register_styles() {
 
 		// register
@@ -139,10 +138,9 @@ class zen_addons_siteorigin {
 	*  register_scripts (temporary disabled)
 	*
 	*  @type	function
-	*  @date	09/24/17
+	*  @date	09/24/2017
 	*  @since	1.0.0
 	*/
-
 	function register_scripts() {
 
 		// register
@@ -151,6 +149,25 @@ class zen_addons_siteorigin {
 		// init
 		//wp_enqueue_script( 'zen-addons-base' );
 
+    }
+
+	/*
+	*  plugin_action_links - Added action plugin links.
+	*
+	*  @type	function
+	*  @date	08/26/2020
+	*  @since	1.0.7
+	*/
+	function plugin_action_links( $links ) {
+
+		if ( isset( $links['edit'] ) ) {
+			unset( $links['edit'] );
+        }
+        
+        $links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . __( 'Learn More', 'zaso' ) . '</a>';
+        
+        return $links;
+        
 	}
 
 }
@@ -164,7 +181,7 @@ class zen_addons_siteorigin {
 *  Example: <?php $zen_addons_siteorigin = zen_addons_siteorigin(); ?>
 *
 *  @type	function
-*  @date	09/24/17
+*  @date	09/24/2017
 *  @since	1.0.0
 *
 *  @param	N/A

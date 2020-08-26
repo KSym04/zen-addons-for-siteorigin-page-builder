@@ -7,20 +7,27 @@ Stable tag: 1.0.7
 License: GPLv3
 License URI: license.txt
 
-An ultimate collection of functional, professional and intuitive widgets extension for SiteOrigin.
+Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple but flexible and useful.
 
 == Description ==
 
 The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
+
+= Builder Framework Compatibility =
+- Page Builder by SiteOrigin (tested plugin version up to): 2.11.2  
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.6  
 
 = Widget Features =
 * Spacer, create an empty space between elements.
 * Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
 * Basic Tabs, create multiple panels contained in a single window.
 * Alert Box, create contextual feedback and flexible alert messages.
+* Info Box, display media, text information and learn more button.
 * Icon, set single icon on popular iconic font or upload your custom icon.
 * Video, add video from YouTube, Vimeo or another provider.
 * YouTube Video Lightbox, pop-up lightbox for YouTube videos.
+* Vimeo Video Lightbox, pop-up lightbox for Vimeo videos.
+* Contact Form 7, display CF7 forms.
 * Widgetized, get widget sidebar.
 
 = Other Features =
@@ -44,9 +51,15 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 
 = How to activate your widgets? =
 
-To enable our ZASO widgets, please activate it on 'Plugins > SiteOrigin Widgets'
+First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
+
+= 1.0.7 =
+* New: Added new widget 'Info Box'
+* New: Added new widget 'Vimeo Video Lightbox'
+* New: Added new widget 'Contact Form 7'
+* Tweak: Minor improvements
 
 = 1.0.6 =
 * New: Added new widget 'YouTube Video Lightbox'
@@ -79,6 +92,11 @@ To enable our ZASO widgets, please activate it on 'Plugins > SiteOrigin Widgets'
 * Birthday: Initial Release
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+Added new widget - Info Box.  
+Added new widget - Vimeo Video Lightbox.  
+Added new widget - Contact Form 7.
 
 = 1.0.6 =
 Added new widget - YouTube Video Lightbox.
