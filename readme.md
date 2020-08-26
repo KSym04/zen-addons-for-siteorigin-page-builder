@@ -23,6 +23,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
 * Basic Tabs, create multiple panels contained in a single window.
 * Alert Box, create contextual feedback and flexible alert messages.
+* Info Box, display media, text information and learn more button.
 * Icon, set single icon on popular iconic font or upload your custom icon.
 * Video, add video from YouTube, Vimeo or another provider.
 * YouTube Video Lightbox, pop-up lightbox for YouTube videos.
@@ -41,7 +42,7 @@ Lastly, We recommend activating only the widgets you needed.
 
 Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin extension.  
 
-_Other open-source projects made this widget plugin possible: jQuery, slick, lity_
+_Special thanks to other open-source projects made this widget plugin possible: jQuery, slick, lity_
 
 ## Installation ##
 
@@ -58,6 +59,7 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 ## Changelog ##
 
 ### 1.0.7 ###
+* New: Added new widget 'Info Box'
 * New: Added new widget 'Vimeo Video Lightbox'
 * New: Added new widget 'Contact Form 7'
 * Tweak: Minor improvements
@@ -95,6 +97,7 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 ## Upgrade Notice ##
 
 ### 1.0.7 ###
+Added new widget - Info Box.  
 Added new widget - Vimeo Video Lightbox.  
 Added new widget - Contact Form 7.
 
