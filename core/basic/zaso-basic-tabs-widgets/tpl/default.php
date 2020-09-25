@@ -15,7 +15,7 @@
         foreach ( $instance['tabs'] as $t1 ) :
         $tt_aria_selected = ( $tt_count == 0 ) ? "true" : "false";
         $tt_aria_tabindex = ( $tt_count == 0 ) ? '' : 'tabindex="-1"';
-        $tt_title_formatted = sanitize_title_with_dashes( $t1['tab_field_title'] );
+        $tt_title_formatted = sanitize_key( $t1['tab_field_title'] );
       ?>
             <button class="zaso-basic-tabs__title"
                   role="tab"
@@ -34,7 +34,7 @@
       $tc_count = 0;
       foreach ( $instance['tabs'] as $t2 ) :
       $tt_aria_selected = ( $tc_count == 0 ) ? "true" : "false";
-      $tt_title_formatted = sanitize_title_with_dashes( $t2['tab_field_title'] );
+      $tt_title_formatted = sanitize_key( $t2['tab_field_title'] );
     ?>
         <div class="zaso-basic-tabs__content" tabindex="0" role="tabpanel"
              id="<?php echo $tt_title_formatted; ?>-tab"

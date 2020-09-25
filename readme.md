@@ -4,7 +4,7 @@
 **Tags:** zaso, widgets, siteorigin, addons, page builder  
 **Requires at least:** 4.4  
 **Tested up to:** 5.5  
-**Stable tag:** 1.0.7  
+**Stable tag:** 1.0.8  
 **License:** GPLv3  
 **License URI:** license.txt  
 
@@ -28,6 +28,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * YouTube Video Lightbox, pop-up lightbox for YouTube videos.
 * Vimeo Video Lightbox, pop-up lightbox for Vimeo videos.
 * Contact Form 7, display CF7 form.
+* Info Box, display information box - image, title, description and learn more button link.
 * Widgetized, get widget sidebar.
 
 **Other Features**
@@ -56,6 +57,12 @@ _Special thanks to other open-source projects made this widget plugin possible: 
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
+
+### 1.0.8 ###
+* New: Added new widget 'Info Box'
+* Fix: Accordion content float issue
+* Fix: Tab key issue on special characters
+* Tweak: Minor improvements
 
 ### 1.0.7 ###
 * New: Added new widget 'Vimeo Video Lightbox'
@@ -94,9 +101,8 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 
 ## Upgrade Notice ##
 
-### 1.0.7 ###
-Added new widget - Vimeo Video Lightbox.  
-Added new widget - Contact Form 7.
+### 1.0.8 ###
+Added new widget - Info Box.  
 
 ## Translations ##
 
