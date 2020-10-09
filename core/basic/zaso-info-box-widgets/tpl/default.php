@@ -8,7 +8,7 @@
 $info_image = siteorigin_widgets_get_attachment_image_src( $instance['info_image'], 'full' )[0];
 ?>
 
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-info-box <?php echo $instance['extra_class']; ?>">
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-info-box <?php echo $instance['extra_class']; ?>" role="banner">
   <div class="zaso-info-box__wrapper">
     <?php if( $instance['info_image'] ) : ?>
       <div class="zaso-info-box__image">

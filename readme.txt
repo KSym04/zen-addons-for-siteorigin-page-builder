@@ -3,7 +3,7 @@ Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
 Tested up to: 5.5
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv3
 License URI: license.txt
 
@@ -14,8 +14,8 @@ Just another collection of helpful widget extensions for SiteOrigin Page Builder
 The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
 
 = Builder Framework Compatibility =
-- Page Builder by SiteOrigin (tested plugin version up to): 2.11.3  
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.7  
+- Page Builder by SiteOrigin (tested plugin version up to): 2.11.5  
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.8  
 
 = Widget Features =
 * Spacer, create an empty space between elements.
@@ -28,12 +28,16 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Vimeo Video Lightbox, pop-up lightbox for Vimeo videos.
 * Contact Form 7, display CF7 form.
 * Info Box, display information box - image, title, description and learn more button link.
+* Hover Card, display image box, title caption and learn more button with hover transition.
 * Widgetized, get widget sidebar.
 
-= Other Features =
+= Standards =
 * Neatly structured semantic HTML
 * Highly accessible widgets with best ARIA practices
 * SEO friendly widgets
+
+= Language Support =
+* English (en_US)
 
 Once you enable the extension widget, you’ll be able to use it anywhere standard widgets are used. You can manage your widgets by going to Plugins > SiteOrigin Widgets in your WordPress admin backend.
 
@@ -43,7 +47,7 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 
 == Installation ==
 
-1. Upload the `zen-addons-site-origin` directory to the `/wp-content/plugins/` directory via FTP
+1. Upload the `zen-addons-for-siteorigin-page-builder` directory to the `/wp-content/plugins/` directory via FTP
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Enjoy
 
@@ -54,6 +58,10 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
+
+= 1.0.9 =
+* New: Added new widget 'Hover Card'
+* Tweak: ARIA roles improvements
 
 = 1.0.8 =
 * New: Added new widget 'Info Box'
@@ -97,6 +105,9 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 * Birthday: Initial Release
 
 == Upgrade Notice ==
+
+= 1.0.9 =
+Added new widget - Hover Card.  
 
 = 1.0.8 =
 Added new widget - Info Box.  

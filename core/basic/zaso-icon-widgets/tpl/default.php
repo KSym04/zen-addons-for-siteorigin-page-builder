@@ -8,7 +8,7 @@
 ?>
 
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-icon <?php echo $instance['extra_class']; ?>">
-	<div class="zaso-icon__block">
+	<div class="zaso-icon__block" role="button">
 
         <div class="zaso-icon__media">
             <?php if ( ! empty( $url ) ) : ?>

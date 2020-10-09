@@ -18,7 +18,7 @@ $video_thumb = wp_get_attachment_image_src( $instance['video_thumb'], 'full' )[0
 $video_play_button = wp_get_attachment_image_src( $instance['video_play_button'], 'full' );
 ?>
 
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-youtube-lightbox <?php echo $instance['extra_class']; ?>">
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-youtube-lightbox <?php echo $instance['extra_class']; ?>" role="dialog">
     <div class="zaso-youtube-lightbox__inner">
         <a href="<?php echo $build_url; ?>" data-lity>
             <?php if ( $video_thumb ) : ?>
