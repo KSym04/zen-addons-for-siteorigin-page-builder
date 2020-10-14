@@ -8,12 +8,31 @@
     display: inline-block;
   }
 
-  &__playbutton {
+  &__playbutton,
+  &__playbutton-hover {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
+  }
+
+  &__playbutton-hover {
+    display: inline-block;
+    opacity: 0;
+  }
+
+  &:hover {
+    .zaso-youtube-lightbox__playbutton {
+      opacity: 0;
+    }
+
+    .zaso-youtube-lightbox__playbutton-hover {
+      opacity: 1;
+    }
   }
 }
 

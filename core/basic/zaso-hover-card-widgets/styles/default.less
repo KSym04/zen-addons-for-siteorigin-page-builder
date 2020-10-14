@@ -73,6 +73,9 @@
   }
 
   &__caption--fadein {
+    transition: 0.7s bottom ease-in-out;
+    bottom: 0;
+    visibility: visible;
     opacity: 1;
   }
 
@@ -126,7 +129,7 @@
   }
 
   &__modal--fadein {
-    transition: 0.4s opacity ease-in;
+    transition: 0.3s opacity ease-in-out;
     opacity: 0;
     top: 0;
   }
@@ -136,7 +139,9 @@
 .zaso-hover-card:hover {
   .zaso-hover-card__caption {
     &--fadein {
-      opacity: 0;
+      visibility: hidden;
+      opacity: 1;
+      bottom: -100%;
     }
   }
 

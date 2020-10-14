@@ -16,6 +16,7 @@ if( $instance['video_showinfo'] ) {
 
 $video_thumb = wp_get_attachment_image_src( $instance['video_thumb'], 'full' )[0];
 $video_play_button = wp_get_attachment_image_src( $instance['video_play_button'], 'full' );
+$video_play_button_hover = wp_get_attachment_image_src( $instance['video_play_button_hover'], 'full' );
 ?>
 
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-youtube-lightbox <?php echo $instance['extra_class']; ?>" role="dialog">
@@ -28,7 +29,11 @@ $video_play_button = wp_get_attachment_image_src( $instance['video_play_button']
             <?php endif; ?>
 
             <?php if ( $video_play_button && $video_thumb ) : ?>
-                <div class="zaso-youtube-lightbox__playbutton" style="background: url(<?php echo $video_play_button[0]; ?>) no-repeat center center; display: inline-block; width: <?php echo $video_play_button[1]; ?>px; height: <?php echo $video_play_button[2]; ?>px;"></div>
+                <div class="zaso-youtube-lightbox__playbutton" style="background: url(<?php echo $video_play_button[0]; ?>) no-repeat center center; width: <?php echo $video_play_button[1]; ?>px; height: <?php echo $video_play_button[2]; ?>px;"></div>
+                
+                <?php if ( $video_play_button_hover ) : ?>
+                    <div class="zaso-youtube-lightbox__playbutton-hover" style="background: url(<?php echo $video_play_button_hover[0]; ?>) no-repeat center center; width: <?php echo $video_play_button_hover[1]; ?>px; height: <?php echo $video_play_button_hover[2]; ?>px;"></div>
+                <?php endif; ?>
             <?php endif; ?>
         </a>
     </div>

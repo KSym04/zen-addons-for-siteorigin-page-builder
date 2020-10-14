@@ -43,6 +43,12 @@ class Zen_Addons_SiteOrigin_Youtube_Lightbox_Widget extends SiteOrigin_Widget {
 				'library' => 'image',
 				'fallback' => true
 			),
+			'video_play_button_hover' => array(
+				'type'  => 'media',
+				'label' => __( 'Video Play Button Image (Hover)', 'zaso' ),
+				'library' => 'image',
+				'fallback' => true
+			),
 			'video_thumb' => array(
 				'type'  => 'media',
 				'label' => __( 'Video Thumbnail', 'zaso' ),

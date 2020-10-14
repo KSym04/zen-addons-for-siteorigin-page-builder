@@ -3,8 +3,8 @@
 **Contributors:** ksym04  
 **Tags:** zaso, widgets, siteorigin, addons, page builder  
 **Requires at least:** 4.4  
-**Tested up to:** 5.5  
-**Stable tag:** 1.0.9  
+**Tested up to:** 5.5.1  
+**Stable tag:** 1.0.10  
 **License:** GPLv3  
 **License URI:** license.txt  
 
@@ -61,6 +61,10 @@ _Special thanks to other open-source projects made this widget plugin possible: 
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
+
+### 1.0.10 ###
+* Tweak: Added hover event option YouTube Video Lightbox
+* Tweak: Improved hover card transition
 
 ### 1.0.9 ###
 * New: Added new widget 'Hover Card'
