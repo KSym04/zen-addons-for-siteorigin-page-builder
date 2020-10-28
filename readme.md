@@ -5,7 +5,7 @@
 **Tags:** zaso, widgets, siteorigin, addons, page builder  
 **Requires at least:** 4.4  
 **Tested up to:** 5.5.1  
-**Stable tag:** 1.0.11  
+**Stable tag:** 1.0.12  
 **License:** GPLv3  
 **License URI:** license.txt  
 
@@ -37,6 +37,8 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Widgetized, get widget sidebar.
 * bbPress Forum Index, display entire bbPress forum index.
 * bbPress Topic Index, display recent 15 topics across all forums with optional pagination and search.
+* bbPress Login, display the bbPress login form.
+* bbPress Registration, display the bbPress registration form.
 
 ### Standards ###
 
@@ -68,6 +70,12 @@ Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin e
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
+
+### 1.0.12 ###
+
+* New: Added new widgets for bbPress - login and registration
+* Tweak: Minor improvements for Image Icon Group displaying text
+* Tweak: Added widgets featured banner
 
 ### 1.0.11 ###
 

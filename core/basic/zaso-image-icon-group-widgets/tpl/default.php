@@ -14,6 +14,9 @@
             <li class="zaso-image-icon-group__list-item">
                 <a class="zaso-image-icon-group__list-item-action" href="<?php echo sow_esc_url( $iig['image_icon_group_link'] ) ?>">
                     <img src="<?php echo $image_icon_group_photo; ?>" alt="<?php echo $iig['image_icon_group_title']; ?>" />
+                    <?php if ( 'block' == $image_icon_group_text_display ) : ?>
+                        <?php echo $iig['image_icon_group_title']; ?>
+                    <?php endif; ?>
                 </a>
             </li>
         <?php endforeach; ?>

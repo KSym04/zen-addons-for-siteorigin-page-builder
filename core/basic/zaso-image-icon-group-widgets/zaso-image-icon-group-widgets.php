@@ -29,7 +29,7 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
 					'image_icon_group_title' => array(
 						'type'  => 'text',
 						'label' => __( 'Title' , 'zaso' )
-                    ),
+					),
                     'image_icon_group_photo' => array(
                         'type'  => 'media',
                         'label' => __( 'Image Icon', 'zaso' ),
@@ -51,7 +51,16 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
                     'horizontal'  => __( 'Horizontal', 'zaso' ),
                     'vertical'  => __( 'Vertical', 'zaso' )
 				)
-            ),
+			),
+			'image_icon_group_text_display' => array(
+				'type' => 'select',
+				'label' => __( 'Show Title', 'zaso' ),
+				'default' => 'none',
+				'options' => array(
+					'block'  => __( 'Yes', 'zaso' ),
+					'none'  => __( 'No', 'zaso' )
+				)
+			),
 			'design' => array(
 				'type' =>  'section',
 				'label' => __( 'Icon Spacings', 'zaso' ),
@@ -170,6 +179,15 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
 				$spacings_padding['bottom'],
 				$spacings_padding['left'] ),
 		) );
+
+	}
+
+	function get_template_variables( $instance, $args ) {
+
+		// return the goodies.
+		return apply_filters( 'zaso_image_icon_group_template_variables', array(
+			'image_icon_group_text_display' => $instance['image_icon_group_text_display']
+		));
 
 	}
 
