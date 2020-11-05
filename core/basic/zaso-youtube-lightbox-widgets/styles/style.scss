@@ -34,6 +34,12 @@
       opacity: 1;
     }
   }
+
+  &__inner {
+      img {
+          width: 100%;
+      }
+  }
 }
 
 .lity {

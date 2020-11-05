@@ -2,8 +2,8 @@
 Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
-Tested up to: 5.5
-Stable tag: 1.0.10
+Tested up to: 5.5.3
+Stable tag: 1.0.14
 License: GPLv3
 License URI: license.txt
 
@@ -29,7 +29,12 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Contact Form 7, display CF7 form.
 * Info Box, display information box - image, title, description and learn more button link.
 * Hover Card, display image box, title caption and learn more button with hover transition.
-* Widgetized, get widget sidebar.
+* Image Icon Group, set group of image icon.
+* Widgetized, get existing widget sidebars to display on the main content.
+* bbPress Forum Index, display entire bbPress forum index.
+* bbPress Topic Index, display recent 15 topics across all forums with optional pagination and search.
+* bbPress Login, display the bbPress login form.
+* bbPress Registration, display the bbPress registration form.
 
 = Standards =
 * Neatly structured semantic HTML
@@ -38,6 +43,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 
 = Language Support =
 * English (en_US)
+* English - Australia (en_AU)
 
 Once you enable the extension widget, you’ll be able to use it anywhere standard widgets are used. You can manage your widgets by going to Plugins > SiteOrigin Widgets in your WordPress admin backend.
 
@@ -58,6 +64,22 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
+
+= 1.0.14 =
+* Tweak: Widgets description improvements
+* Tweak: Completed widgets featured banner
+* Tweak: Latest WordPress 5.5.3 compatibility
+
+= 1.0.12 =
+* New: Added new widgets for bbPress - login and registration
+* Tweak: Minor improvements for Image Icon Group displaying text
+* Tweak: Update some widgets featured banner
+
+= 1.0.11 =
+* New: Added new widgets for bbPress support
+* New: Added new widget 'Image Icon Group'
+* Tweak: Improved thumbnail handling YouTube Video Lightbox
+* Translation: Added English - Australia (en_AU)
 
 = 1.0.10 =
 * Tweak: Added hover event option YouTube Video Lightbox
@@ -110,6 +132,13 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 
 == Upgrade Notice ==
 
+= 1.0.12 =
+Added new widgets for bbPress - login and registration.
+
+= 1.0.11 =
+Added new widgets for bbPress support.
+Added new widget - Image Icon Group.  
+
 = 1.0.9 =
 Added new widget - Hover Card.  
 
@@ -141,3 +170,4 @@ Nothing fancy.
 == Translations ==
 
 * English (en_US)
+* English - Australia (en_AU)

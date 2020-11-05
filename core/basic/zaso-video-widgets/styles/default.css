@@ -1,0 +1,7 @@
+.zaso-video {
+  width: default;
+  height: default;
+}
+.zaso-video__box .mejs-controls {
+  display: default;
+}

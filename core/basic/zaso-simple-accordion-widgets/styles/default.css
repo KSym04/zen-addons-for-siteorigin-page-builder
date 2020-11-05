@@ -1,0 +1,36 @@
+.zaso-simple-accordion {
+  padding: 0;
+  margin: 0;
+}
+.zaso-simple-accordion__title button {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  background-color: default;
+  border-radius: 0;
+  margin: default;
+  padding: default;
+  color: default;
+  font-weight: default;
+  text-align: default;
+}
+.zaso-simple-accordion__title button:hover {
+  background-color: default;
+  color: default;
+}
+.zaso-simple-accordion__content {
+  background-color: default;
+  margin: default;
+  padding: default;
+  color: default;
+  font-size: default;
+  overflow: hidden;
+}
+.zaso-simple-accordion__content p {
+  padding: 0;
+  margin: 0 0 1em;
+}
+.zaso-simple-accordion__content p:last-child,
+.zaso-simple-accordion__content p:last-of-type {
+  margin-bottom: 0;
+}

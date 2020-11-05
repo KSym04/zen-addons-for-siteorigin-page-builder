@@ -2,7 +2,7 @@
 /**
  * Widget Name: ZASO - Widgetized
  * Widget ID: zen-addons-siteorigin-widgetized
- * Description: Get widget sidebar.
+ * Description: Get existing widget sidebars to display on the main content.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */
@@ -52,7 +52,7 @@ class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
 			'zen-addons-siteorigin-widgetized',
 			__( 'ZASO - Widgetized', 'zaso' ),
 			array(
-				'description' 	=> __( 'Get widget sidebar.', 'zaso' ),
+				'description' 	=> __( 'Get existing widget sidebars to display on the main content.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),
