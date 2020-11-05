@@ -4,8 +4,8 @@
 **Contributors:** ksym04  
 **Tags:** zaso, widgets, siteorigin, addons, page builder  
 **Requires at least:** 4.4  
-**Tested up to:** 5.5.1  
-**Stable tag:** 1.0.12  
+**Tested up to:** 5.5.3  
+**Stable tag:** 1.0.14  
 **License:** GPLv3  
 **License URI:** license.txt  
 
@@ -34,7 +34,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * Info Box, display information box - image, title, description and learn more button link.
 * Hover Card, display image box, title caption and learn more button with hover transition.
 * Image Icon Group, set group of image icon.
-* Widgetized, get widget sidebar.
+* Widgetized, get existing widget sidebars to display on the main content.
 * bbPress Forum Index, display entire bbPress forum index.
 * bbPress Topic Index, display recent 15 topics across all forums with optional pagination and search.
 * bbPress Login, display the bbPress login form.
@@ -70,6 +70,12 @@ Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin e
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
+
+### 1.0.14 ###
+
+* Tweak: Widgets description improvements
+* Tweak: Completed widgets featured banner
+* Tweak: Latest WordPress 5.5.3 compatibility
 
 ### 1.0.12 ###
 
