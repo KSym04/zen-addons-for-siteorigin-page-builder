@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zen Addons for SiteOrigin Page Builder\n"
-"POT-Creation-Date: 2020-11-05 11:31+0800\n"
-"PO-Revision-Date: 2020-11-05 11:31+0800\n"
+"POT-Creation-Date: 2020-11-12 12:48+0800\n"
+"PO-Revision-Date: 2020-11-12 12:48+0800\n"
 "Last-Translator: \n"
 "Language-Team: DopeThemes <hello@dopethemes.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -53,7 +53,7 @@ msgstr "Hide"
 #: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:375
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:65
 #: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:134
-#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:43
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:47
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:59
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:27
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:49
@@ -73,7 +73,7 @@ msgstr "Extra ID"
 #: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:376
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:66
 #: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:135
-#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:44
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:48
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:60
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:28
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:50
@@ -93,7 +93,7 @@ msgstr "Add an extra ID."
 #: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:380
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:70
 #: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:139
-#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:48
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:52
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:64
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:32
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:54
@@ -113,7 +113,7 @@ msgstr "Extra Class"
 #: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:381
 #: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:71
 #: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:140
-#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:49
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:53
 #: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:65
 #: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:33
 #: core/basic/zaso-video-widgets/zaso-video-widgets.php:55
@@ -874,18 +874,24 @@ msgid "Info Featured Image"
 msgstr "Info Featured Image"
 
 #: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:35
+#, fuzzy
+#| msgid "Info Featured Image"
+msgid "Info Featured Image Size"
+msgstr "Info Featured Image"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:39
 msgid "Info Button text"
 msgstr "Info Button text"
 
-#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:39
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:43
 msgid "Info Button Url"
 msgstr "Info Button Url"
 
-#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:58
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:62
 msgid "ZASO - Info Box"
 msgstr "ZASO - Info Box"
 
-#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:60
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:64
 msgid ""
 "Display information box - image, title, description and learn more button "
 "link"

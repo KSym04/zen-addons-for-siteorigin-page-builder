@@ -28,7 +28,11 @@ class Zen_Addons_SiteOrigin_Info_Box_Widget extends SiteOrigin_Widget {
 				'type'  => 'media',
 				'label' => __( 'Info Featured Image', 'zaso' ),
 				'library' => 'image',
-				'fallback' => true
+				'fallback' => true,
+            ),
+			'info_image_size' => array(
+				'type' => 'image-size',
+				'label' => __('Info Featured Image Size', 'zaso'),
 			),
 			'info_button_text' => array(
 				'type'  => 'text',
@@ -66,12 +70,8 @@ class Zen_Addons_SiteOrigin_Info_Box_Widget extends SiteOrigin_Widget {
 			ZASO_WIDGET_BASIC_DIR
 		);
 
-	}
-
-	// function get_less_variables( $instance ) {
-	// 	return apply_filters( 'zaso_info_box_less_variables', array() );
-	// }
-
+    }
+    
 	function initialize() {
 
 		$this->register_frontend_styles(
