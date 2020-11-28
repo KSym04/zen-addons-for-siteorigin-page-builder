@@ -3,7 +3,7 @@ Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
 Tested up to: 5.5.3
-Stable tag: 1.0.15
+Stable tag: 1.0.16
 License: GPLv3
 License URI: license.txt
 
@@ -15,7 +15,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 
 = Builder Framework Compatibility =
 - Page Builder by SiteOrigin (tested plugin version up to): 2.11.5  
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.8  
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.10  
 
 = Widget Features =
 * Spacer, create an empty space between elements.
@@ -35,6 +35,7 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 * bbPress Topic Index, display recent 15 topics across all forums with optional pagination and search.
 * bbPress Login, display the bbPress login form.
 * bbPress Registration, display the bbPress registration form.
+* bbPress Lost Password, display the bbPress password retrieval form.
 
 = Standards =
 * Neatly structured semantic HTML
@@ -64,6 +65,11 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
+
+= 1.0.16 =
+* New: Added new widgets for bbPress - lost password
+* Tweak: Added collapsible icon option for accordion widget
+* Tweak: Remove unused CSS files
 
 = 1.0.15 =
 * Tweak: Info Box widget fallback image issue
@@ -134,6 +140,9 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 * Birthday: Initial Release
 
 == Upgrade Notice ==
+
+= 1.0.16 =
+Added new widgets for bbPress - lost password.
 
 = 1.0.12 =
 Added new widgets for bbPress - login and registration.

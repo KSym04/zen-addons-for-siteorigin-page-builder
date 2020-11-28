@@ -57,4 +57,22 @@
   &__content p:last-of-type {
     margin-bottom: @reset_margin;
   }
+
+  &__title .zacc-collapsible-icon-open,
+  &__title .zacc-collapsible-icon-close {
+      float: right;
+      display: none;
+  }
+
+  &__title .zacc-collapsible-icon-close {
+      display: inline-block;
+  }
+
+  &__title.activate .zacc-collapsible-icon-close {
+    display: none;
+  }
+
+  &__title.activate .zacc-collapsible-icon-open {
+    display: inline-block;
+  }
 }

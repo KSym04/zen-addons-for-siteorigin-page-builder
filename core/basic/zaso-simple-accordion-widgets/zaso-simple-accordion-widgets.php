@@ -54,6 +54,18 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
                     'single_open'  => __( 'Single Open Only', 'zaso' )
                 )
             ),
+            'accordion_collapsible_icon_open' => array(
+				'type'  => 'media',
+				'label' => __( 'Collapsible Icon - Open', 'zaso' ),
+				'library' => 'image',
+				'fallback' => true
+            ),
+            'accordion_collapsible_icon_close' => array(
+				'type'  => 'media',
+				'label' => __( 'Collapsible Icon - Close', 'zaso' ),
+				'library' => 'image',
+				'fallback' => true
+			),
 			'extra_id' => array(
 				'type'  => 'text',
 				'label' => __( 'Extra ID', 'zaso' ),
