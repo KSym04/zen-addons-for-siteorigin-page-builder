@@ -1,5 +1,4 @@
-/* [ZASO] Alert Box Template - Main JS */
-
+/* [ZASO] Alert Box Template - JS */
 document.addEventListener("DOMContentLoaded", function () {
 	var closeBtn = document.querySelector(".zaso-alert-box__closebtn");
 	closeBtn.addEventListener("click", function (event) {
