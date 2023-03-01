@@ -7,15 +7,15 @@ Stable tag: 1.0.18
 License: GPLv3
 License URI: license.txt
 
-Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple but flexible and useful.
+Just another collection of user-friendly widget extensions for SiteOrigin Page Builder.
 
 == Description ==
 
-The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
+Make the most out of SiteOrigin Page Builder with the help of Zen Addons! Our widget collection includes a variety of tools that are not only user-friendly but also built on the SiteOrigin widget framework, making them even more powerful.
 
 = Builder Framework Compatibility =
-- Page Builder by SiteOrigin (tested plugin version up to): 2.11.8
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.11
+- Page Builder by SiteOrigin (tested plugin version up to): 2.20.4
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.46.5
 
 = Widget Features =
 * Spacer, create an empty space between elements.
