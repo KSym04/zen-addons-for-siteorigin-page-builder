@@ -20,8 +20,8 @@ function zen_addons_siteorigin_widget_tabs( $tabs ) {
 	$tabs[] = array(
 		'title'  => esc_html__( 'ZASO Widgets', 'zaso' ),
 		'filter' => array(
-				'groups' => array(
-					'zaso-plugin-widgets'
+			'groups' => array(
+				'zaso-plugin-widgets'
 			)
 		)
 	);
