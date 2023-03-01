@@ -21,6 +21,11 @@ $hover_card_image = siteorigin_widgets_get_attachment_image_src( $instance['hove
 
     <div class="zaso-hover-card__modal zaso-hover-card__modal--<?php echo $instance['hover_card_animation']; ?>">
       <h3 class="zaso-hover-card__modal-title"><?php echo $instance['hover_card_title']; ?></h3>
+
+      <?php if( $instance['hover_card_text_content'] ) : ?>
+        <?php echo $instance['hover_card_text_content']; ?>
+      <?php endif; ?>
+
       <a class="zaso-hover-card__modal-action" href="<?php echo sow_esc_url( $instance['hover_card_action_url'] ) ?>">
         <?php echo $instance['hover_card_action_text']; ?>
       </a>

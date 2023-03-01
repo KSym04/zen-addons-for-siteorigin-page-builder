@@ -4,8 +4,8 @@
 **Contributors:** ksym04  
 **Tags:** zaso, widgets, siteorigin, addons, page builder  
 **Requires at least:** 4.4  
-**Tested up to:** 5.5.3  
-**Stable tag:** 1.0.16  
+**Tested up to:** 5.7  
+**Stable tag:** 1.0.17  
 **License:** GPLv3  
 **License URI:** license.txt  
 
@@ -17,8 +17,8 @@ The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets tha
 
 ### Builder Framework Compatibility ###
 
-**Page Builder by SiteOrigin (tested plugin version up to):** 2.11.5  
-**SiteOrigin Widgets Bundle (tested plugin version up to):** 1.17.10  
+**Page Builder by SiteOrigin (tested plugin version up to):** 2.11.8  
+**SiteOrigin Widgets Bundle (tested plugin version up to):** 1.17.11  
 
 ### Widget Features ###
 
@@ -71,6 +71,11 @@ Note: Our widgets have prefix name `'ZASO -'` indicating our SiteOrigin plugin e
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on `'Plugins > SiteOrigin Widgets'`
 
 ## Changelog ##
+
+### 1.0.17 ###
+
+* Tweak: Hover card widget added content field 
+* Test: WordPress 5.7 compatibility 
 
 ### 1.0.16 ###
 
