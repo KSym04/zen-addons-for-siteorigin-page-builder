@@ -38,45 +38,40 @@ if( ! class_exists( 'zen_addons_siteorigin' ) ) :
 
 class zen_addons_siteorigin {
 
-	// vars
+	// Version.
 	var $version = '1.0.18';
 
 	/**
 	 *  __construct
 	 *
-	 *  A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once
+	 *  A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once.
 	 *
 	 *  @type	function
 	 *  @date	09/24/2017
 	 *  @since	1.0.0
 	 *
-	 *  @param	N/A
-	 *  @return	N/A
+	 *  @return	void
 	 */
 	function __construct() {
 		/* Do nothing here */
 	}
 
-	/*
-	*  initialize
-	*
-	*  The real constructor to initialize Zen Addons for SiteOrigin
-	*
-	*  @type	function
-	*  @date	09/24/2017
-	*  @since	1.0.0
-	*
-	*  @param	N/A
-	*  @return	N/A
-	*/
+	/**
+	 *  initialize
+	 *
+	 *  The real constructor to initialize Zen Addons for SiteOrigin.
+	 *
+	 *  @type	function
+	 *  @date	09/24/2017
+	 *  @since	1.0.0
+	 *
+	 *  @return	void
+	 */
 	function initialize() {
-		// Vars.
+		// Settings.
 		$this->settings = array(
-			// Information.
-			'name' 	   => __( 'Zen Addons for SiteOrigin', 'zaso' ),
+			'name'     => esc_html__( 'Zen Addons for SiteOrigin', 'zaso' ),
 			'version'  => $this->version,
-
-			// Path.
 			'file'     => __FILE__,
 			'basename' => plugin_basename( __FILE__ ),
 			'path'     => plugin_dir_path( __FILE__ ),
@@ -84,16 +79,14 @@ class zen_addons_siteorigin {
 		);
 
 		// Defines.
-		define( 'ZASO_VERSION', $this->version );
-
-		define( 'ZASO_BASE_DIR', $this->settings['dir'] );
-		define( 'ZASO_CORE_DIR', $this->settings['dir'] . 'core/' );
-		define( 'ZASO_LIBRARY_DIR', $this->settings['dir'] . 'core/lib/' );
-		define( 'ZASO_WIDGET_BASIC_DIR', $this->settings['dir'] . 'core/basic/' );
-
-		define( 'ZASO_BASE_PATH', $this->settings['path'] );
-		define( 'ZASO_CORE_PATH', $this->settings['path'] . 'core/' );
-		define( 'ZASO_LIBRARY_PATH', $this->settings['path'] . 'core/lib/' );
+		define( 'ZASO_VERSION',           $this->version );
+		define( 'ZASO_BASE_DIR',          $this->settings['dir'] );
+		define( 'ZASO_CORE_DIR',          $this->settings['dir'] . 'core/' );
+		define( 'ZASO_LIBRARY_DIR',       $this->settings['dir'] . 'core/lib/' );
+		define( 'ZASO_WIDGET_BASIC_DIR',  $this->settings['dir'] . 'core/basic/' );
+		define( 'ZASO_BASE_PATH',         $this->settings['path'] );
+		define( 'ZASO_CORE_PATH',         $this->settings['path'] . 'core/' );
+		define( 'ZASO_LIBRARY_PATH',      $this->settings['path'] . 'core/lib/' );
 		define( 'ZASO_WIDGET_BASIC_PATH', $this->settings['path'] . 'core/basic/' );
 
 		// Set text domain.
@@ -118,31 +111,28 @@ class zen_addons_siteorigin {
 	function plugin_action_links( $links ) {
 		if ( isset( $links['edit'] ) ) {
 			unset( $links['edit'] );
-        }
+		}
 
-        $links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . __( 'Learn More', 'zaso' ) . '</a>';
-
-        return $links;
+		$links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Learn More', 'zaso' ) . '</a>';
+		return $links;
 	}
 
 }
 
-/*
-*  zen_addons_siteorigin
-*
-*  The main function responsible for returning the one true zen_addons_siteorigin Instance to functions everywhere.
-*  Use this function like you would a global variable, except without needing to declare the global.
-*
-*  Example: <?php $zen_addons_siteorigin = zen_addons_siteorigin(); ?>
-*
-*  @type	function
-*  @date	09/24/2017
-*  @since	1.0.0
-*
-*  @param	N/A
-*  @return	(object)
-*/
-
+/**
+ *  zen_addons_siteorigin
+ *
+ *  The main function responsible for returning the one true zen_addons_siteorigin Instance to functions everywhere.
+ *  Use this function like you would a global variable, except without needing to declare the global.
+ *
+ *  Example: <?php $zen_addons_siteorigin = zen_addons_siteorigin(); ?>
+ *
+ *  @type	function
+ *  @date	09/24/2017
+ *  @since	1.0.0
+ *
+ *  @return	object
+ */
 function zen_addons_siteorigin() {
 	global $zen_addons_siteorigin;
 
@@ -154,7 +144,7 @@ function zen_addons_siteorigin() {
 	return $zen_addons_siteorigin;
 }
 
-// initialize
+// Initialize.
 zen_addons_siteorigin();
 
 
