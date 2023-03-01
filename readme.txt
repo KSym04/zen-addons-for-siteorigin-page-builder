@@ -3,7 +3,7 @@ Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
 Tested up to: 5.7
-Stable tag: 1.0.17
+Stable tag: 1.0.18
 License: GPLv3
 License URI: license.txt
 
@@ -14,8 +14,8 @@ Just another collection of helpful widget extensions for SiteOrigin Page Builder
 The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
 
 = Builder Framework Compatibility =
-- Page Builder by SiteOrigin (tested plugin version up to): 2.11.8  
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.11  
+- Page Builder by SiteOrigin (tested plugin version up to): 2.11.8
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.11
 
 = Widget Features =
 * Spacer, create an empty space between elements.
@@ -153,16 +153,16 @@ Added new widgets for bbPress - login and registration.
 
 = 1.0.11 =
 Added new widgets for bbPress support.
-Added new widget - Image Icon Group.  
+Added new widget - Image Icon Group.
 
 = 1.0.9 =
-Added new widget - Hover Card.  
+Added new widget - Hover Card.
 
 = 1.0.8 =
-Added new widget - Info Box.  
+Added new widget - Info Box.
 
 = 1.0.7 =
-Added new widget - Vimeo Video Lightbox.  
+Added new widget - Vimeo Video Lightbox.
 Added new widget - Contact Form 7.
 
 = 1.0.6 =

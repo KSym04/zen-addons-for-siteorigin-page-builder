@@ -2,7 +2,7 @@
 /*
 Plugin Name: Zen Addons for SiteOrigin Page Builder
 Description: Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple yet flexible and useful.
-Version: 1.0.17
+Version: 1.0.18
 Author: DopeThemes
 Author URI: https://www.dopethemes.com/
 Plugin URI: https://www.dopethemes.com/downloads/zen-addons-siteorigin/
@@ -39,20 +39,20 @@ if( ! class_exists( 'zen_addons_siteorigin' ) ) :
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.0.17';
+	var $version = '1.0.18';
 
-	/*
-	*  __construct
-	*
-	*  A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once
-	*
-	*  @type	function
-	*  @date	09/24/2017
-	*  @since	1.0.0
-	*
-	*  @param	N/A
-	*  @return	N/A
-	*/
+	/**
+	 *  __construct
+	 *
+	 *  A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once
+	 *
+	 *  @type	function
+	 *  @date	09/24/2017
+	 *  @since	1.0.0
+	 *
+	 *  @param	N/A
+	 *  @return	N/A
+	 */
 	function __construct() {
 		/* Do nothing here */
 	}
@@ -73,14 +73,14 @@ class zen_addons_siteorigin {
 		// Vars.
 		$this->settings = array(
 			// Information.
-			'name' 		=> __( 'Zen Addons for SiteOrigin', 'zaso' ),
-			'version' 	=> $this->version,
+			'name' 	   => __( 'Zen Addons for SiteOrigin', 'zaso' ),
+			'version'  => $this->version,
 
 			// Path.
-			'file' 		=> __FILE__,
-			'basename' 	=> plugin_basename( __FILE__ ),
-			'path' 		=> plugin_dir_path( __FILE__ ),
-			'dir' 		=> plugin_dir_url( __FILE__ )
+			'file'     => __FILE__,
+			'basename' => plugin_basename( __FILE__ ),
+			'path'     => plugin_dir_path( __FILE__ ),
+			'dir'      => plugin_dir_url( __FILE__ )
 		);
 
 		// Defines.
@@ -119,9 +119,9 @@ class zen_addons_siteorigin {
 		if ( isset( $links['edit'] ) ) {
 			unset( $links['edit'] );
         }
-        
+
         $links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . __( 'Learn More', 'zaso' ) . '</a>';
-        
+
         return $links;
 	}
 
