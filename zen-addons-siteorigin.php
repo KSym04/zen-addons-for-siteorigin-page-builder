@@ -101,13 +101,13 @@ class zen_addons_siteorigin {
 		add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
 	}
 
-	/*
-	*  plugin_action_links - Added action plugin links.
-	*
-	*  @type	function
-	*  @date	08/26/2020
-	*  @since	1.0.7
-	*/
+	/**
+	 *  plugin_action_links - Added action plugin links.
+	 *
+	 *  @type	function
+	 *  @date	08/26/2020
+	 *  @since	1.0.7
+	 */
 	function plugin_action_links( $links ) {
 		if ( isset( $links['edit'] ) ) {
 			unset( $links['edit'] );
