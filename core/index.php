@@ -1,4 +1,4 @@
 <?php
 /**
- * Baby Shark doo doo, doo doo doo doo
+ * Just do it
  */
