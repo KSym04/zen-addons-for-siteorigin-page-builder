@@ -2,20 +2,20 @@
 Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
-Tested up to: 5.5.3
-Stable tag: 1.0.16
+Tested up to: 5.7
+Stable tag: 1.0.18
 License: GPLv3
 License URI: license.txt
 
-Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple but flexible and useful.
+Just another collection of user-friendly widget extensions for SiteOrigin Page Builder.
 
 == Description ==
 
-The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
+Make the most out of SiteOrigin Page Builder with the help of Zen Addons! Our widget collection includes a variety of tools that are not only user-friendly but also built on the SiteOrigin widget framework, making them even more powerful.
 
 = Builder Framework Compatibility =
-- Page Builder by SiteOrigin (tested plugin version up to): 2.11.5  
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.10  
+- Page Builder by SiteOrigin (tested plugin version up to): 2.20.4
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.46.5
 
 = Widget Features =
 * Spacer, create an empty space between elements.
@@ -65,6 +65,10 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on 'Plugins > SiteOrigin Widgets'
 
 == Changelog ==
+
+= 1.0.17 =
+* Tweak: Hover card widget added content field
+* Test: WordPress 5.7 compatibility
 
 = 1.0.16 =
 * New: Added new widgets for bbPress - lost password
@@ -149,16 +153,16 @@ Added new widgets for bbPress - login and registration.
 
 = 1.0.11 =
 Added new widgets for bbPress support.
-Added new widget - Image Icon Group.  
+Added new widget - Image Icon Group.
 
 = 1.0.9 =
-Added new widget - Hover Card.  
+Added new widget - Hover Card.
 
 = 1.0.8 =
-Added new widget - Info Box.  
+Added new widget - Info Box.
 
 = 1.0.7 =
-Added new widget - Vimeo Video Lightbox.  
+Added new widget - Vimeo Video Lightbox.
 Added new widget - Contact Form 7.
 
 = 1.0.6 =

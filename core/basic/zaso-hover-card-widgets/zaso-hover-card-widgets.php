@@ -20,6 +20,10 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 				'type'  => 'text',
 				'label' => __( 'Title Caption' , 'zaso' )
 			),
+            'hover_card_text_content' => array(
+				'type'  => 'tinymce',
+				'label' => __( 'Text Content' , 'zaso' )
+			),
 			'hover_card_image' => array(
 				'type'  => 'media',
 				'label' => __( 'Featured Image', 'zaso' ),
