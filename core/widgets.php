@@ -6,42 +6,46 @@
  * @since 1.0.0
  */
 
-if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+// Ensure that the code is only run from within WordPress.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 
 /**
- * Create widgets group tab
+ * Create widgets group tab.
  *
  * @since 1.0.0
  *
- * @return array
+ * @param array $tabs Existing tabs.
+ * @return array Modified tabs including the new tab group.
  */
 function zen_addons_siteorigin_widget_tabs( $tabs ) {
-	// Create tab group.
+	// Create a new tab group for ZASO widgets.
 	$tabs[] = array(
 		'title'  => esc_html__( 'ZASO Widgets', 'zaso' ),
 		'filter' => array(
-			'groups' => array(
-				'zaso-plugin-widgets'
-			)
+			'groups' => array( 'zaso-plugin-widgets' )
 		)
 	);
 
+	// Return the modified tabs array.
 	return $tabs;
 }
 add_filter( 'siteorigin_panels_widget_dialog_tabs', 'zen_addons_siteorigin_widget_tabs', 20 );
 
 /**
- * Add our basic widgets.
+ * Add our basic widgets by including the folder where they are located.
  *
  * @since 1.0.0
  *
- * @return array
+ * @param array $folders Existing widget folders.
+ * @return array Modified folders including the path to the basic widgets.
  */
 function zen_addons_siteorigin_widgets_collection_basic( $folders ) {
-	// Get widgets folder.
+	// Get widgets folder defined by ZASO_WIDGET_BASIC_PATH.
 	$folders[] = ZASO_WIDGET_BASIC_PATH;
 
-	// Return folders list.
+	// Return the modified folders list.
 	return $folders;
 }
 add_filter( 'siteorigin_widgets_widget_folders', 'zen_addons_siteorigin_widgets_collection_basic' );

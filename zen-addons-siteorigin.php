@@ -1,17 +1,17 @@
 <?php
 /*
-Plugin Name: Zen Addons for SiteOrigin Page Builder
-Description: Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple yet flexible and useful.
-Version: 1.0.18
-Author: DopeThemes
-Author URI: https://www.dopethemes.com/
-Plugin URI: https://www.dopethemes.com/downloads/zen-addons-siteorigin/
-Copyright: DopeThemes
-Text Domain: zaso
-Domain Path: /lang
-License: GPLv3
-License URI: license.txt
-*/
+ * Plugin Name: Zen Addons for SiteOrigin Page Builder
+ * Description: Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Builder. It's simple, flexible, and useful.
+ * Version: 1.0.18
+ * Author: DopeThemes
+ * Author URI: https://www.dopethemes.com/
+ * Plugin URI: https://www.dopethemes.com/downloads/zen-addons-siteorigin/
+ * Copyright: DopeThemes
+ * Text Domain: zaso
+ * Domain Path: /lang
+ * License: GPLv3
+ * License URI: https://www.dopethemes.com/gplv3/
+ */
 
 /*
     Copyright DopeThemes
@@ -31,44 +31,35 @@ License URI: license.txt
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
 */
 
-if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if( ! class_exists( 'zen_addons_siteorigin' ) ) :
-
+if ( ! class_exists( 'zen_addons_siteorigin' ) ) :
 
 class zen_addons_siteorigin {
 
-	// Version.
+	// vars
 	var $version = '1.0.18';
 
 	/**
-	 *  __construct
+	 * A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once
 	 *
-	 *  A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once.
-	 *
-	 *  @type	function
-	 *  @date	09/24/2017
-	 *  @since	1.0.0
-	 *
-	 *  @return	void
+	 * @type  function
+	 * @date  09/24/2017
+	 * @since 1.0.0
 	 */
 	function __construct() {
-		/* Do nothing here */
+		// Do nothing here.
 	}
 
 	/**
-	 *  initialize
+	 * The real constructor to initialize Zen Addons for SiteOrigin
 	 *
-	 *  The real constructor to initialize Zen Addons for SiteOrigin.
-	 *
-	 *  @type	function
-	 *  @date	09/24/2017
-	 *  @since	1.0.0
-	 *
-	 *  @return	void
+	 * @type  function
+	 * @date  09/24/2017
+	 * @since 1.0.0
 	 */
 	function initialize() {
-		// Settings.
+		// Vars.
 		$this->settings = array(
 			'name'     => esc_html__( 'Zen Addons for SiteOrigin', 'zaso' ),
 			'version'  => $this->version,
@@ -102,41 +93,39 @@ class zen_addons_siteorigin {
 	}
 
 	/**
-	 *  plugin_action_links - Added action plugin links.
+	 * Added action plugin links
 	 *
-	 *  @type	function
-	 *  @date	08/26/2020
-	 *  @since	1.0.7
+	 * @type  function
+	 * @date  08/26/2020
+	 * @since 1.0.7
+	 * @param array $links
+	 * @return array
 	 */
 	function plugin_action_links( $links ) {
 		if ( isset( $links['edit'] ) ) {
 			unset( $links['edit'] );
 		}
 
-		$links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Learn More', 'zaso' ) . '</a>';
+		$links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . __( 'Learn More', 'zaso' ) . '</a>';
+
 		return $links;
 	}
 
 }
 
 /**
- *  zen_addons_siteorigin
+ * The main function responsible for returning the one true zen_addons_siteorigin Instance to functions everywhere.
+ * Use this function like you would a global variable, except without needing to declare the global.
  *
- *  The main function responsible for returning the one true zen_addons_siteorigin Instance to functions everywhere.
- *  Use this function like you would a global variable, except without needing to declare the global.
- *
- *  Example: <?php $zen_addons_siteorigin = zen_addons_siteorigin(); ?>
- *
- *  @type	function
- *  @date	09/24/2017
- *  @since	1.0.0
- *
- *  @return	object
+ * @type  function
+ * @date  09/24/2017
+ * @since 1.0.0
+ * @return object
  */
 function zen_addons_siteorigin() {
 	global $zen_addons_siteorigin;
 
-	if( ! isset( $zen_addons_siteorigin ) ) {
+	if ( ! isset( $zen_addons_siteorigin ) ) {
 		$zen_addons_siteorigin = new zen_addons_siteorigin();
 		$zen_addons_siteorigin->initialize();
 	}
@@ -144,8 +133,7 @@ function zen_addons_siteorigin() {
 	return $zen_addons_siteorigin;
 }
 
-// Initialize.
+// initialize
 zen_addons_siteorigin();
-
 
 endif; // class_exists check

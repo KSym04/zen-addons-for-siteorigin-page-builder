@@ -1,0 +1,83 @@
+Changelog
+
+1.0.18
+- Tweak: Code documentation - Spacer widgets, functions
+- Tweak: Minor improvements and bug fixes
+- Test: WordPress 6.3 compatibility
+
+1.0.17
+- Tweak: Hover card widget added content field
+- Test: WordPress 5.7 compatibility
+
+1.0.16
+- New: Added new widgets for bbPress - lost password
+- Tweak: Added collapsible icon option for accordion widget
+- Tweak: Remove unused CSS files
+
+1.0.15
+- Tweak: Info Box widget fallback image issue
+
+1.0.14
+- Tweak: Widgets description improvements
+- Tweak: Completed widgets featured banner
+- Tweak: Latest WordPress 5.5.3 compatibility
+
+1.0.12
+- New: Added new widgets for bbPress - login and registration
+- Tweak: Minor improvements for Image Icon Group displaying text
+- Tweak: Added widgets featured banner
+
+1.0.11
+- New: Added new widgets for bbPress support
+- New: Added new widget 'Image Icon Group'
+- Tweak: Improved thumbnail handling YouTube Video Lightbox
+- Translation: Added English - Australia (en_AU)
+
+1.0.10
+- Tweak: Added hover event option YouTube Video Lightbox
+- Tweak: Improved hover card transition
+
+1.0.9
+- New: Added new widget 'Hover Card'
+- Tweak: ARIA roles improvements
+
+1.0.8
+- New: Added new widget 'Info Box'
+- Fix: Accordion content float issue
+- Fix: Tab key issue on special characters
+- Tweak: Minor improvements
+
+1.0.7
+- New: Added new widget 'Vimeo Video Lightbox'
+- New: Added new widget 'Contact Form 7'
+- Tweak: Minor improvements
+
+1.0.6
+- New: Added new widget 'YouTube Video Lightbox'
+- Tweak: Accordion minor improvements
+
+1.0.5
+- New: Added new widget 'Widgetized'
+
+1.0.4
+- New: Added new widget 'Icon'
+- New: Added new widget 'Video'
+
+1.0.3
+- New: Added new widget 'Alert Box'
+- Tweak: Minor default CSS improvements
+
+1.0.2
+- New: Added new widget 'Basic Tabs'
+- New: Added field and LESS variable filters
+- Tweak: Improved spacer and accordion accessibility
+
+1.0.1
+- New: Added simple accordion design panel
+- New: Added spacer design panel
+- New: Added field 'Extra ID' on widgets
+- New: Added en_US language file
+- Fix: Minor issues
+
+1.0.0
+- Birthday: Initial Release
