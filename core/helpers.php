@@ -13,9 +13,8 @@ if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.2
  *
- * @param string $id Extra ID field text string.
- *
- * @return string Formatted HTML id.
+ * @param  string $id   Extra ID field text string.
+ * @return string       Formatted HTML id.
  */
 function zaso_format_field_extra_id( $id ) {
     $id = apply_filters( 'zaso_format_field_extra_id_before', sanitize_text_field( $id ) );
