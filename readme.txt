@@ -2,55 +2,55 @@
 Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
 Requires at least: 4.4
-Tested up to: 5.7
-Stable tag: 1.0.17
+Tested up to: 6.3
+Stable tag: 1.0.18
 License: GPLv3
-License URI: license.txt
+License URI: https://www.dopethemes.com/gplv3/
 
-Just another collection of helpful widget extensions for SiteOrigin Page Builder. Simple but flexible and useful.
+Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Builder. It's simple, flexible, and useful.
 
 == Description ==
 
-The Zen Addons for SiteOrigin Page Builder gives you a collection of widgets that you can use and customize. All the widgets are under SiteOrigin widget framework.
+Zen Addons for SiteOrigin Page Builder provides you with a collection of widgets you can use and customize. All widgets are developed under the SiteOrigin widget framework.
 
 = Builder Framework Compatibility =
-- Page Builder by SiteOrigin (tested plugin version up to): 2.11.8  
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.17.11  
+- Page Builder by SiteOrigin (tested plugin version up to): 2.25.1
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.53.0
 
 = Widget Features =
-* Spacer, create an empty space between elements.
-* Simple Accordion/Toggle, create a vertically stacked list of items or single panel.
-* Basic Tabs, create multiple panels contained in a single window.
-* Alert Box, create contextual feedback and flexible alert messages.
-* Icon, set single icon on popular iconic font or upload your custom icon.
-* Video, add video from YouTube, Vimeo or another provider.
-* YouTube Video Lightbox, pop-up lightbox for YouTube videos.
-* Vimeo Video Lightbox, pop-up lightbox for Vimeo videos.
-* Contact Form 7, display CF7 form.
-* Info Box, display information box - image, title, description and learn more button link.
-* Hover Card, display image box, title caption and learn more button with hover transition.
-* Image Icon Group, set group of image icon.
-* Widgetized, get existing widget sidebars to display on the main content.
-* bbPress Forum Index, display entire bbPress forum index.
-* bbPress Topic Index, display recent 15 topics across all forums with optional pagination and search.
-* bbPress Login, display the bbPress login form.
-* bbPress Registration, display the bbPress registration form.
-* bbPress Lost Password, display the bbPress password retrieval form.
+- Spacer: Creates empty space between elements.
+- Simple Accordion/Toggle: Designs a vertically stacked list of items or a single panel.
+- Basic Tabs: Allows the creation of multiple panels within a single window.
+- Alert Box: Offers contextual feedback and flexible alert messages.
+- Icon: Sets a single icon using a popular iconic font or custom upload.
+- Video: Embeds videos from YouTube, Vimeo, or other providers.
+- YouTube Video Lightbox: Creates pop-up lightboxes for YouTube videos.
+- Vimeo Video Lightbox: Creates pop-up lightboxes for Vimeo videos.
+- Contact Form 7: Displays CF7 forms.
+- Info Box: Showcases an information box with an image, title, description, and learn-more button link.
+- Hover Card: Displays an image box, title caption, and learn-more button with hover transition.
+- Image Icon Group: Sets a group of image icons.
+- Widgetized: Integrates existing widget sidebars into the main content.
+- bbPress Forum Index: Displays the entire bbPress forum index.
+- bbPress Topic Index: Shows the 15 most recent topics across all forums with optional pagination and search.
+- bbPress Login: Incorporates the bbPress login form.
+- bbPress Registration: Includes the bbPress registration form.
+- bbPress Lost Password: Implements the bbPress password retrieval form.
 
 = Standards =
-* Neatly structured semantic HTML
-* Highly accessible widgets with best ARIA practices
-* SEO friendly widgets
+- Neatly structured semantic HTML
+- Highly accessible widgets adhering to best ARIA practices
+- SEO-friendly widgets
 
 = Language Support =
-* English (en_US)
-* English - Australia (en_AU)
+- English (en_US)
+- English - Australia (en_AU)
 
-Once you enable the extension widget, you’ll be able to use it anywhere standard widgets are used. You can manage your widgets by going to Plugins > SiteOrigin Widgets in your WordPress admin backend.
+After enabling the extension widget, you can use it wherever standard widgets are used. Manage your widgets by navigating to Plugins > SiteOrigin Widgets in your WordPress admin backend.
 
-Lastly, We recommend activating only the widgets you needed.
+Lastly, we recommend activating only the widgets you need.
 
-Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin extension.
+Note: Our widgets have the prefix name 'ZASO -', indicating our SiteOrigin plugin extension.
 
 == Installation ==
 
@@ -60,11 +60,21 @@ Note: Our widgets have prefix name 'ZASO -' indicating our SiteOrigin plugin ext
 
 == Frequently Asked Questions ==
 
-= How to activate your widgets? =
+= How do I activate your widgets? =
 
-First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then to enable our ZASO widgets, you can activate it on 'Plugins > SiteOrigin Widgets'
+First, ensure that the 'SiteOrigin Widgets Bundle' plugin is installed. Then, to enable our ZASO widgets, activate them at 'Plugins > SiteOrigin Widgets'.
+
+== Upgrade Notice ==
+
+= 1.0.18 =
+This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.0.18 =
+* Tweak: Code documentation - Spacer widgets, functions
+* Tweak: Minor improvements and bug fixes
+* Test: WordPress 6.3 compatibility
 
 = 1.0.17 =
 * Tweak: Hover card widget added content field
@@ -142,46 +152,6 @@ First, please ensure that 'SiteOrigin Widgets Bundle' plugin was installed, then
 
 = 1.0.0 =
 * Birthday: Initial Release
-
-== Upgrade Notice ==
-
-= 1.0.16 =
-Added new widgets for bbPress - lost password.
-
-= 1.0.12 =
-Added new widgets for bbPress - login and registration.
-
-= 1.0.11 =
-Added new widgets for bbPress support.
-Added new widget - Image Icon Group.  
-
-= 1.0.9 =
-Added new widget - Hover Card.  
-
-= 1.0.8 =
-Added new widget - Info Box.  
-
-= 1.0.7 =
-Added new widget - Vimeo Video Lightbox.  
-Added new widget - Contact Form 7.
-
-= 1.0.6 =
-Added new widget - YouTube Video Lightbox.
-
-= 1.0.5 =
-Added new widget - Widgetized.
-
-= 1.0.4 =
-Added new widgets - Icon, Video.
-
-= 1.0.3 =
-Added new widget - Alert Box.
-
-= 1.0.2 =
-Added new widget - 'Basic Tabs.
-
-= 1.0.0 =
-Nothing fancy.
 
 == Translations ==
 

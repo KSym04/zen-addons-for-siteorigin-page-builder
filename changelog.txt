@@ -1,5 +1,10 @@
 Changelog
 
+1.0.18
+- Tweak: Code documentation - Spacer widgets, functions
+- Tweak: Minor improvements and bug fixes
+- Test: WordPress 6.3 compatibility
+
 1.0.17
 - Tweak: Hover card widget added content field
 - Test: WordPress 5.7 compatibility
