@@ -88,6 +88,9 @@ class zen_addons_siteorigin {
 		include( 'core/widgets.php' );
 		include( 'core/shortcodes.php' );
 
+		// Includes vendor.
+		include( 'core/vendor/dopethemes-dashboard.php' );
+
 		// Plugin action links.
 		add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
 	}
