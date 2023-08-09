@@ -1,36 +1,36 @@
 {
-	"name": "zen-addons-for-siteorigin-page-builder",
-	"version": "1.0.7",
-	"description": "Zen Addons for SiteOrigin Page Builder is a collection of widgets that extends the functionality of the SiteOrigin Page Builder. This plugin provides additional widgets to enhance your site's design and layout.",
-	"keywords": [
-		"siteorigin",
-		"page builder",
-		"widgets",
-		"addons"
-	],
-	"author": "KSym04",
-	"license": "GPLv3",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/KSym04/zen-addons-for-siteorigin-page-builder.git"
-	},
-	"bugs": {
-		"url": "https://github.com/KSym04/zen-addons-for-siteorigin-page-builder/issues"
-	},
-	"homepage": "https://github.com/KSym04/zen-addons-for-siteorigin-page-builder#readme",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"No test specified yet\""
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"autoprefixer": "^10.4.0",
-		"browser-sync": "^2.27.5",
-		"cssnano": "^5.0.6",
-		"gulp": "^4.0.2",
-		"gulp-postcss": "^9.1.0",
-		"gulp-rename": "^2.0.0",
-		"gulp-sass": "^5.1.0",
-		"gulp-sourcemaps": "^3.0.0"
-	}
+  "name": "zen-addons-for-siteorigin-page-builder",
+  "version": "1.0.17",
+  "description": "Zen Addons for SiteOrigin Page Builder is a collection of widgets that extends the functionality of the SiteOrigin Page Builder. This plugin provides additional widgets to enhance your site's design and layout.",
+  "keywords": [
+    "siteorigin",
+    "page builder",
+    "widgets",
+    "addons"
+  ],
+  "author": "KSym04",
+  "license": "GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSym04/zen-addons-for-siteorigin-page-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSym04/zen-addons-for-siteorigin-page-builder/issues"
+  },
+  "homepage": "https://github.com/KSym04/zen-addons-for-siteorigin-page-builder#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified yet\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "browser-sync": "^2.27.5",
+    "cssnano": "^5.0.6",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0"
+  }
 }
