@@ -94,49 +94,43 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
          * @return void
          */
 		public function print_dashboard_script() {
-            $dismissed = get_option( 'dopethemes_dismissed', false );
-            if ( $dismissed ) return;
+			$dismissed = get_option( 'dopethemes_dismissed', false );
+			if ( $dismissed ) return;
 
-            $posts    = $this->get_dopethemes_posts();
-            $ajax_url = esc_url_raw( admin_url( 'admin-ajax.php?action=dismiss_dopethemes&_wpnonce=' . wp_create_nonce( 'dismiss_dopethemes_nonce' ) ) );
+			$posts    = $this->get_dopethemes_posts();
+			$ajax_url = esc_url_raw( admin_url( 'admin-ajax.php?action=dismiss_dopethemes&_wpnonce=' . wp_create_nonce( 'dismiss_dopethemes_nonce' ) ) );
 
 			echo '<script>';
-				echo 'document.addEventListener("DOMContentLoaded", function() {';
-					echo 'var widget = document.querySelector("#dashboard_primary .inside .wordpress-news");';
-					echo 'if (widget) {';
-						echo 'var observer = new MutationObserver(function(mutations) {';
-							echo 'if (widget.querySelectorAll("li").length) {'; // Check if WordPress News list items are present
-								echo 'var dopethemes = document.createElement("div");';
-								echo 'dopethemes.className = "rss-widget";';
-								echo 'var htmlContent = \'<ul>\';';
+				echo 'document.addEventListener( "DOMContentLoaded", function() {';
+					echo 'var container = document.querySelector( ".wordpress-news" );';
+					echo 'if ( container ) {';
+						echo 'var dopethemes = document.createElement( "div" );';
+						echo 'dopethemes.className = "rss-widget dopethemes-rss-widget";';
+						echo 'var htmlContent = \'<ul>\';';
 
-								foreach ( $posts as $post ) {
-									$htmlContent = sprintf(
-										'<li class="dopethemes_dashboard_news_item"><a href="%s" class="dashicons dashicons-no-alt" title="Dismiss all DopeThemes news" onclick="dismiss_dopethemes_news(event); return false;" style="float: right; box-shadow: none; margin-left: 5px; display: none;"></a><a class="rsswidget" href="%s">%s</a></li>',
-										esc_url( admin_url() ),
-										esc_url( $post['link'] ),
-										esc_html( $post['title']['rendered'] )
-									);
-									echo 'htmlContent += \'' . $htmlContent . '\';';
-								}
+						foreach ( $posts as $post ) {
+							$htmlContent = sprintf(
+								'<li class="dopethemes_dashboard_news_item"><a href="%s" class="dashicons dashicons-no-alt" title="Dismiss all DopeThemes news" onclick="dismiss_dopethemes_news( event ); return false;" style="float: right; box-shadow: none; margin-left: 5px; display: none;"></a><a class="rsswidget" href="%s">%s</a></li>',
+								esc_url( admin_url() ),
+								esc_url( $post['link'] ),
+								esc_html( $post['title']['rendered'] )
+							);
+							echo 'htmlContent += \'' . $htmlContent . '\';';
+						}
 
-								echo 'htmlContent += \'</ul>\';';
-								echo 'dopethemes.innerHTML = htmlContent;';
-								echo 'widget.appendChild(dopethemes);';
-								echo 'observer.disconnect();'; // Disconnect the observer after rendering the DopeThemes list
-							echo '}';
-						echo '});';
-						echo 'observer.observe(widget, { childList: true });'; // Observe for child nodes being added
+						echo 'htmlContent += \'</ul>\';';
+						echo 'dopethemes.innerHTML = htmlContent;';
+						echo 'container.insertAdjacentElement( "beforebegin", dopethemes );'; // Inserting before the ".wordpress-news" container
 					echo '}';
-				echo '});';
+				echo '} );';
 
-				echo 'function dismiss_dopethemes_news(event) {';
-				echo '  event.preventDefault();';
-				echo '  if (window.confirm("Are you sure you want to remove DopeThemes Tutorials forever?")) {';
-				echo '    var item = event.target.parentElement;';
-				echo '    item.style.display = "none";';
-				echo '    fetch("' . $ajax_url . '", { method: "POST" });';
-				echo '  }';
+				echo 'function dismiss_dopethemes_news( event ) {';
+					echo 'event.preventDefault();';
+					echo 'if ( window.confirm( "Are you sure you want to remove DopeThemes Tutorials forever?" ) ) {';
+						echo 'var item = event.target.parentElement;';
+						echo 'item.style.display = "none";';
+						echo 'fetch( "' . $ajax_url . '", { method: "POST" } );';
+					echo '}';
 				echo '}';
 			echo '</script>';
 		}
