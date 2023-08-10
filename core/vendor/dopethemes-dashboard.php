@@ -97,31 +97,37 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
             $dismissed = get_option( 'dopethemes_dismissed', false );
             if ( $dismissed ) return;
 
-            $posts = $this->get_dopethemes_posts();
+            $posts    = $this->get_dopethemes_posts();
             $ajax_url = esc_url_raw( admin_url( 'admin-ajax.php?action=dismiss_dopethemes&_wpnonce=' . wp_create_nonce( 'dismiss_dopethemes_nonce' ) ) );
 
 			echo '<script>';
 				echo 'document.addEventListener("DOMContentLoaded", function() {';
-					echo '  var widget = document.querySelector("#dashboard_primary .inside .wordpress-news");';
-					echo '  if (widget) {';
-					echo '    var dopethemes = document.createElement("div");';
-					echo '    dopethemes.className = "rss-widget";';
-					echo '    var htmlContent = \'<ul>\';';
+					echo 'var widget = document.querySelector("#dashboard_primary .inside .wordpress-news");';
+					echo 'if (widget) {';
+						echo 'var observer = new MutationObserver(function(mutations) {';
+							echo 'if (widget.querySelectorAll("li").length) {'; // Check if WordPress News list items are present
+								echo 'var dopethemes = document.createElement("div");';
+								echo 'dopethemes.className = "rss-widget";';
+								echo 'var htmlContent = \'<ul>\';';
 
-					foreach ( $posts as $post ) {
-						$htmlContent = sprintf(
-							'<li class="dopethemes_dashboard_news_item"><a href="%s" class="dashicons dashicons-no-alt" title="Dismiss all DopeThemes news" onclick="dismiss_dopethemes_news(event); return false;" style="float: right; box-shadow: none; margin-left: 5px; display: none;"></a><a class="rsswidget" href="%s">%s</a></li>',
-							esc_url( admin_url() ),
-							esc_url( $post['link'] ),
-							esc_html( $post['title']['rendered'] )
-						);
-						echo '    htmlContent += \'' . $htmlContent . '\';';
-					}
+								foreach ( $posts as $post ) {
+									$htmlContent = sprintf(
+										'<li class="dopethemes_dashboard_news_item"><a href="%s" class="dashicons dashicons-no-alt" title="Dismiss all DopeThemes news" onclick="dismiss_dopethemes_news(event); return false;" style="float: right; box-shadow: none; margin-left: 5px; display: none;"></a><a class="rsswidget" href="%s">%s</a></li>',
+										esc_url( admin_url() ),
+										esc_url( $post['link'] ),
+										esc_html( $post['title']['rendered'] )
+									);
+									echo 'htmlContent += \'' . $htmlContent . '\';';
+								}
 
-					echo '    htmlContent += \'</ul>\';';
-					echo '    dopethemes.innerHTML = htmlContent;';
-					echo '    widget.appendChild(dopethemes);';
-					echo '  }';
+								echo 'htmlContent += \'</ul>\';';
+								echo 'dopethemes.innerHTML = htmlContent;';
+								echo 'widget.appendChild(dopethemes);';
+								echo 'observer.disconnect();'; // Disconnect the observer after rendering the DopeThemes list
+							echo '}';
+						echo '});';
+						echo 'observer.observe(widget, { childList: true });'; // Observe for child nodes being added
+					echo '}';
 				echo '});';
 
 				echo 'function dismiss_dopethemes_news(event) {';
