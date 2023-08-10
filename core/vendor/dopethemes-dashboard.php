@@ -110,7 +110,7 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
 
 						foreach ( $posts as $post ) {
 							$htmlContent = sprintf(
-								'<li class="dopethemes_dashboard_news_item"><a href="%s" class="dashicons dashicons-no-alt" title="Dismiss all DopeThemes news" onclick="dismiss_dopethemes_news( event ); return false;" style="float: right; box-shadow: none; margin-left: 5px; display: none;"></a><a class="rsswidget" href="%s">%s</a></li>',
+								'<li class="dopethemes_dashboard_news_item"><a href="%s" class="dashicons dashicons-no-alt" title="Dismiss all DopeThemes news" onclick="dismiss_dopethemes_news( event ); return false;" style="float: right; box-shadow: none; margin-left: 5px; font-size: 10px; position: relative; top: 5px"></a><a class="rsswidget" href="%s">%s</a></li>',
 								esc_url( admin_url() ),
 								esc_url( $post['link'] ),
 								esc_html( $post['title']['rendered'] )
@@ -120,13 +120,13 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
 
 						echo 'htmlContent += \'</ul>\';';
 						echo 'dopethemes.innerHTML = htmlContent;';
-						echo 'container.insertAdjacentElement( "beforebegin", dopethemes );'; // Inserting before the ".wordpress-news" container
+						echo 'container.insertAdjacentElement( "afterend", dopethemes );'; // Inserting before the ".wordpress-news" container
 					echo '}';
 				echo '} );';
 
 				echo 'function dismiss_dopethemes_news( event ) {';
 					echo 'event.preventDefault();';
-					echo 'if ( window.confirm( "Are you sure you want to remove DopeThemes Tutorials forever?" ) ) {';
+					echo 'if ( window.confirm( "Our team at DopeThemes works hard to provide these tutorials and resources like plugins for free. Dismissing them means you might miss out on some great content. Are you sure you want to remove them from your dashboard? Your support means a lot to us!" ) ) {';
 						echo 'var item = event.target.parentElement;';
 						echo 'item.style.display = "none";';
 						echo 'fetch( "' . $ajax_url . '", { method: "POST" } );';
