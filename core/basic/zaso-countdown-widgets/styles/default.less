@@ -46,19 +46,7 @@
     }
   }
 
-  // Alignment modifiers.
-  &--align-left &__units {
-    justify-content: flex-start;
-  }
-
-  &--align-center &__units {
-    justify-content: center;
-  }
-
-  &--align-right &__units {
-    justify-content: flex-end;
-  }
-
+  // Alignment text modifiers (single class; safe to nest).
   &--align-center {
     text-align: center;
   }
@@ -66,4 +54,18 @@
   &--align-right {
     text-align: right;
   }
+}
+
+// Unit-row alignment written FLAT (literal classes, no chained "&") so
+// SiteOrigin's per-widget scoping prefixes them exactly once and they match.
+.zaso-countdown--align-left .zaso-countdown__units {
+  justify-content: flex-start;
+}
+
+.zaso-countdown--align-center .zaso-countdown__units {
+  justify-content: center;
+}
+
+.zaso-countdown--align-right .zaso-countdown__units {
+  justify-content: flex-end;
 }

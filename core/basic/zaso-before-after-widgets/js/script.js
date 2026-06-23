@@ -29,6 +29,7 @@
 	 */
 	function setup( container ) {
 		var handle      = container.querySelector( '.zaso-before-after__handle' );
+		var beforeImg   = container.querySelector( '.zaso-before-after__before-img' );
 		var orientation = container.getAttribute( 'data-orientation' ) || 'horizontal';
 		var isVertical  = 'vertical' === orientation;
 		var dragging    = false;
@@ -41,14 +42,20 @@
 		var position = clamp( parseFloat( handle.getAttribute( 'aria-valuenow' ) ) || 50 );
 
 		/**
-		 * Apply a position to both the visual clip and the ARIA value.
+		 * Apply a position to the reveal clip, the handle, and the ARIA value.
 		 *
 		 * @param {number} value The new position (0-100).
 		 * @return {void}
 		 */
 		function setPosition( value ) {
 			position = clamp( value );
-			container.style.setProperty( '--zaso-ba-pos', position + '%' );
+			var reveal = 100 - position;
+			if ( beforeImg ) {
+				beforeImg.style.clipPath = isVertical
+					? 'inset(0 0 ' + reveal + '% 0)'
+					: 'inset(0 ' + reveal + '% 0 0)';
+			}
+			handle.style[ isVertical ? 'top' : 'left' ] = position + '%';
 			handle.setAttribute( 'aria-valuenow', String( Math.round( position ) ) );
 		}
 

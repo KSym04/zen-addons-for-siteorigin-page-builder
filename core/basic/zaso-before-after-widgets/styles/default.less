@@ -7,6 +7,7 @@
 @label_bg: default;
 @label_color: default;
 
+// Base layout (single-class rules; safe to nest with one "&").
 .zaso-before-after {
   max-width: @max_width;
   margin-left: auto;
@@ -38,6 +39,8 @@
     height: auto;
   }
 
+  // The clip-path that reveals the "before" image is set inline (server) and
+  // updated by JS. A safe default is provided here for the no-JS case.
   &__before-img {
     position: absolute;
     top: 0;
@@ -45,14 +48,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  &__container--horizontal &__before-img {
-    clip-path: inset(0 calc(100% - var(--zaso-ba-pos)) 0 0);
-  }
-
-  &__container--vertical &__before-img {
-    clip-path: inset(0 0 calc(100% - var(--zaso-ba-pos)) 0);
+    clip-path: inset(0 50% 0 0);
   }
 
   &__label {
@@ -77,13 +73,6 @@
     right: 0.75em;
   }
 
-  &__container--vertical &__label--after {
-    top: auto;
-    right: auto;
-    bottom: 0.75em;
-    left: 0.75em;
-  }
-
   &__handle {
     position: absolute;
     z-index: 3;
@@ -104,18 +93,6 @@
     outline-offset: 2px;
   }
 
-  &__container--horizontal &__handle {
-    left: var(--zaso-ba-pos);
-    top: 50%;
-    cursor: ew-resize;
-  }
-
-  &__container--vertical &__handle {
-    top: var(--zaso-ba-pos);
-    left: 50%;
-    cursor: ns-resize;
-  }
-
   // Divider line, drawn from the handle and clipped by the container.
   &__handle::before {
     content: '';
@@ -127,19 +104,39 @@
     transform: translate(-50%, -50%);
   }
 
-  &__container--horizontal &__handle::before {
-    width: @divider_width;
-    height: 9999px;
-  }
-
-  &__container--vertical &__handle::before {
-    height: @divider_width;
-    width: 9999px;
-  }
-
   &__handle-icon {
     display: block;
     width: 100%;
     height: 100%;
   }
+}
+
+// Orientation-specific rules are written FLAT (literal classes, no chained "&")
+// so SiteOrigin's per-widget scoping prefixes them exactly once and they match.
+// The moving axis (left for horizontal, top for vertical) is set inline by JS.
+.zaso-before-after__container--horizontal .zaso-before-after__handle {
+  top: 50%;
+  cursor: ew-resize;
+}
+
+.zaso-before-after__container--vertical .zaso-before-after__handle {
+  left: 50%;
+  cursor: ns-resize;
+}
+
+.zaso-before-after__container--horizontal .zaso-before-after__handle::before {
+  width: @divider_width;
+  height: 9999px;
+}
+
+.zaso-before-after__container--vertical .zaso-before-after__handle::before {
+  height: @divider_width;
+  width: 9999px;
+}
+
+.zaso-before-after__container--vertical .zaso-before-after__label--after {
+  top: auto;
+  right: auto;
+  bottom: 0.75em;
+  left: 0.75em;
 }
