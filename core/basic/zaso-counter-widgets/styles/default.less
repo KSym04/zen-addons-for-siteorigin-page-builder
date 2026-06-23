@@ -1,0 +1,73 @@
+@number_color: default;
+@number_size: default;
+@title_color: default;
+@title_size: default;
+@icon_color: default;
+@icon_size: default;
+
+.zaso-counter {
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__icon {
+    color: @icon_color;
+    font-size: @icon_size;
+    line-height: 1;
+
+    .sow-icon-fontawesome,
+    [class^="sow-fa"],
+    [class*=" sow-fa"],
+    span {
+      font-size: @icon_size;
+      color: @icon_color;
+    }
+  }
+
+  &__image {
+    width: @icon_size;
+    height: auto;
+    display: inline-block;
+  }
+
+  &__number {
+    color: @number_color;
+    font-size: @number_size;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__title {
+    color: @title_color;
+    font-size: @title_size;
+    line-height: 1.3;
+  }
+
+  // Alignment modifiers.
+  &--align-left {
+    text-align: left;
+
+    .zaso-counter__inner {
+      align-items: flex-start;
+    }
+  }
+
+  &--align-center {
+    text-align: center;
+
+    .zaso-counter__inner {
+      align-items: center;
+    }
+  }
+
+  &--align-right {
+    text-align: right;
+
+    .zaso-counter__inner {
+      align-items: flex-end;
+    }
+  }
+}
