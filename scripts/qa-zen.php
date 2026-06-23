@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 18; // Number of ZASO widgets shipped.
+$expected = 22; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -68,6 +68,26 @@ $cases = array(
 		'file'     => $base . 'zaso-spacer-widgets/tpl/default.php',
 		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'spacer_height' => array( 'spacer_height_unit_value' => '40', 'spacer_height_unit' => 'px' ) ),
 	),
+	'cta-banner'  => array(
+		'file'     => $base . 'zaso-cta-banner-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'layout' => 'stacked', 'alignment' => 'center', 'heading' => 'Hi <b>x</b>', 'subheading' => 'sub', 'content' => '<p>c</p><script>bad()</script>', 'button_text' => 'Go', 'button_url' => 'https://example.com', 'button_new_tab' => true, 'button_nofollow' => true ),
+		'vars'     => array( 'bg_type' => 'solid', 'bg_image_url' => '' ),
+	),
+	'counter'     => array(
+		'file'     => $base . 'zaso-counter-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'design' => array( 'alignment' => 'center' ) ),
+		'vars'     => array( 'prefix' => '$', 'suffix' => '+', 'formatted_end' => '1,250', 'start' => 0.0, 'end' => 1250.0, 'duration' => 2000, 'decimals' => 0, 'separator' => ',', 'title' => 'Customers', 'icon' => '', 'image' => 0, 'image_attr' => array(), 'alignment' => 'center' ),
+	),
+	'countdown'   => array(
+		'file'     => $base . 'zaso-countdown-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'on_expire' => 'message', 'expire_message' => '<p>Done</p><script>bad()</script>', 'design' => array( 'alignment' => 'center' ) ),
+		'vars'     => array( 'deadline_ms' => 9999999999000, 'units' => array( 'days' => array( 'value' => 1, 'label' => 'Days' ), 'seconds' => array( 'value' => 5, 'label' => 'Seconds' ) ), 'on_expire' => 'message', 'alignment' => 'center', 'aria_label' => 'Countdown to later', 'is_expired' => false ),
+	),
+	'before-after' => array(
+		'file'     => $base . 'zaso-before-after-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'before_label' => 'Before', 'after_label' => 'After', 'show_labels' => true ),
+		'vars'     => array( 'before' => array( 'src' => 'https://example.com/b.jpg', 'width' => 800, 'height' => 600, 'alt' => 'b' ), 'after' => array( 'src' => 'https://example.com/a.jpg', 'width' => 800, 'height' => 600, 'alt' => 'a' ), 'orientation' => 'horizontal', 'position' => 50 ),
+	),
 );
 
 foreach ( $cases as $name => $case ) {
@@ -76,6 +96,9 @@ foreach ( $cases as $name => $case ) {
 		continue;
 	}
 	$instance = $case['instance'];
+	if ( ! empty( $case['vars'] ) && is_array( $case['vars'] ) ) {
+		extract( $case['vars'], EXTR_OVERWRITE ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract -- QA harness only; injects get_template_variables() output for the render test.
+	}
 	ob_start();
 	$err = '';
 	try {

@@ -1,5 +1,11 @@
 Changelog
 
+1.3.0
+- New: Call to Action widget for a heading, text, and button over a color, gradient, or image background.
+- New: Counter widget that counts up to a value when it scrolls into view.
+- New: Countdown widget that counts down to a target date and time.
+- New: Before / After widget for draggable image comparisons, with keyboard support.
+
 1.2.0
 - New: Zen Addons admin page (the "Zen Addons" menu) to activate or deactivate widgets from one place, with a note on where activated widgets appear.
 

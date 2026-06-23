@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -45,6 +45,13 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 * Hover Card: show an image card with a title and button that animate on hover.
 * Icon: display a single icon from an icon font or your own upload.
 * Image Icon Group: display a row or grid of linked image icons.
+
+**Conversion and engagement**
+
+* Call to Action: combine a heading, text, and button in a banner over a color, gradient, or image background.
+* Counter: count up to a number with a stat that animates when it scrolls into view.
+* Countdown: count down to a date and time for launches, sales, and events.
+* Before / After: compare two images with a draggable slider, with mouse, touch, and keyboard support.
 
 **Community (bbPress)**
 
@@ -174,6 +181,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.3.0 =
+Adds four new widgets: Call to Action, Counter, Countdown, and Before / After.
+
 = 1.2.0 =
 Adds a Zen Addons admin screen to activate or deactivate your widgets in one place.
 
@@ -184,6 +194,12 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.3.0 =
+* New: Call to Action widget for a heading, text, and button over a color, gradient, or image background.
+* New: Counter widget that counts up to a value when it scrolls into view.
+* New: Countdown widget that counts down to a target date and time.
+* New: Before / After widget for draggable image comparisons, with keyboard support.
 
 = 1.2.0 =
 * New: Zen Addons admin page (the "Zen Addons" menu) to activate or deactivate widgets from one place, with a quick note on where activated widgets appear.

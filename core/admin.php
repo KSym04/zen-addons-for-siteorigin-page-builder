@@ -80,6 +80,10 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 					'label'   => esc_html__( 'Business & Marketing', 'zaso' ),
 					'widgets' => array( 'zaso-info-box-widgets', 'zaso-hover-card-widgets', 'zaso-icon-widgets', 'zaso-image-icon-group-widgets' ),
 				),
+				'engagement'   => array(
+					'label'   => esc_html__( 'Conversion & Engagement', 'zaso' ),
+					'widgets' => array( 'zaso-cta-banner-widgets', 'zaso-counter-widgets', 'zaso-countdown-widgets', 'zaso-before-after-widgets' ),
+				),
 				'community'    => array(
 					'label'   => esc_html__( 'Community (bbPress)', 'zaso' ),
 					'widgets' => array( 'zaso-bbpress-forum-index-widgets', 'zaso-bbpress-topic-index-widgets', 'zaso-bbpress-login-widgets', 'zaso-bbpress-registration-widgets', 'zaso-bbpress-lost-password-widgets' ),
