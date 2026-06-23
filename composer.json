@@ -8,6 +8,14 @@
 		{
 			"name": "DopeThemes",
 			"homepage": "https://www.dopethemes.com/"
+		},
+		{
+			"name": "ksym04",
+			"role": "Contributor"
+		},
+		{
+			"name": "pkvillanueva",
+			"role": "Contributor"
 		}
 	],
 	"require": {

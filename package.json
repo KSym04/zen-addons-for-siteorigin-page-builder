@@ -9,6 +9,10 @@
     "addons"
   ],
   "author": "KSym04",
+  "contributors": [
+    "ksym04",
+    "pkvillanueva"
+  ],
   "license": "GPLv3",
   "repository": {
     "type": "git",
