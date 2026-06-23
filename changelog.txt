@@ -1,5 +1,8 @@
 Changelog
 
+1.2.0
+- New: Zen Addons admin page (the "Zen Addons" menu) to activate or deactivate widgets from one place, with a note on where activated widgets appear.
+
 1.1.0
 - Tweak: Bundle the Lity lightbox library locally instead of loading it from a CDN.
 - Tweak: Cache the DopeThemes dashboard news request to avoid an external call on every admin page load.

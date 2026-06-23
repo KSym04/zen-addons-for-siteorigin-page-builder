@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -169,6 +169,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.2.0 =
+Adds a Zen Addons admin screen to activate or deactivate your widgets in one place.
+
 = 1.1.0 =
 Compatibility update for WordPress 7.0, plus security hardening and performance improvements.
 
@@ -176,6 +179,9 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.2.0 =
+* New: Zen Addons admin page (the "Zen Addons" menu) to activate or deactivate widgets from one place, with a quick note on where activated widgets appear.
 
 = 1.1.0 =
 * Tweak: Bundle the Lity lightbox library locally instead of loading it from a CDN.
