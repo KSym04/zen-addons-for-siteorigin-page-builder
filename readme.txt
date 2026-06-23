@@ -176,8 +176,10 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Screenshots ==
 
-1. The Zen Addons admin page: activate or deactivate any widget from one place, grouped by category.
-2. The four widgets added in version 1.3.0: Call to Action, Counter, Countdown, and Before / After.
+1. Conversion and engagement widgets: Call to Action, Counter, Countdown, and Before / After.
+2. Business and marketing widgets: Info Box, Hover Card, Icon, and Image Icon Group.
+3. Media widgets: Video, YouTube Lightbox, and Vimeo Lightbox.
+4. Interactive widgets: Simple Accordion and Basic Tabs.
 
 == Upgrade Notice ==
 
