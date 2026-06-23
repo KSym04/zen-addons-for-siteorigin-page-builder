@@ -177,7 +177,7 @@ Please read the Frequently Asked Questions before opening a support request, and
 == Screenshots ==
 
 1. The Zen Addons admin page: activate or deactivate any widget from one place, grouped by category.
-2. Zen Addons widgets rendered on a SiteOrigin Page Builder page.
+2. The four widgets added in version 1.3.0: Call to Action, Counter, Countdown, and Before / After.
 
 == Upgrade Notice ==
 
