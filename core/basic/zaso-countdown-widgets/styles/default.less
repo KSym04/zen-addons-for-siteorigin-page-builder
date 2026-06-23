@@ -1,0 +1,69 @@
+@number_color: default;
+@number_size: default;
+@label_color: default;
+@label_size: default;
+@box_bg: default;
+@box_padding: default;
+@box_radius: default;
+@gap: default;
+
+.zaso-countdown {
+
+  &__units {
+    display: flex;
+    flex-wrap: wrap;
+    gap: @gap;
+  }
+
+  &__unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: @box_bg;
+    padding: @box_padding;
+    border-radius: @box_radius;
+    min-width: 4em;
+  }
+
+  &__value {
+    color: @number_color;
+    font-size: @number_size;
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__label {
+    color: @label_color;
+    font-size: @label_size;
+    line-height: 1.3;
+    margin-top: 0.25em;
+  }
+
+  &__message {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Alignment modifiers.
+  &--align-left &__units {
+    justify-content: flex-start;
+  }
+
+  &--align-center &__units {
+    justify-content: center;
+  }
+
+  &--align-right &__units {
+    justify-content: flex-end;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+}
