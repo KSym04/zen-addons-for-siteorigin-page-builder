@@ -1,6 +1,6 @@
 === Zen Addons for SiteOrigin Page Builder ===
-Contributors: ksym04
-Tags: zaso, widgets, siteorigin, addons, page builder
+Contributors: ksym04, pkvillanueva
+Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
@@ -8,75 +8,169 @@ Stable tag: 1.1.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
-Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Builder. It's simple, flexible, and useful.
+A focused collection of accessible, lightweight widget extensions that add the layouts SiteOrigin Page Builder does not ship out of the box.
 
 == Description ==
 
-Zen Addons for SiteOrigin Page Builder provides you with a collection of widgets you can use and customize. All widgets are developed under the SiteOrigin widget framework.
+**Zen Addons for SiteOrigin Page Builder** is a curated set of widget extensions built on the official SiteOrigin Widgets Bundle framework. It adds the practical, everyday widgets most sites actually need, such as tabs, accordions, alert boxes, info boxes, hover cards, video lightboxes, Contact Form 7, and bbPress forms, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
 
-= Builder Framework Compatibility =
-- Page Builder by SiteOrigin (tested plugin version up to): 2.34.3
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.73.1
+Every widget is designed to be clean, accessible, and easy to style. Widgets render with semantic HTML, follow ARIA best practices, and stay out of your way: nothing loads on the front end unless a widget that needs it is actually placed on the page.
 
-= Widget Features =
-- Spacer: Creates empty space between elements.
-- Simple Accordion/Toggle: Designs a vertically stacked list of items or a single panel.
-- Basic Tabs: Allows the creation of multiple panels within a single window.
-- Alert Box: Offers contextual feedback and flexible alert messages.
-- Icon: Sets a single icon using a popular iconic font or custom upload.
-- Video: Embeds videos from YouTube, Vimeo, or other providers.
-- YouTube Video Lightbox: Creates pop-up lightboxes for YouTube videos.
-- Vimeo Video Lightbox: Creates pop-up lightboxes for Vimeo videos.
-- Contact Form 7: Displays CF7 forms.
-- Info Box: Showcases an information box with an image, title, description, and learn-more button link.
-- Hover Card: Displays an image box, title caption, and learn-more button with hover transition.
-- Image Icon Group: Sets a group of image icons.
-- Widgetized: Integrates existing widget sidebars into the main content.
-- bbPress Forum Index: Displays the entire bbPress forum index.
-- bbPress Topic Index: Shows the 15 most recent topics across all forums with optional pagination and search.
-- bbPress Login: Incorporates the bbPress login form.
-- bbPress Registration: Includes the bbPress registration form.
-- bbPress Lost Password: Implements the bbPress password retrieval form.
+= Built for the SiteOrigin workflow =
+
+Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Widgets Bundle. All Zen Addons widgets are grouped under their own "ZASO Widgets" tab in the widget picker, so they are easy to find and never get lost among the core widgets. You can enable only the widgets you use and leave the rest off.
+
+= Widgets included =
+
+**Layout and content**
+
+* Spacer: add controlled vertical space between elements.
+* Alert Box: contextual, styled alert and notice messages.
+* Widgetized: display an existing widget sidebar inside your page content.
+
+**Interactive**
+
+* Simple Accordion / Toggle: vertically stacked collapsible panels.
+* Basic Tabs: multiple panels in a single tabbed window.
+
+**Media**
+
+* Video: embed YouTube, Vimeo, and other provider videos.
+* YouTube Video Lightbox: open a YouTube video in a pop-up lightbox.
+* Vimeo Video Lightbox: open a Vimeo video in a pop-up lightbox.
+
+**Business and marketing**
+
+* Info Box: image, title, description, and a learn-more button.
+* Hover Card: image card with a title and call-to-action that animates on hover.
+* Icon: a single icon from an icon font or a custom upload.
+* Image Icon Group: a row or grid of linked image icons.
+
+**Community (bbPress)**
+
+* bbPress Forum Index: display the full bbPress forum index.
+* bbPress Topic Index: show the most recent topics with optional pagination and search.
+* bbPress Login: the bbPress login form.
+* bbPress Registration: the bbPress registration form.
+* bbPress Lost Password: the bbPress password recovery form.
+
+**Integrations**
+
+* Contact Form 7: place any Contact Form 7 form into a SiteOrigin layout.
+
+= Where to find your widgets =
+
+Zen Addons widgets are SiteOrigin widgets, so they appear in two places:
+
+1. Inside **Page Builder**, click **Add Widget** and open the **ZASO Widgets** tab.
+2. Under **Plugins > SiteOrigin Widgets**, where you can turn individual widgets on or off.
+
+Zen Addons does not add its own top-level admin menu, and the widgets are not listed under Appearance > Widgets, because they are built specifically for the SiteOrigin builder.
 
 = Standards =
-- Neatly structured semantic HTML
-- Highly accessible widgets adhering to best ARIA practices
-- SEO-friendly widgets
 
-= Language Support =
-- English (en_US)
-- English - Australia (en_AU)
+* Semantic, neatly structured HTML.
+* Accessible markup following ARIA best practices.
+* SEO-friendly output.
+* Front-end assets load only on pages where a Zen Addons widget is used.
 
-After enabling the extension widget, you can use it wherever standard widgets are used. Manage your widgets by navigating to Plugins > SiteOrigin Widgets in your WordPress admin backend.
+= Requirements =
 
-Lastly, we recommend activating only the widgets you need.
+* WordPress 5.5 or later and PHP 7.4 or later.
+* Page Builder by SiteOrigin and the SiteOrigin Widgets Bundle (free on WordPress.org). The Widgets Bundle is required because Zen Addons extends its widget framework.
+* Contact Form 7 is only needed if you use the Contact Form 7 widget. bbPress is only needed if you use the bbPress widgets.
 
-Note: Our widgets have the prefix name 'ZASO -', indicating our SiteOrigin plugin extension.
+= Language support =
+
+* English (en_US)
+* English (Australia) (en_AU)
 
 == External services ==
 
-This plugin connects to the DopeThemes website to display a short list of recent DopeThemes posts inside the WordPress dashboard "At a Glance" news area. This is used only to surface helpful tutorials and product news.
+This plugin connects to the DopeThemes website to show a short list of recent DopeThemes posts inside the WordPress dashboard news area, so you can see helpful tutorials and product news.
 
-The connection is made from the WordPress admin dashboard screen. When the dashboard loads, the plugin requests the latest posts from https://www.dopethemes.com/wp-json/wp/v2/posts and shows the three most recent titles and links. The result is cached for 12 hours, and no personal data is sent with the request. You can dismiss the news permanently from the dashboard.
+The request is made only on the main WordPress Dashboard screen. When that screen loads, the plugin fetches the latest posts from https://www.dopethemes.com/wp-json/wp/v2/posts and displays the three most recent titles and links. The response is cached for 12 hours, no personal data is sent with the request, and you can permanently dismiss the news from the dashboard.
 
-The service is provided by DopeThemes. Terms: https://www.dopethemes.com/terms/ Privacy: https://www.dopethemes.com/privacy-policy/
+This service is provided by DopeThemes. Terms of service: https://www.dopethemes.com/terms/ . Privacy policy: https://www.dopethemes.com/privacy-policy/ .
 
 == Installation ==
 
-1. Upload the `zen-addons-for-siteorigin-page-builder` directory to the `/wp-content/plugins/` directory via FTP
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Enjoy
+= Automatic installation =
+
+1. Log in to your WordPress admin.
+2. Go to **Plugins > Add New**.
+3. Search for **Zen Addons for SiteOrigin Page Builder**.
+4. Click **Install Now**, then **Activate**.
+5. Make sure Page Builder by SiteOrigin and the SiteOrigin Widgets Bundle are also installed and active.
+
+= Manual installation =
+
+1. Download the plugin zip file.
+2. Go to **Plugins > Add New > Upload Plugin**.
+3. Choose the zip file and click **Install Now**.
+4. Activate the plugin.
+
+= After activation =
+
+* Edit a page with Page Builder, click **Add Widget**, and open the **ZASO Widgets** tab.
+* Visit **Plugins > SiteOrigin Widgets** to enable or disable individual Zen Addons widgets. We recommend activating only the widgets you need.
 
 == Frequently Asked Questions ==
 
-= How do I activate your widgets? =
+= Do I need SiteOrigin to use Zen Addons? =
 
-First, ensure that the 'SiteOrigin Widgets Bundle' plugin is installed. Then, to enable our ZASO widgets, activate them at 'Plugins > SiteOrigin Widgets'.
+Yes. Zen Addons extends the SiteOrigin Widgets Bundle, which provides the widget framework these widgets are built on. Page Builder by SiteOrigin and the SiteOrigin Widgets Bundle are both free on WordPress.org. Zen Addons declares the Widgets Bundle as a required plugin, so WordPress will prompt you to install it if it is missing.
+
+= Where do the widgets show up after I activate the plugin? =
+
+Zen Addons widgets appear in the SiteOrigin Page Builder widget picker under the **ZASO Widgets** tab, and in the manage screen at **Plugins > SiteOrigin Widgets**. They are not listed under Appearance > Widgets and there is no separate Zen Addons admin menu, because they are SiteOrigin widgets.
+
+= How do I enable or disable individual widgets? =
+
+Go to **Plugins > SiteOrigin Widgets**. Each Zen Addons widget (prefixed with "ZASO -") can be turned on or off there. Activating only the widgets you use keeps things tidy.
+
+= Will Zen Addons slow down my site? =
+
+No. Zen Addons does not add scripts or styles to your front end globally. A widget's CSS or JavaScript (for example, the lightbox script used by the video lightbox widgets) loads only on pages where that widget is actually placed.
+
+= Do the video lightbox widgets load anything from a third-party CDN? =
+
+No. The lightbox library is bundled with the plugin and served from your own site. Nothing is loaded from an external CDN.
+
+= Are the widgets accessible? =
+
+Yes. Widgets use semantic HTML and follow ARIA best practices, including roles and labels for interactive widgets such as tabs and accordions.
+
+= Do I need bbPress or Contact Form 7? =
+
+Only if you use those widgets. The bbPress widgets require bbPress, and the Contact Form 7 widget requires Contact Form 7. If those plugins are not active, simply do not use the related widgets.
+
+= Can I translate Zen Addons? =
+
+Yes. All user-facing strings are translation ready, and the plugin ships with English (US) and English (Australia) language files.
+
+= What happens to my data when I uninstall the plugin? =
+
+Deleting the plugin removes the small options it creates, including the dashboard news dismissal flag and its cached data. Your SiteOrigin widget content lives in your pages and is managed by SiteOrigin, not removed by Zen Addons.
+
+= Where can I get support? =
+
+Visit [https://www.dopethemes.com/](https://www.dopethemes.com/) for support and documentation. Please include your WordPress version, your SiteOrigin Page Builder and Widgets Bundle versions, and your PHP version when reporting an issue.
+
+== Privacy Policy ==
+
+Zen Addons does not collect, store, or transmit any personal data from your site or your visitors. The only external request it makes is the optional, dismissible DopeThemes news fetch described in the External services section above, which sends no personal data and is cached for 12 hours.
+
+== Support ==
+
+For support, documentation, and feature requests, please visit [https://www.dopethemes.com/](https://www.dopethemes.com/).
+
+Please read the Frequently Asked Questions before opening a support request, and include your WordPress, SiteOrigin, and PHP versions along with a description of the issue.
 
 == Upgrade Notice ==
 
 = 1.1.0 =
-Compatibility update for WordPress 7.0, plus performance and reliability improvements.
+Compatibility update for WordPress 7.0, plus security hardening and performance improvements.
 
 = 1.0.18 =
 This update includes minor improvements and bug fixes.
@@ -87,6 +181,7 @@ This update includes minor improvements and bug fixes.
 * Tweak: Bundle the Lity lightbox library locally instead of loading it from a CDN.
 * Tweak: Cache the DopeThemes dashboard news request to avoid an external call on every admin page load.
 * Tweak: Declare SiteOrigin Widgets Bundle as a required plugin.
+* Fix: Escape widget output and harden an admin AJAX action.
 * Fix: Remove plugin options on uninstall for a clean removal.
 * Test: WordPress 7.0 compatibility.
 
