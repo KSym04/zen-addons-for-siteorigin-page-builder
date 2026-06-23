@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - bbPress Topic Index
  * Widget ID: zen-addons-siteorigin-bbpress-topic-index

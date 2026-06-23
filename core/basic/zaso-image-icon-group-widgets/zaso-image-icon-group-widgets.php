@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Image Icon Group
  * Widget ID: zen-addons-siteorigin-image-icon-group

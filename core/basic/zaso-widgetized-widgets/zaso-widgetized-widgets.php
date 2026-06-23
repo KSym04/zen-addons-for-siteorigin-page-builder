@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Widgetized
  * Widget ID: zen-addons-siteorigin-widgetized
@@ -22,7 +23,7 @@ class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
                 if( 'wp_inactive_widgets' == $swkey || 'array_version' == $swkey )
                     continue;
                 
-                $all_sidebars[$swkey] = __( ucwords( str_replace( '-', ' ', $swkey ) ), 'zaso' );
+                $all_sidebars[$swkey] = ucwords( str_replace( '-', ' ', $swkey ) );
             }
         }
         

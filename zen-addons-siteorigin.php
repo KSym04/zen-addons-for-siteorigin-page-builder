@@ -83,8 +83,8 @@ class zen_addons_siteorigin {
 		define( 'ZASO_LIBRARY_PATH',      $this->settings['path'] . 'core/lib/' );
 		define( 'ZASO_WIDGET_BASIC_PATH', $this->settings['path'] . 'core/basic/' );
 
-		// Set text domain.
-		load_textdomain( 'zaso', ZASO_BASE_PATH . 'lang/zaso-' . get_locale() . '.mo' );
+		// Load the plugin text domain on init.
+		add_action( 'init', array( $this, 'load_textdomain' ) );
 
 		// Includes core.
 		include( 'core/helpers.php' );
@@ -96,6 +96,17 @@ class zen_addons_siteorigin {
 
 		// Plugin action links.
 		add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'plugin_action_links' ) );
+	}
+
+	/**
+	 * Load the plugin text domain for translations.
+	 *
+	 * @type  function
+	 * @since 1.1.0
+	 * @return void
+	 */
+	function load_textdomain() {
+		load_plugin_textdomain( 'zaso', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 	}
 
 	/**

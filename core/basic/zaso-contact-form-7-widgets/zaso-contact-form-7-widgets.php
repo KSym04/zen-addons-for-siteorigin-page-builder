@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Contact Form 7
  * Widget ID: zen-addons-siteorigin-contact-form-7
@@ -25,7 +26,7 @@ class Zen_Addons_SiteOrigin_Contact_Form_7_Widget extends SiteOrigin_Widget {
 
         if( $posts ) {
             foreach( $posts as $post ) {
-                $all_cf7[$post->ID] = __( $post->post_title, 'zaso' );
+                $all_cf7[$post->ID] = $post->post_title;
             }
         } else {
             $all_cf7 = array( '' => __( 'No existing form.', 'zaso' ) );

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Vimeo Lightbox
  * Widget ID: zen-addons-siteorigin-vimeo-lightbox

@@ -103,6 +103,12 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
          * @return void
          */
 		public function print_dashboard_script() {
+            // Only run on the main Dashboard screen, not on every admin page.
+            $screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+            if ( ! $screen || 'dashboard' !== $screen->id ) {
+                return;
+            }
+
             $dismissed = get_option( 'dopethemes_dismissed', false );
             if ( $dismissed ) return;
 
@@ -135,7 +141,7 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
 
 				echo 'function dismiss_dopethemes_news(event) {';
 				echo '  event.preventDefault();';
-				echo '  if (window.confirm("Are you sure you want to remove DopeThemes Tutorials forever?")) {';
+				echo '  if (window.confirm("' . esc_js( __( 'Are you sure you want to remove DopeThemes Tutorials forever?', 'zaso' ) ) . '")) {';
 				echo '    var item = event.target.parentElement;';
 				echo '    item.style.display = "none";';
 				echo '    fetch("' . $ajax_url . '", { method: "POST" });';
@@ -163,12 +169,12 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
          * @return void
          */
         public function dismiss_dopethemes_posts() {
-            // Check nonce for security
+            // Check nonce for security.
             check_ajax_referer( 'dismiss_dopethemes_nonce' );
 
-            // Check user permissions
+            // Check user permissions.
             if ( ! current_user_can( 'manage_options' ) ) {
-                wp_die( __( 'You do not have sufficient permissions to perform this action.' ) );
+                wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zaso' ) );
             }
 
             update_option( 'dopethemes_dismissed', true );
@@ -194,6 +200,15 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
          * @return void
          */
         public function enable_dopethemes_posts() {
+			// Check nonce for security.
+			check_ajax_referer( 'enable_dopethemes_nonce' );
+
+			// Check user permissions.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zaso' ) );
+			}
+
+			delete_transient( 'zaso_dopethemes_posts' );
 			update_option( 'dopethemes_dismissed', false );
 			wp_die(); // This is required to terminate immediately and return a proper response.
 		}

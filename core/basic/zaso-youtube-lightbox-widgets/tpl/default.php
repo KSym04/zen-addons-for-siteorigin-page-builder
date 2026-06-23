@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * [ZASO] YouTube Lightbox Template
  *
@@ -19,20 +20,21 @@ $video_play_button = wp_get_attachment_image_src( $instance['video_play_button']
 $video_play_button_hover = wp_get_attachment_image_src( $instance['video_play_button_hover'], 'full' );
 ?>
 
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-youtube-lightbox <?php echo $instance['extra_class']; ?>" role="dialog">
+<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-youtube-lightbox <?php echo esc_attr( $instance['extra_class'] ); ?>" role="dialog">
     <div class="zaso-youtube-lightbox__inner">
-        <a href="<?php echo $build_url; ?>" data-lity>
+        <a href="<?php echo esc_url( $build_url ); ?>" data-lity>
             <?php if ( $video_thumb ) : ?>
-                <img src="<?php echo $video_thumb; ?>" alt="<?php echo $instance['video_url']; ?>" />
+                <img src="<?php echo esc_url( $video_thumb ); ?>" alt="<?php echo esc_attr( $instance['video_url'] ); ?>" />
             <?php else : ?>
-                <?php echo $instance['video_url']; ?>
+                <?php echo esc_html( $instance['video_url'] ); ?>
             <?php endif; ?>
 
             <?php if ( $video_play_button && $video_thumb ) : ?>
-                <div class="zaso-youtube-lightbox__playbutton" style="background: url(<?php echo $video_play_button[0]; ?>) no-repeat center center; width: <?php echo $video_play_button[1]; ?>px; height: <?php echo $video_play_button[2]; ?>px;"></div>
+                <div class="zaso-youtube-lightbox__playbutton" style="background: url(<?php echo esc_url( $video_play_button[0] ); ?>) no-repeat center center; width: <?php echo (int) $video_play_button[1]; ?>px; height: <?php echo (int) $video_play_button[2]; ?>px;"></div>
                 
                 <?php if ( $video_play_button_hover ) : ?>
-                    <div class="zaso-youtube-lightbox__playbutton-hover" style="background: url(<?php echo $video_play_button_hover[0]; ?>) no-repeat center center; width: <?php echo $video_play_button_hover[1]; ?>px; height: <?php echo $video_play_button_hover[2]; ?>px;"></div>
+                    <div class="zaso-youtube-lightbox__playbutton-hover" style="background: url(<?php echo esc_url( $video_play_button_hover[0] ); ?>) no-repeat center center; width: <?php echo (int) $video_play_button_hover[1]; ?>px; height: <?php echo (int) $video_play_button_hover[2]; ?>px;"></div>
                 <?php endif; ?>
             <?php endif; ?>
         </a>

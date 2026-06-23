@@ -26,7 +26,7 @@ function zaso_format_field_extra_id( $id ) {
 
 	// Check if the ID is not empty and is part of the main query.
 	if ( ! empty( $id ) && is_main_query() ) {
-		$id = sprintf( 'id="%s"', $id );
+		$id = sprintf( 'id="%s"', esc_attr( $id ) );
 	}
 
 	// Apply a filter after the ID is formatted, then return the result.

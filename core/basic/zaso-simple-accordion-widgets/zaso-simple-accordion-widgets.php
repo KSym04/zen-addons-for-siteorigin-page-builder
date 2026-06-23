@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Simple Accordion
  * Widget ID: zen-addons-siteorigin-simple-accordion

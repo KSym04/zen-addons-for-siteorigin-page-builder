@@ -53,6 +53,14 @@ Lastly, we recommend activating only the widgets you need.
 
 Note: Our widgets have the prefix name 'ZASO -', indicating our SiteOrigin plugin extension.
 
+== External services ==
+
+This plugin connects to the DopeThemes website to display a short list of recent DopeThemes posts inside the WordPress dashboard "At a Glance" news area. This is used only to surface helpful tutorials and product news.
+
+The connection is made from the WordPress admin dashboard screen. When the dashboard loads, the plugin requests the latest posts from https://www.dopethemes.com/wp-json/wp/v2/posts and shows the three most recent titles and links. The result is cached for 12 hours, and no personal data is sent with the request. You can dismiss the news permanently from the dashboard.
+
+The service is provided by DopeThemes. Terms: https://www.dopethemes.com/terms/ Privacy: https://www.dopethemes.com/privacy-policy/
+
 == Installation ==
 
 1. Upload the `zen-addons-for-siteorigin-page-builder` directory to the `/wp-content/plugins/` directory via FTP

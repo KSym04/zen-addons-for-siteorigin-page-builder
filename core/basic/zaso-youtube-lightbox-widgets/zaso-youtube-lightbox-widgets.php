@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - YouTube Lightbox
  * Widget ID: zen-addons-siteorigin-youtube-lightbox
