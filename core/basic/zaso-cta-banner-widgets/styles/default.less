@@ -1,0 +1,129 @@
+@cta_background: default;
+@overlay_color: default;
+@overlay_alpha: default;
+@heading_color: default;
+@heading_size: default;
+@subheading_color: default;
+@subheading_size: default;
+@text_color: default;
+@button_bg: default;
+@button_bg_hover: default;
+@button_color: default;
+@button_radius: default;
+@padding_y: default;
+@padding_x: default;
+@border_radius: default;
+
+.zaso-cta-banner {
+  position: relative;
+  overflow: hidden;
+  background: @cta_background;
+  border-radius: @border_radius;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: fade(@overlay_color, percentage(@overlay_alpha));
+    z-index: 1;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    padding: @padding_y @padding_x;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__heading {
+    margin: 0;
+    color: @heading_color;
+    font-size: @heading_size;
+    line-height: 1.2;
+  }
+
+  &__subheading {
+    margin: 0;
+    color: @subheading_color;
+    font-size: @subheading_size;
+    line-height: 1.4;
+  }
+
+  &__text {
+    color: @text_color;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    background-color: @button_bg;
+    color: @button_color;
+    border-radius: @button_radius;
+    padding: 0.75em 1.75em;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.15s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: @button_bg_hover;
+      color: @button_color;
+    }
+  }
+
+  // Text alignment modifiers.
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-center {
+    text-align: center;
+
+    .zaso-cta-banner__inner {
+      align-items: center;
+    }
+  }
+
+  &--align-right {
+    text-align: right;
+
+    .zaso-cta-banner__inner {
+      align-items: flex-end;
+    }
+  }
+
+  // Inline layout: content beside the action on wider screens.
+  &--inline .zaso-cta-banner__inner {
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    &--inline .zaso-cta-banner__inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    &--inline .zaso-cta-banner__action {
+      flex-shrink: 0;
+    }
+  }
+}
