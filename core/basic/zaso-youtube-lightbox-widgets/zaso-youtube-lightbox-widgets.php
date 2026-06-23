@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - YouTube Lightbox
  * Widget ID: zen-addons-siteorigin-youtube-lightbox
- * Description: Pop-up lightbox for YouTube videos.
+ * Description: Open a YouTube video in a clickable pop-up lightbox.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

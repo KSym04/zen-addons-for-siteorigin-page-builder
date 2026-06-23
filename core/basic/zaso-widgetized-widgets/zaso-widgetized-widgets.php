@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Widgetized
  * Widget ID: zen-addons-siteorigin-widgetized
- * Description: Get existing widget sidebars to display on the main content.
+ * Description: Place an existing widget sidebar inside your page content.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

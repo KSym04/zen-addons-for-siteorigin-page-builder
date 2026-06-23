@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Info Box
  * Widget ID: zen-addons-siteorigin-info-box
- * Description: Display information box - image, title, description and learn more button link.
+ * Description: Feature an image, title, text, and call-to-action button together.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

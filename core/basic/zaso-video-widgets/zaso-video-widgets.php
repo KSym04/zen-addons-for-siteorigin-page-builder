@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Video
  * Widget ID: zen-addons-siteorigin-video
- * Description: Add video from YouTube, Vimeo or another provider.
+ * Description: Embed a responsive video from YouTube, Vimeo, or other providers.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

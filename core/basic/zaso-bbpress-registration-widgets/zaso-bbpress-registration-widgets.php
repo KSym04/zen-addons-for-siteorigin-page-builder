@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - bbPress Registration
  * Widget ID: zen-addons-siteorigin-bbpress-registration
- * Description: Display the bbPress registration form.
+ * Description: Embed the bbPress account registration form.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

@@ -67,6 +67,10 @@ foreach ( $zaso_ids as $zaso_id ) {
 							}
 							$zaso_on   = ! empty( $zaso_active[ $zaso_wid ] );
 							$zaso_name = preg_replace( '/^ZASO\s*-\s*/', '', $zaso_meta['name'] );
+							if ( '' === trim( (string) $zaso_name ) ) {
+								// Fallback: humanize the widget id if the header name is missing.
+								$zaso_name = ucwords( str_replace( array( 'zaso-', '-widgets', '-' ), array( '', '', ' ' ), $zaso_wid ) );
+							}
 							?>
 							<label class="zaso-card<?php echo $zaso_on ? ' is-active' : ''; ?>">
 								<input type="checkbox" name="zaso_widgets[]" value="<?php echo esc_attr( $zaso_wid ); ?>" <?php checked( $zaso_on ); ?> <?php disabled( ! $zaso_bundle_ok ); ?> />

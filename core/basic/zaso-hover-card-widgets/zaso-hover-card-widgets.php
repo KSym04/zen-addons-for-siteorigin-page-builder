@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Hover Card
  * Widget ID: zen-addons-siteorigin-hover-card
- * Description: Display image box, title caption and learn more button with hover transition.
+ * Description: Show an image card with a title and button that animate on hover.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

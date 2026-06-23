@@ -24,39 +24,39 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 
 **Layout and content**
 
-* Spacer: add controlled vertical space between elements.
-* Alert Box: contextual, styled alert and notice messages.
-* Widgetized: display an existing widget sidebar inside your page content.
+* Spacer: add adjustable vertical spacing between rows and widgets.
+* Alert Box: show a styled info, success, warning, or error message.
+* Widgetized: place an existing widget sidebar inside your page content.
 
 **Interactive**
 
-* Simple Accordion / Toggle: vertically stacked collapsible panels.
-* Basic Tabs: multiple panels in a single tabbed window.
+* Simple Accordion / Toggle: stack content into collapsible, toggleable panels.
+* Basic Tabs: organize content into a set of clickable, accessible tabs.
 
 **Media**
 
-* Video: embed YouTube, Vimeo, and other provider videos.
-* YouTube Video Lightbox: open a YouTube video in a pop-up lightbox.
-* Vimeo Video Lightbox: open a Vimeo video in a pop-up lightbox.
+* Video: embed a responsive video from YouTube, Vimeo, or other providers.
+* YouTube Video Lightbox: open a YouTube video in a clickable pop-up lightbox.
+* Vimeo Video Lightbox: open a Vimeo video in a clickable pop-up lightbox.
 
 **Business and marketing**
 
-* Info Box: image, title, description, and a learn-more button.
-* Hover Card: image card with a title and call-to-action that animates on hover.
-* Icon: a single icon from an icon font or a custom upload.
-* Image Icon Group: a row or grid of linked image icons.
+* Info Box: feature an image, title, text, and call-to-action button together.
+* Hover Card: show an image card with a title and button that animate on hover.
+* Icon: display a single icon from an icon font or your own upload.
+* Image Icon Group: display a row or grid of linked image icons.
 
 **Community (bbPress)**
 
-* bbPress Forum Index: display the full bbPress forum index.
-* bbPress Topic Index: show the most recent topics with optional pagination and search.
-* bbPress Login: the bbPress login form.
-* bbPress Registration: the bbPress registration form.
-* bbPress Lost Password: the bbPress password recovery form.
+* bbPress Forum Index: show the full bbPress forum index in your layout.
+* bbPress Topic Index: list recent bbPress topics with optional search and pagination.
+* bbPress Login: embed the bbPress member login form.
+* bbPress Registration: embed the bbPress account registration form.
+* bbPress Lost Password: embed the bbPress lost password recovery form.
 
 **Integrations**
 
-* Contact Form 7: place any Contact Form 7 form into a SiteOrigin layout.
+* Contact Form 7: drop any Contact Form 7 form into a SiteOrigin layout.
 
 = Where to find your widgets =
 

@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Basic Tabs
  * Widget ID: zen-addons-siteorigin-basic-tabs
- * Description: Create multiple panels contained in a single window.
+ * Description: Organize content into a set of clickable, accessible tabs.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

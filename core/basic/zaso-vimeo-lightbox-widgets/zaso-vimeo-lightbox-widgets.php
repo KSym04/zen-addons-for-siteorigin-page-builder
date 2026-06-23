@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Vimeo Lightbox
  * Widget ID: zen-addons-siteorigin-vimeo-lightbox
- * Description: Pop-up lightbox for Vimeo videos.
+ * Description: Open a Vimeo video in a clickable pop-up lightbox.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

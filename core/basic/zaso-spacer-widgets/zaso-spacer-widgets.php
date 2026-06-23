@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Spacer
  * Widget ID: zen-addons-siteorigin-spacer
- * Description: Create an empty space between elements.
+ * Description: Add adjustable vertical spacing between rows and widgets.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

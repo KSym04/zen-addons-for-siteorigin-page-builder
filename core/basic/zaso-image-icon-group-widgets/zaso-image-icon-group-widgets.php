@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Image Icon Group
  * Widget ID: zen-addons-siteorigin-image-icon-group
- * Description: Set group of image icon.
+ * Description: Display a row or grid of linked image icons.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

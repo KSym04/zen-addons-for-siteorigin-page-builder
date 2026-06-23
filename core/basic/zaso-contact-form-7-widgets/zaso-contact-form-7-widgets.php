@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Contact Form 7
  * Widget ID: zen-addons-siteorigin-contact-form-7
- * Description: Display CF7 form.
+ * Description: Drop any Contact Form 7 form into a SiteOrigin layout.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

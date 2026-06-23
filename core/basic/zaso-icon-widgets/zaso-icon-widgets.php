@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Icon
  * Widget ID: zen-addons-siteorigin-icon
- * Description: Set single icon on popular iconic font or upload your custom icon.
+ * Description: Display a single icon from an icon font or your own upload.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

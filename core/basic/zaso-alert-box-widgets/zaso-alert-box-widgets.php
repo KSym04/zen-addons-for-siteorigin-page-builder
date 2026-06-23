@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - Alert Box
  * Widget ID: zen-addons-siteorigin-alert-box
- * Description: Create contextual feedback and flexible alert messages.
+ * Description: Show a styled info, success, warning, or error message.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */

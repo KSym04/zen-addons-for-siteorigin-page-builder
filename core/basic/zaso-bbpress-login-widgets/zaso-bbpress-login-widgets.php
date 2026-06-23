@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
  * Widget Name: ZASO - bbPress Login
  * Widget ID: zen-addons-siteorigin-bbpress-login
- * Description: Display the bbPress login form.
+ * Description: Embed the bbPress member login form.
  * Author: DopeThemes
  * Author URI: https://www.dopethemes.com/
  */
