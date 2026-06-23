@@ -1,9 +1,10 @@
 === Zen Addons for SiteOrigin Page Builder ===
 Contributors: ksym04
 Tags: zaso, widgets, siteorigin, addons, page builder
-Requires at least: 4.4
-Tested up to: 6.3
-Stable tag: 1.0.18
+Requires at least: 5.5
+Tested up to: 7.0
+Requires PHP: 7.4
+Stable tag: 1.1.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -14,8 +15,8 @@ Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Buil
 Zen Addons for SiteOrigin Page Builder provides you with a collection of widgets you can use and customize. All widgets are developed under the SiteOrigin widget framework.
 
 = Builder Framework Compatibility =
-- Page Builder by SiteOrigin (tested plugin version up to): 2.25.1
-- SiteOrigin Widgets Bundle (tested plugin version up to): 1.53.0
+- Page Builder by SiteOrigin (tested plugin version up to): 2.34.3
+- SiteOrigin Widgets Bundle (tested plugin version up to): 1.73.1
 
 = Widget Features =
 - Spacer: Creates empty space between elements.
@@ -66,10 +67,20 @@ First, ensure that the 'SiteOrigin Widgets Bundle' plugin is installed. Then, to
 
 == Upgrade Notice ==
 
+= 1.1.0 =
+Compatibility update for WordPress 7.0, plus performance and reliability improvements.
+
 = 1.0.18 =
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.1.0 =
+* Tweak: Bundle the Lity lightbox library locally instead of loading it from a CDN.
+* Tweak: Cache the DopeThemes dashboard news request to avoid an external call on every admin page load.
+* Tweak: Declare SiteOrigin Widgets Bundle as a required plugin.
+* Fix: Remove plugin options on uninstall for a clean removal.
+* Test: WordPress 7.0 compatibility.
 
 = 1.0.18 =
 * Tweak: Code documentation - Spacer widgets, functions

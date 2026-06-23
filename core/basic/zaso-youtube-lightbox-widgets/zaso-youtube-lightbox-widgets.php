@@ -100,7 +100,7 @@ class Zen_Addons_SiteOrigin_Youtube_Lightbox_Widget extends SiteOrigin_Widget {
 			array(
 				array(
 					'lity',
-					'https://cdn.jsdelivr.net/npm/lity@2.4.1/dist/lity.min.css',
+					ZASO_BASE_DIR . 'assets/vendor/lity/lity.min.css',
 					array(),
 					ZASO_VERSION
 				)
@@ -122,7 +122,7 @@ class Zen_Addons_SiteOrigin_Youtube_Lightbox_Widget extends SiteOrigin_Widget {
 			array(
 				array(
 					'lity',
-					'https://cdn.jsdelivr.net/npm/lity@2.4.1/dist/lity.min.js',
+					ZASO_BASE_DIR . 'assets/vendor/lity/lity.min.js',
 					array( 'jquery' ),
 					ZASO_VERSION
 				)

@@ -45,11 +45,18 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
          * @return array
          */
         public function get_dopethemes_posts() {
-			// Make a request to the REST API.
-			$response = wp_remote_get( 'https://www.dopethemes.com/wp-json/wp/v2/posts' );
+			// Serve from cache to avoid an external request on every admin page load.
+			$cached = get_transient( 'zaso_dopethemes_posts' );
+			if ( false !== $cached ) {
+				return $cached;
+			}
 
-			// Check for errors.
-			if( is_wp_error( $response ) ) {
+			// Make a request to the REST API, limiting fields and count for a lighter payload.
+			$response = wp_remote_get( 'https://www.dopethemes.com/wp-json/wp/v2/posts?per_page=3&_fields=link,title' );
+
+			// On failure, cache an empty result briefly so a slow/down endpoint cannot be hammered.
+			if ( is_wp_error( $response ) ) {
+				set_transient( 'zaso_dopethemes_posts', array(), HOUR_IN_SECONDS );
 				return array();
 			}
 
@@ -57,12 +64,14 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
 			$posts = json_decode( wp_remote_retrieve_body( $response ), true );
 
 			// Check if we have posts.
-			if( empty( $posts ) ) {
+			if ( empty( $posts ) || ! is_array( $posts ) ) {
+				set_transient( 'zaso_dopethemes_posts', array(), HOUR_IN_SECONDS );
 				return array();
 			}
 
-			// Get the latest 3 posts.
+			// Get the latest 3 posts and cache them for 12 hours.
 			$posts = array_slice( $posts, 0, 3 );
+			set_transient( 'zaso_dopethemes_posts', $posts, 12 * HOUR_IN_SECONDS );
 
 			return $posts;
 		}

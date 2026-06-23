@@ -1,5 +1,12 @@
 Changelog
 
+1.1.0
+- Tweak: Bundle the Lity lightbox library locally instead of loading it from a CDN.
+- Tweak: Cache the DopeThemes dashboard news request to avoid an external call on every admin page load.
+- Tweak: Declare SiteOrigin Widgets Bundle as a required plugin.
+- Fix: Remove plugin options on uninstall for a clean removal.
+- Test: WordPress 7.0 compatibility.
+
 1.0.18
 - Tweak: Code documentation - Spacer widgets, functions
 - Tweak: Minor improvements and bug fixes

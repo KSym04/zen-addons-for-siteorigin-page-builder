@@ -19,3 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	die; // Exit if uninstall script is not called by WordPress.
 }
+
+// Remove the DopeThemes dashboard dismissal flag and its cached posts.
+delete_option( 'dopethemes_dismissed' );
+delete_transient( 'zaso_dopethemes_posts' );

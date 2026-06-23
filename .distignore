@@ -1,0 +1,37 @@
+# Release exclude gate for Zen Addons (consumed by scripts/build-plugin-release.sh).
+# Keep the WordPress.org zip dev-free, AI-free, and strategy-free.
+# NOTE: do NOT exclude *.less or compiled *.css — SiteOrigin needs them at runtime.
+
+# This file itself
+.distignore
+
+# Dev / build tooling
+.gitignore
+.editorconfig
+.travis.yml
+package.json
+package-lock.json
+gulpfile.js
+.github/
+node_modules/
+
+# Source/build artifacts (compiled .css ships; sources + maps do not)
+*.scss
+*.css.map
+
+# GitHub-only readme (WordPress.org uses readme.txt)
+readme.md
+README.md
+
+# AI / planning / strategy — must never enter a public release
+*strategy*
+*Strategy*
+CLAUDE.md
+AGENTS.md
+MEMORY.md
+MILESTONE*
+ROADMAP*
+*.prompt.md
+*.instructions.md
+*.agent.md
+.claude/
