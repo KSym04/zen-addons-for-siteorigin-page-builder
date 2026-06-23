@@ -1,0 +1,42 @@
+.zaso-youtube-lightbox {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.zaso-youtube-lightbox a {
+  position: relative;
+  display: inline-block;
+}
+.zaso-youtube-lightbox__playbutton, .zaso-youtube-lightbox__playbutton-hover {
+  display: inline-block;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.zaso-youtube-lightbox__playbutton-hover {
+  display: inline-block;
+  opacity: 0;
+}
+.zaso-youtube-lightbox:hover .zaso-youtube-lightbox__playbutton {
+  opacity: 0;
+}
+.zaso-youtube-lightbox:hover .zaso-youtube-lightbox__playbutton-hover {
+  opacity: 1;
+}
+.zaso-youtube-lightbox__inner img {
+  width: 100%;
+}
+
+.lity {
+  z-index: 999999;
+}
+.lity-iframe-container {
+  overflow: initial;
+}
+
+/*# sourceMappingURL=style.css.map */

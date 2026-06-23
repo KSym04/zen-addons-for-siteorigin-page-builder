@@ -1,0 +1,43 @@
+@reset_margin: 0;
+@reset_padding: 0;
+
+@spacings_margin: default;
+@spacings_padding: default;
+
+.zaso-image-icon-group {
+  padding: @reset_margin;
+  margin: @reset_padding;
+
+  &__list {
+    padding: @reset_margin;
+    margin: @reset_padding;
+    list-style-type: none;
+  }
+
+  &__list.vertical {
+    li {
+        display: block;
+        margin: @spacings_margin;
+        padding: @spacings_padding;
+        list-style: none;
+    }
+  }
+
+  &__list.horizontal {
+    li {
+        display: inline-block;
+        margin: @spacings_margin;
+        padding: @spacings_padding;
+        list-style: none;
+    }
+  }
+
+  &__list.adapt {
+    li {
+        display: flex;
+        margin: @spacings_margin;
+        padding: @spacings_padding;
+        list-style: none;
+    }
+  }
+}

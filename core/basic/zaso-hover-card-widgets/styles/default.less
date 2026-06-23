@@ -1,0 +1,164 @@
+@reset_margin: 0;
+@reset_padding: 0;
+
+@caption_background_color: default;
+@caption_background_opacity: default;
+@caption_font_color: default;
+@caption_font_size: default;
+@caption_font_alignment: default;
+@caption_font_weight: default;
+@caption_font_transform: default;
+@caption_margin: default;
+@caption_padding: default;
+
+@hover_card_box_shadow: default;
+@hover_card_box_shadow_color: default;
+@hover_card_box_shadow_opacity: default;
+
+@modal_background_color: default;
+@modal_background_color_opacity: default;
+@modal_background_color_hover: default;
+@modal_background_color_opacity_hover: default;
+@modal_button_border_color: default;
+@modal_button_border_color_hover: default;
+@modal_button_font_color: default;
+@modal_button_font_color_hover: default;
+@modal_button_font_size: default;
+@modal_button_font_weight: default;
+@modal_button_font_transform: default;
+@modal_button_padding: default;
+
+.zaso-hover-card {
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  margin: @reset_margin;
+  padding: @reset_padding;
+  box-shadow: @hover_card_box_shadow fade( @hover_card_box_shadow_color, @hover_card_box_shadow_opacity );
+
+  &__box {
+    position: relative;
+    margin: @reset_margin;
+    padding: @reset_padding;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__media {
+    img {
+      visibility: hidden;
+    }
+  }
+
+  /* caption */
+  &__caption {
+    background-color: fade( @caption_background_color, @caption_background_opacity );
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: @caption_margin;
+    padding: @caption_padding;
+
+    &-title {
+      margin: @reset_margin;
+      padding: @reset_padding;
+      font-family: inherit;
+      font-size: @caption_font_size;
+      font-weight: @caption_font_weight;
+      color: @caption_font_color;
+      text-align: @caption_font_alignment;
+      text-transform: @caption_font_transform;
+    }
+  }
+
+  &__caption--fadein {
+    transition: 0.7s bottom ease-in-out;
+    bottom: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* modal */
+  &__modal {
+    background-color: fade( @caption_background_color, @caption_background_opacity );
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: @caption_font_alignment;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__modal-title {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 20px;
+    padding: @reset_padding;
+    font-family: inherit;
+    font-size: @caption_font_size;
+    font-weight: @caption_font_weight;
+    color: @caption_font_color;
+    text-align: @caption_font_alignment;
+    text-transform: @caption_font_transform;
+  }
+
+  p {
+    font-family: inherit;
+    color: @caption_font_color;
+    font-size: 16px;
+    padding: 0 40px;
+  }
+
+  &__modal-action {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: @modal_button_padding;
+    font-family: inherit;
+    font-size: @modal_button_font_size;
+    font-weight: @modal_button_font_weight;
+    text-decoration: none;
+    text-transform: @modal_button_font_transform;
+    color: @modal_button_font_color;
+    line-height: 1;
+    background-color: fade( @modal_background_color, @modal_background_color_opacity );
+    border: 1px solid @modal_button_border_color;
+
+    &:hover {
+      background-color: fade( @modal_background_color_hover, @modal_background_color_opacity_hover );
+      color: @modal_button_font_color_hover;
+      border: 1px solid @modal_button_border_color_hover;
+    }
+  }
+
+  &__modal--fadein {
+    transition: 0.3s opacity ease-in-out;
+    opacity: 0;
+    top: 0;
+  }
+}
+
+/* animations and transitions */
+.zaso-hover-card:hover {
+  .zaso-hover-card__caption {
+    &--fadein {
+      visibility: hidden;
+      opacity: 1;
+      bottom: -100%;
+    }
+  }
+
+  .zaso-hover-card__modal {
+    &--action {
+      opacity: 1;
+    }
+
+    &--fadein {
+      opacity: 1;
+    }
+  }
+}

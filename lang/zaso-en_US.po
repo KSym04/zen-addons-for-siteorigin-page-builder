@@ -1,0 +1,1093 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Zen Addons for SiteOrigin Page Builder\n"
+"POT-Creation-Date: 2020-11-12 12:48+0800\n"
+"PO-Revision-Date: 2020-11-12 12:48+0800\n"
+"Last-Translator: \n"
+"Language-Team: DopeThemes <hello@dopethemes.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:13
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:42
+msgid "Close"
+msgstr "Close"
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:14
+msgid "&times;"
+msgstr "&times;"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:21
+msgid "Messages"
+msgstr "Messages"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:25
+msgid "Close Button"
+msgstr "Close Button"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:28
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:43
+msgid "Show"
+msgstr "Show"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:29
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:44
+msgid "Hide"
+msgstr "Hide"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:34
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:46
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:48
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:21
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:21
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:49
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:43
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:375
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:65
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:134
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:47
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:59
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:27
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:49
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:68
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:38
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:60
+msgid "Extra ID"
+msgstr "Extra ID"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:35
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:47
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:49
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:22
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:22
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:50
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:44
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:376
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:66
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:135
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:48
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:60
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:28
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:50
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:69
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:39
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:61
+msgid "Add an extra ID."
+msgstr "Add an extra ID."
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:39
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:51
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:53
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:26
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:26
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:54
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:48
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:380
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:70
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:139
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:52
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:64
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:32
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:54
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:73
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:43
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:65
+msgid "Extra Class"
+msgstr "Extra Class"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:40
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:52
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:54
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:27
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:27
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:55
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:49
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:381
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:71
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:140
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:53
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:65
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:33
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:55
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:74
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:44
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:66
+msgid "Add an extra class for styling overrides."
+msgstr "Add an extra class for styling overrides."
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:44
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:56
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:49
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:69
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:37
+msgid "Design"
+msgstr "Design"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:49
+msgid "Alert Box"
+msgstr "Alert Box"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:54
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:66
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:189
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:79
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:186
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:42
+msgid "Background Color"
+msgstr "Background Color"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:59
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:76
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:194
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:89
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:191
+msgid "Font Color"
+msgstr "Font Color"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:64
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:199
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:196
+msgid "Font Size"
+msgstr "Font Size"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:69
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:128
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:204
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:76
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:125
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:201
+msgid "Margin"
+msgstr "Margin"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:74
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:101
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:133
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:160
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:209
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:236
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:138
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:165
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:349
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:81
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:108
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:130
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:157
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:206
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:233
+msgid "Top"
+msgstr "Top"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:79
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:106
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:123
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:138
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:165
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:214
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:241
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:111
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:143
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:170
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:354
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:86
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:113
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:120
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:135
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:162
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:211
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:238
+msgid "Right"
+msgstr "Right"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:84
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:111
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:143
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:170
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:219
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:246
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:148
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:175
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:359
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:91
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:118
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:140
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:167
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:216
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:243
+msgid "Bottom"
+msgstr "Bottom"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:89
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:116
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:121
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:148
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:175
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:224
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:251
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:110
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:153
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:180
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:364
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:96
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:123
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:118
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:145
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:172
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:221
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:248
+msgid "Left"
+msgstr "Left"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:96
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:155
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:231
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:103
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:152
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:228
+msgid "Padding"
+msgstr "Padding"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:123
+msgid "Border Settings"
+msgstr "Border Settings"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:128
+msgid "Top Border Width"
+msgstr "Top Border Width"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:133
+msgid "Right Border Width"
+msgstr "Right Border Width"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:138
+msgid "Bottom Border Width"
+msgstr "Bottom Border Width"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:143
+msgid "Left Border Width"
+msgstr "Left Border Width"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:148
+msgid "Top Border Radius"
+msgstr "Top Border Radius"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:153
+msgid "Right Border Radius"
+msgstr "Right Border Radius"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:158
+msgid "Bottom Border Radius"
+msgstr "Bottom Border Radius"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:163
+msgid "Left Border Radius"
+msgstr "Left Border Radius"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:168
+msgid "Border Style"
+msgstr "Border Style"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:171
+msgid "none"
+msgstr "none"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:172
+msgid "Hidden"
+msgstr "Hidden"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:173
+msgid "Dotted"
+msgstr "Dotted"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:174
+msgid "Dashed"
+msgstr "Dashed"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:175
+msgid "Solid"
+msgstr "Solid"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:176
+msgid "Double"
+msgstr "Double"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:177
+msgid "Groove"
+msgstr "Groove"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:178
+msgid "Ridge"
+msgstr "Ridge"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:179
+msgid "Inset"
+msgstr "Inset"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:180
+msgid "Outset"
+msgstr "Outset"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:185
+msgid "Border Color"
+msgstr "Border Color"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:201
+msgid "ZASO - Alert Box"
+msgstr "ZASO - Alert Box"
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:203
+msgid "Create contextual feedback and flexible alert messages."
+msgstr "Create contextual feedback and flexible alert messages."
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:21
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:31
+msgid "Title"
+msgstr "Title"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:25
+msgid "Tab List"
+msgstr "Tab List"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:26
+msgid "Single Tab"
+msgstr "Single Tab"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:35
+msgid "Tab Title"
+msgstr "Tab Title"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:39
+msgid "Tab Content"
+msgstr "Tab Content"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:61
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:74
+msgid "Headings"
+msgstr "Headings"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:71
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:84
+msgid "Background Hover Color"
+msgstr "Background Hover Color"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:81
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:94
+msgid "Font Color Hover"
+msgstr "Font Color Hover"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:86
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:99
+msgid "Font Weight"
+msgstr "Font Weight"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:89
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:105
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:102
+msgid "100"
+msgstr "100"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:90
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:106
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:103
+msgid "200"
+msgstr "200"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:91
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:107
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:104
+msgid "300"
+msgstr "300"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:92
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:108
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:105
+msgid "400 - Normal"
+msgstr "400 - Normal"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:93
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:109
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:106
+msgid "500"
+msgstr "500"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:94
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:110
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:107
+msgid "600"
+msgstr "600"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:95
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:111
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:108
+msgid "700 - Bold"
+msgstr "700 - Bold"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:96
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:112
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:109
+msgid "800"
+msgstr "800"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:97
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:113
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:110
+msgid "900"
+msgstr "900"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:102
+msgid "Font Weight Hover"
+msgstr "Font Weight Hover"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:118
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:115
+msgid "Text Align"
+msgstr "Text Align"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:122
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:112
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:119
+msgid "Center"
+msgstr "Center"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:184
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:181
+msgid "Panels"
+msgstr "Panels"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:267
+msgid "ZASO - Basic Tabs"
+msgstr "ZASO - Basic Tabs"
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:269
+msgid "Create multiple panels contained in a single window."
+msgstr "Create multiple panels contained in a single window."
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:21
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:31
+msgid "Show Pagination"
+msgstr "Show Pagination"
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:24
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:33
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:42
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:34
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:43
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:60
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:31
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:41
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:51
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:29
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:37
+msgid "Yes"
+msgstr "Yes"
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:25
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:34
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:43
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:35
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:44
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:61
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:30
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:40
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:50
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:28
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:36
+msgid "No"
+msgstr "No"
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:30
+msgid "Show Breadcrumbs"
+msgstr "Show Breadcrumbs"
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:39
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:40
+msgid "Show Search"
+msgstr "Show Search"
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:63
+msgid "ZASO - bbPress Forum Index"
+msgstr "ZASO - bbPress Forum Index"
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:65
+msgid "Display entire bbPress forum index."
+msgstr "Display entire bbPress forum index."
+
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:36
+msgid "ZASO - bbPress Login"
+msgstr "ZASO - bbPress Login"
+
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:38
+msgid "Display the bbPress login form."
+msgstr "Display the bbPress login form."
+
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:36
+msgid "ZASO - bbPress Registration"
+msgstr "ZASO - bbPress Registration"
+
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:38
+msgid "Display the bbPress registration form."
+msgstr "Display the bbPress registration form."
+
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:64
+msgid "ZASO - bbPress Topic Index"
+msgstr "ZASO - bbPress Topic Index"
+
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:66
+msgid ""
+"Display recent 15 topics across all forums with optional pagination and "
+"search."
+msgstr ""
+"Display recent 15 topics across all forums with optional pagination and "
+"search."
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:31
+msgid "No existing form."
+msgstr "No existing form."
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:38
+msgid "What CF7 form do you want to display?"
+msgstr "What CF7 form do you want to display?"
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:58
+msgid "ZASO - Contact Form 7"
+msgstr "ZASO - Contact Form 7"
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:60
+msgid "Display CF7 form."
+msgstr "Display CF7 form."
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:21
+msgid "Title Caption"
+msgstr "Title Caption"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:25
+msgid "Featured Image"
+msgstr "Featured Image"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:31
+msgid "Action Text"
+msgstr "Action Text"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:32
+#: zen-addons-siteorigin.php:123
+msgid "Learn More"
+msgstr "Learn More"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:36
+msgid "Action URL"
+msgstr "Action URL"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:41
+msgid "Hover Animation"
+msgstr "Hover Animation"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:44
+msgid "Fade In"
+msgstr "Fade In"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:54
+msgid "Hover Card"
+msgstr "Hover Card"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:59
+msgid "Caption Background Color"
+msgstr "Caption Background Color"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:64
+msgid "Caption Background Opacity"
+msgstr "Caption Background Opacity"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:81
+msgid "Caption Font Color"
+msgstr "Caption Font Color"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:86
+msgid "Caption Font Size"
+msgstr "Caption Font Size"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:91
+msgid "Caption Font Weight"
+msgstr "Caption Font Weight"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:107
+msgid "Caption Text Alignment"
+msgstr "Caption Text Alignment"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:113
+msgid "Justify"
+msgstr "Justify"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:114
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:127
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:338
+msgid "Initial"
+msgstr "Initial"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:115
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:128
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:339
+msgid "Inherit"
+msgstr "Inherit"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:120
+msgid "Caption Text Transform"
+msgstr "Caption Text Transform"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:123
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:334
+msgid "None"
+msgstr "None"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:124
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:335
+msgid "Capitalize"
+msgstr "Capitalize"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:125
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:336
+msgid "Uppercase"
+msgstr "Uppercase"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:126
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:337
+msgid "Lowecase"
+msgstr "Lowecase"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:133
+msgid "Caption Margin"
+msgstr "Caption Margin"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:160
+msgid "Caption Padding"
+msgstr "Caption Padding"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:187
+msgid "Card Box Shadow"
+msgstr "Card Box Shadow"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:192
+msgid "Horizontal Offset"
+msgstr "Horizontal Offset"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:197
+msgid "Vertical Offset"
+msgstr "Vertical Offset"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:202
+msgid "Blur"
+msgstr "Blur"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:207
+msgid "Spread"
+msgstr "Spread"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:212
+msgid "Shadow Color"
+msgstr "Shadow Color"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:217
+msgid "Shadow Color Opacity"
+msgstr "Shadow Color Opacity"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:230
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:262
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:285
+msgid "(transparent)"
+msgstr "(transparent)"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:239
+msgid "Modal Button"
+msgstr "Modal Button"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:244
+msgid "Button Background Color"
+msgstr "Button Background Color"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:249
+msgid "Button Background Opacity"
+msgstr "Button Background Opacity"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:267
+msgid "Button Background Color (Hover)"
+msgstr "Button Background Color (Hover)"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:272
+msgid "Button Background Opacity (Hover)"
+msgstr "Button Background Opacity (Hover)"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:290
+msgid "Button Border Color"
+msgstr "Button Border Color"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:295
+msgid "Button Border Color (hover)"
+msgstr "Button Border Color (hover)"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:300
+msgid "Button Font Color"
+msgstr "Button Font Color"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:305
+msgid "Button Font Color (Hover)"
+msgstr "Button Font Color (Hover)"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:310
+msgid "Button Font Size"
+msgstr "Button Font Size"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:315
+msgid "Button Font Weight"
+msgstr "Button Font Weight"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:331
+msgid "Button Text Transform"
+msgstr "Button Text Transform"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:344
+msgid "Button Padding"
+msgstr "Button Padding"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:390
+msgid "ZASO - Hover Card"
+msgstr "ZASO - Hover Card"
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:392
+msgid ""
+"Display image box, title caption and learn more button with hover transition"
+msgstr ""
+"Display image box, title caption and learn more button with hover transition"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:21
+msgid "Icon"
+msgstr "Icon"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:25
+msgid "Custom Icon"
+msgstr "Custom Icon"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:26
+msgid "Override \"Icon\", Upload your custom icon here."
+msgstr "Override \"Icon\", Upload your custom icon here."
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:32
+msgid "Icon Color"
+msgstr "Icon Color"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:37
+msgid "Icon Size"
+msgstr "Icon Size"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:42
+msgid "Icon Destination URL"
+msgstr "Icon Destination URL"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:47
+msgid "Open in a new window"
+msgstr "Open in a new window"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:51
+msgid "Icon Text"
+msgstr "Icon Text"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:55
+msgid "Icon Text Color"
+msgstr "Icon Text Color"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:60
+msgid "Icon Text Size"
+msgstr "Icon Text Size"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:80
+msgid "ZASO - Icon"
+msgstr "ZASO - Icon"
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:82
+msgid "Set single icon on popular iconic font or upload your custom icon."
+msgstr "Set single icon on popular iconic font or upload your custom icon."
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:21
+msgid "Image Icon Group"
+msgstr "Image Icon Group"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:22
+msgid "Single Image Icon"
+msgstr "Single Image Icon"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:35
+msgid "Image Icon"
+msgstr "Image Icon"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:41
+msgid "Link"
+msgstr "Link"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:48
+msgid "Icon Group Layout"
+msgstr "Icon Group Layout"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:51
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:52
+msgid "Vertical"
+msgstr "Vertical"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:57
+msgid "Show Title"
+msgstr "Show Title"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:66
+msgid "Icon Spacings"
+msgstr "Icon Spacings"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:71
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:50
+msgid "Settings"
+msgstr "Settings"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:149
+msgid "ZASO - Image Icon Group"
+msgstr "ZASO - Image Icon Group"
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:151
+msgid "Set group of image icon."
+msgstr "Set group of image icon."
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:21
+msgid "Info Title"
+msgstr "Info Title"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:25
+msgid "Info Short Description"
+msgstr "Info Short Description"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:29
+msgid "Info Featured Image"
+msgstr "Info Featured Image"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:35
+#, fuzzy
+#| msgid "Info Featured Image"
+msgid "Info Featured Image Size"
+msgstr "Info Featured Image"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:39
+msgid "Info Button text"
+msgstr "Info Button text"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:43
+msgid "Info Button Url"
+msgstr "Info Button Url"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:62
+msgid "ZASO - Info Box"
+msgstr "ZASO - Info Box"
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:64
+msgid ""
+"Display information box - image, title, description and learn more button "
+"link"
+msgstr ""
+"Display information box - image, title, description and learn more button "
+"link"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:21
+msgid "Accordion List"
+msgstr "Accordion List"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:22
+msgid "Single Item"
+msgstr "Single Item"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:31
+msgid "Accordion Title"
+msgstr "Accordion Title"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:35
+msgid "Accordion Content"
+msgstr "Accordion Content"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:40
+msgid "Accordion Initial State"
+msgstr "Accordion Initial State"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:43
+msgid "Open"
+msgstr "Open"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:53
+msgid "Allow Multiple Open"
+msgstr "Allow Multiple Open"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:54
+msgid "Single Open Only"
+msgstr "Single Open Only"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:264
+msgid "ZASO - Simple Accordion"
+msgstr "ZASO - Simple Accordion"
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:266
+msgid "Create a vertically stacked list of items or single panel."
+msgstr "Create a vertically stacked list of items or single panel."
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:22
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:36
+msgid "Height"
+msgstr "Height"
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:23
+msgid "Set empty space height."
+msgstr "Set empty space height."
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:54
+msgid "ZASO - Spacer"
+msgstr "ZASO - Spacer"
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:56
+msgid "Create an empty space between elements."
+msgstr "Create an empty space between elements."
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:21
+msgid "Video URL"
+msgstr "Video URL"
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:22
+msgid ""
+"Insert your video URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+msgstr ""
+"Insert your video URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:26
+msgid "Content"
+msgstr "Content"
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:31
+msgid "Width"
+msgstr "Width"
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:41
+msgid "Controls"
+msgstr "Controls"
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:64
+msgid "ZASO - Video"
+msgstr "ZASO - Video"
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:66
+msgid "Add video from YouTube, Vimeo or another provider."
+msgstr "Add video from YouTube, Vimeo or another provider."
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:21
+msgid "Vimeo Video ID"
+msgstr "Vimeo Video ID"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:22
+msgid "Insert Video ID, example: 12345678"
+msgstr "Insert Video ID, example: 12345678"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:26
+msgid "Loop"
+msgstr "Loop"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:27
+msgid "Play the video again when it reaches the end, infinitely."
+msgstr "Play the video again when it reaches the end, infinitely."
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:36
+msgid "Muted"
+msgstr "Muted"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:37
+msgid ""
+"Set video to mute on load. Viewers can still adjust the volume preferences "
+"in the player."
+msgstr ""
+"Set video to mute on load. Viewers can still adjust the volume preferences "
+"in the player."
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:46
+msgid "Do Not Track"
+msgstr "Do Not Track"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:47
+msgid ""
+"Setting this parameter to \"Yes\" will block the player from tracking any "
+"session data, including all cookies and stats."
+msgstr ""
+"Setting this parameter to \"Yes\" will block the player from tracking any "
+"session data, including all cookies and stats."
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:56
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:42
+msgid "Video Play Button Image"
+msgstr "Video Play Button Image"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:62
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:54
+msgid "Video Thumbnail"
+msgstr "Video Thumbnail"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:83
+msgid "ZASO - Vimeo Lightbox"
+msgstr "ZASO - Vimeo Lightbox"
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:85
+msgid "Pop-up lightbox for Viemo videos."
+msgstr "Pop-up lightbox for Viemo videos."
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:33
+msgid "Widget Sidebar"
+msgstr "Widget Sidebar"
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:53
+msgid "ZASO - Widgetized"
+msgstr "ZASO - Widgetized"
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:55
+msgid "Get existing widget sidebars to display on the main content."
+msgstr "Get existing widget sidebars to display on the main content."
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:21
+msgid "YouTube Video URL"
+msgstr "YouTube Video URL"
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:22
+msgid "Insert URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+msgstr "Insert URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:26
+msgid "Show Related Videos"
+msgstr "Show Related Videos"
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:34
+msgid "Show Info"
+msgstr "Show Info"
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:48
+msgid "Video Play Button Image (Hover)"
+msgstr "Video Play Button Image (Hover)"
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:75
+msgid "ZASO - YouTube Lightbox"
+msgstr "ZASO - YouTube Lightbox"
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:77
+msgid "Pop-up lightbox for YouTube videos."
+msgstr "Pop-up lightbox for YouTube videos."
+
+#: core/widgets.php:20
+msgid "ZASO Widgets"
+msgstr "ZASO Widgets"
+
+#: zen-addons-siteorigin.php:76
+msgid "Zen Addons for SiteOrigin"
+msgstr "Zen Addons for SiteOrigin"

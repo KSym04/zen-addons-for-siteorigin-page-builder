@@ -1,0 +1,78 @@
+@reset_margin: 0;
+@reset_padding: 0;
+@reset_border_radius: 0;
+
+@title_background_color: default;
+@title_background_color_hover: default;
+@title_font_color: default;
+@title_font_color_hover: default;
+@title_font_weight: default;
+@title_text_align: default;
+@title_margin: default;
+@title_padding: default;
+
+@content_background_color: default;
+@content_margin: default;
+@content_padding: default;
+@content_font_color: default;
+@content_font_size: default;
+
+.zaso-simple-accordion {
+  padding: @reset_margin;
+  margin: @reset_padding;
+
+  &__title button {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    background-color: @title_background_color;
+    border-radius: @reset_border_radius;
+    margin: @title_margin;
+    padding: @title_padding;
+    color: @title_font_color;
+    font-weight: @title_font_weight;
+    text-align: @title_text_align;
+  }
+
+  &__title button:hover {
+    background-color: @title_background_color_hover;
+    color: @title_font_color_hover;
+  }
+
+  &__content {
+    background-color: @content_background_color;
+    margin: @content_margin;
+    padding: @content_padding;
+    color: @content_font_color;
+    font-size: @content_font_size;
+    overflow: hidden;
+  }
+
+  &__content p {
+    padding: @reset_padding;
+    margin: 0 0 1em;
+  }
+
+  &__content p:last-child,
+  &__content p:last-of-type {
+    margin-bottom: @reset_margin;
+  }
+
+  &__title .zacc-collapsible-icon-open,
+  &__title .zacc-collapsible-icon-close {
+      float: right;
+      display: none;
+  }
+
+  &__title .zacc-collapsible-icon-close {
+      display: inline-block;
+  }
+
+  &__title.activate .zacc-collapsible-icon-close {
+    display: none;
+  }
+
+  &__title.activate .zacc-collapsible-icon-open {
+    display: inline-block;
+  }
+}

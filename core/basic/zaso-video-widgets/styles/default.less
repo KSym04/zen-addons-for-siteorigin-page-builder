@@ -1,0 +1,16 @@
+@reset_margin: 0;
+@reset_padding: 0;
+@video_control_visibility: default;
+@video_width: default;
+@video_height: default;
+
+.zaso-video {
+  @reset_margin: 0;
+  @reset_padding: 0;
+  width: @video_width;
+  height: @video_height;
+
+  &__box .mejs-controls {
+    display: @video_control_visibility;
+  }
+}

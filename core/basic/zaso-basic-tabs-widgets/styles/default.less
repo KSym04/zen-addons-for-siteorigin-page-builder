@@ -1,0 +1,79 @@
+@reset_margin: 0;
+@reset_padding: 0;
+@reset_border_radius: 0;
+@reset_background_color: transparent;
+
+@title_background_color: default;
+@title_background_color_hover: default;
+@title_font_color: default;
+@title_font_color_hover: default;
+@title_font_weight: default;
+@title_font_weight_hover: default;
+@title_text_align: default;
+@title_margin: default;
+@title_padding: default;
+@title_border_style: solid;
+@title_border_width: default;
+@title_border_color: default;
+
+@content_background_color: default;
+@content_margin: default;
+@content_padding: default;
+@content_font_color: default;
+@content_font_size: default;
+@content_border_style: solid;
+@content_border_width: default;
+@content_border_color: default;
+
+.zaso-basic-tabs {
+  margin: @reset_margin;
+  padding: @reset_padding;
+
+  &__title {
+    display: inline-block;
+    cursor: pointer;
+    background-color: @reset_background_color;
+    margin: @title_margin;
+    padding: @title_padding;
+    border-radius: @reset_border_radius;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px 0 0 0;
+    color: @title_font_color;
+    font-weight: @title_font_weight;
+    text-align: @title_text_align;
+  }
+
+  &__title:hover {
+    background-color: @title_background_color_hover;
+    border-style: solid;
+    border-color: #333333;
+    border-width: 2px 0 0 0;
+  }
+
+  &__title[aria-selected="true"] {
+    background-color: @title_background_color;
+    border-style: solid;
+    border-color: #333333;
+    border-width: 2px 0 0 0;
+    font-weight: @title_font_weight_hover;
+  }
+
+  &__content {
+    background-color: @content_background_color;
+    margin: @content_margin;
+    padding: @content_padding;
+    color: @content_font_color;
+    font-size: @content_font_size;
+  }
+
+  &__content p {
+    padding: @reset_padding;
+    margin: 0 0 1em;
+  }
+
+  &__content p:last-child,
+  &__content p:last-of-type {
+    margin-bottom: @reset_margin;
+  }
+}

@@ -1,0 +1,51 @@
+.zaso-youtube-lightbox {
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  a {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__playbutton,
+  &__playbutton-hover {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  &__playbutton-hover {
+    display: inline-block;
+    opacity: 0;
+  }
+
+  &:hover {
+    .zaso-youtube-lightbox__playbutton {
+      opacity: 0;
+    }
+
+    .zaso-youtube-lightbox__playbutton-hover {
+      opacity: 1;
+    }
+  }
+
+  &__inner {
+      img {
+          width: 100%;
+      }
+  }
+}
+
+.lity {
+  z-index: 999999;
+
+  &-iframe-container {
+    overflow: initial;
+  }
+}

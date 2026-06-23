@@ -1,0 +1,18 @@
+@reset_margin: 0;
+@reset_padding: 0;
+
+@bbpress_topic_index_theme_pagination: default;
+@bbpress_topic_index_theme_search: default;
+
+.zaso-bbpress-topic-index {
+  padding: @reset_margin;
+  margin: @reset_padding;
+
+  .bbp-search-form {
+    display: @bbpress_topic_index_theme_search !important;
+  }
+
+  .bbp-pagination {
+    display: @bbpress_topic_index_theme_pagination !important;
+  }
+}

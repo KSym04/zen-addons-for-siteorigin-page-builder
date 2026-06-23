@@ -1,0 +1,49 @@
+@color: default;
+@size: default;
+@icon_text_color: default;
+@icon_text_size: default;
+
+.zaso-icon {
+
+  &__block {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  &__media ,
+  &__text {
+    display: inline-block;
+  }
+
+  &__media a,
+  &__text a,
+  &__media a:hover,
+  &__text a:hover {
+    text-decoration: none;
+    box-shadow: none;
+    color: @icon_text_color;
+
+    & when ( isnumber( @icon_text_size ) ) {
+      font-size: @icon_text_size;
+    }
+
+  }
+
+  &__media a span:before,
+  &__text a span:before {
+    color: @color;
+    margin-right: 10px;
+
+    & when ( isnumber( @size ) ) {
+      font-size: @size;
+    }
+  }
+
+  &__media p,
+  &__text p {
+    margin: 0;
+    padding: 0;
+  }
+
+}
