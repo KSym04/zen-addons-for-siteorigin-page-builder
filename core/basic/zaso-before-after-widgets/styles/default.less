@@ -1,0 +1,145 @@
+@max_width: default;
+@border_radius: default;
+@handle_color: default;
+@handle_size: default;
+@divider_color: default;
+@divider_width: default;
+@label_bg: default;
+@label_color: default;
+
+.zaso-before-after {
+  max-width: @max_width;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__placeholder {
+    padding: 1.5em;
+    text-align: center;
+    background: #f1f5f9;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    color: #64748b;
+    margin: 0;
+  }
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+    border-radius: @border_radius;
+    line-height: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: none;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__before-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__container--horizontal &__before-img {
+    clip-path: inset(0 calc(100% - var(--zaso-ba-pos)) 0 0);
+  }
+
+  &__container--vertical &__before-img {
+    clip-path: inset(0 0 calc(100% - var(--zaso-ba-pos)) 0);
+  }
+
+  &__label {
+    position: absolute;
+    z-index: 2;
+    background: @label_bg;
+    color: @label_color;
+    padding: 0.3em 0.7em;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  &__label--before {
+    top: 0.75em;
+    left: 0.75em;
+  }
+
+  &__label--after {
+    top: 0.75em;
+    right: 0.75em;
+  }
+
+  &__container--vertical &__label--after {
+    top: auto;
+    right: auto;
+    bottom: 0.75em;
+    left: 0.75em;
+  }
+
+  &__handle {
+    position: absolute;
+    z-index: 3;
+    width: @handle_size;
+    height: @handle_size;
+    margin: 0;
+    padding: 0;
+    border: 2px solid @handle_color;
+    border-radius: 50%;
+    background: @handle_color;
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.2), 0 2px 6px rgba(15, 23, 42, 0.3);
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+  }
+
+  &__handle:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+  }
+
+  &__container--horizontal &__handle {
+    left: var(--zaso-ba-pos);
+    top: 50%;
+    cursor: ew-resize;
+  }
+
+  &__container--vertical &__handle {
+    top: var(--zaso-ba-pos);
+    left: 50%;
+    cursor: ns-resize;
+  }
+
+  // Divider line, drawn from the handle and clipped by the container.
+  &__handle::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: @divider_color;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__container--horizontal &__handle::before {
+    width: @divider_width;
+    height: 9999px;
+  }
+
+  &__container--vertical &__handle::before {
+    height: @divider_width;
+    width: 9999px;
+  }
+
+  &__handle-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
