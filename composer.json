@@ -1,0 +1,30 @@
+{
+	"name": "dopethemes/zen-addons-for-siteorigin-page-builder",
+	"description": "A focused collection of accessible, lightweight widget extensions for SiteOrigin Page Builder.",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://www.dopethemes.com/downloads/zen-addons-siteorigin/",
+	"authors": [
+		{
+			"name": "DopeThemes",
+			"homepage": "https://www.dopethemes.com/"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.9",
+		"wp-coding-standards/wpcs": "^3.1",
+		"phpcompatibility/phpcompatibility-wp": "^2.1"
+	},
+	"scripts": {
+		"phpcs": "phpcs --standard=phpcs.xml.dist",
+		"phpcbf": "phpcbf --standard=phpcs.xml.dist"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

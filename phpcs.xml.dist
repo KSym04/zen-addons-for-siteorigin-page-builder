@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<ruleset name="Zen Addons for SiteOrigin Page Builder">
+	<description>WordPress Coding Standards for Zen Addons for SiteOrigin Page Builder.</description>
+
+	<!-- Scan the plugin, skip dependencies and build output. -->
+	<file>.</file>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/assets/vendor/*</exclude-pattern>
+	<exclude-pattern>*.css</exclude-pattern>
+	<exclude-pattern>*.scss</exclude-pattern>
+	<exclude-pattern>*.js</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<rule ref="WordPress">
+		<!-- Widget files use the SiteOrigin/WP-boilerplate `slug.php` naming, not class-*.php. -->
+		<exclude name="WordPress.Files.FileName"/>
+	</rule>
+
+	<!-- Text domain (grandfathered: shipped as 'zaso' since 2017, kept for translation continuity). -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="zaso"/>
+		</properties>
+	</rule>
+
+	<!-- Enforce the plugin's global prefixes. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="zaso,ZASO,zen_addons_siteorigin"/>
+		</properties>
+	</rule>
+
+	<!-- Target PHP 7.4+ and WordPress 5.5+. -->
+	<config name="testVersion" value="7.4-"/>
+	<config name="minimum_wp_version" value="5.5"/>
+</ruleset>

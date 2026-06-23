@@ -1,37 +1,62 @@
 # Release exclude gate for Zen Addons (consumed by scripts/build-plugin-release.sh).
 # Keep the WordPress.org zip dev-free, AI-free, and strategy-free.
 # NOTE: do NOT exclude *.less or compiled *.css — SiteOrigin needs them at runtime.
+# Mirrors the FeedProof for WooCommerce release conventions.
 
 # This file itself
 .distignore
 
-# Dev / build tooling
+# VCS / dev tooling
+.git
 .gitignore
+.gitattributes
 .editorconfig
 .travis.yml
-package.json
-package-lock.json
-gulpfile.js
+.circleci/
 .github/
 node_modules/
+
+# AI assistant, strategy, and planning docs
+CLAUDE.md
+WORKSPACE-SETUP.md
+AGENTS.md
+MILESTONE-*.md
+ROADMAP-*.md
+*-strategy.md
+*strategy*.md
+*.prompt.md
+*.instructions.md
+*.agent.md
+.cursor/
+.cursorrules
+.aider*
+.claude/
+
+# Dev documentation (WordPress.org uses readme.txt, not these)
+README.md
+readme.md
+docs/
+
+# PHP / JS tooling and manifests
+composer.json
+composer.lock
+phpcs.xml
+phpcs.xml.dist
+phpstan.neon
+phpunit.xml
+phpunit.xml.dist
+package.json
+package-lock.json
+yarn.lock
+gulpfile.js
 
 # Source/build artifacts (compiled .css ships; sources + maps do not)
 *.scss
 *.css.map
 
-# GitHub-only readme (WordPress.org uses readme.txt)
-readme.md
-README.md
-
-# AI / planning / strategy — must never enter a public release
-*strategy*
-*Strategy*
-CLAUDE.md
-AGENTS.md
-MEMORY.md
-MILESTONE*
-ROADMAP*
-*.prompt.md
-*.instructions.md
-*.agent.md
-.claude/
+# Dev scripts, tests, build, logs
+scripts/
+tests/
+Makefile
+*.sh
+*.log

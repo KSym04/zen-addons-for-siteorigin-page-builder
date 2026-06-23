@@ -1,4 +1,27 @@
+# Dependencies / build output
 /node_modules/
 /vendor/
 /bower_components/
 package-lock.json
+composer.lock
+yarn.lock
+
+# AI assistant, strategy, and planning docs.
+# This repository is PUBLIC: never commit governance/strategy/AI files here.
+CLAUDE.md
+WORKSPACE-SETUP.md
+AGENTS.md
+MILESTONE-*.md
+ROADMAP-*.md
+*-strategy.md
+*strategy*.md
+.cursor/
+.cursorrules
+.aider*
+.claude/
+docs/internal/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
