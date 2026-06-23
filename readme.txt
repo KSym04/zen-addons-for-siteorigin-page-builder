@@ -167,6 +167,11 @@ For support, documentation, and feature requests, please visit [https://www.dope
 
 Please read the Frequently Asked Questions before opening a support request, and include your WordPress, SiteOrigin, and PHP versions along with a description of the issue.
 
+== Screenshots ==
+
+1. The Zen Addons admin page: activate or deactivate any widget from one place, grouped by category.
+2. Zen Addons widgets rendered on a SiteOrigin Page Builder page.
+
 == Upgrade Notice ==
 
 = 1.2.0 =
