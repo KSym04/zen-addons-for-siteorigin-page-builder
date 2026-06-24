@@ -25,7 +25,10 @@ foreach ( $zaso_ids as $zaso_id ) {
 }
 ?>
 <div class="wrap zaso-admin">
-	<h1><?php esc_html_e( 'Zen Addons for SiteOrigin', 'zaso' ); ?></h1>
+	<h1 class="zaso-admin__title">
+		<img class="zaso-admin__logo" src="<?php echo esc_url( ZASO_BASE_DIR . 'assets/img/zaso-logo.png' ); ?>" alt="" width="36" height="36" />
+		<span><?php esc_html_e( 'Zen Addons for SiteOrigin', 'zaso' ); ?></span>
+	</h1>
 
 	<?php if ( isset( $_GET['updated'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display-only flag set by our own nonce-verified redirect. ?>
 		<div class="notice notice-success is-dismissible">

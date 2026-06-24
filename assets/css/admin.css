@@ -5,6 +5,19 @@
  * @since 1.2.0
  */
 
+.zaso-admin__title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.zaso-admin__logo {
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	flex-shrink: 0;
+}
+
 .zaso-admin__intro {
 	font-size: 14px;
 	margin: 10px 0 16px;
