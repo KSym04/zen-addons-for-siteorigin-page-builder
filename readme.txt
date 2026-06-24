@@ -195,8 +195,7 @@ Please read the Frequently Asked Questions before opening a support request, and
 5. People and social proof widgets: Team Member and Testimonial Slider.
 6. Content block widgets: Services Grid and Progress Bars.
 7. Image Gallery widget: a responsive image grid with a built-in lightbox.
-8. Pricing Table widget: side-by-side plans with a features list, a highlighted featured tier, and a call-to-action button per plan.
-9. FAQ widget: a collapsible list of questions and answers with optional Schema.org FAQPage markup for rich results in Google Search.
+8. FAQ widget: a collapsible list of questions and answers with optional Schema.org FAQPage markup for rich results in Google Search.
 
 == Upgrade Notice ==
 
