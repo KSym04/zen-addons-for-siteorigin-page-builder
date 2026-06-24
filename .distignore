@@ -6,6 +6,9 @@
 # This file itself
 .distignore
 
+# Release build artifacts (never ship the zip inside the zip)
+for-release/
+
 # VCS / dev tooling
 .git
 .gitignore
