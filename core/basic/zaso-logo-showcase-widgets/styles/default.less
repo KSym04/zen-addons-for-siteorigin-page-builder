@@ -1,61 +1,84 @@
+// ZASO Logo Showcase Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Cross-element modifier rules MUST be flat top-level selectors — never use chained & for
+// descendant modifiers. See reference_siteorigin_widget_dev.
+
+@logo_height: 60px;
+@gap:         40px;
+
+// ─── Base container ───────────────────────────────────────────────────────────
 .zaso-logo-showcase {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: @gap;
+	display:     grid;
+	gap:         @gap;
 	align-items: center;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	list-style:  none;
+	margin:      0;
+	padding:     0;
+
+	// Mobile: 2 columns always
+	grid-template-columns: repeat( 2, 1fr );
 }
 
-@media (min-width: 640px) {
-	.zaso-logo-showcase {
-		grid-template-columns: repeat(3, 1fr);
+// ─── Column variants (flat selectors — no chained & !) ────────────────────────
+.zaso-logo-showcase--cols-2 { grid-template-columns: repeat( 2, 1fr ); }
+.zaso-logo-showcase--cols-3 { grid-template-columns: repeat( 3, 1fr ); }
+.zaso-logo-showcase--cols-4 { grid-template-columns: repeat( 4, 1fr ); }
+.zaso-logo-showcase--cols-5 { grid-template-columns: repeat( 5, 1fr ); }
+.zaso-logo-showcase--cols-6 { grid-template-columns: repeat( 6, 1fr ); }
+
+// ─── Responsive: collapse to fewer cols on tablet ─────────────────────────────
+@media ( max-width: 767px ) {
+	.zaso-logo-showcase--cols-4,
+	.zaso-logo-showcase--cols-5,
+	.zaso-logo-showcase--cols-6 {
+		grid-template-columns: repeat( 3, 1fr );
 	}
 }
 
-@media (min-width: 960px) {
-	.zaso-logo-showcase {
-		grid-template-columns: repeat(@columns, 1fr);
+@media ( max-width: 479px ) {
+	.zaso-logo-showcase--cols-3,
+	.zaso-logo-showcase--cols-4,
+	.zaso-logo-showcase--cols-5,
+	.zaso-logo-showcase--cols-6 {
+		grid-template-columns: repeat( 2, 1fr );
 	}
 }
 
+// ─── Item ─────────────────────────────────────────────────────────────────────
 .zaso-logo-showcase__item {
-	display: flex;
-	align-items: center;
+	display:         flex;
+	align-items:     center;
 	justify-content: center;
 }
 
-.zaso-logo-showcase--align-left .zaso-logo-showcase__item {
-	justify-content: flex-start;
-}
+.zaso-logo-showcase--align-left .zaso-logo-showcase__item  { justify-content: flex-start; }
+.zaso-logo-showcase--align-right .zaso-logo-showcase__item { justify-content: flex-end; }
 
-.zaso-logo-showcase--align-right .zaso-logo-showcase__item {
-	justify-content: flex-end;
-}
-
+// ─── Link / no-link wrapper ────────────────────────────────────────────────────
 .zaso-logo-showcase__link {
-	display: inline-flex;
-	align-items: center;
-	line-height: 0;
+	display:         inline-flex;
+	align-items:     center;
+	line-height:     0;
 	text-decoration: none;
 }
 
+// ─── Image ────────────────────────────────────────────────────────────────────
 .zaso-logo-showcase__img {
-	max-height: @logo_height;
-	width: auto;
-	max-width: 100%;
-	display: block;
-	transition: filter 0.3s ease, opacity 0.3s ease;
+	max-height:  @logo_height;
+	width:       auto;
+	max-width:   100%;
+	display:     block;
+	transition:  filter 0.3s ease, opacity 0.3s ease;
 }
 
+// ─── Greyscale variant ────────────────────────────────────────────────────────
 .zaso-logo-showcase--grayscale .zaso-logo-showcase__img {
-	filter: ~"grayscale(1)";
+	filter:  ~"grayscale(1)";
 	opacity: 0.6;
 }
 
 .zaso-logo-showcase--grayscale .zaso-logo-showcase__link:hover .zaso-logo-showcase__img,
 .zaso-logo-showcase--grayscale .zaso-logo-showcase__item:hover > span .zaso-logo-showcase__img {
-	filter: none;
+	filter:  none;
 	opacity: 1;
 }

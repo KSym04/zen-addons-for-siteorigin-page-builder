@@ -194,7 +194,6 @@ class Zen_Addons_SiteOrigin_Logo_Showcase_Widget extends SiteOrigin_Widget {
 		$design = isset( $instance['design'] ) ? $instance['design'] : array();
 
 		return apply_filters( 'zaso_logo_showcase_less_variables', array(
-			'columns'     => isset( $instance['columns'] ) ? absint( $instance['columns'] ) : 5,
 			'logo_height' => isset( $design['logo_height'] ) ? $design['logo_height'] : '60px',
 			'gap'         => isset( $design['gap'] )         ? $design['gap']         : '40px',
 		) );

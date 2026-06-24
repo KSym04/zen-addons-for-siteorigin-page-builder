@@ -1,24 +1,43 @@
+// ZASO Image Gallery Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Cross-element modifier rules MUST be flat top-level selectors — never use chained & for
+// descendant modifiers. See reference_siteorigin_widget_dev.
+
+@gap:           8px;
+@border_radius: 4px;
+
+// ─── Base container ───────────────────────────────────────────────────────────
 .zaso-image-gallery {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: @gap;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	display:               grid;
+	grid-template-columns: repeat( 2, 1fr );
+	gap:                   @gap;
+	list-style:            none;
+	margin:                0;
+	padding:               0;
 }
 
-@media (min-width: 640px) {
+// ─── Column variants (flat selectors — no chained & !) ────────────────────────
+.zaso-image-gallery--cols-2 { grid-template-columns: repeat( 2, 1fr ); }
+.zaso-image-gallery--cols-3 { grid-template-columns: repeat( 3, 1fr ); }
+.zaso-image-gallery--cols-4 { grid-template-columns: repeat( 4, 1fr ); }
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media ( max-width: 767px ) {
+	.zaso-image-gallery--cols-3,
 	.zaso-image-gallery--cols-4 {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat( 2, 1fr );
 	}
 }
 
-@media (min-width: 960px) {
-	.zaso-image-gallery {
-		grid-template-columns: repeat(@columns, 1fr);
+@media ( max-width: 479px ) {
+	.zaso-image-gallery--cols-2,
+	.zaso-image-gallery--cols-3,
+	.zaso-image-gallery--cols-4 {
+		grid-template-columns: 1fr;
 	}
 }
 
+// ─── Item ─────────────────────────────────────────────────────────────────────
 .zaso-image-gallery__item {
 	min-width: 0;
 }
@@ -27,50 +46,54 @@
 	margin: 0;
 }
 
+// ─── Link wrapper ─────────────────────────────────────────────────────────────
 .zaso-image-gallery__link {
-	display: block;
-	position: relative;
-	overflow: hidden;
-	border-radius: @border_radius;
-	line-height: 0;
+	display:         block;
+	position:        relative;
+	overflow:        hidden;
+	border-radius:   @border_radius;
+	line-height:     0;
 	text-decoration: none;
 }
 
+// ─── Image ────────────────────────────────────────────────────────────────────
 .zaso-image-gallery__img {
-	width: 100%;
-	height: auto;
-	display: block;
-	transition: transform 0.35s ease;
+	width:      100%;
+	height:     auto;
+	display:    block;
+	transition: ~"transform 0.35s ease";
 }
 
 .zaso-image-gallery__link:hover .zaso-image-gallery__img {
 	transform: ~"scale(1.05)";
 }
 
+// ─── Lightbox overlay ─────────────────────────────────────────────────────────
 .zaso-image-gallery__overlay {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.45);
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	display: flex;
-	align-items: center;
+	position:        absolute;
+	top:             0;
+	right:           0;
+	bottom:          0;
+	left:            0;
+	background:      rgba( 0, 0, 0, 0.45 );
+	opacity:         0;
+	transition:      opacity 0.3s ease;
+	display:         flex;
+	align-items:     center;
 	justify-content: center;
-	color: #ffffff;
+	color:           #ffffff;
 }
 
 .zaso-image-gallery__link:hover .zaso-image-gallery__overlay {
 	opacity: 1;
 }
 
+// ─── Caption ──────────────────────────────────────────────────────────────────
 .zaso-image-gallery__caption {
-	font-size: 0.875rem;
-	text-align: center;
-	padding: 6px 4px 0;
-	margin: 0;
-	color: #555555;
+	font-size:   0.875rem;
+	text-align:  center;
+	padding:     6px 4px 0;
+	margin:      0;
+	color:       #555555;
 	line-height: 1.4;
 }

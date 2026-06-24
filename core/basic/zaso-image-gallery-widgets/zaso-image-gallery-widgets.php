@@ -174,7 +174,6 @@ class Zen_Addons_SiteOrigin_Image_Gallery_Widget extends SiteOrigin_Widget {
 		$design = isset( $instance['design'] ) ? $instance['design'] : array();
 
 		return apply_filters( 'zaso_image_gallery_less_variables', array(
-			'columns'       => isset( $instance['columns'] ) ? absint( $instance['columns'] ) : 3,
 			'gap'           => isset( $design['gap'] )           ? $design['gap']           : '8px',
 			'border_radius' => isset( $design['border_radius'] ) ? $design['border_radius'] : '4px',
 		) );
