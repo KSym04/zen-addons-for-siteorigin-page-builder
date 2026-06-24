@@ -64,15 +64,14 @@ $social_icons = array(
 								<?php foreach ( $member['social_links'] as $platform => $link ) : ?>
 									<?php if ( isset( $social_icons[ $platform ] ) ) : ?>
 										<li class="zaso-team-member__social-item">
-											<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sow_esc_url() is SiteOrigin's esc_url() wrapper. ?>
 											<a
 												class="zaso-team-member__social-link zaso-team-member__social-link--<?php echo esc_attr( $platform ); ?>"
-												href="<?php echo sow_esc_url( $link['url'] ); ?>"
+												href="<?php echo sow_esc_url( $link['url'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sow_esc_url() is SiteOrigin's URL escaper. ?>"
 												aria-label="<?php echo esc_attr( $link['label'] ); ?>"
 												target="_blank"
 												rel="noopener noreferrer"
-											><?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG markup, no user input. ?>
-												<?php echo $social_icons[ $platform ]; ?>
+											>
+												<?php echo $social_icons[ $platform ]; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG markup, no user input. ?>
 											</a>
 										</li>
 									<?php endif; ?>
