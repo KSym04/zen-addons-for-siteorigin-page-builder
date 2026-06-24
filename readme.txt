@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -57,6 +57,11 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 
 * Team Member: display a grid of team members with photos, roles, bios, and social links.
 * Testimonial Slider: show a rotating set of testimonials with auto-play, swipe, and keyboard support.
+
+**Content blocks**
+
+* Services Grid: present services or features in a grid, each with an icon, title, description, and optional link.
+* Progress Bars: show labeled progress or skill bars that fill as they scroll into view.
 
 **Community (bbPress)**
 
@@ -192,8 +197,12 @@ Please read the Frequently Asked Questions before opening a support request, and
 3. Media widgets: Video, YouTube Lightbox, and Vimeo Lightbox.
 4. Interactive widgets: Simple Accordion and Basic Tabs.
 5. People and social proof widgets: Team Member and Testimonial Slider.
+6. Content block widgets: Services Grid and Progress Bars.
 
 == Upgrade Notice ==
+
+= 1.5.0 =
+Adds two new widgets: Services Grid and Progress Bars.
 
 = 1.4.0 =
 Adds two new widgets: Team Member grid and Testimonial Slider.
@@ -211,6 +220,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.5.0 =
+* New: Services Grid widget to present services or features with an icon, title, description, and optional link.
+* New: Progress Bars widget for labeled progress or skill bars that fill as they scroll into view.
 
 = 1.4.0 =
 * New: Team Member widget to display a grid of team members with photos, roles, bios, and social links.

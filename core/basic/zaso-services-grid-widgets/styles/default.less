@@ -1,0 +1,143 @@
+// ZASO Services Grid Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Cross-element modifier rules MUST be flat top-level selectors — never use chained & for
+// descendant modifiers (e.g. &--cols-3 &__grid) — the double-prefix produces a selector
+// that never matches. See reference_siteorigin_widget_dev for the full explanation.
+
+@icon_color:         #4f46e5;
+@icon_size:          2.5rem;
+@icon_bg:            transparent;
+@icon_pad:           0;
+@title_color:        #111111;
+@description_color:  #444444;
+@link_color:         #4f46e5;
+@card_background:    #ffffff;
+@card_padding:       28px 28px 28px 28px;
+@card_border_radius: 10px;
+@gap:                24px;
+
+// ─── Base container ───────────────────────────────────────────────────────────
+& {
+	box-sizing: border-box;
+}
+
+// ─── Grid ─────────────────────────────────────────────────────────────────────
+.zaso-services-grid__grid {
+	display:               grid;
+	grid-template-columns: repeat( 3, 1fr );
+	gap:                   @gap;
+	list-style:            none;
+	margin:                0;
+	padding:               0;
+}
+
+// ─── Column variants (flat selectors — no chained & !) ────────────────────────
+.zaso-services-grid--cols-2 .zaso-services-grid__grid { grid-template-columns: repeat( 2, 1fr ); }
+.zaso-services-grid--cols-4 .zaso-services-grid__grid { grid-template-columns: repeat( 4, 1fr ); }
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+.zaso-services-grid__card {
+	background:    @card_background;
+	border-radius: @card_border_radius;
+	padding:       @card_padding;
+	height:        100%;
+	box-sizing:    border-box;
+}
+
+// Framed style adds a border + subtle shadow
+.zaso-services-grid--style-framed .zaso-services-grid__card {
+	border:     1px solid rgba( 0, 0, 0, 0.08 );
+	box-shadow: 0 2px 8px rgba( 0, 0, 0, 0.06 );
+}
+
+// ─── Alignment (flat selectors) ───────────────────────────────────────────────
+.zaso-services-grid--align-center .zaso-services-grid__card { text-align: center; }
+.zaso-services-grid--align-center .zaso-services-grid__icon { margin-left: auto; margin-right: auto; }
+.zaso-services-grid--align-left .zaso-services-grid__card   { text-align: left; }
+
+// ─── Icon ─────────────────────────────────────────────────────────────────────
+.zaso-services-grid__icon {
+	display:         inline-flex;
+	align-items:     center;
+	justify-content: center;
+	padding:         @icon_pad;
+	border-radius:   50%;
+	background:      @icon_bg;
+	margin-bottom:   18px;
+	color:           @icon_color;
+	font-size:       @icon_size;
+	line-height:     1;
+
+	.sow-icon-image,
+	.sow-icon-fontawesome,
+	.sow-icon-genericons,
+	.sow-icon-typicons,
+	.sow-icon-elegantline,
+	.sow-icon-iconfont {
+		color:     @icon_color;
+		font-size: @icon_size;
+		width:     1em;
+		height:    1em;
+	}
+}
+
+.zaso-services-grid__icon-image {
+	width:      @icon_size;
+	height:     @icon_size;
+	object-fit: contain;
+	display:    block;
+}
+
+// ─── Body ─────────────────────────────────────────────────────────────────────
+.zaso-services-grid__title {
+	font-size:   1.15em;
+	font-weight: 600;
+	color:       @title_color;
+	margin:      0 0 10px;
+	line-height: 1.3;
+}
+
+.zaso-services-grid__description {
+	font-size:   0.95em;
+	color:       @description_color;
+	margin:      0 0 16px;
+	line-height: 1.6;
+}
+
+.zaso-services-grid__link {
+	display:         inline-block;
+	color:           @link_color;
+	font-weight:     600;
+	font-size:       0.9em;
+	text-decoration: none;
+	transition:      opacity 0.2s ease;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+		opacity:         0.85;
+	}
+
+	&:focus {
+		outline:        2px solid @link_color;
+		outline-offset: 2px;
+		border-radius:  2px;
+	}
+}
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media ( max-width: 767px ) {
+	.zaso-services-grid__grid,
+	.zaso-services-grid--cols-2 .zaso-services-grid__grid,
+	.zaso-services-grid--cols-3 .zaso-services-grid__grid,
+	.zaso-services-grid--cols-4 .zaso-services-grid__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media ( min-width: 768px ) and ( max-width: 1023px ) {
+	.zaso-services-grid--cols-3 .zaso-services-grid__grid,
+	.zaso-services-grid--cols-4 .zaso-services-grid__grid {
+		grid-template-columns: repeat( 2, 1fr );
+	}
+}

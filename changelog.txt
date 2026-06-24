@@ -1,5 +1,9 @@
 Changelog
 
+1.5.0
+- New: Services Grid widget to present services or features with an icon, title, description, and optional link.
+- New: Progress Bars widget for labeled progress or skill bars that fill as they scroll into view.
+
 1.4.0
 - New: Team Member widget to display a grid of team members with photos, roles, bios, and social links.
 - New: Testimonial Slider widget with auto-play, swipe support, star ratings, and keyboard navigation.

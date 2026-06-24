@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 24; // Number of ZASO widgets shipped.
+$expected = 26; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -137,6 +137,40 @@ $cases = array(
 			'show_arrows'       => true,
 			'show_dots'         => true,
 			'classes'           => 'zaso-testimonial-slider',
+		),
+	),
+	'services-grid'        => array(
+		'file'     => $base . 'zaso-services-grid-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+		'vars'     => array(
+			'services'          => array(
+				array(
+					'icon'         => '',
+					'image_attr'   => array(),
+					'title'        => 'Fast Delivery' . $evil,
+					'description'  => 'Ships in 24 hours.<script>bad()</script>',
+					'link_url'     => 'https://example.com',
+					'link_text'    => 'Learn more' . $evil,
+					'link_new_tab' => true,
+					'has_link'     => true,
+				),
+			),
+			'container_classes' => 'zaso-services-grid zaso-services-grid--cols-3 zaso-services-grid--style-framed zaso-services-grid--align-center',
+		),
+	),
+	'progress-bars'        => array(
+		'file'     => $base . 'zaso-progress-bars-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+		'vars'     => array(
+			'bars'               => array(
+				array( 'label' => 'Design' . $evil, 'percentage' => 90, 'bar_color' => '#4f46e5' ),
+				// Out-of-range percentage must already be clamped to 0-100.
+				array( 'label' => 'Strategy<script>bad()</script>', 'percentage' => 100, 'bar_color' => '' ),
+			),
+			'show_percentage'    => true,
+			'animate'            => true,
+			'animation_duration' => 1200,
+			'classes'            => 'zaso-progress-bars',
 		),
 	),
 );

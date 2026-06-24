@@ -88,6 +88,10 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 					'label'   => esc_html__( 'People & Social Proof', 'zaso' ),
 					'widgets' => array( 'zaso-team-member-widgets', 'zaso-testimonial-slider-widgets' ),
 				),
+				'content'      => array(
+					'label'   => esc_html__( 'Content Blocks', 'zaso' ),
+					'widgets' => array( 'zaso-services-grid-widgets', 'zaso-progress-bars-widgets' ),
+				),
 				'community'    => array(
 					'label'   => esc_html__( 'Community (bbPress)', 'zaso' ),
 					'widgets' => array( 'zaso-bbpress-forum-index-widgets', 'zaso-bbpress-topic-index-widgets', 'zaso-bbpress-login-widgets', 'zaso-bbpress-registration-widgets', 'zaso-bbpress-lost-password-widgets' ),

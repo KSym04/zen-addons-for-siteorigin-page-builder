@@ -1,0 +1,75 @@
+// ZASO Progress Bars Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Keep cross-element modifier rules as flat top-level selectors — never chain & for
+// descendant modifiers. See reference_siteorigin_widget_dev.
+
+@label_color:      #111111;
+@label_size:       0.95rem;
+@percentage_color: #64748b;
+@track_color:      #e5e7eb;
+@fill_color:       #4f46e5;
+@bar_height:       10px;
+@bar_radius:       6px;
+@bar_spacing:      20px;
+
+& {
+	box-sizing: border-box;
+}
+
+// ─── Item ─────────────────────────────────────────────────────────────────────
+.zaso-progress-bars__item {
+	margin-bottom: @bar_spacing;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// ─── Head (label + percentage) ────────────────────────────────────────────────
+.zaso-progress-bars__head {
+	display:         flex;
+	align-items:     baseline;
+	justify-content: space-between;
+	margin-bottom:   8px;
+	gap:             12px;
+}
+
+.zaso-progress-bars__label {
+	font-size:   @label_size;
+	font-weight: 600;
+	color:       @label_color;
+	line-height: 1.3;
+}
+
+.zaso-progress-bars__percentage {
+	font-size:   0.85em;
+	font-weight: 600;
+	color:       @percentage_color;
+	line-height: 1.3;
+	flex-shrink: 0;
+}
+
+// ─── Track + fill ─────────────────────────────────────────────────────────────
+.zaso-progress-bars__track {
+	width:         100%;
+	height:        @bar_height;
+	background:    @track_color;
+	border-radius: @bar_radius;
+	overflow:      hidden;
+}
+
+.zaso-progress-bars__fill {
+	display:       block;
+	height:        100%;
+	width:         0;
+	background:    @fill_color;
+	border-radius: @bar_radius;
+	transition:    width 1.2s cubic-bezier( 0.22, 1, 0.36, 1 );
+}
+
+// ─── Reduced motion: no fill transition ───────────────────────────────────────
+@media ( prefers-reduced-motion: reduce ) {
+	.zaso-progress-bars__fill {
+		transition: none;
+	}
+}
