@@ -190,7 +190,7 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Screenshots ==
 
-1. Conversion and engagement widgets: Call to Action, Counter, Countdown, and Before / After.
+1. Conversion and engagement widgets: Call to Action, Counter, and Countdown.
 2. Business and marketing widgets: Info Box, Hover Card, Icon, and Image Icon Group.
 3. Media widgets: Video, YouTube Lightbox, and Vimeo Lightbox.
 4. Interactive widgets: Simple Accordion and Basic Tabs.
