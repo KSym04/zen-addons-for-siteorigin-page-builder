@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -53,6 +53,11 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 * Countdown: count down to a date and time for launches, sales, and events.
 * Before / After: compare two images with a draggable slider, with mouse, touch, and keyboard support.
 
+**People and social proof**
+
+* Team Member: display a grid of team members with photos, roles, bios, and social links.
+* Testimonial Slider: show a rotating set of testimonials with auto-play, swipe, and keyboard support.
+
 **Community (bbPress)**
 
 * bbPress Forum Index: show the full bbPress forum index in your layout.
@@ -91,6 +96,12 @@ Zen Addons does not add its own top-level admin menu, and the widgets are not li
 
 * English (en_US)
 * English (Australia) (en_AU)
+
+= Zen Addons Pro (coming soon) =
+
+A Pro tier is in active development and will add premium widgets not found in the free plugin, including a pricing table, WooCommerce product showcase, portfolio grid, testimonials, team members, and more. Early pricing starts at $29 per year for a single site.
+
+To get notified when Pro launches, visit https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
 
 == External services ==
 
@@ -183,6 +194,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.4.0 =
+Adds two new widgets: Team Member grid and Testimonial Slider.
+
 = 1.3.0 =
 Adds four new widgets: Call to Action, Counter, Countdown, and Before / After.
 
@@ -196,6 +210,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.4.0 =
+* New: Team Member widget to display a grid of team members with photos, roles, bios, and social links.
+* New: Testimonial Slider widget with auto-play, swipe support, star ratings, and keyboard navigation.
 
 = 1.3.0 =
 * New: Call to Action widget for a heading, text, and button over a color, gradient, or image background.

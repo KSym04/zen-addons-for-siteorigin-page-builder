@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 22; // Number of ZASO widgets shipped.
+$expected = 24; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -83,10 +83,51 @@ $cases = array(
 		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'on_expire' => 'message', 'expire_message' => '<p>Done</p><script>bad()</script>', 'design' => array( 'alignment' => 'center' ) ),
 		'vars'     => array( 'deadline_ms' => 9999999999000, 'units' => array( 'days' => array( 'value' => 1, 'label' => 'Days' ), 'seconds' => array( 'value' => 5, 'label' => 'Seconds' ) ), 'on_expire' => 'message', 'alignment' => 'center', 'aria_label' => 'Countdown to later', 'is_expired' => false ),
 	),
-	'before-after' => array(
+	'before-after'         => array(
 		'file'     => $base . 'zaso-before-after-widgets/tpl/default.php',
 		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'before_label' => 'Before', 'after_label' => 'After', 'show_labels' => true ),
 		'vars'     => array( 'before' => array( 'src' => 'https://example.com/b.jpg', 'width' => 800, 'height' => 600, 'alt' => 'b' ), 'after' => array( 'src' => 'https://example.com/a.jpg', 'width' => 800, 'height' => 600, 'alt' => 'a' ), 'orientation' => 'horizontal', 'position' => 50 ),
+	),
+	'team-member'          => array(
+		'file'     => $base . 'zaso-team-member-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'members' => array(), 'columns' => '3', 'card_style' => 'minimal', 'alignment' => 'center' ),
+		'vars'     => array(
+			'members'           => array(
+				array(
+					'photo'        => array( 'src' => '', 'alt' => 'Jane Doe' ),
+					'name'         => 'Jane <b>Doe</b>' . $evil,
+					'role'         => 'CEO & Co-founder' . $evil,
+					'bio'          => 'Leading our team with vision.<script>bad()</script>',
+					'social_links' => array(
+						'linkedin' => array( 'url' => 'https://linkedin.com', 'label' => 'Jane Doe on LinkedIn' ),
+					),
+				),
+			),
+			'container_classes' => 'zaso-team-member zaso-team-member--cols-3 zaso-team-member--style-minimal zaso-team-member--align-center',
+		),
+	),
+	'testimonial-slider'   => array(
+		'file'     => $base . 'zaso-testimonial-slider-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+		'vars'     => array(
+			'testimonials'      => array(
+				array(
+					'quote'        => 'This product changed our business.<script>bad()</script>',
+					'author_name'  => 'John Smith' . $evil,
+					'author_title' => 'Director' . $evil,
+					'photo_src'    => '',
+					'photo_alt'    => 'John Smith',
+					'rating'       => 5,
+					'rating_label' => '5 out of 5 stars',
+				),
+			),
+			'count'             => 1,
+			'autoplay'          => false,
+			'autoplay_duration' => 5000,
+			'show_arrows'       => true,
+			'show_dots'         => true,
+			'classes'           => 'zaso-testimonial-slider',
+		),
 	),
 );
 

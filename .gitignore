@@ -2,6 +2,7 @@
 /node_modules/
 /vendor/
 /bower_components/
+/for-release/
 package-lock.json
 composer.lock
 yarn.lock

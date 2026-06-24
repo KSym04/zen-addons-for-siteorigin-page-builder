@@ -1,0 +1,186 @@
+// ZASO Testimonial Slider Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to selectors compiled from this file.
+// Never use chained & for cross-element modifiers — flat top-level selectors only.
+
+@quote_font_size:    18px;
+@quote_color:        #333333;
+@quote_italic:       italic;
+@author_name_color:  #111111;
+@author_title_color: #888888;
+@star_color:         #f5a623;
+@card_background:    #ffffff;
+@card_padding:       32px 32px 32px 32px;
+@card_border_radius: 8px;
+@arrow_color:        #111111;
+@dot_color:          #cccccc;
+@dot_active_color:   #111111;
+
+// ─── Root ─────────────────────────────────────────────────────────────────────
+& {
+	position:   relative;
+	box-sizing: border-box;
+}
+
+// ─── Viewport / Track / Slide ─────────────────────────────────────────────────
+.zaso-testimonial-slider__viewport {
+	overflow:   hidden;
+	width:      100%;
+}
+
+.zaso-testimonial-slider__track {
+	display:           flex;
+	transition:        transform 0.4s ease;
+	will-change:       transform;
+}
+
+.zaso-testimonial-slider__slide {
+	flex:              0 0 100%;
+	min-width:         0;
+	box-sizing:        border-box;
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+.zaso-testimonial-slider__card {
+	background:    @card_background;
+	border-radius: @card_border_radius;
+	padding:       @card_padding;
+	box-sizing:    border-box;
+}
+
+// ─── Star Rating ──────────────────────────────────────────────────────────────
+.zaso-testimonial-slider__rating {
+	font-size:     1.25em;
+	color:         @star_color;
+	margin-bottom: 12px;
+	line-height:   1;
+}
+
+// ─── Quote ────────────────────────────────────────────────────────────────────
+.zaso-testimonial-slider__quote {
+	margin:        0 0 20px;
+	padding:       0;
+	border:        none;
+
+	p {
+		font-size:   @quote_font_size;
+		color:       @quote_color;
+		font-style:  @quote_italic;
+		line-height: 1.7;
+		margin:      0;
+	}
+}
+
+// ─── Author ───────────────────────────────────────────────────────────────────
+.zaso-testimonial-slider__author {
+	display:     flex;
+	align-items: center;
+	gap:         12px;
+}
+
+.zaso-testimonial-slider__author-photo {
+	width:         48px;
+	height:        48px;
+	border-radius: 50%;
+	object-fit:    cover;
+	flex-shrink:   0;
+}
+
+.zaso-testimonial-slider__author-info {
+	display:        flex;
+	flex-direction: column;
+	gap:            2px;
+}
+
+.zaso-testimonial-slider__author-name {
+	display:     block;
+	font-weight: 600;
+	font-size:   0.95em;
+	color:       @author_name_color;
+	line-height: 1.3;
+}
+
+.zaso-testimonial-slider__author-title {
+	display:     block;
+	font-size:   0.85em;
+	color:       @author_title_color;
+	line-height: 1.3;
+}
+
+// ─── Arrows ───────────────────────────────────────────────────────────────────
+.zaso-testimonial-slider__arrows {
+	display:         flex;
+	justify-content: space-between;
+	margin-top:      16px;
+}
+
+.zaso-testimonial-slider__arrow {
+	display:         inline-flex;
+	align-items:     center;
+	justify-content: center;
+	background:      transparent;
+	border:          1px solid rgba( 0, 0, 0, 0.15 );
+	border-radius:   50%;
+	width:           40px;
+	height:          40px;
+	cursor:          pointer;
+	color:           @arrow_color;
+	transition:      border-color 0.2s ease, background 0.2s ease;
+	padding:         0;
+
+	svg {
+		width:  18px;
+		height: 18px;
+	}
+
+	&:hover {
+		background:   rgba( 0, 0, 0, 0.06 );
+		border-color: rgba( 0, 0, 0, 0.3 );
+	}
+
+	&:focus {
+		outline:        2px solid @arrow_color;
+		outline-offset: 2px;
+	}
+
+	&[disabled] {
+		opacity: 0.35;
+		cursor:  default;
+	}
+}
+
+// ─── Dots ─────────────────────────────────────────────────────────────────────
+.zaso-testimonial-slider__dots {
+	display:         flex;
+	justify-content: center;
+	gap:             8px;
+	margin-top:      16px;
+}
+
+.zaso-testimonial-slider__dot {
+	width:        10px;
+	height:       10px;
+	border-radius: 50%;
+	background:   @dot_color;
+	border:       none;
+	padding:      0;
+	cursor:       pointer;
+	transition:   background 0.2s ease, transform 0.2s ease;
+
+	&--active,
+	&[aria-selected="true"] {
+		background: @dot_active_color;
+		transform:  scale( 1.25 );
+	}
+
+	&:focus {
+		outline:        2px solid @dot_active_color;
+		outline-offset: 2px;
+	}
+}
+
+// ─── prefers-reduced-motion ───────────────────────────────────────────────────
+@media ( prefers-reduced-motion: reduce ) {
+	.zaso-testimonial-slider__track {
+		transition: none;
+	}
+}

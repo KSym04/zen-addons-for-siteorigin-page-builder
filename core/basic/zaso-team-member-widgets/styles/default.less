@@ -1,0 +1,154 @@
+// ZASO Team Member Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Cross-element modifier rules MUST be flat top-level selectors — never use chained & for
+// descendant modifiers (e.g. &--cols-3 &__grid) — the double-prefix produces a selector
+// that never matches. See reference_siteorigin_widget_dev for the full explanation.
+
+@photo_size:         100px;
+@photo_shape:        50%;      // 50% = circle, 0 = square
+@name_color:         #111111;
+@role_color:         #888888;
+@bio_color:          #444444;
+@social_color:       #888888;
+@social_color_hover: #111111;
+@card_background:    #ffffff;
+@card_padding:       24px 24px 24px 24px;
+@card_border_radius: 8px;
+@gap:                24px;
+
+// ─── Base container ───────────────────────────────────────────────────────────
+& {
+	box-sizing: border-box;
+}
+
+// ─── Grid ─────────────────────────────────────────────────────────────────────
+.zaso-team-member__grid {
+	display:               grid;
+	grid-template-columns: repeat( 3, 1fr );
+	gap:                   @gap;
+	list-style:            none;
+	margin:                0;
+	padding:               0;
+}
+
+// ─── Column variants (flat selectors — no chained & !) ────────────────────────
+.zaso-team-member--cols-2 .zaso-team-member__grid { grid-template-columns: repeat( 2, 1fr ); }
+.zaso-team-member--cols-4 .zaso-team-member__grid { grid-template-columns: repeat( 4, 1fr ); }
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+.zaso-team-member__card {
+	background:    @card_background;
+	border-radius: @card_border_radius;
+	padding:       @card_padding;
+	height:        100%;
+	box-sizing:    border-box;
+}
+
+// Framed style adds a border + subtle shadow
+.zaso-team-member--style-framed .zaso-team-member__card {
+	border:     1px solid rgba( 0, 0, 0, 0.08 );
+	box-shadow: 0 2px 8px rgba( 0, 0, 0, 0.06 );
+}
+
+// ─── Alignment (flat selectors) ───────────────────────────────────────────────
+.zaso-team-member--align-center .zaso-team-member__card { text-align: center; }
+.zaso-team-member--align-center .zaso-team-member__photo-wrap { margin-left: auto; margin-right: auto; }
+.zaso-team-member--align-center .zaso-team-member__social { justify-content: center; }
+.zaso-team-member--align-left .zaso-team-member__card   { text-align: left; }
+.zaso-team-member--align-left .zaso-team-member__social  { justify-content: flex-start; }
+
+// ─── Photo ────────────────────────────────────────────────────────────────────
+.zaso-team-member__photo-wrap {
+	width:         @photo_size;
+	height:        @photo_size;
+	overflow:      hidden;
+	border-radius: @photo_shape;
+	margin-bottom: 16px;
+	flex-shrink:   0;
+}
+
+.zaso-team-member__photo {
+	width:      100%;
+	height:     100%;
+	object-fit: cover;
+	display:    block;
+}
+
+// ─── Info ─────────────────────────────────────────────────────────────────────
+.zaso-team-member__info {
+	flex:    1;
+}
+
+.zaso-team-member__name {
+	font-size:   1.1em;
+	font-weight: 600;
+	color:       @name_color;
+	margin:      0 0 4px;
+	line-height: 1.3;
+}
+
+.zaso-team-member__role {
+	font-size:   0.9em;
+	color:       @role_color;
+	margin:      0 0 12px;
+	line-height: 1.4;
+}
+
+.zaso-team-member__bio {
+	font-size:   0.9em;
+	color:       @bio_color;
+	margin:      0 0 16px;
+	line-height: 1.6;
+}
+
+// ─── Social links ─────────────────────────────────────────────────────────────
+.zaso-team-member__social {
+	display:    flex;
+	flex-wrap:  wrap;
+	gap:        8px;
+	list-style: none;
+	margin:     0;
+	padding:    0;
+}
+
+.zaso-team-member__social-link {
+	display:    inline-flex;
+	align-items: center;
+	color:       @social_color;
+	transition:  color 0.2s ease;
+	line-height: 1;
+
+	svg {
+		width:  18px;
+		height: 18px;
+		fill:   currentColor;
+	}
+
+	&:hover,
+	&:focus {
+		color: @social_color_hover;
+	}
+
+	&:focus {
+		outline:        2px solid @social_color_hover;
+		outline-offset: 2px;
+		border-radius:  2px;
+	}
+}
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media ( max-width: 767px ) {
+	.zaso-team-member__grid,
+	.zaso-team-member--cols-2 .zaso-team-member__grid,
+	.zaso-team-member--cols-3 .zaso-team-member__grid,
+	.zaso-team-member--cols-4 .zaso-team-member__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media ( min-width: 768px ) and ( max-width: 1023px ) {
+	.zaso-team-member--cols-3 .zaso-team-member__grid,
+	.zaso-team-member--cols-4 .zaso-team-member__grid {
+		grid-template-columns: repeat( 2, 1fr );
+	}
+}
