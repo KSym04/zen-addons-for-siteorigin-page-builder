@@ -78,7 +78,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 				),
 				'business'     => array(
 					'label'   => esc_html__( 'Business & Marketing', 'zaso' ),
-					'widgets' => array( 'zaso-info-box-widgets', 'zaso-hover-card-widgets', 'zaso-icon-widgets', 'zaso-image-icon-group-widgets' ),
+					'widgets' => array( 'zaso-info-box-widgets', 'zaso-hover-card-widgets', 'zaso-icon-widgets', 'zaso-image-icon-group-widgets', 'zaso-faq-widgets', 'zaso-pricing-table-widgets' ),
 				),
 				'engagement'   => array(
 					'label'   => esc_html__( 'Conversion & Engagement', 'zaso' ),

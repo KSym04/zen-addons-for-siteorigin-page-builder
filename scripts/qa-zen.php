@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 28; // Number of ZASO widgets shipped.
+$expected = 30; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -216,6 +216,52 @@ $cases = array(
 			),
 			'lightbox'          => true,
 			'container_classes' => 'zaso-image-gallery zaso-image-gallery--cols-3',
+		),
+	),
+	'faq'                  => array(
+		'file'     => $base . 'zaso-faq-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+		'vars'     => array(
+			'items'       => array(
+				array( 'question' => 'What is this?' . $evil, 'answer' => 'A great widget.<script>bad()</script>' ),
+				array( 'question' => 'Is it free?',           'answer' => 'Yes, 100% free.' ),
+			),
+			'schema'      => true,
+			'open_first'  => false,
+			'classes'     => 'zaso-faq',
+			'schema_json' => '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}',
+		),
+	),
+	'pricing-table'        => array(
+		'file'     => $base . 'zaso-pricing-table-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+		'vars'     => array(
+			'plans'    => array(
+				array(
+					'name'        => 'Starter' . $evil,
+					'price'       => '9',
+					'period'      => '/month',
+					'description' => 'Perfect for beginners<script>bad()</script>',
+					'features'    => array( '1 site', '5 GB storage' . $evil ),
+					'cta_text'    => 'Get Started',
+					'cta_url'     => 'https://example.com',
+					'cta_new_tab' => false,
+					'featured'    => false,
+				),
+				array(
+					'name'        => 'Pro',
+					'price'       => '29',
+					'period'      => '/month',
+					'description' => 'For growing teams',
+					'features'    => array( '5 sites', '50 GB storage', 'Priority support' ),
+					'cta_text'    => 'Start Free Trial',
+					'cta_url'     => 'https://example.com',
+					'cta_new_tab' => true,
+					'featured'    => true,
+				),
+			),
+			'currency' => '$',
+			'classes'  => 'zaso-pricing-table zaso-pricing-table--cols-3',
 		),
 	),
 );

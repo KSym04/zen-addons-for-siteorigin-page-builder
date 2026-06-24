@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.6.0
+Stable tag: 1.7.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -46,6 +46,8 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 * Hover Card: show an image card with a title and button that animate on hover.
 * Icon: display a single icon from an icon font or your own upload.
 * Image Icon Group: display a row or grid of linked image icons.
+* FAQ: display a collapsible list of questions and answers with optional Schema.org FAQPage markup for rich results in Google Search.
+* Pricing Table: showcase your plans side-by-side with a features list, a highlighted featured tier, and a call-to-action button per plan.
 
 **Conversion and engagement**
 
@@ -106,7 +108,7 @@ You can also manage every Zen Addons widget from one place under the **Zen Addon
 
 = Zen Addons Pro (coming soon) =
 
-A Pro tier is in active development and will add premium widgets not found in the free plugin, including a pricing table, WooCommerce product showcase, and portfolio grid, plus more advanced layout options. Early pricing starts at $29 per year for a single site.
+A Pro tier is in active development and will add premium widgets not found in the free plugin, including a WooCommerce product showcase and portfolio grid, plus more advanced layout options.
 
 To get notified when Pro launches, visit https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
 
@@ -196,6 +198,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.7.0 =
+Two new widgets: FAQ with Schema.org markup and Pricing Table.
+
 = 1.6.0 =
 Adds two new widgets: Image Gallery with lightbox and Logo Showcase.
 
@@ -218,6 +223,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.7.0 =
+* New: FAQ widget with optional Schema.org FAQPage markup for rich results in Google Search.
+* New: Pricing Table widget to showcase your plans with a features list and highlighted featured tier.
 
 = 1.6.0 =
 * New: Image Gallery widget for responsive image grids with a built-in lightbox that opens full-size images in a pop-up overlay.

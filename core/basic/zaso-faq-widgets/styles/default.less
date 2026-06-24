@@ -1,0 +1,69 @@
+// ZASO FAQ Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Cross-element modifier rules MUST be flat top-level selectors — never use chained &
+// for descendant modifiers. See reference_siteorigin_widget_dev.
+
+@question_color: #111111;
+@answer_color:   #444444;
+@border_color:   #e5e7eb;
+@question_size:  1rem;
+@item_spacing:   0px;
+
+// ─── Base container ───────────────────────────────────────────────────────────
+.zaso-faq {
+	list-style: none;
+	margin:     0;
+	padding:    0;
+}
+
+// ─── Item ─────────────────────────────────────────────────────────────────────
+.zaso-faq__item {
+	border-bottom: 1px solid @border_color;
+	margin-bottom: @item_spacing;
+}
+
+.zaso-faq__item:first-child {
+	border-top: 1px solid @border_color;
+}
+
+// ─── Question ─────────────────────────────────────────────────────────────────
+.zaso-faq__question {
+	display:         flex;
+	justify-content: space-between;
+	align-items:     center;
+	padding:         18px 0;
+	font-size:       @question_size;
+	font-weight:     600;
+	color:           @question_color;
+	cursor:          pointer;
+	user-select:     none;
+	margin:          0;
+}
+
+.zaso-faq__question::after {
+	content:     '+';
+	font-size:   1.4rem;
+	font-weight: 300;
+	line-height: 1;
+	flex-shrink: 0;
+	margin-left: 16px;
+	color:       @border_color;
+}
+
+// ─── Open state (flat selectors — no chained &!) ──────────────────────────────
+.zaso-faq__item--open .zaso-faq__question::after {
+	content: '-';
+}
+
+// ─── Answer ───────────────────────────────────────────────────────────────────
+.zaso-faq__answer {
+	display:     none;
+	color:       @answer_color;
+	padding:     0 0 18px;
+	margin:      0;
+	line-height: 1.65;
+}
+
+.zaso-faq__item--open .zaso-faq__answer {
+	display: block;
+}
