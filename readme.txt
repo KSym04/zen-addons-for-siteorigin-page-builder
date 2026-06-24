@@ -8,11 +8,11 @@ Stable tag: 1.7.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
-A focused collection of accessible, lightweight widget extensions that add the layouts SiteOrigin Page Builder does not ship out of the box.
+30 modern, lightweight widgets for SiteOrigin Page Builder: pricing tables, FAQ, tabs, sliders, and more the builder does not ship by default.
 
 == Description ==
 
-**Zen Addons for SiteOrigin Page Builder** is a curated set of widget extensions built on the official SiteOrigin Widgets Bundle framework. It adds the practical, everyday widgets most sites actually need, such as tabs, accordions, alert boxes, info boxes, hover cards, video lightboxes, Contact Form 7, and bbPress forms, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
+**Zen Addons for SiteOrigin Page Builder** is a curated set of 30 widget extensions built on the official SiteOrigin Widgets Bundle framework. SiteOrigin Page Builder is fast and dependable, but its stock widgets can look dated. Zen Addons fills that gap with modern, sleek widgets that look polished out of the box and stay lightweight. It adds the practical, everyday building blocks most sites actually need, from tabs, accordions, and pricing tables to FAQ sections with Schema.org markup, team grids, testimonials, and video lightboxes, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
 
 Every widget is designed to be clean, accessible, and easy to style. Widgets render with semantic HTML, follow ARIA best practices, and stay out of your way: nothing loads on the front end unless a widget that needs it is actually placed on the page.
 
@@ -194,7 +194,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 4. Interactive widgets: Simple Accordion and Basic Tabs.
 5. People and social proof widgets: Team Member and Testimonial Slider.
 6. Content block widgets: Services Grid and Progress Bars.
-7. Media and social proof widgets: Image Gallery with lightbox and Logo Showcase.
+7. Image Gallery widget: a responsive image grid with a built-in lightbox.
+8. Pricing Table widget: side-by-side plans with a features list, a highlighted featured tier, and a call-to-action button per plan.
+9. FAQ widget: a collapsible list of questions and answers with optional Schema.org FAQPage markup for rich results in Google Search.
 
 == Upgrade Notice ==
 
