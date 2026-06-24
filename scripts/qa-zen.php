@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 30; // Number of ZASO widgets shipped.
+$expected = 32; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -264,6 +264,43 @@ $cases = array(
 			'classes'  => 'zaso-pricing-table zaso-pricing-table--cols-3',
 		),
 	),
+		'post-grid'        => array(
+			'file'     => $base . 'zaso-post-grid-widgets/tpl/default.php',
+			'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+			'vars'     => array(
+				'query_args'        => array( 'post_type' => 'post', 'posts_per_page' => 3, 'ignore_sticky_posts' => true, 'no_found_rows' => true ),
+				'show_image'        => true,
+				'image_size'        => 'medium',
+				'show_date'         => true,
+				'show_author'       => true,
+				'show_excerpt'      => true,
+				'excerpt_length'    => 20,
+				'show_readmore'     => true,
+				'readmore_text'     => 'Read More',
+				'container_classes' => 'zaso-post-grid zaso-post-grid--cols-3',
+			),
+		),
+		'post-carousel'        => array(
+			'file'     => $base . 'zaso-post-carousel-widgets/tpl/default.php',
+			'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+			'vars'     => array(
+				'query_args'        => array( 'post_type' => 'post', 'posts_per_page' => 3, 'ignore_sticky_posts' => true, 'no_found_rows' => true ),
+				'slides_to_show'    => 3,
+				'autoplay'          => true,
+				'autoplay_speed'    => 4000,
+				'show_arrows'       => true,
+				'show_dots'         => true,
+				'show_image'        => true,
+				'image_size'        => 'medium',
+				'show_date'         => true,
+				'show_author'       => true,
+				'show_excerpt'      => true,
+				'excerpt_length'    => 20,
+				'show_readmore'     => true,
+				'readmore_text'     => 'Read More',
+				'container_classes' => 'zaso-post-carousel',
+			),
+		),
 );
 
 foreach ( $cases as $name => $case ) {

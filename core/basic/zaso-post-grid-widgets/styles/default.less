@@ -1,0 +1,145 @@
+// ZASO Post Grid Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Column variants are flat top-level selectors (never chained & for descendant modifiers).
+// See reference_siteorigin_widget_dev for the full explanation.
+
+@gap:          28px;
+@card_bg:      #ffffff;
+@card_border:  #e5e7eb;
+@card_radius:  10px;
+@title_color:  #111111;
+@meta_color:   #6b7280;
+@accent_color: #4f46e5;
+@image_height: 200px;
+
+// ─── Grid ─────────────────────────────────────────────────────────────────────
+.zaso-post-grid__grid {
+	display:               grid;
+	grid-template-columns: repeat( 3, 1fr );
+	gap:                   @gap;
+	list-style:            none;
+	margin:                0;
+	padding:               0;
+}
+
+// ─── Column variants (flat selectors) ─────────────────────────────────────────
+.zaso-post-grid--cols-1 .zaso-post-grid__grid { grid-template-columns: repeat( 1, 1fr ); }
+.zaso-post-grid--cols-2 .zaso-post-grid__grid { grid-template-columns: repeat( 2, 1fr ); }
+.zaso-post-grid--cols-4 .zaso-post-grid__grid { grid-template-columns: repeat( 4, 1fr ); }
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media ( max-width: 767px ) {
+	.zaso-post-grid--cols-3 .zaso-post-grid__grid,
+	.zaso-post-grid--cols-4 .zaso-post-grid__grid {
+		grid-template-columns: repeat( 2, 1fr );
+	}
+}
+
+@media ( max-width: 479px ) {
+	.zaso-post-grid--cols-2 .zaso-post-grid__grid,
+	.zaso-post-grid--cols-3 .zaso-post-grid__grid,
+	.zaso-post-grid--cols-4 .zaso-post-grid__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+.zaso-post-grid__card {
+	display:        flex;
+	flex-direction: column;
+	background:     @card_bg;
+	border:         1px solid @card_border;
+	border-radius:  @card_radius;
+	overflow:       hidden;
+	height:         100%;
+	box-sizing:     border-box;
+}
+
+// ─── Image ────────────────────────────────────────────────────────────────────
+.zaso-post-grid__image {
+	display:    block;
+	overflow:   hidden;
+	line-height: 0;
+}
+
+.zaso-post-grid__img {
+	display:    block;
+	width:      100%;
+	height:     @image_height;
+	object-fit: cover;
+	transition: ~"transform 0.4s ease";
+}
+
+.zaso-post-grid__image:hover .zaso-post-grid__img {
+	transform: ~"scale(1.04)";
+}
+
+// ─── Body ─────────────────────────────────────────────────────────────────────
+.zaso-post-grid__body {
+	display:        flex;
+	flex-direction: column;
+	flex-grow:      1;
+	padding:        20px;
+}
+
+.zaso-post-grid__title {
+	font-size:   1.15em;
+	font-weight: 600;
+	line-height: 1.35;
+	margin:      0 0 8px;
+
+	a {
+		color:           @title_color;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @accent_color;
+		}
+	}
+}
+
+.zaso-post-grid__meta {
+	display:     flex;
+	flex-wrap:   wrap;
+	align-items: center;
+	gap:         6px;
+	font-size:   0.82em;
+	color:       @meta_color;
+	margin:      0 0 12px;
+}
+
+.zaso-post-grid__sep {
+	color: @meta_color;
+}
+
+.zaso-post-grid__excerpt {
+	font-size:   0.92em;
+	color:       #444444;
+	line-height: 1.6;
+	margin:      0 0 16px;
+}
+
+.zaso-post-grid__readmore {
+	display:         inline-flex;
+	align-items:     center;
+	gap:             6px;
+	margin-top:      auto;
+	color:           @accent_color;
+	font-weight:     600;
+	font-size:       0.9em;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+
+	span {
+		transition: ~"transform 0.2s ease";
+	}
+
+	&:hover span {
+		transform: ~"translateX(3px)";
+	}
+}

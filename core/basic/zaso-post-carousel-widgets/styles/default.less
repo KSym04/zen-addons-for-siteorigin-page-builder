@@ -1,0 +1,191 @@
+// ZASO Post Carousel Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Slide width is set by JS (data-driven), so it is intentionally NOT baked into LESS.
+// See reference_siteorigin_widget_dev for the prefix/escape rules.
+
+@gap:          24px;
+@card_bg:      #ffffff;
+@card_border:  #e5e7eb;
+@card_radius:  10px;
+@title_color:  #111111;
+@meta_color:   #6b7280;
+@accent_color: #4f46e5;
+@image_height: 200px;
+@arrow_color:  #4f46e5;
+
+// ─── Root ─────────────────────────────────────────────────────────────────────
+& {
+	position:   relative;
+	box-sizing: border-box;
+}
+
+// ─── Viewport / track ─────────────────────────────────────────────────────────
+.zaso-post-carousel__viewport {
+	overflow:  hidden;
+	position:  relative;
+	width:     100%;
+}
+
+.zaso-post-carousel__track {
+	display:     flex;
+	gap:         @gap;
+	transition:  ~"transform 0.4s ease";
+	will-change: transform;
+}
+
+.zaso-post-carousel__slide {
+	box-sizing: border-box;
+	min-width:  0;
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+.zaso-post-carousel__card {
+	display:        flex;
+	flex-direction: column;
+	background:     @card_bg;
+	border:         1px solid @card_border;
+	border-radius:  @card_radius;
+	overflow:       hidden;
+	height:         100%;
+	box-sizing:     border-box;
+}
+
+.zaso-post-carousel__image {
+	display:     block;
+	overflow:    hidden;
+	line-height: 0;
+}
+
+.zaso-post-carousel__img {
+	display:    block;
+	width:      100%;
+	height:     @image_height;
+	object-fit: cover;
+}
+
+.zaso-post-carousel__body {
+	display:        flex;
+	flex-direction: column;
+	flex-grow:      1;
+	padding:        20px;
+}
+
+.zaso-post-carousel__title {
+	font-size:   1.1em;
+	font-weight: 600;
+	line-height: 1.35;
+	margin:      0 0 8px;
+
+	a {
+		color:           @title_color;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @accent_color;
+		}
+	}
+}
+
+.zaso-post-carousel__meta {
+	display:     flex;
+	flex-wrap:   wrap;
+	align-items: center;
+	gap:         6px;
+	font-size:   0.8em;
+	color:       @meta_color;
+	margin:      0 0 12px;
+}
+
+.zaso-post-carousel__excerpt {
+	font-size:   0.9em;
+	color:       #444444;
+	line-height: 1.6;
+	margin:      0 0 16px;
+}
+
+.zaso-post-carousel__readmore {
+	display:         inline-flex;
+	align-items:     center;
+	gap:             6px;
+	margin-top:      auto;
+	color:           @accent_color;
+	font-weight:     600;
+	font-size:       0.88em;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+// ─── Arrows ───────────────────────────────────────────────────────────────────
+.zaso-post-carousel__arrow {
+	position:        absolute;
+	top:             40%;
+	transform:       ~"translateY(-50%)";
+	z-index:         2;
+	display:         inline-flex;
+	align-items:     center;
+	justify-content: center;
+	width:           42px;
+	height:          42px;
+	padding:         0;
+	border:          1px solid @card_border;
+	border-radius:   50%;
+	background:      #ffffff;
+	color:           @arrow_color;
+	cursor:          pointer;
+	box-shadow:      0 2px 8px rgba( 0, 0, 0, 0.12 );
+	transition:      ~"opacity 0.2s ease, background 0.2s ease";
+
+	&:hover {
+		background: @arrow_color;
+		color:      #ffffff;
+	}
+
+	&[disabled] {
+		opacity: 0.35;
+		cursor:  default;
+	}
+}
+
+.zaso-post-carousel__arrow--prev { left:  -8px; }
+.zaso-post-carousel__arrow--next { right: -8px; }
+
+// ─── Dots ─────────────────────────────────────────────────────────────────────
+.zaso-post-carousel__dots {
+	display:         flex;
+	justify-content: center;
+	align-items:     center;
+	gap:             8px;
+	margin-top:      20px;
+}
+
+.zaso-post-carousel__dot {
+	width:         9px;
+	height:        9px;
+	padding:       0;
+	border:        none;
+	border-radius: 50%;
+	background:    #cbd5e1;
+	cursor:        pointer;
+	transition:    ~"background 0.2s ease, transform 0.2s ease";
+
+	&:hover {
+		background: @accent_color;
+	}
+}
+
+.zaso-post-carousel__dot--active {
+	background: @accent_color;
+	transform: ~"scale(1.3)";
+}
+
+// ─── Reduced motion ───────────────────────────────────────────────────────────
+@media ( prefers-reduced-motion: reduce ) {
+	.zaso-post-carousel__track {
+		transition: none;
+	}
+}

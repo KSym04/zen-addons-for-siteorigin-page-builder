@@ -4,15 +4,15 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.7.0
+Stable tag: 1.8.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
-30 modern, lightweight widgets for SiteOrigin Page Builder: pricing tables, FAQ, tabs, sliders, and more the builder does not ship by default.
+32 modern, lightweight widgets for SiteOrigin Page Builder: post grids, pricing tables, FAQ, sliders, and more the builder does not ship by default.
 
 == Description ==
 
-**Zen Addons for SiteOrigin Page Builder** is a curated set of 30 widget extensions built on the official SiteOrigin Widgets Bundle framework. SiteOrigin Page Builder is fast and dependable, but its stock widgets can look dated. Zen Addons fills that gap with modern, sleek widgets that look polished out of the box and stay lightweight. It adds the practical, everyday building blocks most sites actually need, from tabs, accordions, and pricing tables to FAQ sections with Schema.org markup, team grids, testimonials, and video lightboxes, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
+**Zen Addons for SiteOrigin Page Builder** is a curated set of 32 widget extensions built on the official SiteOrigin Widgets Bundle framework. SiteOrigin Page Builder is fast and dependable, but its stock widgets can look dated. Zen Addons fills that gap with modern, sleek widgets that look polished out of the box and stay lightweight. It adds the practical, everyday building blocks most sites actually need, from tabs, accordions, and pricing tables to FAQ sections with Schema.org markup, team grids, testimonials, and video lightboxes, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
 
 Every widget is designed to be clean, accessible, and easy to style. Widgets render with semantic HTML, follow ARIA best practices, and stay out of your way: nothing loads on the front end unless a widget that needs it is actually placed on the page.
 
@@ -66,6 +66,8 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 
 * Services Grid: present services or features in a grid, each with an icon, title, description, and optional link.
 * Progress Bars: show labeled progress or skill bars that fill as they scroll into view.
+* Post Grid: display a responsive grid of posts with featured images, meta, excerpts, and read-more links.
+* Post Carousel: display posts in a swipeable carousel with autoplay, arrows, and dots.
 
 **Community (bbPress)**
 
@@ -199,6 +201,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.8.0 =
+Two new widgets: Post Grid and Post Carousel for showing your latest posts in SiteOrigin layouts.
+
 = 1.7.0 =
 Two new widgets: FAQ with Schema.org markup and Pricing Table.
 
@@ -224,6 +229,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.8.0 =
+* New: Post Grid widget to display a responsive grid of posts with featured images, meta, excerpts, and read-more links.
+* New: Post Carousel widget to display posts in a swipeable carousel with autoplay, arrows, and dots.
 
 = 1.7.0 =
 * New: FAQ widget with optional Schema.org FAQPage markup for rich results in Google Search.

@@ -90,7 +90,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 				),
 				'content'      => array(
 					'label'   => esc_html__( 'Content Blocks', 'zaso' ),
-					'widgets' => array( 'zaso-services-grid-widgets', 'zaso-progress-bars-widgets' ),
+					'widgets' => array( 'zaso-services-grid-widgets', 'zaso-progress-bars-widgets', 'zaso-post-grid-widgets', 'zaso-post-carousel-widgets' ),
 				),
 				'community'    => array(
 					'label'   => esc_html__( 'Community (bbPress)', 'zaso' ),
