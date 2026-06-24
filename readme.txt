@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.8.1
+Stable tag: 1.8.2
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -201,6 +201,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.8.2 =
+Adds the Zen Addons logo to the widget management screen for a clearer, more polished admin experience.
+
 = 1.8.1 =
 Accessibility improvements across all widgets: better keyboard navigation, screen reader support, focus styles, and clearer labels.
 
@@ -232,6 +235,9 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.8.2 =
+* Improved: Added the Zen Addons logo to the widget management screen heading for a clearer, more polished admin experience.
 
 = 1.8.1 =
 * Improved: Accessibility across all widgets, including stronger keyboard navigation and clearer focus styles.
