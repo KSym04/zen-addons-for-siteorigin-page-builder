@@ -133,6 +133,12 @@
       color: @modal_button_font_color_hover;
       border: 1px solid @modal_button_border_color_hover;
     }
+
+    // Inset ring so the focus indicator is not clipped by overflow: hidden.
+    &:focus-visible {
+      outline: 3px solid #4f46e5;
+      outline-offset: -3px;
+    }
   }
 
   &__modal--fadein {
@@ -143,7 +149,9 @@
 }
 
 /* animations and transitions */
-.zaso-hover-card:hover {
+/* :focus-within mirrors :hover so keyboard users get the same reveal. */
+.zaso-hover-card:hover,
+.zaso-hover-card:focus-within {
   .zaso-hover-card__caption {
     &--fadein {
       visibility: hidden;

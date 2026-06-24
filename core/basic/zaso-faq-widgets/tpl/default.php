@@ -21,20 +21,30 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 if ( empty( $items ) ) {
 	return;
 }
+
+// Stable base id for wiring each question to its answer (unique per widget instance).
+$zaso_faq_uid = ! empty( $args['widget_id'] ) ? sanitize_html_class( $args['widget_id'] ) : uniqid( 'zaso-faq-' );
 ?>
 <dl <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- zaso_format_field_extra_id() returns a safe id="" attribute string. ?>
 	class="<?php echo esc_attr( $classes ); ?>">
 	<?php foreach ( $items as $index => $item ) :
-		$is_open = ( $open_first && 0 === $index );
+		$is_open  = ( $open_first && 0 === $index );
+		$q_id     = $zaso_faq_uid . '-q-' . $index;
+		$a_id     = $zaso_faq_uid . '-a-' . $index;
 	?>
 	<div class="zaso-faq__item<?php echo $is_open ? ' zaso-faq__item--open' : ''; ?>">
 		<dt class="zaso-faq__question"
+			id="<?php echo esc_attr( $q_id ); ?>"
 			role="button"
 			tabindex="0"
+			aria-controls="<?php echo esc_attr( $a_id ); ?>"
 			aria-expanded="<?php echo $is_open ? 'true' : 'false'; ?>">
 			<?php echo esc_html( $item['question'] ); ?>
 		</dt>
-		<dd class="zaso-faq__answer">
+		<dd class="zaso-faq__answer"
+			id="<?php echo esc_attr( $a_id ); ?>"
+			role="region"
+			aria-labelledby="<?php echo esc_attr( $q_id ); ?>">
 			<?php echo wp_kses_post( $item['answer'] ); ?>
 		</dd>
 	</div>

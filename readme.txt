@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -201,6 +201,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.8.1 =
+Accessibility improvements across all widgets: better keyboard navigation, screen reader support, focus styles, and clearer labels.
+
 = 1.8.0 =
 Two new widgets: Post Grid and Post Carousel for showing your latest posts in SiteOrigin layouts.
 
@@ -229,6 +232,14 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.8.1 =
+* Improved: Accessibility across all widgets, including stronger keyboard navigation and clearer focus styles.
+* Improved: Accordion, Tabs, and FAQ now correctly expose their open and closed state and relationships to screen readers.
+* Improved: Sliders and carousels respect reduced-motion preferences and provide clearer, labelled controls.
+* Improved: Images, icons, and links now have more reliable text alternatives and accessible names.
+* Improved: Alert Box can show an optional type icon (info, success, warning, error) so the type is not signalled by colour alone.
+* Fixed: Removed several incorrect landmark and ARIA roles that could confuse screen readers.
 
 = 1.8.0 =
 * New: Post Grid widget to display a responsive grid of posts with featured images, meta, excerpts, and read-more links.

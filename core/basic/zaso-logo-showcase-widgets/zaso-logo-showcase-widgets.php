@@ -160,10 +160,22 @@ class Zen_Addons_SiteOrigin_Logo_Showcase_Widget extends SiteOrigin_Widget {
 				if ( ! empty( $raw['alt'] ) ) {
 					$img['alt'] = $raw['alt'];
 				}
+				if ( ! isset( $img['alt'] ) ) {
+					$img['alt'] = '';
+				}
+				// Accessible name for a LINKED logo when no alt is available, so the
+				// link is never nameless: fall back to the link host, then a generic.
+				$link_url   = isset( $raw['link'] ) ? $raw['link'] : '';
+				$link_label = $img['alt'];
+				if ( '' === (string) $link_label && '' !== (string) $link_url ) {
+					$host       = wp_parse_url( $link_url, PHP_URL_HOST );
+					$link_label = $host ? $host : __( 'Visit link', 'zaso' );
+				}
 				$logos[] = array(
 					'img'          => $img,
-					'link_url'     => isset( $raw['link'] ) ? $raw['link'] : '',
+					'link_url'     => $link_url,
 					'link_new_tab' => ! empty( $raw['link_new_tab'] ),
+					'link_label'   => $link_label,
 				);
 			}
 		}

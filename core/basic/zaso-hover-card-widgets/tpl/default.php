@@ -11,7 +11,7 @@ $hover_card_image = siteorigin_widgets_get_attachment_image_src( $instance['hove
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-hover-card <?php echo esc_attr( $instance['extra_class'] ); ?>">
-  <div class="zaso-hover-card__box" role="figure">
+  <div class="zaso-hover-card__box">
 
     <div class="zaso-hover-card__media">
       <img src="<?php echo esc_url( $hover_card_image ); ?>" alt="<?php echo esc_attr( $instance['hover_card_title'] ); ?>" />

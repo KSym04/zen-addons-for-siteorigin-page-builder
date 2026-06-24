@@ -67,7 +67,7 @@ $social_icons = array(
 											<a
 												class="zaso-team-member__social-link zaso-team-member__social-link--<?php echo esc_attr( $platform ); ?>"
 												href="<?php echo sow_esc_url( $link['url'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sow_esc_url() is SiteOrigin's URL escaper. ?>"
-												aria-label="<?php echo esc_attr( $link['label'] ); ?>"
+												aria-label="<?php echo esc_attr( $link['label'] . ' ' . __( '(opens in new tab)', 'zaso' ) ); ?>"
 												target="_blank"
 												rel="noopener noreferrer"
 											>

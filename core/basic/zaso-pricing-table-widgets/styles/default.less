@@ -60,6 +60,7 @@
 
 // ─── Name ─────────────────────────────────────────────────────────────────────
 .zaso-pricing-table__name {
+	margin:         0;
 	font-size:      1.1rem;
 	font-weight:    700;
 	color:          @featured_color;
@@ -145,4 +146,22 @@
 .zaso-pricing-table__btn:hover {
 	opacity: 0.88;
 	color:   @button_text_color;
+}
+
+.zaso-pricing-table__btn:focus-visible {
+	outline:        2px solid @featured_color;
+	outline-offset: 2px;
+}
+
+// Visually-hidden text for assistive tech (featured indicator, new-tab hint).
+.zaso-pricing-table .screen-reader-text {
+	position: absolute;
+	width:    1px;
+	height:   1px;
+	padding:  0;
+	margin:   -1px;
+	overflow: hidden;
+	clip:     rect( 0, 0, 0, 0 );
+	white-space: nowrap;
+	border:   0;
 }

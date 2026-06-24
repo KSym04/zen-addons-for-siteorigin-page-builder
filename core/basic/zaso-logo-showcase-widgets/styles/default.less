@@ -70,6 +70,11 @@
 	border-color: #d1d5db;
 }
 
+.zaso-logo-showcase__link:focus-visible {
+	outline:        2px solid #4f46e5;
+	outline-offset: 2px;
+}
+
 // ─── Image ────────────────────────────────────────────────────────────────────
 .zaso-logo-showcase__img {
 	max-height:  @logo_height;
@@ -86,6 +91,7 @@
 }
 
 .zaso-logo-showcase--grayscale .zaso-logo-showcase__link:hover .zaso-logo-showcase__img,
+.zaso-logo-showcase--grayscale .zaso-logo-showcase__link:focus-visible .zaso-logo-showcase__img,
 .zaso-logo-showcase--grayscale .zaso-logo-showcase__item:hover > span .zaso-logo-showcase__img {
 	filter:  none;
 	opacity: 1;

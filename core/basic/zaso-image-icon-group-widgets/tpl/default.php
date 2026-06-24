@@ -13,10 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
     <ul class="zaso-image-icon-group__list <?php echo esc_attr( $instance['image_icon_group_orientation'] ); ?>">
         <?php foreach ( $instance['image_icon_group'] as $iig ) : ?>
             <?php $image_icon_group_photo = siteorigin_widgets_get_attachment_image_src( $iig['image_icon_group_photo'], 'full' )[0]; ?>
+            <?php
+            // Ensure the link always has an accessible name: use the title, else
+            // fall back to the link host, then a generic label.
+            $iig_title = isset( $iig['image_icon_group_title'] ) ? (string) $iig['image_icon_group_title'] : '';
+            $iig_label = $iig_title;
+            if ( '' === trim( $iig_label ) && ! empty( $iig['image_icon_group_link'] ) ) {
+                $iig_host  = wp_parse_url( $iig['image_icon_group_link'], PHP_URL_HOST );
+                $iig_label = $iig_host ? $iig_host : __( 'Open link', 'zaso' );
+            }
+            ?>
             <li class="zaso-image-icon-group__list-item">
                 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sow_esc_url() is SiteOrigin's esc_url() wrapper. ?>
-                <a class="zaso-image-icon-group__list-item-action" href="<?php echo sow_esc_url( $iig['image_icon_group_link'] ) ?>">
-                    <img src="<?php echo esc_url( $image_icon_group_photo ); ?>" alt="<?php echo esc_attr( $iig['image_icon_group_title'] ); ?>" />
+                <a class="zaso-image-icon-group__list-item-action" href="<?php echo sow_esc_url( $iig['image_icon_group_link'] ) ?>"<?php if ( '' === trim( $iig_title ) ) : ?> aria-label="<?php echo esc_attr( $iig_label ); ?>"<?php endif; ?>>
+                    <img src="<?php echo esc_url( $image_icon_group_photo ); ?>" alt="<?php echo esc_attr( $iig_title ); ?>" />
                     <?php if ( 'block' == $image_icon_group_text_display ) : ?>
                         <?php echo esc_html( $iig['image_icon_group_title'] ); ?>
                     <?php endif; ?>

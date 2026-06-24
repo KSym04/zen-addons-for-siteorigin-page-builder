@@ -35,7 +35,7 @@ if ( empty( $testimonials ) ) {
 >
 
 	<div class="zaso-testimonial-slider__viewport">
-		<div class="zaso-testimonial-slider__track" aria-live="polite" aria-atomic="false">
+		<div class="zaso-testimonial-slider__track">
 			<?php foreach ( $testimonials as $index => $testimonial ) : ?>
 				<div
 					class="zaso-testimonial-slider__slide"
@@ -101,6 +101,19 @@ if ( empty( $testimonials ) ) {
 		</div><!-- .zaso-testimonial-slider__track -->
 	</div><!-- .zaso-testimonial-slider__viewport -->
 
+	<?php if ( $autoplay && $count > 1 ) : ?>
+		<button
+			class="zaso-testimonial-slider__playpause"
+			type="button"
+			aria-label="<?php esc_attr_e( 'Pause testimonials', 'zaso' ); ?>"
+			data-label-pause="<?php esc_attr_e( 'Pause testimonials', 'zaso' ); ?>"
+			data-label-play="<?php esc_attr_e( 'Play testimonials', 'zaso' ); ?>"
+		>
+			<svg class="zaso-testimonial-slider__pp-icon zaso-testimonial-slider__pp-icon--pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+			<svg class="zaso-testimonial-slider__pp-icon zaso-testimonial-slider__pp-icon--play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"></path></svg>
+		</button>
+	<?php endif; ?>
+
 	<?php if ( $show_arrows && $count > 1 ) : ?>
 		<div class="zaso-testimonial-slider__arrows" aria-hidden="true">
 			<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--prev" type="button" aria-label="<?php esc_attr_e( 'Previous testimonial', 'zaso' ); ?>" tabindex="-1">
@@ -113,18 +126,17 @@ if ( empty( $testimonials ) ) {
 	<?php endif; ?>
 
 	<?php if ( $show_dots && $count > 1 ) : ?>
-		<div class="zaso-testimonial-slider__dots" role="tablist" aria-label="<?php esc_attr_e( 'Testimonial slides', 'zaso' ); ?>">
+		<div class="zaso-testimonial-slider__dots" aria-label="<?php esc_attr_e( 'Testimonial slides', 'zaso' ); ?>">
 			<?php foreach ( $testimonials as $index => $testimonial ) : ?>
 				<button
 					class="zaso-testimonial-slider__dot<?php echo 0 === $index ? ' zaso-testimonial-slider__dot--active' : ''; ?>"
-					role="tab"
 					type="button"
 					aria-label="<?php echo esc_attr( sprintf(
-						/* translators: slide number */
-						__( 'Slide %d', 'zaso' ),
+						/* translators: testimonial number */
+						__( 'Go to testimonial %d', 'zaso' ),
 						$index + 1
 					) ); ?>"
-					aria-selected="<?php echo 0 === $index ? 'true' : 'false'; ?>"
+					<?php echo 0 === $index ? 'aria-current="true"' : ''; ?>
 					data-index="<?php echo esc_attr( $index ); ?>"
 				></button>
 			<?php endforeach; ?>

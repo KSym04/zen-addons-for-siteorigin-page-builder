@@ -167,7 +167,7 @@
 	transition:   background 0.2s ease, transform 0.2s ease;
 
 	&--active,
-	&[aria-selected="true"] {
+	&[aria-current="true"] {
 		background: @dot_active_color;
 		transform:  scale( 1.25 );
 	}
@@ -176,6 +176,54 @@
 		outline:        2px solid @dot_active_color;
 		outline-offset: 2px;
 	}
+}
+
+// ─── Pause / play control ─────────────────────────────────────────────────────
+.zaso-testimonial-slider__playpause {
+	position:        absolute;
+	top:             10px;
+	right:           10px;
+	z-index:         2;
+	display:         inline-flex;
+	align-items:     center;
+	justify-content: center;
+	width:           34px;
+	height:          34px;
+	padding:         0;
+	border:          1px solid rgba( 0, 0, 0, 0.15 );
+	border-radius:   50%;
+	background:      rgba( 255, 255, 255, 0.85 );
+	color:           @arrow_color;
+	cursor:          pointer;
+	transition:      border-color 0.2s ease, background 0.2s ease;
+
+	svg {
+		width:  16px;
+		height: 16px;
+	}
+
+	&:hover {
+		background:   #ffffff;
+		border-color: rgba( 0, 0, 0, 0.3 );
+	}
+
+	&:focus-visible {
+		outline:        2px solid @arrow_color;
+		outline-offset: 2px;
+	}
+}
+
+// Icon swap: show pause while playing, play while paused.
+.zaso-testimonial-slider__pp-icon--play {
+	display: none;
+}
+
+.zaso-testimonial-slider.is-paused .zaso-testimonial-slider__pp-icon--pause {
+	display: none;
+}
+
+.zaso-testimonial-slider.is-paused .zaso-testimonial-slider__pp-icon--play {
+	display: inline-block;
 }
 
 // ─── prefers-reduced-motion ───────────────────────────────────────────────────

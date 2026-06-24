@@ -33,10 +33,19 @@ if( !empty($info_image) ) {
 }
 
 $attr['title'] = $instance['info_title'];
+
+// Always provide an alt: attachment alt text, falling back to the info title.
+$attr['alt'] = '';
+if ( ! empty( $instance['info_image'] ) ) {
+    $attr['alt'] = get_post_meta( $instance['info_image'], '_wp_attachment_image_alt', true );
+}
+if ( '' === $attr['alt'] ) {
+    $attr['alt'] = $instance['info_title'];
+}
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-info-box <?php echo esc_attr( $instance['extra_class'] ); ?>" role="banner">
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-info-box <?php echo esc_attr( $instance['extra_class'] ); ?>">
   <div class="zaso-info-box__wrapper">
     <?php if( $instance['info_image'] ) : ?>
       <div class="zaso-info-box__image">

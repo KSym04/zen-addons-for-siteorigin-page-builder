@@ -21,6 +21,19 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 				'type'  => 'tinymce',
 				'label' => __( 'Messages' , 'zaso' )
 			),
+			'alert_type' => array(
+				'type'        => 'select',
+				'label'       => __( 'Alert Type', 'zaso' ),
+				'default'     => 'none',
+				'description' => __( 'Adds a leading icon and a screen-reader label so the alert type is not conveyed by colour alone.', 'zaso' ),
+				'options'     => array(
+					'none'    => __( 'None', 'zaso' ),
+					'info'    => __( 'Info', 'zaso' ),
+					'success' => __( 'Success', 'zaso' ),
+					'warning' => __( 'Warning', 'zaso' ),
+					'error'   => __( 'Error', 'zaso' ),
+				),
+			),
 			'alert_closebtn' => array(
 				'type'    => 'select',
 				'label'   => __( 'Close Button', 'zaso' ),

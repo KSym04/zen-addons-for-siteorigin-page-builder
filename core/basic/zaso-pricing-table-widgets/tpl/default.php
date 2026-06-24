@@ -28,7 +28,8 @@ $checkmark_svg = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16
 	<?php foreach ( $plans as $plan ) : ?>
 	<li class="zaso-pricing-table__item<?php echo $plan['featured'] ? ' zaso-pricing-table__item--featured' : ''; ?>">
 		<div class="zaso-pricing-table__card">
-			<div class="zaso-pricing-table__name"><?php echo esc_html( $plan['name'] ); ?></div>
+			<?php if ( $plan['featured'] ) : ?><span class="screen-reader-text"><?php esc_html_e( 'Featured plan', 'zaso' ); ?></span><?php endif; ?>
+				<h3 class="zaso-pricing-table__name"><?php echo esc_html( $plan['name'] ); ?></h3>
 			<div class="zaso-pricing-table__price-wrap">
 				<?php if ( '' !== $currency ) : ?>
 				<span class="zaso-pricing-table__currency"><?php echo esc_html( $currency ); ?></span>
@@ -55,7 +56,7 @@ $checkmark_svg = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16
 			<a class="zaso-pricing-table__btn"
 				href="<?php echo sow_esc_url( $plan['cta_url'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sow_esc_url() is SiteOrigin's vetted URL escaper. ?>"
 				<?php echo $plan['cta_new_tab'] ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>>
-				<?php echo esc_html( $plan['cta_text'] ); ?>
+				<?php echo esc_html( $plan['cta_text'] ); ?><?php if ( $plan['cta_new_tab'] ) : ?><span class="screen-reader-text"><?php esc_html_e( '(opens in new tab)', 'zaso' ); ?></span><?php endif; ?>
 			</a>
 			<?php endif; ?>
 		</div>

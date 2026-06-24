@@ -63,7 +63,7 @@ if ( 'image' === $bg_type && ! empty( $bg_image_url ) ) {
 					if ( ! empty( $button_rel ) ) {
 						echo ' rel="' . esc_attr( implode( ' ', $button_rel ) ) . '"';
 					}
-				?>><?php echo esc_html( $instance['button_text'] ); ?></a>
+				?>><?php echo esc_html( $instance['button_text'] ); ?><?php if ( ! empty( $instance['button_new_tab'] ) ) : ?><span class="screen-reader-text"><?php esc_html_e( '(opens in new tab)', 'zaso' ); ?></span><?php endif; ?></a>
 			</div>
 		<?php endif; ?>
 

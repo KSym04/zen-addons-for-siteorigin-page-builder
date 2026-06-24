@@ -11,8 +11,18 @@
         zasoHCBackgroundPlacement.css( 'background-size', 'cover' );
     });
 
-    jQuery('.zaso-hover-card').on('click', function(){
-        window.location = jQuery(this).find('.zaso-hover-card__modal-action').attr('href');
+    // Mouse convenience: clicking anywhere on the card follows the action link.
+    // Keyboard users operate the real, focusable .zaso-hover-card__modal-action
+    // link directly (the modal reveals on :focus-within), so this is a
+    // progressive enhancement for pointer users only.
+    jQuery('.zaso-hover-card').on('click', function( e ){
+        if ( jQuery( e.target ).closest('.zaso-hover-card__modal-action').length ) {
+            return; // Let the real link handle its own activation.
+        }
+        var zasoHCActionHref = jQuery(this).find('.zaso-hover-card__modal-action').attr('href');
+        if ( zasoHCActionHref ) {
+            window.location = zasoHCActionHref;
+        }
     });
 
 })(jQuery);

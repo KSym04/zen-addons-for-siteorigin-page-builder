@@ -130,7 +130,7 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 							'overlay_opacity' => array(
 								'type'    => 'slider',
 								'label'   => __( 'Image Overlay Opacity', 'zaso' ),
-								'default' => 50,
+								'default' => 60,
 								'min'     => 0,
 								'max'     => 100,
 							),

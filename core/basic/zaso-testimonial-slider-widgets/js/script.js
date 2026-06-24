@@ -60,6 +60,7 @@
 		var pointerStartX = 0;
 		var pointerStartY = 0;
 		var isDragging    = false;
+		var manuallyPaused = false; // Set when the user presses the pause control.
 
 		/**
 		 * Move to a specific slide index.
@@ -87,10 +88,11 @@
 			// Update dots.
 			for ( var d = 0; d < dots.length; d++ ) {
 				var isActive = d === next;
-				dots[ d ].setAttribute( 'aria-selected', isActive ? 'true' : 'false' );
 				if ( isActive ) {
+					dots[ d ].setAttribute( 'aria-current', 'true' );
 					dots[ d ].classList.add( 'zaso-testimonial-slider__dot--active' );
 				} else {
+					dots[ d ].removeAttribute( 'aria-current' );
 					dots[ d ].classList.remove( 'zaso-testimonial-slider__dot--active' );
 				}
 			}
@@ -110,9 +112,9 @@
 
 		// ── Auto-play ────────────────────────────────────────────────────────
 
-		/** Start the auto-play interval (no-op if reduced motion). */
+		/** Start the auto-play interval (no-op if reduced motion or manually paused). */
 		function startAutoplay() {
-			if ( ! autoplay || reduced ) {
+			if ( ! autoplay || reduced || manuallyPaused ) {
 				return;
 			}
 			stopAutoplay();
@@ -159,6 +161,27 @@
 					startAutoplay();
 				} );
 			}( dots[ d ], d ) );
+		}
+
+		// ── Pause / play control ─────────────────────────────────────────────
+
+		var playPauseBtn = root.querySelector( '.zaso-testimonial-slider__playpause' );
+		if ( playPauseBtn && autoplay && ! reduced ) {
+			playPauseBtn.addEventListener( 'click', function () {
+				manuallyPaused = ! manuallyPaused;
+				if ( manuallyPaused ) {
+					stopAutoplay();
+					root.classList.add( 'is-paused' );
+					playPauseBtn.setAttribute( 'aria-label', playPauseBtn.getAttribute( 'data-label-play' ) );
+				} else {
+					root.classList.remove( 'is-paused' );
+					playPauseBtn.setAttribute( 'aria-label', playPauseBtn.getAttribute( 'data-label-pause' ) );
+					startAutoplay();
+				}
+			} );
+		} else if ( playPauseBtn ) {
+			// Reduced motion (or autoplay off): no moving content, so the control is not needed.
+			playPauseBtn.parentNode.removeChild( playPauseBtn );
 		}
 
 		// ── Keyboard navigation ──────────────────────────────────────────────

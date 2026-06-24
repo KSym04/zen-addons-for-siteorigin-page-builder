@@ -51,6 +51,11 @@
     border-width: 2px 0 0 0;
   }
 
+  &__title:focus-visible {
+    outline: 2px solid #333333;
+    outline-offset: 2px;
+  }
+
   &__title[aria-selected="true"] {
     background-color: @title_background_color;
     border-style: solid;

@@ -26,13 +26,18 @@
     if ( currentContent.hasClass('zaso-simple-accordion--open') ) {
       currentContent.slideUp().removeClass('zaso-simple-accordion--open');
       currentTitle.removeClass('activate');
+      currentTitle.find('button').attr('aria-expanded', 'false');
     } else {
       currentContent.slideDown().addClass('zaso-simple-accordion--open');
+      currentTitle.find('button').attr('aria-expanded', 'true');
     }
-    
+
     // If setting set to single open only.
     if ( currentAccordionBox.hasClass('single_open') ) {
-        $(this).siblings('.zaso-simple-accordion__title').next().slideUp().removeClass('zaso-simple-accordion--open');
+        var siblingTitles = $(this).siblings('.zaso-simple-accordion__title');
+        siblingTitles.next().slideUp().removeClass('zaso-simple-accordion--open');
+        // Keep the exposed state in sync with the collapsed siblings.
+        siblingTitles.find('button').attr('aria-expanded', 'false');
     }
 
     return false;

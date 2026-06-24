@@ -21,13 +21,13 @@ $video_play_button_hover = wp_get_attachment_image_src( $instance['video_play_bu
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-youtube-lightbox <?php echo esc_attr( $instance['extra_class'] ); ?>" role="dialog">
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-youtube-lightbox <?php echo esc_attr( $instance['extra_class'] ); ?>">
     <div class="zaso-youtube-lightbox__inner">
-        <a href="<?php echo esc_url( $build_url ); ?>" data-lity>
+        <a href="<?php echo esc_url( $build_url ); ?>" data-lity aria-label="<?php esc_attr_e( 'Play video', 'zaso' ); ?>">
             <?php if ( $video_thumb ) : ?>
-                <img src="<?php echo esc_url( $video_thumb ); ?>" alt="<?php echo esc_attr( $instance['video_url'] ); ?>" />
+                <img src="<?php echo esc_url( $video_thumb ); ?>" alt="" />
             <?php else : ?>
-                <?php echo esc_html( $instance['video_url'] ); ?>
+                <?php esc_html_e( 'Play video', 'zaso' ); ?>
             <?php endif; ?>
 
             <?php if ( $video_play_button && $video_thumb ) : ?>
