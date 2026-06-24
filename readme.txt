@@ -118,25 +118,17 @@ This service is provided by DopeThemes. Terms of service: https://www.dopethemes
 
 == Installation ==
 
-= Automatic installation =
-
-1. Log in to your WordPress admin.
-2. Go to **Plugins > Add New**.
-3. Search for **Zen Addons for SiteOrigin Page Builder**.
-4. Click **Install Now**, then **Activate**.
-5. Make sure Page Builder by SiteOrigin and the SiteOrigin Widgets Bundle are also installed and active.
+1. In your WordPress admin, go to **Plugins > Add New** and search for **Zen Addons for SiteOrigin Page Builder**.
+2. Click **Install Now**, then **Activate**.
+3. Install and activate **Page Builder by SiteOrigin** and the **SiteOrigin Widgets Bundle** (both free). Zen Addons needs the Widgets Bundle and will prompt you to install it if it is missing.
+4. Edit any page with Page Builder, click **Add Widget**, and open the **ZASO Widgets** tab to add Zen Addons widgets.
+5. Visit **Plugins > SiteOrigin Widgets**, or the **Zen Addons** menu in your admin sidebar, to turn individual widgets on or off.
 
 = Manual installation =
 
 1. Download the plugin zip file.
-2. Go to **Plugins > Add New > Upload Plugin**.
-3. Choose the zip file and click **Install Now**.
-4. Activate the plugin.
-
-= After activation =
-
-* Edit a page with Page Builder, click **Add Widget**, and open the **ZASO Widgets** tab.
-* Visit **Plugins > SiteOrigin Widgets** to enable or disable individual Zen Addons widgets. We recommend activating only the widgets you need.
+2. Go to **Plugins > Add New > Upload Plugin**, choose the zip file, and click **Install Now**.
+3. Activate the plugin, then follow steps 3 to 5 above.
 
 == Frequently Asked Questions ==
 
