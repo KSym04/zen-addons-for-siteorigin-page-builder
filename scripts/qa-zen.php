@@ -66,7 +66,7 @@ $cases = array(
 	),
 	'spacer'      => array(
 		'file'     => $base . 'zaso-spacer-widgets/tpl/default.php',
-		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'spacer_height' => array( 'spacer_height_unit_value' => '40', 'spacer_height_unit' => 'px' ) ),
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil, 'height' => '40px' ),
 	),
 	'cta-banner'  => array(
 		'file'     => $base . 'zaso-cta-banner-widgets/tpl/default.php',
@@ -120,8 +120,18 @@ $cases = array(
 					'rating'       => 5,
 					'rating_label' => '5 out of 5 stars',
 				),
+				// Out-of-range rating must NOT fatal (str_repeat negative-count guard).
+				array(
+					'quote'        => 'Second voice.',
+					'author_name'  => 'Jane Roe',
+					'author_title' => 'CTO',
+					'photo_src'    => '',
+					'photo_alt'    => 'Jane Roe',
+					'rating'       => 6,
+					'rating_label' => '5 out of 5 stars',
+				),
 			),
-			'count'             => 1,
+			'count'             => 2,
 			'autoplay'          => false,
 			'autoplay_duration' => 5000,
 			'show_arrows'       => true,

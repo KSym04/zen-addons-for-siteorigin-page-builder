@@ -77,7 +77,7 @@ Zen Addons widgets are SiteOrigin widgets, so they appear in two places:
 1. Inside **Page Builder**, click **Add Widget** and open the **ZASO Widgets** tab.
 2. Under **Plugins > SiteOrigin Widgets**, where you can turn individual widgets on or off.
 
-Zen Addons does not add its own top-level admin menu, and the widgets are not listed under Appearance > Widgets, because they are built specifically for the SiteOrigin builder.
+You can also manage every Zen Addons widget from one place under the **Zen Addons** menu in your WordPress admin sidebar. The widgets are not listed under Appearance > Widgets, because they are built specifically for the SiteOrigin builder.
 
 = Standards =
 
@@ -99,7 +99,7 @@ Zen Addons does not add its own top-level admin menu, and the widgets are not li
 
 = Zen Addons Pro (coming soon) =
 
-A Pro tier is in active development and will add premium widgets not found in the free plugin, including a pricing table, WooCommerce product showcase, portfolio grid, testimonials, team members, and more. Early pricing starts at $29 per year for a single site.
+A Pro tier is in active development and will add premium widgets not found in the free plugin, including a pricing table, WooCommerce product showcase, and portfolio grid, plus more advanced layout options. Early pricing starts at $29 per year for a single site.
 
 To get notified when Pro launches, visit https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
 
@@ -141,11 +141,11 @@ Yes. Zen Addons extends the SiteOrigin Widgets Bundle, which provides the widget
 
 = Where do the widgets show up after I activate the plugin? =
 
-Zen Addons widgets appear in the SiteOrigin Page Builder widget picker under the **ZASO Widgets** tab, and in the manage screen at **Plugins > SiteOrigin Widgets**. They are not listed under Appearance > Widgets and there is no separate Zen Addons admin menu, because they are SiteOrigin widgets.
+Zen Addons widgets appear in the SiteOrigin Page Builder widget picker under the **ZASO Widgets** tab, and in the manage screen at **Plugins > SiteOrigin Widgets**. You can also activate or deactivate them from the **Zen Addons** menu in your WordPress admin sidebar. They are not listed under Appearance > Widgets, because they are SiteOrigin widgets.
 
 = How do I enable or disable individual widgets? =
 
-Go to **Plugins > SiteOrigin Widgets**. Each Zen Addons widget (prefixed with "ZASO -") can be turned on or off there. Activating only the widgets you use keeps things tidy.
+Go to the **Zen Addons** menu in your WordPress admin sidebar, or to **Plugins > SiteOrigin Widgets**. Each Zen Addons widget (prefixed with "ZASO -") can be turned on or off from either place. Activating only the widgets you use keeps things tidy.
 
 = Will Zen Addons slow down my site? =
 
@@ -191,6 +191,7 @@ Please read the Frequently Asked Questions before opening a support request, and
 2. Business and marketing widgets: Info Box, Hover Card, Icon, and Image Icon Group.
 3. Media widgets: Video, YouTube Lightbox, and Vimeo Lightbox.
 4. Interactive widgets: Simple Accordion and Basic Tabs.
+5. People and social proof widgets: Team Member and Testimonial Slider.
 
 == Upgrade Notice ==
 

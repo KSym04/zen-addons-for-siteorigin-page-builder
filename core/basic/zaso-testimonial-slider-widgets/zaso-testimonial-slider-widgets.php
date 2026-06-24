@@ -222,7 +222,9 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 					}
 				}
 
-				$rating = absint( isset( $raw['rating'] ) ? $raw['rating'] : 0 );
+				// Clamp to 0-5 so the star markup (str_repeat) can never receive a
+				// negative count, which would fatal under PHP 8 on a corrupted instance.
+				$rating = min( 5, max( 0, absint( isset( $raw['rating'] ) ? $raw['rating'] : 0 ) ) );
 
 				$testimonials[] = array(
 					'quote'        => isset( $raw['quote'] ) ? $raw['quote'] : '',

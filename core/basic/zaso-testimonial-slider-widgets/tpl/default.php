@@ -51,11 +51,15 @@ if ( empty( $testimonials ) ) {
 				>
 					<div class="zaso-testimonial-slider__card">
 
-						<?php if ( ! empty( $testimonial['rating'] ) ) : ?>
+						<?php
+						// Clamp defensively so str_repeat() can never receive a negative count (PHP 8 fatal).
+						$zaso_stars = max( 0, min( 5, (int) $testimonial['rating'] ) );
+						?>
+						<?php if ( $zaso_stars > 0 ) : ?>
 							<div class="zaso-testimonial-slider__rating">
 								<span role="img" aria-label="<?php echo esc_attr( $testimonial['rating_label'] ); ?>">
 									<span aria-hidden="true">
-										<?php echo esc_html( str_repeat( '★', $testimonial['rating'] ) . str_repeat( '☆', 5 - $testimonial['rating'] ) ); ?>
+										<?php echo esc_html( str_repeat( '★', $zaso_stars ) . str_repeat( '☆', 5 - $zaso_stars ) ); ?>
 									</span>
 								</span>
 							</div>
