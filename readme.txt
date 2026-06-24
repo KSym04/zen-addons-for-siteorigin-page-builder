@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.5.0
+Stable tag: 1.6.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -38,6 +38,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 * Video: embed a responsive video from YouTube, Vimeo, or other providers.
 * YouTube Video Lightbox: open a YouTube video in a clickable pop-up lightbox.
 * Vimeo Video Lightbox: open a Vimeo video in a clickable pop-up lightbox.
+* Image Gallery: display a responsive image grid with an optional lightbox that opens full-size images in a pop-up overlay.
 
 **Business and marketing**
 
@@ -57,6 +58,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 
 * Team Member: display a grid of team members with photos, roles, bios, and social links.
 * Testimonial Slider: show a rotating set of testimonials with auto-play, swipe, and keyboard support.
+* Logo Showcase: display a responsive grid of client or partner logos with an optional greyscale-to-colour hover effect.
 
 **Content blocks**
 
@@ -190,8 +192,12 @@ Please read the Frequently Asked Questions before opening a support request, and
 4. Interactive widgets: Simple Accordion and Basic Tabs.
 5. People and social proof widgets: Team Member and Testimonial Slider.
 6. Content block widgets: Services Grid and Progress Bars.
+7. Media and social proof widgets: Image Gallery with lightbox and Logo Showcase.
 
 == Upgrade Notice ==
+
+= 1.6.0 =
+Adds two new widgets: Image Gallery with lightbox and Logo Showcase.
 
 = 1.5.0 =
 Adds two new widgets: Services Grid and Progress Bars.
@@ -212,6 +218,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.6.0 =
+* New: Image Gallery widget for responsive image grids with a built-in lightbox that opens full-size images in a pop-up overlay.
+* New: Logo Showcase widget to display a grid of client or partner logos, with optional greyscale-to-colour hover effect.
 
 = 1.5.0 =
 * New: Services Grid widget to present services or features with an icon, title, description, and optional link.

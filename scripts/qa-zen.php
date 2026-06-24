@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 26; // Number of ZASO widgets shipped.
+$expected = 28; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -171,6 +171,51 @@ $cases = array(
 			'animate'            => true,
 			'animation_duration' => 1200,
 			'classes'            => 'zaso-progress-bars',
+		),
+	),
+	'logo-showcase'        => array(
+		'file'     => $base . 'zaso-logo-showcase-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+		'vars'     => array(
+			'logos'             => array(
+				array(
+					'img'          => array( 'src' => 'https://example.com/logo.png', 'alt' => 'Acme Corp' . $evil, 'width' => 200, 'height' => 80 ),
+					'link_url'     => 'https://example.com',
+					'link_new_tab' => true,
+				),
+				array(
+					'img'          => array( 'src' => 'https://example.com/logo2.png', 'alt' => 'Beta Inc<script>bad()</script>', 'width' => '', 'height' => '' ),
+					'link_url'     => '',
+					'link_new_tab' => false,
+				),
+			),
+			'container_classes' => 'zaso-logo-showcase zaso-logo-showcase--cols-5 zaso-logo-showcase--align-center zaso-logo-showcase--grayscale',
+		),
+	),
+	'image-gallery'        => array(
+		'file'     => $base . 'zaso-image-gallery-widgets/tpl/default.php',
+		'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+		'vars'     => array(
+			'images'            => array(
+				array(
+					'thumb_src'    => 'https://example.com/thumb1.jpg',
+					'thumb_width'  => 600,
+					'thumb_height' => 400,
+					'full_src'     => 'https://example.com/full1.jpg',
+					'alt'          => 'Gallery image 1' . $evil,
+					'caption'      => 'Caption one<script>bad()</script>',
+				),
+				array(
+					'thumb_src'    => 'https://example.com/thumb2.jpg',
+					'thumb_width'  => '',
+					'thumb_height' => '',
+					'full_src'     => 'https://example.com/full2.jpg',
+					'alt'          => '',
+					'caption'      => '',
+				),
+			),
+			'lightbox'          => true,
+			'container_classes' => 'zaso-image-gallery zaso-image-gallery--cols-3',
 		),
 	),
 );

@@ -74,7 +74,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 				),
 				'media'        => array(
 					'label'   => esc_html__( 'Media', 'zaso' ),
-					'widgets' => array( 'zaso-video-widgets', 'zaso-youtube-lightbox-widgets', 'zaso-vimeo-lightbox-widgets' ),
+					'widgets' => array( 'zaso-video-widgets', 'zaso-youtube-lightbox-widgets', 'zaso-vimeo-lightbox-widgets', 'zaso-image-gallery-widgets' ),
 				),
 				'business'     => array(
 					'label'   => esc_html__( 'Business & Marketing', 'zaso' ),
@@ -86,7 +86,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 				),
 				'people'       => array(
 					'label'   => esc_html__( 'People & Social Proof', 'zaso' ),
-					'widgets' => array( 'zaso-team-member-widgets', 'zaso-testimonial-slider-widgets' ),
+					'widgets' => array( 'zaso-team-member-widgets', 'zaso-testimonial-slider-widgets', 'zaso-logo-showcase-widgets' ),
 				),
 				'content'      => array(
 					'label'   => esc_html__( 'Content Blocks', 'zaso' ),

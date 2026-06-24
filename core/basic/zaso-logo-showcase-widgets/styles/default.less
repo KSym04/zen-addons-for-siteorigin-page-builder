@@ -1,0 +1,61 @@
+.zaso-logo-showcase {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: @gap;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-width: 640px) {
+	.zaso-logo-showcase {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 960px) {
+	.zaso-logo-showcase {
+		grid-template-columns: repeat(@columns, 1fr);
+	}
+}
+
+.zaso-logo-showcase__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.zaso-logo-showcase--align-left .zaso-logo-showcase__item {
+	justify-content: flex-start;
+}
+
+.zaso-logo-showcase--align-right .zaso-logo-showcase__item {
+	justify-content: flex-end;
+}
+
+.zaso-logo-showcase__link {
+	display: inline-flex;
+	align-items: center;
+	line-height: 0;
+	text-decoration: none;
+}
+
+.zaso-logo-showcase__img {
+	max-height: @logo_height;
+	width: auto;
+	max-width: 100%;
+	display: block;
+	transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.zaso-logo-showcase--grayscale .zaso-logo-showcase__img {
+	filter: ~"grayscale(1)";
+	opacity: 0.6;
+}
+
+.zaso-logo-showcase--grayscale .zaso-logo-showcase__link:hover .zaso-logo-showcase__img,
+.zaso-logo-showcase--grayscale .zaso-logo-showcase__item:hover > span .zaso-logo-showcase__img {
+	filter: none;
+	opacity: 1;
+}
