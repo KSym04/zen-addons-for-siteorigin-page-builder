@@ -14,7 +14,8 @@ $hover_card_image = siteorigin_widgets_get_attachment_image_src( $instance['hove
   <div class="zaso-hover-card__box">
 
     <div class="zaso-hover-card__media">
-      <img src="<?php echo esc_url( $hover_card_image ); ?>" alt="<?php echo esc_attr( $instance['hover_card_title'] ); ?>" />
+      <?php // The image is painted as the card background via JS; this element is only a src source (visibility:hidden), so it is decorative (alt=""). The card's meaning is exposed via the visible title heading. ?>
+      <img src="<?php echo esc_url( $hover_card_image ); ?>" alt="" aria-hidden="true" />
     </div>
 
     <div class="zaso-hover-card__caption zaso-hover-card__caption--<?php echo esc_attr( $instance['hover_card_animation'] ); ?>">
@@ -22,7 +23,8 @@ $hover_card_image = siteorigin_widgets_get_attachment_image_src( $instance['hove
     </div>
 
     <div class="zaso-hover-card__modal zaso-hover-card__modal--<?php echo esc_attr( $instance['hover_card_animation'] ); ?>">
-      <h3 class="zaso-hover-card__modal-title"><?php echo esc_html( $instance['hover_card_title'] ); ?></h3>
+      <?php // Not a heading: the always-visible caption already provides the card's <h3>; repeating it here as a heading would create duplicate headings for screen readers. ?>
+      <div class="zaso-hover-card__modal-title"><?php echo esc_html( $instance['hover_card_title'] ); ?></div>
 
       <?php if( $instance['hover_card_text_content'] ) : ?>
         <?php echo wp_kses_post( $instance['hover_card_text_content'] ); ?>

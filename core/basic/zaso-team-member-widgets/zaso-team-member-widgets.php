@@ -131,7 +131,7 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 					'social_color' => array(
 						'type'    => 'color',
 						'label'   => __( 'Social Icon Color', 'zaso' ),
-						'default' => '#888888',
+						'default' => '#6b6b6b',
 					),
 					'social_color_hover' => array(
 						'type'    => 'color',
@@ -317,7 +317,7 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 			'name_color'          => isset( $design['name_color'] )          ? $design['name_color']          : '#111111',
 			'role_color'          => isset( $design['role_color'] )          ? $design['role_color']          : '#6b6b6b',
 			'bio_color'           => isset( $design['bio_color'] )           ? $design['bio_color']           : '#444444',
-			'social_color'        => isset( $design['social_color'] )        ? $design['social_color']        : '#888888',
+			'social_color'        => isset( $design['social_color'] )        ? $design['social_color']        : '#6b6b6b',
 			'social_color_hover'  => isset( $design['social_color_hover'] )  ? $design['social_color_hover']  : '#111111',
 			'card_background'     => isset( $design['card_background'] )     ? $design['card_background']     : '#ffffff',
 			'card_padding'        => sprintf( '%s %s %s %s', $pad_top, $pad_right, $pad_bottom, $pad_left ),

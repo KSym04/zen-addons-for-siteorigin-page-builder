@@ -18,6 +18,12 @@
 	flex-shrink: 0;
 }
 
+/* Keyboard focus highlight on a widget card when its checkbox is focused. */
+.zaso-card:focus-within {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
 .zaso-admin__intro {
 	font-size: 14px;
 	margin: 10px 0 16px;
