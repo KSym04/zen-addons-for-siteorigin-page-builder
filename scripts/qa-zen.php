@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 32; // Number of ZASO widgets shipped.
+$expected = 34; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -299,6 +299,35 @@ $cases = array(
 				'show_readmore'     => true,
 				'readmore_text'     => 'Read More',
 				'container_classes' => 'zaso-post-carousel',
+			),
+		),
+		'flip-card'            => array(
+			'file'     => $base . 'zaso-flip-card-widgets/tpl/default.php',
+			'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+			'vars'     => array(
+				'image_src'      => 'https://example.com/card.jpg',
+				'front_title'    => 'Front <b>Title</b>' . $evil,
+				'front_subtitle' => 'A short subtitle' . $evil,
+				'back_heading'   => 'Back Heading' . $evil,
+				'back_text'      => 'Body copy on the back.<script>bad()</script>',
+				'button_text'    => 'Learn More' . $evil,
+				'button_url'     => 'https://example.com',
+				'classes'        => 'zaso-flip-card zaso-flip-card--horizontal',
+			),
+		),
+		'social-share'         => array(
+			'file'     => $base . 'zaso-social-share-widgets/tpl/default.php',
+			'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+			'vars'     => array(
+				'items'       => array(
+					array( 'key' => 'facebook', 'label' => 'Facebook',  'color' => '#1877f2', 'icon' => '<path d="M0 0h24v24H0z"/>', 'href' => 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com' ),
+					array( 'key' => 'email',    'label' => 'Email',     'color' => '#6b7280', 'icon' => '<path d="M0 0h24v24H0z"/>', 'href' => 'mailto:?subject=Hi&body=https%3A%2F%2Fexample.com' ),
+					array( 'key' => 'copy',     'label' => 'Copy Link', 'color' => '#374151', 'icon' => '<path d="M0 0h24v24H0z"/>', 'href' => '' ),
+				),
+				'share_url'   => 'https://example.com/?a=' . $evil,
+				'show_labels' => true,
+				'color_mode'  => 'brand',
+				'classes'     => 'zaso-social-share zaso-social-share--rounded zaso-social-share--brand',
 			),
 		),
 );

@@ -4,15 +4,15 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.8.2
+Stable tag: 1.9.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
-32 modern, lightweight widgets for SiteOrigin Page Builder: post grids, pricing tables, FAQ, sliders, and more the builder does not ship by default.
+34 modern, lightweight widgets for SiteOrigin Page Builder: post grids, pricing tables, FAQ, sliders, and more the builder does not ship by default.
 
 == Description ==
 
-**Zen Addons for SiteOrigin Page Builder** is a curated set of 32 widget extensions built on the official SiteOrigin Widgets Bundle framework. SiteOrigin Page Builder is fast and dependable, but its stock widgets can look dated. Zen Addons fills that gap with modern, sleek widgets that look polished out of the box and stay lightweight. It adds the practical, everyday building blocks most sites actually need, from tabs, accordions, and pricing tables to FAQ sections with Schema.org markup, team grids, testimonials, and video lightboxes, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
+**Zen Addons for SiteOrigin Page Builder** is a curated set of 34 widget extensions built on the official SiteOrigin Widgets Bundle framework. SiteOrigin Page Builder is fast and dependable, but its stock widgets can look dated. Zen Addons fills that gap with modern, sleek widgets that look polished out of the box and stay lightweight. It adds the practical, everyday building blocks most sites actually need, from tabs, accordions, and pricing tables to FAQ sections with Schema.org markup, team grids, testimonials, and video lightboxes, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
 
 Every widget is designed to be clean, accessible, and easy to style. Widgets render with semantic HTML, follow ARIA best practices, and stay out of your way: nothing loads on the front end unless a widget that needs it is actually placed on the page.
 
@@ -44,6 +44,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 
 * Info Box: feature an image, title, text, and call-to-action button together.
 * Hover Card: show an image card with a title and button that animate on hover.
+* Flip Card: show a card that flips on hover or keyboard focus to reveal back-side content and a call-to-action.
 * Icon: display a single icon from an icon font or your own upload.
 * Image Icon Group: display a row or grid of linked image icons.
 * FAQ: display a collapsible list of questions and answers with optional Schema.org FAQPage markup for rich results in Google Search.
@@ -55,6 +56,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 * Counter: count up to a number with a stat that animates when it scrolls into view.
 * Countdown: count down to a date and time for launches, sales, and events.
 * Before / After: compare two images with a draggable slider, with mouse, touch, and keyboard support.
+* Social Share Bar: add share buttons for Facebook, X, LinkedIn, Pinterest, Reddit, WhatsApp, Telegram, email, and a copy-link button, with no third-party scripts.
 
 **People and social proof**
 
@@ -158,6 +160,10 @@ No. Zen Addons does not add scripts or styles to your front end globally. A widg
 
 No. The lightbox library is bundled with the plugin and served from your own site. Nothing is loaded from an external CDN.
 
+= Does the Social Share Bar add any third-party tracking or share-count scripts? =
+
+No. The Social Share Bar builds each share link on your own server and renders plain links. It loads no social network SDKs, tracking pixels, or share-count scripts, so it stays fast and private.
+
 = Are the widgets accessible? =
 
 Yes. Widgets use semantic HTML and follow ARIA best practices, including roles and labels for interactive widgets such as tabs and accordions.
@@ -201,6 +207,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.9.0 =
+Two new widgets: Flip Card and a Social Share Bar with no third-party scripts.
+
 = 1.8.2 =
 Adds the Zen Addons logo to the widget management screen for a clearer, more polished admin experience.
 
@@ -235,6 +244,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.9.0 =
+* New: Flip Card widget that flips on hover or keyboard focus to reveal back-side content and a call-to-action.
+* New: Social Share Bar widget with Facebook, X, LinkedIn, Pinterest, Reddit, WhatsApp, Telegram, email, and copy-link buttons, built without any third-party scripts.
 
 = 1.8.2 =
 * Improved: Added the Zen Addons logo to the widget management screen heading for a clearer, more polished admin experience.

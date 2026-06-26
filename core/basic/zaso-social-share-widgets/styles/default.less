@@ -1,0 +1,116 @@
+// ZASO Social Share Bar Widget
+// NOTE: SiteOrigin prepends .so-widget-<id> to every selector compiled from this file.
+// Cross-element modifier rules MUST be flat top-level selectors — never use chained &
+// for descendant modifiers. See reference_siteorigin_widget_dev.
+
+@alignment:       flex-start;
+@gap:             8px;
+@icon_size:       20px;
+@button_padding:  12px;
+@border_radius:   8px;
+@mono_bg_color:   #01949a;
+@mono_icon_color: #ffffff;
+
+// ─── Bar ────────────────────────────────────────────────────────────────────────
+.zaso-social-share {
+	display:         flex;
+	flex-wrap:       wrap;
+	align-items:     center;
+	justify-content: @alignment;
+	gap:             @gap;
+	margin:          0;
+	padding:         0;
+}
+
+// ─── Button (shared by <a> and <button>) ────────────────────────────────────────
+.zaso-social-share__btn {
+	display:          inline-flex;
+	align-items:      center;
+	justify-content:  center;
+	gap:              8px;
+	padding:          @button_padding;
+	border:           0;
+	border-radius:    @border_radius;
+	background-color: #01949a;
+	color:            #ffffff;
+	line-height:      1;
+	cursor:           pointer;
+	text-decoration:  none;
+	transition:       transform 0.15s ease, filter 0.15s ease;
+	-webkit-appearance: none;
+	appearance:       none;
+}
+
+.zaso-social-share__btn:hover {
+	filter:    brightness( 1.08 );
+	transform: translateY( -1px );
+	color:     #ffffff;
+}
+
+.zaso-social-share__btn:focus-visible {
+	outline:        3px solid #0f172a;
+	outline-offset: 2px;
+}
+
+// ─── Icon ───────────────────────────────────────────────────────────────────────
+// fill is set to an explicit colour (NOT currentColor): the button is an <a>, and a
+// theme's link colour can win the cascade for the inherited `color`, dragging the glyph
+// to the theme's dark text colour. A direct `fill` keeps icons legible on any theme.
+.zaso-social-share__icon {
+	font-size:    @icon_size;
+	width:        1em;
+	height:       1em;
+	display:      block;
+	flex-shrink:  0;
+	fill:         #ffffff;
+}
+
+// ─── Optional label ─────────────────────────────────────────────────────────────
+.zaso-social-share__label {
+	font-size:   0.9em;
+	font-weight: 600;
+	white-space: nowrap;
+	color:       #ffffff;
+}
+
+// ─── Single-colour (mono) mode — flat overrides ─────────────────────────────────
+.zaso-social-share--mono .zaso-social-share__btn {
+	background-color: @mono_bg_color;
+	color:            @mono_icon_color;
+}
+
+.zaso-social-share--mono .zaso-social-share__btn:hover {
+	color: @mono_icon_color;
+}
+
+.zaso-social-share--mono .zaso-social-share__icon {
+	fill: @mono_icon_color;
+}
+
+.zaso-social-share--mono .zaso-social-share__label {
+	color: @mono_icon_color;
+}
+
+// ─── Copied feedback ────────────────────────────────────────────────────────────
+.zaso-social-share__btn--copy.is-copied {
+	filter: brightness( 1.12 );
+}
+
+// ─── Screen-reader-only live region ─────────────────────────────────────────────
+.zaso-social-share__status {
+	position:    absolute;
+	width:       1px;
+	height:      1px;
+	margin:      -1px;
+	padding:     0;
+	overflow:    hidden;
+	clip:        rect( 0, 0, 0, 0 );
+	white-space: nowrap;
+	border:      0;
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.zaso-social-share__btn {
+		transition: none;
+	}
+}
