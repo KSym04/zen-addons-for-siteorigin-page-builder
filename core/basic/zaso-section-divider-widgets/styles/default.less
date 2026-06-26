@@ -1,0 +1,30 @@
+@divider_color: #4f46e5;
+@divider_height: 100px;
+@divider_width: 100%;
+
+.zaso-section-divider {
+  line-height: 0;
+  width: @divider_width;
+  height: @divider_height;
+  max-width: 100%;
+  overflow: hidden;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: @divider_color;
+  }
+
+  &--flip-x svg {
+    transform: scaleX(-1);
+  }
+
+  &--flip-y svg {
+    transform: scaleY(-1);
+  }
+
+  &--flip-x.zaso-section-divider--flip-y svg {
+    transform: scale(-1, -1);
+  }
+}

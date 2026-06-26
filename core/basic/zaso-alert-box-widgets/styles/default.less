@@ -40,18 +40,42 @@
 
   &__closebtn {
     position: absolute;
-    right: 1em;
+    right: 0.5em;
     top: 0.5em;
-    opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
     color: @message_font_color;
-    background-color: transparent;
-    padding: @reset_margin;
-    margin: @reset_padding;
+    font-size: 1.25em;
+    line-height: 1;
+    opacity: 0.7;
+    cursor: pointer;
   }
 
-  &__closebtn:hover {
+  &__closebtn span {
+    display: block;
+    line-height: 1;
+  }
+
+  &__closebtn:hover,
+  &__closebtn:focus {
     opacity: 1;
-    background-color: transparent;
+    background: none;
+  }
+
+  &__closebtn:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
 
   // Typed alerts (opt-in): leading icon + screen-reader label. Untyped alerts
@@ -91,4 +115,25 @@
     white-space: nowrap;
     border: 0;
   }
+}
+
+// Theme-proofing. Some themes style a plain <button> with a dark background at
+// high specificity, e.g. Twenty Twenty-One's
+// `button:not(:hover):not(:active):not(.has-text-color)` is (0,3,1) and beats a
+// single-class widget rule. Re-assert the bare control look from a higher
+// specificity (0,4,1) instead of using !important, so the close button stays a
+// clean glyph on any theme.
+.zaso-alert-box .zaso-alert-box__messagebox button.zaso-alert-box__closebtn {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  color: @message_font_color;
+}
+
+.zaso-alert-box .zaso-alert-box__messagebox button.zaso-alert-box__closebtn:hover,
+.zaso-alert-box .zaso-alert-box__messagebox button.zaso-alert-box__closebtn:focus {
+  background: transparent;
+  color: @message_font_color;
 }

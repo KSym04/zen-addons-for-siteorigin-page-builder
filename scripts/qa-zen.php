@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 34; // Number of ZASO widgets shipped.
+$expected = 36; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -328,6 +328,27 @@ $cases = array(
 				'show_labels' => true,
 				'color_mode'  => 'brand',
 				'classes'     => 'zaso-social-share zaso-social-share--rounded zaso-social-share--brand',
+			),
+		),
+		'section-divider'      => array(
+			'file'     => $base . 'zaso-section-divider-widgets/tpl/default.php',
+			'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+			'vars'     => array(
+				'style'           => 'tilt',
+				'flip_horizontal' => true,
+				'flip_vertical'   => false,
+			),
+		),
+		'icon-list'            => array(
+			'file'     => $base . 'zaso-icon-list-widgets/tpl/default.php',
+			'instance' => array( 'extra_id' => $evil, 'extra_class' => $evil ),
+			'vars'     => array(
+				'items'        => array(
+					array( 'text' => 'First item' . $evil, 'icon' => '', 'link' => 'https://example.com/?a=' . $evil ),
+					array( 'text' => 'Second<script>bad()</script>', 'icon' => '', 'link' => '' ),
+				),
+				'default_icon' => '',
+				'layout'       => 'vertical',
 			),
 		),
 );

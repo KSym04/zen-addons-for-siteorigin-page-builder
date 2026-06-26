@@ -4,15 +4,15 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.9.0
+Stable tag: 1.10.0
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
-34 modern, lightweight widgets for SiteOrigin Page Builder: post grids, pricing tables, FAQ, sliders, and more the builder does not ship by default.
+36 modern, lightweight widgets for SiteOrigin Page Builder: post grids, pricing tables, FAQ, sliders, and more the builder does not ship by default.
 
 == Description ==
 
-**Zen Addons for SiteOrigin Page Builder** is a curated set of 34 widget extensions built on the official SiteOrigin Widgets Bundle framework. SiteOrigin Page Builder is fast and dependable, but its stock widgets can look dated. Zen Addons fills that gap with modern, sleek widgets that look polished out of the box and stay lightweight. It adds the practical, everyday building blocks most sites actually need, from tabs, accordions, and pricing tables to FAQ sections with Schema.org markup, team grids, testimonials, and video lightboxes, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
+**Zen Addons for SiteOrigin Page Builder** is a curated set of 36 widget extensions built on the official SiteOrigin Widgets Bundle framework. SiteOrigin Page Builder is fast and dependable, but its stock widgets can look dated. Zen Addons fills that gap with modern, sleek widgets that look polished out of the box and stay lightweight. It adds the practical, everyday building blocks most sites actually need, from tabs, accordions, and pricing tables to FAQ sections with Schema.org markup, team grids, testimonials, and video lightboxes, so you can build richer pages inside SiteOrigin without reaching for a heavier page builder.
 
 Every widget is designed to be clean, accessible, and easy to style. Widgets render with semantic HTML, follow ARIA best practices, and stay out of your way: nothing loads on the front end unless a widget that needs it is actually placed on the page.
 
@@ -207,6 +207,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.10.0 =
+Two new widgets, Section Divider and Icon List, plus new widgets now enable themselves and small theme-compatibility fixes.
+
 = 1.9.0 =
 Two new widgets: Flip Card and a Social Share Bar with no third-party scripts.
 
@@ -244,6 +247,14 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.0 =
+* New: Section Divider widget to add an SVG shape divider (waves, curve, tilt, or triangle) to the top or bottom of a section.
+* New: Icon List widget to display a vertical or horizontal list of items, each with its own icon and text.
+* Fixed: Newly added widgets are now enabled by default, so they appear in the editor right away. This also enables the Flip Card and Social Share Bar widgets that previously needed manual activation.
+* Improved: The Zen Addons management screen now lists every widget, including Flip Card and Social Share Bar.
+* Improved: The Alert Box close button now keeps its clean look on themes that style buttons with a dark background.
+* Improved: Pricing Table buttons keep their readable button text on themes that restyle links.
 
 = 1.9.0 =
 * New: Flip Card widget that flips on hover or keyboard focus to reveal back-side content and a call-to-action.

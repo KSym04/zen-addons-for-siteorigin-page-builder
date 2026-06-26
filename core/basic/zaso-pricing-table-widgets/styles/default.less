@@ -153,6 +153,17 @@
 	outline-offset: 2px;
 }
 
+// Theme-proofing. Themes style links/buttons at high specificity, e.g. Twenty
+// Twenty-One's `a:not(.wp-block-button__link):not(.wp-block-file__button)` is
+// (0,2,1) and overrides the widget's (0,2,0) button colours, leaving dark text
+// on the coloured button. Re-assert the button look from (0,3,1), no !important.
+.zaso-pricing-table__card a.zaso-pricing-table__btn,
+.zaso-pricing-table__card a.zaso-pricing-table__btn:hover,
+.zaso-pricing-table__card a.zaso-pricing-table__btn:focus {
+	background: @button_bg;
+	color:      @button_text_color;
+}
+
 // Visually-hidden text for assistive tech (featured indicator, new-tab hint).
 .zaso-pricing-table .screen-reader-text {
 	position: absolute;

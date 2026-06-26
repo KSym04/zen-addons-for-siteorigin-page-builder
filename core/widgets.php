@@ -49,3 +49,31 @@ function zen_addons_siteorigin_widgets_collection_basic( $folders ) {
 	return $folders;
 }
 add_filter( 'siteorigin_widgets_widget_folders', 'zen_addons_siteorigin_widgets_collection_basic' );
+
+/**
+ * Make every ZASO widget active by default.
+ *
+ * SiteOrigin merges this default map under the saved siteorigin_widgets_active
+ * option with wp_parse_args( $saved, $defaults ), so a saved value always wins.
+ * A widget the user has deliberately toggled off therefore stays off, while a
+ * newly shipped ZASO widget (absent from the saved option) defaults to active
+ * instead of SiteOrigin's inactive default. Glob keeps this correct for future
+ * widgets with no per-release maintenance.
+ *
+ * @since 1.10.0
+ *
+ * @param array $defaults Default active map ( widget folder slug => bool ).
+ * @return array Map including every ZASO widget folder slug set to true.
+ */
+function zen_addons_siteorigin_default_active_widgets( $defaults ) {
+	if ( ! is_array( $defaults ) ) {
+		$defaults = array();
+	}
+
+	foreach ( (array) glob( ZASO_WIDGET_BASIC_PATH . '*/', GLOB_ONLYDIR ) as $dir ) {
+		$defaults[ basename( $dir ) ] = true;
+	}
+
+	return $defaults;
+}
+add_filter( 'siteorigin_widgets_default_active', 'zen_addons_siteorigin_default_active_widgets' );

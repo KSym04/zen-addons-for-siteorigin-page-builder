@@ -66,7 +66,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 			return array(
 				'layout'       => array(
 					'label'   => esc_html__( 'Layout & Content', 'zaso' ),
-					'widgets' => array( 'zaso-spacer-widgets', 'zaso-alert-box-widgets', 'zaso-widgetized-widgets' ),
+					'widgets' => array( 'zaso-spacer-widgets', 'zaso-alert-box-widgets', 'zaso-widgetized-widgets', 'zaso-section-divider-widgets' ),
 				),
 				'interactive'  => array(
 					'label'   => esc_html__( 'Interactive', 'zaso' ),
@@ -82,7 +82,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 				),
 				'engagement'   => array(
 					'label'   => esc_html__( 'Conversion & Engagement', 'zaso' ),
-					'widgets' => array( 'zaso-cta-banner-widgets', 'zaso-counter-widgets', 'zaso-countdown-widgets', 'zaso-before-after-widgets' ),
+					'widgets' => array( 'zaso-cta-banner-widgets', 'zaso-counter-widgets', 'zaso-countdown-widgets', 'zaso-before-after-widgets', 'zaso-flip-card-widgets', 'zaso-social-share-widgets' ),
 				),
 				'people'       => array(
 					'label'   => esc_html__( 'People & Social Proof', 'zaso' ),
@@ -90,7 +90,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 				),
 				'content'      => array(
 					'label'   => esc_html__( 'Content Blocks', 'zaso' ),
-					'widgets' => array( 'zaso-services-grid-widgets', 'zaso-progress-bars-widgets', 'zaso-post-grid-widgets', 'zaso-post-carousel-widgets' ),
+					'widgets' => array( 'zaso-services-grid-widgets', 'zaso-progress-bars-widgets', 'zaso-post-grid-widgets', 'zaso-post-carousel-widgets', 'zaso-icon-list-widgets' ),
 				),
 				'community'    => array(
 					'label'   => esc_html__( 'Community (bbPress)', 'zaso' ),
