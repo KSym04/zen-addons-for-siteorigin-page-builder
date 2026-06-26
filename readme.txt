@@ -248,6 +248,7 @@ This update includes minor improvements and bug fixes.
 = 1.9.0 =
 * New: Flip Card widget that flips on hover or keyboard focus to reveal back-side content and a call-to-action.
 * New: Social Share Bar widget with Facebook, X, LinkedIn, Pinterest, Reddit, WhatsApp, Telegram, email, and copy-link buttons, built without any third-party scripts.
+* Improved: Small accessibility refinements to Hover Card, Team Member, and the Zen Addons admin screen.
 
 = 1.8.2 =
 * Improved: Added the Zen Addons logo to the widget management screen heading for a clearer, more polished admin experience.
