@@ -97,6 +97,7 @@ class zen_addons_siteorigin {
 		// Admin management page.
 		if ( is_admin() ) {
 			include( 'core/admin.php' );
+			include( 'core/widget-design.php' );
 			include( 'core/dependency-notice.php' );
 		}
 
