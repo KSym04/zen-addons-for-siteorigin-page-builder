@@ -86,6 +86,58 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 				'label'   => __( 'Currency Symbol', 'zaso' ),
 				'default' => '$',
 			),
+			'design_style' => array(
+				'type'           => 'presets',
+				'label'          => __( 'Style', 'zaso' ),
+				'default_preset' => '',
+				/**
+				 * Curated design presets ("skins") for this widget. The free core
+				 * ships three; Zen Addons Pro appends its full library via the
+				 * shared `zaso_design_presets` filter (gated on a valid license).
+				 * Selecting one fills the Design fields below; users can still tweak.
+				 */
+				'options'        => apply_filters( 'zaso_design_presets', array(
+					'soft'    => array(
+						'label'  => __( 'Soft', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'card_bg'           => '#ffffff',
+								'card_border'       => '#e2e8f0',
+								'card_radius'       => '12px',
+								'button_bg'         => '#4f46e5',
+								'button_text_color' => '#ffffff',
+								'featured_color'    => '#4f46e5',
+							),
+						),
+					),
+					'bold'    => array(
+						'label'  => __( 'Bold', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'card_bg'           => '#ffffff',
+								'card_border'       => '#cbd5e1',
+								'card_radius'       => '14px',
+								'button_bg'         => '#0f172a',
+								'button_text_color' => '#ffffff',
+								'featured_color'    => '#0f172a',
+							),
+						),
+					),
+					'minimal' => array(
+						'label'  => __( 'Minimal', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'card_bg'           => '#f8fafc',
+								'card_border'       => '#e5e7eb',
+								'card_radius'       => '8px',
+								'button_bg'         => '#15803d',
+								'button_text_color' => '#ffffff',
+								'featured_color'    => '#15803d',
+							),
+						),
+					),
+				), 'pricing-table' ),
+			),
 			'design'  => array(
 				'type'   => 'section',
 				'label'  => __( 'Design', 'zaso' ),

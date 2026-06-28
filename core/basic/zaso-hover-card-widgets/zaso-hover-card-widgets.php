@@ -49,6 +49,79 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 					'fadein'  => __( 'Fade In', 'zaso' )
 				)
 			),
+			'design_style' => array(
+				'type'           => 'presets',
+				'label'          => __( 'Style', 'zaso' ),
+				'default_preset' => '',
+				/**
+				 * Curated design presets ("skins") for this widget. The free core
+				 * ships three; Zen Addons Pro appends its full library via the
+				 * shared `zaso_design_presets` filter (gated on a valid license).
+				 * Selecting one fills the Design fields below; users can still tweak.
+				 */
+				'options'        => apply_filters( 'zaso_design_presets', array(
+					'indigo_bold'   => array(
+						'label'  => __( 'Indigo Bold', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'hover_box' => array(
+									'caption_background_color'   => '#4f46e5',
+									'caption_background_opacity' => '90',
+									'caption_font_color'         => '#ffffff',
+								),
+								'modal_button' => array(
+									'button_background_color'        => '#ffffff',
+									'button_font_color'              => '#4f46e5',
+									'button_border_color'            => '#ffffff',
+									'button_background_color_hover'  => '#4338ca',
+									'button_font_color_hover'        => '#ffffff',
+									'button_border_color_hover'      => '#4338ca',
+								),
+							),
+						),
+					),
+					'slate_dark'    => array(
+						'label'  => __( 'Slate Dark', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'hover_box' => array(
+									'caption_background_color'   => '#0f172a',
+									'caption_background_opacity' => '90',
+									'caption_font_color'         => '#ffffff',
+								),
+								'modal_button' => array(
+									'button_background_color'        => '#4f46e5',
+									'button_font_color'              => '#ffffff',
+									'button_border_color'            => '#4f46e5',
+									'button_background_color_hover'  => '#ffffff',
+									'button_font_color_hover'        => '#0f172a',
+									'button_border_color_hover'      => '#ffffff',
+								),
+							),
+						),
+					),
+					'light_minimal' => array(
+						'label'  => __( 'Light Minimal', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'hover_box' => array(
+									'caption_background_color'   => '#f8fafc',
+									'caption_background_opacity' => '90',
+									'caption_font_color'         => '#0f172a',
+								),
+								'modal_button' => array(
+									'button_background_color'        => '#0f172a',
+									'button_font_color'              => '#ffffff',
+									'button_border_color'            => '#0f172a',
+									'button_background_color_hover'  => '#4f46e5',
+									'button_font_color_hover'        => '#ffffff',
+									'button_border_color_hover'      => '#4f46e5',
+								),
+							),
+						),
+					),
+				), 'hover-card' ),
+			),
 			'design' => array(
 				'type' =>  'section',
 				'label' => __( 'Design', 'zaso' ),

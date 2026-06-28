@@ -89,6 +89,70 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 					'center' => __( 'Center', 'zaso' ),
 				),
 			),
+			'design_style' => array(
+				'type'           => 'presets',
+				'label'          => __( 'Style', 'zaso' ),
+				'default_preset' => '',
+				/**
+				 * Curated design presets ("skins") for this widget. The free core
+				 * ships three; Zen Addons Pro appends its full library via the
+				 * shared `zaso_design_presets` filter (gated on a valid license).
+				 * Selecting one fills the Design fields below; users can still tweak.
+				 */
+				'options'        => apply_filters( 'zaso_design_presets', array(
+					'soft_light'   => array(
+						'label'  => __( 'Soft Light', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'icon_color'         => '#4f46e5',
+								'icon_size'          => '2.5rem',
+								'icon_bg'            => '#eef2ff',
+								'title_color'        => '#0f172a',
+								'description_color'  => '#334155',
+								'link_color'         => '#4f46e5',
+								'card_background'    => '#f8fafc',
+								'card_padding'       => array( 'top' => '28px', 'right' => '28px', 'bottom' => '28px', 'left' => '28px' ),
+								'card_border_radius' => '12px',
+								'gap'                => '24px',
+							),
+						),
+					),
+					'solid_accent' => array(
+						'label'  => __( 'Solid Accent', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'icon_color'         => '#ffffff',
+								'icon_size'          => '2.5rem',
+								'icon_bg'            => '',
+								'title_color'        => '#ffffff',
+								'description_color'  => '#e0e7ff',
+								'link_color'         => '#ffffff',
+								'card_background'    => '#4f46e5',
+								'card_padding'       => array( 'top' => '30px', 'right' => '30px', 'bottom' => '30px', 'left' => '30px' ),
+								'card_border_radius' => '14px',
+								'gap'                => '24px',
+							),
+						),
+					),
+					'icon_accent'  => array(
+						'label'  => __( 'Icon Accent', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'icon_color'         => '#ffffff',
+								'icon_size'          => '2.5rem',
+								'icon_bg'            => '#4f46e5',
+								'title_color'        => '#0f172a',
+								'description_color'  => '#475569',
+								'link_color'         => '#4f46e5',
+								'card_background'    => '#ffffff',
+								'card_padding'       => array( 'top' => '28px', 'right' => '28px', 'bottom' => '28px', 'left' => '28px' ),
+								'card_border_radius' => '10px',
+								'gap'                => '24px',
+							),
+						),
+					),
+				), 'services-grid' ),
+			),
 			'design'     => array(
 				'type'   => 'section',
 				'label'  => __( 'Design', 'zaso' ),

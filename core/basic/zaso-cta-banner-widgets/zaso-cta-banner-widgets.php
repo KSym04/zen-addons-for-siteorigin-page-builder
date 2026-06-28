@@ -77,6 +77,100 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 				'label'       => __( 'Extra Class', 'zaso' ),
 				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
 			),
+			'design_style' => array(
+				'type'           => 'presets',
+				'label'          => __( 'Style', 'zaso' ),
+				'default_preset' => '',
+				/**
+				 * Curated design presets ("skins") for this widget. The free core
+				 * ships three; Zen Addons Pro appends its full library via the
+				 * shared `zaso_design_presets` filter (gated on a valid license).
+				 * Selecting one fills the Design fields below; users can still tweak.
+				 */
+				'options'        => apply_filters( 'zaso_design_presets', array(
+					'soft'         => array(
+						'label'  => __( 'Soft', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'background' => array(
+									'bg_type'  => 'solid',
+									'bg_color' => '#eff6ff',
+								),
+								'typography' => array(
+									'heading_color'    => '#1e3a8a',
+									'subheading_color' => '#1e40af',
+									'text_color'       => '#1e3a8a',
+								),
+								'button' => array(
+									'button_bg'       => '#4f46e5',
+									'button_bg_hover' => '#4338ca',
+									'button_color'    => '#ffffff',
+									'button_radius'   => '6px',
+								),
+								'spacing' => array(
+									'padding_y'     => '2.5rem',
+									'padding_x'     => '2rem',
+									'border_radius' => '8px',
+								),
+							),
+						),
+					),
+					'solid_accent' => array(
+						'label'  => __( 'Solid Accent', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'background' => array(
+									'bg_type'  => 'solid',
+									'bg_color' => '#4f46e5',
+								),
+								'typography' => array(
+									'heading_color'    => '#ffffff',
+									'subheading_color' => '#e0e7ff',
+									'text_color'       => '#ffffff',
+								),
+								'button' => array(
+									'button_bg'       => '#ffffff',
+									'button_bg_hover' => '#e0e7ff',
+									'button_color'    => '#4f46e5',
+									'button_radius'   => '10px',
+								),
+								'spacing' => array(
+									'padding_y'     => '3rem',
+									'padding_x'     => '2rem',
+									'border_radius' => '10px',
+								),
+							),
+						),
+					),
+					'outline'      => array(
+						'label'  => __( 'Outline', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'background' => array(
+									'bg_type'  => 'solid',
+									'bg_color' => '#ffffff',
+								),
+								'typography' => array(
+									'heading_color'    => '#0f172a',
+									'subheading_color' => '#334155',
+									'text_color'       => '#0f172a',
+								),
+								'button' => array(
+									'button_bg'       => '#4f46e5',
+									'button_bg_hover' => '#4338ca',
+									'button_color'    => '#ffffff',
+									'button_radius'   => '6px',
+								),
+								'spacing' => array(
+									'padding_y'     => '2.5rem',
+									'padding_x'     => '2rem',
+									'border_radius' => '8px',
+								),
+							),
+						),
+					),
+				), 'cta-banner' ),
+			),
 			'design' => array(
 				'type'   => 'section',
 				'label'  => __( 'Design', 'zaso' ),

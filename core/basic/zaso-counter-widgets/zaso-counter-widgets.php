@@ -83,6 +83,66 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 				'label'       => __( 'Extra Class', 'zaso' ),
 				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
 			),
+			'design_style' => array(
+				'type'           => 'presets',
+				'label'          => __( 'Style', 'zaso' ),
+				'default_preset' => '',
+				/**
+				 * Curated design presets ("skins") for this widget. The free core
+				 * ships three; Zen Addons Pro appends its full library via the
+				 * shared `zaso_design_presets` filter (gated on a valid license).
+				 * Selecting one fills the Design fields below; users can still tweak.
+				 *
+				 * The Counter widget has no background, border, radius, or padding
+				 * fields, so these skins style the number, title, and icon colours
+				 * and sizes against the page background. Every colour clears WCAG AA
+				 * (>= 4.5:1) on a light background.
+				 */
+				'options'        => apply_filters( 'zaso_design_presets', array(
+					'soft_slate'    => array(
+						'label'  => __( 'Soft Slate', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'alignment'    => 'center',
+								'number_color' => '#1e293b',
+								'number_size'  => '3rem',
+								'title_color'  => '#475569',
+								'title_size'   => '1rem',
+								'icon_color'   => '#4f46e5',
+								'icon_size'    => '2.5rem',
+							),
+						),
+					),
+					'accent_indigo' => array(
+						'label'  => __( 'Accent Indigo', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'alignment'    => 'center',
+								'number_color' => '#4f46e5',
+								'number_size'  => '3.5rem',
+								'title_color'  => '#334155',
+								'title_size'   => '1.125rem',
+								'icon_color'   => '#4f46e5',
+								'icon_size'    => '2.75rem',
+							),
+						),
+					),
+					'bold_dark'     => array(
+						'label'  => __( 'Bold Dark', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'alignment'    => 'center',
+								'number_color' => '#0f172a',
+								'number_size'  => '3rem',
+								'title_color'  => '#475569',
+								'title_size'   => '1rem',
+								'icon_color'   => '#0f172a',
+								'icon_size'    => '2.5rem',
+							),
+						),
+					),
+				), 'counter' ),
+			),
 			'design' => array(
 				'type'   => 'section',
 				'label'  => __( 'Design', 'zaso' ),

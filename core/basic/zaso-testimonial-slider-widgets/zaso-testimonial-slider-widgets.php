@@ -81,6 +81,76 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 				'label'   => __( 'Show Dot Pagination', 'zaso' ),
 				'default' => true,
 			),
+			'design_style'      => array(
+				'type'           => 'presets',
+				'label'          => __( 'Style', 'zaso' ),
+				'default_preset' => '',
+				/**
+				 * Curated design presets ("skins") for this widget. The free core
+				 * ships three; Zen Addons Pro appends its full library via the
+				 * shared `zaso_design_presets` filter (gated on a valid license).
+				 * Selecting one fills the Design fields below; users can still tweak.
+				 */
+				'options'        => apply_filters( 'zaso_design_presets', array(
+					'soft_light'   => array(
+						'label'  => __( 'Soft Light', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'quote_font_size'    => '18px',
+								'quote_color'        => '#334155',
+								'quote_italic'       => 'yes',
+								'author_name_color'  => '#0f172a',
+								'author_title_color' => '#475569',
+								'star_color'         => '#b45309',
+								'card_background'    => '#ffffff',
+								'card_padding'       => array( 'top' => '32px', 'right' => '32px', 'bottom' => '32px', 'left' => '32px' ),
+								'card_border_radius' => '12px',
+								'arrow_color'        => '#0f172a',
+								'dot_color'          => '#cbd5e1',
+								'dot_active_color'   => '#4f46e5',
+							),
+						),
+					),
+					'solid_accent' => array(
+						'label'  => __( 'Solid Accent', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'quote_font_size'    => '18px',
+								'quote_color'        => '#ffffff',
+								'quote_italic'       => 'yes',
+								'author_name_color'  => '#ffffff',
+								'author_title_color' => '#e0e7ff',
+								'star_color'         => '#fbbf24',
+								'card_background'    => '#4f46e5',
+								'card_padding'       => array( 'top' => '36px', 'right' => '36px', 'bottom' => '36px', 'left' => '36px' ),
+								'card_border_radius' => '12px',
+								'arrow_color'        => '#ffffff',
+								'dot_color'          => '#a5b4fc',
+								'dot_active_color'   => '#ffffff',
+							),
+						),
+					),
+					'outline'      => array(
+						'label'  => __( 'Outline', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'quote_font_size'    => '18px',
+								'quote_color'        => '#0f172a',
+								'quote_italic'       => 'no',
+								'author_name_color'  => '#0f172a',
+								'author_title_color' => '#475569',
+								'star_color'         => '#b45309',
+								'card_background'    => '#f8fafc',
+								'card_padding'       => array( 'top' => '28px', 'right' => '32px', 'bottom' => '28px', 'left' => '32px' ),
+								'card_border_radius' => '10px',
+								'arrow_color'        => '#4f46e5',
+								'dot_color'          => '#cbd5e1',
+								'dot_active_color'   => '#4f46e5',
+							),
+						),
+					),
+				), 'testimonial-slider' ),
+			),
 			'design'            => array(
 				'type'   => 'section',
 				'label'  => __( 'Design', 'zaso' ),
