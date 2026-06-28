@@ -120,8 +120,8 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		public function register_menu() {
 			add_submenu_page(
 				self::PARENT_SLUG,
-				esc_html__( 'Widget Design', 'zaso' ),
-				esc_html__( 'Widget Design', 'zaso' ),
+				esc_html__( 'Design Library', 'zaso' ),
+				esc_html__( 'Design Library', 'zaso' ),
 				self::CAPABILITY,
 				self::MENU_SLUG,
 				array( $this, 'render_page' )
@@ -191,14 +191,14 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		 * @param  string|null $fg     Accumulated foreground color (by reference).
 		 * @return void
 		 */
-		protected function scan_colors( $values, &$bg, &$fg ) {
+		protected function scan_colors( $values, &$bg, &$fg, &$accent ) {
 			if ( ! is_array( $values ) ) {
 				return;
 			}
 
 			foreach ( $values as $key => $value ) {
 				if ( is_array( $value ) ) {
-					$this->scan_colors( $value, $bg, $fg );
+					$this->scan_colors( $value, $bg, $fg, $accent );
 					continue;
 				}
 
@@ -206,11 +206,21 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					continue;
 				}
 
-				$lower    = is_string( $key ) ? strtolower( $key ) : '';
-				$is_bg    = ( false !== strpos( $lower, 'background' ) || false !== strpos( $lower, 'bg' ) );
-				$is_fg    = ( false !== strpos( $lower, 'font_color' ) || false !== strpos( $lower, 'text' ) || false !== strpos( $lower, 'title' ) || false !== strpos( $lower, 'number' ) || false !== strpos( $lower, 'quote' ) || false !== strpos( $lower, 'color' ) );
+				$lower = is_string( $key ) ? strtolower( $key ) : '';
 
-				if ( $is_bg ) {
+				// The colorful / brand surface (button fill, featured, accent, link, icon, star, active state).
+				$is_accent = ( false !== strpos( $lower, 'button_bg' ) || false !== strpos( $lower, 'button_background' ) || false !== strpos( $lower, 'featured' ) || false !== strpos( $lower, 'accent' ) || false !== strpos( $lower, 'link' ) || false !== strpos( $lower, 'icon' ) || false !== strpos( $lower, 'star' ) || false !== strpos( $lower, 'active' ) );
+				// The card / message background surface.
+				$is_bg = ( false !== strpos( $lower, 'background' ) || false !== strpos( $lower, 'card_bg' ) || 'bg_color' === $lower || false !== strpos( $lower, '_bg' ) );
+				// Body text. Exclude button text (its color pairs with the button fill, not the card).
+				$is_btn_text = ( false !== strpos( $lower, 'button_text' ) || false !== strpos( $lower, 'button_font' ) );
+				$is_fg       = ( ! $is_btn_text && ( false !== strpos( $lower, 'font_color' ) || false !== strpos( $lower, 'text' ) || false !== strpos( $lower, 'title' ) || false !== strpos( $lower, 'number' ) || false !== strpos( $lower, 'quote' ) || false !== strpos( $lower, 'description' ) || false !== strpos( $lower, 'name_color' ) ) );
+
+				if ( $is_accent ) {
+					if ( null === $accent ) {
+						$accent = $value;
+					}
+				} elseif ( $is_bg ) {
 					if ( null === $bg ) {
 						$bg = $value;
 					}
@@ -220,6 +230,51 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					}
 				}
 			}
+		}
+
+		/**
+		 * Relative luminance of a hex color (WCAG).
+		 *
+		 * @param  string $hex Hex color.
+		 * @return float
+		 */
+		protected function luminance( $hex ) {
+			$hex = ltrim( (string) $hex, '#' );
+			if ( 3 === strlen( $hex ) ) {
+				$hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+			}
+			if ( 6 !== strlen( $hex ) ) {
+				return 1.0;
+			}
+			$chan = array();
+			foreach ( array( 0, 2, 4 ) as $i ) {
+				$c      = hexdec( substr( $hex, $i, 2 ) ) / 255;
+				$chan[] = ( $c <= 0.03928 ) ? $c / 12.92 : pow( ( $c + 0.055 ) / 1.055, 2.4 );
+			}
+			return 0.2126 * $chan[0] + 0.7152 * $chan[1] + 0.0722 * $chan[2];
+		}
+
+		/**
+		 * WCAG contrast ratio between two hex colors.
+		 *
+		 * @param  string $a Hex color.
+		 * @param  string $b Hex color.
+		 * @return float
+		 */
+		protected function contrast( $a, $b ) {
+			$la = $this->luminance( $a );
+			$lb = $this->luminance( $b );
+			return ( max( $la, $lb ) + 0.05 ) / ( min( $la, $lb ) + 0.05 );
+		}
+
+		/**
+		 * Pick a readable text color (dark or white) for a given background.
+		 *
+		 * @param  string $bg Background hex.
+		 * @return string
+		 */
+		protected function readable_on( $bg ) {
+			return ( $this->luminance( $bg ) > 0.4 ) ? '#0f172a' : '#ffffff';
 		}
 
 		/**
@@ -267,7 +322,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 				</style>
 
 				<div class="zaso-wd-head">
-					<h1><?php echo esc_html__( 'Widget Design', 'zaso' ); ?></h1>
+					<h1><?php echo esc_html__( 'Design Library', 'zaso' ); ?></h1>
 				</div>
 				<p class="zaso-wd-intro"><?php echo esc_html__( 'Browse every ready made design skin for the supported Zen Addons widgets. Pick one inside the widget editor to apply it, then fine tune the colors to taste.', 'zaso' ); ?></p>
 
@@ -298,19 +353,26 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 							$is_pro    = ( 0 === strpos( $preset_id, 'pro_' ) );
 							$label     = isset( $preset['label'] ) ? (string) $preset['label'] : $preset_id;
 
-							$bg = null;
-							$fg = null;
+							$bg     = null;
+							$fg     = null;
+							$accent = null;
 							if ( isset( $preset['values'] ) ) {
-								$this->scan_colors( $preset['values'], $bg, $fg );
+								$this->scan_colors( $preset['values'], $bg, $fg, $accent );
 							}
 
 							$swatch_bg = ( null !== $bg ) ? $bg : '#ffffff';
-							$swatch_fg = ( null !== $fg ) ? $fg : '#0f172a';
+							$swatch_fg = ( null !== $fg ) ? $fg : $this->readable_on( $swatch_bg );
+							// Guarantee the sample text is legible on the swatch background.
+							if ( $this->contrast( $swatch_fg, $swatch_bg ) < 3.0 ) {
+								$swatch_fg = $this->readable_on( $swatch_bg );
+							}
+							// The accent bar shows the skin's brand color (button/featured/etc.).
+							$swatch_accent = ( null !== $accent ) ? $accent : $swatch_fg;
 							?>
 							<div class="zaso-wd-card">
 								<div class="zaso-wd-swatch" style="<?php echo esc_attr( 'background:' . $swatch_bg . ';color:' . $swatch_fg . ';' ); ?>">
 									<span class="zaso-wd-aa"><?php echo esc_html__( 'Aa', 'zaso' ); ?></span>
-									<span class="zaso-wd-line"></span>
+									<span class="zaso-wd-line" style="<?php echo esc_attr( 'background:' . $swatch_accent . ';opacity:1;' ); ?>"></span>
 								</div>
 								<div class="zaso-wd-meta">
 									<span class="zaso-wd-label"><?php echo esc_html( $label ); ?></span>
