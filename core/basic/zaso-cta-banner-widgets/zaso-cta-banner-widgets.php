@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Call to Action
+ * Widget Name: Zen Addons - Call to Action
  * Widget ID: zen-addons-siteorigin-cta-banner
  * Description: A call to action banner with a heading, text, and button over a color, gradient, or image background.
  * Author: DopeThemes
@@ -226,7 +226,7 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-cta-banner',
-			__( 'ZASO - Call to Action', 'zaso' ),
+			__( 'Zen Addons - Call to Action', 'zaso' ),
 			array(
 				'description'   => __( 'A call to action banner with a heading, text, and button.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

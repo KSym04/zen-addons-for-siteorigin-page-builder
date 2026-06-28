@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Testimonial Slider
+ * Widget Name: Zen Addons - Testimonial Slider
  * Widget ID: zen-addons-siteorigin-testimonial-slider
  * Description: A sliding testimonial carousel with auto-play, swipe, and keyboard support.
  * Author: DopeThemes
@@ -188,7 +188,7 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 
 		parent::__construct(
 			'zen-addons-siteorigin-testimonial-slider',
-			__( 'ZASO - Testimonial Slider', 'zaso' ),
+			__( 'Zen Addons - Testimonial Slider', 'zaso' ),
 			array(
 				'description'   => __( 'A sliding testimonial carousel with auto-play, swipe, and keyboard support.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

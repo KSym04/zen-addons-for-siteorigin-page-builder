@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Hover Card
+ * Widget Name: Zen Addons - Hover Card
  * Widget ID: zen-addons-siteorigin-hover-card
  * Description: Show an image card with a title and button that animate on hover.
  * Author: DopeThemes
@@ -392,7 +392,7 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-hover-card',
-			__( 'ZASO - Hover Card', 'zaso' ),
+			__( 'Zen Addons - Hover Card', 'zaso' ),
 			array(
 				'description'   => __( 'Display image box, title caption and learn more button with hover transition', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

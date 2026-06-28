@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - bbPress Topic Index
+ * Widget Name: Zen Addons - bbPress Topic Index
  * Widget ID: zen-addons-siteorigin-bbpress-topic-index
  * Description: List recent bbPress topics with optional search and pagination.
  * Author: DopeThemes
@@ -62,7 +62,7 @@ class Zen_Addons_SiteOrigin_BbPress_Topic_Index_Widget extends SiteOrigin_Widget
 
 		parent::__construct(
 			'zen-addons-siteorigin-bbpress-topic-index',
-			__( 'ZASO - bbPress Topic Index', 'zaso' ),
+			__( 'Zen Addons - bbPress Topic Index', 'zaso' ),
 			array(
 				'description' 	=> __( 'Display recent 15 topics across all forums with optional pagination and search.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',

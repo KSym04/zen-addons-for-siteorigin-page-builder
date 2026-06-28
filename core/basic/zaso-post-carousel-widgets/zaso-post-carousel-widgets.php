@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Post Carousel
+ * Widget Name: Zen Addons - Post Carousel
  * Widget ID: zen-addons-siteorigin-post-carousel
  * Description: Display posts in a responsive, swipeable carousel with autoplay, arrows, and dots.
  * Author: DopeThemes
@@ -164,7 +164,7 @@ class Zen_Addons_SiteOrigin_Post_Carousel_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-post-carousel',
-			__( 'ZASO - Post Carousel', 'zaso' ),
+			__( 'Zen Addons - Post Carousel', 'zaso' ),
 			array(
 				'description'   => __( 'Display posts in a responsive, swipeable carousel with autoplay, arrows, and dots.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

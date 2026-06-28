@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Contact Form 7
+ * Widget Name: Zen Addons - Contact Form 7
  * Widget ID: zen-addons-siteorigin-contact-form-7
  * Description: Drop any Contact Form 7 form into a SiteOrigin layout.
  * Author: DopeThemes
@@ -56,7 +56,7 @@ class Zen_Addons_SiteOrigin_Contact_Form_7_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-contact-form-7',
-			__( 'ZASO - Contact Form 7', 'zaso' ),
+			__( 'Zen Addons - Contact Form 7', 'zaso' ),
 			array(
 				'description' 	=> __( 'Display CF7 form.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',

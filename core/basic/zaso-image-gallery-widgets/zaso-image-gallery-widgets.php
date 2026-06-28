@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Image Gallery
+ * Widget Name: Zen Addons - Image Gallery
  * Widget ID: zen-addons-siteorigin-image-gallery
  * Description: Display a responsive image gallery grid with an optional lightbox that opens full-size images in a pop-up overlay.
  * Author: DopeThemes
@@ -96,7 +96,7 @@ class Zen_Addons_SiteOrigin_Image_Gallery_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-image-gallery',
-			__( 'ZASO - Image Gallery', 'zaso' ),
+			__( 'Zen Addons - Image Gallery', 'zaso' ),
 			array(
 				'description'   => __( 'Display a responsive image gallery grid with an optional lightbox that opens full-size images in a pop-up overlay.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

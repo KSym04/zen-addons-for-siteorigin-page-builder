@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - bbPress Forum Index
+ * Widget Name: Zen Addons - bbPress Forum Index
  * Widget ID: zen-addons-siteorigin-bbpress-forum-index
  * Description: Show the full bbPress forum index in your layout.
  * Author: DopeThemes
@@ -61,7 +61,7 @@ class Zen_Addons_SiteOrigin_BbPress_Forum_Index_Widget extends SiteOrigin_Widget
 
 		parent::__construct(
 			'zen-addons-siteorigin-bbpress-forum-index',
-			__( 'ZASO - bbPress Forum Index', 'zaso' ),
+			__( 'Zen Addons - bbPress Forum Index', 'zaso' ),
 			array(
 				'description' 	=> __( 'Display entire bbPress forum index.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',

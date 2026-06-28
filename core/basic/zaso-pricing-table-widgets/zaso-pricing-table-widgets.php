@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Pricing Table
+ * Widget Name: Zen Addons - Pricing Table
  * Widget ID: zen-addons-siteorigin-pricing-table
  * Description: Showcase your plans side-by-side with a features list, highlighted tier, and call-to-action button.
  * Author: DopeThemes
@@ -142,7 +142,7 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-pricing-table',
-			__( 'ZASO - Pricing Table', 'zaso' ),
+			__( 'Zen Addons - Pricing Table', 'zaso' ),
 			array(
 				'description'   => __( 'Showcase your plans side-by-side with a features list, highlighted tier, and call-to-action button.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

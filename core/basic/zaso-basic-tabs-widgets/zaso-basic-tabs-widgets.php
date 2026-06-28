@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Basic Tabs
+ * Widget Name: Zen Addons - Basic Tabs
  * Widget ID: zen-addons-siteorigin-basic-tabs
  * Description: Organize content into a set of clickable, accessible tabs.
  * Author: DopeThemes
@@ -265,7 +265,7 @@ class Zen_Addons_SiteOrigin_Basic_Tabs_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-basic-tabs',
-			__( 'ZASO - Basic Tabs', 'zaso' ),
+			__( 'Zen Addons - Basic Tabs', 'zaso' ),
 			array(
 				'description'   => __( 'Create multiple panels contained in a single window.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

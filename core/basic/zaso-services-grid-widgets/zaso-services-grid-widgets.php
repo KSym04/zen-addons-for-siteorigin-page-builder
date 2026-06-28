@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Services Grid
+ * Widget Name: Zen Addons - Services Grid
  * Widget ID: zen-addons-siteorigin-services-grid
  * Description: Display a grid of services or features, each with an icon, title, description, and optional link.
  * Author: DopeThemes
@@ -167,7 +167,7 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-services-grid',
-			__( 'ZASO - Services Grid', 'zaso' ),
+			__( 'Zen Addons - Services Grid', 'zaso' ),
 			array(
 				'description'   => __( 'Display a grid of services or features, each with an icon, title, description, and optional link.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

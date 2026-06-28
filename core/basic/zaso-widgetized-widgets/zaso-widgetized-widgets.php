@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Widgetized
+ * Widget Name: Zen Addons - Widgetized
  * Widget ID: zen-addons-siteorigin-widgetized
  * Description: Place an existing widget sidebar inside your page content.
  * Author: DopeThemes
@@ -51,7 +51,7 @@ class Zen_Addons_SiteOrigin_Widgetized_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-widgetized',
-			__( 'ZASO - Widgetized', 'zaso' ),
+			__( 'Zen Addons - Widgetized', 'zaso' ),
 			array(
 				'description' 	=> __( 'Get existing widget sidebars to display on the main content.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',

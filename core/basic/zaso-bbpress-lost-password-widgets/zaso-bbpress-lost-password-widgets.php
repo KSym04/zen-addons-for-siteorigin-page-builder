@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - bbPress Lost Password
+ * Widget Name: Zen Addons - bbPress Lost Password
  * Widget ID: zen-addons-siteorigin-bbpress-lost-password
  * Description: Embed the bbPress lost password recovery form.
  * Author: DopeThemes
@@ -34,7 +34,7 @@ class Zen_Addons_SiteOrigin_BbPress_Lost_Password_Widget extends SiteOrigin_Widg
 
 		parent::__construct(
 			'zen-addons-siteorigin-bbpress-lost-password',
-			__( 'ZASO - bbPress Lost Password', 'zaso' ),
+			__( 'Zen Addons - bbPress Lost Password', 'zaso' ),
 			array(
 				'description' 	=> __( 'Display the bbPress password retrieval form.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',

@@ -140,3 +140,16 @@
   bottom: 0.75em;
   left: 0.75em;
 }
+
+// ── Theme-robustness (1.10.1) ───────────────────────────────────────────────
+// Neutralize native/theme <button> chrome on the drag handle (appearance,
+// background, border, font). Same @vars, no !important. The divider `::before`
+// is intentionally left untouched.
+.zaso-before-after button.zaso-before-after__handle {
+  -webkit-appearance: none;
+  appearance: none;
+  background: @handle_color;
+  border: 2px solid @handle_color;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.2), 0 2px 6px rgba(15, 23, 42, 0.3);
+  font: inherit;
+}

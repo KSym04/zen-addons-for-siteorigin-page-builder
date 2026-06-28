@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Logo Showcase
+ * Widget Name: Zen Addons - Logo Showcase
  * Widget ID: zen-addons-siteorigin-logo-showcase
  * Description: Display a responsive grid of client or partner logos with an optional greyscale-to-colour hover effect.
  * Author: DopeThemes
@@ -108,7 +108,7 @@ class Zen_Addons_SiteOrigin_Logo_Showcase_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-logo-showcase',
-			__( 'ZASO - Logo Showcase', 'zaso' ),
+			__( 'Zen Addons - Logo Showcase', 'zaso' ),
 			array(
 				'description'   => __( 'Display a responsive grid of client or partner logos with an optional greyscale-to-colour hover effect.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

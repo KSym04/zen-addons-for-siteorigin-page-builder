@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Social Share Bar
+ * Widget Name: Zen Addons - Social Share Bar
  * Widget ID: zen-addons-siteorigin-social-share
  * Description: A row of share buttons (Facebook, X, LinkedIn, Pinterest, Reddit, WhatsApp, Telegram, Email) plus a copy-link button. Server-built share URLs, no third-party scripts.
  * Author: DopeThemes
@@ -202,7 +202,7 @@ class Zen_Addons_SiteOrigin_Social_Share_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-social-share',
-			__( 'ZASO - Social Share Bar', 'zaso' ),
+			__( 'Zen Addons - Social Share Bar', 'zaso' ),
 			array(
 				'description'   => __( 'A row of share buttons plus a copy-link button. Server-built share URLs, no third-party scripts.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

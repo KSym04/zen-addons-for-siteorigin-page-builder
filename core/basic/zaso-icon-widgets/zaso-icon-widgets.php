@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Icon
+ * Widget Name: Zen Addons - Icon
  * Widget ID: zen-addons-siteorigin-icon
  * Description: Display a single icon from an icon font or your own upload.
  * Author: DopeThemes
@@ -78,7 +78,7 @@ class Zen_Addons_SiteOrigin_Icon_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-icon',
-			__( 'ZASO - Icon', 'zaso' ),
+			__( 'Zen Addons - Icon', 'zaso' ),
 			array(
 				'description' 	=> __( 'Set single icon on popular iconic font or upload your custom icon.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',

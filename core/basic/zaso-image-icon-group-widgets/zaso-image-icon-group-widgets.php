@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Image Icon Group
+ * Widget Name: Zen Addons - Image Icon Group
  * Widget ID: zen-addons-siteorigin-image-icon-group
  * Description: Display a row or grid of linked image icons.
  * Author: DopeThemes
@@ -147,7 +147,7 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-image-icon-group',
-			__( 'ZASO - Image Icon Group', 'zaso' ),
+			__( 'Zen Addons - Image Icon Group', 'zaso' ),
 			array(
 				'description'   => __( 'Set group of image icon.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

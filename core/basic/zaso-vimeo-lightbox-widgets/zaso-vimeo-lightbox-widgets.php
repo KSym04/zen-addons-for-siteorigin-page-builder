@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Vimeo Lightbox
+ * Widget Name: Zen Addons - Vimeo Lightbox
  * Widget ID: zen-addons-siteorigin-vimeo-lightbox
  * Description: Open a Vimeo video in a clickable pop-up lightbox.
  * Author: DopeThemes
@@ -81,7 +81,7 @@ class Zen_Addons_SiteOrigin_Vimeo_Lightbox_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-vimeo-lightbox',
-			__( 'ZASO - Vimeo Lightbox', 'zaso' ),
+			__( 'Zen Addons - Vimeo Lightbox', 'zaso' ),
 			array(
 				'description'   => __( 'Pop-up lightbox for Viemo videos.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

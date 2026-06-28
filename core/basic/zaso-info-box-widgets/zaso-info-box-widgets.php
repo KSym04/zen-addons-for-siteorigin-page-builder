@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Info Box
+ * Widget Name: Zen Addons - Info Box
  * Widget ID: zen-addons-siteorigin-info-box
  * Description: Feature an image, title, text, and call-to-action button together.
  * Author: DopeThemes
@@ -60,7 +60,7 @@ class Zen_Addons_SiteOrigin_Info_Box_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-info-box',
-			__( 'ZASO - Info Box', 'zaso' ),
+			__( 'Zen Addons - Info Box', 'zaso' ),
 			array(
 				'description'   => __( 'Display information box - image, title, description and learn more button link', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

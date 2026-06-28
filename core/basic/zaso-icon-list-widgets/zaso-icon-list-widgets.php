@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Icon List
+ * Widget Name: Zen Addons - Icon List
  * Widget ID: zen-addons-siteorigin-icon-list
  * Description: A vertical or horizontal list of items, each with an icon and text.
  * Author: DopeThemes
@@ -105,7 +105,7 @@ class Zen_Addons_SiteOrigin_Icon_List_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-icon-list',
-			__( 'ZASO - Icon List', 'zaso' ),
+			__( 'Zen Addons - Icon List', 'zaso' ),
 			array(
 				'description'   => __( 'Display a list of items, each with an icon and text.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

@@ -189,3 +189,56 @@
 		transition: none;
 	}
 }
+
+// ─── Theme-robustness (1.10.1) ──────────────────────────────────────────────────
+// Themes style bare a/button/h3; re-assert widget chrome at higher specificity.
+// Flat selectors, same @vars/defaults, no !important. Hover/active are re-stated
+// so the raised base specificity cannot kill the interactive states.
+.zaso-post-carousel h3.zaso-post-carousel__title {
+	font-family: inherit;
+}
+
+.zaso-post-carousel h3.zaso-post-carousel__title a {
+	color:           @title_color;
+	text-decoration: none;
+}
+
+.zaso-post-carousel h3.zaso-post-carousel__title a:hover,
+.zaso-post-carousel h3.zaso-post-carousel__title a:focus {
+	color: @accent_color;
+}
+
+.zaso-post-carousel a.zaso-post-carousel__readmore {
+	color:           @accent_color;
+	text-decoration: none;
+}
+
+.zaso-post-carousel a.zaso-post-carousel__readmore:hover,
+.zaso-post-carousel a.zaso-post-carousel__readmore:focus {
+	text-decoration: underline;
+}
+
+.zaso-post-carousel button.zaso-post-carousel__arrow {
+	-webkit-appearance: none;
+	appearance:         none;
+	background:         #ffffff;
+	color:              @arrow_color;
+	border:             1px solid @card_border;
+}
+
+.zaso-post-carousel button.zaso-post-carousel__arrow:hover {
+	background: @arrow_color;
+	color:      #ffffff;
+}
+
+.zaso-post-carousel button.zaso-post-carousel__dot {
+	-webkit-appearance: none;
+	appearance:         none;
+	background:         #cbd5e1;
+	border:             0;
+}
+
+.zaso-post-carousel button.zaso-post-carousel__dot:hover,
+.zaso-post-carousel button.zaso-post-carousel__dot--active {
+	background: @accent_color;
+}

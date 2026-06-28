@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Section Divider
+ * Widget Name: Zen Addons - Section Divider
  * Widget ID: zen-addons-siteorigin-section-divider
  * Description: Add an SVG shape divider (wave, curve, tilt, triangle) to the top or bottom of a section.
  * Author: DopeThemes
@@ -73,7 +73,7 @@ class Zen_Addons_SiteOrigin_Section_Divider_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-section-divider',
-			__( 'ZASO - Section Divider', 'zaso' ),
+			__( 'Zen Addons - Section Divider', 'zaso' ),
 			array(
 				'description'   => __( 'Add an SVG shape divider to the top or bottom of a section.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

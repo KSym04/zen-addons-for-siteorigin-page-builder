@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Video
+ * Widget Name: Zen Addons - Video
  * Widget ID: zen-addons-siteorigin-video
  * Description: Embed a responsive video from YouTube, Vimeo, or other providers.
  * Author: DopeThemes
@@ -62,7 +62,7 @@ class Zen_Addons_SiteOrigin_Video_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-video',
-			__( 'ZASO - Video', 'zaso' ),
+			__( 'Zen Addons - Video', 'zaso' ),
 			array(
 				'description'   => __( 'Add video from YouTube, Vimeo or another provider.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

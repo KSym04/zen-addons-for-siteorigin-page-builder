@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Flip Card
+ * Widget Name: Zen Addons - Flip Card
  * Widget ID: zen-addons-siteorigin-flip-card
  * Description: A card that flips on hover or keyboard focus to reveal back-side content and a call-to-action.
  * Author: DopeThemes
@@ -132,7 +132,7 @@ class Zen_Addons_SiteOrigin_Flip_Card_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-flip-card',
-			__( 'ZASO - Flip Card', 'zaso' ),
+			__( 'Zen Addons - Flip Card', 'zaso' ),
 			array(
 				'description'   => __( 'A card that flips on hover or keyboard focus to reveal back-side content and a call-to-action.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

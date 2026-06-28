@@ -146,3 +146,24 @@
     }
   }
 }
+
+// ── Theme-robustness (1.10.1) ───────────────────────────────────────────────
+// Re-assert chrome at higher specificity so themes that style bare `a`/`h2`
+// (e.g. `a:not(.wp-block-button__link)`) cannot hijack the button or heading.
+// Flat selectors, same @vars, no !important; SiteOrigin's `.so-widget-<id>`
+// prefix adds the extra class that wins the specificity tie.
+.zaso-cta-banner a.zaso-cta-banner__button {
+  background-color: @button_bg;
+  color: @button_color;
+  text-decoration: none;
+}
+
+.zaso-cta-banner a.zaso-cta-banner__button:hover,
+.zaso-cta-banner a.zaso-cta-banner__button:focus {
+  background-color: @button_bg_hover;
+  color: @button_color;
+}
+
+.zaso-cta-banner h2.zaso-cta-banner__heading {
+  font-family: inherit;
+}

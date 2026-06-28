@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Countdown
+ * Widget Name: Zen Addons - Countdown
  * Widget ID: zen-addons-siteorigin-countdown
  * Description: A countdown timer to a target date and time for launches and promotions.
  * Author: DopeThemes
@@ -150,7 +150,7 @@ class Zen_Addons_SiteOrigin_Countdown_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-countdown',
-			__( 'ZASO - Countdown', 'zaso' ),
+			__( 'Zen Addons - Countdown', 'zaso' ),
 			array(
 				'description'   => __( 'A countdown timer to a target date for launches and promotions.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

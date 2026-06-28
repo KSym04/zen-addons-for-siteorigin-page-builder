@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Team Member
+ * Widget Name: Zen Addons - Team Member
  * Widget ID: zen-addons-siteorigin-team-member
  * Description: Display a grid of team members with photos, roles, bios, and social links.
  * Author: DopeThemes
@@ -196,7 +196,7 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-team-member',
-			__( 'ZASO - Team Member', 'zaso' ),
+			__( 'Zen Addons - Team Member', 'zaso' ),
 			array(
 				'description'   => __( 'Display a grid of team members with photos, roles, bios, and social links.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

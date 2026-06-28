@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Alert Box
+ * Widget Name: Zen Addons - Alert Box
  * Widget ID: zen-addons-siteorigin-alert-box
  * Description: Show a styled info, success, warning, or error message.
  * Author: DopeThemes
@@ -212,7 +212,7 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-alert-box',
-			__( 'ZASO - Alert Box', 'zaso' ),
+			__( 'Zen Addons - Alert Box', 'zaso' ),
 			array(
 				'description'   => __( 'Create contextual feedback and flexible alert messages.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

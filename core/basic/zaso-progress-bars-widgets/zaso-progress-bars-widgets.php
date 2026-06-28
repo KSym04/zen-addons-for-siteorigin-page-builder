@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Progress Bars
+ * Widget Name: Zen Addons - Progress Bars
  * Widget ID: zen-addons-siteorigin-progress-bars
  * Description: Show a set of labeled progress or skill bars that fill when they scroll into view.
  * Author: DopeThemes
@@ -121,7 +121,7 @@ class Zen_Addons_SiteOrigin_Progress_Bars_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-progress-bars',
-			__( 'ZASO - Progress Bars', 'zaso' ),
+			__( 'Zen Addons - Progress Bars', 'zaso' ),
 			array(
 				'description'   => __( 'Show a set of labeled progress or skill bars that fill when they scroll into view.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

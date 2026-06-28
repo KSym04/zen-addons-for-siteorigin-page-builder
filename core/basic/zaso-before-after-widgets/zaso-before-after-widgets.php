@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Before / After
+ * Widget Name: Zen Addons - Before / After
  * Widget ID: zen-addons-siteorigin-before-after
  * Description: A draggable image comparison slider that reveals a before and after image.
  * Author: DopeThemes
@@ -132,7 +132,7 @@ class Zen_Addons_SiteOrigin_Before_After_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-before-after',
-			__( 'ZASO - Before / After', 'zaso' ),
+			__( 'Zen Addons - Before / After', 'zaso' ),
 			array(
 				'description'   => __( 'A draggable slider that compares a before and after image.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

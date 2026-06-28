@@ -53,6 +53,22 @@ foreach ( $zaso_dirs as $folder ) {
 }
 $check( "All $expected ZASO widgets discovered", $found === $expected, "found $found" );
 
+// 2b. Every discovered widget must be ACTIVE by default. SiteOrigin defaults a
+// newly-found widget to INACTIVE, so a new widget renders blank for users until
+// manually toggled (1.10.0 shipped 2 blank widgets before this guard existed).
+// core/widgets.php must register it via the siteorigin_widgets_default_active filter.
+$default_active   = apply_filters( 'siteorigin_widgets_default_active', array() );
+$inactive_default = array();
+foreach ( $zaso_dirs as $folder ) {
+	foreach ( (array) glob( $folder . '*/', GLOB_ONLYDIR ) as $dir ) {
+		$slug = basename( $dir );
+		if ( empty( $default_active[ $slug ] ) ) {
+			$inactive_default[] = $slug;
+		}
+	}
+}
+$check( 'All ZASO widgets default-active', empty( $inactive_default ), empty( $inactive_default ) ? '' : 'NOT default-active: ' . implode( ', ', $inactive_default ) );
+
 // 3. Representative template render + escaping smoke test.
 $base  = WP_PLUGIN_DIR . '/zen-addons-for-siteorigin-page-builder/core/basic/';
 $cases = array(

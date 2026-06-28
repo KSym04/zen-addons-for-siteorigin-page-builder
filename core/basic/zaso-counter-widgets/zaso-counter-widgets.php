@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Counter
+ * Widget Name: Zen Addons - Counter
  * Widget ID: zen-addons-siteorigin-counter
  * Description: An animated number that counts up to a target value when it scrolls into view.
  * Author: DopeThemes
@@ -137,7 +137,7 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-counter',
-			__( 'ZASO - Counter', 'zaso' ),
+			__( 'Zen Addons - Counter', 'zaso' ),
 			array(
 				'description'   => __( 'An animated number that counts up when scrolled into view.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

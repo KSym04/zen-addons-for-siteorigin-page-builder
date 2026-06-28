@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Post Grid
+ * Widget Name: Zen Addons - Post Grid
  * Widget ID: zen-addons-siteorigin-post-grid
  * Description: Display a responsive grid of posts with featured images, meta, excerpts, and read-more links.
  * Author: DopeThemes
@@ -138,7 +138,7 @@ class Zen_Addons_SiteOrigin_Post_Grid_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-post-grid',
-			__( 'ZASO - Post Grid', 'zaso' ),
+			__( 'Zen Addons - Post Grid', 'zaso' ),
 			array(
 				'description'   => __( 'Display a responsive grid of posts with featured images, meta, excerpts, and read-more links.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

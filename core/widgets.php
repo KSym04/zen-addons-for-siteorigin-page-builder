@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function zen_addons_siteorigin_widget_tabs( $tabs ) {
 	// Create a new tab group for ZASO widgets.
 	$tabs[] = array(
-		'title'  => esc_html__( 'ZASO Widgets', 'zaso' ),
+		'title'  => esc_html__( 'Zen Addons', 'zaso' ),
 		'filter' => array(
 			'groups' => array( 'zaso-plugin-widgets' )
 		)

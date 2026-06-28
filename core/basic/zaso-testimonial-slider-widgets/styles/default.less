@@ -232,3 +232,57 @@
 		transition: none;
 	}
 }
+
+// ─── Theme-robustness (1.10.1) ──────────────────────────────────────────────────
+// Themes inject blockquote quote-marks/borders and native <button> chrome;
+// re-assert at higher specificity. Same @vars, no !important; hover/active are
+// re-stated so the raised base specificity cannot kill interactive states.
+.zaso-testimonial-slider blockquote.zaso-testimonial-slider__quote {
+	margin:  0 0 20px;
+	padding: 0;
+	border:  0;
+	quotes:  none;
+}
+
+.zaso-testimonial-slider blockquote.zaso-testimonial-slider__quote::before,
+.zaso-testimonial-slider blockquote.zaso-testimonial-slider__quote::after {
+	content: none;
+}
+
+.zaso-testimonial-slider button.zaso-testimonial-slider__arrow {
+	-webkit-appearance: none;
+	appearance:         none;
+	background:         transparent;
+	color:              @arrow_color;
+	border:             1px solid rgba( 0, 0, 0, 0.15 );
+}
+
+.zaso-testimonial-slider button.zaso-testimonial-slider__arrow:hover {
+	background:   rgba( 0, 0, 0, 0.06 );
+	border-color: rgba( 0, 0, 0, 0.3 );
+}
+
+.zaso-testimonial-slider button.zaso-testimonial-slider__dot {
+	-webkit-appearance: none;
+	appearance:         none;
+	background:         @dot_color;
+	border:             0;
+}
+
+.zaso-testimonial-slider button.zaso-testimonial-slider__dot--active,
+.zaso-testimonial-slider button.zaso-testimonial-slider__dot[aria-current="true"] {
+	background: @dot_active_color;
+}
+
+.zaso-testimonial-slider button.zaso-testimonial-slider__playpause {
+	-webkit-appearance: none;
+	appearance:         none;
+	background:         rgba( 255, 255, 255, 0.85 );
+	color:              @arrow_color;
+	border:             1px solid rgba( 0, 0, 0, 0.15 );
+}
+
+.zaso-testimonial-slider button.zaso-testimonial-slider__playpause:hover {
+	background:   #ffffff;
+	border-color: rgba( 0, 0, 0, 0.3 );
+}

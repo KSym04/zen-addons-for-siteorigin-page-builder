@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - bbPress Login
+ * Widget Name: Zen Addons - bbPress Login
  * Widget ID: zen-addons-siteorigin-bbpress-login
  * Description: Embed the bbPress member login form.
  * Author: DopeThemes
@@ -34,7 +34,7 @@ class Zen_Addons_SiteOrigin_BbPress_Login_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-bbpress-login',
-			__( 'ZASO - bbPress Login', 'zaso' ),
+			__( 'Zen Addons - bbPress Login', 'zaso' ),
 			array(
 				'description' 	=> __( 'Display the bbPress login form.', 'zaso' ),
 				'help' 			=> 'https://www.dopethemes.com/',

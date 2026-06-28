@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Zen Addons for SiteOrigin Page Builder
  * Description: Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Builder. It's simple, flexible, and useful.
- * Version: 1.10.0
+ * Version: 1.10.1
  * Requires at least: 5.5
  * Requires PHP: 7.4
  * Requires Plugins: so-widgets-bundle
@@ -41,7 +41,7 @@ if ( ! class_exists( 'zen_addons_siteorigin' ) ) :
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.10.0';
+	var $version = '1.10.1';
 
 	/**
 	 * A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once
@@ -97,6 +97,7 @@ class zen_addons_siteorigin {
 		// Admin management page.
 		if ( is_admin() ) {
 			include( 'core/admin.php' );
+			include( 'core/dependency-notice.php' );
 		}
 
 		// Plugin action links.

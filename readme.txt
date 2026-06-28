@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.0
+Stable tag: 1.10.1
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -207,6 +207,9 @@ Please read the Frequently Asked Questions before opening a support request, and
 
 == Upgrade Notice ==
 
+= 1.10.1 =
+Theme-compatibility hardening so widget buttons, links, headings, and slider controls keep their styling on more themes, plus a one-click setup helper for the required SiteOrigin plugins.
+
 = 1.10.0 =
 Two new widgets, Section Divider and Icon List, plus new widgets now enable themselves and small theme-compatibility fixes.
 
@@ -247,6 +250,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.1 =
+* Improved: Theme-compatibility hardening across the Call to Action, Before / After, Post Carousel, Testimonial Slider, and Flip Card widgets. Buttons, links, headings, and slider controls (arrows, dots, and the play and pause button) now keep their intended styling on themes that restyle bare links, buttons, headings, or blockquotes. No design changes, just sturdier styling.
+* New: A setup notice helps new users install the SiteOrigin plugins Zen Addons needs (Widgets Bundle and Page Builder) with one-click install or activate links. It appears only while one is missing and never shows once both are active, so existing setups are unaffected.
 
 = 1.10.0 =
 * New: Section Divider widget to add an SVG shape divider (waves, curve, tilt, or triangle) to the top or bottom of a section.

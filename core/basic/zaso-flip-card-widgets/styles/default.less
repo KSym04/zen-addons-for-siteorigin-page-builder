@@ -145,3 +145,27 @@
 		transition: none;
 	}
 }
+
+// ─── Theme-robustness (1.10.1) ──────────────────────────────────────────────────
+// Themes style bare a/h3/h4; re-assert button + heading chrome at higher
+// specificity. Same @vars, no !important.
+.zaso-flip-card a.zaso-flip-card__button {
+	background-color: @button_bg_color;
+	color:            @button_text_color;
+	text-decoration:  none;
+}
+
+.zaso-flip-card a.zaso-flip-card__button:hover,
+.zaso-flip-card a.zaso-flip-card__button:focus {
+	color: @button_text_color;
+}
+
+.zaso-flip-card h3.zaso-flip-card__title {
+	font-family: inherit;
+	color:       @front_text_color;
+}
+
+.zaso-flip-card h4.zaso-flip-card__back-heading {
+	font-family: inherit;
+	color:       @back_text_color;
+}

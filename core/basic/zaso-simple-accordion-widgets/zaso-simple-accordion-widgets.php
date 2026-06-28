@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - Simple Accordion
+ * Widget Name: Zen Addons - Simple Accordion
  * Widget ID: zen-addons-siteorigin-simple-accordion
  * Description: Stack content into collapsible, toggleable accordion panels.
  * Author: DopeThemes
@@ -274,7 +274,7 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-simple-accordion',
-			__( 'ZASO - Simple Accordion', 'zaso' ),
+			__( 'Zen Addons - Simple Accordion', 'zaso' ),
 			array(
 				'description'   => __( 'Create a vertically stacked list of items or single panel.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

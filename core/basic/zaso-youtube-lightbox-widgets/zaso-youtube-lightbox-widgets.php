@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - YouTube Lightbox
+ * Widget Name: Zen Addons - YouTube Lightbox
  * Widget ID: zen-addons-siteorigin-youtube-lightbox
  * Description: Open a YouTube video in a clickable pop-up lightbox.
  * Author: DopeThemes
@@ -73,7 +73,7 @@ class Zen_Addons_SiteOrigin_Youtube_Lightbox_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-youtube-lightbox',
-			__( 'ZASO - YouTube Lightbox', 'zaso' ),
+			__( 'Zen Addons - YouTube Lightbox', 'zaso' ),
 			array(
 				'description'   => __( 'Pop-up lightbox for YouTube videos.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',

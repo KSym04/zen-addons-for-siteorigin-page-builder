@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 /**
- * Widget Name: ZASO - FAQ
+ * Widget Name: Zen Addons - FAQ
  * Widget ID: zen-addons-siteorigin-faq
  * Description: Display a collapsible FAQ list with optional Schema.org FAQPage structured data for rich results in Google Search.
  * Author: DopeThemes
@@ -93,7 +93,7 @@ class Zen_Addons_SiteOrigin_FAQ_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-faq',
-			__( 'ZASO - FAQ', 'zaso' ),
+			__( 'Zen Addons - FAQ', 'zaso' ),
 			array(
 				'description'   => __( 'Display a collapsible FAQ list with optional Schema.org FAQPage structured data for rich results in Google Search.', 'zaso' ),
 				'help'          => 'https://www.dopethemes.com/',
