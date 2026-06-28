@@ -137,7 +137,7 @@ if ( ! function_exists( 'zaso_dependency_notice' ) ) :
 				? esc_html__( 'required', 'zaso' )
 				: esc_html__( 'recommended', 'zaso' );
 			echo '<li style="margin-bottom:8px;">';
-			echo '<strong>' . esc_html( $dep['name'] ) . '</strong> (' . esc_html( $tag ) . ') &mdash; '
+			echo '<strong>' . esc_html( $dep['name'] ) . '</strong> (' . esc_html( $tag ) . '): '
 				. esc_html( $dep['why'] );
 			echo wp_kses_post( zaso_dependency_action_link( $slug, $dep ) );
 			echo '</li>';
