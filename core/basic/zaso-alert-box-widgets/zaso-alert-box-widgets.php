@@ -53,6 +53,73 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 				'label' => __( 'Extra Class', 'zaso' ),
 				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
 			),
+			'design_style' => array(
+				'type'           => 'presets',
+				'label'          => __( 'Style', 'zaso' ),
+				'default_preset' => '',
+				/**
+				 * Curated design presets ("skins") for this widget. The free core
+				 * ships three; Zen Addons Pro appends its full library via the
+				 * shared `zaso_design_presets` filter (gated on a valid license).
+				 * Selecting one fills the Design fields below; users can still tweak.
+				 */
+				'options'        => apply_filters( 'zaso_design_presets', array(
+					'soft_info'    => array(
+						'label'  => __( 'Soft Info', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'message_box' => array(
+									'message_background_color' => '#eff6ff',
+									'message_font_color'       => '#1e3a8a',
+									'message_font_size'        => '1rem',
+									'message_padding'          => array( 'top' => '14px', 'right' => '16px', 'bottom' => '14px', 'left' => '16px' ),
+									'message_border'           => array(
+										'bw_top' => '1px', 'bw_right' => '1px', 'bw_bottom' => '1px', 'bw_left' => '1px',
+										'br_top' => '8px', 'br_right' => '8px', 'br_bottom' => '8px', 'br_left' => '8px',
+										'border_style' => 'solid', 'border_color' => '#bfdbfe',
+									),
+								),
+							),
+						),
+					),
+					'solid_accent' => array(
+						'label'  => __( 'Solid Accent', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'message_box' => array(
+									'message_background_color' => '#4f46e5',
+									'message_font_color'       => '#ffffff',
+									'message_font_size'        => '1rem',
+									'message_padding'          => array( 'top' => '16px', 'right' => '18px', 'bottom' => '16px', 'left' => '18px' ),
+									'message_border'           => array(
+										'bw_top' => '0px', 'bw_right' => '0px', 'bw_bottom' => '0px', 'bw_left' => '0px',
+										'br_top' => '10px', 'br_right' => '10px', 'br_bottom' => '10px', 'br_left' => '10px',
+										'border_style' => 'none', 'border_color' => '#4f46e5',
+									),
+								),
+							),
+						),
+					),
+					'left_accent'  => array(
+						'label'  => __( 'Left Accent', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'message_box' => array(
+									'message_background_color' => '#f8fafc',
+									'message_font_color'       => '#0f172a',
+									'message_font_size'        => '1rem',
+									'message_padding'          => array( 'top' => '14px', 'right' => '16px', 'bottom' => '14px', 'left' => '18px' ),
+									'message_border'           => array(
+										'bw_top' => '0px', 'bw_right' => '0px', 'bw_bottom' => '0px', 'bw_left' => '4px',
+										'br_top' => '6px', 'br_right' => '6px', 'br_bottom' => '6px', 'br_left' => '6px',
+										'border_style' => 'solid', 'border_color' => '#4f46e5',
+									),
+								),
+							),
+						),
+					),
+				), 'alert-box' ),
+			),
 			'design' => array(
 				'type' =>  'section',
 				'label' => __( 'Design', 'zaso' ),
