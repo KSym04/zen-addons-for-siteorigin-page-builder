@@ -22,13 +22,20 @@ if ( empty( $plans ) ) {
 
 $checkmark_svg = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 ?>
+<?php
+/**
+ * Fires before the pricing grid. Pro hooks this to render the billing toggle.
+ * No output in free core (no callback attached).
+ */
+do_action( 'zaso_pricing_table_before_plans', $instance, $plans );
+?>
 <ul <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- zaso_format_field_extra_id() returns a safe id="" attribute string. ?>
 	class="<?php echo esc_attr( $classes ); ?>"
 	role="list">
 	<?php foreach ( $plans as $plan ) : ?>
 	<li class="zaso-pricing-table__item<?php echo $plan['featured'] ? ' zaso-pricing-table__item--featured' : ''; ?>">
 		<div class="zaso-pricing-table__card">
-			<?php if ( $plan['featured'] ) : ?><span class="screen-reader-text"><?php esc_html_e( 'Featured plan', 'zaso' ); ?></span><?php endif; ?>
+			<?php do_action( 'zaso_pricing_table_plan_meta', $plan, $instance ); /* Pro hook: ribbon + annual data. Inlined on the existing tag so free output stays byte-identical. */ if ( $plan['featured'] ) : ?><span class="screen-reader-text"><?php esc_html_e( 'Featured plan', 'zaso' ); ?></span><?php endif; ?>
 				<h3 class="zaso-pricing-table__name"><?php echo esc_html( $plan['name'] ); ?></h3>
 			<div class="zaso-pricing-table__price-wrap">
 				<?php if ( '' !== $currency ) : ?>
@@ -42,7 +49,10 @@ $checkmark_svg = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16
 			<?php if ( '' !== $plan['description'] ) : ?>
 			<p class="zaso-pricing-table__description"><?php echo esc_html( $plan['description'] ); ?></p>
 			<?php endif; ?>
-			<?php if ( ! empty( $plan['features'] ) ) : ?>
+			<?php
+			ob_start();
+			if ( ! empty( $plan['features'] ) ) :
+			?>
 			<ul class="zaso-pricing-table__features">
 				<?php foreach ( $plan['features'] as $feature ) : ?>
 				<li>
@@ -51,7 +61,16 @@ $checkmark_svg = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16
 				</li>
 				<?php endforeach; ?>
 			</ul>
-			<?php endif; ?>
+			<?php
+			endif;
+			$zaso_features_html = ob_get_clean();
+			/**
+			 * Filter the rendered features list. Pro hooks this to swap in a
+			 * comparison (check / cross) list. Default returns the core markup.
+			 */
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- default is pre-escaped template markup; the Pro callback escapes its own output.
+			echo apply_filters( 'zaso_pricing_table_features_render', $zaso_features_html, $plan, $instance );
+			?>
 			<?php if ( '' !== $plan['cta_text'] ) : ?>
 			<a class="zaso-pricing-table__btn"
 				href="<?php echo sow_esc_url( $plan['cta_url'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sow_esc_url() is SiteOrigin's vetted URL escaper. ?>"

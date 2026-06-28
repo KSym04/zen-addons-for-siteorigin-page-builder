@@ -194,7 +194,7 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 			'plans'    => $plans,
 			'currency' => $currency,
 			'classes'  => $classes,
-		) );
+		), $instance );
 	}
 
 	function get_less_variables( $instance ) {
