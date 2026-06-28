@@ -1,0 +1,352 @@
+/**
+ * Zen Addons - Visual Style Picker styles.
+ *
+ * Scoped under the .zaso-sp- prefix to avoid colliding with editor or theme CSS.
+ * Covers the inline "Browse styles" trigger button, the modal overlay + dialog,
+ * the responsive card grid, the rendered preview frame, and the Free / Pro
+ * badges. No !important, no em dashes.
+ *
+ * @since 1.10.5
+ */
+
+/* ---- Trigger button (replaces the visible <select>) ---- */
+.zaso-sp-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	width: 100%;
+	max-width: 360px;
+	text-align: left;
+	cursor: pointer;
+	padding: 8px 12px;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	background: #ffffff;
+	color: #1d2327;
+	font-size: 13px;
+	line-height: 1.3;
+	box-shadow: 0 1px 1px rgba( 15, 23, 42, 0.04 );
+	transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.zaso-sp-btn:hover {
+	border-color: #15803d;
+	box-shadow: 0 1px 3px rgba( 21, 128, 61, 0.18 );
+}
+
+.zaso-sp-btn:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 1px;
+}
+
+.zaso-sp-btn-icon {
+	flex-shrink: 0;
+	color: #15803d;
+	font-size: 14px;
+	line-height: 1;
+}
+
+.zaso-sp-btn-text {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.zaso-sp-btn-main {
+	font-weight: 600;
+}
+
+.zaso-sp-btn-current {
+	font-size: 11.5px;
+	color: #64748b;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.zaso-sp-btn-current:empty {
+	display: none;
+}
+
+/* ---- Overlay + dialog ---- */
+.zaso-sp-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 100100;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 5vh 16px;
+	background: rgba( 15, 23, 42, 0.55 );
+	overflow-y: auto;
+}
+
+.zaso-sp-dialog {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 860px;
+	max-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	background: #ffffff;
+	border-radius: 16px;
+	box-shadow: 0 24px 60px rgba( 15, 23, 42, 0.35 );
+	overflow: hidden;
+	font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.zaso-sp-dialog * {
+	box-sizing: border-box;
+}
+
+/* ---- Header ---- */
+.zaso-sp-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 18px 22px;
+	border-bottom: 1px solid #e2e8f0;
+	background: linear-gradient( 180deg, #ffffff 0%, #f8fafc 100% );
+}
+
+.zaso-sp-title {
+	margin: 0;
+	padding: 0;
+	font-size: 17px;
+	font-weight: 800;
+	color: #0f172a;
+	line-height: 1.2;
+}
+
+.zaso-sp-close {
+	flex-shrink: 0;
+	cursor: pointer;
+	width: 34px;
+	height: 34px;
+	border: 1px solid #e2e8f0;
+	border-radius: 9px;
+	background: #ffffff;
+	color: #475569;
+	font-size: 22px;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.12s ease, color 0.12s ease;
+}
+
+.zaso-sp-close:hover {
+	background: #f1f5f9;
+	color: #0f172a;
+}
+
+.zaso-sp-close:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 1px;
+}
+
+/* ---- Body + grid ---- */
+.zaso-sp-body {
+	padding: 20px 22px 24px;
+	overflow-y: auto;
+}
+
+.zaso-sp-grid {
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr ) );
+	gap: 16px;
+}
+
+/* ---- Card ---- */
+.zaso-sp-card {
+	display: block;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	padding: 12px;
+	border: 1px solid #e2e8f0;
+	border-radius: 14px;
+	background: #ffffff;
+	box-shadow: 0 1px 2px rgba( 15, 23, 42, 0.04 );
+	transition: box-shadow 0.12s ease, transform 0.12s ease, border-color 0.12s ease;
+}
+
+.zaso-sp-card:hover {
+	box-shadow: 0 8px 22px rgba( 15, 23, 42, 0.10 );
+	transform: translateY( -2px );
+	border-color: #cbd5e1;
+}
+
+.zaso-sp-card:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 2px;
+}
+
+.zaso-sp-card.is-selected {
+	border-color: #15803d;
+	box-shadow: 0 0 0 2px rgba( 21, 128, 61, 0.35 );
+}
+
+.zaso-sp-frame {
+	border-radius: 10px;
+	padding: 12px;
+	background: linear-gradient( 180deg, #f8fafc 0%, #f1f5f9 100% );
+	border: 1px solid #eef2f6;
+}
+
+.zaso-sp-meta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-top: 11px;
+}
+
+.zaso-sp-label {
+	color: #0f172a;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+/* ---- Badges ---- */
+.zaso-sp-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 10.5px;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: 0.6px;
+	text-transform: uppercase;
+	padding: 5px 9px;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+
+.zaso-sp-badge.is-free {
+	color: #475569;
+	background: #eef2f6;
+	border: 1px solid #e2e8f0;
+}
+
+.zaso-sp-badge.is-pro {
+	color: #ffffff;
+	background: #15803d;
+	box-shadow: 0 1px 2px rgba( 21, 128, 61, 0.35 );
+}
+
+/* ---- Locked unlock card ---- */
+.zaso-sp-unlock {
+	grid-column: 1 / -1;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	border: 1px dashed #86efac;
+	border-radius: 14px;
+	padding: 18px 20px;
+	background: #ffffff;
+	text-decoration: none;
+}
+
+.zaso-sp-unlock:hover {
+	background: #f0fdf4;
+	border-color: #4ade80;
+	transform: none;
+	box-shadow: none;
+}
+
+.zaso-sp-unlock-ic {
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	border-radius: 12px;
+	background: #15803d;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+}
+
+.zaso-sp-unlock-txt {
+	flex: 1 1 auto;
+	color: #334155;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+.zaso-sp-unlock-cta {
+	flex-shrink: 0;
+	font-size: 13px;
+	font-weight: 700;
+	color: #ffffff;
+	background: #15803d;
+	padding: 9px 16px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+}
+
+/* ---- Shared preview facsimile (mirrors the Design Library frames) ---- */
+.zaso-sp-frame .zaso-wd-pv {
+	height: 130px;
+	border-radius: 8px;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+	box-shadow: 0 1px 3px rgba( 15, 23, 42, 0.10 );
+}
+
+/* Alert Box. */
+.zaso-sp-frame .zaso-wd-pv-alert { justify-content: center; gap: 4px; padding: 14px; }
+.zaso-sp-frame .zaso-wd-pv-alert strong { font-size: 13px; line-height: 1.2; }
+.zaso-sp-frame .zaso-wd-pv-alert span { font-size: 12px; line-height: 1.4; }
+
+/* CTA Banner. */
+.zaso-sp-frame .zaso-wd-pv-cta { justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 12px; }
+.zaso-sp-frame .zaso-wd-pv-cta .zaso-wd-pv-h { font-size: 14px; font-weight: 700; line-height: 1.2; }
+.zaso-sp-frame .zaso-wd-pv-cta .zaso-wd-pv-sub { font-size: 11px; line-height: 1.3; opacity: 0.9; }
+.zaso-sp-frame .zaso-wd-pv-cta .zaso-wd-pv-btn { margin-top: 2px; font-size: 11px; font-weight: 600; padding: 6px 12px; }
+
+/* Pricing Table. */
+.zaso-sp-frame .zaso-wd-pv-pricing { position: relative; align-items: center; justify-content: center; gap: 5px; padding: 16px 12px 12px; }
+.zaso-sp-frame .zaso-wd-pv-pricing .zaso-wd-pv-stripe { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.zaso-sp-frame .zaso-wd-pv-pricing .zaso-wd-pv-price { font-size: 22px; font-weight: 800; line-height: 1; }
+.zaso-sp-frame .zaso-wd-pv-pricing .zaso-wd-pv-feat { width: 70%; height: 5px; border-radius: 3px; background: #e2e8f0; }
+.zaso-sp-frame .zaso-wd-pv-pricing .zaso-wd-pv-btn { margin-top: 4px; width: 82%; text-align: center; font-size: 11px; font-weight: 600; padding: 6px 0; border-radius: 6px; }
+
+/* Testimonial Slider. */
+.zaso-sp-frame .zaso-wd-pv-testimonial { justify-content: center; gap: 6px; padding: 14px; }
+.zaso-sp-frame .zaso-wd-pv-testimonial .zaso-wd-pv-stars { font-size: 13px; letter-spacing: 3px; line-height: 1; }
+.zaso-sp-frame .zaso-wd-pv-testimonial .zaso-wd-pv-quote { font-size: 12px; line-height: 1.4; font-style: italic; }
+.zaso-sp-frame .zaso-wd-pv-testimonial .zaso-wd-pv-author { font-size: 11px; font-weight: 700; }
+
+/* Counter. */
+.zaso-sp-frame .zaso-wd-pv-counter { justify-content: center; align-items: center; gap: 4px; padding: 12px; border: 1px solid #e2e8f0; }
+.zaso-sp-frame .zaso-wd-pv-counter .zaso-wd-pv-dot { width: 10px; height: 10px; border-radius: 999px; margin-bottom: 2px; }
+.zaso-sp-frame .zaso-wd-pv-counter .zaso-wd-pv-num { font-size: 26px; font-weight: 800; line-height: 1; }
+.zaso-sp-frame .zaso-wd-pv-counter .zaso-wd-pv-lbl { font-size: 11px; }
+
+/* Hover Card. */
+.zaso-sp-frame .zaso-wd-pv-hover { justify-content: flex-end; background: linear-gradient( 135deg, #cbd5e1, #94a3b8 ); }
+.zaso-sp-frame .zaso-wd-pv-hover .zaso-wd-pv-caption { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; }
+.zaso-sp-frame .zaso-wd-pv-hover .zaso-wd-pv-caption-t { font-size: 12px; font-weight: 600; }
+.zaso-sp-frame .zaso-wd-pv-hover .zaso-wd-pv-btn { font-size: 10px; font-weight: 600; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
+
+/* Services Grid. */
+.zaso-sp-frame .zaso-wd-pv-services { justify-content: center; gap: 5px; padding: 14px; }
+.zaso-sp-frame .zaso-wd-pv-services .zaso-wd-pv-chip { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; line-height: 1; box-sizing: border-box; }
+.zaso-sp-frame .zaso-wd-pv-services .zaso-wd-pv-title { font-size: 13px; font-weight: 700; }
+.zaso-sp-frame .zaso-wd-pv-services .zaso-wd-pv-desc { font-size: 11px; line-height: 1.4; }
+
+/* ---- Responsive ---- */
+@media ( max-width: 600px ) {
+	.zaso-sp-overlay { padding: 0; }
+	.zaso-sp-dialog { max-width: 100%; min-height: 100%; max-height: 100%; border-radius: 0; }
+	.zaso-sp-grid { grid-template-columns: repeat( auto-fill, minmax( 150px, 1fr ) ); gap: 12px; }
+	.zaso-sp-unlock { flex-direction: column; align-items: flex-start; }
+}

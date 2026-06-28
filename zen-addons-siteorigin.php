@@ -98,6 +98,7 @@ class zen_addons_siteorigin {
 		if ( is_admin() ) {
 			include( 'core/admin.php' );
 			include( 'core/widget-design.php' );
+			include( 'core/style-picker.php' );
 			include( 'core/dependency-notice.php' );
 		}
 
