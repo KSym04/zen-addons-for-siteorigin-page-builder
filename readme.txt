@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.4
+Stable tag: 1.10.5
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -205,6 +205,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.5 =
+Simpler design controls: the separate Style presets field is removed in favour of the Browse designs gallery, which already applies a complete look in one click. Your existing widgets look exactly the same.
+
 = 1.10.4 =
 New Counter ready-made designs: thirty animated stat-block looks (six free) chosen visually from the Browse designs gallery, matching the Alert Box experience. Your existing counters are unchanged.
 
@@ -254,6 +257,9 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.5 =
+* Changed: Streamlined the widget design controls. The separate "Style" presets field has been removed; pick a complete ready-made look from the "Browse designs" gallery, or fine-tune colours in the Design settings. Existing widgets are unchanged.
 
 = 1.10.4 =
 * New: Counter ready-made designs. Thirty animated stat-block looks (six free: icon card, centered, icon top, badge, divider, underline) chosen visually from the "Browse designs" gallery, with icons, prefixes, suffixes, and structural styles like rings, bars, and sparklines. Leave it on the classic counter to keep your current look unchanged.

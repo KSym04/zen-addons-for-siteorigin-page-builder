@@ -722,11 +722,11 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 
 	/*
 	 * The standalone "Templates" admin page is retired: section templates are
-	 * browsed + inserted natively in Page Builder's Layouts tab, skins via the
-	 * in-editor style picker, and "what you get" lives on the Pro Widgets
+	 * browsed + inserted natively in Page Builder's Layouts tab, pre-made designs
+	 * via the in-editor design picker, and "what you get" lives on the Pro Widgets
 	 * overview page. This class is intentionally NOT instantiated (no menu/page)
-	 * but stays defined because ZASO_Style_Picker extends it to reuse its
-	 * widget-skin/preview helpers.
+	 * but stays defined because ZASO_Design_Picker extends it to reuse its
+	 * widget-class/preview helpers.
 	 */
 
 endif; // class_exists check.

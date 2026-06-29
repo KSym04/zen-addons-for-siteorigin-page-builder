@@ -51,7 +51,6 @@ return array(
 			'show_arrows'       => true,
 			'show_dots'         => true,
 			'layout'            => 'card',
-			'design_style'      => 'soft_light',
 			'design'            => array(
 				'quote_font_size'    => '18px',
 				'quote_color'        => '#334155',

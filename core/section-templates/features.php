@@ -56,7 +56,6 @@ return array(
 			'card_style'   => 'framed',
 			'alignment'    => 'center',
 			'layout'       => 'boxed',
-			'design_style' => 'icon_accent',
 			'design'       => array(
 				'icon_color'         => '#ffffff',
 				'icon_size'          => '2.5rem',
