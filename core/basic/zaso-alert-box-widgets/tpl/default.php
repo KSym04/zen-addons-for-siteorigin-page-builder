@@ -33,9 +33,20 @@ $zaso_alert_types = array(
 );
 $zaso_has_type = isset( $zaso_alert_types[ $alert_type ] );
 
+// Optional custom icon (SiteOrigin icon picker, any family incl. the new
+// Material Symbols). When set it overrides the alert-type SVG and every design
+// variant glyph. Empty (the default for every existing instance) changes
+// nothing, so the default render stays byte-identical.
+$zaso_custom_icon     = ! empty( $instance['custom_icon'] ) ? $instance['custom_icon'] : '';
+$zaso_has_custom_icon = ( '' !== $zaso_custom_icon );
+$zaso_show_icon       = $zaso_has_type || $zaso_has_custom_icon;
+
 $zaso_box_class = 'zaso-alert-box__messagebox';
+if ( $zaso_show_icon ) {
+	$zaso_box_class .= ' zaso-alert-box__messagebox--has-icon';
+}
 if ( $zaso_has_type ) {
-	$zaso_box_class .= ' zaso-alert-box__messagebox--has-icon zaso-alert-box__messagebox--' . $alert_type;
+	$zaso_box_class .= ' zaso-alert-box__messagebox--' . $alert_type;
 }
 
 // Optional structural layout. Default ('default') is the original bordered box
@@ -63,6 +74,22 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_alert_box_design_opti
 		$zaso_wrapper_class .= ' zaso-alert-box--design-' . sanitize_html_class( $zaso_design_variant );
 	}
 }
+
+// Optional width. 'full' (default) fills the container and adds NO class, so
+// existing instances (no width key) render byte-identical. 'content' shrinks the
+// alert to fit its message.
+$zaso_width = ! empty( $instance['width'] ) ? $instance['width'] : 'full';
+if ( 'content' === $zaso_width ) {
+	$zaso_wrapper_class .= ' zaso-alert-box--width-content';
+}
+
+// A custom icon overrides the type / design glyph. The modifier class lets the
+// stylesheet suppress every design variant's ::before glyph so only the custom
+// icon shows (no double icon). Added only when a custom icon is set, so the
+// default render stays byte-identical.
+if ( $zaso_has_custom_icon ) {
+	$zaso_wrapper_class .= ' zaso-alert-box--custom-icon';
+}
 ?>
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="<?php echo esc_attr( $zaso_wrapper_class ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>">
@@ -72,9 +99,15 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_alert_box_design_opti
         <span aria-hidden="true"><?php esc_html_e( '&times;', 'zaso' ); ?></span>
       </button>
     <?php endif; ?>
-    <?php if ( $zaso_has_type ) : ?>
-      <span class="zaso-alert-box__icon" aria-hidden="true"><?php echo $zaso_alert_types[ $alert_type ]['icon']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- hardcoded static inline SVG, no user input. ?></span>
-      <span class="zaso-alert-box__sr"><?php echo esc_html( $zaso_alert_types[ $alert_type ]['label'] ); ?></span>
+    <?php if ( $zaso_show_icon ) : ?>
+      <span class="zaso-alert-box__icon" aria-hidden="true"><?php
+		if ( $zaso_has_custom_icon ) {
+			echo siteorigin_widget_get_icon( $zaso_custom_icon ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- siteorigin_widget_get_icon() returns SiteOrigin-generated, safe markup.
+		} else {
+			echo $zaso_alert_types[ $alert_type ]['icon']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- hardcoded static inline SVG, no user input.
+		}
+		?></span>
+      <span class="zaso-alert-box__sr"><?php echo $zaso_has_type ? esc_html( $zaso_alert_types[ $alert_type ]['label'] ) : ''; ?></span>
       <div class="zaso-alert-box__body"><?php echo wp_kses_post( $instance['alert_message'] ); ?></div>
     <?php else : ?>
       <?php echo wp_kses_post( $instance['alert_message'] ); ?>

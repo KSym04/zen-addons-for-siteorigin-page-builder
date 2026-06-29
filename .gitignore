@@ -26,3 +26,5 @@ docs/internal/
 .DS_Store
 Thumbs.db
 *.log
+TODO-unified-design-picker.md
+.screenshots/

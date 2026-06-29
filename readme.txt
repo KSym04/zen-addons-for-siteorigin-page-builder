@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.1
+Stable tag: 1.10.3
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -25,7 +25,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 **Layout and content**
 
 * Spacer: add adjustable vertical spacing between rows and widgets.
-* Alert Box: show a styled info, success, warning, or error message.
+* Alert Box: show a styled info, success, warning, or error message, with six ready-made one-click designs.
 * Widgetized: place an existing widget sidebar inside your page content.
 
 **Interactive**
@@ -200,16 +200,12 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Screenshots ==
 
-1. Conversion and engagement widgets: Call to Action, Counter, and Countdown.
-2. Business and marketing widgets: Info Box, Hover Card, Icon, and Image Icon Group.
-3. Media widgets: Video, YouTube Lightbox, and Vimeo Lightbox.
-4. Interactive widgets: Simple Accordion and Basic Tabs.
-5. People and social proof widgets: Team Member and Testimonial Slider.
-6. Content block widgets: Services Grid and Progress Bars.
-7. Image Gallery widget: a responsive image grid with a built-in lightbox.
-8. FAQ widget: a collapsible list of questions and answers with optional Schema.org FAQPage markup for rich results in Google Search.
+1. Alert Box: thirty ready-made alert designs (six free) - one-click styled looks across success, info, warning and error tones.
 
 == Upgrade Notice ==
+
+= 1.10.3 =
+New Alert Box ready-made designs with a visual picker (browse each design as a real preview, apply in one click), Material Symbols icons bundled locally, plus a custom icon and width option for the Alert Box, and more layout and colour options. Your existing widgets are unchanged.
 
 = 1.10.1 =
 Theme-compatibility hardening so widget buttons, links, headings, and slider controls keep their styling on more themes, plus a one-click setup helper for the required SiteOrigin plugins.
@@ -254,6 +250,14 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.3 =
+* New: Alert Box ready-made designs. Pick from six one-click styled looks (left accent, soft tint, outlined, icon badge, top bar, and solid fill) across success, info, warning, and error tones. Leave it on the classic box to keep your current look unchanged.
+* New: Visual design picker for the Alert Box. The Pre-made Design field opens a "Browse designs" gallery showing every design as a real rendered preview, so you pick by sight; your choice is staged and applied only when you press Apply.
+* New: Material Symbols icons. Choose Material icons in any widget icon field. The font is bundled locally for privacy and speed, with no calls to Google.
+* New: Alert Box custom icon. Set your own icon to override the alert type icon.
+* New: Alert Box width option. Show the alert full width or shrink it to fit its message.
+* Improved: Clearer Alert Box design controls (Layout, Style, and Pre-made Design reordered and relabelled with plain help), plus more layout and colour options across several widgets.
 
 = 1.10.1 =
 * Improved: Theme-compatibility hardening across the Call to Action, Before / After, Post Carousel, Testimonial Slider, and Flip Card widgets. Buttons, links, headings, and slider controls (arrows, dots, and the play and pause button) now keep their intended styling on themes that restyle bare links, buttons, headings, or blockquotes. No design changes, just sturdier styling.

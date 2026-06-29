@@ -13,14 +13,25 @@ $zaso_aria_control = 1;
 // multiple accordion instances on the same page.
 $zaso_acc_uid = ! empty( $args['widget_id'] ) ? sanitize_html_class( $args['widget_id'] ) : uniqid( 'zaso-acc-' );
 
-$zacc_collapsible_icon_open = wp_get_attachment_image_src( $instance['accordion_collapsible_icon_open'], 'full' )[0];
-$zacc_collapsible_icon_close = wp_get_attachment_image_src( $instance['accordion_collapsible_icon_close'], 'full' )[0];
+// Defensive: the collapsible icons are optional, so an empty field makes
+// wp_get_attachment_image_src() return false; guard the [0] access to avoid an
+// "array offset on false" warning. A set icon yields the same URL (byte-identical).
+$zacc_icon_open_src          = ! empty( $instance['accordion_collapsible_icon_open'] ) ? wp_get_attachment_image_src( $instance['accordion_collapsible_icon_open'], 'full' ) : false;
+$zacc_collapsible_icon_open  = ( is_array( $zacc_icon_open_src ) && isset( $zacc_icon_open_src[0] ) ) ? $zacc_icon_open_src[0] : '';
+$zacc_icon_close_src         = ! empty( $instance['accordion_collapsible_icon_close'] ) ? wp_get_attachment_image_src( $instance['accordion_collapsible_icon_close'], 'full' ) : false;
+$zacc_collapsible_icon_close = ( is_array( $zacc_icon_close_src ) && isset( $zacc_icon_close_src[0] ) ) ? $zacc_icon_close_src[0] : '';
 
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
 <dl <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-simple-accordion <?php echo esc_attr( $instance['extra_class'] ); ?> <?php echo esc_attr( $instance['accordion_settings'] ); ?>" role="presentation">
-  <?php foreach ( $instance['accordion'] as $a ) : ?>
+  <?php
+  // Defensive: an accordion repeater with no rows saves the key absent. Default
+  // to an empty array so an item-less instance renders nothing instead of a
+  // warning; a populated instance is unaffected (output byte-identical).
+  $zaso_accordion_items = ( ! empty( $instance['accordion'] ) && is_array( $instance['accordion'] ) ) ? $instance['accordion'] : array();
+  ?>
+  <?php foreach ( $zaso_accordion_items as $a ) : ?>
     <?php $zaso_is_open = ( $a['accordion_field_state'] == 'zaso-simple-accordion--open' ); ?>
     <dt class="zaso-simple-accordion__title <?php echo $zaso_is_open ? 'activate' : ''; ?>" role="heading" aria-level="<?php echo (int) $zaso_aria_level; ?>">
       <button aria-expanded="<?php echo $zaso_is_open ? 'true' : 'false'; ?>" aria-controls="<?php echo esc_attr( $zaso_acc_uid ); ?>-controls-<?php echo esc_attr( $zaso_aria_control ); ?>" id="<?php echo esc_attr( $zaso_acc_uid ); ?>-id-<?php echo esc_attr( $zaso_aria_control ); ?>" type="button">

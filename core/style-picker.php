@@ -153,6 +153,14 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 			$widgets = array();
 
 			foreach ( $this->get_supported_widgets() as $class => $meta ) {
+				// The Alert Box has its own dedicated Visual Design Picker (the
+				// design_variant screenshot gallery in core/design-picker.php), so
+				// it is intentionally excluded here: its Style and Layout fields stay
+				// as plain dropdowns and never get a second "Browse designs" button.
+				if ( 'zaso-alert-box-widgets' === $meta['folder'] ) {
+					continue;
+				}
+
 				if ( ! $this->ensure_widget_class( $class, $meta['folder'] ) ) {
 					continue;
 				}
@@ -228,8 +236,27 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 				);
 			}
 
+			// The Alert Box's unique design_variant ids. The picker JS uses these to
+			// recognise the Alert Box form and leave its Style select as a plain
+			// dropdown (the Alert Box has its own design-picker gallery). Without this
+			// the shared Pro scheme ids would let the Alert Box Style select bind to
+			// another widget's previews.
+			$skip_design_ids = array();
+			if ( ! function_exists( 'zaso_alert_box_design_options' ) ) {
+				$this->ensure_widget_class( 'Zen_Addons_SiteOrigin_Alert_Box_Widget', 'zaso-alert-box-widgets' );
+			}
+			if ( function_exists( 'zaso_alert_box_design_options' ) ) {
+				foreach ( array_keys( zaso_alert_box_design_options() ) as $aid ) {
+					$aid = (string) $aid;
+					if ( '' !== $aid ) {
+						$skip_design_ids[] = $aid;
+					}
+				}
+			}
+
 			return array(
-				'widgets'  => $widgets,
+				'widgets'           => $widgets,
+				'skipFormDesignIds' => $skip_design_ids,
 				'proUrl'   => self::PRO_URL,
 				// When a valid Pro license is active the user already has the full
 				// library, so the JS hides the upsell footer.
@@ -237,7 +264,7 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 				'i18n'    => array(
 					'browse'     => esc_html__( 'Browse designs', 'zaso' ),
 					'choose'     => esc_html__( 'Choose a design', 'zaso' ),
-					'subtitle'   => esc_html__( 'Pick a layout structure, then a colour style.', 'zaso' ),
+					'subtitle'   => esc_html__( 'Pick a layout and a colour style, then Apply.', 'zaso' ),
 					'layout'     => esc_html__( 'Layout', 'zaso' ),
 					'layoutHint' => esc_html__( 'Structure and shape', 'zaso' ),
 					'style'      => esc_html__( 'Style', 'zaso' ),
@@ -246,6 +273,8 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 					'pro'        => esc_html__( 'Pro', 'zaso' ),
 					'unlock'     => esc_html__( 'Unlock the full design library with Zen Addons Pro.', 'zaso' ),
 					'close'      => esc_html__( 'Close', 'zaso' ),
+					'apply'      => esc_html__( 'Apply', 'zaso' ),
+					'cancel'     => esc_html__( 'Cancel', 'zaso' ),
 				),
 			);
 		}

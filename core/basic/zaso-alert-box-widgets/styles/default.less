@@ -393,3 +393,53 @@
 .zaso-alert-box--design-icon-badge .zaso-alert-box__icon::before { content: "\f8b6"; font-size: 23px; } // error
 .zaso-alert-box--design-top-bar .zaso-alert-box__icon::before { content: "\ef49"; font-size: 1.25em; } // campaign
 .zaso-alert-box--design-solid .zaso-alert-box__icon::before { content: "\f8b6"; font-size: 1.25em; } // error
+
+// ===========================================================================
+// CUSTOM ICON OVERRIDE
+// ---------------------------------------------------------------------------
+// When the user picks a Custom Icon the wrapper carries
+// .zaso-alert-box--custom-icon and the template renders that icon as a <span>
+// (siteorigin_widget_get_icon) inside .zaso-alert-box__icon, replacing the
+// alert-type SVG. Suppress every design variant's ::before glyph here so only
+// the custom icon shows (no double icon). This selector is (0,3,1) and loads
+// AFTER the free design ::before rules (each (0,2,1)), so it wins on both
+// specificity and source order without !important. The SiteOrigin icon renders
+// its glyph on its own inner span (.sow-icon-* ::before), NOT on
+// .zaso-alert-box__icon::before, so it is untouched by this rule; it is also a
+// <span> not an <svg>, so the variants' `__icon svg{display:none}` never hits
+// it. The custom icon inherits the variant's icon colour via currentColor.
+// ===========================================================================
+.zaso-alert-box.zaso-alert-box--custom-icon .zaso-alert-box__icon::before {
+  content: none;
+}
+
+// ===========================================================================
+// Title / body stacking for design variants. The Claude Design spec renders
+// the bold title on its own line with the body stacked below. The message is a
+// single rich-text field, so the leading <strong> is the title: make it block
+// for every design variant. The genuinely single-line designs (banner, toast,
+// pill) are excluded below, and terminal has no leading strong. Scoped under
+// --design- so the default Alert Box render is untouched.
+// ===========================================================================
+.zaso-alert-box[class*="zaso-alert-box--design-"] .zaso-alert-box__body strong:first-child {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.zaso-alert-box.zaso-alert-box--design-banner .zaso-alert-box__body strong:first-child,
+.zaso-alert-box.zaso-alert-box--design-toast .zaso-alert-box__body strong:first-child,
+.zaso-alert-box.zaso-alert-box--design-pill .zaso-alert-box__body strong:first-child {
+  display: inline;
+  font-size: inherit;
+  margin-bottom: 0;
+}
+
+// ===========================================================================
+// Width option. Default 'full' adds no class (block, fills the container =
+// byte-identical to today). 'content' shrinks the alert to fit its message.
+// ===========================================================================
+.zaso-alert-box.zaso-alert-box--width-content {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+}

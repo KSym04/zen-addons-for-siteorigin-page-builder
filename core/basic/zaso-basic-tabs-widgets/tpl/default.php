@@ -16,9 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
         // multiple tab instances (or duplicate tab titles) on one page. The id
         // is index-based so each tab button stays matched to its panel.
         $zaso_tabs_uid = ! empty( $args['widget_id'] ) ? sanitize_html_class( $args['widget_id'] ) : uniqid( 'zaso-tabs-' );
+        // Defensive: a tabs repeater with no rows saves the key absent. Default to
+        // an empty array so an item-less instance renders nothing instead of a
+        // warning; a populated instance is unaffected (output byte-identical).
+        $zaso_tabs = ( ! empty( $instance['tabs'] ) && is_array( $instance['tabs'] ) ) ? $instance['tabs'] : array();
         // counter
         $tt_count = 0;
-        foreach ( $instance['tabs'] as $t1 ) :
+        foreach ( $zaso_tabs as $t1 ) :
         $tt_aria_selected = ( $tt_count == 0 ) ? "true" : "false";
         $tt_aria_tabindex = ( $tt_count == 0 ) ? '' : '-1';
         $tt_tab_id = $zaso_tabs_uid . '-' . $tt_count;
@@ -38,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
     <?php
       // counter
       $tc_count = 0;
-      foreach ( $instance['tabs'] as $t2 ) :
+      foreach ( $zaso_tabs as $t2 ) :
       $tt_aria_selected = ( $tc_count == 0 ) ? "true" : "false";
       $zaso_panel_id = $zaso_tabs_uid . '-' . $tc_count;
     ?>

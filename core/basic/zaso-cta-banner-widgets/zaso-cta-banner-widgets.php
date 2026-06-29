@@ -391,11 +391,53 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 
 	function get_less_variables( $instance ) {
 
-		$design     = $instance['design'];
-		$background  = $design['background'];
-		$typography  = $design['typography'];
-		$button      = $design['button'];
-		$spacing     = $design['spacing'];
+		// Defensive: a design_style preset may fill only some of the design
+		// sub-fields (a solid skin omits the gradient + overlay keys, and every
+		// skin omits heading_size / subheading_size). Default any missing piece
+		// so a partially-filled preset can never crash or emit a notice. A
+		// fully-saved Default instance already carries every key, so these
+		// fallbacks only apply to keys a preset omitted and its output is
+		// byte-identical. Fallback values equal the widget's own field defaults.
+		$design     = isset( $instance['design'] ) && is_array( $instance['design'] ) ? $instance['design'] : array();
+		$background  = wp_parse_args(
+			( isset( $design['background'] ) && is_array( $design['background'] ) ) ? $design['background'] : array(),
+			array(
+				'bg_type'         => 'solid',
+				'bg_color'        => '#1e293b',
+				'gradient_start'  => '#4f46e5',
+				'gradient_end'    => '#1e293b',
+				'gradient_angle'  => 135,
+				'overlay_color'   => '#0f172a',
+				'overlay_opacity' => 60,
+			)
+		);
+		$typography  = wp_parse_args(
+			( isset( $design['typography'] ) && is_array( $design['typography'] ) ) ? $design['typography'] : array(),
+			array(
+				'heading_color'    => '#ffffff',
+				'heading_size'     => '2rem',
+				'subheading_color' => '#cbd5e1',
+				'subheading_size'  => '1.125rem',
+				'text_color'       => '#e2e8f0',
+			)
+		);
+		$button      = wp_parse_args(
+			( isset( $design['button'] ) && is_array( $design['button'] ) ) ? $design['button'] : array(),
+			array(
+				'button_bg'       => '#4f46e5',
+				'button_bg_hover' => '#4338ca',
+				'button_color'    => '#ffffff',
+				'button_radius'   => '6px',
+			)
+		);
+		$spacing     = wp_parse_args(
+			( isset( $design['spacing'] ) && is_array( $design['spacing'] ) ) ? $design['spacing'] : array(),
+			array(
+				'padding_y'     => '3rem',
+				'padding_x'     => '2rem',
+				'border_radius' => '0px',
+			)
+		);
 
 		// Compute the banner background from the chosen type. Image type is
 		// rendered as an inline style in the template, so LESS stays transparent.
@@ -437,7 +479,13 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 
 	function get_template_variables( $instance, $args ) {
 
-		$background = $instance['design']['background'];
+		// Defensive: mirror get_less_variables so a partially-filled preset cannot
+		// crash the template build either. Defaults match the widget's own fields.
+		$design     = isset( $instance['design'] ) && is_array( $instance['design'] ) ? $instance['design'] : array();
+		$background  = isset( $design['background'] ) && is_array( $design['background'] ) ? $design['background'] : array();
+		if ( ! isset( $background['bg_type'] ) ) {
+			$background['bg_type'] = 'solid';
+		}
 
 		// Resolve the background image URL (used for the "image" background type).
 		$bg_image_url = '';

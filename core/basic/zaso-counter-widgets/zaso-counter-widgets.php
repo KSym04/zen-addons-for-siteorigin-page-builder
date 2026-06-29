@@ -238,15 +238,20 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 
 	function get_less_variables( $instance ) {
 
-		$design = $instance['design'];
+		// Defensive: a design_style preset fills the design fields, but default any
+		// missing key so a partially-filled preset can never emit a notice. A
+		// fully-saved Default instance already carries every key, so these
+		// fallbacks only apply to absent keys and its output is byte-identical.
+		// Fallback values equal the widget's own design field defaults.
+		$design = isset( $instance['design'] ) && is_array( $instance['design'] ) ? $instance['design'] : array();
 
 		return apply_filters( 'zaso_counter_less_variables', array(
-			'number_color' => $design['number_color'],
-			'number_size'  => $design['number_size'],
-			'title_color'  => $design['title_color'],
-			'title_size'   => $design['title_size'],
-			'icon_color'   => $design['icon_color'],
-			'icon_size'    => $design['icon_size'],
+			'number_color' => isset( $design['number_color'] ) ? $design['number_color'] : '#1e293b',
+			'number_size'  => isset( $design['number_size'] )  ? $design['number_size']  : '3rem',
+			'title_color'  => isset( $design['title_color'] )  ? $design['title_color']  : '#64748b',
+			'title_size'   => isset( $design['title_size'] )   ? $design['title_size']   : '1rem',
+			'icon_color'   => isset( $design['icon_color'] )   ? $design['icon_color']   : '#4f46e5',
+			'icon_size'    => isset( $design['icon_size'] )    ? $design['icon_size']    : '2.5rem',
 		) );
 
 	}
@@ -298,7 +303,7 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 			'icon'          => $instance['icon'],
 			'image'         => $instance['image'],
 			'image_attr'    => $attr,
-			'alignment'     => $instance['design']['alignment'],
+			'alignment'     => isset( $instance['design']['alignment'] ) ? $instance['design']['alignment'] : 'center',
 			'formatted_end' => $formatted_end,
 		) );
 

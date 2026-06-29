@@ -1,0 +1,454 @@
+/**
+ * Zen Addons - Visual Design Picker (Alert Box) styles.
+ *
+ * Scoped under the .zaso-dp- prefix to avoid colliding with editor or theme CSS.
+ * Covers the inline "Browse designs" trigger button, the modal overlay + dialog,
+ * the responsive image-card grid, the Free / Pro badges, and the Cancel / Apply
+ * footer. No !important, no em dashes.
+ *
+ * @since 1.11.0
+ */
+
+/* ---- Trigger button (replaces the visible <select>) ---- */
+.zaso-dp-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	width: 100%;
+	max-width: 360px;
+	text-align: left;
+	cursor: pointer;
+	padding: 8px 12px;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	background: #ffffff;
+	color: #1d2327;
+	font-size: 13px;
+	line-height: 1.3;
+	box-shadow: 0 1px 1px rgba( 15, 23, 42, 0.04 );
+	transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.zaso-dp-btn:hover {
+	border-color: #15803d;
+	box-shadow: 0 1px 3px rgba( 21, 128, 61, 0.18 );
+}
+
+.zaso-dp-btn:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 1px;
+}
+
+.zaso-dp-btn-icon {
+	flex-shrink: 0;
+	color: #15803d;
+	font-size: 14px;
+	line-height: 1;
+}
+
+.zaso-dp-btn-text {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+
+.zaso-dp-btn-main {
+	font-weight: 600;
+}
+
+.zaso-dp-btn-current {
+	font-size: 11.5px;
+	color: #64748b;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.zaso-dp-btn-current:empty {
+	display: none;
+}
+
+/* ---- Overlay + dialog ---- */
+.zaso-dp-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 100100;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 5vh 16px;
+	background: rgba( 15, 23, 42, 0.55 );
+	overflow-y: auto;
+}
+
+.zaso-dp-dialog {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 900px;
+	max-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	background: #ffffff;
+	border-radius: 16px;
+	box-shadow: 0 24px 60px rgba( 15, 23, 42, 0.35 );
+	overflow: hidden;
+	font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.zaso-dp-dialog * {
+	box-sizing: border-box;
+}
+
+/* ---- Header ---- */
+.zaso-dp-head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 22px 24px 18px;
+	border-bottom: 1px solid #e2e8f0;
+	background: linear-gradient( 180deg, #ffffff 0%, #f8fafc 100% );
+}
+
+.zaso-dp-head-text {
+	min-width: 0;
+}
+
+.zaso-dp-title {
+	margin: 0;
+	padding: 0;
+	font-size: 19px;
+	font-weight: 800;
+	color: #0f172a;
+	line-height: 1.2;
+}
+
+.zaso-dp-subtitle {
+	margin: 5px 0 0;
+	font-size: 13px;
+	color: #64748b;
+	line-height: 1.4;
+}
+
+.zaso-dp-close {
+	flex-shrink: 0;
+	cursor: pointer;
+	width: 34px;
+	height: 34px;
+	border: 1px solid #e2e8f0;
+	border-radius: 9px;
+	background: #ffffff;
+	color: #475569;
+	font-size: 20px;
+	line-height: 1;
+	transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.zaso-dp-close:hover {
+	border-color: #cbd5e1;
+	background: #f8fafc;
+}
+
+.zaso-dp-close:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 2px;
+}
+
+/* ---- Body + grid ---- */
+.zaso-dp-body {
+	padding: 18px 24px 24px;
+	overflow-y: auto;
+	background: #fbfcfe;
+}
+
+.zaso-dp-grid {
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax( 210px, 1fr ) );
+	gap: 16px;
+}
+
+/* ---- Card ---- */
+.zaso-dp-card {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	padding: 10px;
+	border: 1px solid #e2e8f0;
+	border-radius: 14px;
+	background: #ffffff;
+	box-shadow: 0 1px 2px rgba( 15, 23, 42, 0.04 );
+	transition: box-shadow 0.14s ease, transform 0.14s ease, border-color 0.14s ease;
+}
+
+.zaso-dp-card:hover {
+	box-shadow: 0 10px 26px rgba( 15, 23, 42, 0.12 );
+	transform: translateY( -3px );
+	border-color: #cbd5e1;
+}
+
+.zaso-dp-card:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 2px;
+}
+
+.zaso-dp-card.is-selected {
+	border-color: #15803d;
+	box-shadow: 0 0 0 3px rgba( 21, 128, 61, 0.30 ), 0 8px 22px rgba( 15, 23, 42, 0.10 );
+}
+
+.zaso-dp-card.is-selected::after {
+	content: "";
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #15803d url( "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E" ) center / 12px no-repeat;
+}
+
+/* ---- Preview frame ---- */
+.zaso-dp-frame {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 96px;
+	padding: 10px;
+	border-radius: 10px;
+	background: #f1f5f9;
+	overflow: hidden;
+}
+
+.zaso-dp-img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 6px;
+}
+
+.zaso-dp-frame-default {
+	background: repeating-linear-gradient( 45deg, #f8fafc, #f8fafc 8px, #f1f5f9 8px, #f1f5f9 16px );
+}
+
+.zaso-dp-default-box {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 14px 16px;
+	border: 1px solid #cbd5e1;
+	border-radius: 8px;
+	background: #ffffff;
+	color: #475569;
+	font-size: 12.5px;
+	font-weight: 600;
+	text-align: center;
+}
+
+/* ---- Meta row (label + badge) ---- */
+.zaso-dp-meta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-top: 10px;
+}
+
+.zaso-dp-label {
+	font-size: 13px;
+	font-weight: 600;
+	color: #0f172a;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.zaso-dp-badge {
+	flex-shrink: 0;
+	font-size: 10.5px;
+	font-weight: 700;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+	padding: 2px 7px;
+	border-radius: 999px;
+}
+
+.zaso-dp-badge.is-free {
+	color: #15803d;
+	background: #dcfce7;
+}
+
+.zaso-dp-badge.is-pro {
+	color: #92400e;
+	background: #fef3c7;
+}
+
+/* ---- Locked (blurred Pro upsell) cards ---- */
+.zaso-dp-card.is-locked {
+	cursor: not-allowed;
+	text-decoration: none;
+	border-color: #e2e8f0;
+	background: #ffffff;
+}
+
+.zaso-dp-card.is-locked:hover {
+	transform: none;
+	border-color: #15803d;
+	box-shadow: 0 6px 18px rgba( 21, 128, 61, 0.16 );
+}
+
+.zaso-dp-card.is-locked .zaso-dp-frame {
+	position: relative;
+}
+
+/* Blur + dim the preview so the design reads as a teaser, not a usable card. */
+.zaso-dp-img-locked {
+	filter: blur( 3px ) brightness( 0.9 );
+	pointer-events: none;
+	transform: scale( 1.04 );
+}
+
+/* Lock glyph centred over the blurred preview. */
+.zaso-dp-lock-ic {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%, -50% );
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba( 255, 255, 255, 0.92 );
+	box-shadow: 0 2px 8px rgba( 15, 23, 42, 0.20 );
+	color: #15803d;
+	font-size: 19px;
+	line-height: 1;
+	pointer-events: none;
+}
+
+/* The locked PRO badge is green to signal the upgrade, premium look. */
+.zaso-dp-card.is-locked .zaso-dp-badge.is-pro {
+	color: #ffffff;
+	background: #15803d;
+}
+
+/* ---- Unlock (Pro upsell) card ---- */
+.zaso-dp-unlock {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 8px;
+	text-decoration: none;
+	border-style: dashed;
+	border-color: #cbd5e1;
+	background: #fffdf7;
+}
+
+.zaso-dp-unlock:hover {
+	border-color: #d97706;
+}
+
+.zaso-dp-unlock-ic {
+	font-size: 22px;
+	line-height: 1;
+}
+
+.zaso-dp-unlock-txt {
+	font-size: 12.5px;
+	color: #475569;
+	line-height: 1.4;
+}
+
+.zaso-dp-unlock-cta {
+	font-size: 10.5px;
+	font-weight: 700;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+	padding: 3px 9px;
+	border-radius: 999px;
+	color: #92400e;
+	background: #fef3c7;
+}
+
+/* ---- Footer (Cancel / Apply) ---- */
+.zaso-dp-foot {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+	padding: 14px 24px;
+	border-top: 1px solid #e2e8f0;
+	background: linear-gradient( 180deg, #f8fafc 0%, #ffffff 100% );
+}
+
+.zaso-dp-cancel,
+.zaso-dp-apply {
+	cursor: pointer;
+	padding: 9px 18px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.2;
+	transition: background-color 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.zaso-dp-cancel {
+	border: 1px solid #c3c4c7;
+	background: #ffffff;
+	color: #334155;
+}
+
+.zaso-dp-cancel:hover {
+	border-color: #94a3b8;
+	background: #f8fafc;
+}
+
+.zaso-dp-apply {
+	border: 1px solid #15803d;
+	background: #15803d;
+	color: #ffffff;
+	box-shadow: 0 1px 2px rgba( 21, 128, 61, 0.25 );
+}
+
+.zaso-dp-apply:hover {
+	border-color: #166534;
+	background: #166534;
+	box-shadow: 0 2px 6px rgba( 21, 128, 61, 0.30 );
+}
+
+.zaso-dp-cancel:focus,
+.zaso-dp-apply:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 2px;
+}
+
+/* ---- Reduced motion ---- */
+@media ( prefers-reduced-motion: reduce ) {
+	.zaso-dp-card,
+	.zaso-dp-btn,
+	.zaso-dp-cancel,
+	.zaso-dp-apply {
+		transition: none;
+	}
+	.zaso-dp-card:hover {
+		transform: none;
+	}
+}
+
+/* ---- Responsive ---- */
+@media ( max-width: 600px ) {
+	.zaso-dp-overlay { padding: 0; }
+	.zaso-dp-dialog { max-width: 100%; min-height: 100%; max-height: 100%; border-radius: 0; }
+	.zaso-dp-head { padding: 18px 18px 14px; }
+	.zaso-dp-body { padding: 14px 18px 20px; }
+	.zaso-dp-grid { grid-template-columns: repeat( auto-fill, minmax( 150px, 1fr ) ); gap: 12px; }
+	.zaso-dp-foot { padding: 12px 18px; }
+	.zaso-dp-cancel,
+	.zaso-dp-apply { flex: 1; text-align: center; }
+}

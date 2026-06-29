@@ -481,6 +481,59 @@
 .zaso-sp-frame .zaso-wd-pv-services.zaso-wd-pv--layout-icon-left .zaso-wd-pv-desc { grid-column: 2; align-self: start; }
 .zaso-sp-frame .zaso-wd-pv-services.zaso-wd-pv--layout-centered { padding: 18px; gap: 8px; }
 
+/* ---- Footer (Cancel / Apply) ---- */
+.zaso-sp-foot {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+	padding: 14px 24px;
+	border-top: 1px solid #e2e8f0;
+	background: linear-gradient( 180deg, #f8fafc 0%, #ffffff 100% );
+}
+
+.zaso-sp-cancel,
+.zaso-sp-apply {
+	cursor: pointer;
+	padding: 9px 18px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.2;
+	transition: background-color 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.zaso-sp-cancel {
+	border: 1px solid #c3c4c7;
+	background: #ffffff;
+	color: #334155;
+}
+
+.zaso-sp-cancel:hover {
+	border-color: #94a3b8;
+	background: #f8fafc;
+}
+
+.zaso-sp-apply {
+	border: 1px solid #15803d;
+	background: #15803d;
+	color: #ffffff;
+	box-shadow: 0 1px 2px rgba( 21, 128, 61, 0.25 );
+}
+
+.zaso-sp-apply:hover {
+	border-color: #166534;
+	background: #166534;
+	box-shadow: 0 2px 6px rgba( 21, 128, 61, 0.30 );
+}
+
+.zaso-sp-cancel:focus,
+.zaso-sp-apply:focus {
+	outline: 2px solid #15803d;
+	outline-offset: 2px;
+}
+
 /* ---- Responsive ---- */
 @media ( max-width: 600px ) {
 	.zaso-sp-overlay { padding: 0; }
@@ -489,4 +542,7 @@
 	.zaso-sp-body { padding: 4px 18px 22px; }
 	.zaso-sp-grid { grid-template-columns: repeat( auto-fill, minmax( 150px, 1fr ) ); gap: 12px; }
 	.zaso-sp-unlock { flex-direction: column; align-items: flex-start; }
+	.zaso-sp-foot { padding: 12px 18px; }
+	.zaso-sp-cancel,
+	.zaso-sp-apply { flex: 1; text-align: center; }
 }

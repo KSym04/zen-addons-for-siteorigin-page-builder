@@ -63,3 +63,10 @@ tests/
 Makefile
 *.sh
 *.log
+
+# WP.org listing screenshot staging (not shipped in the plugin)
+.screenshots/
+.screenshots
+
+# Local-only design-picker planning doc (not shipped)
+TODO-unified-design-picker.md

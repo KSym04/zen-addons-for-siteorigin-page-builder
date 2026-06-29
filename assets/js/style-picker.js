@@ -25,6 +25,16 @@
 	var i18n = data.i18n || {};
 	var proUrl = data.proUrl || '';
 
+	// Option ids that mark a form whose Style select must be left as a native
+	// dropdown (the Alert Box, which has its own dedicated design-picker gallery).
+	// When a presets select shares a form with a select carrying every one of
+	// these ids, enhancement is skipped. This is deterministic where matchWidget
+	// is not: the Pro design library re-uses the SAME scheme ids across widgets,
+	// so a presets select cannot be attributed to a widget by its ids alone.
+	var SKIP_DESIGN_IDS = ( Array.isArray( data.skipFormDesignIds ) ? data.skipFormDesignIds : [] )
+		.map( function( id ) { return String( id ); } )
+		.filter( function( id ) { return id && id !== 'default'; } );
+
 	/**
 	 * Pre-index the localized widget map into a lookup-friendly shape.
 	 * Each entry: { slug, label, ids, skins, hasPro, layouts, layoutKey, layoutIds }.
@@ -156,6 +166,56 @@
 		return null;
 	}
 
+	/**
+	 * Find a sibling <select> of the presets select whose option values contain
+	 * every id in `ids`. Climbs the presets select's ancestors (SiteOrigin renders
+	 * all of one widget instance's fields inside a shared container), so it binds
+	 * within the same widget form only. Used to detect the Alert Box form by its
+	 * unique design_variant ids.
+	 *
+	 * @param {HTMLSelectElement} presetSelect The presets select.
+	 * @param {string[]} ids Option ids that must all be present.
+	 * @return {HTMLSelectElement|null} The matching sibling select, or null.
+	 */
+	function findSiblingSelectWithIds( presetSelect, ids ) {
+		try {
+			if ( ! ids || ! ids.length ) {
+				return null;
+			}
+			// Scope to this widget instance's form so the search never crosses into
+			// another open widget's fields (several forms can be in the DOM at once).
+			var scope = ( typeof presetSelect.closest === 'function' )
+				? presetSelect.closest( '.siteorigin-widget-form' )
+				: null;
+			if ( ! scope ) {
+				scope = presetSelect.parentNode; // Fallback: immediate field wrapper only.
+			}
+			if ( ! scope || ! scope.querySelectorAll ) {
+				return null;
+			}
+
+			var selects = scope.querySelectorAll( 'select' );
+			for ( var i = 0; i < selects.length; i++ ) {
+				var s = selects[ i ];
+				if ( s === presetSelect ) {
+					continue;
+				}
+				var optVals = Array.prototype.map.call( s.options, function( o ) {
+					return String( o.value );
+				} );
+				var isSuperset = ids.every( function( id ) {
+					return optVals.indexOf( id ) !== -1;
+				} );
+				if ( isSuperset ) {
+					return s;
+				}
+			}
+		} catch ( e ) {
+			/* Treated as "not the skip form" on failure. */
+		}
+		return null;
+	}
+
 	/* ------------------------------------------------------------------ *
 	 * Modal
 	 * ------------------------------------------------------------------ */
@@ -241,6 +301,19 @@
 			? findLayoutSelect( select, entry )
 			: null;
 
+		// Staged selection. Cards no longer write to the form on click; they only
+		// update this object and their visual state. The footer's Apply button
+		// commits everything at once, so the user always sees what they are about
+		// to apply (and Cancel / Esc / outside-click discards it untouched). The
+		// originals let Apply skip a redundant `change` event - re-applying an
+		// unchanged style preset would needlessly clobber the user's manual tweaks.
+		var originalLayout = layoutSelect ? String( layoutSelect.value ) : null;
+		var originalStyle  = String( current );
+		var staged = {
+			layout: originalLayout,
+			style:  originalStyle
+		};
+
 		var overlay = document.createElement( 'div' );
 		overlay.className = 'zaso-sp-overlay';
 
@@ -267,7 +340,7 @@
 
 		var subtitle = document.createElement( 'p' );
 		subtitle.className = 'zaso-sp-subtitle';
-		subtitle.textContent = i18n.subtitle || 'Pick a layout structure, then a colour style.';
+		subtitle.textContent = i18n.subtitle || 'Pick a layout and a colour style, then Apply.';
 
 		headText.appendChild( eyebrow );
 		headText.appendChild( title );
@@ -296,7 +369,9 @@
 
 			entry.layouts.forEach( function( layout ) {
 				layoutGrid.appendChild(
-					buildLayoutCard( layout, layoutSelect.value, layoutSelect, trigger )
+					buildLayoutCard( layout, staged.layout, function( id ) {
+						staged.layout = id;
+					} )
 				);
 			} );
 
@@ -312,7 +387,9 @@
 		grid.className = 'zaso-sp-grid';
 
 		entry.skins.forEach( function( skin ) {
-			grid.appendChild( buildCard( skin, current, select, trigger ) );
+			grid.appendChild( buildCard( skin, staged.style, function( id ) {
+				staged.style = id;
+			} ) );
 		} );
 
 		// Unlicensed only: offer a single unlock card. A licensed user already has
@@ -327,8 +404,57 @@
 			grid
 		) );
 
+		/**
+		 * Commit the staged selection to the native form controls, then close.
+		 *
+		 * Layout and style are written independently and only when they actually
+		 * changed, so applying a style never re-fires its preset (which would wipe
+		 * the user's manual Design tweaks) and applying a layout never touches the
+		 * style. The native <select>s stay the source of truth: this just drives
+		 * them, exactly as the per-card clicks used to.
+		 */
+		function commitStaged() {
+			if (
+				layoutSelect
+				&& staged.layout !== null
+				&& String( staged.layout ) !== String( originalLayout )
+			) {
+				applyLayout( layoutSelect, String( staged.layout ) );
+			}
+
+			if (
+				staged.style !== null
+				&& String( staged.style ) !== String( originalStyle )
+			) {
+				applySkin( select, String( staged.style ) );
+			}
+
+			refreshTriggerLabel( trigger, skinLabelById( entry, staged.style ) );
+			closeModal();
+		}
+
+		/* Footer: Cancel (discard) + Apply (commit). */
+		var foot = document.createElement( 'div' );
+		foot.className = 'zaso-sp-foot';
+
+		var cancelBtn = document.createElement( 'button' );
+		cancelBtn.type = 'button';
+		cancelBtn.className = 'zaso-sp-cancel';
+		cancelBtn.textContent = i18n.cancel || 'Cancel';
+		cancelBtn.addEventListener( 'click', closeModal );
+
+		var applyBtn = document.createElement( 'button' );
+		applyBtn.type = 'button';
+		applyBtn.className = 'zaso-sp-apply';
+		applyBtn.textContent = i18n.apply || 'Apply';
+		applyBtn.addEventListener( 'click', commitStaged );
+
+		foot.appendChild( cancelBtn );
+		foot.appendChild( applyBtn );
+
 		dialog.appendChild( head );
 		dialog.appendChild( body );
+		dialog.appendChild( foot );
 		overlay.appendChild( dialog );
 		document.body.appendChild( overlay );
 
@@ -393,15 +519,15 @@
 	}
 
 	/**
-	 * Build one layout card. Clicking it drives the widget's layout <select>.
+	 * Build one layout card. Clicking it stages the layout choice (the footer's
+	 * Apply button commits it); it does not write to the form on its own.
 	 *
 	 * @param {Object} layout { id, label, html }.
-	 * @param {string} current Currently selected layout id.
-	 * @param {HTMLSelectElement} select The widget's layout select.
-	 * @param {HTMLElement} trigger Opening button (label is style-only; untouched here).
+	 * @param {string} current Currently staged layout id.
+	 * @param {Function} onPick Called with the chosen layout id to stage it.
 	 * @return {HTMLElement} The card button.
 	 */
-	function buildLayoutCard( layout, current, select, trigger ) {
+	function buildLayoutCard( layout, current, onPick ) {
 		var card = document.createElement( 'button' );
 		card.type = 'button';
 		card.className = 'zaso-sp-card zaso-sp-card-layout'
@@ -427,7 +553,7 @@
 		card.appendChild( meta );
 
 		card.addEventListener( 'click', function() {
-			applyLayout( select, String( layout.id ) );
+			onPick( String( layout.id ) );
 
 			// Reflect selection within this section's grid only.
 			var prev = card.parentNode.querySelector( '.zaso-sp-card.is-selected' );
@@ -443,19 +569,20 @@
 	}
 
 	/**
-	 * Build one skin card.
+	 * Build one skin card. Clicking it stages the colour style (the footer's Apply
+	 * button commits it); it does not write to the form or close the modal.
 	 *
 	 * @param {Object} skin { id, label, isPro, html }.
-	 * @param {string} current Currently selected preset id.
-	 * @param {HTMLSelectElement} select Native select.
-	 * @param {HTMLElement} trigger Opening button (for label refresh).
+	 * @param {string} current Currently staged preset id.
+	 * @param {Function} onPick Called with the chosen preset id to stage it.
 	 * @return {HTMLElement} The card button.
 	 */
-	function buildCard( skin, current, select, trigger ) {
+	function buildCard( skin, current, onPick ) {
 		var card = document.createElement( 'button' );
 		card.type = 'button';
 		card.className = 'zaso-sp-card' + ( String( skin.id ) === String( current ) ? ' is-selected' : '' );
 		card.setAttribute( 'data-skin', String( skin.id ) );
+		card.setAttribute( 'aria-pressed', String( skin.id ) === String( current ) ? 'true' : 'false' );
 
 		var frame = document.createElement( 'div' );
 		frame.className = 'zaso-sp-frame';
@@ -480,17 +607,16 @@
 		card.appendChild( meta );
 
 		card.addEventListener( 'click', function() {
-			applySkin( select, String( skin.id ) );
+			onPick( String( skin.id ) );
 
 			// Reflect selection in the grid.
 			var prev = card.parentNode.querySelector( '.zaso-sp-card.is-selected' );
 			if ( prev ) {
 				prev.classList.remove( 'is-selected' );
+				prev.setAttribute( 'aria-pressed', 'false' );
 			}
 			card.classList.add( 'is-selected' );
-
-			refreshTriggerLabel( trigger, skin.label || skin.id );
-			closeModal();
+			card.setAttribute( 'aria-pressed', 'true' );
 		} );
 
 		return card;
@@ -574,6 +700,25 @@
 	}
 
 	/**
+	 * Resolve a skin label from its preset id within a widget entry.
+	 *
+	 * @param {Object} entry Widget index entry.
+	 * @param {string} id Preset id (may be null/'default').
+	 * @return {string} Matching skin label, or empty string.
+	 */
+	function skinLabelById( entry, id ) {
+		if ( id == null || id === 'default' || id === '' ) {
+			return '';
+		}
+		for ( var i = 0; i < entry.skins.length; i++ ) {
+			if ( String( entry.skins[ i ].id ) === String( id ) ) {
+				return entry.skins[ i ].label || id;
+			}
+		}
+		return '';
+	}
+
+	/**
 	 * Read the label of the currently selected option in a select.
 	 *
 	 * @param {HTMLSelectElement} select Native select.
@@ -616,6 +761,16 @@
 				return; // Malformed: leave the native select alone.
 			}
 			if ( ! presets || typeof presets !== 'object' ) {
+				return;
+			}
+
+			// Alert Box guard: when this presets select shares a form with the
+			// Alert Box's unique Design ( design_variant ) select, this is the Alert
+			// Box form. Its Style stays a plain dropdown (the Alert Box has its own
+			// design-picker gallery), so skip enhancement. This is deterministic;
+			// matchWidget is not, because Pro re-uses the same scheme ids everywhere.
+			if ( SKIP_DESIGN_IDS.length && findSiblingSelectWithIds( select, SKIP_DESIGN_IDS ) ) {
+				select.setAttribute( PROCESSED, '1' );
 				return;
 			}
 

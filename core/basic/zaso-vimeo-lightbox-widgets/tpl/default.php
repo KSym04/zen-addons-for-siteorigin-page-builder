@@ -21,7 +21,11 @@ if( $instance['video_muted'] ) {
     $build_url .= '&muted=' . sanitize_text_field( $instance['video_muted'] );
 }
 
-$video_thumb = wp_get_attachment_image_src( $instance['video_thumb'], 'full' )[0];
+// Defensive: an unset thumbnail makes wp_get_attachment_image_src() return
+// false; guard the [0] access to avoid an "array offset on false" warning. A set
+// thumbnail yields the same URL as before (output byte-identical).
+$video_thumb_src = ! empty( $instance['video_thumb'] ) ? wp_get_attachment_image_src( $instance['video_thumb'], 'full' ) : false;
+$video_thumb     = ( is_array( $video_thumb_src ) && isset( $video_thumb_src[0] ) ) ? $video_thumb_src[0] : '';
 $video_play_button = wp_get_attachment_image_src( $instance['video_play_button'], 'full' );
 ?>
 
