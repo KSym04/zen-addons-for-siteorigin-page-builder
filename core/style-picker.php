@@ -112,7 +112,10 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 					$cards[] = array(
 						'id'    => $preset_id,
 						'label' => $label,
-						'isPro' => ( 0 === strpos( $preset_id, 'pro_' ) ),
+						// The free core ships exactly these four palette schemes; every
+						// other scheme is Pro. (The old 'pro_' prefix test broke when the
+						// palette re-keyed to canonical scheme ids.)
+						'isPro' => ! in_array( $preset_id, array( 'saas_indigo', 'dark_midnight', 'min_mono', 'bold_sunset' ), true ),
 						'html'  => $html,
 					);
 				}
@@ -128,8 +131,11 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 			}
 
 			return array(
-				'widgets' => $widgets,
-				'proUrl'  => self::PRO_URL,
+				'widgets'  => $widgets,
+				'proUrl'   => self::PRO_URL,
+				// When a valid Pro license is active the user already has the full
+				// library, so the JS hides the upsell footer.
+				'licensed' => ( class_exists( 'Zanp_Pro' ) && Zanp_Pro::is_licensed() ),
 				'i18n'    => array(
 					'browse' => esc_html__( 'Browse styles', 'zaso' ),
 					'choose' => esc_html__( 'Choose a style', 'zaso' ),

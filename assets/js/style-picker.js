@@ -196,8 +196,9 @@
 			grid.appendChild( buildCard( skin, current, select, trigger ) );
 		} );
 
-		// Unlicensed: no Pro skins in the map. Offer a single unlock card.
-		if ( ! entry.hasPro && proUrl ) {
+		// Unlicensed only: offer a single unlock card. A licensed user already has
+		// the full library (and the map carries the Pro skins), so never upsell.
+		if ( ! data.licensed && ! entry.hasPro && proUrl ) {
 			grid.appendChild( buildUnlockCard( entry ) );
 		}
 
