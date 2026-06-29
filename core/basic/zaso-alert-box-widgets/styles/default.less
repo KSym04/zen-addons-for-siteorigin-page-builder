@@ -337,3 +337,59 @@
 .zaso-alert-box--design-solid .zaso-alert-box__messagebox b { color: #ffffff; }
 .zaso-alert-box--design-solid .zaso-alert-box__icon { color: #ffffff; }
 .zaso-alert-box--design-solid .zaso-alert-box__messagebox button.zaso-alert-box__closebtn { color: rgba(255, 255, 255, 0.75); }
+
+// ===========================================================================
+// DESIGN ICONS (free): per-variant Material Symbols Rounded glyph
+// ---------------------------------------------------------------------------
+// Each free design renders its OWN glyph from the self-hosted Material Symbols
+// Rounded @font-face (assets/css/material-symbols.css, family "ZASO Material
+// Symbols Rounded") via a ::before pseudo-element. The default inline SVG is
+// hidden per variant and replaced by the variant's mapped glyph, inheriting the
+// variant's existing icon colour and matching its icon size. Every rule is
+// scoped under .zaso-alert-box--design-*, so a default alert (no design
+// variant) keeps its inline SVG and renders byte-identical.
+// ===========================================================================
+
+// Shared glyph face for the free design icons.
+.zaso-alert-box--design-left-accent .zaso-alert-box__icon::before,
+.zaso-alert-box--design-soft-tint .zaso-alert-box__icon::before,
+.zaso-alert-box--design-outlined .zaso-alert-box__icon::before,
+.zaso-alert-box--design-icon-badge .zaso-alert-box__icon::before,
+.zaso-alert-box--design-top-bar .zaso-alert-box__icon::before,
+.zaso-alert-box--design-solid .zaso-alert-box__icon::before {
+  font-family: "ZASO Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Centre each glyph inside its icon box.
+.zaso-alert-box--design-left-accent .zaso-alert-box__icon,
+.zaso-alert-box--design-soft-tint .zaso-alert-box__icon,
+.zaso-alert-box--design-outlined .zaso-alert-box__icon,
+.zaso-alert-box--design-icon-badge .zaso-alert-box__icon,
+.zaso-alert-box--design-top-bar .zaso-alert-box__icon,
+.zaso-alert-box--design-solid .zaso-alert-box__icon {
+  align-items: center;
+  justify-content: center;
+}
+
+// Hide the default inline SVG for the free design variants.
+.zaso-alert-box--design-left-accent .zaso-alert-box__icon svg,
+.zaso-alert-box--design-soft-tint .zaso-alert-box__icon svg,
+.zaso-alert-box--design-outlined .zaso-alert-box__icon svg,
+.zaso-alert-box--design-icon-badge .zaso-alert-box__icon svg,
+.zaso-alert-box--design-top-bar .zaso-alert-box__icon svg,
+.zaso-alert-box--design-solid .zaso-alert-box__icon svg {
+  display: none;
+}
+
+// Per-variant glyph + size (FILL 0 / outline weight, matching the bundled subset).
+.zaso-alert-box--design-left-accent .zaso-alert-box__icon::before { content: "\f0be"; font-size: 1.25em; } // check_circle
+.zaso-alert-box--design-soft-tint .zaso-alert-box__icon::before { content: "\e88e"; font-size: 1.25em; } // info
+.zaso-alert-box--design-outlined .zaso-alert-box__icon::before { content: "\f083"; font-size: 1.25em; } // warning
+.zaso-alert-box--design-icon-badge .zaso-alert-box__icon::before { content: "\f8b6"; font-size: 23px; } // error
+.zaso-alert-box--design-top-bar .zaso-alert-box__icon::before { content: "\ef49"; font-size: 1.25em; } // campaign
+.zaso-alert-box--design-solid .zaso-alert-box__icon::before { content: "\f8b6"; font-size: 1.25em; } // error

@@ -411,6 +411,22 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 			)
 		);
 
+		// Self-hosted Material Symbols Rounded @font-face. The design variants render
+		// their per-variant glyph through this font via a ::before pseudo-element, so
+		// it must load whenever an Alert Box renders (this free widget renders both the
+		// six free designs and the twenty-four Pro designs). SiteOrigin enqueues this
+		// only on pages where the widget is present, and skips it if already enqueued.
+		$this->register_frontend_styles(
+			array(
+				array(
+					'zaso-material-symbols',
+					ZASO_BASE_DIR . 'assets/css/material-symbols.css',
+					array(),
+					ZASO_VERSION,
+				)
+			)
+		);
+
 	}
 
 }
