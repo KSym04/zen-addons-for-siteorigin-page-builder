@@ -8,6 +8,34 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * Author URI: https://www.dopethemes.com/
  */
 
+if ( ! function_exists( 'zaso_alert_box_design_options' ) ) :
+	/**
+	 * Curated "designs" for the Alert Box widget.
+	 *
+	 * The free core ships six ready-made designs inline; Zen Addons Pro appends
+	 * its twenty-four additional designs via the shared `zaso_alert_designs`
+	 * filter (the Pro controller self-gates on a valid license, so an unlicensed
+	 * or lapsed site only ever sees the six free entries). The empty-string key
+	 * is the classic "Default" box and adds no class, keeping every existing
+	 * instance byte-identical.
+	 *
+	 * @return array Map of design id => human label.
+	 */
+	function zaso_alert_box_design_options() {
+		$zaso_alert_box_free_designs = array(
+			''            => __( 'Default (classic box)', 'zaso' ),
+			'left-accent' => __( 'Left Accent (success)', 'zaso' ),
+			'soft-tint'   => __( 'Soft Tint (info)', 'zaso' ),
+			'outlined'    => __( 'Outlined (warning)', 'zaso' ),
+			'icon-badge'  => __( 'Icon Badge Card (error)', 'zaso' ),
+			'top-bar'     => __( 'Top Bar (neutral)', 'zaso' ),
+			'solid'       => __( 'Solid Fill (info)', 'zaso' ),
+		);
+
+		return apply_filters( 'zaso_alert_designs', $zaso_alert_box_free_designs );
+	}
+endif;
+
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Alert_Box_Widget' ) ) :
 
 
@@ -64,6 +92,13 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 					'left-accent' => __( 'Left Accent (flat bar)', 'zaso' ),
 					'banner'      => __( 'Banner (horizontal band)', 'zaso' ),
 				),
+			),
+			'design_variant' => array(
+				'type'        => 'select',
+				'label'       => __( 'Design', 'zaso' ),
+				'default'     => '',
+				'description' => __( 'Pick a ready-made alert design. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). "Default" keeps the classic box driven by the Style and Design settings below.', 'zaso' ),
+				'options'     => zaso_alert_box_design_options(),
 			),
 			'design_style' => array(
 				'type'           => 'presets',

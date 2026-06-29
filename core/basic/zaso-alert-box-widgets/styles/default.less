@@ -227,3 +227,113 @@
 .zaso-alert-box--layout-banner .zaso-alert-box__messagebox--has-icon .zaso-alert-box__body {
   padding: 1em 2.6em 1em 1.2em;
 }
+
+// ===========================================================================
+// DESIGN VARIANTS (free): ready-made alert looks
+// ---------------------------------------------------------------------------
+// Hex values tuned to the canonical Claude Design spec ("Alert Box
+// Widget.dc.html"). Each variant is a self-contained look (container, icon
+// colour, title = <strong>/<b>, body = box text colour, scheme-matched close).
+// Every rule is scoped under .zaso-alert-box--design-* so the default render
+// and all existing instances stay byte-identical. Pro ships 24 more designs in
+// its own stylesheet; these six are the free set.
+// ===========================================================================
+
+// ----- F01 Left Accent (success) ------------------------------------------
+.zaso-alert-box--design-left-accent .zaso-alert-box__messagebox {
+  background-color: #f0fdf4;
+  color: #3f6212;
+  border: 0;
+  border-left: 4px solid #16a34a;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(22, 163, 74, 0.08);
+}
+.zaso-alert-box--design-left-accent .zaso-alert-box__messagebox strong,
+.zaso-alert-box--design-left-accent .zaso-alert-box__messagebox b { color: #14532d; }
+.zaso-alert-box--design-left-accent .zaso-alert-box__icon { color: #16a34a; }
+.zaso-alert-box--design-left-accent .zaso-alert-box__messagebox button.zaso-alert-box__closebtn { color: #86c8a0; }
+
+// ----- F02 Soft Tint (info) -----------------------------------------------
+.zaso-alert-box--design-soft-tint .zaso-alert-box__messagebox {
+  background-color: #eff6ff;
+  color: #3b5bdb;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+}
+.zaso-alert-box--design-soft-tint .zaso-alert-box__messagebox strong,
+.zaso-alert-box--design-soft-tint .zaso-alert-box__messagebox b { color: #1e3a8a; }
+.zaso-alert-box--design-soft-tint .zaso-alert-box__icon { color: #2563eb; }
+.zaso-alert-box--design-soft-tint .zaso-alert-box__messagebox button.zaso-alert-box__closebtn { color: #93b4f0; }
+
+// ----- F03 Outlined (warning) ---------------------------------------------
+.zaso-alert-box--design-outlined .zaso-alert-box__messagebox {
+  background-color: #ffffff;
+  color: #b45309;
+  border: 1.5px solid #f59e0b;
+  border-radius: 10px;
+}
+.zaso-alert-box--design-outlined .zaso-alert-box__messagebox strong,
+.zaso-alert-box--design-outlined .zaso-alert-box__messagebox b { color: #92400e; }
+.zaso-alert-box--design-outlined .zaso-alert-box__icon { color: #d97706; }
+.zaso-alert-box--design-outlined .zaso-alert-box__messagebox button.zaso-alert-box__closebtn { color: #e0b878; }
+
+// ----- F04 Icon Badge Card (error) ----------------------------------------
+.zaso-alert-box--design-icon-badge .zaso-alert-box__messagebox {
+  background-color: #ffffff;
+  color: #be123c;
+  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+.zaso-alert-box--design-icon-badge .zaso-alert-box__messagebox strong,
+.zaso-alert-box--design-icon-badge .zaso-alert-box__messagebox b { color: #881337; }
+.zaso-alert-box--design-icon-badge .zaso-alert-box__messagebox--has-icon { align-items: center; }
+.zaso-alert-box--design-icon-badge .zaso-alert-box__icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 0;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #ffe4e6;
+  color: #e11d48;
+}
+.zaso-alert-box--design-icon-badge .zaso-alert-box__icon svg { width: 23px; height: 23px; }
+.zaso-alert-box--design-icon-badge .zaso-alert-box__messagebox button.zaso-alert-box__closebtn { color: #cbd5e1; }
+
+// ----- F05 Top Bar (neutral) ----------------------------------------------
+.zaso-alert-box--design-top-bar .zaso-alert-box__messagebox {
+  background-color: #ffffff;
+  color: #4338ca;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+}
+.zaso-alert-box--design-top-bar .zaso-alert-box__messagebox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #4f46e5;
+}
+.zaso-alert-box--design-top-bar .zaso-alert-box__messagebox strong,
+.zaso-alert-box--design-top-bar .zaso-alert-box__messagebox b { color: #312e81; }
+.zaso-alert-box--design-top-bar .zaso-alert-box__icon { color: #4f46e5; }
+.zaso-alert-box--design-top-bar .zaso-alert-box__messagebox button.zaso-alert-box__closebtn { color: #c7c9ec; }
+
+// ----- P06 Solid Fill (error, promoted free) ------------------------------
+.zaso-alert-box--design-solid .zaso-alert-box__messagebox {
+  background-color: #dc2626;
+  color: rgba(255, 255, 255, 0.88);
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(220, 38, 38, 0.22);
+}
+.zaso-alert-box--design-solid .zaso-alert-box__messagebox strong,
+.zaso-alert-box--design-solid .zaso-alert-box__messagebox b { color: #ffffff; }
+.zaso-alert-box--design-solid .zaso-alert-box__icon { color: #ffffff; }
+.zaso-alert-box--design-solid .zaso-alert-box__messagebox button.zaso-alert-box__closebtn { color: rgba(255, 255, 255, 0.75); }
