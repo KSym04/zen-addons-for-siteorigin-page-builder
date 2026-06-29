@@ -8,6 +8,56 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * Author URI: https://www.dopethemes.com/
  */
 
+if ( ! function_exists( 'zaso_counter_design_options' ) ) :
+	/**
+	 * Curated "designs" for the Counter widget.
+	 *
+	 * The free core ships six ready-made designs inline; Zen Addons Pro appends
+	 * its twenty-four additional designs via the shared `zaso_counter_designs`
+	 * filter (the Pro controller self-gates on a valid license, so an unlicensed
+	 * or lapsed site only ever sees the six free entries). The empty-string key
+	 * is the classic stacked counter and adds no class, keeping every existing
+	 * instance byte-identical.
+	 *
+	 * @return array Map of design id => human label.
+	 */
+	function zaso_counter_design_options() {
+		$zaso_counter_free_designs = array(
+			''          => __( 'Default (classic counter)', 'zaso' ),
+			'icon-card' => __( 'Icon Card (success)', 'zaso' ),
+			'centered'  => __( 'Centered (info)', 'zaso' ),
+			'icon-top'  => __( 'Icon Top (installs)', 'zaso' ),
+			'badge'     => __( 'Badge (uptime)', 'zaso' ),
+			'divider'   => __( 'Divider (neutral)', 'zaso' ),
+			'underline' => __( 'Underline (rating)', 'zaso' ),
+		);
+
+		return apply_filters( 'zaso_counter_designs', $zaso_counter_free_designs );
+	}
+endif;
+
+if ( ! function_exists( 'zaso_counter_design_description' ) ) :
+	/**
+	 * Help text for the "Pre-made Design" field.
+	 *
+	 * On a white-labelled Pro site the agency's client must never see the real
+	 * product name or an upsell (they already have the full library), so the brand
+	 * + "unlocks twenty-four more" sentence is dropped. Everywhere else (free, or
+	 * licensed-but-not-white-labelled) the upsell line is kept.
+	 *
+	 * @return string Field description.
+	 */
+	function zaso_counter_design_description() {
+		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
+
+		if ( $white_label ) {
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic counter)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+		}
+
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic counter)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+	}
+endif;
+
 if ( ! class_exists( 'Zen_Addons_SiteOrigin_Counter_Widget' ) ) :
 
 
@@ -87,7 +137,7 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 				'type'        => 'select',
 				'label'       => __( 'Layout', 'zaso' ),
 				'default'     => 'default',
-				'description' => __( 'Structural layout of the counter. The Style skin below still controls colours and sizes; Layout controls the shape (stacked, boxed card, inline row, ringed circle).', 'zaso' ),
+				'description' => __( 'The structural shape of the counter: stacked, boxed card, inline row or ringed circle. Layout sets the frame; Style (below) sets the colours.', 'zaso' ),
 				'options'     => array(
 					'default' => __( 'Default (stacked)', 'zaso' ),
 					'card'    => __( 'Card (boxed, soft shadow)', 'zaso' ),
@@ -169,9 +219,16 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 					),
 				), 'counter' ),
 			),
+			'design_variant' => array(
+				'type'        => 'select',
+				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'default'     => '',
+				'description' => zaso_counter_design_description(),
+				'options'     => zaso_counter_design_options(),
+			),
 			'design' => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design (custom colours)', 'zaso' ),
 				'hide'   => true,
 				'fields' => array(
 					'alignment' => array(

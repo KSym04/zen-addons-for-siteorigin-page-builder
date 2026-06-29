@@ -1,11 +1,19 @@
 /**
- * Zen Addons - Visual Design Picker (Alert Box).
+ * Zen Addons - Visual Design Picker (Alert Box + Counter).
  *
- * Replaces the Alert Box widget's plain "Design" ( design_variant ) <select> with
- * a "Browse designs" button that opens a modal gallery of REAL rendered design
+ * Replaces a widget's plain "Design" ( design_variant ) <select> with a
+ * "Browse designs" button that opens a modal gallery of REAL rendered design
  * screenshots. Cards stage a choice; the footer's Apply button writes it to the
  * native <select> and dispatches `change` so SiteOrigin persists it. Every step
  * is wrapped so any failure leaves the native dropdown fully functional.
+ *
+ * The picker serves more than one widget. The localized payload carries a
+ * `widgets` array, one self-contained config per widget ( Alert Box, Counter ),
+ * each with its own design cards, its own design-id set ( used to match the
+ * right <select> ), its own blurred/locked Pro upsell cards and its own UI
+ * strings. A <select> is bound to the FIRST widget config whose id set is a
+ * subset of the select's options, so one widget's gallery never lands on
+ * another's dropdown.
  *
  * The widget form renders on demand, so a MutationObserver re-scans the DOM as
  * fields appear. Vanilla JS, no dependencies.
@@ -15,39 +23,17 @@
 ( function() {
 	'use strict';
 
-	var data = window.ZasoDesignPicker;
-	if ( ! data || ! Array.isArray( data.designs ) || ! data.designs.length ) {
+	var raw = window.ZasoDesignPicker;
+	if ( ! raw ) {
 		return; // No data: native <select> keeps working untouched.
 	}
 
-	// Render-only Pro upsell cards (blurred + locked). Never written to the select.
-	var lockedDesigns = Array.isArray( data.lockedDesigns ) ? data.lockedDesigns : [];
+	// Accept the multi-widget shape ( { widgets: [...] } ) and, defensively, the
+	// legacy single-widget shape ( { designs: [...] } ).
+	var rawWidgets = Array.isArray( raw.widgets ) ? raw.widgets
+		: ( Array.isArray( raw.designs ) ? [ raw ] : [] );
 
 	var PROCESSED = 'data-zaso-dp';
-	var i18n = data.i18n || {};
-	var proUrl = data.proUrl || '';
-	var defaultLabel = data.defaultLabel || 'Default';
-	// White-labelled Pro site: never show Free / Pro tier badges to the client.
-	var whiteLabel = !! data.whiteLabel;
-
-	// Design ids that identify the target <select> (its options must be a superset).
-	var designIds = ( Array.isArray( data.designIds ) ? data.designIds : data.designs.map( function( d ) {
-		return d.id;
-	} ) ).map( function( id ) {
-		return String( id );
-	} ).filter( function( id ) {
-		return id && id !== 'default';
-	} );
-
-	if ( ! designIds.length ) {
-		return;
-	}
-
-	// id => label, for the trigger caption.
-	var labelById = {};
-	data.designs.forEach( function( d ) {
-		labelById[ String( d.id ) ] = d.label || d.id;
-	} );
 
 	/**
 	 * Escape a string for safe insertion as an attribute / text value.
@@ -64,19 +50,77 @@
 	}
 
 	/**
-	 * Test whether a <select> is the Alert Box design_variant control: its option
-	 * values must contain every known design id. The design id set is large and
-	 * unique (glass, terminal, ...), so no other field collides.
+	 * Normalise one raw widget payload into a runtime config: precompute the id
+	 * set used for matching and an id => label map for the trigger caption.
+	 *
+	 * @param {Object} w Raw widget payload from the server.
+	 * @return {Object|null} Config, or null when it carries no usable designs.
+	 */
+	function buildConfig( w ) {
+		if ( ! w || ! Array.isArray( w.designs ) || ! w.designs.length ) {
+			return null;
+		}
+
+		var designIds = ( Array.isArray( w.designIds ) ? w.designIds : w.designs.map( function( d ) {
+			return d.id;
+		} ) ).map( function( id ) {
+			return String( id );
+		} ).filter( function( id ) {
+			return id && id !== 'default';
+		} );
+
+		if ( ! designIds.length ) {
+			return null;
+		}
+
+		var labelById = {};
+		w.designs.forEach( function( d ) {
+			labelById[ String( d.id ) ] = d.label || d.id;
+		} );
+
+		return {
+			key: w.key || '',
+			designs: w.designs,
+			designIds: designIds,
+			labelById: labelById,
+			// Render-only Pro upsell cards (blurred + locked). Never written to the select.
+			lockedDesigns: Array.isArray( w.lockedDesigns ) ? w.lockedDesigns : [],
+			i18n: w.i18n || {},
+			proUrl: w.proUrl || '',
+			defaultLabel: w.defaultLabel || 'Default',
+			// White-labelled Pro site: never show Free / Pro tier badges to the client.
+			whiteLabel: !! w.whiteLabel
+		};
+	}
+
+	var configs = [];
+	rawWidgets.forEach( function( w ) {
+		var cfg = buildConfig( w );
+		if ( cfg ) {
+			configs.push( cfg );
+		}
+	} );
+
+	if ( ! configs.length ) {
+		return;
+	}
+
+	/**
+	 * Test whether a <select> is a design_variant control for a given config:
+	 * its option values must contain every design id in that config. Each
+	 * widget's id set is large, unique and disjoint from the others, so no field
+	 * collides.
 	 *
 	 * @param {HTMLSelectElement} select Candidate select.
-	 * @return {boolean} True when this is the design select.
+	 * @param {Object} cfg Widget config.
+	 * @return {boolean} True when this select belongs to cfg.
 	 */
-	function isDesignSelect( select ) {
+	function isDesignSelect( select, cfg ) {
 		try {
 			var optVals = Array.prototype.map.call( select.options, function( o ) {
 				return String( o.value );
 			} );
-			return designIds.every( function( id ) {
+			return cfg.designIds.every( function( id ) {
 				return optVals.indexOf( id ) !== -1;
 			} );
 		} catch ( e ) {
@@ -133,9 +177,14 @@
 	 *
 	 * @param {HTMLSelectElement} select The native design_variant select.
 	 * @param {HTMLElement} trigger The button that opened the modal.
+	 * @param {Object} cfg The widget config bound to this select.
 	 */
-	function openModal( select, trigger ) {
+	function openModal( select, trigger, cfg ) {
 		closeModal();
+
+		var i18n = cfg.i18n;
+		var lockedDesigns = cfg.lockedDesigns;
+		var proUrl = cfg.proUrl;
 
 		// Staged selection. Cards only update this + their visual state; the footer
 		// Apply button commits, so the user sees what they are about to apply and
@@ -165,7 +214,7 @@
 
 		var subtitle = document.createElement( 'p' );
 		subtitle.className = 'zaso-dp-subtitle';
-		subtitle.textContent = i18n.subtitle || 'A pre-made design styles the whole alert in one click. Pick one, then Apply.';
+		subtitle.textContent = i18n.subtitle || 'A pre-made design styles the whole widget in one click. Pick one, then Apply.';
 
 		headText.appendChild( title );
 		headText.appendChild( subtitle );
@@ -197,15 +246,15 @@
 		}
 
 		// Built-in reset card for the classic default ( design_variant = '' ).
-		grid.appendChild( buildDefaultCard( staged.design, function( card ) {
+		grid.appendChild( buildDefaultCard( cfg, staged.design, function( card ) {
 			stage( '' );
 			card.classList.add( 'is-selected' );
 			card.setAttribute( 'aria-pressed', 'true' );
 		} ) );
 
 		// One card per real design.
-		data.designs.forEach( function( design ) {
-			grid.appendChild( buildDesignCard( design, staged.design, function( card ) {
+		cfg.designs.forEach( function( design ) {
+			grid.appendChild( buildDesignCard( cfg, design, staged.design, function( card ) {
 				stage( design.id );
 				card.classList.add( 'is-selected' );
 				card.setAttribute( 'aria-pressed', 'true' );
@@ -218,9 +267,9 @@
 		// gallery. White-labelled sites get neither (handled server-side: empty).
 		if ( lockedDesigns.length && proUrl ) {
 			lockedDesigns.forEach( function( design ) {
-				grid.appendChild( buildLockedCard( design ) );
+				grid.appendChild( buildLockedCard( cfg, design ) );
 			} );
-			grid.appendChild( buildUnlockCard() );
+			grid.appendChild( buildUnlockCard( cfg ) );
 		}
 
 		body.appendChild( grid );
@@ -234,7 +283,7 @@
 			if ( String( staged.design ) !== String( original ) ) {
 				applyDesign( select, String( staged.design ) );
 			}
-			refreshTriggerLabel( trigger, staged.design );
+			refreshTriggerLabel( cfg, trigger, staged.design );
 			closeModal();
 		}
 
@@ -291,13 +340,15 @@
 	}
 
 	/**
-	 * Build the built-in "Default (classic box)" reset card.
+	 * Build the built-in "Default (classic)" reset card.
 	 *
+	 * @param {Object} cfg Widget config.
 	 * @param {string} current Currently staged design id.
 	 * @param {Function} onPick Called with the card element on click.
 	 * @return {HTMLElement} The card button.
 	 */
-	function buildDefaultCard( current, onPick ) {
+	function buildDefaultCard( cfg, current, onPick ) {
+		var defaultLabel = cfg.defaultLabel;
 		var isSel = ( '' === String( current ) );
 		var card = document.createElement( 'button' );
 		card.type = 'button';
@@ -332,12 +383,14 @@
 	/**
 	 * Build one real-design card (rendered screenshot + label + Free/Pro badge).
 	 *
+	 * @param {Object} cfg Widget config.
 	 * @param {Object} design { id, label, isPro, img }.
 	 * @param {string} current Currently staged design id.
 	 * @param {Function} onPick Called with the card element on click.
 	 * @return {HTMLElement} The card button.
 	 */
-	function buildDesignCard( design, current, onPick ) {
+	function buildDesignCard( cfg, design, current, onPick ) {
+		var i18n = cfg.i18n;
 		var isSel = ( String( design.id ) === String( current ) );
 		var card = document.createElement( 'button' );
 		card.type = 'button';
@@ -375,7 +428,7 @@
 
 		// Tier badges are hidden on white-labelled sites so the agency's client
 		// never sees the Free / Pro distinction.
-		if ( ! whiteLabel ) {
+		if ( ! cfg.whiteLabel ) {
 			var badge = document.createElement( 'span' );
 			badge.className = 'zaso-dp-badge ' + ( design.isPro ? 'is-pro' : 'is-free' );
 			badge.textContent = design.isPro ? ( i18n.pro || 'Pro' ) : ( i18n.free || 'Free' );
@@ -397,13 +450,15 @@
 	 * selectable: it never stages a value or writes the <select>; clicking it
 	 * opens the upgrade page in a new tab.
 	 *
+	 * @param {Object} cfg Widget config.
 	 * @param {Object} design { id, label, thumb }.
 	 * @return {HTMLElement} The anchor card.
 	 */
-	function buildLockedCard( design ) {
+	function buildLockedCard( cfg, design ) {
+		var i18n = cfg.i18n;
 		var card = document.createElement( 'a' );
 		card.className = 'zaso-dp-card is-locked';
-		card.href = proUrl;
+		card.href = cfg.proUrl;
 		card.target = '_blank';
 		card.rel = 'noopener';
 		card.setAttribute( 'data-locked', '1' );
@@ -460,12 +515,14 @@
 	 * Build the "Unlock all designs with Pro" CTA card shown after the locked
 	 * gallery to unlicensed users.
 	 *
+	 * @param {Object} cfg Widget config.
 	 * @return {HTMLElement} The anchor card.
 	 */
-	function buildUnlockCard() {
+	function buildUnlockCard( cfg ) {
+		var i18n = cfg.i18n;
 		var card = document.createElement( 'a' );
 		card.className = 'zaso-dp-card zaso-dp-unlock';
-		card.href = proUrl;
+		card.href = cfg.proUrl;
 		card.target = '_blank';
 		card.rel = 'noopener';
 
@@ -520,10 +577,11 @@
 	/**
 	 * Update the trigger button's caption to reflect the active design.
 	 *
+	 * @param {Object} cfg Widget config.
 	 * @param {HTMLElement} trigger The button.
 	 * @param {string} designId Active design id ( '' = default ).
 	 */
-	function refreshTriggerLabel( trigger, designId ) {
+	function refreshTriggerLabel( cfg, trigger, designId ) {
 		if ( ! trigger ) {
 			return;
 		}
@@ -532,11 +590,12 @@
 			return;
 		}
 		var id = String( designId == null ? '' : designId );
-		caption.textContent = ( '' === id ) ? defaultLabel : ( labelById[ id ] || '' );
+		caption.textContent = ( '' === id ) ? cfg.defaultLabel : ( cfg.labelById[ id ] || '' );
 	}
 
 	/**
-	 * Enhance the Alert Box design_variant <select> with a Browse-designs button.
+	 * Enhance a design_variant <select> with a Browse-designs button, binding it
+	 * to the first widget config whose id set matches the select's options.
 	 *
 	 * @param {HTMLSelectElement} select Candidate select.
 	 */
@@ -551,9 +610,19 @@
 			// not re-trigger on this node.
 			select.setAttribute( PROCESSED, '1' );
 
-			if ( ! isDesignSelect( select ) ) {
-				return; // Not the design control.
+			// Bind to the first widget config this select belongs to.
+			var cfg = null;
+			for ( var c = 0; c < configs.length; c++ ) {
+				if ( isDesignSelect( select, configs[ c ] ) ) {
+					cfg = configs[ c ];
+					break;
+				}
 			}
+			if ( ! cfg ) {
+				return; // Not a design control for any supported widget.
+			}
+
+			var i18n = cfg.i18n;
 
 			var btn = document.createElement( 'button' );
 			btn.type = 'button';
@@ -581,18 +650,18 @@
 
 			btn.addEventListener( 'click', function( ev ) {
 				ev.preventDefault();
-				openModal( select, btn );
+				openModal( select, btn, cfg );
 			} );
 
 			// Keep the caption in sync if the value changes elsewhere.
 			select.addEventListener( 'change', function() {
-				refreshTriggerLabel( btn, select.value );
+				refreshTriggerLabel( cfg, btn, select.value );
 			} );
 
 			select.parentNode.insertBefore( btn, select );
 			select.style.display = 'none';
 
-			refreshTriggerLabel( btn, select.value );
+			refreshTriggerLabel( cfg, btn, select.value );
 		} catch ( e ) {
 			/* Any failure leaves the native dropdown intact. */
 		}

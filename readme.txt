@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.3
+Stable tag: 1.10.4
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -53,7 +53,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 **Conversion and engagement**
 
 * Call to Action: combine a heading, text, and button in a banner over a color, gradient, or image background.
-* Counter: count up to a number with a stat that animates when it scrolls into view.
+* Counter: count up to a number with a stat that animates when it scrolls into view, with thirty ready-made designs (six free).
 * Countdown: count down to a date and time for launches, sales, and events.
 * Before / After: compare two images with a draggable slider, with mouse, touch, and keyboard support.
 * Social Share Bar: add share buttons for Facebook, X, LinkedIn, Pinterest, Reddit, WhatsApp, Telegram, email, and a copy-link button, with no third-party scripts.
@@ -201,8 +201,12 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 == Screenshots ==
 
 1. Alert Box: thirty ready-made alert designs (six free) - one-click styled looks across success, info, warning and error tones.
+2. Counter: thirty ready-made counter designs (six free) - animated stat blocks with icons, prefixes, suffixes, and structural styles like rings, bars and sparklines.
 
 == Upgrade Notice ==
+
+= 1.10.4 =
+New Counter ready-made designs: thirty animated stat-block looks (six free) chosen visually from the Browse designs gallery, matching the Alert Box experience. Your existing counters are unchanged.
 
 = 1.10.3 =
 New Alert Box ready-made designs with a visual picker (browse each design as a real preview, apply in one click), Material Symbols icons bundled locally, plus a custom icon and width option for the Alert Box, and more layout and colour options. Your existing widgets are unchanged.
@@ -250,6 +254,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.4 =
+* New: Counter ready-made designs. Thirty animated stat-block looks (six free: icon card, centered, icon top, badge, divider, underline) chosen visually from the "Browse designs" gallery, with icons, prefixes, suffixes, and structural styles like rings, bars, and sparklines. Leave it on the classic counter to keep your current look unchanged.
+* Improved: The visual Browse designs picker now covers the Counter as well as the Alert Box.
 
 = 1.10.3 =
 * New: Alert Box ready-made designs. Pick from six one-click styled looks (left accent, soft tint, outlined, icon badge, top bar, and solid fill) across success, info, warning, and error tones. Leave it on the classic box to keep your current look unchanged.

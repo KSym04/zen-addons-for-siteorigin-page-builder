@@ -194,3 +194,247 @@
   position: relative;
   z-index: 1;
 }
+
+// ===========================================================================
+// DESIGN VARIANTS (free): ready-made counter looks
+// ---------------------------------------------------------------------------
+// Hex values, sizes and glyphs tuned to the canonical Claude Design spec
+// ("Counter Widget.dc.html"). Each variant is a self-contained surface (card,
+// number colour + size, label, optional icon box, structural extras). Every
+// rule is scoped under .zaso-counter--design-* so the default render and all
+// existing instances stay byte-identical. The number font weight is 800 with a
+// -0.02em tracking per the spec. The icon glyph itself comes from the existing
+// Icon field (the demo / user picks the spec glyph: download, groups, bolt);
+// these rules only style the icon BOX, so a counter with no icon set still
+// reads correctly (icon optional). Pro ships 24 more designs in its own
+// stylesheet; these six are the free set.
+// ===========================================================================
+
+// Shared number treatment for every free design.
+.zaso-counter--design-icon-card .zaso-counter__number,
+.zaso-counter--design-centered .zaso-counter__number,
+.zaso-counter--design-icon-top .zaso-counter__number,
+.zaso-counter--design-badge .zaso-counter__number,
+.zaso-counter--design-divider .zaso-counter__number,
+.zaso-counter--design-underline .zaso-counter__number {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+// ----- F01 Icon Card (success) --------------------------------------------
+// Row: icon box on the left, number stacked over the label on the right.
+// A CSS grid keeps the icon optically centred against the number + label pair
+// without any extra markup. With no icon set the number + label simply fill the
+// card.
+.zaso-counter--design-icon-card .zaso-counter__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 0;
+  text-align: left;
+  background-color: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+.zaso-counter--design-icon-card .zaso-counter__icon {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #dcfce7;
+  font-size: 26px;
+  line-height: 1;
+  color: #16a34a;
+}
+.zaso-counter--design-icon-card .zaso-counter__icon span { font-size: 26px; color: #16a34a; }
+.zaso-counter--design-icon-card .zaso-counter__image { width: 26px; }
+.zaso-counter--design-icon-card .zaso-counter__number {
+  grid-column: 2;
+  align-self: end;
+  font-size: 38px;
+  color: #14532d;
+}
+.zaso-counter--design-icon-card .zaso-counter__title {
+  grid-column: 2;
+  align-self: start;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3f6212;
+}
+
+// ----- F02 Centered (info) ------------------------------------------------
+.zaso-counter--design-centered .zaso-counter__inner {
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 26px 24px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+.zaso-counter--design-centered .zaso-counter__number {
+  font-size: 46px;
+  color: #2563eb;
+}
+.zaso-counter--design-centered .zaso-counter__title {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+// ----- F03 Icon Top (installs) --------------------------------------------
+// Stacked, centred. The glyph sits above the number as a bare block (no box),
+// then the number with a coloured "+" suffix, then the label.
+.zaso-counter--design-icon-top .zaso-counter__inner {
+  align-items: flex-start;
+  text-align: left;
+  gap: 0;
+  background-color: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+.zaso-counter--design-icon-top .zaso-counter__icon {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 24px;
+  line-height: 1;
+  color: #ea580c;
+}
+.zaso-counter--design-icon-top .zaso-counter__icon span { font-size: 24px; color: #ea580c; }
+.zaso-counter--design-icon-top .zaso-counter__image { width: 24px; }
+.zaso-counter--design-icon-top .zaso-counter__number {
+  font-size: 40px;
+  color: #9a3412;
+}
+.zaso-counter--design-icon-top .zaso-counter__suffix { font-size: 26px; color: #ea580c; }
+.zaso-counter--design-icon-top .zaso-counter__title {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c2410c;
+}
+
+// ----- F04 Badge (uptime) -------------------------------------------------
+// Row: circular icon badge on the left, number (with "%" suffix) over the label
+// on the right. Same grid technique as Icon Card.
+.zaso-counter--design-badge .zaso-counter__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 0;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+.zaso-counter--design-badge .zaso-counter__icon {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #eef2ff;
+  font-size: 25px;
+  line-height: 1;
+  color: #4f46e5;
+}
+.zaso-counter--design-badge .zaso-counter__icon span { font-size: 25px; color: #4f46e5; }
+.zaso-counter--design-badge .zaso-counter__image { width: 25px; }
+.zaso-counter--design-badge .zaso-counter__number {
+  grid-column: 2;
+  align-self: end;
+  font-size: 36px;
+  color: #312e81;
+}
+.zaso-counter--design-badge .zaso-counter__suffix { font-size: 22px; color: #4f46e5; }
+.zaso-counter--design-badge .zaso-counter__title {
+  grid-column: 2;
+  align-self: start;
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4338ca;
+}
+
+// ----- F05 Divider (neutral) ----------------------------------------------
+// Stacked. A hairline rule sits between the number and the label, rendered as a
+// top border on the label (pseudo-free, no extra markup). With no label the
+// card is just the number, which still reads cleanly.
+.zaso-counter--design-divider .zaso-counter__inner {
+  align-items: stretch;
+  text-align: left;
+  gap: 0;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+.zaso-counter--design-divider .zaso-counter__number {
+  justify-content: flex-start;
+  font-size: 42px;
+  color: #0f172a;
+}
+.zaso-counter--design-divider .zaso-counter__title {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+// ----- F06 Underline (rating) ---------------------------------------------
+// Stacked. A short teal accent bar sits between the number and the label,
+// rendered as a ::before on the label so no extra markup is needed. The number
+// carries a muted "/5" suffix.
+.zaso-counter--design-underline .zaso-counter__inner {
+  align-items: flex-start;
+  text-align: left;
+  gap: 0;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+.zaso-counter--design-underline .zaso-counter__number {
+  font-size: 42px;
+  color: #0f766e;
+}
+.zaso-counter--design-underline .zaso-counter__suffix {
+  font-size: 18px;
+  font-weight: 700;
+  color: #94a3b8;
+}
+.zaso-counter--design-underline .zaso-counter__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+.zaso-counter--design-underline .zaso-counter__title::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 12px 0;
+  border-radius: 2px;
+  background-color: #14b8a6;
+}
