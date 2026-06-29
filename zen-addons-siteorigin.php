@@ -99,6 +99,7 @@ class zen_addons_siteorigin {
 			include( 'core/admin.php' );
 			include( 'core/widget-design.php' );
 			include( 'core/style-picker.php' );
+			include( 'core/section-templates.php' );
 			include( 'core/dependency-notice.php' );
 		}
 
