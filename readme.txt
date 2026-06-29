@@ -194,6 +194,10 @@ For support, documentation, and feature requests, please visit [https://www.dope
 
 Please read the Frequently Asked Questions before opening a support request, and include your WordPress, SiteOrigin, and PHP versions along with a description of the issue.
 
+== Credits ==
+
+Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for use in widget icon pickers. Material Symbols is created by Google and distributed under the Apache License 2.0. The font is served locally from the plugin (no Google Fonts CDN), and a copy of the Apache License 2.0 is included in assets/fonts/LICENSE.
+
 == Screenshots ==
 
 1. Conversion and engagement widgets: Call to Action, Counter, and Countdown.

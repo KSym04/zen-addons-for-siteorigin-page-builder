@@ -1,0 +1,38 @@
+/**
+ * Material Symbols Rounded icon family for SiteOrigin / Zen Addons widgets.
+ *
+ * Self-hosted, GDPR/WordPress.org compliant (no Google Fonts CDN).
+ * Font: Material Symbols Rounded by Google, licensed under Apache License 2.0.
+ * A curated subset is bundled in ../fonts/material-symbols-rounded.woff2.
+ *
+ * This stylesheet is enqueued ON DEMAND by SiteOrigin's
+ * siteorigin_widget_get_icon() only when a Material icon is actually output.
+ */
+
+@font-face {
+	font-family: 'ZASO Material Symbols Rounded';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url( '../fonts/material-symbols-rounded.woff2' ) format( 'woff2' );
+}
+
+.sow-icon-materialsymbols {
+	font-family: 'ZASO Material Symbols Rounded';
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.sow-icon-materialsymbols[data-sow-icon]:before {
+	content: attr( data-sow-icon );
+}

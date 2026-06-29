@@ -90,6 +90,7 @@ class zen_addons_siteorigin {
 		include( 'core/helpers.php' );
 		include( 'core/widgets.php' );
 		include( 'core/shortcodes.php' );
+		include( 'core/material-icons.php' );
 
 		// Includes vendor.
 		include( 'core/vendor/dopethemes-dashboard.php' );
