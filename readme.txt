@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.5
+Stable tag: 1.10.6
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -110,11 +110,11 @@ You can also manage every Zen Addons widget from one place under the **Zen Addon
 * English (en_US)
 * English (Australia) (en_AU)
 
-= Zen Addons Pro (coming soon) =
+= Zen Addons Pro =
 
-A Pro tier is in active development and will add premium widgets not found in the free plugin, including a WooCommerce product showcase and portfolio grid, plus more advanced layout options.
+Zen Addons Pro is available now. It adds the Popup and Portfolio widgets, a site-wide Display Layer (visibility conditions by login, role, and date, device targeting, scroll animations, and a custom CSS class on every widget), Pricing Table Pro, and twenty-four extra Alert Box designs plus twenty-four extra Counter designs, all chosen visually from the Browse designs gallery.
 
-To get notified when Pro launches, visit https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
+Learn more and compare plans at https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
 
 == External services ==
 
@@ -205,6 +205,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.6 =
+Listing update only: Zen Addons Pro is now available. No changes to the free plugin's functionality.
+
 = 1.10.5 =
 Simpler design controls: the separate Style presets field is removed in favour of the Browse designs gallery, which already applies a complete look in one click. Your existing widgets look exactly the same.
 
@@ -257,6 +260,9 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.6 =
+* Changed: Readme update; Zen Addons Pro is now available. No functional changes to the free plugin.
 
 = 1.10.5 =
 * Changed: Streamlined the widget design controls. The separate "Style" presets field has been removed; pick a complete ready-made look from the "Browse designs" gallery, or fine-tune colours in the Design settings. Existing widgets are unchanged.
