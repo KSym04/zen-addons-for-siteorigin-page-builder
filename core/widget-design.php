@@ -329,13 +329,29 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		 * inside esc_attr() before it touches a style attribute; the surrounding
 		 * markup and copy are static, so the returned string is safe to echo raw.
 		 *
+		 * An optional structural $layout adds a `zaso-wd-pv--layout-{value}`
+		 * modifier class to the preview root. The style-picker CSS restyles each
+		 * facsimile per layout so a card can show a widget's STRUCTURE (shape,
+		 * elevation, arrangement) independently of its colour skin. Passing an
+		 * empty or 'default' layout leaves the markup byte-identical to before, so
+		 * every existing caller keeps its current output.
+		 *
 		 * @since  1.10.3
+		 * @since  1.11.1 Added the $layout parameter.
 		 *
 		 * @param  string $slug   Widget slug (folder without the zaso- prefix and -widgets suffix).
 		 * @param  array  $values Nested preset values array.
+		 * @param  string $layout Optional structural layout id. Default empty (no modifier).
 		 * @return string Preview HTML, or an empty string for an unknown slug.
 		 */
-		protected function render_preview( $slug, $values ) {
+		protected function render_preview( $slug, $values, $layout = '' ) {
+			// Structural layout modifier. Empty / 'default' adds nothing, so the
+			// skin-only previews stay exactly as they shipped.
+			$layout       = is_string( $layout ) ? $layout : '';
+			$layout_class = ( '' !== $layout && 'default' !== $layout )
+				? ' zaso-wd-pv--layout-' . sanitize_html_class( $layout )
+				: '';
+
 			switch ( $slug ) {
 
 				case 'alert-box':
@@ -351,7 +367,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 
 					$style = 'background:' . esc_attr( $bg ) . ';color:' . esc_attr( $text ) . ';border:' . esc_attr( $base_border ) . ';border-left:' . esc_attr( $left_border ) . ';border-radius:' . esc_attr( $radius ) . ';';
 
-					return '<div class="zaso-wd-pv zaso-wd-pv-alert" style="' . $style . '">'
+					return '<div class="zaso-wd-pv zaso-wd-pv-alert' . esc_attr( $layout_class ) . '" style="' . $style . '">'
 						. '<strong>' . esc_html__( 'Heads up', 'zaso' ) . '</strong>'
 						. '<span>' . esc_html__( 'This is an alert message.', 'zaso' ) . '</span>'
 						. '</div>';
@@ -366,7 +382,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 
 					$btn_style = 'background:' . esc_attr( $button_bg ) . ';color:' . esc_attr( $button_color ) . ';border-radius:' . esc_attr( $button_radius ) . ';';
 
-					return '<div class="zaso-wd-pv zaso-wd-pv-cta" style="background:' . esc_attr( $bg ) . ';">'
+					return '<div class="zaso-wd-pv zaso-wd-pv-cta' . esc_attr( $layout_class ) . '" style="background:' . esc_attr( $bg ) . ';">'
 						. '<span class="zaso-wd-pv-h" style="color:' . esc_attr( $heading_color ) . ';">' . esc_html__( 'Ready to start?', 'zaso' ) . '</span>'
 						. '<span class="zaso-wd-pv-sub" style="color:' . esc_attr( $text_color ) . ';">' . esc_html__( 'Join us today.', 'zaso' ) . '</span>'
 						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'Get Started', 'zaso' ) . '</span>'
@@ -384,7 +400,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					$card_style = 'background:' . esc_attr( $card_bg ) . ';border:1px solid ' . esc_attr( $card_border ) . ';border-radius:' . esc_attr( $card_radius ) . ';';
 					$btn_style  = 'background:' . esc_attr( $button_bg ) . ';color:' . esc_attr( $button_text ) . ';';
 
-					return '<div class="zaso-wd-pv zaso-wd-pv-pricing" style="' . $card_style . '">'
+					return '<div class="zaso-wd-pv zaso-wd-pv-pricing' . esc_attr( $layout_class ) . '" style="' . $card_style . '">'
 						. '<span class="zaso-wd-pv-stripe" style="background:' . esc_attr( $featured ) . ';"></span>'
 						. '<span class="zaso-wd-pv-price" style="color:' . esc_attr( $price_color ) . ';">$29</span>'
 						. '<span class="zaso-wd-pv-feat"></span>'
@@ -401,7 +417,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 
 					$card_style = 'background:' . esc_attr( $bg ) . ';border-radius:' . esc_attr( $radius ) . ';';
 
-					return '<div class="zaso-wd-pv zaso-wd-pv-testimonial" style="' . $card_style . '">'
+					return '<div class="zaso-wd-pv zaso-wd-pv-testimonial' . esc_attr( $layout_class ) . '" style="' . $card_style . '">'
 						. '<span class="zaso-wd-pv-stars" style="color:' . esc_attr( $star_color ) . ';">&#9733;&#9733;&#9733;</span>'
 						. '<span class="zaso-wd-pv-quote" style="color:' . esc_attr( $quote_color ) . ';">' . esc_html__( 'Great product, highly recommend.', 'zaso' ) . '</span>'
 						. '<span class="zaso-wd-pv-author" style="color:' . esc_attr( $author_color ) . ';">' . esc_html__( 'Jane Doe', 'zaso' ) . '</span>'
@@ -412,7 +428,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					$title_color  = $this->get_val( $values, 'design.title_color', '#475569' );
 					$icon_color   = $this->get_val( $values, 'design.icon_color', '#4f46e5' );
 
-					return '<div class="zaso-wd-pv zaso-wd-pv-counter" style="background:#ffffff;">'
+					return '<div class="zaso-wd-pv zaso-wd-pv-counter' . esc_attr( $layout_class ) . '" style="background:#ffffff;">'
 						. '<span class="zaso-wd-pv-dot" style="background:' . esc_attr( $icon_color ) . ';"></span>'
 						. '<span class="zaso-wd-pv-num" style="color:' . esc_attr( $number_color ) . ';">1,250</span>'
 						. '<span class="zaso-wd-pv-lbl" style="color:' . esc_attr( $title_color ) . ';">' . esc_html__( 'Happy clients', 'zaso' ) . '</span>'
@@ -427,7 +443,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					$caption_style = 'background:' . esc_attr( $caption_bg ) . ';color:' . esc_attr( $caption_text ) . ';';
 					$btn_style     = 'background:' . esc_attr( $button_bg ) . ';color:' . esc_attr( $button_text ) . ';';
 
-					return '<div class="zaso-wd-pv zaso-wd-pv-hover">'
+					return '<div class="zaso-wd-pv zaso-wd-pv-hover' . esc_attr( $layout_class ) . '">'
 						. '<span class="zaso-wd-pv-caption" style="' . $caption_style . '">'
 						. '<span class="zaso-wd-pv-caption-t">' . esc_html__( 'Project title', 'zaso' ) . '</span>'
 						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'View', 'zaso' ) . '</span>'
@@ -447,7 +463,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 						$chip_style = 'background:transparent;color:' . esc_attr( $icon_color ) . ';border:2px solid ' . esc_attr( $icon_color ) . ';';
 					}
 
-					return '<div class="zaso-wd-pv zaso-wd-pv-services" style="background:' . esc_attr( $bg ) . ';">'
+					return '<div class="zaso-wd-pv zaso-wd-pv-services' . esc_attr( $layout_class ) . '" style="background:' . esc_attr( $bg ) . ';">'
 						. '<span class="zaso-wd-pv-chip" style="' . $chip_style . '">&#9679;</span>'
 						. '<span class="zaso-wd-pv-title" style="color:' . esc_attr( $title_color ) . ';">' . esc_html__( 'Our Service', 'zaso' ) . '</span>'
 						. '<span class="zaso-wd-pv-desc" style="color:' . esc_attr( $desc_color ) . ';">' . esc_html__( 'A short description line.', 'zaso' ) . '</span>'

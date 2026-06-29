@@ -27,7 +27,7 @@
 
 	/**
 	 * Pre-index the localized widget map into a lookup-friendly shape.
-	 * Each entry: { slug, label, ids: [presetId...], skins: [...], hasPro: bool }.
+	 * Each entry: { slug, label, ids, skins, hasPro, layouts, layoutKey, layoutIds }.
 	 */
 	var index = [];
 	try {
@@ -37,12 +37,19 @@
 				return;
 			}
 			var ids = w.skins.map( function( s ) { return String( s.id ); } );
+			var layouts = Array.isArray( w.layouts ) ? w.layouts : [];
+			var layoutIds = Array.isArray( w.layoutIds )
+				? w.layoutIds.map( function( id ) { return String( id ); } )
+				: layouts.map( function( l ) { return String( l.id ); } );
 			index.push( {
 				slug: slug,
 				label: w.label || slug,
 				ids: ids,
 				skins: w.skins,
-				hasPro: w.skins.some( function( s ) { return !! s.isPro; } )
+				hasPro: w.skins.some( function( s ) { return !! s.isPro; } ),
+				layouts: layouts,
+				layoutKey: w.layoutKey || 'layout',
+				layoutIds: layoutIds
 			} );
 		} );
 	} catch ( e ) {
@@ -101,6 +108,54 @@
 		return best;
 	}
 
+	/**
+	 * Locate the widget's structural layout <select> relative to its presets
+	 * <select>. SiteOrigin renders every field of one widget instance inside a
+	 * shared form container, so we climb the presets select's ancestors and, at
+	 * each level, look for a sibling <select> whose <option> values are a superset
+	 * of the widget's layout ids. This robustly binds the right control even when
+	 * several widgets are open at once, and never touches the CTA Banner's
+	 * button-placement select (its values are stacked / inline, not the layout ids).
+	 *
+	 * @param {HTMLSelectElement} presetSelect The matched presets select.
+	 * @param {Object} entry The widget index entry.
+	 * @return {HTMLSelectElement|null} The layout select, or null when none.
+	 */
+	function findLayoutSelect( presetSelect, entry ) {
+		try {
+			var wanted = ( entry.layoutIds || [] ).filter( function( id ) {
+				return id && id !== 'default';
+			} );
+			if ( ! wanted.length ) {
+				return null;
+			}
+
+			var node = presetSelect.parentNode;
+			for ( var depth = 0; node && node.querySelectorAll && depth < 12; depth++ ) {
+				var selects = node.querySelectorAll( 'select' );
+				for ( var i = 0; i < selects.length; i++ ) {
+					var s = selects[ i ];
+					if ( s === presetSelect ) {
+						continue;
+					}
+					var optVals = Array.prototype.map.call( s.options, function( o ) {
+						return String( o.value );
+					} );
+					var isSuperset = wanted.every( function( id ) {
+						return optVals.indexOf( id ) !== -1;
+					} );
+					if ( isSuperset ) {
+						return s;
+					}
+				}
+				node = node.parentNode;
+			}
+		} catch ( e ) {
+			/* Layout section is simply omitted on failure. */
+		}
+		return null;
+	}
+
 	/* ------------------------------------------------------------------ *
 	 * Modal
 	 * ------------------------------------------------------------------ */
@@ -147,6 +202,29 @@
 	}
 
 	/**
+	 * Apply a layout: set the layout select value and dispatch change so the
+	 * widget form (and the live preview) restructures. Mirrors applySkin so the
+	 * native <select> stays the source of truth and the fallback.
+	 *
+	 * @param {HTMLSelectElement} select The widget's layout select.
+	 * @param {string} layoutId The chosen layout id.
+	 */
+	function applyLayout( select, layoutId ) {
+		try {
+			if ( ! select ) {
+				return;
+			}
+			select.value = layoutId;
+			if ( select.value !== layoutId ) {
+				return; // The select rejected the value; do not fire a misleading event.
+			}
+			select.dispatchEvent( new Event( 'change', { bubbles: true } ) );
+		} catch ( e ) {
+			/* Native select remains usable. */
+		}
+	}
+
+	/**
 	 * Build and open the modal gallery for a widget/select pair.
 	 *
 	 * @param {Object} entry The matched widget index entry.
@@ -158,6 +236,11 @@
 
 		var current = select.value;
 
+		// Resolve the widget's layout control (may be null for layout-less widgets).
+		var layoutSelect = ( entry.layouts && entry.layouts.length )
+			? findLayoutSelect( select, entry )
+			: null;
+
 		var overlay = document.createElement( 'div' );
 		overlay.className = 'zaso-sp-overlay';
 
@@ -165,15 +248,30 @@
 		dialog.className = 'zaso-sp-dialog';
 		dialog.setAttribute( 'role', 'dialog' );
 		dialog.setAttribute( 'aria-modal', 'true' );
-		dialog.setAttribute( 'aria-label', ( i18n.choose || 'Choose a style' ) + ': ' + entry.label );
+		dialog.setAttribute( 'aria-label', ( i18n.choose || 'Choose a design' ) + ': ' + entry.label );
 
-		/* Header. */
+		/* Header: eyebrow + title + subtitle, with a close button. */
 		var head = document.createElement( 'div' );
 		head.className = 'zaso-sp-head';
 
+		var headText = document.createElement( 'div' );
+		headText.className = 'zaso-sp-head-text';
+
+		var eyebrow = document.createElement( 'span' );
+		eyebrow.className = 'zaso-sp-eyebrow';
+		eyebrow.textContent = entry.label;
+
 		var title = document.createElement( 'h2' );
 		title.className = 'zaso-sp-title';
-		title.textContent = ( i18n.choose || 'Choose a style' ) + ': ' + entry.label;
+		title.textContent = i18n.choose || 'Choose a design';
+
+		var subtitle = document.createElement( 'p' );
+		subtitle.className = 'zaso-sp-subtitle';
+		subtitle.textContent = i18n.subtitle || 'Pick a layout structure, then a colour style.';
+
+		headText.appendChild( eyebrow );
+		headText.appendChild( title );
+		headText.appendChild( subtitle );
 
 		var closeBtn = document.createElement( 'button' );
 		closeBtn.type = 'button';
@@ -182,13 +280,34 @@
 		closeBtn.innerHTML = '&times;';
 		closeBtn.addEventListener( 'click', closeModal );
 
-		head.appendChild( title );
+		head.appendChild( headText );
 		head.appendChild( closeBtn );
 
-		/* Scrollable body with the card grid. */
+		/* Scrollable body holding the labelled sections. */
 		var body = document.createElement( 'div' );
 		body.className = 'zaso-sp-body';
 
+		// Section 1: Layout (only when the widget exposes layouts AND we found the
+		// control to drive). Falls back silently to a style-only modal otherwise,
+		// preserving the original behaviour for layout-less widgets.
+		if ( layoutSelect && entry.layouts.length ) {
+			var layoutGrid = document.createElement( 'div' );
+			layoutGrid.className = 'zaso-sp-grid zaso-sp-grid-layout';
+
+			entry.layouts.forEach( function( layout ) {
+				layoutGrid.appendChild(
+					buildLayoutCard( layout, layoutSelect.value, layoutSelect, trigger )
+				);
+			} );
+
+			body.appendChild( buildSection(
+				i18n.layout || 'Layout',
+				i18n.layoutHint || 'Structure and shape',
+				layoutGrid
+			) );
+		}
+
+		// Section 2: Style (colour skins) - always present.
 		var grid = document.createElement( 'div' );
 		grid.className = 'zaso-sp-grid';
 
@@ -202,7 +321,12 @@
 			grid.appendChild( buildUnlockCard( entry ) );
 		}
 
-		body.appendChild( grid );
+		body.appendChild( buildSection(
+			i18n.style || 'Style',
+			i18n.styleHint || 'Colour scheme',
+			grid
+		) );
+
 		dialog.appendChild( head );
 		dialog.appendChild( body );
 		overlay.appendChild( dialog );
@@ -233,6 +357,89 @@
 		/* Move focus into the dialog. */
 		var firstSelected = dialog.querySelector( '.zaso-sp-card.is-selected' );
 		( firstSelected || closeBtn ).focus();
+	}
+
+	/**
+	 * Build a labelled section wrapper (heading + hint + a card grid).
+	 *
+	 * @param {string} titleText Section title (e.g. "Layout").
+	 * @param {string} hintText Short helper line under / beside the title.
+	 * @param {HTMLElement} gridEl The pre-built card grid for this section.
+	 * @return {HTMLElement} The section element.
+	 */
+	function buildSection( titleText, hintText, gridEl ) {
+		var section = document.createElement( 'section' );
+		section.className = 'zaso-sp-section';
+
+		var headRow = document.createElement( 'div' );
+		headRow.className = 'zaso-sp-section-head';
+
+		var h = document.createElement( 'h3' );
+		h.className = 'zaso-sp-section-title';
+		h.textContent = titleText || '';
+
+		var hint = document.createElement( 'span' );
+		hint.className = 'zaso-sp-section-hint';
+		hint.textContent = hintText || '';
+
+		headRow.appendChild( h );
+		if ( hintText ) {
+			headRow.appendChild( hint );
+		}
+
+		section.appendChild( headRow );
+		section.appendChild( gridEl );
+		return section;
+	}
+
+	/**
+	 * Build one layout card. Clicking it drives the widget's layout <select>.
+	 *
+	 * @param {Object} layout { id, label, html }.
+	 * @param {string} current Currently selected layout id.
+	 * @param {HTMLSelectElement} select The widget's layout select.
+	 * @param {HTMLElement} trigger Opening button (label is style-only; untouched here).
+	 * @return {HTMLElement} The card button.
+	 */
+	function buildLayoutCard( layout, current, select, trigger ) {
+		var card = document.createElement( 'button' );
+		card.type = 'button';
+		card.className = 'zaso-sp-card zaso-sp-card-layout'
+			+ ( String( layout.id ) === String( current ) ? ' is-selected' : '' );
+		card.setAttribute( 'data-layout', String( layout.id ) );
+		card.setAttribute( 'aria-pressed', String( layout.id ) === String( current ) ? 'true' : 'false' );
+
+		var frame = document.createElement( 'div' );
+		frame.className = 'zaso-sp-frame';
+		// layout.html is trusted plugin markup (static copy + esc_attr'd colours),
+		// produced server-side by ZASO_Widget_Design::render_preview().
+		frame.innerHTML = layout.html || '';
+
+		var meta = document.createElement( 'div' );
+		meta.className = 'zaso-sp-meta';
+
+		var label = document.createElement( 'span' );
+		label.className = 'zaso-sp-label';
+		label.textContent = layout.label || layout.id;
+
+		meta.appendChild( label );
+		card.appendChild( frame );
+		card.appendChild( meta );
+
+		card.addEventListener( 'click', function() {
+			applyLayout( select, String( layout.id ) );
+
+			// Reflect selection within this section's grid only.
+			var prev = card.parentNode.querySelector( '.zaso-sp-card.is-selected' );
+			if ( prev ) {
+				prev.classList.remove( 'is-selected' );
+				prev.setAttribute( 'aria-pressed', 'false' );
+			}
+			card.classList.add( 'is-selected' );
+			card.setAttribute( 'aria-pressed', 'true' );
+		} );
+
+		return card;
 	}
 
 	/**
@@ -435,7 +642,7 @@
 
 			var labelMain = document.createElement( 'span' );
 			labelMain.className = 'zaso-sp-btn-main';
-			labelMain.textContent = i18n.browse || 'Browse styles';
+			labelMain.textContent = i18n.browse || 'Browse designs';
 
 			var labelCur = document.createElement( 'span' );
 			labelCur.className = 'zaso-sp-btn-current';

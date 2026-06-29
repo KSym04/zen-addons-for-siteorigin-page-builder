@@ -44,6 +44,17 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 		const HANDLE = 'zaso-style-picker';
 
 		/**
+		 * Widgets whose structural layout field is keyed `block_layout` instead of
+		 * the usual `layout`. The CTA Banner already uses `layout` for the button
+		 * placement (stacked / inline), so its STRUCTURAL layout lives under
+		 * `block_layout` and must be read from there.
+		 *
+		 * @since 1.11.1
+		 * @var array
+		 */
+		const BLOCK_LAYOUT_SLUGS = array( 'cta-banner' );
+
+		/**
 		 * Hook only the editor asset enqueue. The parent constructor is NOT called
 		 * on purpose: this subclass must not register the Design Library menu again.
 		 *
@@ -65,6 +76,62 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 		 */
 		protected function is_editor_screen( $hook ) {
 			return in_array( $hook, array( 'post.php', 'post-new.php', 'widgets.php' ), true );
+		}
+
+		/**
+		 * Read the structural layout <select> options for a widget class.
+		 *
+		 * Mirrors get_widget_skins() but targets the layout field. The CTA Banner
+		 * keys its structural layouts under `block_layout`; every other supported
+		 * widget uses `layout`. Returns an ordered map of option id => label, or an
+		 * empty array when the widget has no usable layout field.
+		 *
+		 * @since  1.11.1
+		 *
+		 * @param  string $class      Widget class name (already confirmed to exist).
+		 * @param  string $layout_key The form_options key to read ( 'layout' | 'block_layout' ).
+		 * @return array Ordered map of layout id => label, or an empty array.
+		 */
+		protected function get_widget_layouts( $class, $layout_key ) {
+			if ( ! is_subclass_of( $class, 'SiteOrigin_Widget' ) ) {
+				return array();
+			}
+
+			$widget = new $class();
+			$form   = $widget->form_options();
+
+			if (
+				! is_array( $form )
+				|| empty( $form[ $layout_key ]['options'] )
+				|| ! is_array( $form[ $layout_key ]['options'] )
+			) {
+				return array();
+			}
+
+			return $form[ $layout_key ]['options'];
+		}
+
+		/**
+		 * Pick the neutral preset values used to render the layout previews.
+		 *
+		 * Layout cards must show STRUCTURE, not colour, so every one is rendered
+		 * with the same skin. The first preset (the canonical free "Indigo" scheme
+		 * across the library) is a clean, light, neutral choice. Falls back to an
+		 * empty array, in which case render_preview() uses its built-in defaults.
+		 *
+		 * @since  1.11.1
+		 *
+		 * @param  array $skins Ordered map of preset id => preset (label, values).
+		 * @return array Nested preset values for the neutral skin.
+		 */
+		protected function neutral_layout_values( $skins ) {
+			foreach ( $skins as $preset ) {
+				if ( isset( $preset['values'] ) && is_array( $preset['values'] ) ) {
+					return $preset['values'];
+				}
+			}
+
+			return array();
 		}
 
 		/**
@@ -124,9 +191,40 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 					continue;
 				}
 
+				// Structural layout variants (orthogonal to the colour skin). The
+				// CTA Banner keys its structural layouts under `block_layout`; every
+				// other widget uses `layout`. Each card renders the SAME neutral skin
+				// so the preview shows the STRUCTURE, not the colours.
+				$layout_key     = in_array( $slug, self::BLOCK_LAYOUT_SLUGS, true ) ? 'block_layout' : 'layout';
+				$layout_options = $this->get_widget_layouts( $class, $layout_key );
+				$neutral_values = $this->neutral_layout_values( $skins );
+
+				$layout_cards = array();
+				$layout_ids   = array();
+				foreach ( $layout_options as $layout_id => $layout_label ) {
+					$layout_id   = (string) $layout_id;
+					$layout_html = $this->render_preview( $slug, $neutral_values, $layout_id );
+
+					if ( '' === $layout_html ) {
+						continue; // Unknown slug; nothing to preview.
+					}
+
+					$layout_cards[] = array(
+						'id'    => $layout_id,
+						'label' => (string) $layout_label,
+						'html'  => $layout_html,
+					);
+					$layout_ids[] = $layout_id;
+				}
+
 				$widgets[ $slug ] = array(
-					'label' => $meta['label'],
-					'skins' => $cards,
+					'label'     => $meta['label'],
+					'skins'     => $cards,
+					// Empty when a widget exposes no layout field, so the picker JS
+					// simply omits the Layout section and behaves exactly as before.
+					'layouts'   => $layout_cards,
+					'layoutKey' => $layout_key,
+					'layoutIds' => $layout_ids,
 				);
 			}
 
@@ -137,12 +235,17 @@ if ( ! class_exists( 'ZASO_Style_Picker' ) && class_exists( 'ZASO_Widget_Design'
 				// library, so the JS hides the upsell footer.
 				'licensed' => ( class_exists( 'Zanp_Pro' ) && Zanp_Pro::is_licensed() ),
 				'i18n'    => array(
-					'browse' => esc_html__( 'Browse styles', 'zaso' ),
-					'choose' => esc_html__( 'Choose a style', 'zaso' ),
-					'free'   => esc_html__( 'Free', 'zaso' ),
-					'pro'    => esc_html__( 'Pro', 'zaso' ),
-					'unlock' => esc_html__( 'Unlock the full design library with Zen Addons Pro.', 'zaso' ),
-					'close'  => esc_html__( 'Close', 'zaso' ),
+					'browse'     => esc_html__( 'Browse designs', 'zaso' ),
+					'choose'     => esc_html__( 'Choose a design', 'zaso' ),
+					'subtitle'   => esc_html__( 'Pick a layout structure, then a colour style.', 'zaso' ),
+					'layout'     => esc_html__( 'Layout', 'zaso' ),
+					'layoutHint' => esc_html__( 'Structure and shape', 'zaso' ),
+					'style'      => esc_html__( 'Style', 'zaso' ),
+					'styleHint'  => esc_html__( 'Colour scheme', 'zaso' ),
+					'free'       => esc_html__( 'Free', 'zaso' ),
+					'pro'        => esc_html__( 'Pro', 'zaso' ),
+					'unlock'     => esc_html__( 'Unlock the full design library with Zen Addons Pro.', 'zaso' ),
+					'close'      => esc_html__( 'Close', 'zaso' ),
 				),
 			);
 		}
