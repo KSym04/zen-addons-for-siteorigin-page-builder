@@ -53,6 +53,18 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 				'label' => __( 'Extra Class', 'zaso' ),
 				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
 			),
+			'layout' => array(
+				'type'        => 'select',
+				'label'       => __( 'Layout', 'zaso' ),
+				'default'     => 'default',
+				'description' => __( 'Structural layout of the alert. The Style skin below still controls colours; Layout controls the shape (shadow, border, padding, icon treatment).', 'zaso' ),
+				'options'     => array(
+					'default'     => __( 'Default (bordered box)', 'zaso' ),
+					'card'        => __( 'Card (elevated, soft shadow)', 'zaso' ),
+					'left-accent' => __( 'Left Accent (flat bar)', 'zaso' ),
+					'banner'      => __( 'Banner (horizontal band)', 'zaso' ),
+				),
+			),
 			'design_style' => array(
 				'type'           => 'presets',
 				'label'          => __( 'Style', 'zaso' ),

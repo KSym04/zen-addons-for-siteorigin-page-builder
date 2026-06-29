@@ -137,3 +137,93 @@
   background: transparent;
   color: @message_font_color;
 }
+
+// ===========================================================================
+// LAYOUT VARIANTS (structure only)
+// ---------------------------------------------------------------------------
+// Orthogonal to the colour skins. The Style preset still drives bg/text/accent
+// via the colour vars above; these rules only restructure shape (shadow,
+// border presence, padding, radius, icon treatment, flex band). The "default"
+// layout adds no class and is intentionally untouched here.
+// ===========================================================================
+
+// ----- Layout: card --------------------------------------------------------
+// Elevated surface: no visible border, larger radius, generous padding, soft
+// shadow. A typed icon becomes a filled circular badge (badge fill = the text
+// colour, glyph = the box background) so it reads clearly on any skin.
+.zaso-alert-box--layout-card .zaso-alert-box__messagebox {
+  border: 0;
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 12px 30px -10px rgba( 0, 0, 0, 0.28 ), 0 3px 8px rgba( 0, 0, 0, 0.08 );
+}
+
+.zaso-alert-box--layout-card .zaso-alert-box__messagebox--has-icon {
+  align-items: center;
+  gap: 0.85em;
+}
+
+.zaso-alert-box--layout-card .zaso-alert-box__icon {
+  width: 2.4em;
+  height: 2.4em;
+  margin-top: 0;
+  padding: 0.55em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: @message_font_color;
+  color: @message_background_color;
+}
+
+// ----- Layout: left-accent -------------------------------------------------
+// Flat panel, square-ish corners, no full border. A single thick coloured bar
+// on the left edge. The bar uses the text colour, not the border colour, so it
+// always contrasts with the fill on every skin (the border colour can equal the
+// background on a solid skin, which would make the bar disappear). Icon inline.
+.zaso-alert-box--layout-left-accent .zaso-alert-box__messagebox {
+  border: 0;
+  border-left: 5px solid @message_font_color;
+  border-radius: 0 4px 4px 0;
+  box-shadow: none;
+}
+
+// ----- Layout: banner ------------------------------------------------------
+// Horizontal band: a tinted leading block (the icon) flush-left against a
+// padded message on the right. Minimal radius, flat, zero internal gap.
+.zaso-alert-box--layout-banner .zaso-alert-box__messagebox {
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.zaso-alert-box--layout-banner .zaso-alert-box__messagebox--has-icon {
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+}
+
+// Leading block: a solid accent panel (fill = text colour, glyph = background)
+// so it punches on every skin instead of reading as a muddy grey overlay.
+.zaso-alert-box--layout-banner .zaso-alert-box__messagebox--has-icon .zaso-alert-box__icon {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0 1.2em;
+  align-items: center;
+  justify-content: center;
+  background: @message_font_color;
+  color: @message_background_color;
+}
+
+.zaso-alert-box--layout-banner .zaso-alert-box__messagebox--has-icon .zaso-alert-box__icon svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+// Reserve room on the right so the absolutely-positioned close button never
+// overlaps the banner copy.
+.zaso-alert-box--layout-banner .zaso-alert-box__messagebox--has-icon .zaso-alert-box__body {
+  padding: 1em 2.6em 1em 1.2em;
+}

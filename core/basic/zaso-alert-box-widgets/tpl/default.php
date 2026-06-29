@@ -37,9 +37,22 @@ $zaso_box_class = 'zaso-alert-box__messagebox';
 if ( $zaso_has_type ) {
 	$zaso_box_class .= ' zaso-alert-box__messagebox--has-icon zaso-alert-box__messagebox--' . $alert_type;
 }
+
+// Optional structural layout. Default ('default') is the original bordered box
+// and adds NO extra class, so existing instances render byte-identical. Only the
+// alternate layouts (card / left-accent / banner) add a modifier class.
+$zaso_layout         = ! empty( $instance['layout'] ) ? $instance['layout'] : 'default';
+$zaso_layout_allowed = array( 'default', 'card', 'left-accent', 'banner' );
+if ( ! in_array( $zaso_layout, $zaso_layout_allowed, true ) ) {
+	$zaso_layout = 'default';
+}
+$zaso_wrapper_class = 'zaso-alert-box';
+if ( 'default' !== $zaso_layout ) {
+	$zaso_wrapper_class .= ' zaso-alert-box--layout-' . $zaso_layout;
+}
 ?>
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-alert-box <?php echo esc_attr( $instance['extra_class'] ); ?>">
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="<?php echo esc_attr( $zaso_wrapper_class ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>">
   <div class="<?php echo esc_attr( $zaso_box_class ); ?>">
     <?php if( $instance['alert_closebtn'] == 'show' ) : ?>
       <button type="button" class="zaso-alert-box__closebtn" data-dismiss="alert" aria-label="<?php esc_attr_e( 'Close', 'zaso' ); ?>">
