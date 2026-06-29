@@ -4,6 +4,7 @@
 // Cross-element modifier rules MUST be flat top-level selectors.
 
 @featured_color:    #4f46e5;
+@accent_on_surface: #4f46e5;
 @card_bg:           #ffffff;
 @card_border:       #e5e7eb;
 @card_radius:       12px;
@@ -56,7 +57,7 @@
 
 // ─── Featured (flat selectors — no chained &!) ────────────────────────────────
 .zaso-pricing-table__item--featured .zaso-pricing-table__card {
-	border-color: @featured_color;
+	border-color: @accent_on_surface;
 	border-width: 2px;
 }
 
@@ -125,7 +126,7 @@
 }
 
 .zaso-pricing-table__features svg {
-	color:       @featured_color;
+	color:       @accent_on_surface;
 	flex-shrink: 0;
 	margin-top:  2px;
 }
@@ -151,7 +152,7 @@
 }
 
 .zaso-pricing-table__btn:focus-visible {
-	outline:        2px solid @featured_color;
+	outline:        2px solid @accent_on_surface;
 	outline-offset: 2px;
 }
 
@@ -228,7 +229,7 @@
 .zaso-pricing-table--layout-elevated .zaso-pricing-table__item--featured .zaso-pricing-table__card {
 	border:     0;
 	transform:  translateY( -10px );
-	box-shadow: 0 0 0 2px @featured_color, 0 24px 50px -16px rgba( 0, 0, 0, 0.35 ), 0 8px 16px rgba( 0, 0, 0, 0.10 );
+	box-shadow: 0 0 0 2px @accent_on_surface, 0 24px 50px -16px rgba( 0, 0, 0, 0.35 ), 0 8px 16px rgba( 0, 0, 0, 0.10 );
 }
 
 // ─── Layout: compact ───────────────────────────────────────────────────────────

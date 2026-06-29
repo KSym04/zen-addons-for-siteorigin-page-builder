@@ -354,15 +354,19 @@
 }
 
 // ─── Layout: minimal ───────────────────────────────────────────────────────────
-// No card surface: drops the background, radius and shadow, replacing them with a
-// single accent rule above the content. The rule reuses the author-name colour so
-// it stays visible on light/neutral page backgrounds. Intended for light skins;
-// pair with a dark-text skin (Soft Light / Outline).
+// Flat, un-elevated treatment: drops the radius and shadow and adds a single
+// accent rule above the content. CRITICAL: it KEEPS the skin's @card_background
+// so a colour skin always owns the background its text sits on. A dark skin
+// (light text) therefore keeps its dark surface here and stays readable, instead
+// of bleeding light text onto the page canvas. The top rule uses the accent
+// (@star_color), which the skins already guarantee is visible on their surface
+// (dark schemes fall the accent back to the light text value), so the rule reads
+// on every skin. Square corners + tighter padding keep the "minimal" feel.
 .zaso-testimonial-slider--layout-minimal .zaso-testimonial-slider__card {
-	background:    transparent;
+	background:    @card_background;
 	border:        0;
-	border-top:    3px solid @author_name_color;
+	border-top:    3px solid @star_color;
 	border-radius: 0;
 	box-shadow:    none;
-	padding:       24px 2px 4px;
+	padding:       24px;
 }

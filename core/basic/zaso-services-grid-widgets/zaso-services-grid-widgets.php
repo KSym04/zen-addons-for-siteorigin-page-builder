@@ -138,7 +138,7 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 								'icon_bg'            => '#4f46e5',
 								'title_color'        => '#e2e8f0',
 								'description_color'  => '#94a3b8',
-								'link_color'         => '#4f46e5',
+								'link_color'         => '#a5b4fc',
 								'card_background'    => '#0f172a',
 								'card_padding'       => array( 'top' => '28px', 'right' => '28px', 'bottom' => '28px', 'left' => '28px' ),
 								'card_border_radius' => '12px',

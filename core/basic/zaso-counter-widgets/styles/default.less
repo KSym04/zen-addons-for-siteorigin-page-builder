@@ -124,22 +124,73 @@
 }
 
 // ----- Layout: circle ------------------------------------------------------
-// The number lives inside a transparent ringed circle; icon stacks above it and
-// the title below. The ring uses the icon colour (the skin accent) so it always
-// reads as a deliberate accent rather than blending into the number. aspect-ratio
-// keeps a true circle while min sizing accommodates longer numbers.
+// The number is the hero, set inside a premium accent ring. The ring is a
+// masked conic-gradient donut (a clean "progress-ring" feel with a soft accent
+// sheen) painted as a pseudo-element, so its hole stays TRANSPARENT and the
+// layout reads correctly on any page background, not just white. The decorative
+// icon is intentionally dropped here so nothing floats above the ring and the
+// ring + number stay balanced and optically centred. The title sits below.
 .zaso-counter--layout-circle .zaso-counter__inner {
-  gap: 0.85rem;
+  gap: 1rem;
+}
+
+// Drop the icon in this layout: the ring is the visual, an icon above it just
+// floats and unbalances the composition.
+.zaso-counter--layout-circle .zaso-counter__icon {
+  display: none;
 }
 
 .zaso-counter--layout-circle .zaso-counter__number {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 9rem;
+  width: auto;
+  min-width: 10.5rem;
   aspect-ratio: 1 / 1;
-  padding: 1rem;
-  border: 0.25rem solid @icon_color;
+  padding: 1.9rem;
   border-radius: 50%;
+}
+
+// The ring is built from two masked donut layers, so it reads as a deliberate,
+// premium accent rather than a hairline border. Because counters are frequently
+// percentages, the accent fills the FULL ring (a partial arc would look like a
+// broken progress value against, say, 99%). Both layers punch a TRANSPARENT hole
+// via mask, so the centre shows the page background on any surface, not just
+// white.
+//
+// Layer 1 (::before): a soft track ring for subtle depth under the accent.
+.zaso-counter--layout-circle .zaso-counter__number::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: fade( @icon_color, 14% );
+  // calc() is escaped (~"...") so the LESS compiler passes it through literally
+  // instead of folding "100% - 0.82rem" into a unit-stripped percentage.
+  -webkit-mask: radial-gradient( farthest-side, transparent calc( ~"100% - 0.82rem" ), #000 calc( ~"100% - 0.82rem" ) );
+  mask: radial-gradient( farthest-side, transparent calc( ~"100% - 0.82rem" ), #000 calc( ~"100% - 0.82rem" ) );
+  z-index: 0;
+}
+
+// Layer 2 (::after): the solid accent ring with a gentle conic sheen (low
+// contrast so there is no faint dead zone) plus a soft accent-tinted shadow for
+// lift. Slightly thinner than the track so a thin track halo stays visible.
+.zaso-counter--layout-circle .zaso-counter__number::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient( from -90deg, @icon_color, lighten( @icon_color, 9% ) 50%, @icon_color );
+  -webkit-mask: radial-gradient( farthest-side, transparent calc( ~"100% - 0.7rem" ), #000 calc( ~"100% - 0.7rem" ) );
+  mask: radial-gradient( farthest-side, transparent calc( ~"100% - 0.7rem" ), #000 calc( ~"100% - 0.7rem" ) );
+  filter: drop-shadow( 0 6px 16px fade( @icon_color, 28% ) );
+  z-index: 0;
+}
+
+// Keep the number (and any prefix/suffix) optically centred above the ring.
+.zaso-counter--layout-circle .zaso-counter__number > * {
+  position: relative;
+  z-index: 1;
 }

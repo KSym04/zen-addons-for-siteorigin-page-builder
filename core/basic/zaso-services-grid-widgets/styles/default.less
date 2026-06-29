@@ -104,7 +104,14 @@
 	line-height: 1.6;
 }
 
-.zaso-services-grid__link {
+// Qualified with the container class on purpose. Some themes colour widget links
+// via rules like `.widget a:link` (specificity 0,2,1) on the SiteOrigin panel
+// wrapper, which would otherwise beat a bare `.zaso-services-grid__link` (0,2,0)
+// and force the link to the theme's link colour (invisible on dark skins). The
+// extra `.zaso-services-grid` lifts this to (0,3,0) so the skin's @link_color
+// always wins, with no !important. Flat descendant selector (SiteOrigin prefixes
+// .so-widget-<id> once); not chained &, so no double-prefix.
+.zaso-services-grid .zaso-services-grid__link {
 	display:         inline-block;
 	color:           @link_color;
 	font-weight:     600;
