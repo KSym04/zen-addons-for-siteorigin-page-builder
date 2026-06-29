@@ -109,83 +109,118 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 				 * Selecting one fills the Design fields below; users can still tweak.
 				 */
 				'options'        => apply_filters( 'zaso_design_presets', array(
-					'soft'         => array(
-						'label'  => __( 'Soft', 'zaso' ),
+					// Free subset of the DopeThemes premium palette (4 schemes,
+					// one per aesthetic family). Pro appends the full library.
+					'saas_indigo'   => array(
+						'label'  => __( 'Indigo', 'zaso' ),
 						'values' => array(
 							'design' => array(
 								'background' => array(
-									'bg_type'  => 'solid',
-									'bg_color' => '#eff6ff',
+									'bg_type' => 'gradient',
+									'bg_color' => '#ffffff',
+									'gradient_start' => '#ffffff',
+									'gradient_end' => '#eef2ff',
+									'gradient_angle' => 135,
 								),
 								'typography' => array(
-									'heading_color'    => '#1e3a8a',
-									'subheading_color' => '#1e40af',
-									'text_color'       => '#1e3a8a',
+									'heading_color' => '#0f172a',
+									'subheading_color' => '#475569',
+									'text_color' => '#475569',
 								),
 								'button' => array(
-									'button_bg'       => '#4f46e5',
+									'button_bg' => '#4f46e5',
 									'button_bg_hover' => '#4338ca',
-									'button_color'    => '#ffffff',
-									'button_radius'   => '6px',
+									'button_color' => '#ffffff',
+									'button_radius' => '8px',
 								),
 								'spacing' => array(
-									'padding_y'     => '2.5rem',
-									'padding_x'     => '2rem',
-									'border_radius' => '8px',
-								),
-							),
-						),
-					),
-					'solid_accent' => array(
-						'label'  => __( 'Solid Accent', 'zaso' ),
-						'values' => array(
-							'design' => array(
-								'background' => array(
-									'bg_type'  => 'solid',
-									'bg_color' => '#4f46e5',
-								),
-								'typography' => array(
-									'heading_color'    => '#ffffff',
-									'subheading_color' => '#e0e7ff',
-									'text_color'       => '#ffffff',
-								),
-								'button' => array(
-									'button_bg'       => '#ffffff',
-									'button_bg_hover' => '#e0e7ff',
-									'button_color'    => '#4f46e5',
-									'button_radius'   => '10px',
-								),
-								'spacing' => array(
-									'padding_y'     => '3rem',
-									'padding_x'     => '2rem',
+									'padding_y' => '2.75rem',
+									'padding_x' => '2rem',
 									'border_radius' => '10px',
 								),
 							),
 						),
 					),
-					'outline'      => array(
-						'label'  => __( 'Outline', 'zaso' ),
+					'dark_midnight'   => array(
+						'label'  => __( 'Midnight', 'zaso' ),
 						'values' => array(
 							'design' => array(
 								'background' => array(
-									'bg_type'  => 'solid',
+									'bg_type' => 'solid',
+									'bg_color' => '#0f172a',
+								),
+								'typography' => array(
+									'heading_color' => '#e2e8f0',
+									'subheading_color' => '#94a3b8',
+									'text_color' => '#94a3b8',
+								),
+								'button' => array(
+									'button_bg' => '#4f46e5',
+									'button_bg_hover' => '#4338ca',
+									'button_color' => '#ffffff',
+									'button_radius' => '10px',
+								),
+								'spacing' => array(
+									'padding_y' => '3rem',
+									'padding_x' => '2rem',
+									'border_radius' => '12px',
+								),
+							),
+						),
+					),
+					'min_mono'   => array(
+						'label'  => __( 'Mono', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'background' => array(
+									'bg_type' => 'solid',
 									'bg_color' => '#ffffff',
 								),
 								'typography' => array(
-									'heading_color'    => '#0f172a',
-									'subheading_color' => '#334155',
-									'text_color'       => '#0f172a',
+									'heading_color' => '#111111',
+									'subheading_color' => '#6b7280',
+									'text_color' => '#6b7280',
 								),
 								'button' => array(
-									'button_bg'       => '#4f46e5',
-									'button_bg_hover' => '#4338ca',
-									'button_color'    => '#ffffff',
-									'button_radius'   => '6px',
+									'button_bg' => '#111111',
+									'button_bg_hover' => '#000000',
+									'button_color' => '#ffffff',
+									'button_radius' => '6px',
 								),
 								'spacing' => array(
-									'padding_y'     => '2.5rem',
-									'padding_x'     => '2rem',
+									'padding_y' => '2.5rem',
+									'padding_x' => '2rem',
 									'border_radius' => '8px',
+								),
+							),
+						),
+					),
+					'bold_sunset'   => array(
+						'label'  => __( 'Sunset', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'background' => array(
+									'bg_type' => 'gradient',
+									'bg_color' => '#fff7ed',
+									'gradient_start' => '#fff7ed',
+									'gradient_end' => '#ffedd5',
+									'gradient_angle' => 135,
+								),
+								'typography' => array(
+									'heading_color' => '#7c2d12',
+									'subheading_color' => '#9a3412',
+									'text_color' => '#9a3412',
+								),
+								'button' => array(
+									'button_bg' => '#c2410c',
+									'button_bg_hover' => '#9a3412',
+									'button_color' => '#ffffff',
+									'button_radius' => '8px',
+								),
+								'spacing' => array(
+									'padding_y' => '2.75rem',
+									'padding_x' => '2rem',
+									'border_radius' => '12px',
 								),
 							),
 						),

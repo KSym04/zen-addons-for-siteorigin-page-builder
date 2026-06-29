@@ -109,42 +109,63 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 				 * Selecting one fills the Design fields below; users can still tweak.
 				 */
 				'options'        => apply_filters( 'zaso_design_presets', array(
-					'soft'    => array(
-						'label'  => __( 'Soft', 'zaso' ),
+					'saas_indigo'   => array(
+						'label'  => __( 'Indigo', 'zaso' ),
 						'values' => array(
 							'design' => array(
+								'featured_color'    => '#4f46e5',
 								'card_bg'           => '#ffffff',
+								'text_color'        => '#0f172a',
+								'text_muted'        => '#475569',
 								'card_border'       => '#e2e8f0',
 								'card_radius'       => '12px',
 								'button_bg'         => '#4f46e5',
 								'button_text_color' => '#ffffff',
+							),
+						),
+					),
+					'dark_midnight' => array(
+						'label'  => __( 'Midnight', 'zaso' ),
+						'values' => array(
+							'design' => array(
 								'featured_color'    => '#4f46e5',
-							),
-						),
-					),
-					'bold'    => array(
-						'label'  => __( 'Bold', 'zaso' ),
-						'values' => array(
-							'design' => array(
-								'card_bg'           => '#ffffff',
-								'card_border'       => '#cbd5e1',
+								'card_bg'           => '#0f172a',
+								'text_color'        => '#e2e8f0',
+								'text_muted'        => '#94a3b8',
+								'card_border'       => '#334155',
 								'card_radius'       => '14px',
-								'button_bg'         => '#0f172a',
+								'button_bg'         => '#4f46e5',
 								'button_text_color' => '#ffffff',
-								'featured_color'    => '#0f172a',
 							),
 						),
 					),
-					'minimal' => array(
-						'label'  => __( 'Minimal', 'zaso' ),
+					'min_mono'      => array(
+						'label'  => __( 'Mono', 'zaso' ),
 						'values' => array(
 							'design' => array(
-								'card_bg'           => '#f8fafc',
-								'card_border'       => '#e5e7eb',
+								'featured_color'    => '#111111',
+								'card_bg'           => '#ffffff',
+								'text_color'        => '#111111',
+								'text_muted'        => '#6b7280',
+								'card_border'       => '#e5e5e5',
 								'card_radius'       => '8px',
-								'button_bg'         => '#15803d',
+								'button_bg'         => '#111111',
 								'button_text_color' => '#ffffff',
-								'featured_color'    => '#15803d',
+							),
+						),
+					),
+					'bold_sunset'   => array(
+						'label'  => __( 'Sunset', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'featured_color'    => '#c2410c',
+								'card_bg'           => '#fff7ed',
+								'text_color'        => '#7c2d12',
+								'text_muted'        => '#9a3412',
+								'card_border'       => '#fed7aa',
+								'card_radius'       => '16px',
+								'button_bg'         => '#c2410c',
+								'button_text_color' => '#ffffff',
 							),
 						),
 					),
@@ -164,6 +185,16 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 						'type'    => 'color',
 						'label'   => __( 'Card Background', 'zaso' ),
 						'default' => '#ffffff',
+					),
+					'text_color'        => array(
+						'type'    => 'color',
+						'label'   => __( 'Text Color', 'zaso' ),
+						'default' => '#111111',
+					),
+					'text_muted'        => array(
+						'type'    => 'color',
+						'label'   => __( 'Muted Text Color', 'zaso' ),
+						'default' => '#6b7280',
 					),
 					'card_border'       => array(
 						'type'    => 'color',
@@ -267,6 +298,8 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 		return apply_filters( 'zaso_pricing_table_less_variables', array(
 			'featured_color'    => isset( $design['featured_color'] )    ? $design['featured_color']    : '#4f46e5',
 			'card_bg'           => isset( $design['card_bg'] )           ? $design['card_bg']           : '#ffffff',
+			'text_color'        => isset( $design['text_color'] )        ? $design['text_color']        : '#111111',
+			'text_muted'        => isset( $design['text_muted'] )        ? $design['text_muted']        : '#6b7280',
 			'card_border'       => isset( $design['card_border'] )       ? $design['card_border']       : '#e5e7eb',
 			'card_radius'       => isset( $design['card_radius'] )       ? $design['card_radius']       : '12px',
 			'button_bg'         => isset( $design['button_bg'] )         ? $design['button_bg']         : '#4f46e5',

@@ -9,6 +9,8 @@
 @card_radius:       12px;
 @button_bg:         #4f46e5;
 @button_text_color: #ffffff;
+@text_color:        #111111;
+@text_muted:        #6b7280;
 @gap:               24px;
 
 // ─── Grid ─────────────────────────────────────────────────────────────────────
@@ -63,13 +65,13 @@
 	margin:         0;
 	font-size:      1.1rem;
 	font-weight:    700;
-	color:          @featured_color;
+	color:          @text_color;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
 
 .zaso-pricing-table__item:not( .zaso-pricing-table__item--featured ) .zaso-pricing-table__name {
-	color: #6b7280;
+	color: @text_muted;
 }
 
 // ─── Price ────────────────────────────────────────────────────────────────────
@@ -83,25 +85,25 @@
 .zaso-pricing-table__currency {
 	font-size:   1.25rem;
 	font-weight: 600;
-	color:       #111111;
+	color:       @text_color;
 }
 
 .zaso-pricing-table__price {
 	font-size:   2.5rem;
 	font-weight: 700;
 	line-height: 1;
-	color:       #111111;
+	color:       @text_color;
 }
 
 .zaso-pricing-table__period {
 	font-size: 0.875rem;
-	color:     #6b7280;
+	color:     @text_muted;
 }
 
 // ─── Description ──────────────────────────────────────────────────────────────
 .zaso-pricing-table__description {
 	font-size: 0.9rem;
-	color:     #6b7280;
+	color:     @text_muted;
 	margin:    0 0 16px;
 }
 
@@ -119,7 +121,7 @@
 	gap:         8px;
 	padding:     6px 0;
 	font-size:   0.9rem;
-	color:       #374151;
+	color:       @text_muted;
 }
 
 .zaso-pricing-table__features svg {

@@ -72,34 +72,14 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 				 * Selecting one fills the Design fields below; users can still tweak.
 				 */
 				'options'        => apply_filters( 'zaso_design_presets', array(
-					'indigo_bold'   => array(
-						'label'  => __( 'Indigo Bold', 'zaso' ),
+					'saas_indigo' => array(
+						'label'  => __( 'Indigo', 'zaso' ),
 						'values' => array(
 							'design' => array(
 								'hover_box' => array(
-									'caption_background_color'   => '#4f46e5',
-									'caption_background_opacity' => '90',
-									'caption_font_color'         => '#ffffff',
-								),
-								'modal_button' => array(
-									'button_background_color'        => '#ffffff',
-									'button_font_color'              => '#4f46e5',
-									'button_border_color'            => '#ffffff',
-									'button_background_color_hover'  => '#4338ca',
-									'button_font_color_hover'        => '#ffffff',
-									'button_border_color_hover'      => '#4338ca',
-								),
-							),
-						),
-					),
-					'slate_dark'    => array(
-						'label'  => __( 'Slate Dark', 'zaso' ),
-						'values' => array(
-							'design' => array(
-								'hover_box' => array(
-									'caption_background_color'   => '#0f172a',
-									'caption_background_opacity' => '90',
-									'caption_font_color'         => '#ffffff',
+									'caption_background_color'   => '#ffffff',
+									'caption_background_opacity' => '95',
+									'caption_font_color'         => '#0f172a',
 								),
 								'modal_button' => array(
 									'button_background_color'        => '#4f46e5',
@@ -107,27 +87,67 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 									'button_border_color'            => '#4f46e5',
 									'button_background_color_hover'  => '#ffffff',
 									'button_font_color_hover'        => '#0f172a',
-									'button_border_color_hover'      => '#ffffff',
+									'button_border_color_hover'      => '#4f46e5',
 								),
 							),
 						),
 					),
-					'light_minimal' => array(
-						'label'  => __( 'Light Minimal', 'zaso' ),
+					'dark_midnight' => array(
+						'label'  => __( 'Midnight', 'zaso' ),
 						'values' => array(
 							'design' => array(
 								'hover_box' => array(
-									'caption_background_color'   => '#f8fafc',
+									'caption_background_color'   => '#0f172a',
 									'caption_background_opacity' => '90',
-									'caption_font_color'         => '#0f172a',
+									'caption_font_color'         => '#e2e8f0',
 								),
 								'modal_button' => array(
-									'button_background_color'        => '#0f172a',
+									'button_background_color'        => '#4f46e5',
 									'button_font_color'              => '#ffffff',
-									'button_border_color'            => '#0f172a',
-									'button_background_color_hover'  => '#4f46e5',
-									'button_font_color_hover'        => '#ffffff',
+									'button_border_color'            => '#4f46e5',
+									'button_background_color_hover'  => '#0f172a',
+									'button_font_color_hover'        => '#e2e8f0',
 									'button_border_color_hover'      => '#4f46e5',
+								),
+							),
+						),
+					),
+					'min_mono' => array(
+						'label'  => __( 'Mono', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'hover_box' => array(
+									'caption_background_color'   => '#ffffff',
+									'caption_background_opacity' => '95',
+									'caption_font_color'         => '#111111',
+								),
+								'modal_button' => array(
+									'button_background_color'        => '#111111',
+									'button_font_color'              => '#ffffff',
+									'button_border_color'            => '#111111',
+									'button_background_color_hover'  => '#ffffff',
+									'button_font_color_hover'        => '#111111',
+									'button_border_color_hover'      => '#111111',
+								),
+							),
+						),
+					),
+					'bold_sunset' => array(
+						'label'  => __( 'Sunset', 'zaso' ),
+						'values' => array(
+							'design' => array(
+								'hover_box' => array(
+									'caption_background_color'   => '#fff7ed',
+									'caption_background_opacity' => '95',
+									'caption_font_color'         => '#7c2d12',
+								),
+								'modal_button' => array(
+									'button_background_color'        => '#c2410c',
+									'button_font_color'              => '#ffffff',
+									'button_border_color'            => '#c2410c',
+									'button_background_color_hover'  => '#fff7ed',
+									'button_font_color_hover'        => '#7c2d12',
+									'button_border_color_hover'      => '#c2410c',
 								),
 							),
 						),
