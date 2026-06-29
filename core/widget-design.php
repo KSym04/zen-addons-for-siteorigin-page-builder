@@ -120,8 +120,8 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		public function register_menu() {
 			add_submenu_page(
 				self::PARENT_SLUG,
-				esc_html__( 'Design Library', 'zaso' ),
-				esc_html__( 'Design Library', 'zaso' ),
+				esc_html__( 'Templates', 'zaso' ),
+				esc_html__( 'Templates', 'zaso' ),
 				self::CAPABILITY,
 				self::MENU_SLUG,
 				array( $this, 'render_page' )
@@ -458,333 +458,249 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		}
 
 		/**
-		 * Render the Widget Design gallery page.
+		 * Collect the Zen Addons section templates registered with SiteOrigin Page
+		 * Builder's prebuilt "Layouts" browser.
 		 *
-		 * @since 1.10.2
+		 * Reads the live `siteorigin_panels_prebuilt_layouts` filter and keeps only
+		 * the ids namespaced with `zaso-section-` (so theme or third party layouts
+		 * never leak in). Pro sections carry the `zaso-section-pro-` prefix and only
+		 * appear once Zen Addons Pro is active and licensed, because the Pro plugin
+		 * registers them through the same filter.
+		 *
+		 * @since  1.11.0
+		 * @return array List of templates: id, name, desc, screenshot, isPro.
+		 */
+		public function get_section_templates() {
+			$layouts = apply_filters( 'siteorigin_panels_prebuilt_layouts', array() );
+
+			$templates = array();
+
+			if ( ! is_array( $layouts ) ) {
+				return $templates;
+			}
+
+			foreach ( $layouts as $id => $layout ) {
+				$id = (string) $id;
+
+				if ( 0 !== strpos( $id, 'zaso-section-' ) ) {
+					continue;
+				}
+
+				if ( ! is_array( $layout ) ) {
+					continue;
+				}
+
+				$templates[] = array(
+					'id'         => $id,
+					'name'       => isset( $layout['name'] ) ? (string) $layout['name'] : $id,
+					'desc'       => isset( $layout['description'] ) ? (string) $layout['description'] : '',
+					'screenshot' => isset( $layout['screenshot'] ) ? (string) $layout['screenshot'] : '',
+					'isPro'      => ( 0 === strpos( $id, 'zaso-section-pro-' ) ),
+				);
+			}
+
+			return $templates;
+		}
+
+		/**
+		 * Render the Templates hub page.
+		 *
+		 * A showcase and quick-start guide for the Section Template Library. The
+		 * sections themselves are inserted from Page Builder's own "Layouts"
+		 * browser; this page is the gallery and the how-to, not the inserter.
+		 *
+		 * @since 1.11.0
 		 */
 		public function render_page() {
 			if ( ! current_user_can( self::CAPABILITY ) ) {
 				return;
 			}
 
-			// Build the section model up front so the hero can report accurate totals.
-			$widgets    = $this->get_supported_widgets();
-			$sections   = array();
-			$total_free = 0;
-			$total_pro  = 0;
+			$templates = $this->get_section_templates();
 
-			foreach ( $widgets as $class => $meta ) {
-				if ( ! $this->ensure_widget_class( $class, $meta['folder'] ) ) {
-					continue;
+			// Pro is "unlocked" only when the Pro plugin is present and licensed.
+			$licensed = ( class_exists( 'Zanp_Pro' ) && method_exists( 'Zanp_Pro', 'is_licensed' ) && Zanp_Pro::is_licensed() );
+
+			$pro_count  = 0;
+			$free_count = 0;
+			foreach ( $templates as $tpl ) {
+				if ( $tpl['isPro'] ) {
+					++$pro_count;
+				} else {
+					++$free_count;
 				}
-
-				$skins = $this->get_widget_skins( $class );
-				if ( empty( $skins ) ) {
-					continue;
-				}
-
-				// Widget slug: folder basename without the zaso- prefix and -widgets suffix.
-				$slug = preg_replace( array( '/^zaso-/', '/-widgets$/' ), '', $meta['folder'] );
-
-				$free = array();
-				$pro  = array();
-				foreach ( $skins as $preset_id => $preset ) {
-					$preset_id = (string) $preset_id;
-					if ( 0 === strpos( $preset_id, 'pro_' ) ) {
-						$pro[ $preset_id ] = $preset;
-					} else {
-						$free[ $preset_id ] = $preset;
-					}
-				}
-
-				$total_free += count( $free );
-				$total_pro  += count( $pro );
-
-				$sections[] = array(
-					'label'  => $meta['label'],
-					'slug'   => $slug,
-					'anchor' => 'zaso-wd-w-' . $slug,
-					'free'   => $free,
-					'pro'    => $pro,
-				);
 			}
 
 			$logo_url = defined( 'ZASO_BASE_DIR' )
 				? ZASO_BASE_DIR . 'assets/img/zaso-logo.png'
 				: plugins_url( 'assets/img/zaso-logo.png', dirname( __DIR__ ) . '/zen-addons-siteorigin.php' );
 			?>
-			<div class="wrap zaso-wd">
+			<div class="wrap zaso-th">
 				<style>
-					.zaso-wd { max-width: 1240px; }
-					.zaso-wd * { box-sizing: border-box; }
+					.zaso-th { max-width: 1180px; }
+					.zaso-th * { box-sizing: border-box; }
 
 					/* ---- Hero ---- */
-					.zaso-wd .zaso-wd-hero { background: linear-gradient( 180deg, #ffffff 0%, #f8fafc 100% ); border: 1px solid #e2e8f0; border-radius: 18px; padding: 26px 28px; margin: 16px 0 8px; box-shadow: 0 1px 2px rgba( 15, 23, 42, 0.04 ); }
-					.zaso-wd .zaso-wd-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-					.zaso-wd .zaso-wd-brand img { width: 40px; height: 40px; border-radius: 10px; display: block; flex-shrink: 0; }
-					.zaso-wd .zaso-wd-wordmark { font-size: 15px; font-weight: 700; color: #0f172a; letter-spacing: 0.2px; }
-					.zaso-wd .zaso-wd-eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #15803d; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 4px 10px; border-radius: 999px; }
-					.zaso-wd .zaso-wd-hero h1 { color: #0f172a; font-size: 28px; font-weight: 800; line-height: 1.15; margin: 0 0 6px; padding: 0; }
-					.zaso-wd .zaso-wd-intro { color: #475569; font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 760px; }
+					.zaso-th .zaso-th-hero { background: linear-gradient( 180deg, #ffffff 0%, #f8fafc 100% ); border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px 30px; margin: 16px 0 22px; box-shadow: 0 1px 2px rgba( 15, 23, 42, 0.04 ); }
+					.zaso-th .zaso-th-brand { display: flex; align-items: center; gap: 11px; margin-bottom: 16px; }
+					.zaso-th .zaso-th-brand img { width: 38px; height: 38px; border-radius: 9px; display: block; flex-shrink: 0; }
+					.zaso-th .zaso-th-wordmark { font-size: 14.5px; font-weight: 700; color: #0f172a; letter-spacing: 0.2px; }
+					.zaso-th .zaso-th-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #1d4ed8; background: #eff6ff; border: 1px solid #bfdbfe; padding: 4px 10px; border-radius: 999px; }
+					.zaso-th .zaso-th-hero h1 { color: #0f172a; font-size: 28px; font-weight: 800; line-height: 1.15; margin: 0 0 7px; padding: 0; }
+					.zaso-th .zaso-th-intro { color: #475569; font-size: 14.5px; line-height: 1.55; margin: 0; max-width: 720px; }
 
-					/* How-to steps */
-					.zaso-wd .zaso-wd-steps { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-					.zaso-wd .zaso-wd-step { display: flex; align-items: flex-start; gap: 10px; flex: 1 1 200px; min-width: 200px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; }
-					.zaso-wd .zaso-wd-step .num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 999px; background: #15803d; color: #ffffff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-					.zaso-wd .zaso-wd-step .txt { font-size: 12.5px; line-height: 1.4; color: #334155; }
-					.zaso-wd .zaso-wd-step .txt b { color: #0f172a; }
+					/* ---- How-to strip ---- */
+					.zaso-th .zaso-th-how { margin: 0 0 26px; }
+					.zaso-th .zaso-th-how h2 { color: #0f172a; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; margin: 0 2px 12px; padding: 0; }
+					.zaso-th .zaso-th-steps { display: grid; grid-template-columns: repeat( 3, 1fr ); gap: 14px; }
+					.zaso-th .zaso-th-step { display: flex; align-items: flex-start; gap: 12px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 16px; }
+					.zaso-th .zaso-th-step .num { flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px; background: #2563eb; color: #ffffff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+					.zaso-th .zaso-th-step .txt { font-size: 13px; line-height: 1.45; color: #475569; }
+					.zaso-th .zaso-th-step .txt b { color: #0f172a; font-weight: 700; }
 
-					/* Stat + legend bar */
-					.zaso-wd .zaso-wd-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin-top: 18px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
-					.zaso-wd .zaso-wd-stat { font-size: 13px; color: #475569; }
-					.zaso-wd .zaso-wd-stat b { color: #0f172a; font-weight: 700; }
-					.zaso-wd .zaso-wd-legend { display: flex; align-items: center; gap: 12px; margin-left: auto; }
-					.zaso-wd .zaso-wd-legend span { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #475569; }
+					/* ---- Section heading ---- */
+					.zaso-th .zaso-th-sec-head { display: flex; align-items: baseline; gap: 12px; margin: 0 2px 16px; }
+					.zaso-th .zaso-th-sec-head h2 { color: #0f172a; font-size: 19px; font-weight: 800; margin: 0; padding: 0; border: 0; }
+					.zaso-th .zaso-th-sec-head .meta { font-size: 13px; color: #64748b; }
 
-					/* ---- Sticky widget nav ---- */
-					.zaso-wd .zaso-wd-nav { position: sticky; top: 32px; z-index: 20; display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; margin: 16px 0 8px; background: rgba( 255, 255, 255, 0.9 ); backdrop-filter: saturate( 180% ) blur( 8px ); border: 1px solid #e2e8f0; border-radius: 14px; }
-					.zaso-wd .zaso-wd-nav a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; font-size: 13px; font-weight: 600; color: #334155; background: #f1f5f9; border: 1px solid transparent; padding: 7px 12px; border-radius: 999px; transition: all 0.12s ease; }
-					.zaso-wd .zaso-wd-nav a:hover { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
-					.zaso-wd .zaso-wd-nav a .ct { font-size: 11px; font-weight: 700; color: #64748b; background: #ffffff; border-radius: 999px; padding: 1px 7px; }
+					/* ---- Card grid ---- */
+					.zaso-th .zaso-th-grid { display: grid; grid-template-columns: repeat( auto-fill, minmax( 296px, 1fr ) ); gap: 20px; }
+					.zaso-th .zaso-th-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 2px rgba( 15, 23, 42, 0.04 ); transition: box-shadow 0.14s ease, transform 0.14s ease, border-color 0.14s ease; }
+					.zaso-th .zaso-th-card:hover { box-shadow: 0 10px 26px rgba( 15, 23, 42, 0.10 ); transform: translateY( -3px ); border-color: #cbd5e1; }
 
-					/* ---- Section ---- */
-					.zaso-wd .zaso-wd-section { scroll-margin-top: 96px; margin: 28px 0 0; }
-					.zaso-wd .zaso-wd-section-head { display: flex; align-items: baseline; gap: 12px; margin: 0 0 14px; }
-					.zaso-wd h2 { color: #0f172a; font-size: 20px; font-weight: 800; margin: 0; padding: 0; border: 0; }
-					.zaso-wd .zaso-wd-section-head .meta { font-size: 13px; color: #64748b; }
+					.zaso-th .zaso-th-thumb { position: relative; aspect-ratio: 16 / 10; background: #f1f5f9; overflow: hidden; border-bottom: 1px solid #e2e8f0; }
+					.zaso-th .zaso-th-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+					/* Top scrim keeps the corner badge legible over any screenshot. */
+					.zaso-th .zaso-th-thumb::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 60px; z-index: 1; pointer-events: none; background: linear-gradient( 180deg, rgba( 15, 23, 42, 0.16 ) 0%, rgba( 15, 23, 42, 0 ) 100% ); }
 
-					/* Free / Pro groups */
-					.zaso-wd .zaso-wd-group { border-radius: 16px; padding: 16px 16px 18px; margin-bottom: 14px; }
-					.zaso-wd .zaso-wd-group.is-free { background: #f8fafc; border: 1px solid #eef2f6; }
-					.zaso-wd .zaso-wd-group.is-pro { background: linear-gradient( 180deg, #f0fdf4 0%, #f7fef9 100% ); border: 1px solid #dcfce7; }
-					.zaso-wd .zaso-wd-group-label { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.6px; margin: 0 2px 12px; }
-					.zaso-wd .zaso-wd-group.is-pro .zaso-wd-group-label { color: #166534; }
-					.zaso-wd .zaso-wd-group-label .hint { margin-left: auto; font-size: 11px; font-weight: 500; letter-spacing: 0; text-transform: none; color: #64748b; }
+					/* Placeholder sits behind the screenshot so a missing image still looks intentional. */
+					.zaso-th .zaso-th-ph { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 9px; padding: 22px; background: linear-gradient( 135deg, #eef2ff 0%, #f0f9ff 100% ); }
+					.zaso-th .zaso-th-ph i { display: block; border-radius: 5px; background: #ffffff; box-shadow: 0 1px 2px rgba( 15, 23, 42, 0.06 ); }
+					.zaso-th .zaso-th-ph i.b1 { height: 16px; width: 52%; }
+					.zaso-th .zaso-th-ph i.b2 { height: 9px; width: 78%; background: #dbeafe; box-shadow: none; }
+					.zaso-th .zaso-th-ph i.b3 { height: 9px; width: 64%; background: #dbeafe; box-shadow: none; }
+					.zaso-th .zaso-th-ph i.b4 { margin-top: auto; height: 26px; width: 38%; background: #2563eb; box-shadow: none; }
 
-					.zaso-wd .zaso-wd-grid { display: grid; grid-template-columns: repeat( auto-fill, minmax( 224px, 1fr ) ); gap: 16px; }
-					.zaso-wd .zaso-wd-card { border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px; background: #ffffff; box-shadow: 0 1px 2px rgba( 15, 23, 42, 0.04 ); transition: box-shadow 0.12s ease, transform 0.12s ease; }
-					.zaso-wd .zaso-wd-card:hover { box-shadow: 0 6px 18px rgba( 15, 23, 42, 0.08 ); transform: translateY( -2px ); }
-					.zaso-wd .zaso-wd-pv-frame { border-radius: 10px; padding: 12px; background: linear-gradient( 180deg, #f8fafc 0%, #f1f5f9 100% ); border: 1px solid #eef2f6; }
+					.zaso-th .zaso-th-badge { position: absolute; top: 12px; right: 12px; z-index: 2; display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; white-space: nowrap; backdrop-filter: saturate( 180% ) blur( 4px ); }
+					.zaso-th .zaso-th-badge.is-free { color: #334155; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba( 15, 23, 42, 0.16 ); }
+					.zaso-th .zaso-th-badge.is-pro { color: #ffffff; background: #15803d; box-shadow: 0 1px 3px rgba( 21, 128, 61, 0.4 ); }
+					.zaso-th .zaso-th-badge.is-pro .dot { width: 5px; height: 5px; border-radius: 999px; background: #bbf7d0; }
 
-					/* Shared preview frame. Each skin renders a roughly 140px facsimile of the real widget. */
-					.zaso-wd .zaso-wd-pv { height: 140px; border-radius: 8px; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; box-shadow: 0 1px 3px rgba( 15, 23, 42, 0.10 ); }
+					.zaso-th .zaso-th-body { padding: 15px 16px 17px; display: flex; flex-direction: column; gap: 5px; }
+					.zaso-th .zaso-th-body h3 { color: #0f172a; font-size: 15px; font-weight: 700; line-height: 1.3; margin: 0; padding: 0; }
+					.zaso-th .zaso-th-body p { color: #475569; font-size: 13px; line-height: 1.5; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-					/* Alert Box. */
-					.zaso-wd .zaso-wd-pv-alert { justify-content: center; gap: 4px; padding: 14px; }
-					.zaso-wd .zaso-wd-pv-alert strong { font-size: 13px; line-height: 1.2; }
-					.zaso-wd .zaso-wd-pv-alert span { font-size: 12px; line-height: 1.4; }
+					/* ---- Upsell card ---- */
+					.zaso-th .zaso-th-upsell { display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: 24px; text-decoration: none; background: linear-gradient( 160deg, #f0fdf4 0%, #ffffff 70% ); border: 1px dashed #86efac; border-radius: 12px; transition: border-color 0.14s ease, box-shadow 0.14s ease; }
+					.zaso-th .zaso-th-upsell:hover { border-color: #22c55e; box-shadow: 0 10px 26px rgba( 21, 128, 61, 0.12 ); }
+					.zaso-th .zaso-th-upsell .ic { width: 42px; height: 42px; border-radius: 11px; background: #15803d; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 4px; }
+					.zaso-th .zaso-th-upsell strong { display: block; color: #166534; font-size: 16px; font-weight: 800; line-height: 1.25; }
+					.zaso-th .zaso-th-upsell span { color: #475569; font-size: 13px; line-height: 1.5; }
+					.zaso-th .zaso-th-upsell .cta { align-self: flex-start; margin-top: 6px; font-size: 13px; font-weight: 700; color: #ffffff; background: #15803d; padding: 9px 16px; border-radius: 10px; }
 
-					/* CTA Banner. */
-					.zaso-wd .zaso-wd-pv-cta { justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 12px; }
-					.zaso-wd .zaso-wd-pv-cta .zaso-wd-pv-h { font-size: 14px; font-weight: 700; line-height: 1.2; }
-					.zaso-wd .zaso-wd-pv-cta .zaso-wd-pv-sub { font-size: 11px; line-height: 1.3; opacity: 0.9; }
-					.zaso-wd .zaso-wd-pv-cta .zaso-wd-pv-btn { margin-top: 2px; font-size: 11px; font-weight: 600; padding: 6px 12px; }
-
-					/* Pricing Table. */
-					.zaso-wd .zaso-wd-pv-pricing { position: relative; align-items: center; justify-content: center; gap: 5px; padding: 16px 12px 12px; }
-					.zaso-wd .zaso-wd-pv-pricing .zaso-wd-pv-stripe { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-					.zaso-wd .zaso-wd-pv-pricing .zaso-wd-pv-price { font-size: 22px; font-weight: 800; line-height: 1; }
-					.zaso-wd .zaso-wd-pv-pricing .zaso-wd-pv-feat { width: 70%; height: 5px; border-radius: 3px; background: #e2e8f0; }
-					.zaso-wd .zaso-wd-pv-pricing .zaso-wd-pv-btn { margin-top: 4px; width: 82%; text-align: center; font-size: 11px; font-weight: 600; padding: 6px 0; border-radius: 6px; }
-
-					/* Testimonial Slider. */
-					.zaso-wd .zaso-wd-pv-testimonial { justify-content: center; gap: 6px; padding: 14px; }
-					.zaso-wd .zaso-wd-pv-testimonial .zaso-wd-pv-stars { font-size: 13px; letter-spacing: 3px; line-height: 1; }
-					.zaso-wd .zaso-wd-pv-testimonial .zaso-wd-pv-quote { font-size: 12px; line-height: 1.4; font-style: italic; }
-					.zaso-wd .zaso-wd-pv-testimonial .zaso-wd-pv-author { font-size: 11px; font-weight: 700; }
-
-					/* Counter. */
-					.zaso-wd .zaso-wd-pv-counter { justify-content: center; align-items: center; gap: 4px; padding: 12px; border: 1px solid #e2e8f0; }
-					.zaso-wd .zaso-wd-pv-counter .zaso-wd-pv-dot { width: 10px; height: 10px; border-radius: 999px; margin-bottom: 2px; }
-					.zaso-wd .zaso-wd-pv-counter .zaso-wd-pv-num { font-size: 26px; font-weight: 800; line-height: 1; }
-					.zaso-wd .zaso-wd-pv-counter .zaso-wd-pv-lbl { font-size: 11px; }
-
-					/* Hover Card. */
-					.zaso-wd .zaso-wd-pv-hover { justify-content: flex-end; background: linear-gradient( 135deg, #cbd5e1, #94a3b8 ); }
-					.zaso-wd .zaso-wd-pv-hover .zaso-wd-pv-caption { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; }
-					.zaso-wd .zaso-wd-pv-hover .zaso-wd-pv-caption-t { font-size: 12px; font-weight: 600; }
-					.zaso-wd .zaso-wd-pv-hover .zaso-wd-pv-btn { font-size: 10px; font-weight: 600; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
-
-					/* Services Grid. */
-					.zaso-wd .zaso-wd-pv-services { justify-content: center; gap: 5px; padding: 14px; }
-					.zaso-wd .zaso-wd-pv-services .zaso-wd-pv-chip { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; line-height: 1; box-sizing: border-box; }
-					.zaso-wd .zaso-wd-pv-services .zaso-wd-pv-title { font-size: 13px; font-weight: 700; }
-					.zaso-wd .zaso-wd-pv-services .zaso-wd-pv-desc { font-size: 11px; line-height: 1.4; }
-
-					.zaso-wd .zaso-wd-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 11px; }
-					.zaso-wd .zaso-wd-label { color: #0f172a; font-size: 13px; font-weight: 600; line-height: 1.2; }
-					.zaso-wd .zaso-wd-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; white-space: nowrap; }
-					.zaso-wd .zaso-wd-badge.is-free { color: #475569; background: #eef2f6; border: 1px solid #e2e8f0; }
-					.zaso-wd .zaso-wd-badge.is-pro { color: #ffffff; background: #15803d; box-shadow: 0 1px 2px rgba( 21, 128, 61, 0.35 ); }
-					.zaso-wd .zaso-wd-badge.is-pro .dot { width: 5px; height: 5px; border-radius: 999px; background: #bbf7d0; }
-
-					/* Locked / unlock affordance for Pro when unlicensed. */
-					.zaso-wd .zaso-wd-unlock { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; border: 1px dashed #86efac; border-radius: 14px; padding: 18px 20px; background: #ffffff; text-decoration: none; }
-					.zaso-wd .zaso-wd-unlock .ic { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #15803d; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-					.zaso-wd .zaso-wd-unlock .body { flex: 1 1 auto; }
-					.zaso-wd .zaso-wd-unlock strong { display: block; color: #166534; font-size: 15px; margin-bottom: 2px; }
-					.zaso-wd .zaso-wd-unlock span { color: #475569; font-size: 13px; }
-					.zaso-wd .zaso-wd-unlock .cta { flex-shrink: 0; font-size: 13px; font-weight: 700; color: #ffffff; background: #15803d; padding: 9px 16px; border-radius: 10px; }
+					/* ---- Empty state ---- */
+					.zaso-th .zaso-th-empty { border: 1px dashed #cbd5e1; border-radius: 12px; padding: 40px 24px; text-align: center; color: #64748b; font-size: 14px; background: #f8fafc; }
 
 					@media ( max-width: 782px ) {
-						.zaso-wd .zaso-wd-hero { padding: 20px; }
-						.zaso-wd .zaso-wd-hero h1 { font-size: 23px; }
-						.zaso-wd .zaso-wd-legend { margin-left: 0; }
-						.zaso-wd .zaso-wd-nav { top: 46px; }
-						.zaso-wd .zaso-wd-grid { grid-template-columns: repeat( auto-fill, minmax( 160px, 1fr ) ); gap: 12px; }
-						.zaso-wd .zaso-wd-unlock { flex-direction: column; align-items: flex-start; }
+						.zaso-th .zaso-th-hero { padding: 22px; }
+						.zaso-th .zaso-th-hero h1 { font-size: 23px; }
+						.zaso-th .zaso-th-steps { grid-template-columns: 1fr; }
+						.zaso-th .zaso-th-grid { grid-template-columns: 1fr; gap: 16px; }
 					}
 				</style>
 
-				<div class="zaso-wd-hero">
-					<div class="zaso-wd-brand">
-						<img src="<?php echo esc_url( $logo_url ); ?>" alt="" width="40" height="40" />
-						<span class="zaso-wd-wordmark"><?php echo esc_html__( 'Zen Addons', 'zaso' ); ?></span>
-						<span class="zaso-wd-eyebrow"><?php echo esc_html__( 'Design Library', 'zaso' ); ?></span>
+				<div class="zaso-th-hero">
+					<div class="zaso-th-brand">
+						<img src="<?php echo esc_url( $logo_url ); ?>" alt="" width="38" height="38" />
+						<span class="zaso-th-wordmark"><?php echo esc_html__( 'Zen Addons', 'zaso' ); ?></span>
+						<span class="zaso-th-eyebrow"><?php echo esc_html__( 'Templates', 'zaso' ); ?></span>
 					</div>
-					<h1><?php echo esc_html__( 'Design Library', 'zaso' ); ?></h1>
-					<p class="zaso-wd-intro"><?php echo esc_html__( 'A live gallery of every ready made skin for your Zen Addons widgets. Browse the looks below, then apply one in the Page Builder editor and fine tune the colors to match your brand.', 'zaso' ); ?></p>
+					<h1><?php echo esc_html__( 'Templates', 'zaso' ); ?></h1>
+					<p class="zaso-th-intro"><?php echo esc_html__( 'Ready-to-insert sections, designed with Zen Addons widgets.', 'zaso' ); ?></p>
+				</div>
 
-					<div class="zaso-wd-steps">
-						<div class="zaso-wd-step">
+				<div class="zaso-th-how">
+					<h2><?php echo esc_html__( 'How to add a template', 'zaso' ); ?></h2>
+					<div class="zaso-th-steps">
+						<div class="zaso-th-step">
 							<span class="num">1</span>
 							<span class="txt"><?php
 								printf(
-									/* translators: %s: the Page Builder widget tab name. */
-									esc_html__( 'Add a Zen Addons widget in %s.', 'zaso' ),
+									/* translators: %s: the page editor name (Page Builder). */
+									esc_html__( 'Edit a page with %s.', 'zaso' ),
 									'<b>' . esc_html__( 'Page Builder', 'zaso' ) . '</b>'
 								);
 							?></span>
 						</div>
-						<div class="zaso-wd-step">
+						<div class="zaso-th-step">
 							<span class="num">2</span>
 							<span class="txt"><?php
 								printf(
-									/* translators: %s: the widget field label that holds the skins. */
-									esc_html__( 'Open its %s dropdown.', 'zaso' ),
-									'<b>' . esc_html__( 'Design Style', 'zaso' ) . '</b>'
+									/* translators: %s: the Page Builder browser tab name (Layouts). */
+									esc_html__( 'Open the %s tab.', 'zaso' ),
+									'<b>' . esc_html__( 'Layouts', 'zaso' ) . '</b>'
 								);
 							?></span>
 						</div>
-						<div class="zaso-wd-step">
+						<div class="zaso-th-step">
 							<span class="num">3</span>
-							<span class="txt"><?php echo wp_kses( __( 'Pick a skin, then <b>tweak the colors</b> to taste.', 'zaso' ), array( 'b' => array() ) ); ?></span>
+							<span class="txt"><?php echo wp_kses( __( 'Choose a <b>Zen Addons section</b> to insert it.', 'zaso' ), array( 'b' => array() ) ); ?></span>
 						</div>
-					</div>
-
-					<div class="zaso-wd-stats">
-						<span class="zaso-wd-stat"><b><?php echo esc_html( number_format_i18n( count( $sections ) ) ); ?></b> <?php echo esc_html__( 'widgets', 'zaso' ); ?></span>
-						<span class="zaso-wd-stat"><b><?php echo esc_html( number_format_i18n( $total_free ) ); ?></b> <?php echo esc_html__( 'free skins', 'zaso' ); ?></span>
-						<span class="zaso-wd-stat"><b><?php echo esc_html( number_format_i18n( $total_pro ) ); ?></b> <?php echo esc_html__( 'Pro skins', 'zaso' ); ?></span>
-						<span class="zaso-wd-legend">
-							<span><span class="zaso-wd-badge is-free"><?php echo esc_html__( 'Free', 'zaso' ); ?></span><?php echo esc_html__( 'included', 'zaso' ); ?></span>
-							<span><span class="zaso-wd-badge is-pro"><span class="dot"></span><?php echo esc_html__( 'Pro', 'zaso' ); ?></span><?php echo esc_html__( 'with a license', 'zaso' ); ?></span>
-						</span>
 					</div>
 				</div>
 
-				<?php if ( ! empty( $sections ) ) : ?>
-				<nav class="zaso-wd-nav" aria-label="<?php echo esc_attr__( 'Jump to widget', 'zaso' ); ?>">
-					<?php foreach ( $sections as $section ) : ?>
-						<a href="#<?php echo esc_attr( $section['anchor'] ); ?>">
-							<?php echo esc_html( $section['label'] ); ?>
-							<span class="ct"><?php echo esc_html( number_format_i18n( count( $section['free'] ) + count( $section['pro'] ) ) ); ?></span>
-						</a>
-					<?php endforeach; ?>
-				</nav>
-				<?php endif; ?>
+				<div class="zaso-th-sec-head">
+					<h2><?php echo esc_html__( 'Section templates', 'zaso' ); ?></h2>
+					<span class="meta"><?php
+						printf(
+							/* translators: 1: number of free templates, 2: number of Pro templates. */
+							esc_html__( '%1$d free, %2$d Pro', 'zaso' ),
+							(int) $free_count,
+							(int) $pro_count
+						);
+					?></span>
+				</div>
 
-				<?php foreach ( $sections as $section ) : ?>
-					<section id="<?php echo esc_attr( $section['anchor'] ); ?>" class="zaso-wd-section">
-						<div class="zaso-wd-section-head">
-							<h2><?php echo esc_html( $section['label'] ); ?></h2>
-							<span class="meta"><?php
-								printf(
-									/* translators: 1: number of free skins, 2: number of Pro skins. */
-									esc_html__( '%1$d free, %2$d Pro', 'zaso' ),
-									(int) count( $section['free'] ),
-									(int) count( $section['pro'] )
-								);
-							?></span>
-						</div>
+				<?php if ( empty( $templates ) && $licensed ) : ?>
+					<div class="zaso-th-empty"><?php echo esc_html__( 'No section templates are registered yet.', 'zaso' ); ?></div>
+				<?php else : ?>
+					<div class="zaso-th-grid">
+						<?php foreach ( $templates as $tpl ) : ?>
+							<div class="zaso-th-card">
+								<div class="zaso-th-thumb">
+									<span class="zaso-th-ph" aria-hidden="true">
+										<i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i>
+									</span>
+									<?php if ( '' !== $tpl['screenshot'] ) : ?>
+										<img src="<?php echo esc_url( $tpl['screenshot'] ); ?>" alt="<?php echo esc_attr( $tpl['name'] ); ?>" loading="lazy" />
+									<?php endif; ?>
+									<?php if ( $tpl['isPro'] ) : ?>
+										<span class="zaso-th-badge is-pro"><span class="dot"></span><?php echo esc_html__( 'Pro', 'zaso' ); ?></span>
+									<?php else : ?>
+										<span class="zaso-th-badge is-free"><?php echo esc_html__( 'Free', 'zaso' ); ?></span>
+									<?php endif; ?>
+								</div>
+								<div class="zaso-th-body">
+									<h3><?php echo esc_html( $tpl['name'] ); ?></h3>
+									<?php if ( '' !== $tpl['desc'] ) : ?>
+										<p><?php echo esc_html( $tpl['desc'] ); ?></p>
+									<?php endif; ?>
+								</div>
+							</div>
+						<?php endforeach; ?>
 
-						<?php if ( ! empty( $section['free'] ) ) : ?>
-						<div class="zaso-wd-group is-free">
-							<div class="zaso-wd-group-label">
-								<?php echo esc_html__( 'Free skins', 'zaso' ); ?>
-								<span class="hint"><?php echo esc_html__( 'included in Zen Addons', 'zaso' ); ?></span>
-							</div>
-							<div class="zaso-wd-grid">
-								<?php $this->render_cards( $section['free'], $section['slug'], false ); ?>
-							</div>
-						</div>
+						<?php if ( ! $licensed ) : ?>
+							<a class="zaso-th-upsell" href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener">
+								<span class="ic" aria-hidden="true">&#9889;</span>
+								<strong><?php echo esc_html__( 'Unlock the full Pro template library', 'zaso' ); ?></strong>
+								<span><?php echo esc_html__( 'Get premium sections built with Zen Addons widgets, plus every Pro widget and style.', 'zaso' ); ?></span>
+								<span class="cta"><?php echo esc_html__( 'Get Zen Addons Pro', 'zaso' ); ?></span>
+							</a>
 						<?php endif; ?>
-
-						<div class="zaso-wd-group is-pro">
-							<div class="zaso-wd-group-label">
-								<?php echo esc_html__( 'Pro library', 'zaso' ); ?>
-								<span class="hint"><?php echo esc_html__( 'Zen Addons Pro', 'zaso' ); ?></span>
-							</div>
-							<div class="zaso-wd-grid">
-								<?php if ( ! empty( $section['pro'] ) ) : ?>
-									<?php $this->render_cards( $section['pro'], $section['slug'], true ); ?>
-								<?php else : ?>
-									<a class="zaso-wd-unlock" href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener">
-										<span class="ic" aria-hidden="true">&#128274;</span>
-										<span class="body">
-											<strong><?php
-												printf(
-													/* translators: %s: widget label. */
-													esc_html__( '8 more %s skins with Pro', 'zaso' ),
-													esc_html( $section['label'] )
-												);
-											?></strong>
-											<span><?php echo esc_html__( 'Unlock the full design library for every widget, plus premium styles and presets.', 'zaso' ); ?></span>
-										</span>
-										<span class="cta"><?php echo esc_html__( 'Get Pro', 'zaso' ); ?></span>
-									</a>
-								<?php endif; ?>
-							</div>
-						</div>
-					</section>
-				<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
 			</div>
 			<?php
-		}
-
-		/**
-		 * Render a grid of skin cards for one Free or Pro group.
-		 *
-		 * @since  1.10.4
-		 *
-		 * @param  array  $presets Preset id => preset array (label + nested values).
-		 * @param  string $slug    Widget slug for render_preview().
-		 * @param  bool   $is_pro  Whether the group is the Pro library.
-		 * @return void
-		 */
-		protected function render_cards( $presets, $slug, $is_pro ) {
-			foreach ( $presets as $preset_id => $preset ) {
-				$preset_id = (string) $preset_id;
-				$label     = isset( $preset['label'] ) ? (string) $preset['label'] : $preset_id;
-				$values    = ( isset( $preset['values'] ) && is_array( $preset['values'] ) ) ? $preset['values'] : array();
-				// render_preview() returns trusted HTML: static markup with every dynamic colour run through esc_attr().
-				$preview = $this->render_preview( $slug, $values );
-				?>
-				<div class="zaso-wd-card">
-					<div class="zaso-wd-pv-frame">
-						<?php echo $preview; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped inside render_preview(). ?>
-					</div>
-					<div class="zaso-wd-meta">
-						<span class="zaso-wd-label"><?php echo esc_html( $label ); ?></span>
-						<?php if ( $is_pro ) : ?>
-							<span class="zaso-wd-badge is-pro"><span class="dot"></span><?php echo esc_html__( 'Pro', 'zaso' ); ?></span>
-						<?php else : ?>
-							<span class="zaso-wd-badge is-free"><?php echo esc_html__( 'Free', 'zaso' ); ?></span>
-						<?php endif; ?>
-					</div>
-				</div>
-				<?php
-			}
 		}
 	}
 
