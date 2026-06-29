@@ -10,6 +10,15 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 $layout    = in_array( $instance['layout'], array( 'stacked', 'inline' ), true ) ? $instance['layout'] : 'stacked';
 $alignment = in_array( $instance['alignment'], array( 'left', 'center', 'right' ), true ) ? $instance['alignment'] : 'center';
 
+// Optional structural layout. The default ('default') is the original full-width
+// band and adds NO modifier class, so existing instances render byte-identical.
+// Only the alternate layouts (card / split / centered) emit a modifier class.
+$block_layout    = ! empty( $instance['block_layout'] ) ? $instance['block_layout'] : 'default';
+if ( ! in_array( $block_layout, array( 'default', 'card', 'split', 'centered' ), true ) ) {
+	$block_layout = 'default';
+}
+$block_modifier = ( 'default' !== $block_layout ) ? ' zaso-cta-banner--layout-' . $block_layout : '';
+
 // Use the heading as the region's accessible name; fall back to a generic label.
 $region_label = '' !== trim( (string) $instance['heading'] ) ? $instance['heading'] : __( 'Call to action', 'zaso' );
 
@@ -31,7 +40,7 @@ if ( 'image' === $bg_type && ! empty( $bg_image_url ) ) {
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
-<section <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-cta-banner zaso-cta-banner--<?php echo esc_attr( $layout ); ?> zaso-cta-banner--align-<?php echo esc_attr( $alignment ); ?> zaso-cta-banner--bg-<?php echo esc_attr( $bg_type ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>" role="region" aria-label="<?php echo esc_attr( $region_label ); ?>"<?php echo $inline_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_url() applied above. ?>>
+<section <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-cta-banner zaso-cta-banner--<?php echo esc_attr( $layout ); ?> zaso-cta-banner--align-<?php echo esc_attr( $alignment ); ?> zaso-cta-banner--bg-<?php echo esc_attr( $bg_type ); ?><?php echo esc_attr( $block_modifier ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>" role="region" aria-label="<?php echo esc_attr( $region_label ); ?>"<?php echo $inline_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_url() applied above. ?>>
 
 	<?php if ( 'image' === $bg_type && ! empty( $bg_image_url ) ) : ?>
 		<span class="zaso-cta-banner__overlay" aria-hidden="true"></span>

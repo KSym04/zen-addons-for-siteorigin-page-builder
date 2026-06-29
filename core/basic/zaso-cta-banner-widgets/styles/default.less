@@ -167,3 +167,81 @@
 .zaso-cta-banner h2.zaso-cta-banner__heading {
   font-family: inherit;
 }
+
+// ===========================================================================
+// LAYOUT VARIANTS (structure only)
+// ---------------------------------------------------------------------------
+// Orthogonal to the colour skin and to the button-placement / alignment
+// options. The Style preset still drives bg/text/button colour via the vars
+// above; these rules only restructure shape (elevation, divider, measure).
+// They reuse the existing colour vars (e.g. @heading_color for the divider) and
+// add no new colour vars and no !important. The "default" layout emits no class
+// and is intentionally untouched here. Each block lives at a higher specificity
+// than the var-driven base so it wins cleanly.
+// ===========================================================================
+
+// ----- Layout: card --------------------------------------------------------
+// Elevated, contained promo card: larger corner radius plus a soft drop shadow
+// so the banner reads as a floating surface. Spacing still follows the skin's
+// padding vars; only the elevation and radius are restructured.
+.zaso-cta-banner--layout-card {
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -16px rgba( 0, 0, 0, 0.35 ), 0 4px 12px rgba( 0, 0, 0, 0.10 );
+}
+
+// ----- Layout: split -------------------------------------------------------
+// Two distinct zones on wider screens: the content on the left, the action on
+// the right, separated by a thin vertical divider. Distinct from the "inline"
+// placement (a plain space-between row) by the divider rule, the dedicated
+// action gutter, and an emphasised button. The divider uses the heading colour
+// faded down, so it tracks the skin without a new colour var.
+.zaso-cta-banner--layout-split .zaso-cta-banner__inner {
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .zaso-cta-banner--layout-split .zaso-cta-banner__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .zaso-cta-banner--layout-split .zaso-cta-banner__content {
+    flex: 1 1 auto;
+    text-align: left;
+  }
+
+  .zaso-cta-banner--layout-split .zaso-cta-banner__action {
+    flex-shrink: 0;
+    padding-left: 2rem;
+    border-left: 1px solid fade( @heading_color, 18% );
+  }
+}
+
+.zaso-cta-banner--layout-split .zaso-cta-banner__button {
+  padding: 0.9em 2.1em;
+}
+
+// ----- Layout: centered ----------------------------------------------------
+// A centered spotlight: content is centred and constrained to a comfortable
+// reading measure, the vertical rhythm opens up, and the button is enlarged.
+// Distinct from the "center" text-alignment option, which only changes text
+// alignment; this also caps the content width and scales the call to action.
+.zaso-cta-banner--layout-centered .zaso-cta-banner__inner {
+  align-items: center;
+  text-align: center;
+  gap: 1.75rem;
+}
+
+.zaso-cta-banner--layout-centered .zaso-cta-banner__content {
+  align-items: center;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.zaso-cta-banner--layout-centered .zaso-cta-banner__button {
+  padding: 1em 2.5em;
+  font-size: 1.05rem;
+}

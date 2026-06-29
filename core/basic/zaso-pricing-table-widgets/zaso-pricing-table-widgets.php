@@ -86,6 +86,18 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 				'label'   => __( 'Currency Symbol', 'zaso' ),
 				'default' => '$',
 			),
+			'layout' => array(
+				'type'        => 'select',
+				'label'       => __( 'Layout', 'zaso' ),
+				'default'     => 'default',
+				'description' => __( 'Structural layout of the table. The Style skin below still controls colours; Layout controls the shape (card border, shadow, radius, padding, density).', 'zaso' ),
+				'options'     => array(
+					'default'  => __( 'Default (bordered cards)', 'zaso' ),
+					'bordered' => __( 'Bordered (flat connected columns)', 'zaso' ),
+					'elevated' => __( 'Elevated (floating cards, soft shadow)', 'zaso' ),
+					'compact'  => __( 'Compact (dense padding, smaller type)', 'zaso' ),
+				),
+			),
 			'design_style' => array(
 				'type'           => 'presets',
 				'label'          => __( 'Style', 'zaso' ),

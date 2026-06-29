@@ -176,3 +176,102 @@
 	white-space: nowrap;
 	border:   0;
 }
+
+// ════════════════════════════════════════════════════════════════════════════
+// LAYOUT VARIANTS (structure only)
+// ----------------------------------------------------------------------------
+// Orthogonal to the colour skins. The Style preset still drives bg/border/accent/
+// button colours via the @vars above; these rules only restructure shape (card
+// border presence, shadow, radius, padding, density, grid gap). The "default"
+// layout adds no class and is intentionally untouched here. Flat top-level
+// selectors only, per the column-modifier convention above.
+// ════════════════════════════════════════════════════════════════════════════
+
+// ─── Layout: bordered ──────────────────────────────────────────────────────────
+// Flat connected columns: zero grid gap so the cards butt into one ruled block,
+// square corners, no shadow. Each card already carries a 1px @card_border (and the
+// featured tier a 2px accent border) from the base rules, so touching edges form
+// the seams. This stays wrap-safe: every card keeps all four borders when the
+// grid reflows on mobile, and empty trailing cells render nothing. The featured
+// tier lifts above the neighbouring seams via z-index so its accent reads cleanly.
+.zaso-pricing-table--layout-bordered {
+	gap: 0;
+}
+
+.zaso-pricing-table--layout-bordered .zaso-pricing-table__card {
+	border-radius: 0;
+	box-shadow:    none;
+}
+
+.zaso-pricing-table--layout-bordered .zaso-pricing-table__item--featured .zaso-pricing-table__card {
+	position: relative;
+	z-index:  1;
+}
+
+// ─── Layout: elevated ──────────────────────────────────────────────────────────
+// Floating cards: no border, larger radius, generous padding, soft drop shadow,
+// wider gap. The featured tier rises higher and gains an accent ring (reusing
+// @featured_color) plus a deeper shadow instead of a flat border.
+.zaso-pricing-table--layout-elevated {
+	gap: 32px;
+}
+
+.zaso-pricing-table--layout-elevated .zaso-pricing-table__card {
+	border:        0;
+	border-radius: 18px;
+	padding:       36px 32px;
+	box-shadow:    0 0 0 1px rgba( 0, 0, 0, 0.05 ), 0 10px 30px -12px rgba( 0, 0, 0, 0.25 ), 0 4px 10px rgba( 0, 0, 0, 0.06 );
+}
+
+.zaso-pricing-table--layout-elevated .zaso-pricing-table__item--featured .zaso-pricing-table__card {
+	border:     0;
+	transform:  translateY( -10px );
+	box-shadow: 0 0 0 2px @featured_color, 0 24px 50px -16px rgba( 0, 0, 0, 0.35 ), 0 8px 16px rgba( 0, 0, 0, 0.10 );
+}
+
+// ─── Layout: compact ───────────────────────────────────────────────────────────
+// Dense table: tighter padding, smaller type and row spacing, slimmer button and
+// gap, for fitting many plans or features in a small space.
+.zaso-pricing-table--layout-compact {
+	gap: 12px;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__card {
+	padding:       20px 22px;
+	border-radius: 8px;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__name {
+	font-size: 0.95rem;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__price-wrap {
+	margin: 10px 0 6px;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__price {
+	font-size: 1.9rem;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__currency {
+	font-size: 1rem;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__description {
+	font-size: 0.82rem;
+	margin:    0 0 10px;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__features {
+	margin: 10px 0 16px;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__features li {
+	padding:   3px 0;
+	font-size: 0.82rem;
+}
+
+.zaso-pricing-table--layout-compact .zaso-pricing-table__btn {
+	padding:   9px 16px;
+	font-size: 0.875rem;
+}

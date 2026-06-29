@@ -18,9 +18,19 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 if ( empty( $services ) ) {
 	return;
 }
+
+// Optional structural layout. Default ('default') is the original stacked card and
+// adds NO extra class, so existing instances render byte-identical. Only the
+// alternate layouts (boxed / icon-left / centered) add a modifier class.
+$zaso_layout         = ! empty( $instance['layout'] ) ? $instance['layout'] : 'default';
+$zaso_layout_allowed = array( 'default', 'boxed', 'icon-left', 'centered' );
+if ( ! in_array( $zaso_layout, $zaso_layout_allowed, true ) ) {
+	$zaso_layout = 'default';
+}
+$zaso_layout_class = ( 'default' !== $zaso_layout ) ? ' zaso-services-grid--layout-' . $zaso_layout : '';
 ?>
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="<?php echo esc_attr( $container_classes ); ?>">
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="<?php echo esc_attr( $container_classes . $zaso_layout_class ); ?>">
 	<ul class="zaso-services-grid__grid" role="list">
 		<?php foreach ( $services as $service ) : ?>
 			<li class="zaso-services-grid__item">

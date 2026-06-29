@@ -286,3 +286,83 @@
 	background:   #ffffff;
 	border-color: rgba( 0, 0, 0, 0.3 );
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// LAYOUT VARIANTS (structure only)
+// ───────────────────────────────────────────────────────────────────────────────
+// Orthogonal to the colour skins. The Style preset still drives every colour
+// (card bg, quote, author, star, arrow, dot) via the @vars above; these rules
+// only restructure shape (elevation, decorative mark, alignment, rule). The
+// "default" layout adds no class and is intentionally untouched here. Selectors
+// are flat top-level with the modifier class leading, exactly like the
+// theme-robustness block above, so SiteOrigin's .so-widget-<id> prefix resolves
+// to a descendant match against the .zaso-testimonial-slider root.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// ─── Layout: card ──────────────────────────────────────────────────────────────
+// Elevated surface. Same skin background/padding/radius, lifted off the page with
+// a soft drop shadow plus a hairline border so it reads as a raised card on any
+// skin (including flat/transparent page backgrounds).
+.zaso-testimonial-slider--layout-card .zaso-testimonial-slider__card {
+	box-shadow: 0 22px 48px -18px rgba( 0, 0, 0, 0.34 ), 0 6px 16px rgba( 0, 0, 0, 0.10 );
+	border:     1px solid rgba( 0, 0, 0, 0.06 );
+}
+
+// ─── Layout: quote ─────────────────────────────────────────────────────────────
+// Centred editorial layout with a large decorative quotation mark. Everything
+// centres; the author photo stacks above the name/title. The mark reuses the
+// quote colour at low opacity so it tints correctly on every skin.
+.zaso-testimonial-slider--layout-quote .zaso-testimonial-slider__card {
+	position:    relative;
+	text-align:  center;
+	padding-top: 76px;
+}
+
+.zaso-testimonial-slider--layout-quote .zaso-testimonial-slider__card::before {
+	content:        "\201C";
+	position:       absolute;
+	top:            0.06em;
+	left:           50%;
+	transform:      translateX( -50% );
+	font-family:    Georgia, "Times New Roman", serif;
+	font-size:      5em;
+	line-height:    1;
+	color:          @quote_color;
+	opacity:        0.22;
+	pointer-events: none;
+}
+
+.zaso-testimonial-slider--layout-quote .zaso-testimonial-slider__rating {
+	display:         flex;
+	justify-content: center;
+}
+
+.zaso-testimonial-slider--layout-quote .zaso-testimonial-slider__author {
+	flex-direction: column;
+	align-items:    center;
+	text-align:     center;
+	gap:            10px;
+}
+
+.zaso-testimonial-slider--layout-quote .zaso-testimonial-slider__author-info {
+	align-items: center;
+}
+
+.zaso-testimonial-slider--layout-quote .zaso-testimonial-slider__author-photo {
+	width:  56px;
+	height: 56px;
+}
+
+// ─── Layout: minimal ───────────────────────────────────────────────────────────
+// No card surface: drops the background, radius and shadow, replacing them with a
+// single accent rule above the content. The rule reuses the author-name colour so
+// it stays visible on light/neutral page backgrounds. Intended for light skins;
+// pair with a dark-text skin (Soft Light / Outline).
+.zaso-testimonial-slider--layout-minimal .zaso-testimonial-slider__card {
+	background:    transparent;
+	border:        0;
+	border-top:    3px solid @author_name_color;
+	border-radius: 0;
+	box-shadow:    none;
+	padding:       24px 2px 4px;
+}

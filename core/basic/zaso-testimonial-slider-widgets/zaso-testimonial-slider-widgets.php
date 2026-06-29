@@ -81,6 +81,18 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 				'label'   => __( 'Show Dot Pagination', 'zaso' ),
 				'default' => true,
 			),
+			'layout'            => array(
+				'type'        => 'select',
+				'label'       => __( 'Layout', 'zaso' ),
+				'default'     => 'default',
+				'description' => __( 'Structural layout of each testimonial. The Style skin below still controls colours; Layout controls the shape (card elevation, decorative quote mark, minimal rule).', 'zaso' ),
+				'options'     => array(
+					'default' => __( 'Default (simple card)', 'zaso' ),
+					'card'    => __( 'Card (elevated, soft shadow)', 'zaso' ),
+					'quote'   => __( 'Quote (centered, decorative mark)', 'zaso' ),
+					'minimal' => __( 'Minimal (no card, top rule)', 'zaso' ),
+				),
+			),
 			'design_style'      => array(
 				'type'           => 'presets',
 				'label'          => __( 'Style', 'zaso' ),

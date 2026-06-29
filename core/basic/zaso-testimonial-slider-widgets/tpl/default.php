@@ -23,10 +23,24 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 if ( empty( $testimonials ) ) {
 	return;
 }
+
+// Optional structural layout. Default ('default') is the original simple card and
+// adds NO extra class, so existing instances render byte-identical. Only the
+// alternate layouts (card / quote / minimal) add a modifier class. Layout is a
+// pure-CSS concern: the slider/arrow/dot markup and JS are untouched.
+$zaso_layout         = ! empty( $instance['layout'] ) ? $instance['layout'] : 'default';
+$zaso_layout_allowed = array( 'default', 'card', 'quote', 'minimal' );
+if ( ! in_array( $zaso_layout, $zaso_layout_allowed, true ) ) {
+	$zaso_layout = 'default';
+}
+$zaso_root_class = $classes;
+if ( 'default' !== $zaso_layout ) {
+	$zaso_root_class .= ' zaso-testimonial-slider--layout-' . $zaso_layout;
+}
 ?>
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?>
-	class="<?php echo esc_attr( $classes ); ?>"
+	class="<?php echo esc_attr( $zaso_root_class ); ?>"
 	role="region"
 	aria-label="<?php esc_attr_e( 'Testimonials', 'zaso' ); ?>"
 	data-autoplay="<?php echo $autoplay ? '1' : '0'; ?>"

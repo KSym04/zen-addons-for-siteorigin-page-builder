@@ -170,3 +170,114 @@
     }
   }
 }
+
+// ===========================================================================
+// LAYOUT VARIANTS (structure only)
+// ---------------------------------------------------------------------------
+// Orthogonal to the colour skins. The Style preset still drives caption / modal
+// colours via the colour vars above; these rules only restructure HOW the image
+// and caption are arranged and how the card reveals on hover. The "default"
+// layout adds no class and is intentionally untouched here. Every variant keeps
+// the modal (and its action button) working: it still reveals on :hover and
+// :focus-within so keyboard users get the same behaviour.
+// ===========================================================================
+
+// ----- Layout: caption-below -----------------------------------------------
+// Image sits on top; the title caption becomes a SOLID panel in normal flow
+// below the image instead of an overlay. The real <img> is promoted to the
+// visible media (object-fit: cover) so it defines a clean media band, and the
+// caption uses the skin's caption colour at full opacity for a crisp panel.
+.zaso-hover-card--layout-caption-below {
+  .zaso-hover-card__box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Promote the real image to the visible media band (the JS-painted background
+  // on __box still sits underneath as a graceful fallback).
+  .zaso-hover-card__media {
+    order: 1;
+    overflow: hidden;
+    line-height: 0;
+
+    img {
+      visibility: visible;
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+  }
+
+  // Caption drops out of absolute positioning into a solid panel below the
+  // image. Full-opacity skin colour so it reads as a distinct band.
+  .zaso-hover-card__caption {
+    order: 2;
+    position: static;
+    background-color: @caption_background_color;
+  }
+
+  // Hide the below-panel caption on hover so the revealed modal does not show a
+  // ghost of the title bleeding through its translucent fill.
+  &:hover .zaso-hover-card__caption--fadein,
+  &:focus-within .zaso-hover-card__caption--fadein {
+    visibility: hidden;
+  }
+}
+
+// ----- Layout: slide-up ----------------------------------------------------
+// On hover the modal becomes a bottom PANEL that slides up from the lower edge
+// (transform) instead of cross-fading as a full overlay, so the top of the
+// image stays visible above the rising panel. The always-visible title caption
+// is hidden as the panel takes its place.
+.zaso-hover-card--layout-slide-up {
+  .zaso-hover-card__modal--fadein {
+    top: auto;
+    bottom: 0;
+    opacity: 1;
+    padding: 22px 8px;
+    transform: translateY( 100% );
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &:hover .zaso-hover-card__caption--fadein,
+  &:focus-within .zaso-hover-card__caption--fadein {
+    visibility: hidden;
+  }
+
+  &:hover .zaso-hover-card__modal--fadein,
+  &:focus-within .zaso-hover-card__modal--fadein {
+    transform: translateY( 0 );
+  }
+}
+
+// ----- Layout: zoom --------------------------------------------------------
+// The background image zooms on hover while the caption stays fixed. The real
+// <img> is made visible and scaled inside an overflow-clipped media layer, so
+// only the image moves; the caption and the (crisp, unscaled) modal sit on top.
+.zaso-hover-card--layout-zoom {
+  .zaso-hover-card__media {
+    overflow: hidden;
+    line-height: 0;
+
+    img {
+      visibility: visible;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.6s ease;
+    }
+  }
+
+  // Caption fixed: it does not slide away on hover.
+  &:hover .zaso-hover-card__caption--fadein,
+  &:focus-within .zaso-hover-card__caption--fadein {
+    visibility: visible;
+    bottom: 0;
+  }
+
+  &:hover .zaso-hover-card__media img,
+  &:focus-within .zaso-hover-card__media img {
+    transform: scale( 1.15 );
+  }
+}

@@ -49,6 +49,18 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 					'fadein'  => __( 'Fade In', 'zaso' )
 				)
 			),
+			'layout' => array(
+				'type'        => 'select',
+				'label'       => __( 'Layout', 'zaso' ),
+				'default'     => 'default',
+				'description' => __( 'Structural layout of the card. The Style skin below still controls colours; Layout controls how the image and caption are arranged and how the card reveals on hover.', 'zaso' ),
+				'options'     => array(
+					'default'       => __( 'Default (caption overlay)', 'zaso' ),
+					'caption-below' => __( 'Caption Below (solid panel under image)', 'zaso' ),
+					'slide-up'      => __( 'Slide Up (panel slides up on hover)', 'zaso' ),
+					'zoom'          => __( 'Zoom (image zooms, caption fixed)', 'zaso' ),
+				),
+			),
 			'design_style' => array(
 				'type'           => 'presets',
 				'label'          => __( 'Style', 'zaso' ),

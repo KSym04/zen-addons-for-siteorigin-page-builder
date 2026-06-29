@@ -21,6 +21,20 @@ if ( empty( $plans ) ) {
 }
 
 $checkmark_svg = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+// Optional structural layout. Default ('default') is the original bordered cards
+// and adds NO extra class, so existing instances render byte-identical. Only the
+// alternate layouts (bordered / elevated / compact) append a modifier class to
+// the root list. The Style skin still drives all colours independently.
+$zaso_layout         = ! empty( $instance['layout'] ) ? $instance['layout'] : 'default';
+$zaso_layout_allowed = array( 'default', 'bordered', 'elevated', 'compact' );
+if ( ! in_array( $zaso_layout, $zaso_layout_allowed, true ) ) {
+	$zaso_layout = 'default';
+}
+$zaso_table_classes = $classes;
+if ( 'default' !== $zaso_layout ) {
+	$zaso_table_classes .= ' zaso-pricing-table--layout-' . $zaso_layout;
+}
 ?>
 <?php
 /**
@@ -30,7 +44,7 @@ $checkmark_svg = '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16
 do_action( 'zaso_pricing_table_before_plans', $instance, $plans );
 ?>
 <ul <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- zaso_format_field_extra_id() returns a safe id="" attribute string. ?>
-	class="<?php echo esc_attr( $classes ); ?>"
+	class="<?php echo esc_attr( $zaso_table_classes ); ?>"
 	role="list">
 	<?php foreach ( $plans as $plan ) : ?>
 	<li class="zaso-pricing-table__item<?php echo $plan['featured'] ? ' zaso-pricing-table__item--featured' : ''; ?>">

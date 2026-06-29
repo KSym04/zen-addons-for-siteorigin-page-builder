@@ -50,7 +50,7 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 			),
 			'layout' => array(
 				'type'    => 'select',
-				'label'   => __( 'Layout', 'zaso' ),
+				'label'   => __( 'Button Placement', 'zaso' ),
 				'default' => 'stacked',
 				'options' => array(
 					'stacked' => __( 'Stacked (button below text)', 'zaso' ),
@@ -76,6 +76,27 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 				'type'        => 'text',
 				'label'       => __( 'Extra Class', 'zaso' ),
 				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+			),
+			/**
+			 * Structural layout dimension (orthogonal to the colour skin). The
+			 * Style preset below still drives all colours; this only restructures
+			 * the banner shape (card elevation, split divider, centered measure).
+			 * Note: the key is `block_layout`, not `layout`, because `layout`
+			 * already ships as the button-placement (stacked / inline) control
+			 * above and must not be repurposed. The default value adds no class,
+			 * so existing instances render byte-identical.
+			 */
+			'block_layout' => array(
+				'type'        => 'select',
+				'label'       => __( 'Layout Structure', 'zaso' ),
+				'default'     => 'default',
+				'description' => __( 'Structural shape of the banner. The Style skin below still controls colours; this controls the layout (card elevation, split divider, centered measure). Independent of the button placement and text alignment options above.', 'zaso' ),
+				'options'     => array(
+					'default'  => __( 'Default (full-width band)', 'zaso' ),
+					'card'     => __( 'Card (elevated, rounded, shadow)', 'zaso' ),
+					'split'    => __( 'Split (content / action divided)', 'zaso' ),
+					'centered' => __( 'Centered (constrained spotlight)', 'zaso' ),
+				),
 			),
 			'design_style' => array(
 				'type'           => 'presets',

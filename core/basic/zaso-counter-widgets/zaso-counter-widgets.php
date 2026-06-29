@@ -83,6 +83,18 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 				'label'       => __( 'Extra Class', 'zaso' ),
 				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
 			),
+			'layout' => array(
+				'type'        => 'select',
+				'label'       => __( 'Layout', 'zaso' ),
+				'default'     => 'default',
+				'description' => __( 'Structural layout of the counter. The Style skin below still controls colours and sizes; Layout controls the shape (stacked, boxed card, inline row, ringed circle).', 'zaso' ),
+				'options'     => array(
+					'default' => __( 'Default (stacked)', 'zaso' ),
+					'card'    => __( 'Card (boxed, soft shadow)', 'zaso' ),
+					'inline'  => __( 'Inline (icon + number in a row)', 'zaso' ),
+					'circle'  => __( 'Circle (number in a ring)', 'zaso' ),
+				),
+			),
 			'design_style' => array(
 				'type'           => 'presets',
 				'label'          => __( 'Style', 'zaso' ),

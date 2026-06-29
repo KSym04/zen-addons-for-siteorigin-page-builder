@@ -9,12 +9,22 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 
 $alignment = in_array( $instance['design']['alignment'], array( 'left', 'center', 'right' ), true ) ? $instance['design']['alignment'] : 'center';
 
+// Optional structural layout. Default ('default') is the original stacked layout
+// and adds NO extra class, so existing instances render byte-identical. Only the
+// alternate layouts (card / inline / circle) add a modifier class.
+$zaso_layout         = ! empty( $instance['layout'] ) ? $instance['layout'] : 'default';
+$zaso_layout_allowed = array( 'default', 'card', 'inline', 'circle' );
+if ( ! in_array( $zaso_layout, $zaso_layout_allowed, true ) ) {
+	$zaso_layout = 'default';
+}
+$zaso_layout_class = ( 'default' !== $zaso_layout ) ? ' zaso-counter--layout-' . $zaso_layout : '';
+
 // Full accessible value, e.g. "$1,250+".
 $aria_value = $prefix . $formatted_end . $suffix;
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
-<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-counter zaso-counter--align-<?php echo esc_attr( $alignment ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>">
+<div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-counter zaso-counter--align-<?php echo esc_attr( $alignment ); ?><?php echo esc_attr( $zaso_layout_class ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>">
 	<div class="zaso-counter__inner">
 
 		<?php if ( ! empty( $image ) && ! empty( $image_attr['src'] ) ) : ?>

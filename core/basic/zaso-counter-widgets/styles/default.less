@@ -71,3 +71,75 @@
     }
   }
 }
+
+// ===========================================================================
+// LAYOUT VARIANTS (structure only)
+// ---------------------------------------------------------------------------
+// Orthogonal to the colour skins. The Style preset still drives number / title
+// / icon colour and size via the colour vars above; these rules only restructure
+// shape (surface, padding, radius, shadow, row vs column, ring). The "default"
+// layout adds no class and is intentionally untouched here. The Counter has no
+// background field, so surfaces are neutral (white) or transparent, keeping the
+// AA-safe-on-light contract the skins are built against.
+// ===========================================================================
+
+// ----- Layout: card --------------------------------------------------------
+// Wraps the whole stat in an elevated neutral card: soft white surface, hairline
+// border, generous padding, large radius, layered shadow. Colours are untouched,
+// so every skin keeps its AA contrast against the white card.
+.zaso-counter--layout-card .zaso-counter__inner {
+  background: #ffffff;
+  border: 1px solid rgba( 15, 23, 42, 0.1 );
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 12px 30px -12px rgba( 15, 23, 42, 0.22 ), 0 2px 6px rgba( 15, 23, 42, 0.06 );
+}
+
+// ----- Layout: inline ------------------------------------------------------
+// Icon and number sit on one row; the title wraps to a full-width line beneath.
+// Cross-axis centring keeps the icon optically aligned with the number. The
+// horizontal placement follows the chosen alignment via justify-content.
+.zaso-counter--layout-inline .zaso-counter__inner {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.75rem;
+  row-gap: 0.5rem;
+}
+
+.zaso-counter--layout-inline .zaso-counter__title {
+  flex-basis: 100%;
+}
+
+.zaso-counter--layout-inline.zaso-counter--align-left .zaso-counter__inner {
+  justify-content: flex-start;
+}
+
+.zaso-counter--layout-inline.zaso-counter--align-center .zaso-counter__inner {
+  justify-content: center;
+}
+
+.zaso-counter--layout-inline.zaso-counter--align-right .zaso-counter__inner {
+  justify-content: flex-end;
+}
+
+// ----- Layout: circle ------------------------------------------------------
+// The number lives inside a transparent ringed circle; icon stacks above it and
+// the title below. The ring uses the icon colour (the skin accent) so it always
+// reads as a deliberate accent rather than blending into the number. aspect-ratio
+// keeps a true circle while min sizing accommodates longer numbers.
+.zaso-counter--layout-circle .zaso-counter__inner {
+  gap: 0.85rem;
+}
+
+.zaso-counter--layout-circle .zaso-counter__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 9rem;
+  aspect-ratio: 1 / 1;
+  padding: 1rem;
+  border: 0.25rem solid @icon_color;
+  border-radius: 50%;
+}

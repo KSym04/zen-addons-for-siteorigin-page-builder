@@ -141,3 +141,84 @@
 		grid-template-columns: repeat( 2, 1fr );
 	}
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// LAYOUT VARIANTS (structure only)
+// ───────────────────────────────────────────────────────────────────────────────
+// Orthogonal to the colour skins. The Style preset still drives icon/title/bg
+// colour via the vars above; these rules only restructure shape (icon placement,
+// elevation, padding). They reuse @card_background / @icon_bg / @icon_size so they
+// combine cleanly with every skin and with the Card Style + Alignment modifiers.
+// Flat top-level selectors only (SiteOrigin prepends .so-widget-<id>; chained &
+// would double-prefix and never match). The "default" layout adds no class.
+// Placed AFTER the alignment rules so equal-specificity (0,2,0) layout overrides
+// win by source order where they intentionally diverge from alignment.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// ----- Layout: boxed -----------------------------------------------------------
+// Each item becomes a distinctly elevated surface with a soft border, rounded
+// corners and a depth shadow, plus a hover lift. Reads as a tactile card on any
+// skin because the border/shadow are neutral alpha values over @card_background.
+.zaso-services-grid--layout-boxed .zaso-services-grid__card {
+	border:        1px solid rgba( 0, 0, 0, 0.06 );
+	border-radius: 18px;
+	box-shadow:    0 18px 38px -16px rgba( 0, 0, 0, 0.35 ), 0 3px 8px rgba( 0, 0, 0, 0.08 );
+	transition:    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zaso-services-grid--layout-boxed .zaso-services-grid__card:hover,
+.zaso-services-grid--layout-boxed .zaso-services-grid__card:focus-within {
+	transform:  translateY( -6px );
+	box-shadow: 0 28px 52px -16px rgba( 0, 0, 0, 0.4 ), 0 6px 14px rgba( 0, 0, 0, 0.1 );
+}
+
+// ----- Layout: icon-left -------------------------------------------------------
+// Icon sits to the LEFT of the text block on a flex row. Forces left text
+// alignment and resets the icon's centering margins so it stays flush-left even
+// when the Alignment field is set to Center. The icon never shrinks.
+.zaso-services-grid--layout-icon-left .zaso-services-grid__card {
+	display:     flex;
+	align-items: flex-start;
+	gap:         18px;
+	text-align:  left;
+}
+
+.zaso-services-grid--layout-icon-left .zaso-services-grid__icon {
+	flex-shrink:   0;
+	margin-top:    0.1em;
+	margin-left:   0;
+	margin-right:  0;
+	margin-bottom: 0;
+}
+
+.zaso-services-grid--layout-icon-left .zaso-services-grid__body {
+	flex:      1 1 auto;
+	min-width: 0;
+}
+
+// ----- Layout: centered --------------------------------------------------------
+// Icon on top, everything centered, with generous vertical padding and a larger
+// icon plate. Centers regardless of the Alignment field so the layout is
+// self-consistent. The icon box is sized in em of @icon_size so it scales with
+// the chosen icon size and forms a clean circle when @icon_bg is set.
+.zaso-services-grid--layout-centered .zaso-services-grid__card {
+	display:        flex;
+	flex-direction: column;
+	align-items:    center;
+	text-align:     center;
+	padding-top:    46px;
+	padding-bottom: 46px;
+}
+
+.zaso-services-grid--layout-centered .zaso-services-grid__icon {
+	width:         1.9em;
+	height:        1.9em;
+	margin-left:   auto;
+	margin-right:  auto;
+	margin-bottom: 26px;
+}
+
+.zaso-services-grid--layout-centered .zaso-services-grid__body {
+	max-width: 34ch;
+	margin:    0 auto;
+}

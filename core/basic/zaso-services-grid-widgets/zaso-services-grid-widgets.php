@@ -89,6 +89,18 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 					'center' => __( 'Center', 'zaso' ),
 				),
 			),
+			'layout' => array(
+				'type'        => 'select',
+				'label'       => __( 'Layout', 'zaso' ),
+				'default'     => 'default',
+				'description' => __( 'Structural layout of each service card. The Style skin below still controls colours; Layout controls the shape (icon placement, elevation, padding).', 'zaso' ),
+				'options'     => array(
+					'default'   => __( 'Default (icon top, stacked)', 'zaso' ),
+					'boxed'     => __( 'Boxed (elevated card with lift)', 'zaso' ),
+					'icon-left' => __( 'Icon Left (icon beside text)', 'zaso' ),
+					'centered'  => __( 'Centered (icon top, roomy padding)', 'zaso' ),
+				),
+			),
 			'design_style' => array(
 				'type'           => 'presets',
 				'label'          => __( 'Style', 'zaso' ),
