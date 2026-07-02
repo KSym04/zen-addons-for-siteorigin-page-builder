@@ -8,6 +8,60 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * Author URI: https://www.dopethemes.com/
  */
 
+if ( ! function_exists( 'zaso_cta_banner_design_options' ) ) :
+	/**
+	 * Curated "designs" for the Call to Action widget.
+	 *
+	 * The free core ships six ready-made designs inline; Zen Addons Pro appends
+	 * its twenty-four additional designs via the shared `zaso_cta_designs` filter
+	 * (the Pro controller self-gates on a valid license, so an unlicensed or lapsed
+	 * site only ever sees the six free entries). The empty-string key is the classic
+	 * "Default" banner and adds no class, keeping every existing instance
+	 * byte-identical.
+	 *
+	 * @since 1.10.7
+	 *
+	 * @return array Map of design id => human label.
+	 */
+	function zaso_cta_banner_design_options() {
+		$zaso_cta_banner_free_designs = array(
+			''                  => __( 'Default (classic banner)', 'zaso' ),
+			'solid-centered'    => __( 'Solid Centered (indigo)', 'zaso' ),
+			'horizontal-split'  => __( 'Horizontal Split (teal)', 'zaso' ),
+			'soft-tint'         => __( 'Soft Tint (blue)', 'zaso' ),
+			'gradient-centered' => __( 'Gradient Centered (violet)', 'zaso' ),
+			'outlined'          => __( 'Outlined (minimal)', 'zaso' ),
+			'dark'              => __( 'Dark', 'zaso' ),
+		);
+
+		return apply_filters( 'zaso_cta_designs', $zaso_cta_banner_free_designs );
+	}
+endif;
+
+if ( ! function_exists( 'zaso_cta_banner_design_description' ) ) :
+	/**
+	 * Help text for the "Pre-made Design" field.
+	 *
+	 * On a white-labelled Pro site the agency's client must never see the real
+	 * product name or an upsell (they already have the full library), so the brand
+	 * + "unlocks twenty-four more" sentence is dropped. Everywhere else (free, or
+	 * licensed-but-not-white-labelled) the upsell line is kept.
+	 *
+	 * @since 1.10.7
+	 *
+	 * @return string Field description.
+	 */
+	function zaso_cta_banner_design_description() {
+		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
+
+		if ( $white_label ) {
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic banner)" to build your own look with the Layout Structure and Design colour settings instead.', 'zaso' );
+		}
+
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic banner)" to build your own look with the Layout Structure and Design colour settings instead.', 'zaso' );
+	}
+endif;
+
 if ( ! class_exists( 'Zen_Addons_SiteOrigin_Cta_Banner_Widget' ) ) :
 
 
@@ -97,6 +151,20 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 					'split'    => __( 'Split (content / action divided)', 'zaso' ),
 					'centered' => __( 'Centered (constrained spotlight)', 'zaso' ),
 				),
+			),
+			/**
+			 * Pre-made design (visual picker). Empty ('') is the classic look and
+			 * adds NO class, so existing instances (which have no design_variant
+			 * key) render byte-identical. A picked design applies a self-contained
+			 * skin that overrides the manual Design colours below. The Browse
+			 * designs modal (core/design-picker.php) enhances this select.
+			 */
+			'design_variant' => array(
+				'type'        => 'select',
+				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'default'     => '',
+				'description' => zaso_cta_banner_design_description(),
+				'options'     => zaso_cta_banner_design_options(),
 			),
 			'design' => array(
 				'type'   => 'section',

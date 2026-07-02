@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.6
+Stable tag: 1.10.7
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -52,7 +52,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 
 **Conversion and engagement**
 
-* Call to Action: combine a heading, text, and button in a banner over a color, gradient, or image background.
+* Call to Action: combine a heading, text, and button in a banner over a color, gradient, or image background, with thirty ready-made designs (six free).
 * Counter: count up to a number with a stat that animates when it scrolls into view, with thirty ready-made designs (six free).
 * Countdown: count down to a date and time for launches, sales, and events.
 * Before / After: compare two images with a draggable slider, with mouse, touch, and keyboard support.
@@ -260,6 +260,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.7 =
+* New: Call to Action ready-made designs. Thirty banner looks (six free: solid centered, horizontal split, soft tint, gradient centered, outlined, and dark) chosen visually from the "Browse designs" gallery, over solid, gradient, and image backgrounds. Leave it on the classic banner to keep your current look unchanged.
+* Improved: The visual Browse designs picker now covers the Call to Action as well as the Alert Box and Counter.
 
 = 1.10.6 =
 * Changed: Readme update; Zen Addons Pro is now available. No functional changes to the free plugin.

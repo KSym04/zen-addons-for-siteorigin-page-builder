@@ -245,3 +245,270 @@
   padding: 1em 2.5em;
   font-size: 1.05rem;
 }
+
+// ===========================================================================
+// PRE-MADE DESIGNS (self-contained skins) — 1.10.7
+// ---------------------------------------------------------------------------
+// One-click "Browse designs" looks. Each `.zaso-cta-banner--design-{id}` block
+// is fully self-contained (hardcoded hex, no @vars) and, being source-ordered
+// after the var-driven base and the layout variants, wins every specificity tie
+// without !important. Each design sets its OWN alignment and flow so it renders
+// consistently regardless of the Button Placement / Text Alignment / Layout
+// Structure fields. The empty design_variant ('') adds no class, so existing
+// banners are untouched. Buttons override the flat `a.zaso-cta-banner__button`
+// base selector via an equal-specificity, later-in-source rule.
+// Six ship free; Zen Addons Pro adds twenty-four more in the Pro plugin.
+// ===========================================================================
+
+// ----- Design: Solid Centered (indigo) -------------------------------------
+.zaso-cta-banner--design-solid-centered {
+  background: #4f46e5;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba( 79, 70, 229, 0.22 );
+  text-align: center;
+}
+.zaso-cta-banner--design-solid-centered .zaso-cta-banner__inner {
+  padding: 2.5rem 2.75rem;
+  align-items: center;
+}
+.zaso-cta-banner--design-solid-centered .zaso-cta-banner__content {
+  align-items: center;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.zaso-cta-banner--design-solid-centered .zaso-cta-banner__heading {
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+.zaso-cta-banner--design-solid-centered .zaso-cta-banner__subheading,
+.zaso-cta-banner--design-solid-centered .zaso-cta-banner__text {
+  color: rgba( 255, 255, 255, 0.85 );
+}
+.zaso-cta-banner--design-solid-centered a.zaso-cta-banner__button {
+  background-color: #ffffff;
+  color: #4f46e5;
+  border-radius: 10px;
+  padding: 0.8em 1.7em;
+  font-weight: 700;
+}
+.zaso-cta-banner--design-solid-centered a.zaso-cta-banner__button:hover,
+.zaso-cta-banner--design-solid-centered a.zaso-cta-banner__button:focus {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+// ----- Design: Horizontal Split (teal) -------------------------------------
+.zaso-cta-banner--design-horizontal-split {
+  background: #0d9488;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba( 13, 148, 136, 0.22 );
+  text-align: left;
+}
+.zaso-cta-banner--design-horizontal-split .zaso-cta-banner__inner {
+  padding: 2rem 2.25rem;
+  align-items: stretch;
+}
+.zaso-cta-banner--design-horizontal-split .zaso-cta-banner__heading {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.zaso-cta-banner--design-horizontal-split .zaso-cta-banner__subheading,
+.zaso-cta-banner--design-horizontal-split .zaso-cta-banner__text {
+  color: rgba( 255, 255, 255, 0.85 );
+}
+.zaso-cta-banner--design-horizontal-split a.zaso-cta-banner__button {
+  background-color: #ffffff;
+  color: #0d9488;
+  border-radius: 10px;
+  padding: 0.8em 1.5em;
+  font-weight: 700;
+}
+.zaso-cta-banner--design-horizontal-split a.zaso-cta-banner__button:hover,
+.zaso-cta-banner--design-horizontal-split a.zaso-cta-banner__button:focus {
+  background-color: #f0fdfa;
+  color: #0d9488;
+}
+@media ( min-width: 768px ) {
+  .zaso-cta-banner--design-horizontal-split .zaso-cta-banner__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .zaso-cta-banner--design-horizontal-split .zaso-cta-banner__content {
+    flex: 1 1 auto;
+  }
+  .zaso-cta-banner--design-horizontal-split .zaso-cta-banner__action {
+    flex-shrink: 0;
+  }
+}
+
+// ----- Design: Soft Tint (blue) --------------------------------------------
+.zaso-cta-banner--design-soft-tint {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  box-shadow: none;
+  text-align: left;
+}
+.zaso-cta-banner--design-soft-tint .zaso-cta-banner__inner {
+  padding: 2rem 2.25rem;
+  align-items: stretch;
+}
+.zaso-cta-banner--design-soft-tint .zaso-cta-banner__heading {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.zaso-cta-banner--design-soft-tint .zaso-cta-banner__subheading,
+.zaso-cta-banner--design-soft-tint .zaso-cta-banner__text {
+  color: #3b5bdb;
+}
+.zaso-cta-banner--design-soft-tint a.zaso-cta-banner__button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 0.8em 1.5em;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba( 37, 99, 235, 0.3 );
+}
+.zaso-cta-banner--design-soft-tint a.zaso-cta-banner__button:hover,
+.zaso-cta-banner--design-soft-tint a.zaso-cta-banner__button:focus {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+@media ( min-width: 768px ) {
+  .zaso-cta-banner--design-soft-tint .zaso-cta-banner__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .zaso-cta-banner--design-soft-tint .zaso-cta-banner__content {
+    flex: 1 1 auto;
+  }
+  .zaso-cta-banner--design-soft-tint .zaso-cta-banner__action {
+    flex-shrink: 0;
+  }
+}
+
+// ----- Design: Gradient Centered (violet) ----------------------------------
+.zaso-cta-banner--design-gradient-centered {
+  background: linear-gradient( 135deg, #7c3aed, #c026d3 );
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba( 124, 58, 237, 0.28 );
+  text-align: center;
+}
+.zaso-cta-banner--design-gradient-centered .zaso-cta-banner__inner {
+  padding: 2.5rem 2.75rem;
+  align-items: center;
+}
+.zaso-cta-banner--design-gradient-centered .zaso-cta-banner__content {
+  align-items: center;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.zaso-cta-banner--design-gradient-centered .zaso-cta-banner__heading {
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+.zaso-cta-banner--design-gradient-centered .zaso-cta-banner__subheading,
+.zaso-cta-banner--design-gradient-centered .zaso-cta-banner__text {
+  color: rgba( 255, 255, 255, 0.88 );
+}
+.zaso-cta-banner--design-gradient-centered a.zaso-cta-banner__button {
+  background-color: #ffffff;
+  color: #7c3aed;
+  border-radius: 10px;
+  padding: 0.8em 1.75em;
+  font-weight: 700;
+}
+.zaso-cta-banner--design-gradient-centered a.zaso-cta-banner__button:hover,
+.zaso-cta-banner--design-gradient-centered a.zaso-cta-banner__button:focus {
+  background-color: #f5f3ff;
+  color: #7c3aed;
+}
+
+// ----- Design: Outlined (minimal) ------------------------------------------
+.zaso-cta-banner--design-outlined {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba( 15, 23, 42, 0.05 );
+  text-align: center;
+}
+.zaso-cta-banner--design-outlined .zaso-cta-banner__inner {
+  padding: 2.375rem 2.75rem;
+  align-items: center;
+}
+.zaso-cta-banner--design-outlined .zaso-cta-banner__content {
+  align-items: center;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.zaso-cta-banner--design-outlined .zaso-cta-banner__heading {
+  color: #0f172a;
+  font-size: 1.625rem;
+  font-weight: 800;
+}
+.zaso-cta-banner--design-outlined .zaso-cta-banner__subheading,
+.zaso-cta-banner--design-outlined .zaso-cta-banner__text {
+  color: #64748b;
+}
+.zaso-cta-banner--design-outlined a.zaso-cta-banner__button {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 0.8em 1.75em;
+  font-weight: 700;
+}
+.zaso-cta-banner--design-outlined a.zaso-cta-banner__button:hover,
+.zaso-cta-banner--design-outlined a.zaso-cta-banner__button:focus {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+// ----- Design: Dark --------------------------------------------------------
+.zaso-cta-banner--design-dark {
+  background: #0f172a;
+  border-radius: 16px;
+  box-shadow: none;
+  text-align: center;
+}
+.zaso-cta-banner--design-dark .zaso-cta-banner__inner {
+  padding: 2.5rem 2.75rem;
+  align-items: center;
+}
+.zaso-cta-banner--design-dark .zaso-cta-banner__content {
+  align-items: center;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.zaso-cta-banner--design-dark .zaso-cta-banner__heading {
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+.zaso-cta-banner--design-dark .zaso-cta-banner__subheading,
+.zaso-cta-banner--design-dark .zaso-cta-banner__text {
+  color: #94a3b8;
+}
+.zaso-cta-banner--design-dark a.zaso-cta-banner__button {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-radius: 10px;
+  padding: 0.8em 1.75em;
+  font-weight: 700;
+}
+.zaso-cta-banner--design-dark a.zaso-cta-banner__button:hover,
+.zaso-cta-banner--design-dark a.zaso-cta-banner__button:focus {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}

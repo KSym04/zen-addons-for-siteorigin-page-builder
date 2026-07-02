@@ -19,6 +19,20 @@ if ( ! in_array( $block_layout, array( 'default', 'card', 'split', 'centered' ),
 }
 $block_modifier = ( 'default' !== $block_layout ) ? ' zaso-cta-banner--layout-' . $block_layout : '';
 
+// Optional pre-made design. Empty ('') is the classic look and adds NO class, so
+// existing instances (which have no design_variant key) render byte-identical.
+// The value is whitelisted against the live design list, so a Pro design saved on
+// a now-unlicensed site (where the Pro filter no longer registers it) falls back
+// to the default render instead of emitting an unstyled Pro class.
+$design_modifier     = '';
+$zaso_design_variant = ! empty( $instance['design_variant'] ) ? $instance['design_variant'] : '';
+if ( '' !== $zaso_design_variant && function_exists( 'zaso_cta_banner_design_options' ) ) {
+	$zaso_design_allowed = array_keys( zaso_cta_banner_design_options() );
+	if ( in_array( $zaso_design_variant, $zaso_design_allowed, true ) ) {
+		$design_modifier = ' zaso-cta-banner--design-' . sanitize_html_class( $zaso_design_variant );
+	}
+}
+
 // Use the heading as the region's accessible name; fall back to a generic label.
 $region_label = '' !== trim( (string) $instance['heading'] ) ? $instance['heading'] : __( 'Call to action', 'zaso' );
 
@@ -40,7 +54,7 @@ if ( 'image' === $bg_type && ! empty( $bg_image_url ) ) {
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
-<section <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-cta-banner zaso-cta-banner--<?php echo esc_attr( $layout ); ?> zaso-cta-banner--align-<?php echo esc_attr( $alignment ); ?> zaso-cta-banner--bg-<?php echo esc_attr( $bg_type ); ?><?php echo esc_attr( $block_modifier ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>" role="region" aria-label="<?php echo esc_attr( $region_label ); ?>"<?php echo $inline_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_url() applied above. ?>>
+<section <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-cta-banner zaso-cta-banner--<?php echo esc_attr( $layout ); ?> zaso-cta-banner--align-<?php echo esc_attr( $alignment ); ?> zaso-cta-banner--bg-<?php echo esc_attr( $bg_type ); ?><?php echo esc_attr( $block_modifier ); ?><?php echo esc_attr( $design_modifier ); ?> <?php echo esc_attr( $instance['extra_class'] ); ?>" role="region" aria-label="<?php echo esc_attr( $region_label ); ?>"<?php echo $inline_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_url() applied above. ?>>
 
 	<?php if ( 'image' === $bg_type && ! empty( $bg_image_url ) ) : ?>
 		<span class="zaso-cta-banner__overlay" aria-hidden="true"></span>

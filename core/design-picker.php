@@ -1,6 +1,6 @@
 <?php
 /**
- * Zen Addons "Visual Design Picker" editor enhancer (Alert Box + Counter).
+ * Zen Addons "Visual Design Picker" editor enhancer (Alert Box + Counter + Call to Action).
  *
  * Replaces a widget's plain "Design" ( design_variant ) dropdown in the Page
  * Builder / widgets editor with a "Browse designs" button that opens a modal
@@ -66,7 +66,7 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 	 * Class ZASO_Design_Picker
 	 *
 	 * Enqueues the design-picker assets on editor screens and localizes one entry
-	 * per supported widget ( Alert Box, Counter ), each entry carrying its design
+	 * per supported widget ( Alert Box, Counter, Call to Action ), each entry carrying its design
 	 * cards with rendered thumbnail URLs, its id set and its Pro upsell cards.
 	 *
 	 * @since 1.11.0
@@ -98,6 +98,14 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		 * @var array
 		 */
 		const COUNTER_FREE_IDS = array( 'icon-card', 'centered', 'icon-top', 'badge', 'divider', 'underline' );
+
+		/**
+		 * The six free Call to Action design ids.
+		 *
+		 * @since 1.10.7
+		 * @var array
+		 */
+		const CTA_FREE_IDS = array( 'solid-centered', 'horizontal-split', 'soft-tint', 'gradient-centered', 'outlined', 'dark' );
 
 		/**
 		 * The twenty-four Pro Alert Box designs ( id => label ), mirrored from the
@@ -177,6 +185,46 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				'footer-note'    => esc_html__( 'Footer Note', 'zaso' ),
 				'gradient-ring'  => esc_html__( 'Gradient Ring', 'zaso' ),
 				'centered-icon'  => esc_html__( 'Centered Icon', 'zaso' ),
+			);
+		}
+
+		/**
+		 * The twenty-four Pro Call to Action designs ( id => label ), mirrored from
+		 * the Pro plugin's Zanp_Cta_Designs so the FREE plugin can show them as
+		 * blurred, locked upsell cards WITHOUT depending on the Pro filter.
+		 *
+		 * Each id has a bundled thumbnail at assets/design-previews/cta-banner/{id}.webp.
+		 * Render-only: these ids are NEVER added to designIds.
+		 *
+		 * @since 1.10.7
+		 * @return array Map of Pro design id => human label.
+		 */
+		protected function locked_pro_cta_designs() {
+			return array(
+				'bold-gradient'    => esc_html__( 'Bold Gradient', 'zaso' ),
+				'dark-glow'        => esc_html__( 'Dark Glow', 'zaso' ),
+				'image-scrim'      => esc_html__( 'Image Scrim', 'zaso' ),
+				'image-horizontal' => esc_html__( 'Image Horizontal', 'zaso' ),
+				'split-block'      => esc_html__( 'Split Block', 'zaso' ),
+				'eyebrow'          => esc_html__( 'Eyebrow', 'zaso' ),
+				'icon-row'         => esc_html__( 'Icon Row', 'zaso' ),
+				'pastel-pill'      => esc_html__( 'Pastel Pill', 'zaso' ),
+				'dotted-gradient'  => esc_html__( 'Dotted Gradient', 'zaso' ),
+				'stacked-dark'     => esc_html__( 'Stacked Dark', 'zaso' ),
+				'glass'            => esc_html__( 'Glass', 'zaso' ),
+				'arrow-link'       => esc_html__( 'Arrow Link', 'zaso' ),
+				'big-type'         => esc_html__( 'Big Type', 'zaso' ),
+				'badge-tag'        => esc_html__( 'Badge Tag', 'zaso' ),
+				'stats'            => esc_html__( 'Stats', 'zaso' ),
+				'gradient-heading' => esc_html__( 'Gradient Heading', 'zaso' ),
+				'image-bottom'     => esc_html__( 'Image Bottom', 'zaso' ),
+				'two-column'       => esc_html__( 'Two Column', 'zaso' ),
+				'pill-banner'      => esc_html__( 'Pill Banner', 'zaso' ),
+				'left-accent'      => esc_html__( 'Left Accent', 'zaso' ),
+				'vibrant-mesh'     => esc_html__( 'Vibrant Mesh', 'zaso' ),
+				'corporate'        => esc_html__( 'Corporate', 'zaso' ),
+				'bold-solid'       => esc_html__( 'Bold Solid', 'zaso' ),
+				'gradient-ring'    => esc_html__( 'Gradient Ring', 'zaso' ),
 			);
 		}
 
@@ -401,6 +449,43 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		}
 
 		/**
+		 * Build the Call to Action entry.
+		 *
+		 * The design list ( zaso_cta_banner_design_options() ) already reflects the
+		 * license: six entries unlicensed, thirty when Pro is active ( the Pro
+		 * `zaso_cta_designs` filter registers the twenty-four ). Preview URLs are
+		 * resolved directly from the bundled thumbnails ( all thirty ship in the free
+		 * plugin ), so the picker is fully self-sufficient with Pro off.
+		 *
+		 * @since  1.10.7
+		 * @return array Entry array, or empty when unavailable.
+		 */
+		protected function build_cta_entry() {
+			if ( ! function_exists( 'zaso_cta_banner_design_options' ) ) {
+				$this->ensure_widget_class( 'Zen_Addons_SiteOrigin_Cta_Banner_Widget', 'zaso-cta-banner-widgets' );
+			}
+			if ( ! function_exists( 'zaso_cta_banner_design_options' ) ) {
+				return array();
+			}
+
+			$base = ZASO_BASE_DIR . 'assets/design-previews/cta-banner/';
+
+			return $this->build_entry(
+				array(
+					'key'         => 'cta',
+					'options'     => zaso_cta_banner_design_options(),
+					'free_ids'    => self::CTA_FREE_IDS,
+					'locked_map'  => $this->locked_pro_cta_designs(),
+					'noun'        => esc_html__( 'call to action', 'zaso' ),
+					'default'     => esc_html__( 'Default (classic banner)', 'zaso' ),
+					'preview_url' => static function ( $id ) use ( $base ) {
+						return $base . $id . '.webp';
+					},
+				)
+			);
+		}
+
+		/**
 		 * Build the localized data map the picker JS consumes.
 		 *
 		 * Returns a `widgets` array: one self-contained entry per supported widget.
@@ -415,7 +500,7 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		public function build_localized_data() {
 			$widgets = array();
 
-			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry() ) as $entry ) {
+			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry() ) as $entry ) {
 				if ( ! empty( $entry['designs'] ) ) {
 					$widgets[] = $entry;
 				}

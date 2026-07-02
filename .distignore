@@ -23,6 +23,7 @@ node_modules/
 CLAUDE.md
 WORKSPACE-SETUP.md
 AGENTS.md
+SPEC.md
 MILESTONE-*.md
 ROADMAP-*.md
 *-strategy.md
