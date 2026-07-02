@@ -35,6 +35,20 @@ $zaso_table_classes = $classes;
 if ( 'default' !== $zaso_layout ) {
 	$zaso_table_classes .= ' zaso-pricing-table--layout-' . $zaso_layout;
 }
+
+// Optional pre-made design. The default ('') adds NO class, so every existing
+// instance (which lacks the key) renders byte-identical. A recognised design id
+// appends a modifier to the root list and the design stylesheet fully skins the
+// cards. Free ships six designs; Zen Addons Pro appends its twenty-four via the
+// shared `zaso_pricing_table_designs` filter, so an unknown or unlicensed id is
+// rejected here and falls back to the default look.
+$zaso_design_variant = ! empty( $instance['design_variant'] ) ? $instance['design_variant'] : '';
+if ( '' !== $zaso_design_variant && function_exists( 'zaso_pricing_table_design_options' ) ) {
+	$zaso_design_allowed = array_keys( zaso_pricing_table_design_options() );
+	if ( in_array( $zaso_design_variant, $zaso_design_allowed, true ) ) {
+		$zaso_table_classes .= ' zaso-pricing-table--design-' . sanitize_html_class( $zaso_design_variant );
+	}
+}
 ?>
 <?php
 /**

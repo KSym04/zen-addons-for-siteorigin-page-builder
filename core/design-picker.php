@@ -1,6 +1,6 @@
 <?php
 /**
- * Zen Addons "Visual Design Picker" editor enhancer (Alert Box + Counter + Call to Action).
+ * Zen Addons "Visual Design Picker" editor enhancer (Alert Box + Counter + Call to Action + Pricing Table).
  *
  * Replaces a widget's plain "Design" ( design_variant ) dropdown in the Page
  * Builder / widgets editor with a "Browse designs" button that opens a modal
@@ -106,6 +106,14 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		 * @var array
 		 */
 		const CTA_FREE_IDS = array( 'solid-centered', 'horizontal-split', 'soft-tint', 'gradient-centered', 'outlined', 'dark' );
+
+		/**
+		 * The six free Pricing Table design ids.
+		 *
+		 * @since 1.11.0
+		 * @var array
+		 */
+		const PRICING_TABLE_FREE_IDS = array( 'classic-indigo', 'classic-teal', 'accent-indigo', 'accent-rose', 'minimal-slate', 'minimal-violet' );
 
 		/**
 		 * The twenty-four Pro Alert Box designs ( id => label ), mirrored from the
@@ -225,6 +233,46 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				'corporate'        => esc_html__( 'Corporate', 'zaso' ),
 				'bold-solid'       => esc_html__( 'Bold Solid', 'zaso' ),
 				'gradient-ring'    => esc_html__( 'Gradient Ring', 'zaso' ),
+			);
+		}
+
+		/**
+		 * The twenty-four Pro Pricing Table designs ( id => label ), mirrored from
+		 * the Pro plugin's Zanp_Pricing_Table_Designs so the FREE plugin can show
+		 * them as blurred, locked upsell cards WITHOUT depending on the Pro filter.
+		 *
+		 * Each id has a bundled thumbnail at assets/design-previews/pricing-table/{id}.webp.
+		 * Render-only: these ids are NEVER added to designIds.
+		 *
+		 * @since 1.11.0
+		 * @return array Map of Pro design id => human label.
+		 */
+		protected function locked_pro_pricing_table_designs() {
+			return array(
+				'ribbon-indigo'        => esc_html__( 'Ribbon (Indigo)', 'zaso' ),
+				'ribbon-dark'          => esc_html__( 'Ribbon (Dark)', 'zaso' ),
+				'featured-violet'      => esc_html__( 'Featured (Violet)', 'zaso' ),
+				'featured-teal'        => esc_html__( 'Featured (Teal)', 'zaso' ),
+				'comparison-light'     => esc_html__( 'Comparison (Light)', 'zaso' ),
+				'comparison-dark'      => esc_html__( 'Comparison (Dark)', 'zaso' ),
+				'gradient-sunset'      => esc_html__( 'Gradient Header (Sunset)', 'zaso' ),
+				'gradient-blue'        => esc_html__( 'Gradient Header (Blue)', 'zaso' ),
+				'split-slate'          => esc_html__( 'Split Panel (Slate)', 'zaso' ),
+				'split-emerald'        => esc_html__( 'Split Panel (Emerald)', 'zaso' ),
+				'darkpremium-indigo'   => esc_html__( 'Dark Premium (Indigo)', 'zaso' ),
+				'darkpremium-teal'     => esc_html__( 'Dark Premium (Teal)', 'zaso' ),
+				'twotone-amber'        => esc_html__( 'Two-tone (Amber)', 'zaso' ),
+				'twotone-emerald'      => esc_html__( 'Two-tone (Emerald)', 'zaso' ),
+				'gradientring-fuchsia' => esc_html__( 'Gradient Ring (Fuchsia)', 'zaso' ),
+				'gradientring-blue'    => esc_html__( 'Gradient Ring (Blue)', 'zaso' ),
+				'iconfeatures-indigo'  => esc_html__( 'Icon Features (Indigo)', 'zaso' ),
+				'iconfeatures-teal'    => esc_html__( 'Icon Features (Teal)', 'zaso' ),
+				'compact-slate'        => esc_html__( 'Compact (Slate)', 'zaso' ),
+				'compact-violet'       => esc_html__( 'Compact (Violet)', 'zaso' ),
+				'stacked-rose'         => esc_html__( 'Stacked Badge (Rose)', 'zaso' ),
+				'stacked-amber'        => esc_html__( 'Stacked Badge (Amber)', 'zaso' ),
+				'minitable-light'      => esc_html__( 'Mini Table (Light)', 'zaso' ),
+				'minitable-dark'       => esc_html__( 'Mini Table (Dark)', 'zaso' ),
 			);
 		}
 
@@ -486,6 +534,43 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		}
 
 		/**
+		 * Build the Pricing Table entry.
+		 *
+		 * The design list ( zaso_pricing_table_design_options() ) already reflects the
+		 * license: six entries unlicensed, thirty when Pro is active ( the Pro
+		 * `zaso_pricing_table_designs` filter registers the twenty-four ). Preview URLs
+		 * are resolved directly from the bundled thumbnails ( all thirty ship in the
+		 * free plugin ), so the picker is fully self-sufficient with Pro off.
+		 *
+		 * @since  1.11.0
+		 * @return array Entry array, or empty when unavailable.
+		 */
+		protected function build_pricing_table_entry() {
+			if ( ! function_exists( 'zaso_pricing_table_design_options' ) ) {
+				$this->ensure_widget_class( 'Zen_Addons_SiteOrigin_Pricing_Table_Widget', 'zaso-pricing-table-widgets' );
+			}
+			if ( ! function_exists( 'zaso_pricing_table_design_options' ) ) {
+				return array();
+			}
+
+			$base = ZASO_BASE_DIR . 'assets/design-previews/pricing-table/';
+
+			return $this->build_entry(
+				array(
+					'key'         => 'pricing-table',
+					'options'     => zaso_pricing_table_design_options(),
+					'free_ids'    => self::PRICING_TABLE_FREE_IDS,
+					'locked_map'  => $this->locked_pro_pricing_table_designs(),
+					'noun'        => esc_html__( 'pricing table', 'zaso' ),
+					'default'     => esc_html__( 'Default (classic table)', 'zaso' ),
+					'preview_url' => static function ( $id ) use ( $base ) {
+						return $base . $id . '.webp';
+					},
+				)
+			);
+		}
+
+		/**
 		 * Build the localized data map the picker JS consumes.
 		 *
 		 * Returns a `widgets` array: one self-contained entry per supported widget.
@@ -500,7 +585,7 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		public function build_localized_data() {
 			$widgets = array();
 
-			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry() ) as $entry ) {
+			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry(), $this->build_pricing_table_entry() ) as $entry ) {
 				if ( ! empty( $entry['designs'] ) ) {
 					$widgets[] = $entry;
 				}

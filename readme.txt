@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.7
+Stable tag: 1.10.8
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -205,6 +205,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.8 =
+New Pricing Table ready-made designs: thirty pricing looks (six free) chosen visually from the Browse designs gallery, matching the Alert Box, Counter, and Call to Action experience. Your existing pricing tables are unchanged.
+
 = 1.10.6 =
 Listing update only: Zen Addons Pro is now available. No changes to the free plugin's functionality.
 
@@ -260,6 +263,11 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.8 =
+* New: Pricing Table ready-made designs. Thirty pricing looks (six free: Classic, Accent Header, and Minimal Outline, each in two colour skins) chosen visually from the "Browse designs" gallery, with their own layouts, headers, ribbons, and feature styling. Leave it on the classic table to keep your current look unchanged.
+* Improved: The visual Browse designs picker now covers the Pricing Table as well as the Alert Box, Counter, and Call to Action.
+* Maintenance: version alignment with Zen Addons Pro 1.10.8, which adds thirty entrance animations to the Pro Popup widget. No functional changes to the free plugin.
 
 = 1.10.7 =
 * New: Call to Action ready-made designs. Thirty banner looks (six free: solid centered, horizontal split, soft tint, gradient centered, outlined, and dark) chosen visually from the "Browse designs" gallery, over solid, gradient, and image backgrounds. Leave it on the classic banner to keep your current look unchanged.

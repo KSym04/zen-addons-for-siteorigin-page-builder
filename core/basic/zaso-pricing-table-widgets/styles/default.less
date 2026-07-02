@@ -278,3 +278,475 @@
 	padding:   9px 16px;
 	font-size: 0.875rem;
 }
+
+// ════════════════════════════════════════════════════════════════════════════
+// PRE-MADE DESIGNS (free 6)
+// ----------------------------------------------------------------------------
+// Self-contained colour skins keyed by the root modifier .zaso-pricing-table--
+// design-<id> on the <ul>. Each design only ADDS rules; nothing above is edited.
+// Name colour/casing is re-asserted from (0,3,0) via .card .__name so it beats
+// the muted-name rule; buttons are re-asserted from (0,3,1) on a.__btn so themes
+// can't recolour them (no !important anywhere). Feature icon: the template's
+// inline <svg> is hidden and a Material Symbols check_circle is drawn as ::before
+// so the glyph matches the design source. Values pulled verbatim from the spec
+// FREE section (Layouts 01–03). No divider node exists in the markup, so the
+// spec's divider tones are intentionally omitted.
+// ════════════════════════════════════════════════════════════════════════════
+
+// ─── Design: classic-indigo (01A) ───────────────────────────────────────────
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__card {
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       28px;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__card .zaso-pricing-table__name {
+	color:          #4f46e5;
+	font-size:      14px;
+	font-weight:    700;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__description {
+	color:     #64748b;
+	font-size: 13.5px;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__currency {
+	color:       #0f172a;
+	font-size:   26px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__price {
+	color:       #0f172a;
+	font-size:   44px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__period {
+	color:       #94a3b8;
+	font-size:   15px;
+	font-weight: 600;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__features li {
+	color: #334155;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__features svg {
+	display: none;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__features li::before {
+	font-family:              "ZASO Material Symbols Rounded";
+	font-variation-settings:  'FILL' 1;
+	content:                  "\f0be";
+	font-size:                18px;
+	line-height:              1.3;
+	flex-shrink:              0;
+	color:                    #16a34a;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__btn {
+	border-radius: 11px;
+	padding:       13px;
+	font-size:     14.5px;
+	font-weight:   700;
+}
+
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__card a.zaso-pricing-table__btn,
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__card a.zaso-pricing-table__btn:hover,
+.zaso-pricing-table--design-classic-indigo .zaso-pricing-table__card a.zaso-pricing-table__btn:focus {
+	background: #4f46e5;
+	color:      #ffffff;
+}
+
+// ─── Design: classic-teal (01B) ─────────────────────────────────────────────
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__card {
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       28px;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__card .zaso-pricing-table__name {
+	color:          #0d9488;
+	font-size:      14px;
+	font-weight:    700;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__description {
+	color:     #64748b;
+	font-size: 13.5px;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__currency {
+	color:       #0f172a;
+	font-size:   26px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__price {
+	color:       #0f172a;
+	font-size:   44px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__period {
+	color:       #94a3b8;
+	font-size:   15px;
+	font-weight: 600;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__features li {
+	color: #334155;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__features svg {
+	display: none;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__features li::before {
+	font-family:              "ZASO Material Symbols Rounded";
+	font-variation-settings:  'FILL' 1;
+	content:                  "\f0be";
+	font-size:                18px;
+	line-height:              1.3;
+	flex-shrink:              0;
+	color:                    #0d9488;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__btn {
+	border-radius: 11px;
+	padding:       13px;
+	font-size:     14.5px;
+	font-weight:   700;
+}
+
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__card a.zaso-pricing-table__btn,
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__card a.zaso-pricing-table__btn:hover,
+.zaso-pricing-table--design-classic-teal .zaso-pricing-table__card a.zaso-pricing-table__btn:focus {
+	background: #0d9488;
+	color:      #ffffff;
+}
+
+// ─── Design: accent-indigo (02A) ────────────────────────────────────────────
+// Header bleed: card padding 28px + overflow hidden. .__name negative-margins to
+// the top/side edges and .__price-wrap continues the same #4f46e5 fill below it,
+// so the two nodes read as one solid colour-block header flush to the card edge.
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__card {
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       28px;
+	overflow:      hidden;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__card .zaso-pricing-table__name {
+	background:     #4f46e5;
+	color:          #ffffff;
+	margin:         -28px -28px 0;
+	padding:        22px 28px 0;
+	font-size:      15px;
+	font-weight:    700;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__price-wrap {
+	background: #4f46e5;
+	margin:     0 -28px 18px;
+	padding:    0 28px 22px;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__currency {
+	color:       #ffffff;
+	font-size:   22px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__price {
+	color:       #ffffff;
+	font-size:   38px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__period {
+	color:       rgba( 255, 255, 255, 0.8 );
+	font-size:   14px;
+	font-weight: 600;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__description {
+	color:     #64748b;
+	font-size: 13.5px;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__features li {
+	color: #334155;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__features svg {
+	display: none;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__features li::before {
+	font-family:              "ZASO Material Symbols Rounded";
+	font-variation-settings:  'FILL' 1;
+	content:                  "\f0be";
+	font-size:                18px;
+	line-height:              1.3;
+	flex-shrink:              0;
+	color:                    #16a34a;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__btn {
+	border-radius: 11px;
+	padding:       12px;
+	font-size:     14.5px;
+	font-weight:   700;
+}
+
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__card a.zaso-pricing-table__btn,
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__card a.zaso-pricing-table__btn:hover,
+.zaso-pricing-table--design-accent-indigo .zaso-pricing-table__card a.zaso-pricing-table__btn:focus {
+	background: transparent;
+	color:      #4f46e5;
+	border:     1.5px solid #4f46e5;
+}
+
+// ─── Design: accent-rose (02B) ──────────────────────────────────────────────
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__card {
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       28px;
+	overflow:      hidden;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__card .zaso-pricing-table__name {
+	background:     #e11d48;
+	color:          #ffffff;
+	margin:         -28px -28px 0;
+	padding:        22px 28px 0;
+	font-size:      15px;
+	font-weight:    700;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__price-wrap {
+	background: #e11d48;
+	margin:     0 -28px 18px;
+	padding:    0 28px 22px;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__currency {
+	color:       #ffffff;
+	font-size:   22px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__price {
+	color:       #ffffff;
+	font-size:   38px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__period {
+	color:       rgba( 255, 255, 255, 0.8 );
+	font-size:   14px;
+	font-weight: 600;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__description {
+	color:     #64748b;
+	font-size: 13.5px;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__features li {
+	color: #334155;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__features svg {
+	display: none;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__features li::before {
+	font-family:              "ZASO Material Symbols Rounded";
+	font-variation-settings:  'FILL' 1;
+	content:                  "\f0be";
+	font-size:                18px;
+	line-height:              1.3;
+	flex-shrink:              0;
+	color:                    #16a34a;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__btn {
+	border-radius: 11px;
+	padding:       12px;
+	font-size:     14.5px;
+	font-weight:   700;
+}
+
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__card a.zaso-pricing-table__btn,
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__card a.zaso-pricing-table__btn:hover,
+.zaso-pricing-table--design-accent-rose .zaso-pricing-table__card a.zaso-pricing-table__btn:focus {
+	background: transparent;
+	color:      #e11d48;
+	border:     1.5px solid #e11d48;
+}
+
+// ─── Design: minimal-slate (03A) ────────────────────────────────────────────
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__card {
+	background:    #f8fafc;
+	border:        1.5px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       28px;
+	box-shadow:    none;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__card .zaso-pricing-table__name {
+	color:          #0f172a;
+	font-size:      14px;
+	font-weight:    700;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__description {
+	color:     #64748b;
+	font-size: 13.5px;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__currency {
+	color:       #0f172a;
+	font-size:   24px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__price {
+	color:       #0f172a;
+	font-size:   40px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__period {
+	color:       #94a3b8;
+	font-size:   14px;
+	font-weight: 600;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__features li {
+	color: #334155;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__features svg {
+	display: none;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__features li::before {
+	font-family:              "ZASO Material Symbols Rounded";
+	font-variation-settings:  'FILL' 1;
+	content:                  "\f0be";
+	font-size:                18px;
+	line-height:              1.3;
+	flex-shrink:              0;
+	color:                    #16a34a;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__btn {
+	border-radius: 11px;
+	padding:       13px;
+	font-size:     14.5px;
+	font-weight:   700;
+}
+
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__card a.zaso-pricing-table__btn,
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__card a.zaso-pricing-table__btn:hover,
+.zaso-pricing-table--design-minimal-slate .zaso-pricing-table__card a.zaso-pricing-table__btn:focus {
+	background: #0f172a;
+	color:      #ffffff;
+}
+
+// ─── Design: minimal-violet (03B) ───────────────────────────────────────────
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__card {
+	background:    #faf5ff;
+	border:        1.5px solid #e9d5ff;
+	border-radius: 18px;
+	padding:       28px;
+	box-shadow:    none;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__card .zaso-pricing-table__name {
+	color:          #7c3aed;
+	font-size:      14px;
+	font-weight:    700;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__description {
+	color:     #7c3aed;
+	opacity:   0.8;
+	font-size: 13.5px;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__currency {
+	color:       #0f172a;
+	font-size:   24px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__price {
+	color:       #0f172a;
+	font-size:   40px;
+	font-weight: 800;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__period {
+	color:       #a78bfa;
+	font-size:   14px;
+	font-weight: 600;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__features li {
+	color: #334155;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__features svg {
+	display: none;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__features li::before {
+	font-family:              "ZASO Material Symbols Rounded";
+	font-variation-settings:  'FILL' 1;
+	content:                  "\f0be";
+	font-size:                18px;
+	line-height:              1.3;
+	flex-shrink:              0;
+	color:                    #7c3aed;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__btn {
+	border-radius: 11px;
+	padding:       13px;
+	font-size:     14.5px;
+	font-weight:   700;
+}
+
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__card a.zaso-pricing-table__btn,
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__card a.zaso-pricing-table__btn:hover,
+.zaso-pricing-table--design-minimal-violet .zaso-pricing-table__card a.zaso-pricing-table__btn:focus {
+	background: #7c3aed;
+	color:      #ffffff;
+}

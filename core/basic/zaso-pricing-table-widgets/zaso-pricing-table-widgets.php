@@ -127,6 +127,56 @@ if ( ! function_exists( 'zaso_pricing_accessible_accent' ) ) {
 	}
 }
 
+if ( ! function_exists( 'zaso_pricing_table_design_options' ) ) :
+	/**
+	 * Curated "designs" for the Pricing Table widget.
+	 *
+	 * The free core ships six ready-made designs inline; Zen Addons Pro appends
+	 * its twenty-four additional designs via the shared `zaso_pricing_table_designs`
+	 * filter (the Pro controller self-gates on a valid license, so an unlicensed or
+	 * lapsed site only ever sees the six free entries). The empty-string key is the
+	 * classic bordered table and adds no class, keeping every existing instance
+	 * byte-identical.
+	 *
+	 * @return array Map of design id => human label.
+	 */
+	function zaso_pricing_table_design_options() {
+		$zaso_pricing_table_free_designs = array(
+			''               => __( 'Default (classic table)', 'zaso' ),
+			'classic-indigo' => __( 'Classic (Indigo)', 'zaso' ),
+			'classic-teal'   => __( 'Classic (Teal)', 'zaso' ),
+			'accent-indigo'  => __( 'Accent Header (Indigo)', 'zaso' ),
+			'accent-rose'    => __( 'Accent Header (Rose)', 'zaso' ),
+			'minimal-slate'  => __( 'Minimal Outline (Slate)', 'zaso' ),
+			'minimal-violet' => __( 'Minimal Outline (Violet)', 'zaso' ),
+		);
+
+		return apply_filters( 'zaso_pricing_table_designs', $zaso_pricing_table_free_designs );
+	}
+endif;
+
+if ( ! function_exists( 'zaso_pricing_table_design_description' ) ) :
+	/**
+	 * Help text for the "Pre-made Design" field.
+	 *
+	 * On a white-labelled Pro site the agency's client must never see the real
+	 * product name or an upsell (they already have the full library), so the brand
+	 * + "unlocks twenty-four more" sentence is dropped. Everywhere else (free, or
+	 * licensed-but-not-white-labelled) the upsell line is kept.
+	 *
+	 * @return string Field description.
+	 */
+	function zaso_pricing_table_design_description() {
+		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
+
+		if ( $white_label ) {
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic table)" to build your own look with the Layout, Columns and Design colour settings instead.', 'zaso' );
+		}
+
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic table)" to build your own look with the Layout, Columns and Design colour settings instead.', 'zaso' );
+	}
+endif;
+
 if ( ! class_exists( 'Zen_Addons_SiteOrigin_Pricing_Table_Widget' ) ) :
 
 
@@ -217,6 +267,13 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 					'compact'  => __( 'Compact (dense padding, smaller type)', 'zaso' ),
 				),
 			),
+			'design_variant' => array(
+				'type'        => 'select',
+				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'default'     => '',
+				'description' => zaso_pricing_table_design_description(),
+				'options'     => zaso_pricing_table_design_options(),
+			),
 			'design'  => array(
 				'type'   => 'section',
 				'label'  => __( 'Design', 'zaso' ),
@@ -293,6 +350,35 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 			$zaso_pricing_table_fields,
 			ZASO_WIDGET_BASIC_DIR
 		);
+	}
+
+	/**
+	 * Register the widget's front-end assets.
+	 *
+	 * SiteOrigin enqueues these only on pages where the widget is present, and
+	 * skips a handle that is already enqueued (so a page with several ZASO widgets
+	 * loads the shared Material Symbols font once).
+	 *
+	 * @since 1.11.0
+	 */
+	function initialize() {
+
+		// Self-hosted Material Symbols Rounded @font-face. The pre-made design
+		// variants draw their feature-check glyph through this font via a ::before
+		// pseudo-element ( and hide the default inline SVG ), so the font must load
+		// whenever a Pricing Table renders. Without it the check glyph falls back to
+		// a missing-glyph box. No Google CDN: the font ships in the plugin.
+		$this->register_frontend_styles(
+			array(
+				array(
+					'zaso-material-symbols',
+					ZASO_BASE_DIR . 'assets/css/material-symbols.css',
+					array(),
+					ZASO_VERSION,
+				)
+			)
+		);
+
 	}
 
 	function get_template_variables( $instance, $args ) {
