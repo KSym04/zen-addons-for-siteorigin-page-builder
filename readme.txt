@@ -208,7 +208,7 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 == Upgrade Notice ==
 
 = 1.10.10 =
-New Hover Card ready-made designs: thirty image-card looks (six free) with caption reveals on hover, chosen visually from the Browse designs gallery. Your existing hover cards are unchanged.
+New Hover Card ready-made designs: thirty image-card looks (six free) with caption reveals on hover, chosen visually from the Browse designs gallery. The classic hover card also gets softly rounded corners, a gentle gradient caption, and a more legible hover button.
 
 = 1.10.9 =
 New Testimonial Slider ready-made designs: thirty slider looks (six free) chosen visually from the Browse designs gallery. Your existing testimonials are unchanged.
@@ -273,7 +273,8 @@ This update includes minor improvements and bug fixes.
 == Changelog ==
 
 = 1.10.10 =
-* New: Hover Card ready-made designs. Thirty image-card looks (six free: Bottom Slide-up and Full Overlay, each in three skins) chosen visually from the "Browse designs" gallery, each with its own caption reveal on hover, colour skin, and call-to-action button. Leave it on the classic hover card to keep your current look unchanged.
+* New: Hover Card ready-made designs. Thirty image-card looks (six free: Bottom Slide-up and Full Overlay, each in three skins) chosen visually from the "Browse designs" gallery, each with its own caption reveal on hover, colour skin, and call-to-action button.
+* Improved: The classic Hover Card now has softly rounded corners and a gentle gradient caption instead of a hard bar, and its hover button stays legible on every theme.
 * Improved: The visual Browse designs picker now covers the Hover Card as well as the Alert Box, Counter, Call to Action, Pricing Table, and Testimonial Slider.
 
 = 1.10.9 =

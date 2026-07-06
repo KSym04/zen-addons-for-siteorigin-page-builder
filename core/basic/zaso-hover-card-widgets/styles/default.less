@@ -42,6 +42,10 @@
     padding: @reset_padding;
     width: 100%;
     height: 100%;
+    // Rounded, clipped card so the corners are consistent with the ready-made
+    // designs (and the image / caption never spill past the rounded edge).
+    border-radius: 16px;
+    overflow: hidden;
   }
 
   &__media {
@@ -52,13 +56,22 @@
 
   /* caption */
   &__caption {
-    background-color: fade( @caption_background_color, @caption_background_opacity );
+    // Soft gradient scrim in the user's caption colour (solid at the base, fading
+    // up to transparent) instead of a hard bar: modern, legible over any image,
+    // and it still honours the chosen caption colour + opacity.
+    background: linear-gradient(
+      to top,
+      fade( @caption_background_color, @caption_background_opacity ) 0%,
+      fade( @caption_background_color, @caption_background_opacity ) 32%,
+      fade( @caption_background_color, 0 ) 100%
+    );
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
     margin: @caption_margin;
     padding: @caption_padding;
+    padding-top: 2.75em;
 
     &-title {
       margin: @reset_margin;
@@ -169,6 +182,21 @@
       opacity: 1;
     }
   }
+}
+
+// Theme-leak guard for the default modal button. Some themes (e.g. Twenty
+// Twenty-One) colour <a> at specificity (0,3,1), which beats the flat button
+// rule above and leaves the theme's dark link colour on the dark button
+// background (dark text on dark). Re-assert the widget's button colours from a
+// higher-specificity selector (wrapper + modal + a.button) so they always win,
+// with no !important. The ready-made designs set their own button colours and
+// are unaffected.
+.zaso-hover-card .zaso-hover-card__modal a.zaso-hover-card__modal-action {
+  color: @modal_button_font_color;
+}
+.zaso-hover-card .zaso-hover-card__modal a.zaso-hover-card__modal-action:hover,
+.zaso-hover-card .zaso-hover-card__modal a.zaso-hover-card__modal-action:focus {
+  color: @modal_button_font_color_hover;
 }
 
 // ===========================================================================
