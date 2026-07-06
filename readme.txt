@@ -202,6 +202,8 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 1. Alert Box: thirty ready-made alert designs (six free) - one-click styled looks across success, info, warning and error tones.
 2. Counter: thirty ready-made counter designs (six free) - animated stat blocks with icons, prefixes, suffixes, and structural styles like rings, bars and sparklines.
+3. Call to Action: thirty ready-made banner designs (six free) - one-click styled looks across solid, gradient, image and split layouts, each with matching buttons.
+4. Pricing Table: thirty ready-made pricing designs (six free) - complete pricing tables with tier styling, billing toggles, comparison checkmarks and feature lists.
 
 == Upgrade Notice ==
 
