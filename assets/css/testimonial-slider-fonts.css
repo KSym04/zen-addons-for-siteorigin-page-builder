@@ -1,0 +1,36 @@
+/**
+ * Testimonial Slider bundled webfonts for the pre-made designs.
+ *
+ * Self-hosted, WordPress.org / GDPR compliant (no Google Fonts CDN call).
+ * Hanken Grotesk (variable, wght 100-900) and DM Mono are licensed under the
+ * SIL Open Font License 1.1 (see ../fonts/LICENSE).
+ *
+ * These faces are applied ONLY inside a `--design-<id>` skin (see default.less),
+ * so the default widget and every existing instance render byte-identical with
+ * the theme's own typography. This stylesheet only declares the faces; the
+ * skins opt in.
+ */
+
+@font-face {
+	font-family: 'Hanken Grotesk';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url( '../fonts/hanken-grotesk-variable.woff2' ) format( 'woff2' );
+}
+
+@font-face {
+	font-family: 'DM Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url( '../fonts/dm-mono-400.woff2' ) format( 'woff2' );
+}
+
+@font-face {
+	font-family: 'DM Mono';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url( '../fonts/dm-mono-500.woff2' ) format( 'woff2' );
+}

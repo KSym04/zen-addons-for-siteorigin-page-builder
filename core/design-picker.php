@@ -1,6 +1,6 @@
 <?php
 /**
- * Zen Addons "Visual Design Picker" editor enhancer (Alert Box + Counter + Call to Action + Pricing Table).
+ * Zen Addons "Visual Design Picker" editor enhancer (Alert Box + Counter + Call to Action + Pricing Table + Testimonial Slider).
  *
  * Replaces a widget's plain "Design" ( design_variant ) dropdown in the Page
  * Builder / widgets editor with a "Browse designs" button that opens a modal
@@ -114,6 +114,14 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		 * @var array
 		 */
 		const PRICING_TABLE_FREE_IDS = array( 'classic-indigo', 'classic-teal', 'accent-indigo', 'accent-rose', 'minimal-slate', 'minimal-violet' );
+
+		/**
+		 * The six free Testimonial Slider design ids.
+		 *
+		 * @since 1.11.0
+		 * @var array
+		 */
+		const TESTIMONIAL_SLIDER_FREE_IDS = array( 'centered-indigo', 'centered-teal', 'avatar-left-slate', 'avatar-left-violet', 'quote-mark-rose', 'quote-mark-amber' );
 
 		/**
 		 * The twenty-four Pro Alert Box designs ( id => label ), mirrored from the
@@ -273,6 +281,46 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				'stacked-amber'        => esc_html__( 'Stacked Badge (Amber)', 'zaso' ),
 				'minitable-light'      => esc_html__( 'Mini Table (Light)', 'zaso' ),
 				'minitable-dark'       => esc_html__( 'Mini Table (Dark)', 'zaso' ),
+			);
+		}
+
+		/**
+		 * The twenty-four Pro Testimonial Slider designs ( id => label ), mirrored
+		 * from the Pro plugin's Zanp_Testimonial_Slider_Designs so the FREE plugin can
+		 * show them as blurred, locked upsell cards WITHOUT depending on the Pro filter.
+		 *
+		 * Each id has a bundled thumbnail at assets/design-previews/testimonial-slider/{id}.webp.
+		 * Render-only: these ids are NEVER added to designIds.
+		 *
+		 * @since 1.11.0
+		 * @return array Map of Pro design id => human label.
+		 */
+		protected function locked_pro_testimonial_slider_designs() {
+			return array(
+				'gradient-quote-indigo' => esc_html__( 'Gradient Quote (Indigo)', 'zaso' ),
+				'gradient-quote-sunset' => esc_html__( 'Gradient Quote (Sunset)', 'zaso' ),
+				'dark-sky'              => esc_html__( 'Dark (Sky Glow)', 'zaso' ),
+				'dark-violet'           => esc_html__( 'Dark (Violet Glow)', 'zaso' ),
+				'arrows-footer-teal'    => esc_html__( 'Arrows Footer (Teal)', 'zaso' ),
+				'arrows-footer-indigo'  => esc_html__( 'Arrows Footer (Indigo)', 'zaso' ),
+				'tinted-violet'         => esc_html__( 'Soft Tint (Violet)', 'zaso' ),
+				'tinted-emerald'        => esc_html__( 'Soft Tint (Emerald)', 'zaso' ),
+				'logo-quote-slate'      => esc_html__( 'Company Logo (Slate)', 'zaso' ),
+				'logo-quote-blue'       => esc_html__( 'Company Logo (Blue)', 'zaso' ),
+				'stat-indigo'           => esc_html__( 'Stat Highlight (Indigo)', 'zaso' ),
+				'stat-rose'             => esc_html__( 'Stat Highlight (Rose)', 'zaso' ),
+				'split-panel-indigo'    => esc_html__( 'Split Panel (Indigo)', 'zaso' ),
+				'split-panel-teal'      => esc_html__( 'Split Panel (Teal)', 'zaso' ),
+				'accent-top-amber'      => esc_html__( 'Accent Top (Amber)', 'zaso' ),
+				'accent-top-cyan'       => esc_html__( 'Accent Top (Cyan)', 'zaso' ),
+				'verified-emerald'      => esc_html__( 'Verified (Emerald)', 'zaso' ),
+				'verified-indigo'       => esc_html__( 'Verified (Indigo)', 'zaso' ),
+				'minimal-slate'         => esc_html__( 'Minimal (Slate)', 'zaso' ),
+				'minimal-violet'        => esc_html__( 'Minimal (Violet)', 'zaso' ),
+				'watermark-fuchsia'     => esc_html__( 'Quote Watermark (Fuchsia)', 'zaso' ),
+				'watermark-blue'        => esc_html__( 'Quote Watermark (Blue)', 'zaso' ),
+				'spotlight-violet'      => esc_html__( 'Spotlight (Violet)', 'zaso' ),
+				'spotlight-sunset'      => esc_html__( 'Spotlight (Sunset)', 'zaso' ),
 			);
 		}
 
@@ -571,6 +619,43 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		}
 
 		/**
+		 * Build the Testimonial Slider entry.
+		 *
+		 * The design list ( zaso_testimonial_slider_design_options() ) already reflects
+		 * the license: six entries unlicensed, thirty when Pro is active ( the Pro
+		 * `zaso_testimonial_slider_designs` filter registers the twenty-four ). Preview
+		 * URLs are resolved directly from the bundled thumbnails ( all thirty ship in
+		 * the free plugin ), so the picker is fully self-sufficient with Pro off.
+		 *
+		 * @since  1.11.0
+		 * @return array Entry array, or empty when unavailable.
+		 */
+		protected function build_testimonial_slider_entry() {
+			if ( ! function_exists( 'zaso_testimonial_slider_design_options' ) ) {
+				$this->ensure_widget_class( 'Zen_Addons_SiteOrigin_Testimonial_Slider_Widget', 'zaso-testimonial-slider-widgets' );
+			}
+			if ( ! function_exists( 'zaso_testimonial_slider_design_options' ) ) {
+				return array();
+			}
+
+			$base = ZASO_BASE_DIR . 'assets/design-previews/testimonial-slider/';
+
+			return $this->build_entry(
+				array(
+					'key'         => 'testimonial-slider',
+					'options'     => zaso_testimonial_slider_design_options(),
+					'free_ids'    => self::TESTIMONIAL_SLIDER_FREE_IDS,
+					'locked_map'  => $this->locked_pro_testimonial_slider_designs(),
+					'noun'        => esc_html__( 'testimonial slider', 'zaso' ),
+					'default'     => esc_html__( 'Default (simple card)', 'zaso' ),
+					'preview_url' => static function ( $id ) use ( $base ) {
+						return $base . $id . '.webp';
+					},
+				)
+			);
+		}
+
+		/**
 		 * Build the localized data map the picker JS consumes.
 		 *
 		 * Returns a `widgets` array: one self-contained entry per supported widget.
@@ -585,7 +670,7 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		public function build_localized_data() {
 			$widgets = array();
 
-			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry(), $this->build_pricing_table_entry() ) as $entry ) {
+			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry(), $this->build_pricing_table_entry(), $this->build_testimonial_slider_entry() ) as $entry ) {
 				if ( ! empty( $entry['designs'] ) ) {
 					$widgets[] = $entry;
 				}

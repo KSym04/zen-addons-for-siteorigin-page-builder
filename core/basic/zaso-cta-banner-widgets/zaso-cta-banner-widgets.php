@@ -328,6 +328,26 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 
 	}
 
+	function initialize() {
+
+		// Self-hosted Material Symbols Rounded @font-face. Certain design variants
+		// render a per-design glyph through this font via a ::before / ::after
+		// pseudo-element (the free Solid Centered arrow, plus the Pro designs), so
+		// it must load whenever a CTA banner renders. SiteOrigin enqueues this only
+		// on pages where the widget is present, and skips it if already enqueued.
+		$this->register_frontend_styles(
+			array(
+				array(
+					'zaso-material-symbols',
+					ZASO_BASE_DIR . 'assets/css/material-symbols.css',
+					array(),
+					ZASO_VERSION,
+				)
+			)
+		);
+
+	}
+
 	function get_less_variables( $instance ) {
 
 		// Defensive: a design_style preset may fill only some of the design

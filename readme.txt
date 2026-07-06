@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.8
+Stable tag: 1.10.9
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -205,6 +205,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.9 =
+New Testimonial Slider ready-made designs: thirty slider looks (six free) chosen visually from the Browse designs gallery. Your existing testimonials are unchanged.
+
 = 1.10.8 =
 New Pricing Table ready-made designs: thirty pricing looks (six free) chosen visually from the Browse designs gallery, matching the Alert Box, Counter, and Call to Action experience. Your existing pricing tables are unchanged.
 
@@ -263,6 +266,13 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.9 =
+* New: Testimonial Slider ready-made designs. Thirty slider looks (six free: Centered Quote, Avatar Left, and Big Quote Mark, each in two colour skins) chosen visually from the "Browse designs" gallery. Leave it on the simple card to keep your current look unchanged.
+* New: Star ratings now render as crisp inline SVG stars, and the ready-made designs use two bundled, self-hosted webfonts (Hanken Grotesk and DM Mono). No external Google Fonts request is made.
+* New: Two optional Testimonial fields, Company Name and Aggregate Rating, used by the "Company logo" and "Stat highlight" designs and ignored by every other design.
+* Improved: The visual Browse designs picker now covers the Testimonial Slider as well as the Alert Box, Counter, Call to Action, and Pricing Table.
+* Improved: The Call to Action "Solid Centered" ready-made design now shows its button arrow icon, matching the design gallery preview.
 
 = 1.10.8 =
 * New: Pricing Table ready-made designs. Thirty pricing looks (six free: Classic, Accent Header, and Minimal Outline, each in two colour skins) chosen visually from the "Browse designs" gallery, with their own layouts, headers, ribbons, and feature styling. Leave it on the classic table to keep your current look unchanged.

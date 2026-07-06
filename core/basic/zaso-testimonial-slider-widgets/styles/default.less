@@ -249,6 +249,14 @@
 	content: none;
 }
 
+// Controls are `button.`-element-qualified on purpose. Twenty Twenty-One skins its
+// buttons with `button:not(:hover):not(:active):not(.has-text-color)` etc, which is
+// specificity (0,3,1) — a plain class-scoped rule would lose to it and leak the
+// theme's colours. Prefixed by SiteOrigin's `.so-widget-<id>` these defensive rules
+// resolve to (0,3,1) too and hold the default appearance. The design skins below
+// out-rank both theme and base by doubling the root class (prefixed (0,4,0)); the
+// Pro design sheet triples it. (The redundant `[aria-current="true"]` selector was
+// dropped so the skins' `__dot--active` rule is not shadowed at (0,4,1).)
 .zaso-testimonial-slider button.zaso-testimonial-slider__arrow {
 	-webkit-appearance: none;
 	appearance:         none;
@@ -269,8 +277,7 @@
 	border:             0;
 }
 
-.zaso-testimonial-slider button.zaso-testimonial-slider__dot--active,
-.zaso-testimonial-slider button.zaso-testimonial-slider__dot[aria-current="true"] {
+.zaso-testimonial-slider button.zaso-testimonial-slider__dot--active {
 	background: @dot_active_color;
 }
 
@@ -369,4 +376,440 @@
 	border-radius: 0;
 	box-shadow:    none;
 	padding:       24px;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// PRE-MADE DESIGN SKINS — shared scaffold + 6 FREE designs (layouts 01-03 × A/B)
+// The skinned card path (tpl/default.php) emits: optional .__company/.__badge/.__stat,
+// .__rating (inline-SVG stars), .__quote, .__person (.__avatar + .__authorinfo), and a
+// .__footer (.__dots + .__counter + .__arrows). This scaffold gives every skin its
+// shared SHAPE; each skin owns its PALETTE + arrangement. Colours that fight the
+// theme's own `button {}` rule (specificity (0,3,1)) are set per-skin at a DOUBLED
+// root class (.zaso-testimonial-slider.zaso-testimonial-slider--design-<id> …) so they
+// win by class-count regardless of stylesheet order; structure the theme never touches
+// stays at the lighter shared specificity. .__viewport/.__track/.__slide are never
+// touched (they drive the flex+transform carousel). Fonts load from the bundled
+// webfonts (assets/css/testimonial-slider-fonts.css); default widget keeps theme type.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// The skin FRAME (background, border, radius, shadow, padding) lives on the widget
+// ROOT so the slider-level footer (dots + arrows) sits INSIDE the card, exactly like
+// the design. The per-slide .__card becomes a transparent content wrapper. Each skin
+// paints the root; absolute children (rating/badge) resolve to this positioned root,
+// so their offsets are unchanged.
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] {
+	font-family:   'Hanken Grotesk', system-ui, -apple-system, "Segoe UI", sans-serif;
+	position:      relative;
+	overflow:      hidden;
+	border-radius: 18px;
+	box-sizing:    border-box;
+}
+
+// Optional blocks stay hidden until a layout opts in; the autoplay control is unused
+// by the skin path (skins hide it to match the designs).
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__badge,
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__company,
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__stat,
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__counter,
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__playpause {
+	display: none;
+}
+
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__card {
+	position:       static;
+	overflow:       visible;
+	background:     transparent;
+	border:         0;
+	border-radius:  0;
+	box-shadow:     none;
+	padding:        0;
+	box-sizing:     border-box;
+	display:        flex;
+	flex-direction: column;
+}
+
+// Star strip (SVG).
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__rating {
+	display:     flex;
+	gap:         3px;
+	margin:      0 0 16px;
+	line-height: 1;
+	font-size:   0;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__star {
+	display: inline-flex;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__star svg {
+	width:   18px;
+	height:  18px;
+	display: block;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__star--full {
+	color: #f59e0b;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__star--empty {
+	color: #e2e8f0;
+}
+
+// Quote.
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__quote {
+	margin:  0 0 20px;
+	padding: 0;
+	border:  0;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__quote p {
+	font-family:    'Hanken Grotesk', system-ui, -apple-system, "Segoe UI", sans-serif;
+	font-size:      15px;
+	line-height:    1.6;
+	letter-spacing: normal;
+	color:          #334155;
+	font-style:     normal;
+	font-weight:    400;
+	margin:         0;
+}
+// Decorative curly quotes wrap the testimonial text, matching the design.
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__quote p::before {
+	content: "\201C";
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__quote p::after {
+	content: "\201D";
+}
+
+// Person (avatar + info).
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__person {
+	display:     flex;
+	align-items: center;
+	gap:         11px;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__avatar {
+	width:  42px;
+	height: 42px;
+	flex:   none;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__author-photo,
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__initials {
+	width:           100%;
+	height:          100%;
+	border-radius:   50%;
+	display:         flex;
+	align-items:     center;
+	justify-content: center;
+	font-weight:     800;
+	font-size:       15px;
+	object-fit:      cover;
+	box-sizing:      border-box;
+	line-height:     1;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__authorinfo {
+	display:        flex;
+	flex-direction: column;
+	gap:            1px;
+	text-align:     left;
+	min-width:      0;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__author-name {
+	font-weight: 700;
+	font-size:   13.5px;
+	line-height: 1.3;
+	color:       #0f172a;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__author-title {
+	font-weight: 400;
+	font-size:   12px;
+	line-height: 1.3;
+	color:       #94a3b8;
+}
+
+// Footer (dots + counter + arrows) — SHAPE only; each skin paints the palette.
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__footer {
+	display:         flex;
+	align-items:     center;
+	justify-content: space-between;
+	gap:             10px;
+	margin-top:      18px;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__dots {
+	display:     flex;
+	align-items: center;
+	gap:         6px;
+	margin:      0;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__dot {
+	width:         5px;
+	height:        5px;
+	border-radius: 999px;
+	padding:       0;
+	flex:          none;
+	transition:    width .2s ease, background .2s ease;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__dot--active {
+	width:     18px;
+	transform: none;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__arrows {
+	display: flex;
+	gap:     8px;
+	margin:  0;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__counter {
+	font-family: 'DM Mono', ui-monospace, monospace;
+	font-size:   12px;
+	color:       #94a3b8;
+	white-space: nowrap;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__arrow {
+	width:           30px;
+	height:          30px;
+	border-radius:   50%;
+	display:         flex;
+	align-items:     center;
+	justify-content: center;
+	padding:         0;
+	cursor:          pointer;
+	flex:            none;
+}
+.zaso-testimonial-slider[class*="zaso-testimonial-slider--design-"] .zaso-testimonial-slider__arrow svg {
+	width:  17px;
+	height: 17px;
+}
+
+// ─── Layout 01 — Centered quote (01A Indigo, 01B Teal) ──────────────────────────
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal {
+	background: #ffffff;
+	border:     1px solid #e2e8f0;
+	padding:    30px 28px;
+	box-shadow: 0 4px 16px rgba( 15, 23, 42, 0.05 );
+	text-align: center;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__rating,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__rating {
+	justify-content: center;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__person,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__person {
+	justify-content: center;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__dot,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__dot {
+	width:  6px;
+	height: 6px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__dot--active,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__dot--active {
+	width:  20px;
+	height: 6px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__footer,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__footer {
+	justify-content: center;
+	margin-top:      20px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__arrows,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__arrows {
+	display: none;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__dot {
+	background: #cbd5e1;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__dot--active {
+	background: #4f46e5;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-indigo .zaso-testimonial-slider__initials {
+	background: #eef2ff;
+	color:      #4f46e5;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__dot {
+	background: #cbd5e1;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__dot--active {
+	background: #0d9488;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-centered-teal .zaso-testimonial-slider__initials {
+	background: #f0fdfa;
+	color:      #0d9488;
+}
+
+// ─── Layout 02 — Avatar top-left, stars right (02A Slate, 02B Violet) ───────────
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet {
+	background: #ffffff;
+	border:     1px solid #e2e8f0;
+	padding:    26px;
+	box-shadow: 0 4px 16px rgba( 15, 23, 42, 0.05 );
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__person,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__person {
+	order:         -1;
+	margin-bottom: 16px;
+	gap:           12px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__avatar,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__avatar {
+	width:  46px;
+	height: 46px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__initials,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__initials {
+	font-size: 16px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__author-name,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__author-name {
+	font-size: 14px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__rating,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__rating {
+	position: absolute;
+	top:      26px;
+	right:    26px;
+	margin:   0;
+	gap:      2px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__star svg,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__star svg {
+	width:  15px;
+	height: 15px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__quote p,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__quote p {
+	font-size: 14.5px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__quote,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__quote {
+	margin: 0 0 18px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__footer,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__footer {
+	border-top:  1px solid #f1f5f9;
+	padding-top: 14px;
+	margin-top:  0;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__dot {
+	background: #cbd5e1;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__dot--active {
+	background: #0f172a;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__initials {
+	background: #f1f5f9;
+	color:      #0f172a;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__arrow--prev {
+	background:    transparent;
+	border:        1px solid #e2e8f0;
+	color:         #94a3b8;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-slate .zaso-testimonial-slider__arrow--next {
+	background: #0f172a;
+	border:     1px solid #0f172a;
+	color:      #ffffff;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__dot {
+	background: #cbd5e1;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__dot--active {
+	background: #7c3aed;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__initials {
+	background: #faf5ff;
+	color:      #7c3aed;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__arrow--prev {
+	background: transparent;
+	border:     1px solid #e2e8f0;
+	color:      #94a3b8;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-avatar-left-violet .zaso-testimonial-slider__arrow--next {
+	background: #7c3aed;
+	border:     1px solid #7c3aed;
+	color:      #ffffff;
+}
+
+// ─── Layout 03 — Big quote mark (03A Rose, 03B Amber) ───────────────────────────
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber {
+	background: #ffffff;
+	border:     1px solid #e2e8f0;
+	padding:    26px;
+	box-shadow: 0 4px 16px rgba( 15, 23, 42, 0.05 );
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose::before,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber::before {
+	content:     "\201D";
+	position:    absolute;
+	top:         6px;
+	right:       22px;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size:   96px;
+	font-weight: 800;
+	line-height: 1;
+	z-index:     0;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__rating,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__quote,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__person,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__footer,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__rating,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__quote,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__person,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__footer {
+	position: relative;
+	z-index:  1;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__star svg,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__star svg {
+	width:  17px;
+	height: 17px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__footer,
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__footer {
+	border-top:  1px solid #f1f5f9;
+	padding-top: 16px;
+	margin-top:  20px;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose::before {
+	color: #fff1f2;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__dot {
+	background: #cbd5e1;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__dot--active {
+	background: #e11d48;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__initials {
+	background: #fff1f2;
+	color:      #e11d48;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__arrow--prev {
+	background: transparent;
+	border:     1px solid #e2e8f0;
+	color:      #94a3b8;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-rose .zaso-testimonial-slider__arrow--next {
+	background: #e11d48;
+	border:     1px solid #e11d48;
+	color:      #ffffff;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber::before {
+	color: #fffbeb;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__dot {
+	background: #cbd5e1;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__dot--active {
+	background: #d97706;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__initials {
+	background: #fffbeb;
+	color:      #d97706;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__arrow--prev {
+	background: transparent;
+	border:     1px solid #e2e8f0;
+	color:      #94a3b8;
+}
+.zaso-testimonial-slider.zaso-testimonial-slider--design-quote-mark-amber .zaso-testimonial-slider__arrow--next {
+	background: #d97706;
+	border:     1px solid #d97706;
+	color:      #ffffff;
 }

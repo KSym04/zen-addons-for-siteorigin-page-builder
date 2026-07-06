@@ -8,6 +8,134 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * Author URI: https://www.dopethemes.com/
  */
 
+if ( ! function_exists( 'zaso_testimonial_slider_design_options' ) ) :
+	/**
+	 * Curated "designs" for the Testimonial Slider widget.
+	 *
+	 * The free core ships six ready-made designs inline; Zen Addons Pro appends its
+	 * twenty-four additional designs via the shared `zaso_testimonial_slider_designs`
+	 * filter (the Pro controller self-gates on a valid license, so an unlicensed or
+	 * lapsed site only ever sees the six free entries). The empty-string key is the
+	 * classic simple card and adds no class, keeping every existing instance
+	 * byte-identical.
+	 *
+	 * @return array Map of design id => human label.
+	 */
+	function zaso_testimonial_slider_design_options() {
+		$zaso_testimonial_slider_free_designs = array(
+			''                   => __( 'Default (simple card)', 'zaso' ),
+			'centered-indigo'    => __( 'Centered Quote (Indigo)', 'zaso' ),
+			'centered-teal'      => __( 'Centered Quote (Teal)', 'zaso' ),
+			'avatar-left-slate'  => __( 'Avatar Left (Slate)', 'zaso' ),
+			'avatar-left-violet' => __( 'Avatar Left (Violet)', 'zaso' ),
+			'quote-mark-rose'    => __( 'Big Quote Mark (Rose)', 'zaso' ),
+			'quote-mark-amber'   => __( 'Big Quote Mark (Amber)', 'zaso' ),
+		);
+
+		return apply_filters( 'zaso_testimonial_slider_designs', $zaso_testimonial_slider_free_designs );
+	}
+endif;
+
+if ( ! function_exists( 'zaso_testimonial_slider_design_description' ) ) :
+	/**
+	 * Help text for the "Pre-made Design" field.
+	 *
+	 * On a white-labelled Pro site the agency's client must never see the real
+	 * product name or an upsell (they already have the full library), so the brand
+	 * + "unlocks twenty-four more" sentence is dropped. Everywhere else the upsell
+	 * line is kept.
+	 *
+	 * @return string Field description.
+	 */
+	function zaso_testimonial_slider_design_description() {
+		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
+
+		if ( $white_label ) {
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (simple card)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+		}
+
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (simple card)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+	}
+endif;
+
+if ( ! function_exists( 'zaso_testimonial_slider_icon' ) ) :
+	/**
+	 * Return an inline Material Symbols Rounded glyph as SVG.
+	 *
+	 * The pre-made designs draw stars, chevrons and badge marks with the exact
+	 * Material Symbols Rounded outlines (Apache License 2.0) rendered inline as SVG
+	 * rather than via an icon font. Inline SVG is immune to the missing-glyph "tofu"
+	 * a curated font subset can produce, needs no @font-face, and recolours through
+	 * `currentColor`, so each skin tints its icons with a plain `color` rule.
+	 *
+	 * @param string $zaso_name One of: star, chevron_left, chevron_right, hub, verified.
+	 * @return string SVG markup, or an empty string for an unknown name.
+	 */
+	function zaso_testimonial_slider_icon( $zaso_name ) {
+		$zaso_paths = array(
+			'star'          => 'M480-269 314-169q-11 7-23 6t-21-8q-9-7-14-17.5t-2-23.5l44-189-147-127q-10-9-12.5-20.5T140-571q4-11 12-18t22-9l194-17 75-178q5-12 15.5-18t21.5-6q11 0 21.5 6t15.5 18l75 178 194 17q14 2 22 9t12 18q4 11 1.5 22.5T809-528L662-401l44 189q3 13-2 23.5T690-171q-9 7-21 8t-23-6L480-269Z',
+			'chevron_left'  => 'm432-480 156 156q11 11 11 28t-11 28q-11 11-28 11t-28-11L348-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 28-11t28 11q11 11 11 28t-11 28L432-480Z',
+			'chevron_right' => 'M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z',
+			'hub'           => 'M240-40q-50 0-85-35t-35-85q0-50 35-85t85-35q14 0 26 3t23 8l57-71q-28-31-39-70t-5-78l-81-27q-17 25-43 40t-58 15q-50 0-85-35T0-580q0-50 35-85t85-35q50 0 85 35t35 85v8l81 28q20-36 53.5-61t75.5-32v-87q-39-11-64.5-42.5T360-840q0-50 35-85t85-35q50 0 85 35t35 85q0 42-26 73.5T510-724v87q42 7 75.5 32t53.5 61l81-28v-8q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-32 0-58.5-15T739-515l-81 27q6 39-5 77.5T614-340l57 70q11-5 23-7.5t26-2.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-20 6.5-38.5T624-232l-57-71q-41 23-87.5 23T392-303l-56 71q11 15 17.5 33.5T360-160q0 50-35 85t-85 35Z',
+			'verified'      => 'm438-452-58-57q-11-11-27.5-11T324-508q-11 11-11 28t11 28l86 86q12 12 28 12t28-12l170-170q12-12 11.5-28T636-592q-12-12-28.5-12.5T579-593L438-452ZM326-90l-58-98-110-24q-15-3-24-15.5t-7-27.5l11-113-75-86q-10-11-10-26t10-26l75-86-11-113q-2-15 7-27.5t24-15.5l110-24 58-98q8-13 22-17.5t28 1.5l104 44 104-44q14-6 28-1.5t22 17.5l58 98 110 24q15 3 24 15.5t7 27.5l-11 113 75 86q10 11 10 26t-10 26l-75 86 11 113q2 15-7 27.5T802-212l-110 24-58 98q-8 13-22 17.5T584-74l-104-44-104 44q-14 6-28 1.5T326-90Z',
+		);
+
+		if ( ! isset( $zaso_paths[ $zaso_name ] ) ) {
+			return '';
+		}
+
+		return '<svg class="zaso-testimonial-slider__icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" focusable="false"><path d="' . esc_attr( $zaso_paths[ $zaso_name ] ) . '"></path></svg>';
+	}
+endif;
+
+if ( ! function_exists( 'zaso_testimonial_slider_stars' ) ) :
+	/**
+	 * Render a five-star rating row as inline SVG stars.
+	 *
+	 * Filled stars carry `--full` and inherit the skin's star colour; the remainder
+	 * carry `--empty` and take a muted tint, matching the design's rating strip.
+	 *
+	 * @param int $zaso_filled Number of filled stars (already clamped 0-5).
+	 * @return string Star markup.
+	 */
+	function zaso_testimonial_slider_stars( $zaso_filled ) {
+		$zaso_filled = max( 0, min( 5, (int) $zaso_filled ) );
+		$zaso_out    = '';
+		for ( $zaso_i = 1; $zaso_i <= 5; $zaso_i++ ) {
+			$zaso_state = ( $zaso_i <= $zaso_filled ) ? 'full' : 'empty';
+			$zaso_out  .= '<span class="zaso-testimonial-slider__star zaso-testimonial-slider__star--' . $zaso_state . '">' . zaso_testimonial_slider_icon( 'star' ) . '</span>';
+		}
+		return $zaso_out;
+	}
+endif;
+
+if ( ! function_exists( 'zaso_testimonial_slider_initials' ) ) :
+	/**
+	 * Derive up to two uppercase initials from an author name.
+	 *
+	 * Used for the tinted avatar disc when a testimonial has no photo, matching the
+	 * design's initials avatars. Multibyte-safe.
+	 *
+	 * @param string $zaso_name Author name.
+	 * @return string One or two uppercase letters (may be empty).
+	 */
+	function zaso_testimonial_slider_initials( $zaso_name ) {
+		$zaso_name = trim( wp_strip_all_tags( (string) $zaso_name ) );
+		if ( '' === $zaso_name ) {
+			return '';
+		}
+		$zaso_parts = preg_split( '/\s+/', $zaso_name );
+		$zaso_first = function_exists( 'mb_substr' ) ? mb_substr( $zaso_parts[0], 0, 1 ) : substr( $zaso_parts[0], 0, 1 );
+		$zaso_last  = '';
+		if ( count( $zaso_parts ) > 1 ) {
+			$zaso_tail  = $zaso_parts[ count( $zaso_parts ) - 1 ];
+			$zaso_last  = function_exists( 'mb_substr' ) ? mb_substr( $zaso_tail, 0, 1 ) : substr( $zaso_tail, 0, 1 );
+		}
+		$zaso_ini = $zaso_first . $zaso_last;
+		return function_exists( 'mb_strtoupper' ) ? mb_strtoupper( $zaso_ini ) : strtoupper( $zaso_ini );
+	}
+endif;
+
 if ( ! class_exists( 'Zen_Addons_SiteOrigin_Testimonial_Slider_Widget' ) ) :
 
 
@@ -38,6 +166,11 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 						'type'        => 'text',
 						'label'       => __( 'Role / Company', 'zaso' ),
 						'description' => __( 'e.g. CEO at Acme Corp', 'zaso' ),
+					),
+					'company_name' => array(
+						'type'        => 'text',
+						'label'       => __( 'Company Name', 'zaso' ),
+						'description' => __( 'Optional. Shown with a logo mark by the "Company logo" designs; ignored by every other design.', 'zaso' ),
 					),
 					'author_photo' => array(
 						'type'     => 'media',
@@ -92,6 +225,23 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 					'quote'   => __( 'Quote (centered, decorative mark)', 'zaso' ),
 					'minimal' => __( 'Minimal (no card, top rule)', 'zaso' ),
 				),
+			),
+			'design_variant'    => array(
+				'type'        => 'select',
+				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'default'     => '',
+				'description' => zaso_testimonial_slider_design_description(),
+				'options'     => zaso_testimonial_slider_design_options(),
+			),
+			'agg_rating'        => array(
+				'type'        => 'text',
+				'label'       => __( 'Aggregate Rating', 'zaso' ),
+				'description' => __( 'Optional. A headline score such as 4.9, shown by the "Stat highlight" designs; ignored by every other design.', 'zaso' ),
+			),
+			'agg_rating_label'  => array(
+				'type'        => 'text',
+				'label'       => __( 'Aggregate Rating Label', 'zaso' ),
+				'description' => __( 'Optional. Sits under the score, e.g. from 1,200+ verified reviews.', 'zaso' ),
 			),
 			'design'            => array(
 				'type'   => 'section',
@@ -242,6 +392,7 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 					'quote'        => isset( $raw['quote'] ) ? $raw['quote'] : '',
 					'author_name'  => $author_name,
 					'author_title' => isset( $raw['author_title'] ) ? $raw['author_title'] : '',
+					'company_name' => isset( $raw['company_name'] ) ? $raw['company_name'] : '',
 					'photo_src'    => $photo_src,
 					'photo_alt'    => $photo_alt,
 					'rating'       => $rating,
@@ -260,6 +411,9 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 		$extra_class = isset( $instance['extra_class'] ) ? sanitize_html_class( $instance['extra_class'] ) : '';
 		$classes     = trim( 'zaso-testimonial-slider ' . $extra_class );
 
+		$agg_rating       = isset( $instance['agg_rating'] ) ? trim( (string) $instance['agg_rating'] ) : '';
+		$agg_rating_label = isset( $instance['agg_rating_label'] ) ? trim( (string) $instance['agg_rating_label'] ) : '';
+
 		return apply_filters( 'zaso_testimonial_slider_template_variables', array(
 			'testimonials'      => $testimonials,
 			'count'             => $count,
@@ -267,6 +421,8 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 			'autoplay_duration' => $autoplay_duration,
 			'show_arrows'       => $show_arrows,
 			'show_dots'         => $show_dots,
+			'agg_rating'        => $agg_rating,
+			'agg_rating_label'  => $agg_rating_label,
 			'classes'           => $classes,
 		) );
 	}
@@ -307,6 +463,20 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 					array(),
 					ZASO_VERSION,
 					true,
+				),
+			)
+		);
+
+		// Bundled webfonts (Hanken Grotesk + DM Mono) for the pre-made designs. The
+		// faces are declared here but only applied inside a `--design-<id>` skin, so
+		// the default widget keeps the theme's typography. Self-hosted, no CDN.
+		$this->register_frontend_styles(
+			array(
+				array(
+					'zaso-testimonial-slider-fonts',
+					ZASO_BASE_DIR . 'assets/css/testimonial-slider-fonts.css',
+					array(),
+					ZASO_VERSION,
 				),
 			)
 		);

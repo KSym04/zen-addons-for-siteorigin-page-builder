@@ -200,3 +200,21 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+===============================================================================
+
+Bundled fonts and their licenses:
+
+* material-symbols-rounded.woff2
+  Material Symbols Rounded by Google. Apache License 2.0 (the license text above).
+
+* hanken-grotesk-variable.woff2
+  Hanken Grotesk by Alfredo Marco Pradil. SIL Open Font License, Version 1.1.
+  https://openfontlicense.org/
+
+* dm-mono-400.woff2, dm-mono-500.woff2
+  DM Mono by Colophon Foundry. SIL Open Font License, Version 1.1.
+  https://openfontlicense.org/
+
+The SIL Open Font License 1.1 permits bundling and redistribution of these
+fonts with this plugin. The full OFL text is available at the URL above.
