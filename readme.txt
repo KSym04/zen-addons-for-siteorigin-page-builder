@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.9
+Stable tag: 1.10.10
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -207,6 +207,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.10 =
+New Hover Card ready-made designs: thirty image-card looks (six free) with caption reveals on hover, chosen visually from the Browse designs gallery. Your existing hover cards are unchanged.
+
 = 1.10.9 =
 New Testimonial Slider ready-made designs: thirty slider looks (six free) chosen visually from the Browse designs gallery. Your existing testimonials are unchanged.
 
@@ -268,6 +271,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.10 =
+* New: Hover Card ready-made designs. Thirty image-card looks (six free: Bottom Slide-up and Full Overlay, each in three skins) chosen visually from the "Browse designs" gallery, each with its own caption reveal on hover, colour skin, and call-to-action button. Leave it on the classic hover card to keep your current look unchanged.
+* Improved: The visual Browse designs picker now covers the Hover Card as well as the Alert Box, Counter, Call to Action, Pricing Table, and Testimonial Slider.
 
 = 1.10.9 =
 * New: Testimonial Slider ready-made designs. Thirty slider looks (six free: Centered Quote, Avatar Left, and Big Quote Mark, each in two colour skins) chosen visually from the "Browse designs" gallery. Leave it on the simple card to keep your current look unchanged.

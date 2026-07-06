@@ -26,6 +26,19 @@ $zaso_wrapper_class = 'zaso-hover-card';
 if ( 'default' !== $zaso_layout ) {
 	$zaso_wrapper_class .= ' zaso-hover-card--layout-' . $zaso_layout;
 }
+
+// Optional pre-made design. Empty ('') is the classic look and adds NO class, so
+// existing instances (which have no design_variant key) render byte-identical.
+// The value is whitelisted against the live design list, so a Pro design saved on
+// a now-unlicensed site (where the Pro filter no longer registers it) falls back
+// to the default render instead of emitting an unstyled Pro class.
+$zaso_design_variant = ! empty( $instance['design_variant'] ) ? $instance['design_variant'] : '';
+if ( '' !== $zaso_design_variant && function_exists( 'zaso_hover_card_design_options' ) ) {
+	$zaso_design_allowed = array_keys( zaso_hover_card_design_options() );
+	if ( in_array( $zaso_design_variant, $zaso_design_allowed, true ) ) {
+		$zaso_wrapper_class .= ' zaso-hover-card--design-' . sanitize_html_class( $zaso_design_variant );
+	}
+}
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>

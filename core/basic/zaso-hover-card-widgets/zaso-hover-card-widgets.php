@@ -8,6 +8,60 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * Author URI: https://www.dopethemes.com/
  */
 
+if ( ! function_exists( 'zaso_hover_card_design_options' ) ) :
+	/**
+	 * Curated "designs" for the Hover Card widget.
+	 *
+	 * The free core ships six ready-made designs inline; Zen Addons Pro appends
+	 * its twenty-four additional designs via the shared `zaso_hover_card_designs`
+	 * filter (the Pro controller self-gates on a valid license, so an unlicensed or
+	 * lapsed site only ever sees the six free entries). The empty-string key is the
+	 * classic "Default" hover card and adds no class, keeping every existing
+	 * instance byte-identical.
+	 *
+	 * @since 1.10.10
+	 *
+	 * @return array Map of design id => human label.
+	 */
+	function zaso_hover_card_design_options() {
+		$zaso_hover_card_free_designs = array(
+			''                 => __( 'Default (classic hover card)', 'zaso' ),
+			'slide-up-frosted' => __( 'Slide Up - Frosted (teal)', 'zaso' ),
+			'slide-up-dark'    => __( 'Slide Up - Dark (green)', 'zaso' ),
+			'slide-up-tinted'  => __( 'Slide Up - Tinted (cyan)', 'zaso' ),
+			'overlay-scrim'    => __( 'Overlay - Dark Scrim (blue)', 'zaso' ),
+			'overlay-solid'    => __( 'Overlay - Vivid Solid (blue)', 'zaso' ),
+			'overlay-gradient' => __( 'Overlay - Gradient (blue)', 'zaso' ),
+		);
+
+		return apply_filters( 'zaso_hover_card_designs', $zaso_hover_card_free_designs );
+	}
+endif;
+
+if ( ! function_exists( 'zaso_hover_card_design_description' ) ) :
+	/**
+	 * Help text for the "Pre-made Design" field.
+	 *
+	 * On a white-labelled Pro site the agency's client must never see the real
+	 * product name or an upsell (they already have the full library), so the brand
+	 * + "unlocks twenty-four more" sentence is dropped. Everywhere else (free, or
+	 * licensed-but-not-white-labelled) the upsell line is kept.
+	 *
+	 * @since 1.10.10
+	 *
+	 * @return string Field description.
+	 */
+	function zaso_hover_card_design_description() {
+		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
+
+		if ( $white_label ) {
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic hover card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+		}
+
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic hover card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+	}
+endif;
+
 if( ! class_exists( 'Zen_Addons_SiteOrigin_Hover_Card_Widget' ) ) :
 
 
@@ -17,6 +71,20 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 
 		// ZASO hover card field array.
 		$zaso_hover_card_field_array = array(
+			/**
+			 * Pre-made design (visual picker). Empty ('') is the classic look and
+			 * adds NO class, so existing instances (which have no design_variant
+			 * key) render byte-identical. A picked design applies a self-contained
+			 * skin that overrides the manual Design colours below. The Browse
+			 * designs modal (core/design-picker.php) enhances this select.
+			 */
+			'design_variant' => array(
+				'type'        => 'select',
+				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'default'     => '',
+				'description' => zaso_hover_card_design_description(),
+				'options'     => zaso_hover_card_design_options(),
+			),
 			'hover_card_title' => array(
 				'type'  => 'text',
 				'label' => __( 'Title Caption' , 'zaso' )
@@ -520,6 +588,22 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 					array( 'jquery' ),
 					ZASO_VERSION,
 					true,
+				)
+			)
+		);
+
+		// Self-hosted Material Symbols Rounded @font-face. Certain design variants
+		// render a per-design glyph through this font via a ::before / ::after
+		// pseudo-element (the free Slide Up arrows, plus the Pro designs), so it
+		// must load whenever a hover card renders. SiteOrigin enqueues this only on
+		// pages where the widget is present, and skips it if already enqueued.
+		$this->register_frontend_styles(
+			array(
+				array(
+					'zaso-material-symbols',
+					ZASO_BASE_DIR . 'assets/css/material-symbols.css',
+					array(),
+					ZASO_VERSION,
 				)
 			)
 		);

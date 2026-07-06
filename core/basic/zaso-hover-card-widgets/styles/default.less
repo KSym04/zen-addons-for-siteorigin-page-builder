@@ -281,3 +281,471 @@
     transform: scale( 1.15 );
   }
 }
+
+// ===========================================================================
+// PRE-MADE DESIGNS (self-contained skins) — 1.10.10
+// ---------------------------------------------------------------------------
+// One-click "Browse designs" looks. Each `.zaso-hover-card--design-{id}` block
+// is fully self-contained (hardcoded hex, no @vars) and, being source-ordered
+// after the var-driven base and the layout variants, wins every specificity tie
+// without !important. The empty design_variant ('') adds no class, so existing
+// hover cards are untouched.
+//
+// Skins colour only the reveal panel (__modal) + its button and drive the
+// reveal mechanics; they NEVER paint a gradient over __media, so the user's
+// uploaded image always shows through (the design's demo image gradient is a
+// preview-only device). The always-visible caption is hidden on design variants
+// because the modal carries the title on reveal.
+//
+// Six ship free (layouts 01 slide-up + 02 overlay); Zen Addons Pro adds the
+// remaining twenty-four via the shared `zaso_hover_card_designs` filter.
+// ===========================================================================
+
+// ----- Shared base FX (all 6 free design variants) -------------------------
+// Rounded, clipped card; image zoom on hover; card lift + deeper shadow; a
+// bottom vignette for legibility. Reveal (:focus-within mirrors :hover) so
+// keyboard users get the same behaviour as pointer users.
+.zaso-hover-card--design-slide-up-frosted,
+.zaso-hover-card--design-slide-up-dark,
+.zaso-hover-card--design-slide-up-tinted,
+.zaso-hover-card--design-overlay-scrim,
+.zaso-hover-card--design-overlay-solid,
+.zaso-hover-card--design-overlay-gradient {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba( 15, 23, 42, 0.14 );
+  transition: transform 0.45s cubic-bezier( 0.4, 0, 0.2, 1 ), box-shadow 0.45s cubic-bezier( 0.4, 0, 0.2, 1 );
+
+  .zaso-hover-card__box {
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  // Promote the real image to a visible, zoomable media layer (the JS-painted
+  // background on __box still sits underneath as a graceful fallback).
+  .zaso-hover-card__media {
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+
+    img {
+      visibility: visible;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.6s cubic-bezier( 0.4, 0, 0.2, 1 );
+    }
+
+    // Bottom vignette — darkens the lower edge only, never masks the image with
+    // a skin colour. Sits above the image, below the modal panel.
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      background: linear-gradient( to top, rgba( 0, 0, 0, 0.34 ), rgba( 0, 0, 0, 0 ) 55% );
+    }
+  }
+
+  // The always-visible caption is redundant here; the modal carries the title.
+  .zaso-hover-card__caption {
+    display: none;
+  }
+}
+
+// Shared hover: lift the card + deeper shadow, zoom the image.
+.zaso-hover-card--design-slide-up-frosted:hover,
+.zaso-hover-card--design-slide-up-frosted:focus-within,
+.zaso-hover-card--design-slide-up-dark:hover,
+.zaso-hover-card--design-slide-up-dark:focus-within,
+.zaso-hover-card--design-slide-up-tinted:hover,
+.zaso-hover-card--design-slide-up-tinted:focus-within,
+.zaso-hover-card--design-overlay-scrim:hover,
+.zaso-hover-card--design-overlay-scrim:focus-within,
+.zaso-hover-card--design-overlay-solid:hover,
+.zaso-hover-card--design-overlay-solid:focus-within,
+.zaso-hover-card--design-overlay-gradient:hover,
+.zaso-hover-card--design-overlay-gradient:focus-within {
+  transform: translateY( -4px );
+  box-shadow: 0 26px 54px rgba( 15, 23, 42, 0.3 );
+}
+
+.zaso-hover-card--design-slide-up-frosted:hover .zaso-hover-card__media img,
+.zaso-hover-card--design-slide-up-frosted:focus-within .zaso-hover-card__media img,
+.zaso-hover-card--design-slide-up-dark:hover .zaso-hover-card__media img,
+.zaso-hover-card--design-slide-up-dark:focus-within .zaso-hover-card__media img,
+.zaso-hover-card--design-slide-up-tinted:hover .zaso-hover-card__media img,
+.zaso-hover-card--design-slide-up-tinted:focus-within .zaso-hover-card__media img,
+.zaso-hover-card--design-overlay-scrim:hover .zaso-hover-card__media img,
+.zaso-hover-card--design-overlay-scrim:focus-within .zaso-hover-card__media img,
+.zaso-hover-card--design-overlay-solid:hover .zaso-hover-card__media img,
+.zaso-hover-card--design-overlay-solid:focus-within .zaso-hover-card__media img,
+.zaso-hover-card--design-overlay-gradient:hover .zaso-hover-card__media img,
+.zaso-hover-card--design-overlay-gradient:focus-within .zaso-hover-card__media img {
+  transform: scale( 1.09 );
+}
+
+// ===========================================================================
+// LAYOUT 01 — slide-up (bottom panel slides up from the lower edge on hover)
+// ---------------------------------------------------------------------------
+// __modal = a bottom-anchored, auto-height panel. Rests at translateY(100%)
+// (off-screen below) and slides to translateY(0) on hover. Left-aligned text.
+// ===========================================================================
+
+// ----- Design 01A: Slide Up - Frosted (teal) -------------------------------
+.zaso-hover-card--design-slide-up-frosted .zaso-hover-card__modal {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+  padding: 20px 22px 22px;
+  background: rgba( 255, 255, 255, 0.96 );
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  opacity: 1;
+  transform: translateY( 100% );
+  transition: transform 0.38s cubic-bezier( 0.4, 0, 0.2, 1 );
+}
+.zaso-hover-card--design-slide-up-frosted:hover .zaso-hover-card__modal,
+.zaso-hover-card--design-slide-up-frosted:focus-within .zaso-hover-card__modal {
+  transform: translateY( 0 );
+}
+.zaso-hover-card--design-slide-up-frosted .zaso-hover-card__modal-title {
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  color: #0f172a;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: left;
+}
+.zaso-hover-card--design-slide-up-frosted .zaso-hover-card__modal p {
+  margin: 0 0 14px;
+  padding: 0;
+  color: #64748b;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.zaso-hover-card--design-slide-up-frosted a.zaso-hover-card__modal-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0;
+  padding: 0.6em 1.15em;
+  background: #064e3b;
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.zaso-hover-card--design-slide-up-frosted a.zaso-hover-card__modal-action:hover,
+.zaso-hover-card--design-slide-up-frosted a.zaso-hover-card__modal-action:focus {
+  background: #053d2f;
+  color: #ffffff;
+  border: 0;
+}
+
+// ----- Design 01B: Slide Up - Dark (green) ---------------------------------
+.zaso-hover-card--design-slide-up-dark .zaso-hover-card__modal {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+  padding: 20px 22px 22px;
+  background: rgba( 15, 23, 42, 0.96 );
+  opacity: 1;
+  transform: translateY( 100% );
+  transition: transform 0.38s cubic-bezier( 0.4, 0, 0.2, 1 );
+}
+.zaso-hover-card--design-slide-up-dark:hover .zaso-hover-card__modal,
+.zaso-hover-card--design-slide-up-dark:focus-within .zaso-hover-card__modal {
+  transform: translateY( 0 );
+}
+.zaso-hover-card--design-slide-up-dark .zaso-hover-card__modal-title {
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: left;
+}
+.zaso-hover-card--design-slide-up-dark .zaso-hover-card__modal p {
+  margin: 0 0 14px;
+  padding: 0;
+  color: #94a3b8;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.zaso-hover-card--design-slide-up-dark a.zaso-hover-card__modal-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0;
+  padding: 0.6em 1.15em;
+  background: #4ade80;
+  color: #052e16;
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.zaso-hover-card--design-slide-up-dark a.zaso-hover-card__modal-action:hover,
+.zaso-hover-card--design-slide-up-dark a.zaso-hover-card__modal-action:focus {
+  background: #22c55e;
+  color: #052e16;
+  border: 0;
+}
+
+// ----- Design 01C: Slide Up - Tinted (cyan) --------------------------------
+.zaso-hover-card--design-slide-up-tinted .zaso-hover-card__modal {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+  padding: 20px 22px 22px;
+  background: rgba( 13, 148, 136, 0.94 );
+  opacity: 1;
+  transform: translateY( 100% );
+  transition: transform 0.38s cubic-bezier( 0.4, 0, 0.2, 1 );
+}
+.zaso-hover-card--design-slide-up-tinted:hover .zaso-hover-card__modal,
+.zaso-hover-card--design-slide-up-tinted:focus-within .zaso-hover-card__modal {
+  transform: translateY( 0 );
+}
+.zaso-hover-card--design-slide-up-tinted .zaso-hover-card__modal-title {
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: left;
+}
+.zaso-hover-card--design-slide-up-tinted .zaso-hover-card__modal p {
+  margin: 0 0 14px;
+  padding: 0;
+  color: rgba( 255, 255, 255, 0.85 );
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.zaso-hover-card--design-slide-up-tinted a.zaso-hover-card__modal-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0;
+  padding: 0.6em 1.15em;
+  background: #ffffff;
+  color: #0d9488;
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.zaso-hover-card--design-slide-up-tinted a.zaso-hover-card__modal-action:hover,
+.zaso-hover-card--design-slide-up-tinted a.zaso-hover-card__modal-action:focus {
+  background: #f0fdfa;
+  color: #0d9488;
+  border: 0;
+}
+
+// Slide-up button glyph: trailing arrow_forward (U+E5C8), as per source design.
+.zaso-hover-card--design-slide-up-frosted a.zaso-hover-card__modal-action::after,
+.zaso-hover-card--design-slide-up-dark a.zaso-hover-card__modal-action::after,
+.zaso-hover-card--design-slide-up-tinted a.zaso-hover-card__modal-action::after {
+  content: "\e5c8";
+  font-family: "ZASO Material Symbols Rounded";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  font-size: 1.1em;
+  font-variation-settings: 'wght' 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ===========================================================================
+// LAYOUT 02 — overlay (full-inset scrim, cross-fades in, centred content)
+// ---------------------------------------------------------------------------
+// __modal = a full-inset panel. Rests at opacity:0 and fades to opacity:1 on
+// hover. Flex column, centred both axes, text-align centre.
+// ===========================================================================
+
+// ----- Design 02A: Overlay - Dark Scrim (blue) -----------------------------
+.zaso-hover-card--design-overlay-scrim .zaso-hover-card__modal {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: rgba( 12, 74, 110, 0.82 );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.zaso-hover-card--design-overlay-scrim:hover .zaso-hover-card__modal,
+.zaso-hover-card--design-overlay-scrim:focus-within .zaso-hover-card__modal {
+  opacity: 1;
+}
+.zaso-hover-card--design-overlay-scrim .zaso-hover-card__modal-title {
+  display: block;
+  margin: 0 0 8px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+}
+.zaso-hover-card--design-overlay-scrim .zaso-hover-card__modal p {
+  margin: 0 0 16px;
+  padding: 0;
+  color: rgba( 255, 255, 255, 0.85 );
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.zaso-hover-card--design-overlay-scrim a.zaso-hover-card__modal-action {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.6em 1.3em;
+  background: #ffffff;
+  color: #0c4a6e;
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.zaso-hover-card--design-overlay-scrim a.zaso-hover-card__modal-action:hover,
+.zaso-hover-card--design-overlay-scrim a.zaso-hover-card__modal-action:focus {
+  background: #e0f2fe;
+  color: #0c4a6e;
+  border: 0;
+}
+
+// ----- Design 02B: Overlay - Vivid Solid (blue) ----------------------------
+.zaso-hover-card--design-overlay-solid .zaso-hover-card__modal {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: #2563eb;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.zaso-hover-card--design-overlay-solid:hover .zaso-hover-card__modal,
+.zaso-hover-card--design-overlay-solid:focus-within .zaso-hover-card__modal {
+  opacity: 1;
+}
+.zaso-hover-card--design-overlay-solid .zaso-hover-card__modal-title {
+  display: block;
+  margin: 0 0 8px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  text-align: center;
+}
+.zaso-hover-card--design-overlay-solid .zaso-hover-card__modal p {
+  margin: 0 0 16px;
+  padding: 0;
+  color: rgba( 255, 255, 255, 0.88 );
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.zaso-hover-card--design-overlay-solid a.zaso-hover-card__modal-action {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.6em 1.3em;
+  background: rgba( 255, 255, 255, 0.18 );
+  color: #ffffff;
+  border: 1px solid rgba( 255, 255, 255, 0.35 );
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.zaso-hover-card--design-overlay-solid a.zaso-hover-card__modal-action:hover,
+.zaso-hover-card--design-overlay-solid a.zaso-hover-card__modal-action:focus {
+  background: rgba( 255, 255, 255, 0.28 );
+  color: #ffffff;
+  border: 1px solid rgba( 255, 255, 255, 0.5 );
+}
+
+// ----- Design 02C: Overlay - Gradient (blue) -------------------------------
+.zaso-hover-card--design-overlay-gradient .zaso-hover-card__modal {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: radial-gradient( circle at 50% 42%, rgba( 59, 130, 246, 0.6 ), rgba( 8, 20, 50, 0.72 ) );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.zaso-hover-card--design-overlay-gradient:hover .zaso-hover-card__modal,
+.zaso-hover-card--design-overlay-gradient:focus-within .zaso-hover-card__modal {
+  opacity: 1;
+}
+.zaso-hover-card--design-overlay-gradient .zaso-hover-card__modal-title {
+  display: block;
+  margin: 0 0 8px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+}
+.zaso-hover-card--design-overlay-gradient .zaso-hover-card__modal p {
+  margin: 0 0 16px;
+  padding: 0;
+  color: rgba( 255, 255, 255, 0.85 );
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.zaso-hover-card--design-overlay-gradient a.zaso-hover-card__modal-action {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.6em 1.3em;
+  background: linear-gradient( 135deg, #3b82f6, #0ea5e9 );
+  color: #ffffff;
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba( 14, 165, 233, 0.4 );
+}
+.zaso-hover-card--design-overlay-gradient a.zaso-hover-card__modal-action:hover,
+.zaso-hover-card--design-overlay-gradient a.zaso-hover-card__modal-action:focus {
+  background: linear-gradient( 135deg, #2563eb, #0284c7 );
+  color: #ffffff;
+  border: 0;
+}

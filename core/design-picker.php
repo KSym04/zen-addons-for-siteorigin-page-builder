@@ -124,6 +124,14 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		const TESTIMONIAL_SLIDER_FREE_IDS = array( 'centered-indigo', 'centered-teal', 'avatar-left-slate', 'avatar-left-violet', 'quote-mark-rose', 'quote-mark-amber' );
 
 		/**
+		 * The six free Hover Card design ids.
+		 *
+		 * @since 1.12.0
+		 * @var array
+		 */
+		const HOVER_CARD_FREE_IDS = array( 'slide-up-frosted', 'slide-up-dark', 'slide-up-tinted', 'overlay-scrim', 'overlay-solid', 'overlay-gradient' );
+
+		/**
 		 * The twenty-four Pro Alert Box designs ( id => label ), mirrored from the
 		 * Pro plugin's Zanp_Alert_Designs::pro_designs() so the FREE plugin can show
 		 * them as blurred, locked upsell cards WITHOUT depending on the Pro filter.
@@ -321,6 +329,46 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				'watermark-blue'        => esc_html__( 'Quote Watermark (Blue)', 'zaso' ),
 				'spotlight-violet'      => esc_html__( 'Spotlight (Violet)', 'zaso' ),
 				'spotlight-sunset'      => esc_html__( 'Spotlight (Sunset)', 'zaso' ),
+			);
+		}
+
+		/**
+		 * The twenty-four Pro Hover Card designs ( id => label ), mirrored from the
+		 * Pro plugin's Zanp_Hover_Card_Designs so the FREE plugin can show them as
+		 * blurred, locked upsell cards WITHOUT depending on the Pro filter.
+		 *
+		 * Each id has a bundled thumbnail at assets/design-previews/hover-card/{id}.webp.
+		 * Render-only: these ids are NEVER added to designIds.
+		 *
+		 * @since 1.12.0
+		 * @return array Map of Pro design id => human label.
+		 */
+		protected function locked_pro_hover_card_designs() {
+			return array(
+				'side-panel-white'  => esc_html__( 'Side Panel White', 'zaso' ),
+				'side-panel-dark'   => esc_html__( 'Side Panel Dark', 'zaso' ),
+				'side-panel-amber'  => esc_html__( 'Side Panel Amber', 'zaso' ),
+				'strips-white'      => esc_html__( 'Strips White', 'zaso' ),
+				'strips-dark'       => esc_html__( 'Strips Dark', 'zaso' ),
+				'strips-accent'     => esc_html__( 'Strips Accent', 'zaso' ),
+				'corner-white'      => esc_html__( 'Corner White', 'zaso' ),
+				'corner-dark'       => esc_html__( 'Corner Dark', 'zaso' ),
+				'corner-accent'     => esc_html__( 'Corner Accent', 'zaso' ),
+				'centered-light'    => esc_html__( 'Centered Light', 'zaso' ),
+				'centered-dark'     => esc_html__( 'Centered Dark', 'zaso' ),
+				'centered-accent'   => esc_html__( 'Centered Accent', 'zaso' ),
+				'type-strip-white'  => esc_html__( 'Type Strip White', 'zaso' ),
+				'type-strip-dark'   => esc_html__( 'Type Strip Dark', 'zaso' ),
+				'type-strip-tinted' => esc_html__( 'Type Strip Tinted', 'zaso' ),
+				'tint-blue'         => esc_html__( 'Tint Blue', 'zaso' ),
+				'tint-dark'         => esc_html__( 'Tint Dark', 'zaso' ),
+				'tint-amber'        => esc_html__( 'Tint Amber', 'zaso' ),
+				'glass-light'       => esc_html__( 'Glass Light', 'zaso' ),
+				'glass-dark'        => esc_html__( 'Glass Dark', 'zaso' ),
+				'glass-frosted'     => esc_html__( 'Glass Frosted', 'zaso' ),
+				'editorial-white'   => esc_html__( 'Editorial White', 'zaso' ),
+				'editorial-dark'    => esc_html__( 'Editorial Dark', 'zaso' ),
+				'editorial-accent'  => esc_html__( 'Editorial Accent', 'zaso' ),
 			);
 		}
 
@@ -656,6 +704,43 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		}
 
 		/**
+		 * Build the Hover Card entry.
+		 *
+		 * The design list ( zaso_hover_card_design_options() ) already reflects the
+		 * license: six entries unlicensed, thirty when Pro is active ( the Pro
+		 * `zaso_hover_card_designs` filter registers the twenty-four ). Preview URLs
+		 * are resolved directly from the bundled thumbnails ( all thirty ship in the
+		 * free plugin ), so the picker is fully self-sufficient with Pro off.
+		 *
+		 * @since  1.12.0
+		 * @return array Entry array, or empty when unavailable.
+		 */
+		protected function build_hover_card_entry() {
+			if ( ! function_exists( 'zaso_hover_card_design_options' ) ) {
+				$this->ensure_widget_class( 'Zen_Addons_SiteOrigin_Hover_Card_Widget', 'zaso-hover-card-widgets' );
+			}
+			if ( ! function_exists( 'zaso_hover_card_design_options' ) ) {
+				return array();
+			}
+
+			$base = ZASO_BASE_DIR . 'assets/design-previews/hover-card/';
+
+			return $this->build_entry(
+				array(
+					'key'         => 'hover-card',
+					'options'     => zaso_hover_card_design_options(),
+					'free_ids'    => self::HOVER_CARD_FREE_IDS,
+					'locked_map'  => $this->locked_pro_hover_card_designs(),
+					'noun'        => esc_html__( 'hover card', 'zaso' ),
+					'default'     => esc_html__( 'Default (classic hover card)', 'zaso' ),
+					'preview_url' => static function ( $id ) use ( $base ) {
+						return $base . $id . '.webp';
+					},
+				)
+			);
+		}
+
+		/**
 		 * Build the localized data map the picker JS consumes.
 		 *
 		 * Returns a `widgets` array: one self-contained entry per supported widget.
@@ -670,7 +755,7 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		public function build_localized_data() {
 			$widgets = array();
 
-			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry(), $this->build_pricing_table_entry(), $this->build_testimonial_slider_entry() ) as $entry ) {
+			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry(), $this->build_pricing_table_entry(), $this->build_testimonial_slider_entry(), $this->build_hover_card_entry() ) as $entry ) {
 				if ( ! empty( $entry['designs'] ) ) {
 					$widgets[] = $entry;
 				}
