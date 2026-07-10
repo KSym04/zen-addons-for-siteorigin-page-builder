@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.10
+Stable tag: 1.10.11
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -207,6 +207,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.11 =
+Maintenance release that keeps the free plugin in step with Zen Addons Pro 1.10.11. No changes to the free plugin itself.
+
 = 1.10.10 =
 New Hover Card ready-made designs: thirty image-card looks (six free) with caption reveals on hover, chosen visually from the Browse designs gallery. The classic hover card also gets softly rounded corners, a gentle gradient caption, and a more legible hover button.
 
@@ -271,6 +274,9 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.11 =
+* Maintenance: Version alignment with Zen Addons Pro 1.10.11, which makes the Pro Popup widget form show only the settings the selected trigger uses. No functional changes to the free plugin.
 
 = 1.10.10 =
 * New: Hover Card ready-made designs. Thirty image-card looks (six free: Bottom Slide-up and Full Overlay, each in three skins) chosen visually from the "Browse designs" gallery, each with its own caption reveal on hover, colour skin, and call-to-action button.
