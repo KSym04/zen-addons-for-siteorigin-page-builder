@@ -229,3 +229,197 @@
 	max-width: 34ch;
 	margin:    0 auto;
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// PRE-MADE DESIGNS — free set (6). Complete looks chosen from the "Browse designs"
+// gallery via the design_variant field. Each fixes its own card shape, icon tile,
+// typography and accent, so it is self-contained and overrides the base skin. The
+// design class carries the .so-widget-<id> prefix (0,3,0) and beats the base card
+// rules (0,2,0) by specificity, so no !important is needed. Flat top-level
+// selectors only; .sow-icon-* / ::before / ::after nest under a flat parent, which
+// is a valid descendant (same shape as the base icon rule). Pro appends 24 more
+// via the zaso_services_grid_designs filter in its own (tripled-selector) sheet.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// Recolour + resize the rendered glyph (wrapper + SiteOrigin inner icon element).
+.zaso-svc-glyph(@c; @s) {
+	color:     @c;
+	font-size: @s;
+	.sow-icon-fontawesome, .sow-icon-materialsymbols, .sow-icon-genericons,
+	.sow-icon-typicons, .sow-icon-elegantline, .sow-icon-iconfont, .sow-icon-image {
+		color:     @c;
+		font-size: @s;
+	}
+}
+
+// Text link with a trailing arrow (Unicode → so no extra webfont dependency).
+.zaso-svc-arrow(@c) {
+	display:         inline-flex;
+	align-items:     center;
+	gap:             5px;
+	color:           @c;
+	font-weight:     700;
+	text-decoration: none;
+	&::after { content: "\2192"; font-weight: 600; }
+	&:hover, &:focus { text-decoration: none; opacity: 0.82; }
+	&:focus { outline: 2px solid @c; outline-offset: 2px; border-radius: 2px; }
+}
+
+// ----- 01 Centered — icon tile on top, everything centred -----------------------
+.zaso-services-grid--design-centered .zaso-services-grid__card {
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       30px 26px;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+	text-align:    center;
+}
+.zaso-services-grid--design-centered .zaso-services-grid__icon {
+	width:         60px;
+	height:        60px;
+	border-radius: 16px;
+	background:    #eef2ff;
+	padding:       0;
+	margin:        0 auto 18px;
+	.zaso-svc-glyph( #4f46e5; 30px );
+}
+.zaso-services-grid--design-centered .zaso-services-grid__title       { font-size: 18px; font-weight: 800; color: #0f172a; margin: 0 0 8px; letter-spacing: -0.01em; }
+.zaso-services-grid--design-centered .zaso-services-grid__description  { font-size: 13.5px; line-height: 1.55; color: #64748b; margin: 0 0 16px; }
+.zaso-services-grid--design-centered .zaso-services-grid__link         { .zaso-svc-arrow( #4f46e5 ); font-size: 13.5px; }
+
+// ----- 02 Inline — icon tile to the left of the text ----------------------------
+.zaso-services-grid--design-inline .zaso-services-grid__card {
+	display:       flex;
+	align-items:   flex-start;
+	gap:           16px;
+	text-align:    left;
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       26px;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+}
+.zaso-services-grid--design-inline .zaso-services-grid__icon {
+	width:         50px;
+	height:        50px;
+	flex:          none;
+	border-radius: 13px;
+	background:    #f1f5f9;
+	padding:       0;
+	margin:        0;
+	.zaso-svc-glyph( #0f172a; 26px );
+}
+.zaso-services-grid--design-inline .zaso-services-grid__body         { flex: 1 1 auto; min-width: 0; }
+.zaso-services-grid--design-inline .zaso-services-grid__title        { font-size: 17px; font-weight: 800; color: #0f172a; margin: 0 0 6px; letter-spacing: -0.01em; }
+.zaso-services-grid--design-inline .zaso-services-grid__description  { font-size: 13px; line-height: 1.5; color: #64748b; margin: 0 0 12px; }
+.zaso-services-grid--design-inline .zaso-services-grid__link         { .zaso-svc-arrow( #0f172a ); font-size: 13px; }
+
+// ----- 03 Chip badge — icon in a pill, divider above the link -------------------
+.zaso-services-grid--design-chip-badge .zaso-services-grid__card {
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       26px;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+	text-align:    left;
+}
+.zaso-services-grid--design-chip-badge .zaso-services-grid__icon {
+	width:         auto;
+	height:        auto;
+	border-radius: 999px;
+	background:    #fff1f2;
+	padding:       7px 13px;
+	margin:        0 0 16px;
+	.zaso-svc-glyph( #e11d48; 17px );
+}
+.zaso-services-grid--design-chip-badge .zaso-services-grid__title       { font-size: 18px; font-weight: 800; color: #0f172a; margin: 0 0 8px; letter-spacing: -0.01em; }
+.zaso-services-grid--design-chip-badge .zaso-services-grid__description  { font-size: 13.5px; line-height: 1.55; color: #64748b; margin: 0 0 16px; }
+.zaso-services-grid--design-chip-badge .zaso-services-grid__link {
+	.zaso-svc-arrow( #e11d48 );
+	display:     flex;
+	font-size:   13.5px;
+	margin-top:  2px;
+	padding-top: 14px;
+	border-top:  1px solid #f1f5f9;
+}
+
+// ----- 04 Borderless — no card, bare glyph --------------------------------------
+.zaso-services-grid--design-borderless .zaso-services-grid__card {
+	background:  transparent;
+	border:      0;
+	box-shadow:  none;
+	padding:     8px 4px;
+	text-align:  left;
+}
+.zaso-services-grid--design-borderless .zaso-services-grid__icon {
+	width:      auto;
+	height:     auto;
+	background: transparent;
+	padding:    0;
+	margin:     0 0 14px;
+	.zaso-svc-glyph( #059669; 32px );
+}
+.zaso-services-grid--design-borderless .zaso-services-grid__title       { font-size: 19px; font-weight: 800; color: #0f172a; margin: 0 0 8px; letter-spacing: -0.01em; }
+.zaso-services-grid--design-borderless .zaso-services-grid__description  { font-size: 14px; line-height: 1.6; color: #64748b; margin: 0 0 14px; }
+.zaso-services-grid--design-borderless .zaso-services-grid__link         { .zaso-svc-arrow( #059669 ); font-size: 14px; }
+
+// ----- 05 Icon top-right — index counter + circular icon at top-right -----------
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__grid { counter-reset: zaso-svc; }
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__item { counter-increment: zaso-svc; }
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__card {
+	position:      relative;
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       84px 26px 26px;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+	text-align:    left;
+}
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__card::before {
+	content:        "/ " counter( zaso-svc, decimal-leading-zero );
+	position:       absolute;
+	top:            30px;
+	left:           26px;
+	font-family:    'DM Mono', ui-monospace, monospace;
+	font-size:      12px;
+	font-weight:    500;
+	letter-spacing: 0.06em;
+	color:          #94a3b8;
+}
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__icon {
+	position:      absolute;
+	top:           26px;
+	right:         26px;
+	width:         46px;
+	height:        46px;
+	border-radius: 50%;
+	background:    #f0fdfa;
+	padding:       0;
+	margin:        0;
+	.zaso-svc-glyph( #0d9488; 24px );
+}
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__title       { font-size: 18px; font-weight: 800; color: #0f172a; margin: 0 0 8px; letter-spacing: -0.01em; }
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__description  { font-size: 13.5px; line-height: 1.55; color: #64748b; margin: 0 0 14px; }
+.zaso-services-grid--design-icon-top-right .zaso-services-grid__link         { .zaso-svc-arrow( #0d9488 ); font-size: 13.5px; }
+
+// ----- 06 Icon over title — small amber tile, left aligned ----------------------
+.zaso-services-grid--design-icon-over-title .zaso-services-grid__card {
+	background:    #ffffff;
+	border:        1px solid #e2e8f0;
+	border-radius: 18px;
+	padding:       26px;
+	box-shadow:    0 4px 16px rgba( 15, 23, 42, 0.05 );
+	text-align:    left;
+}
+.zaso-services-grid--design-icon-over-title .zaso-services-grid__icon {
+	width:         44px;
+	height:        44px;
+	border-radius: 12px;
+	background:    #fffbeb;
+	padding:       0;
+	margin:        0 0 16px;
+	.zaso-svc-glyph( #d97706; 23px );
+}
+.zaso-services-grid--design-icon-over-title .zaso-services-grid__title       { font-size: 18px; font-weight: 800; color: #0f172a; margin: 0 0 8px; letter-spacing: -0.01em; }
+.zaso-services-grid--design-icon-over-title .zaso-services-grid__description  { font-size: 13.5px; line-height: 1.55; color: #64748b; margin: 0 0 14px; }
+.zaso-services-grid--design-icon-over-title .zaso-services-grid__link         { .zaso-svc-arrow( #d97706 ); font-size: 13.5px; }

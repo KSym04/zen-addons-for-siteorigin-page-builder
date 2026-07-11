@@ -8,6 +8,60 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
  * Author URI: https://www.dopethemes.com/
  */
 
+if ( ! function_exists( 'zaso_services_grid_design_options' ) ) :
+	/**
+	 * Curated "designs" for the Services Grid widget.
+	 *
+	 * The free core ships six ready-made designs inline; Zen Addons Pro appends its
+	 * twenty-four additional designs via the shared `zaso_services_grid_designs`
+	 * filter (the Pro controller self-gates on a valid license, so an unlicensed or
+	 * lapsed site only ever sees the six free entries). The empty-string key is the
+	 * classic default grid card and adds no class, keeping every existing instance
+	 * byte-identical.
+	 *
+	 * @since 1.10.12
+	 *
+	 * @return array Map of design id => human label.
+	 */
+	function zaso_services_grid_design_options() {
+		$zaso_services_grid_free_designs = array(
+			''               => __( 'Default (grid card)', 'zaso' ),
+			'centered'       => __( 'Centered (icon tile top)', 'zaso' ),
+			'inline'         => __( 'Inline (icon left)', 'zaso' ),
+			'chip-badge'     => __( 'Chip badge', 'zaso' ),
+			'borderless'     => __( 'Borderless', 'zaso' ),
+			'icon-top-right' => __( 'Icon top-right', 'zaso' ),
+			'icon-over-title' => __( 'Icon over title', 'zaso' ),
+		);
+
+		return apply_filters( 'zaso_services_grid_designs', $zaso_services_grid_free_designs );
+	}
+endif;
+
+if ( ! function_exists( 'zaso_services_grid_design_description' ) ) :
+	/**
+	 * Help text for the "Pre-made Design" field.
+	 *
+	 * On a white-labelled Pro site the agency's client must never see the real
+	 * product name or an upsell (they already have the full library), so the brand
+	 * + "unlocks twenty-four more" sentence is dropped. Everywhere else (free, or
+	 * licensed-but-not-white-labelled) the upsell line is kept.
+	 *
+	 * @since 1.10.12
+	 *
+	 * @return string Field description.
+	 */
+	function zaso_services_grid_design_description() {
+		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
+
+		if ( $white_label ) {
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (grid card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+		}
+
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (grid card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+	}
+endif;
+
 if ( ! class_exists( 'Zen_Addons_SiteOrigin_Services_Grid_Widget' ) ) :
 
 
@@ -100,6 +154,13 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 					'icon-left' => __( 'Icon Left (icon beside text)', 'zaso' ),
 					'centered'  => __( 'Centered (icon top, roomy padding)', 'zaso' ),
 				),
+			),
+			'design_variant' => array(
+				'type'        => 'select',
+				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'default'     => '',
+				'description' => zaso_services_grid_design_description(),
+				'options'     => zaso_services_grid_design_options(),
 			),
 			'design'     => array(
 				'type'   => 'section',

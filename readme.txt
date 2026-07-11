@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.11
+Stable tag: 1.10.12
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -25,7 +25,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 **Layout and content**
 
 * Spacer: add adjustable vertical spacing between rows and widgets.
-* Alert Box: show a styled info, success, warning, or error message, with six ready-made one-click designs.
+* Alert Box: show a styled info, success, warning, or error message, with thirty ready-made designs (six free).
 * Widgetized: place an existing widget sidebar inside your page content.
 
 **Interactive**
@@ -43,12 +43,12 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 **Business and marketing**
 
 * Info Box: feature an image, title, text, and call-to-action button together.
-* Hover Card: show an image card with a title and button that animate on hover.
+* Hover Card: show an image card with a title and button that animate on hover, with thirty ready-made designs (six free).
 * Flip Card: show a card that flips on hover or keyboard focus to reveal back-side content and a call-to-action.
 * Icon: display a single icon from an icon font or your own upload.
 * Image Icon Group: display a row or grid of linked image icons.
 * FAQ: display a collapsible list of questions and answers with optional Schema.org FAQPage markup for rich results in Google Search.
-* Pricing Table: showcase your plans side-by-side with a features list, a highlighted featured tier, and a call-to-action button per plan.
+* Pricing Table: showcase your plans side-by-side with a features list, a highlighted featured tier, and a call-to-action button per plan, with thirty ready-made designs (six free).
 
 **Conversion and engagement**
 
@@ -61,12 +61,12 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 **People and social proof**
 
 * Team Member: display a grid of team members with photos, roles, bios, and social links.
-* Testimonial Slider: show a rotating set of testimonials with auto-play, swipe, and keyboard support.
+* Testimonial Slider: show a rotating set of testimonials with auto-play, swipe, and keyboard support, with thirty ready-made designs (six free).
 * Logo Showcase: display a responsive grid of client or partner logos with an optional greyscale-to-colour hover effect.
 
 **Content blocks**
 
-* Services Grid: present services or features in a grid, each with an icon, title, description, and optional link.
+* Services Grid: present services or features in a grid, each with an icon, title, description, and optional link, with thirty ready-made designs (six free).
 * Progress Bars: show labeled progress or skill bars that fill as they scroll into view.
 * Post Grid: display a responsive grid of posts with featured images, meta, excerpts, and read-more links.
 * Post Carousel: display posts in a swipeable carousel with autoplay, arrows, and dots.
@@ -112,7 +112,7 @@ You can also manage every Zen Addons widget from one place under the **Zen Addon
 
 = Zen Addons Pro =
 
-Zen Addons Pro is available now. It adds the Popup and Portfolio widgets, a site-wide Display Layer (visibility conditions by login, role, and date, device targeting, scroll animations, and a custom CSS class on every widget), Pricing Table Pro, and twenty-four extra Alert Box designs plus twenty-four extra Counter designs, all chosen visually from the Browse designs gallery.
+Zen Addons Pro is available now. It adds the Popup and Portfolio widgets, a site-wide Display Layer (visibility conditions by login, role, and date, device targeting, scroll animations, and a custom CSS class on every widget), Pricing Table Pro, and twenty-four extra designs each for the Alert Box, Counter, Call to Action, Pricing Table, Testimonial Slider, Hover Card, and Services Grid, all chosen visually from the Browse designs gallery.
 
 Learn more and compare plans at https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
 
@@ -207,6 +207,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.12 =
+New Services Grid ready-made designs: thirty grid-card looks (six free) chosen visually from the Browse designs gallery. Your existing services grids are unchanged.
+
 = 1.10.11 =
 Maintenance release that keeps the free plugin in step with Zen Addons Pro 1.10.11. No changes to the free plugin itself.
 
@@ -274,6 +277,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.12 =
+* New: Services Grid ready-made designs. Thirty grid-card looks (six free: Centered, Inline, Chip Badge, Borderless, Icon Top-right, and Icon Over Title) chosen visually from the "Browse designs" gallery, each with its own card, icon, and accent treatment. Leave it on the default grid card to keep your current look unchanged.
+* Improved: The visual Browse designs picker now covers the Services Grid as well as the Alert Box, Counter, Call to Action, Pricing Table, Testimonial Slider, and Hover Card.
 
 = 1.10.11 =
 * Maintenance: Version alignment with Zen Addons Pro 1.10.11, which makes the Pro Popup widget form show only the settings the selected trigger uses. No functional changes to the free plugin.

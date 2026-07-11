@@ -132,6 +132,14 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		const HOVER_CARD_FREE_IDS = array( 'slide-up-frosted', 'slide-up-dark', 'slide-up-tinted', 'overlay-scrim', 'overlay-solid', 'overlay-gradient' );
 
 		/**
+		 * The six free Services Grid design ids.
+		 *
+		 * @since 1.10.12
+		 * @var array
+		 */
+		const SERVICES_GRID_FREE_IDS = array( 'centered', 'inline', 'chip-badge', 'borderless', 'icon-top-right', 'icon-over-title' );
+
+		/**
 		 * The twenty-four Pro Alert Box designs ( id => label ), mirrored from the
 		 * Pro plugin's Zanp_Alert_Designs::pro_designs() so the FREE plugin can show
 		 * them as blurred, locked upsell cards WITHOUT depending on the Pro filter.
@@ -369,6 +377,49 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				'editorial-white'   => esc_html__( 'Editorial White', 'zaso' ),
 				'editorial-dark'    => esc_html__( 'Editorial Dark', 'zaso' ),
 				'editorial-accent'  => esc_html__( 'Editorial Accent', 'zaso' ),
+			);
+		}
+
+		/**
+		 * The twenty-four Pro Services Grid designs ( id => label ), mirrored from
+		 * the Pro plugin's Zanp_Services_Grid_Designs::pro_designs() so the FREE
+		 * plugin can show them as blurred, locked upsell cards WITHOUT depending on
+		 * the Pro filter.
+		 *
+		 * Each id has a bundled thumbnail at
+		 * assets/design-previews/services-grid/{id}.webp. This list is render-only:
+		 * these ids are NEVER added to designIds, so they are never written to the
+		 * design <select>.
+		 *
+		 * @since  1.10.12
+		 * @return array Map of design id => human label.
+		 */
+		protected function locked_pro_services_grid_designs() {
+			return array(
+				'gradient-tile'  => esc_html__( 'Gradient Tile', 'zaso' ),
+				'icon-ring'      => esc_html__( 'Icon Ring', 'zaso' ),
+				'dark-glow'      => esc_html__( 'Dark Glow', 'zaso' ),
+				'accent-bar'     => esc_html__( 'Accent Bar', 'zaso' ),
+				'tinted-bg'      => esc_html__( 'Tinted Background', 'zaso' ),
+				'split-panel'    => esc_html__( 'Split Panel', 'zaso' ),
+				'ghost-number'   => esc_html__( 'Ghost Number', 'zaso' ),
+				'stat-footer'    => esc_html__( 'Stat Footer', 'zaso' ),
+				'button-footer'  => esc_html__( 'Button Footer', 'zaso' ),
+				'tag-list'       => esc_html__( 'Tag List', 'zaso' ),
+				'corner-icon'    => esc_html__( 'Corner Icon', 'zaso' ),
+				'gradient-card'  => esc_html__( 'Gradient Card', 'zaso' ),
+				'banner-header'  => esc_html__( 'Banner Header', 'zaso' ),
+				'progress-bar'   => esc_html__( 'Progress Bar', 'zaso' ),
+				'dashed-ghost'   => esc_html__( 'Dashed Ghost', 'zaso' ),
+				'timeline-step'  => esc_html__( 'Timeline Step', 'zaso' ),
+				'diagonal-split' => esc_html__( 'Diagonal Split', 'zaso' ),
+				'watermark'      => esc_html__( 'Watermark', 'zaso' ),
+				'price-tag'      => esc_html__( 'Price Tag', 'zaso' ),
+				'checklist'      => esc_html__( 'Checklist', 'zaso' ),
+				'gradient-ring'  => esc_html__( 'Gradient Ring', 'zaso' ),
+				'corner-ribbon'  => esc_html__( 'Corner Ribbon', 'zaso' ),
+				'team-stack'     => esc_html__( 'Team Stack', 'zaso' ),
+				'cta-bar'        => esc_html__( 'CTA Bar', 'zaso' ),
 			);
 		}
 
@@ -741,6 +792,43 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		}
 
 		/**
+		 * Build the Services Grid entry.
+		 *
+		 * The design list ( zaso_services_grid_design_options() ) already reflects
+		 * the license: six entries unlicensed, thirty when Pro is active ( the Pro
+		 * `zaso_services_grid_designs` filter registers the twenty-four ). Preview
+		 * URLs are resolved directly from the bundled thumbnails ( all thirty ship
+		 * in the free plugin ), so the picker is fully self-sufficient with Pro off.
+		 *
+		 * @since  1.10.12
+		 * @return array Entry array, or empty when unavailable.
+		 */
+		protected function build_services_grid_entry() {
+			if ( ! function_exists( 'zaso_services_grid_design_options' ) ) {
+				$this->ensure_widget_class( 'Zen_Addons_SiteOrigin_Services_Grid_Widget', 'zaso-services-grid-widgets' );
+			}
+			if ( ! function_exists( 'zaso_services_grid_design_options' ) ) {
+				return array();
+			}
+
+			$base = ZASO_BASE_DIR . 'assets/design-previews/services-grid/';
+
+			return $this->build_entry(
+				array(
+					'key'         => 'services-grid',
+					'options'     => zaso_services_grid_design_options(),
+					'free_ids'    => self::SERVICES_GRID_FREE_IDS,
+					'locked_map'  => $this->locked_pro_services_grid_designs(),
+					'noun'        => esc_html__( 'services grid', 'zaso' ),
+					'default'     => esc_html__( 'Default (grid card)', 'zaso' ),
+					'preview_url' => static function ( $id ) use ( $base ) {
+						return $base . $id . '.webp';
+					},
+				)
+			);
+		}
+
+		/**
 		 * Build the localized data map the picker JS consumes.
 		 *
 		 * Returns a `widgets` array: one self-contained entry per supported widget.
@@ -755,7 +843,7 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		public function build_localized_data() {
 			$widgets = array();
 
-			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry(), $this->build_pricing_table_entry(), $this->build_testimonial_slider_entry(), $this->build_hover_card_entry() ) as $entry ) {
+			foreach ( array( $this->build_alert_entry(), $this->build_counter_entry(), $this->build_cta_entry(), $this->build_pricing_table_entry(), $this->build_testimonial_slider_entry(), $this->build_hover_card_entry(), $this->build_services_grid_entry() ) as $entry ) {
 				if ( ! empty( $entry['designs'] ) ) {
 					$widgets[] = $entry;
 				}
