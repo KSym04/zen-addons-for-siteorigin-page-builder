@@ -849,6 +849,22 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				}
 			}
 
+			/**
+			 * Let companion plugins contribute picker entries for widgets the free
+			 * core does not ship. Zen Addons Pro uses this to give its Pro-only
+			 * widgets (e.g. the Portfolio Grid) the same "Browse designs" experience
+			 * as the free widgets. Each entry must be the same self-contained shape
+			 * build_entry() produces; malformed entries are dropped, so a filter
+			 * mistake degrades to the plain dropdown instead of breaking the picker.
+			 *
+			 * @since 1.10.13
+			 *
+			 * @param array $widgets Picker entries built so far.
+			 */
+			$widgets = array_values( array_filter( (array) apply_filters( 'zaso_design_picker_entries', $widgets ), static function ( $entry ) {
+				return is_array( $entry ) && ! empty( $entry['designs'] ) && ! empty( $entry['designIds'] );
+			} ) );
+
 			if ( empty( $widgets ) ) {
 				return array();
 			}

@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.12
+Stable tag: 1.10.13
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -112,7 +112,7 @@ You can also manage every Zen Addons widget from one place under the **Zen Addon
 
 = Zen Addons Pro =
 
-Zen Addons Pro is available now. It adds the Popup and Portfolio widgets, a site-wide Display Layer (visibility conditions by login, role, and date, device targeting, scroll animations, and a custom CSS class on every widget), Pricing Table Pro, and twenty-four extra designs each for the Alert Box, Counter, Call to Action, Pricing Table, Testimonial Slider, Hover Card, and Services Grid, all chosen visually from the Browse designs gallery.
+Zen Addons Pro is available now. It adds the Popup and Portfolio widgets (the Portfolio Grid ships with thirty ready-made card designs of its own), a site-wide Display Layer (visibility conditions by login, role, and date, device targeting, scroll animations, and a custom CSS class on every widget), Pricing Table Pro, and twenty-four extra designs each for the Alert Box, Counter, Call to Action, Pricing Table, Testimonial Slider, Hover Card, and Services Grid, all chosen visually from the Browse designs gallery.
 
 Learn more and compare plans at https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
 
@@ -207,6 +207,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.13 =
+Maintenance and groundwork release: the Browse designs picker can now serve design galleries for companion plugins' widgets. Zen Addons Pro 1.10.13 uses this to give its Portfolio Grid thirty ready-made designs. No changes to the free widgets themselves.
+
 = 1.10.12 =
 New Services Grid ready-made designs: thirty grid-card looks (six free) chosen visually from the Browse designs gallery. Your existing services grids are unchanged.
 
@@ -277,6 +280,9 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.13 =
+* Improved: The visual "Browse designs" picker can now host design galleries contributed by companion plugins. Zen Addons Pro 1.10.13 uses this to give its Portfolio Grid widget thirty ready-made card designs with the same one-click picker experience as the free widgets.
 
 = 1.10.12 =
 * New: Services Grid ready-made designs. Thirty grid-card looks (six free: Centered, Inline, Chip Badge, Borderless, Icon Top-right, and Icon Over Title) chosen visually from the "Browse designs" gallery, each with its own card, icon, and accent treatment. Leave it on the default grid card to keep your current look unchanged.
