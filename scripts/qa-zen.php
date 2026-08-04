@@ -37,9 +37,20 @@ $check = function ( $label, $ok, $detail = '' ) use ( &$fails ) {
 // 1. Framework present.
 $check( 'SiteOrigin_Widget framework available', class_exists( 'SiteOrigin_Widget' ) );
 
-// 2. Widget discovery.
+// 2. Widget discovery. Still goes through SiteOrigin's real folder filter (that
+// registration path is what the check exists to prove), but the result is scoped
+// to THIS plugin's directory only: a loose "zen-addons" substring also matches
+// the Pro companion's path (zen-addons-siteorigin-builder-pro), so the count
+// inflates to 38 whenever Pro is active in the sandbox and the gate false-fails.
+$free_base = wp_normalize_path( WP_PLUGIN_DIR . '/zen-addons-for-siteorigin-page-builder/' );
 $folders   = apply_filters( 'siteorigin_widgets_widget_folders', array() );
-$zaso_dirs = array_filter( $folders, function ( $p ) { return false !== strpos( $p, 'zen-addons' ); } );
+$zaso_dirs = array_filter(
+	$folders,
+	function ( $p ) use ( $free_base ) {
+		return 0 === strpos( wp_normalize_path( $p ), $free_base );
+	}
+);
+$check( 'Free widget folder registered with SiteOrigin', ! empty( $zaso_dirs ), empty( $zaso_dirs ) ? 'siteorigin_widgets_widget_folders has no folder under ' . $free_base : count( $zaso_dirs ) . ' folder(s)' );
 $found     = 0;
 foreach ( $zaso_dirs as $folder ) {
 	foreach ( (array) glob( $folder . '*/', GLOB_ONLYDIR ) as $dir ) {

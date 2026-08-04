@@ -24,8 +24,8 @@
  * upgrade page.
  *
  * This class extends ZASO_Widget_Design only to reuse its ensure_widget_class()
- * helper and PRO_URL constant. It deliberately does NOT call the parent
- * constructor, so no second admin menu is registered.
+ * helper and its pro_url() upsell-link builder. It deliberately does NOT call
+ * the parent constructor, so no second admin menu is registered.
  *
  * @package Zen Addons for SiteOrigin Page Builder
  * @since 1.11.0
@@ -559,7 +559,7 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				// ids are deliberately NOT in designIds, so the JS never matches them
 				// against, or writes them to, the design_variant <select>.
 				'lockedDesigns' => $locked,
-				'proUrl'        => self::PRO_URL,
+				'proUrl'        => self::pro_url( 'design_picker' ),
 				'licensed'      => $licensed,
 				// White-labelled Pro sites must not expose the Free / Pro tier badges
 				// to the agency's client. The JS hides every badge when this is true.

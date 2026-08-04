@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.13
+Stable tag: 1.10.14
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -207,6 +207,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.14 =
+Small quality release: the plugin settings screen now shows what Zen Addons Pro adds, and upgrade links land on the pricing section directly. No changes to any widget or to your existing pages.
+
 = 1.10.13 =
 Maintenance and groundwork release: the Browse designs picker can now serve design galleries for companion plugins' widgets. Zen Addons Pro 1.10.13 uses this to give its Portfolio Grid thirty ready-made designs. No changes to the free widgets themselves.
 
@@ -280,6 +283,11 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.14 =
+* Added: A Zen Addons Pro summary on the plugin's own settings screen, so you can see what the paid tier adds without opening a widget first. It disappears once Pro is licensed, and stays hidden on white labelled sites.
+* Improved: The upgrade links in the "Browse designs" picker and the template library now open the pricing section of the product page directly, instead of dropping you at the top of it.
+* Improved: The upgrade destination can now be changed by a site owner or a companion plugin through the new zaso_pro_upsell_url filter.
 
 = 1.10.13 =
 * Improved: The visual "Browse designs" picker can now host design galleries contributed by companion plugins. Zen Addons Pro 1.10.13 uses this to give its Portfolio Grid widget thirty ready-made card designs with the same one-click picker experience as the free widgets.

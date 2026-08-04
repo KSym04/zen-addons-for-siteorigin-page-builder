@@ -119,6 +119,23 @@
 	margin: 0 0 8px;
 }
 
+.zaso-admin__box--pro {
+	border-color: #c3c4c7;
+	border-left: 3px solid #2271b1;
+}
+
+.zaso-admin__pro-list {
+	margin: 0 0 12px;
+	padding-left: 18px;
+	list-style: disc;
+}
+
+.zaso-admin__pro-list li {
+	margin: 0 0 4px;
+	font-size: 13px;
+	color: #50575e;
+}
+
 .zaso-admin__box p {
 	color: #50575e;
 	margin: 0 0 12px;

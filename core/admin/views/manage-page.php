@@ -23,6 +23,18 @@ foreach ( $zaso_ids as $zaso_id ) {
 		$zaso_active_ct++;
 	}
 }
+
+/*
+ * Pro upsell panel visibility.
+ *
+ * Hidden once Pro is licensed, and hidden on white-labelled Pro sites so an
+ * agency's client never sees DopeThemes upgrade messaging. Also requires
+ * ZASO_Widget_Design, which is defined conditionally.
+ */
+$zaso_licensed    = ( class_exists( 'Zanp_Pro' ) && method_exists( 'Zanp_Pro', 'is_licensed' ) && Zanp_Pro::is_licensed() );
+$zaso_white_label = ( class_exists( 'Zanp_Settings' ) && method_exists( 'Zanp_Settings', 'is_white_label' ) && Zanp_Settings::is_white_label() );
+$zaso_show_pro    = ( ! $zaso_licensed && ! $zaso_white_label && class_exists( 'ZASO_Widget_Design' ) );
+$zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen' ) : '';
 ?>
 <div class="wrap zaso-admin">
 	<h1 class="zaso-admin__title">
@@ -101,6 +113,20 @@ foreach ( $zaso_ids as $zaso_id ) {
 				<h2><?php esc_html_e( 'Where to find your widgets', 'zaso' ); ?></h2>
 				<p><?php esc_html_e( 'Active widgets appear in the SiteOrigin Page Builder widget picker under the "ZASO Widgets" tab, and on the Plugins > SiteOrigin Widgets screen.', 'zaso' ); ?></p>
 			</div>
+			<?php if ( $zaso_show_pro ) : ?>
+				<div class="zaso-admin__box zaso-admin__box--pro">
+					<h2><?php esc_html_e( 'Zen Addons Pro', 'zaso' ); ?></h2>
+					<p><?php esc_html_e( 'Every widget you already use, with the full design library unlocked.', 'zaso' ); ?></p>
+					<ul class="zaso-admin__pro-list">
+						<li><?php esc_html_e( 'Ready-made designs for the widgets you build with most', 'zaso' ); ?></li>
+						<li><?php esc_html_e( 'Popup and modal builder', 'zaso' ); ?></li>
+						<li><?php esc_html_e( 'Portfolio grid with filtering', 'zaso' ); ?></li>
+						<li><?php esc_html_e( 'Entrance animations on every widget', 'zaso' ); ?></li>
+					</ul>
+					<a class="button button-primary" href="<?php echo esc_url( $zaso_pro_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'See plans and pricing', 'zaso' ); ?></a>
+				</div>
+			<?php endif; ?>
+
 			<div class="zaso-admin__box zaso-admin__more">
 				<h2><?php esc_html_e( 'More from DopeThemes', 'zaso' ); ?></h2>
 				<p><?php esc_html_e( 'Tutorials, themes, and more widgets for the SiteOrigin builder.', 'zaso' ); ?></p>

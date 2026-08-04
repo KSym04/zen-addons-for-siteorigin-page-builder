@@ -53,12 +53,74 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		const CAPABILITY = 'manage_options';
 
 		/**
-		 * Upsell URL for the Pro library.
+		 * Base upsell URL for the Pro library.
+		 *
+		 * Left unparameterised for backward compatibility. Callers should use
+		 * {@see self::pro_url()} instead, so the link carries its campaign
+		 * attribution and lands on the pricing section of the page rather than
+		 * on the free download call to action at the top of it.
 		 *
 		 * @since 1.10.2
 		 * @var string
 		 */
 		const PRO_URL = 'https://www.dopethemes.com/downloads/zen-addons-siteorigin/';
+
+		/**
+		 * Fragment identifier of the pricing section on the product page.
+		 *
+		 * @since 1.10.14
+		 * @var string
+		 */
+		const PRO_ANCHOR = 'pro-pricing';
+
+		/**
+		 * Build the Pro upsell URL for a given placement.
+		 *
+		 * Every upsell in the plugin routes through here for two reasons. It
+		 * appends UTM parameters so each placement can be measured separately
+		 * instead of all upgrade traffic arriving unattributed, and it anchors
+		 * the link to the pricing section so a visitor who clicked a locked Pro
+		 * design is not dropped at the top of a page whose primary button says
+		 * "Download Free".
+		 *
+		 * @since 1.10.14
+		 *
+		 * @param string $placement Short identifier for where the link lives,
+		 *                          for example 'design_picker' or 'manage_screen'.
+		 * @return string Absolute upsell URL. Escape at the point of output.
+		 */
+		public static function pro_url( $placement = 'plugin' ) {
+			$placement = sanitize_key( $placement );
+
+			if ( '' === $placement ) {
+				$placement = 'plugin';
+			}
+
+			$url = add_query_arg(
+				array(
+					'utm_source'   => 'zen-addons',
+					'utm_medium'   => 'plugin',
+					'utm_campaign' => 'pro-upsell',
+					'utm_content'  => $placement,
+				),
+				self::PRO_URL
+			);
+
+			$url .= '#' . self::PRO_ANCHOR;
+
+			/**
+			 * Filter the Pro upsell URL.
+			 *
+			 * Lets the destination be repointed (for example to a dedicated
+			 * pricing page) without shipping a plugin release.
+			 *
+			 * @since 1.10.14
+			 *
+			 * @param string $url       The full upsell URL.
+			 * @param string $placement The placement identifier.
+			 */
+			return (string) apply_filters( 'zaso_pro_upsell_url', $url, $placement );
+		}
 
 		/**
 		 * Hook the submenu registration. Priority 11 ensures it runs after the
@@ -706,7 +768,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 						<?php endforeach; ?>
 
 						<?php if ( ! $licensed ) : ?>
-							<a class="zaso-th-upsell" href="<?php echo esc_url( self::PRO_URL ); ?>" target="_blank" rel="noopener">
+							<a class="zaso-th-upsell" href="<?php echo esc_url( self::pro_url( 'template_library' ) ); ?>" target="_blank" rel="noopener">
 								<span class="ic" aria-hidden="true">&#9889;</span>
 								<strong><?php echo esc_html__( 'Unlock the full Pro template library', 'zaso' ); ?></strong>
 								<span><?php echo esc_html__( 'Get premium sections built with Zen Addons widgets, plus every Pro widget and style.', 'zaso' ); ?></span>
