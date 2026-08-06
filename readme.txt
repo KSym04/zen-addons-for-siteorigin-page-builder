@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.10.14
+Stable tag: 1.10.15
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -207,6 +207,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.15 =
+Adds a polite review request on the plugin's own screens after two weeks of use. Answer once and it will not ask again. Also adds review and support links to the settings screen. No changes to any widget or to your existing pages.
+
 = 1.10.14 =
 Small quality release: the plugin settings screen now shows what Zen Addons Pro adds, and upgrade links land on the pricing section directly. No changes to any widget or to your existing pages.
 
@@ -283,6 +286,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.15 =
+* Added: A polite review request that appears only on the Plugins screen and the Zen Addons pages, and only after the plugin has been in use for at least two weeks. Choose review, later, or no thanks and it remembers your answer; no thanks means it never asks again.
+* Added: Review and support links on the Zen Addons settings screen, so help and feedback are always one click away.
 
 = 1.10.14 =
 * Added: A Zen Addons Pro summary on the plugin's own settings screen, so you can see what the paid tier adds without opening a widget first. It disappears once Pro is licensed, and stays hidden on white labelled sites.

@@ -23,3 +23,6 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 // Remove the DopeThemes dashboard dismissal flag and its cached posts.
 delete_option( 'dopethemes_dismissed' );
 delete_transient( 'zaso_dopethemes_posts' );
+
+// Remove the review prompt state.
+delete_option( 'zaso_review_prompt' );

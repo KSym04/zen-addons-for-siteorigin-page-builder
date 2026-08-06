@@ -127,6 +127,13 @@ $zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen
 				</div>
 			<?php endif; ?>
 
+			<div class="zaso-admin__box">
+				<h2><?php esc_html_e( 'Reviews and support', 'zaso' ); ?></h2>
+				<p><?php esc_html_e( 'A review on WordPress.org helps other SiteOrigin users find the plugin. Stuck on something? The support forum is read by the developers.', 'zaso' ); ?></p>
+				<a class="button" href="https://wordpress.org/support/plugin/zen-addons-for-siteorigin-page-builder/reviews/#new-post" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Leave a review', 'zaso' ); ?></a>
+				<a class="button" href="https://wordpress.org/support/plugin/zen-addons-for-siteorigin-page-builder/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get support', 'zaso' ); ?></a>
+			</div>
+
 			<div class="zaso-admin__box zaso-admin__more">
 				<h2><?php esc_html_e( 'More from DopeThemes', 'zaso' ); ?></h2>
 				<p><?php esc_html_e( 'Tutorials, themes, and more widgets for the SiteOrigin builder.', 'zaso' ); ?></p>
