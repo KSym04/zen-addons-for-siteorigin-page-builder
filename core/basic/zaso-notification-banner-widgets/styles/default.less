@@ -1,0 +1,137 @@
+// [ZASO] Notification Banner
+//
+// Every variable SiteOrigin injects from get_less_variables() must ALSO be
+// declared here with a `default` placeholder, exactly as the Alert Box does.
+// Referencing an injected variable that is not declared in this file makes the
+// LESS fail to parse and SiteOrigin silently emits ZERO bytes of CSS, shipping
+// the widget completely unstyled.
+//
+// Selectors are scoped and doubled where a theme is likely to fight us (themes
+// paint every `button` and every `a` inside content). Higher specificity is used
+// instead of !important, per the plugin coding standard.
+
+@reset_margin: 0;
+@reset_padding: 0;
+
+@background_color: default;
+@font_color: default;
+@link_color: default;
+@link_font_color: default;
+
+.zaso-notification-banner {
+  margin: @reset_margin;
+  background-color: @background_color;
+  color: @font_color;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 16px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  &__message {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    p {
+      margin: 0;
+      color: @font_color;
+    }
+
+    // Themes commonly restyle links inside content; keep ours legible on the
+    // banner background rather than inheriting a light-on-light link colour.
+    a {
+      color: @font_color;
+      text-decoration: underline;
+    }
+  }
+
+  // Doubled class beats a theme's `.entry-content a` rule without !important.
+  &__button&__button {
+    flex: 0 0 auto;
+    display: inline-block;
+    background-color: @link_color;
+    color: @link_font_color;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    line-height: 1.2;
+
+    &:hover,
+    &:focus {
+      background-color: @link_color;
+      color: @link_font_color;
+      text-decoration: none;
+      opacity: 0.9;
+    }
+  }
+
+  // Themes paint every `button`; the doubled class wins the cascade.
+  &__dismiss&__dismiss {
+    flex: 0 0 auto;
+    background: none;
+    border: 0;
+    padding: 4px 8px;
+    margin: @reset_margin;
+    color: @font_color;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      background: none;
+      color: @font_color;
+      opacity: 0.75;
+    }
+
+    // Never remove the focus ring: this is the only control in the widget.
+    &:focus-visible {
+      outline: 2px solid @font_color;
+      outline-offset: 2px;
+    }
+  }
+
+  &--align-left &__inner {
+    justify-content: flex-start;
+  }
+
+  &--align-center &__inner {
+    justify-content: center;
+  }
+
+  &--top,
+  &--bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+  &--top {
+    top: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+}
+
+// Stack the parts on small screens so a long message never squeezes the button
+// and the dismiss control off the edge.
+@media (max-width: 600px) {
+  .zaso-notification-banner__inner {
+    flex-wrap: wrap;
+  }
+
+  .zaso-notification-banner__message {
+    flex: 1 1 100%;
+  }
+}

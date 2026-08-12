@@ -82,7 +82,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 				),
 				'engagement'   => array(
 					'label'   => esc_html__( 'Conversion & Engagement', 'zaso' ),
-					'widgets' => array( 'zaso-cta-banner-widgets', 'zaso-counter-widgets', 'zaso-countdown-widgets', 'zaso-before-after-widgets', 'zaso-flip-card-widgets', 'zaso-social-share-widgets' ),
+					'widgets' => array( 'zaso-cta-banner-widgets', 'zaso-counter-widgets', 'zaso-countdown-widgets', 'zaso-before-after-widgets', 'zaso-flip-card-widgets', 'zaso-social-share-widgets', 'zaso-notification-banner-widgets' ),
 				),
 				'people'       => array(
 					'label'   => esc_html__( 'People & Social Proof', 'zaso' ),

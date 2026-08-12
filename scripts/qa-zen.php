@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $fails    = 0;
-$expected = 36; // Number of ZASO widgets shipped.
+$expected = 37; // Number of ZASO widgets shipped.
 $evil     = 'x" onmouseover="alert(1)';
 
 /**
@@ -79,6 +79,100 @@ foreach ( $zaso_dirs as $folder ) {
 	}
 }
 $check( 'All ZASO widgets default-active', empty( $inactive_default ), empty( $inactive_default ) ? '' : 'NOT default-active: ' . implode( ', ', $inactive_default ) );
+
+// 2c. Every discovered widget must also appear in the admin manage screen's
+// category map. That map in core/admin.php is HAND-MAINTAINED, so a newly
+// shipped widget registers and renders correctly while being invisible on the
+// Zen Addons screen - users cannot find or toggle it, and the "%d of %d widgets
+// active" count silently disagrees with reality.
+// core/admin.php is only included behind is_admin(), which is false under WP-CLI,
+// so the class must be loaded explicitly here or this check silently no-ops and
+// reports nothing at all - which reads as coverage that does not exist.
+if ( ! class_exists( 'ZASO_Admin' ) ) {
+	$zaso_admin_file = WP_PLUGIN_DIR . '/zen-addons-for-siteorigin-page-builder/core/admin.php';
+	if ( file_exists( $zaso_admin_file ) ) {
+		include_once $zaso_admin_file;
+	}
+}
+$check( 'Admin category map is loadable', class_exists( 'ZASO_Admin' ) );
+if ( class_exists( 'ZASO_Admin' ) ) {
+	$zaso_admin_obj = new ZASO_Admin();
+	if ( method_exists( $zaso_admin_obj, 'get_categories' ) ) {
+		$mapped = array();
+		foreach ( (array) $zaso_admin_obj->get_categories() as $cat ) {
+			if ( ! empty( $cat['widgets'] ) ) {
+				$mapped = array_merge( $mapped, (array) $cat['widgets'] );
+			}
+		}
+		$on_disk = array();
+		foreach ( $zaso_dirs as $folder ) {
+			foreach ( (array) glob( $folder . '*/', GLOB_ONLYDIR ) as $dir ) {
+				$on_disk[] = basename( untrailingslashit( $dir ) );
+			}
+		}
+		$unmapped = array_diff( $on_disk, $mapped );
+		$check(
+			'Every widget appears in the admin category map',
+			empty( $unmapped ),
+			empty( $unmapped ) ? count( $mapped ) . ' mapped' : 'MISSING from core/admin.php: ' . implode( ', ', $unmapped )
+		);
+	}
+}
+
+// 2d. Every LESS variable a stylesheet USES must also be DECLARED in that same
+// stylesheet (the `@foo: default;` placeholder convention Alert Box follows).
+// Referencing a SiteOrigin-injected variable without declaring it makes the LESS
+// fail to parse, and SiteOrigin then emits ZERO bytes of CSS silently - the
+// widget ships completely unstyled with every other gate still green. Caught on
+// the Notification Banner before release; this makes it impossible to repeat.
+$less_bad = array();
+foreach ( $zaso_dirs as $folder ) {
+	foreach ( (array) glob( $folder . '*/styles/default.less' ) as $less_file ) {
+		$less = file_get_contents( $less_file );
+		if ( false === $less ) {
+			continue;
+		}
+		// Strip comments first: prose mentioning a variable (`// same @vars, no
+		// !important`) is not a usage, and counting it produces false failures on
+		// widgets that ship and work.
+		$less = preg_replace( '#/\*.*?\*/#s', '', $less );
+		$less = preg_replace( '#//.*$#m', '', $less );
+		preg_match_all( '/^\s*@([a-zA-Z0-9_-]+)\s*:/m', $less, $dec );
+		preg_match_all( '/@([a-zA-Z0-9_-]+)/', $less, $use );
+		$declared = array_map( 'strtolower', $dec[1] );
+		// Mixin and detached-ruleset parameters are declared inside parentheses
+		// (`.grid(@columns)`, `each(@list, { @c ... })`), not with `@foo:`. Count
+		// anything appearing inside parens as declared. This can miss a genuine
+		// bug used inside parens, which is the safe direction to be wrong: a gate
+		// that false-fails eight shipped, working widgets would block real releases.
+		preg_match_all( '/\(([^)]*)\)/', $less, $paren );
+		foreach ( $paren[1] as $paren_body ) {
+			if ( preg_match_all( '/@([a-zA-Z0-9_-]+)/', $paren_body, $pv ) ) {
+				$declared = array_merge( $declared, array_map( 'strtolower', $pv[1] ) );
+			}
+		}
+		$declared = array_unique( $declared );
+		// LESS/CSS at-rules are not variables.
+		$at_rules = array( 'media', 'import', 'supports', 'keyframes', 'font-face', 'charset', 'namespace', 'page', 'arguments', 'rest' );
+		$missing  = array();
+		foreach ( array_unique( $use[1] ) as $var ) {
+			if ( in_array( strtolower( $var ), $at_rules, true ) ) {
+				continue;
+			}
+			if ( ! in_array( strtolower( $var ), $declared, true ) ) {
+				$missing[] = '@' . $var;
+			}
+		}
+		if ( ! empty( $missing ) ) {
+			$less_bad[] = basename( dirname( dirname( $less_file ) ) ) . ' (' . implode( ', ', $missing ) . ')';
+		}
+	}
+}
+$check(
+	'Every LESS variable used is also declared',
+	empty( $less_bad ),
+	empty( $less_bad ) ? 'all stylesheets self-contained' : 'UNDECLARED, LESS will emit 0 bytes: ' . implode( '; ', $less_bad )
+);
 
 // 3. Representative template render + escaping smoke test.
 $base  = WP_PLUGIN_DIR . '/zen-addons-for-siteorigin-page-builder/core/basic/';
@@ -377,6 +471,34 @@ $cases = array(
 				'default_icon' => '',
 				'layout'       => 'vertical',
 			),
+		),
+		'notification-banner'  => array(
+			'file'     => $base . 'zaso-notification-banner-widgets/tpl/default.php',
+			'instance' => array(
+				'extra_id'            => $evil,
+				'extra_class'         => $evil,
+				// Rich-text (wp_kses_post) field: assert the script tag is stripped.
+				// Do NOT inject $evil here - kses legitimately keeps it as visible
+				// TEXT inside the <p>, which is not an attribute and not exploitable,
+				// but the leak check greps for the raw string and cannot tell the
+				// difference. Attribute-context escaping is covered by the fields
+				// below, which is where a real leak would actually occur.
+				'banner_message'      => '<p>Sale ends Friday</p><script>bad()</script>',
+				'banner_link_text'    => 'Shop now' . $evil,
+				'banner_link_url'     => 'https://example.com/?a=' . $evil,
+				'banner_link_new_tab' => true,
+				'banner_position'     => 'top',
+				'banner_dismissible'  => true,
+				'banner_remember'     => 'forever',
+				'design'              => array(
+					'background_color' => '#1e293b',
+					'font_color'       => '#ffffff',
+					'link_color'       => '#2563eb',
+					'link_font_color'  => '#ffffff',
+					'align'            => 'center',
+				),
+			),
+			'vars'     => array(),
 		),
 );
 
