@@ -82,6 +82,35 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 		const HANDLE = 'zaso-design-picker';
 
 		/**
+		 * Number of Pro designs the upsell copy advertises.
+		 *
+		 * Seven galleries carry twenty-four Pro designs each (Alert Box, Counter,
+		 * Call to Action, Pricing Table, Testimonial Slider, Hover Card, Services
+		 * Grid). It cannot be counted at runtime: on a free site the Pro plugin is
+		 * not installed, so nothing has registered those designs to count. Verify
+		 * against the live filters before changing it, e.g.
+		 * `count( apply_filters( 'zaso_alert_designs', array() ) )` on a licensed site.
+		 *
+		 * Excludes the Portfolio widget's thirty designs, which belong to a Pro-only
+		 * widget a free user never sees in this picker.
+		 *
+		 * @since 1.10.17
+		 */
+		const PRO_DESIGN_COUNT = 168;
+
+		/**
+		 * Lowest Pro price, including the currency symbol.
+		 *
+		 * Matches the Personal tier (EDD product 17502). Shipped in a translatable
+		 * string, so a price change needs a plugin release to reach existing installs
+		 * - update the tier in EDD and this constant together, or the picker will
+		 * advertise a price the checkout does not honour.
+		 *
+		 * @since 1.10.17
+		 */
+		const PRO_PRICE_FROM = '$39';
+
+		/**
 		 * The six free Alert Box design ids. Everything else is a Pro design, so
 		 * the picker can badge cards and gate the upsell without a license probe
 		 * per card.
@@ -465,9 +494,24 @@ if ( ! class_exists( 'ZASO_Design_Picker' ) && class_exists( 'ZASO_Widget_Design
 				),
 				'free'      => esc_html__( 'Free', 'zaso' ),
 				'pro'       => esc_html__( 'Pro', 'zaso' ),
-				'locked'    => esc_html__( 'This design is part of Zen Addons Pro. Upgrade to use it.', 'zaso' ),
-				'unlock'    => esc_html__( 'Unlock the full design library with Zen Addons Pro.', 'zaso' ),
-				'unlockAll' => esc_html__( 'Unlock all designs with Pro', 'zaso' ),
+				'locked'    => sprintf(
+					/* translators: 1: number of Pro designs, 2: lowest Pro price including currency symbol. */
+					esc_html__( 'Part of Zen Addons Pro: %1$d designs across 7 widgets, from %2$s.', 'zaso' ),
+					self::PRO_DESIGN_COUNT,
+					self::PRO_PRICE_FROM
+				),
+				'unlock'    => sprintf(
+					/* translators: 1: number of Pro designs, 2: lowest Pro price including currency symbol. */
+					esc_html__( 'Get all %1$d Pro designs from %2$s, ready to use on every widget above.', 'zaso' ),
+					self::PRO_DESIGN_COUNT,
+					self::PRO_PRICE_FROM
+				),
+				'unlockAll' => sprintf(
+					/* translators: 1: number of Pro designs, 2: lowest Pro price including currency symbol. */
+					esc_html__( 'Unlock %1$d designs from %2$s', 'zaso' ),
+					self::PRO_DESIGN_COUNT,
+					self::PRO_PRICE_FROM
+				),
 				'close'     => esc_html__( 'Close', 'zaso' ),
 				'apply'     => esc_html__( 'Apply', 'zaso' ),
 				'cancel'    => esc_html__( 'Cancel', 'zaso' ),

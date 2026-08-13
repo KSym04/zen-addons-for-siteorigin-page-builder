@@ -2,9 +2,9 @@
 Contributors: ksym04, pkvillanueva
 Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.10.16
+Stable tag: 1.10.17
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -208,6 +208,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.17 =
+The Browse designs gallery now states what Zen Addons Pro includes and what it costs. Tested up to WordPress 7.1. Nothing changes on your existing pages.
+
 = 1.10.16 =
 Adds a Notification Banner widget for announcements, with an optional sticky position and a dismissal the visitor's browser remembers. Nothing changes on your existing pages.
 
@@ -290,6 +293,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.17 =
+* Improved: The Browse designs gallery now tells you exactly what Pro includes and what it costs, instead of only saying a design is locked.
+* Improved: Tested up to WordPress 7.1.
 
 = 1.10.16 =
 * Added: Notification Banner widget for announcements. Show a message inline or pinned to the top or bottom of the screen, with an optional button and a dismiss control.
