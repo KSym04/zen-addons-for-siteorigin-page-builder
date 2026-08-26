@@ -26,3 +26,6 @@ delete_transient( 'zaso_dopethemes_posts' );
 
 // Remove the review prompt state.
 delete_option( 'zaso_review_prompt' );
+
+// Remove the FeedProof cross-promotion notice state.
+delete_option( 'zaso_cross_promo' );

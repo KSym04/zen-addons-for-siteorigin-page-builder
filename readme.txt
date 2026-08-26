@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.10.17
+Stable tag: 1.10.18
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -208,6 +208,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.18 =
+Adds a one-time notice, shown only to WooCommerce stores, about FeedProof, our free product feed auditor. It waits a week before appearing, never shows alongside the review prompt, and goes away for good when you dismiss it. Nothing changes on your existing pages.
+
 = 1.10.17 =
 The Browse designs gallery now states what Zen Addons Pro includes and what it costs. Tested up to WordPress 7.1. Nothing changes on your existing pages.
 
@@ -293,6 +296,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.18 =
+* Added: a one-time notice introducing FeedProof, our free WooCommerce product feed auditor, shown only on sites that run WooCommerce and do not already have it. It appears on the Plugins screen and the Zen Addons screens only, never across the dashboard, waits seven days before it can appear so no existing install is prompted on update day, never shows at the same time as the review prompt, and stays gone once dismissed. Its one stored setting is removed when the plugin is deleted.
+* No change to any widget, design, or stored page data.
 
 = 1.10.17 =
 * Improved: The Browse designs gallery now tells you exactly what Pro includes and what it costs, instead of only saying a design is locked.
