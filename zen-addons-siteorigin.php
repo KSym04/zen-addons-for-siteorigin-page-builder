@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Zen Addons for SiteOrigin Page Builder
  * Description: Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Builder. It's simple, flexible, and useful.
- * Version: 1.10.20
+ * Version: 1.10.21
  * Requires at least: 5.5
  * Requires PHP: 7.4
  * Requires Plugins: so-widgets-bundle
@@ -41,7 +41,7 @@ if ( ! class_exists( 'zen_addons_siteorigin' ) ) :
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.10.20';
+	var $version = '1.10.21';
 
 	/**
 	 * Plugin paths and URLs, populated in initialize().
@@ -73,8 +73,13 @@ class zen_addons_siteorigin {
 	 */
 	function initialize() {
 		// Vars.
+		// 'name' is deliberately NOT translated here. initialize() runs at plugin load,
+		// long before the init action, so a translation call would force WordPress to load
+		// the text domain just in time. Since 6.7 that emits a _load_textdomain_just_in_time
+		// "called incorrectly" notice on every debug-enabled site. The plugin name is a
+		// proper noun anyway; translate at the point of output if it is ever displayed.
 		$this->settings = array(
-			'name'     => esc_html__( 'Zen Addons for SiteOrigin', 'zen-addons-for-siteorigin-page-builder' ),
+			'name'     => 'Zen Addons for SiteOrigin',
 			'version'  => $this->version,
 			'file'     => __FILE__,
 			'basename' => plugin_basename( __FILE__ ),
