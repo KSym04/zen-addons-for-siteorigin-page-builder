@@ -23,13 +23,13 @@ if ( ! function_exists( 'zaso_testimonial_slider_design_options' ) ) :
 	 */
 	function zaso_testimonial_slider_design_options() {
 		$zaso_testimonial_slider_free_designs = array(
-			''                   => __( 'Default (simple card)', 'zaso' ),
-			'centered-indigo'    => __( 'Centered Quote (Indigo)', 'zaso' ),
-			'centered-teal'      => __( 'Centered Quote (Teal)', 'zaso' ),
-			'avatar-left-slate'  => __( 'Avatar Left (Slate)', 'zaso' ),
-			'avatar-left-violet' => __( 'Avatar Left (Violet)', 'zaso' ),
-			'quote-mark-rose'    => __( 'Big Quote Mark (Rose)', 'zaso' ),
-			'quote-mark-amber'   => __( 'Big Quote Mark (Amber)', 'zaso' ),
+			''                   => __( 'Default (simple card)', 'zen-addons-for-siteorigin-page-builder' ),
+			'centered-indigo'    => __( 'Centered Quote (Indigo)', 'zen-addons-for-siteorigin-page-builder' ),
+			'centered-teal'      => __( 'Centered Quote (Teal)', 'zen-addons-for-siteorigin-page-builder' ),
+			'avatar-left-slate'  => __( 'Avatar Left (Slate)', 'zen-addons-for-siteorigin-page-builder' ),
+			'avatar-left-violet' => __( 'Avatar Left (Violet)', 'zen-addons-for-siteorigin-page-builder' ),
+			'quote-mark-rose'    => __( 'Big Quote Mark (Rose)', 'zen-addons-for-siteorigin-page-builder' ),
+			'quote-mark-amber'   => __( 'Big Quote Mark (Amber)', 'zen-addons-for-siteorigin-page-builder' ),
 		);
 
 		return apply_filters( 'zaso_testimonial_slider_designs', $zaso_testimonial_slider_free_designs );
@@ -51,10 +51,10 @@ if ( ! function_exists( 'zaso_testimonial_slider_design_description' ) ) :
 		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
 
 		if ( $white_label ) {
-			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (simple card)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (simple card)" to build your own look with the Layout, Style and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
-		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (simple card)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (simple card)" to build your own look with the Layout, Style and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 	}
 endif;
 
@@ -146,8 +146,8 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 		$zaso_testimonial_slider_field_array = array(
 			'testimonials' => array(
 				'type'       => 'repeater',
-				'label'      => __( 'Testimonials', 'zaso' ),
-				'item_name'  => __( 'Testimonial', 'zaso' ),
+				'label'      => __( 'Testimonials', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Testimonial', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[name*='[author_name]']",
 					'update_event' => 'change',
@@ -156,34 +156,34 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 				'fields' => array(
 					'quote' => array(
 						'type'  => 'textarea',
-						'label' => __( 'Quote', 'zaso' ),
+						'label' => __( 'Quote', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'author_name' => array(
 						'type'  => 'text',
-						'label' => __( 'Author Name', 'zaso' ),
+						'label' => __( 'Author Name', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'author_title' => array(
 						'type'        => 'text',
-						'label'       => __( 'Role / Company', 'zaso' ),
-						'description' => __( 'e.g. CEO at Acme Corp', 'zaso' ),
+						'label'       => __( 'Role / Company', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'e.g. CEO at Acme Corp', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'company_name' => array(
 						'type'        => 'text',
-						'label'       => __( 'Company Name', 'zaso' ),
-						'description' => __( 'Optional. Shown with a logo mark by the "Company logo" designs; ignored by every other design.', 'zaso' ),
+						'label'       => __( 'Company Name', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'Optional. Shown with a logo mark by the "Company logo" designs; ignored by every other design.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'author_photo' => array(
 						'type'     => 'media',
-						'label'    => __( 'Author Photo', 'zaso' ),
+						'label'    => __( 'Author Photo', 'zen-addons-for-siteorigin-page-builder' ),
 						'library'  => 'image',
 						'fallback' => true,
 					),
 					'rating' => array(
 						'type'    => 'select',
-						'label'   => __( 'Star Rating', 'zaso' ),
+						'label'   => __( 'Star Rating', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '0',
 						'options' => array(
-							'0' => __( 'None', 'zaso' ),
+							'0' => __( 'None', 'zen-addons-for-siteorigin-page-builder' ),
 							'1' => '★',
 							'2' => '★★',
 							'3' => '★★★',
@@ -195,154 +195,154 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 			),
 			'autoplay'          => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Auto-play', 'zaso' ),
+				'label'   => __( 'Auto-play', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'autoplay_duration' => array(
 				'type'        => 'number',
-				'label'       => __( 'Auto-play Duration (ms)', 'zaso' ),
+				'label'       => __( 'Auto-play Duration (ms)', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 5000,
-				'description' => __( 'Time each slide is shown, in milliseconds.', 'zaso' ),
+				'description' => __( 'Time each slide is shown, in milliseconds.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'show_arrows'       => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Navigation Arrows', 'zaso' ),
+				'label'   => __( 'Show Navigation Arrows', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'show_dots'         => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Dot Pagination', 'zaso' ),
+				'label'   => __( 'Show Dot Pagination', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'layout'            => array(
 				'type'        => 'select',
-				'label'       => __( 'Layout', 'zaso' ),
+				'label'       => __( 'Layout', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'default',
-				'description' => __( 'Structural layout of each testimonial. The Style skin below still controls colours; Layout controls the shape (card elevation, decorative quote mark, minimal rule).', 'zaso' ),
+				'description' => __( 'Structural layout of each testimonial. The Style skin below still controls colours; Layout controls the shape (card elevation, decorative quote mark, minimal rule).', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'default' => __( 'Default (simple card)', 'zaso' ),
-					'card'    => __( 'Card (elevated, soft shadow)', 'zaso' ),
-					'quote'   => __( 'Quote (centered, decorative mark)', 'zaso' ),
-					'minimal' => __( 'Minimal (no card, top rule)', 'zaso' ),
+					'default' => __( 'Default (simple card)', 'zen-addons-for-siteorigin-page-builder' ),
+					'card'    => __( 'Card (elevated, soft shadow)', 'zen-addons-for-siteorigin-page-builder' ),
+					'quote'   => __( 'Quote (centered, decorative mark)', 'zen-addons-for-siteorigin-page-builder' ),
+					'minimal' => __( 'Minimal (no card, top rule)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design_variant'    => array(
 				'type'        => 'select',
-				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'label'       => __( 'Pre-made Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '',
 				'description' => zaso_testimonial_slider_design_description(),
 				'options'     => zaso_testimonial_slider_design_options(),
 			),
 			'agg_rating'        => array(
 				'type'        => 'text',
-				'label'       => __( 'Aggregate Rating', 'zaso' ),
-				'description' => __( 'Optional. A headline score such as 4.9, shown by the "Stat highlight" designs; ignored by every other design.', 'zaso' ),
+				'label'       => __( 'Aggregate Rating', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Optional. A headline score such as 4.9, shown by the "Stat highlight" designs; ignored by every other design.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'agg_rating_label'  => array(
 				'type'        => 'text',
-				'label'       => __( 'Aggregate Rating Label', 'zaso' ),
-				'description' => __( 'Optional. Sits under the score, e.g. from 1,200+ verified reviews.', 'zaso' ),
+				'label'       => __( 'Aggregate Rating Label', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Optional. Sits under the score, e.g. from 1,200+ verified reviews.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'design'            => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'quote_font_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Quote Font Size', 'zaso' ),
+						'label'   => __( 'Quote Font Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '18px',
 					),
 					'quote_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Quote Color', 'zaso' ),
+						'label'   => __( 'Quote Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#333333',
 					),
 					'quote_italic' => array(
 						'type'    => 'select',
-						'label'   => __( 'Quote Italic', 'zaso' ),
+						'label'   => __( 'Quote Italic', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => 'yes',
 						'options' => array(
-							'yes' => __( 'Yes', 'zaso' ),
-							'no'  => __( 'No', 'zaso' ),
+							'yes' => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' ),
+							'no'  => __( 'No', 'zen-addons-for-siteorigin-page-builder' ),
 						),
 					),
 					'author_name_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Author Name Color', 'zaso' ),
+						'label'   => __( 'Author Name Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'author_title_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Author Title Color', 'zaso' ),
+						'label'   => __( 'Author Title Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#888888',
 					),
 					'star_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Star Color', 'zaso' ),
+						'label'   => __( 'Star Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#f5a623',
 					),
 					'card_background' => array(
 						'type'    => 'color',
-						'label'   => __( 'Card Background', 'zaso' ),
+						'label'   => __( 'Card Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'card_padding' => array(
 						'type'   => 'section',
-						'label'  => __( 'Card Padding', 'zaso' ),
+						'label'  => __( 'Card Padding', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide'   => true,
 						'fields' => array(
 							'top' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Top', 'zaso' ),
+								'label'   => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '32px',
 							),
 							'right' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Right', 'zaso' ),
+								'label'   => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '32px',
 							),
 							'bottom' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Bottom', 'zaso' ),
+								'label'   => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '32px',
 							),
 							'left' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Left', 'zaso' ),
+								'label'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '32px',
 							),
 						),
 					),
 					'card_border_radius' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Card Border Radius', 'zaso' ),
+						'label'   => __( 'Card Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '8px',
 					),
 					'arrow_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Arrow Color', 'zaso' ),
+						'label'   => __( 'Arrow Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'dot_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Dot Color', 'zaso' ),
+						'label'   => __( 'Dot Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#cccccc',
 					),
 					'dot_active_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Active Dot Color', 'zaso' ),
+						'label'   => __( 'Active Dot Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -350,9 +350,9 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 
 		parent::__construct(
 			'zen-addons-siteorigin-testimonial-slider',
-			__( 'Zen Addons - Testimonial Slider', 'zaso' ),
+			__( 'Zen Addons - Testimonial Slider', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'A sliding testimonial carousel with auto-play, swipe, and keyboard support.', 'zaso' ),
+				'description'   => __( 'A sliding testimonial carousel with auto-play, swipe, and keyboard support.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),
@@ -397,7 +397,7 @@ class Zen_Addons_SiteOrigin_Testimonial_Slider_Widget extends SiteOrigin_Widget 
 					'photo_alt'    => $photo_alt,
 					'rating'       => $rating,
 					/* translators: 1: number of stars, 2: max stars */
-					'rating_label' => $rating > 0 ? sprintf( __( '%1$d out of %2$d stars', 'zaso' ), $rating, 5 ) : '',
+					'rating_label' => $rating > 0 ? sprintf( __( '%1$d out of %2$d stars', 'zen-addons-for-siteorigin-page-builder' ), $rating, 5 ) : '',
 				);
 			}
 		}

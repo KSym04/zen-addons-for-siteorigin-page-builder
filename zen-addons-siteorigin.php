@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Zen Addons for SiteOrigin Page Builder
  * Description: Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Builder. It's simple, flexible, and useful.
- * Version: 1.10.18
+ * Version: 1.10.19
  * Requires at least: 5.5
  * Requires PHP: 7.4
  * Requires Plugins: so-widgets-bundle
@@ -10,7 +10,7 @@
  * Author URI: https://www.dopethemes.com/
  * Plugin URI: https://www.dopethemes.com/downloads/zen-addons-siteorigin/
  * Copyright: DopeThemes
- * Text Domain: zaso
+ * Text Domain: zen-addons-for-siteorigin-page-builder
  * Domain Path: /lang
  * License: GPLv3
  * License URI: https://www.dopethemes.com/gplv3/
@@ -41,7 +41,7 @@ if ( ! class_exists( 'zen_addons_siteorigin' ) ) :
 class zen_addons_siteorigin {
 
 	// vars
-	var $version = '1.10.18';
+	var $version = '1.10.19';
 
 	/**
 	 * A dummy constructor to ensure Zen Addons for SiteOrigin is only initialized once
@@ -64,7 +64,7 @@ class zen_addons_siteorigin {
 	function initialize() {
 		// Vars.
 		$this->settings = array(
-			'name'     => esc_html__( 'Zen Addons for SiteOrigin', 'zaso' ),
+			'name'     => esc_html__( 'Zen Addons for SiteOrigin', 'zen-addons-for-siteorigin-page-builder' ),
 			'version'  => $this->version,
 			'file'     => __FILE__,
 			'basename' => plugin_basename( __FILE__ ),
@@ -118,7 +118,7 @@ class zen_addons_siteorigin {
 	 * @return void
 	 */
 	function load_textdomain() {
-		load_plugin_textdomain( 'zaso', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
+		load_plugin_textdomain( 'zen-addons-for-siteorigin-page-builder', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 	}
 
 	/**
@@ -135,7 +135,7 @@ class zen_addons_siteorigin {
 			unset( $links['edit'] );
 		}
 
-		$links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . __( 'Learn More', 'zaso' ) . '</a>';
+		$links['learn-more'] = '<a href="https://www.dopethemes.com/downloads/zen-addons-siteorigin/" target="_blank" rel="noopener noreferrer">' . __( 'Learn More', 'zen-addons-for-siteorigin-page-builder' ) . '</a>';
 
 		return $links;
 	}

@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
             $iig_label = $iig_title;
             if ( '' === trim( $iig_label ) && ! empty( $iig['image_icon_group_link'] ) ) {
                 $iig_host  = wp_parse_url( $iig['image_icon_group_link'], PHP_URL_HOST );
-                $iig_label = $iig_host ? $iig_host : __( 'Open link', 'zaso' );
+                $iig_label = $iig_host ? $iig_host : __( 'Open link', 'zen-addons-for-siteorigin-page-builder' );
             }
             ?>
             <li class="zaso-image-icon-group__list-item">

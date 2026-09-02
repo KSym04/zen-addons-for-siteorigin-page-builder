@@ -36,7 +36,7 @@ function zaso_material_symbols_icon_family( $families ) {
 	// value with explode( '-', $value, 2 ), so a hyphenated slug would split into
 	// the wrong family/icon parts and the glyph would never render.
 	$families['materialsymbols'] = array(
-		'name'      => __( 'Material Symbols Rounded', 'zaso' ),
+		'name'      => __( 'Material Symbols Rounded', 'zen-addons-for-siteorigin-page-builder' ),
 		'style_uri' => ZASO_BASE_DIR . 'assets/css/material-symbols.css?ver=' . ZASO_VERSION,
 		'icons'     => zaso_material_symbols_icons(),
 	);

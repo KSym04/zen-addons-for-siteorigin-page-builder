@@ -141,7 +141,7 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
 
 				echo 'function dismiss_dopethemes_news(event) {';
 				echo '  event.preventDefault();';
-				echo '  if (window.confirm("' . esc_js( __( 'Are you sure you want to remove DopeThemes Tutorials forever?', 'zaso' ) ) . '")) {';
+				echo '  if (window.confirm("' . esc_js( __( 'Are you sure you want to remove DopeThemes Tutorials forever?', 'zen-addons-for-siteorigin-page-builder' ) ) . '")) {';
 				echo '    var item = event.target.parentElement;';
 				echo '    item.style.display = "none";';
 				echo '    fetch("' . $ajax_url . '", { method: "POST" });';
@@ -174,7 +174,7 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
 
             // Check user permissions.
             if ( ! current_user_can( 'manage_options' ) ) {
-                wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zaso' ) );
+                wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zen-addons-for-siteorigin-page-builder' ) );
             }
 
             update_option( 'dopethemes_dismissed', true );
@@ -205,7 +205,7 @@ if ( ! defined( 'DOPETHEMES_DASHBOARD_LOADED' ) ) {
 
 			// Check user permissions.
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zaso' ) );
+				wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zen-addons-for-siteorigin-page-builder' ) );
 			}
 
 			delete_transient( 'zaso_dopethemes_posts' );

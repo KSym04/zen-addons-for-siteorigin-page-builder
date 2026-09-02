@@ -19,8 +19,8 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 		$zaso_simple_accordion_field_array = array(
 			'accordion' => array(
 				'type' => 'repeater',
-				'label' => __( 'Accordion List' , 'zaso' ),
-				'item_name'  => __( 'Single Item', 'zaso' ),
+				'label' => __( 'Accordion List' , 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Single Item', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'      => "[name*='accordion_field_title']",
 					'update_event'  => 'change',
@@ -29,160 +29,160 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'accordion_field_title' => array(
 						'type'  => 'text',
-						'label' => __( 'Accordion Title' , 'zaso' )
+						'label' => __( 'Accordion Title' , 'zen-addons-for-siteorigin-page-builder' )
 					),
 					'accordion_field_content' => array(
 						'type'  => 'tinymce',
-						'label' => __( 'Accordion Content' , 'zaso' ),
+						'label' => __( 'Accordion Content' , 'zen-addons-for-siteorigin-page-builder' ),
 						'row'   => 20
 					),
 					'accordion_field_state' => array(
 						'type'    => 'select',
-						'label'   => __( 'Accordion Initial State' , 'zaso' ),
+						'label'   => __( 'Accordion Initial State' , 'zen-addons-for-siteorigin-page-builder' ),
 						'options' => array(
-							'zaso-simple-accordion--close' => __( 'Close', 'zaso' ),
-							'zaso-simple-accordion--open'  => __( 'Open', 'zaso' ),
+							'zaso-simple-accordion--close' => __( 'Close', 'zen-addons-for-siteorigin-page-builder' ),
+							'zaso-simple-accordion--open'  => __( 'Open', 'zen-addons-for-siteorigin-page-builder' ),
 						)
 					),
 				)
             ),
             'accordion_settings' => array(
                 'type'    => 'select',
-                'label'   => __( 'Settings', 'zaso' ),
+                'label'   => __( 'Settings', 'zen-addons-for-siteorigin-page-builder' ),
                 'default' => '700',
                 'options' => array(
-                    'multiple_open'  => __( 'Allow Multiple Open', 'zaso' ),
-                    'single_open'  => __( 'Single Open Only', 'zaso' )
+                    'multiple_open'  => __( 'Allow Multiple Open', 'zen-addons-for-siteorigin-page-builder' ),
+                    'single_open'  => __( 'Single Open Only', 'zen-addons-for-siteorigin-page-builder' )
                 )
             ),
             'accordion_collapsible_icon_open' => array(
 				'type'  => 'media',
-				'label' => __( 'Collapsible Icon - Open', 'zaso' ),
+				'label' => __( 'Collapsible Icon - Open', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true
             ),
             'accordion_collapsible_icon_close' => array(
 				'type'  => 'media',
-				'label' => __( 'Collapsible Icon - Close', 'zaso' ),
+				'label' => __( 'Collapsible Icon - Close', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true
 			),
 			'extra_id' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
-				'description'	=> __( 'Add an extra ID.', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description'	=> __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'design' => array(
 				'type' =>  'section',
-				'label' => __( 'Design', 'zaso' ),
+				'label' => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide' => true,
 				'fields' => array(
 					'heading' => array(
 							'type' => 'section',
-							'label' => __( 'Headings', 'zaso' ),
+							'label' => __( 'Headings', 'zen-addons-for-siteorigin-page-builder' ),
 							'hide' => true,
 							'fields' => array(
 								'title_background_color' => array(
 									'type'    => 'color',
-									'label'   => __( 'Background Color', 'zaso' ),
+									'label'   => __( 'Background Color', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '#e5e5e5',
 								),
 								'title_background_color_hover' => array(
 									'type'    => 'color',
-									'label'   => __( 'Background Hover Color', 'zaso' ),
+									'label'   => __( 'Background Hover Color', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '#d5d5d5',
 								),
 								'title_font_color' => array(
 									'type'    => 'color',
-									'label'   => __( 'Font Color', 'zaso' ),
+									'label'   => __( 'Font Color', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '#333333',
 								),
 								'title_font_color_hover' => array(
 									'type'    => 'color',
-									'label'   => __( 'Font Color Hover', 'zaso' ),
+									'label'   => __( 'Font Color Hover', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '#333333',
 								),
 								'title_font_weight' => array(
 									'type'    => 'select',
-									'label'   => __( 'Font Weight', 'zaso' ),
+									'label'   => __( 'Font Weight', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '700',
 									'options' => array(
-										'100'  => __( '100', 'zaso' ),
-										'200'  => __( '200', 'zaso' ),
-										'300'  => __( '300', 'zaso' ),
-										'400'  => __( '400 - Normal', 'zaso' ),
-										'500'  => __( '500', 'zaso' ),
-										'600'  => __( '600', 'zaso' ),
-										'700'  => __( '700 - Bold', 'zaso' ),
-										'800'  => __( '800', 'zaso' ),
-										'900'  => __( '900', 'zaso' )
+										'100'  => __( '100', 'zen-addons-for-siteorigin-page-builder' ),
+										'200'  => __( '200', 'zen-addons-for-siteorigin-page-builder' ),
+										'300'  => __( '300', 'zen-addons-for-siteorigin-page-builder' ),
+										'400'  => __( '400 - Normal', 'zen-addons-for-siteorigin-page-builder' ),
+										'500'  => __( '500', 'zen-addons-for-siteorigin-page-builder' ),
+										'600'  => __( '600', 'zen-addons-for-siteorigin-page-builder' ),
+										'700'  => __( '700 - Bold', 'zen-addons-for-siteorigin-page-builder' ),
+										'800'  => __( '800', 'zen-addons-for-siteorigin-page-builder' ),
+										'900'  => __( '900', 'zen-addons-for-siteorigin-page-builder' )
 									)
 								),
 								'title_text_align' => array(
 									'type'    => 'select',
-									'label'   => __( 'Text Align', 'zaso' ),
+									'label'   => __( 'Text Align', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => 'left',
 									'options' => array(
-										'left'   => __( 'Left', 'zaso' ),
-										'center' => __( 'Center', 'zaso' ),
-										'right'  => __( 'Right', 'zaso' )
+										'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+										'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
+										'right'  => __( 'Right', 'zen-addons-for-siteorigin-page-builder' )
 									)
 								),
 								'title_margin' => array(
 									'type' => 'section',
-									'label' => __( 'Margin', 'zaso' ),
+									'label' => __( 'Margin', 'zen-addons-for-siteorigin-page-builder' ),
 									'hide' => true,
 									'fields' => array(
 										'top' => array(
 											'type' => 'measurement',
-											'label' => __( 'Top', 'zaso' ),
+											'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 										'right' => array(
 											'type' => 'measurement',
-											'label' => __( 'Right', 'zaso' ),
+											'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 										'bottom' => array(
 											'type' => 'measurement',
-											'label' => __( 'Bottom', 'zaso' ),
+											'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 										'left' => array(
 											'type' => 'measurement',
-											'label' => __( 'Left', 'zaso' ),
+											'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 									),
 								),
 								'title_padding' => array(
 									'type' => 'section',
-									'label' => __( 'Padding', 'zaso' ),
+									'label' => __( 'Padding', 'zen-addons-for-siteorigin-page-builder' ),
 									'hide' => true,
 									'fields' => array(
 										'top' => array(
 											'type' => 'measurement',
-											'label' => __( 'Top', 'zaso' ),
+											'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1em'
 										),
 										'right' => array(
 											'type' => 'measurement',
-											'label' => __( 'Right', 'zaso' ),
+											'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1.2em'
 										),
 										'bottom' => array(
 											'type' => 'measurement',
-											'label' => __( 'Bottom', 'zaso' ),
+											'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1em'
 										),
 										'left' => array(
 											'type' => 'measurement',
-											'label' => __( 'Left', 'zaso' ),
+											'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1.2em'
 										),
 									),
@@ -191,74 +191,74 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 					),
 					'panels' => array(
 							'type' => 'section',
-							'label' => __( 'Panels', 'zaso' ),
+							'label' => __( 'Panels', 'zen-addons-for-siteorigin-page-builder' ),
 							'hide' => true,
 							'fields' => array(
 								'content_background_color' => array(
 									'type' => 'color',
-									'label' => __( 'Background Color',  'zaso' ),
+									'label' => __( 'Background Color',  'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '#f5f5f5',
 								),
 								'content_font_color' => array(
 									'type'    => 'color',
-									'label'   => __( 'Font Color', 'zaso' ),
+									'label'   => __( 'Font Color', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '#333333',
 								),
 								'content_font_size' => array(
 									'type'    => 'measurement',
-									'label'   => __( 'Font Size', 'zaso' ),
+									'label'   => __( 'Font Size', 'zen-addons-for-siteorigin-page-builder' ),
 									'default' => '1rem',
 								),
 								'content_margin' => array(
 									'type' => 'section',
-									'label' => __( 'Margin', 'zaso' ),
+									'label' => __( 'Margin', 'zen-addons-for-siteorigin-page-builder' ),
 									'hide' => true,
 									'fields' => array(
 										'top' => array(
 											'type' => 'measurement',
-											'label' => __( 'Top', 'zaso' ),
+											'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 										'right' => array(
 											'type' => 'measurement',
-											'label' => __( 'Right', 'zaso' ),
+											'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 										'bottom' => array(
 											'type' => 'measurement',
-											'label' => __( 'Bottom', 'zaso' ),
+											'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 										'left' => array(
 											'type' => 'measurement',
-											'label' => __( 'Left', 'zaso' ),
+											'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '0px'
 										),
 									),
 								),
 								'content_padding' => array(
 									'type' => 'section',
-									'label' => __( 'Padding', 'zaso' ),
+									'label' => __( 'Padding', 'zen-addons-for-siteorigin-page-builder' ),
 									'hide' => true,
 									'fields' => array(
 										'top' => array(
 											'type' => 'measurement',
-											'label' => __( 'Top', 'zaso' ),
+											'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1em'
 										),
 										'right' => array(
 											'type' => 'measurement',
-											'label' => __( 'Right', 'zaso' ),
+											'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1.2em'
 										),
 										'bottom' => array(
 											'type' => 'measurement',
-											'label' => __( 'Bottom', 'zaso' ),
+											'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1em'
 										),
 										'left' => array(
 											'type' => 'measurement',
-											'label' => __( 'Left', 'zaso' ),
+											'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 											'default' => '1.2em'
 										),
 									),
@@ -274,9 +274,9 @@ class Zen_Addons_SiteOrigin_Simple_Accordion_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-simple-accordion',
-			__( 'Zen Addons - Simple Accordion', 'zaso' ),
+			__( 'Zen Addons - Simple Accordion', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Create a vertically stacked list of items or single panel.', 'zaso' ),
+				'description'   => __( 'Create a vertically stacked list of items or single panel.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),

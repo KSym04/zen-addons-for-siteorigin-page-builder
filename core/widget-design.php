@@ -144,31 +144,31 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		public function get_supported_widgets() {
 			return array(
 				'Zen_Addons_SiteOrigin_Alert_Box_Widget'          => array(
-					'label'  => esc_html__( 'Alert Box', 'zaso' ),
+					'label'  => esc_html__( 'Alert Box', 'zen-addons-for-siteorigin-page-builder' ),
 					'folder' => 'zaso-alert-box-widgets',
 				),
 				'Zen_Addons_SiteOrigin_Cta_Banner_Widget'         => array(
-					'label'  => esc_html__( 'CTA Banner', 'zaso' ),
+					'label'  => esc_html__( 'CTA Banner', 'zen-addons-for-siteorigin-page-builder' ),
 					'folder' => 'zaso-cta-banner-widgets',
 				),
 				'Zen_Addons_SiteOrigin_Pricing_Table_Widget'      => array(
-					'label'  => esc_html__( 'Pricing Table', 'zaso' ),
+					'label'  => esc_html__( 'Pricing Table', 'zen-addons-for-siteorigin-page-builder' ),
 					'folder' => 'zaso-pricing-table-widgets',
 				),
 				'Zen_Addons_SiteOrigin_Testimonial_Slider_Widget' => array(
-					'label'  => esc_html__( 'Testimonial Slider', 'zaso' ),
+					'label'  => esc_html__( 'Testimonial Slider', 'zen-addons-for-siteorigin-page-builder' ),
 					'folder' => 'zaso-testimonial-slider-widgets',
 				),
 				'Zen_Addons_SiteOrigin_Counter_Widget'            => array(
-					'label'  => esc_html__( 'Counter', 'zaso' ),
+					'label'  => esc_html__( 'Counter', 'zen-addons-for-siteorigin-page-builder' ),
 					'folder' => 'zaso-counter-widgets',
 				),
 				'Zen_Addons_SiteOrigin_Hover_Card_Widget'         => array(
-					'label'  => esc_html__( 'Hover Card', 'zaso' ),
+					'label'  => esc_html__( 'Hover Card', 'zen-addons-for-siteorigin-page-builder' ),
 					'folder' => 'zaso-hover-card-widgets',
 				),
 				'Zen_Addons_SiteOrigin_Services_Grid_Widget'      => array(
-					'label'  => esc_html__( 'Services Grid', 'zaso' ),
+					'label'  => esc_html__( 'Services Grid', 'zen-addons-for-siteorigin-page-builder' ),
 					'folder' => 'zaso-services-grid-widgets',
 				),
 			);
@@ -182,8 +182,8 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 		public function register_menu() {
 			add_submenu_page(
 				self::PARENT_SLUG,
-				esc_html__( 'Templates', 'zaso' ),
-				esc_html__( 'Templates', 'zaso' ),
+				esc_html__( 'Templates', 'zen-addons-for-siteorigin-page-builder' ),
+				esc_html__( 'Templates', 'zen-addons-for-siteorigin-page-builder' ),
 				self::CAPABILITY,
 				self::MENU_SLUG,
 				array( $this, 'render_page' )
@@ -430,8 +430,8 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					$style = 'background:' . esc_attr( $bg ) . ';color:' . esc_attr( $text ) . ';border:' . esc_attr( $base_border ) . ';border-left:' . esc_attr( $left_border ) . ';border-radius:' . esc_attr( $radius ) . ';';
 
 					return '<div class="zaso-wd-pv zaso-wd-pv-alert' . esc_attr( $layout_class ) . '" style="' . $style . '">'
-						. '<strong>' . esc_html__( 'Heads up', 'zaso' ) . '</strong>'
-						. '<span>' . esc_html__( 'This is an alert message.', 'zaso' ) . '</span>'
+						. '<strong>' . esc_html__( 'Heads up', 'zen-addons-for-siteorigin-page-builder' ) . '</strong>'
+						. '<span>' . esc_html__( 'This is an alert message.', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
 						. '</div>';
 
 				case 'cta-banner':
@@ -445,9 +445,9 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					$btn_style = 'background:' . esc_attr( $button_bg ) . ';color:' . esc_attr( $button_color ) . ';border-radius:' . esc_attr( $button_radius ) . ';';
 
 					return '<div class="zaso-wd-pv zaso-wd-pv-cta' . esc_attr( $layout_class ) . '" style="background:' . esc_attr( $bg ) . ';">'
-						. '<span class="zaso-wd-pv-h" style="color:' . esc_attr( $heading_color ) . ';">' . esc_html__( 'Ready to start?', 'zaso' ) . '</span>'
-						. '<span class="zaso-wd-pv-sub" style="color:' . esc_attr( $text_color ) . ';">' . esc_html__( 'Join us today.', 'zaso' ) . '</span>'
-						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'Get Started', 'zaso' ) . '</span>'
+						. '<span class="zaso-wd-pv-h" style="color:' . esc_attr( $heading_color ) . ';">' . esc_html__( 'Ready to start?', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
+						. '<span class="zaso-wd-pv-sub" style="color:' . esc_attr( $text_color ) . ';">' . esc_html__( 'Join us today.', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
+						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'Get Started', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
 						. '</div>';
 
 				case 'pricing-table':
@@ -467,7 +467,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 						. '<span class="zaso-wd-pv-price" style="color:' . esc_attr( $price_color ) . ';">$29</span>'
 						. '<span class="zaso-wd-pv-feat"></span>'
 						. '<span class="zaso-wd-pv-feat"></span>'
-						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'Choose', 'zaso' ) . '</span>'
+						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'Choose', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
 						. '</div>';
 
 				case 'testimonial-slider':
@@ -481,8 +481,8 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 
 					return '<div class="zaso-wd-pv zaso-wd-pv-testimonial' . esc_attr( $layout_class ) . '" style="' . $card_style . '">'
 						. '<span class="zaso-wd-pv-stars" style="color:' . esc_attr( $star_color ) . ';">&#9733;&#9733;&#9733;</span>'
-						. '<span class="zaso-wd-pv-quote" style="color:' . esc_attr( $quote_color ) . ';">' . esc_html__( 'Great product, highly recommend.', 'zaso' ) . '</span>'
-						. '<span class="zaso-wd-pv-author" style="color:' . esc_attr( $author_color ) . ';">' . esc_html__( 'Jane Doe', 'zaso' ) . '</span>'
+						. '<span class="zaso-wd-pv-quote" style="color:' . esc_attr( $quote_color ) . ';">' . esc_html__( 'Great product, highly recommend.', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
+						. '<span class="zaso-wd-pv-author" style="color:' . esc_attr( $author_color ) . ';">' . esc_html__( 'Jane Doe', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
 						. '</div>';
 
 				case 'counter':
@@ -493,7 +493,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 					return '<div class="zaso-wd-pv zaso-wd-pv-counter' . esc_attr( $layout_class ) . '" style="background:#ffffff;">'
 						. '<span class="zaso-wd-pv-dot" style="background:' . esc_attr( $icon_color ) . ';"></span>'
 						. '<span class="zaso-wd-pv-num" style="color:' . esc_attr( $number_color ) . ';">1,250</span>'
-						. '<span class="zaso-wd-pv-lbl" style="color:' . esc_attr( $title_color ) . ';">' . esc_html__( 'Happy clients', 'zaso' ) . '</span>'
+						. '<span class="zaso-wd-pv-lbl" style="color:' . esc_attr( $title_color ) . ';">' . esc_html__( 'Happy clients', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
 						. '</div>';
 
 				case 'hover-card':
@@ -507,8 +507,8 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 
 					return '<div class="zaso-wd-pv zaso-wd-pv-hover' . esc_attr( $layout_class ) . '">'
 						. '<span class="zaso-wd-pv-caption" style="' . $caption_style . '">'
-						. '<span class="zaso-wd-pv-caption-t">' . esc_html__( 'Project title', 'zaso' ) . '</span>'
-						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'View', 'zaso' ) . '</span>'
+						. '<span class="zaso-wd-pv-caption-t">' . esc_html__( 'Project title', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
+						. '<span class="zaso-wd-pv-btn" style="' . $btn_style . '">' . esc_html__( 'View', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
 						. '</span>'
 						. '</div>';
 
@@ -527,8 +527,8 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 
 					return '<div class="zaso-wd-pv zaso-wd-pv-services' . esc_attr( $layout_class ) . '" style="background:' . esc_attr( $bg ) . ';">'
 						. '<span class="zaso-wd-pv-chip" style="' . $chip_style . '">&#9679;</span>'
-						. '<span class="zaso-wd-pv-title" style="color:' . esc_attr( $title_color ) . ';">' . esc_html__( 'Our Service', 'zaso' ) . '</span>'
-						. '<span class="zaso-wd-pv-desc" style="color:' . esc_attr( $desc_color ) . ';">' . esc_html__( 'A short description line.', 'zaso' ) . '</span>'
+						. '<span class="zaso-wd-pv-title" style="color:' . esc_attr( $title_color ) . ';">' . esc_html__( 'Our Service', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
+						. '<span class="zaso-wd-pv-desc" style="color:' . esc_attr( $desc_color ) . ';">' . esc_html__( 'A short description line.', 'zen-addons-for-siteorigin-page-builder' ) . '</span>'
 						. '</div>';
 			}
 
@@ -690,23 +690,23 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 				<div class="zaso-th-hero">
 					<div class="zaso-th-brand">
 						<img src="<?php echo esc_url( $logo_url ); ?>" alt="" width="38" height="38" />
-						<span class="zaso-th-wordmark"><?php echo esc_html__( 'Zen Addons', 'zaso' ); ?></span>
-						<span class="zaso-th-eyebrow"><?php echo esc_html__( 'Templates', 'zaso' ); ?></span>
+						<span class="zaso-th-wordmark"><?php echo esc_html__( 'Zen Addons', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
+						<span class="zaso-th-eyebrow"><?php echo esc_html__( 'Templates', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
 					</div>
-					<h1><?php echo esc_html__( 'Templates', 'zaso' ); ?></h1>
-					<p class="zaso-th-intro"><?php echo esc_html__( 'Ready-to-insert sections, designed with Zen Addons widgets.', 'zaso' ); ?></p>
+					<h1><?php echo esc_html__( 'Templates', 'zen-addons-for-siteorigin-page-builder' ); ?></h1>
+					<p class="zaso-th-intro"><?php echo esc_html__( 'Ready-to-insert sections, designed with Zen Addons widgets.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
 				</div>
 
 				<div class="zaso-th-how">
-					<h2><?php echo esc_html__( 'How to add a template', 'zaso' ); ?></h2>
+					<h2><?php echo esc_html__( 'How to add a template', 'zen-addons-for-siteorigin-page-builder' ); ?></h2>
 					<div class="zaso-th-steps">
 						<div class="zaso-th-step">
 							<span class="num">1</span>
 							<span class="txt"><?php
 								printf(
 									/* translators: %s: the page editor name (Page Builder). */
-									esc_html__( 'Edit a page with %s.', 'zaso' ),
-									'<b>' . esc_html__( 'Page Builder', 'zaso' ) . '</b>'
+									esc_html__( 'Edit a page with %s.', 'zen-addons-for-siteorigin-page-builder' ),
+									'<b>' . esc_html__( 'Page Builder', 'zen-addons-for-siteorigin-page-builder' ) . '</b>'
 								);
 							?></span>
 						</div>
@@ -715,24 +715,24 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 							<span class="txt"><?php
 								printf(
 									/* translators: %s: the Page Builder browser tab name (Layouts). */
-									esc_html__( 'Open the %s tab.', 'zaso' ),
-									'<b>' . esc_html__( 'Layouts', 'zaso' ) . '</b>'
+									esc_html__( 'Open the %s tab.', 'zen-addons-for-siteorigin-page-builder' ),
+									'<b>' . esc_html__( 'Layouts', 'zen-addons-for-siteorigin-page-builder' ) . '</b>'
 								);
 							?></span>
 						</div>
 						<div class="zaso-th-step">
 							<span class="num">3</span>
-							<span class="txt"><?php echo wp_kses( __( 'Choose a <b>Zen Addons section</b> to insert it.', 'zaso' ), array( 'b' => array() ) ); ?></span>
+							<span class="txt"><?php echo wp_kses( __( 'Choose a <b>Zen Addons section</b> to insert it.', 'zen-addons-for-siteorigin-page-builder' ), array( 'b' => array() ) ); ?></span>
 						</div>
 					</div>
 				</div>
 
 				<div class="zaso-th-sec-head">
-					<h2><?php echo esc_html__( 'Section templates', 'zaso' ); ?></h2>
+					<h2><?php echo esc_html__( 'Section templates', 'zen-addons-for-siteorigin-page-builder' ); ?></h2>
 					<span class="meta"><?php
 						printf(
 							/* translators: 1: number of free templates, 2: number of Pro templates. */
-							esc_html__( '%1$d free, %2$d Pro', 'zaso' ),
+							esc_html__( '%1$d free, %2$d Pro', 'zen-addons-for-siteorigin-page-builder' ),
 							(int) $free_count,
 							(int) $pro_count
 						);
@@ -740,7 +740,7 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 				</div>
 
 				<?php if ( empty( $templates ) && $licensed ) : ?>
-					<div class="zaso-th-empty"><?php echo esc_html__( 'No section templates are registered yet.', 'zaso' ); ?></div>
+					<div class="zaso-th-empty"><?php echo esc_html__( 'No section templates are registered yet.', 'zen-addons-for-siteorigin-page-builder' ); ?></div>
 				<?php else : ?>
 					<div class="zaso-th-grid">
 						<?php foreach ( $templates as $tpl ) : ?>
@@ -753,9 +753,9 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 										<img src="<?php echo esc_url( $tpl['screenshot'] ); ?>" alt="<?php echo esc_attr( $tpl['name'] ); ?>" loading="lazy" />
 									<?php endif; ?>
 									<?php if ( $tpl['isPro'] ) : ?>
-										<span class="zaso-th-badge is-pro"><span class="dot"></span><?php echo esc_html__( 'Pro', 'zaso' ); ?></span>
+										<span class="zaso-th-badge is-pro"><span class="dot"></span><?php echo esc_html__( 'Pro', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
 									<?php else : ?>
-										<span class="zaso-th-badge is-free"><?php echo esc_html__( 'Free', 'zaso' ); ?></span>
+										<span class="zaso-th-badge is-free"><?php echo esc_html__( 'Free', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
 									<?php endif; ?>
 								</div>
 								<div class="zaso-th-body">
@@ -770,9 +770,9 @@ if ( ! class_exists( 'ZASO_Widget_Design' ) ) :
 						<?php if ( ! $licensed ) : ?>
 							<a class="zaso-th-upsell" href="<?php echo esc_url( self::pro_url( 'template_library' ) ); ?>" target="_blank" rel="noopener">
 								<span class="ic" aria-hidden="true">&#9889;</span>
-								<strong><?php echo esc_html__( 'Unlock the full Pro template library', 'zaso' ); ?></strong>
-								<span><?php echo esc_html__( 'Get premium sections built with Zen Addons widgets, plus every Pro widget and style.', 'zaso' ); ?></span>
-								<span class="cta"><?php echo esc_html__( 'Get Zen Addons Pro', 'zaso' ); ?></span>
+								<strong><?php echo esc_html__( 'Unlock the full Pro template library', 'zen-addons-for-siteorigin-page-builder' ); ?></strong>
+								<span><?php echo esc_html__( 'Get premium sections built with Zen Addons widgets, plus every Pro widget and style.', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
+								<span class="cta"><?php echo esc_html__( 'Get Zen Addons Pro', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
 							</a>
 						<?php endif; ?>
 					</div>

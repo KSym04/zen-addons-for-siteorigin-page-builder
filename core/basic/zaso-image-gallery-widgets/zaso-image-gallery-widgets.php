@@ -18,8 +18,8 @@ class Zen_Addons_SiteOrigin_Image_Gallery_Widget extends SiteOrigin_Widget {
 		$zaso_image_gallery_field_array = array(
 			'images' => array(
 				'type'       => 'repeater',
-				'label'      => __( 'Images', 'zaso' ),
-				'item_name'  => __( 'Image', 'zaso' ),
+				'label'      => __( 'Images', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Image', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[id*='[image]']",
 					'update_event' => 'change',
@@ -28,67 +28,67 @@ class Zen_Addons_SiteOrigin_Image_Gallery_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'image' => array(
 						'type'     => 'media',
-						'label'    => __( 'Image', 'zaso' ),
+						'label'    => __( 'Image', 'zen-addons-for-siteorigin-page-builder' ),
 						'library'  => 'image',
 						'fallback' => true,
 					),
 					'caption' => array(
 						'type'  => 'text',
-						'label' => __( 'Caption', 'zaso' ),
+						'label' => __( 'Caption', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 				),
 			),
 			'columns'    => array(
 				'type'    => 'select',
-				'label'   => __( 'Columns', 'zaso' ),
+				'label'   => __( 'Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '3',
 				'options' => array(
-					'2' => __( '2 Columns', 'zaso' ),
-					'3' => __( '3 Columns', 'zaso' ),
-					'4' => __( '4 Columns', 'zaso' ),
+					'2' => __( '2 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'3' => __( '3 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'4' => __( '4 Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'lightbox'   => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Enable Lightbox', 'zaso' ),
+				'label'   => __( 'Enable Lightbox', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
-				'description' => __( 'Click an image to open it full-size in a pop-up overlay.', 'zaso' ),
+				'description' => __( 'Click an image to open it full-size in a pop-up overlay.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'image_size' => array(
 				'type'    => 'select',
-				'label'   => __( 'Image Size', 'zaso' ),
+				'label'   => __( 'Image Size', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'large',
 				'options' => array(
-					'thumbnail' => __( 'Thumbnail', 'zaso' ),
-					'medium'    => __( 'Medium', 'zaso' ),
-					'large'     => __( 'Large', 'zaso' ),
-					'full'      => __( 'Full Size', 'zaso' ),
+					'thumbnail' => __( 'Thumbnail', 'zen-addons-for-siteorigin-page-builder' ),
+					'medium'    => __( 'Medium', 'zen-addons-for-siteorigin-page-builder' ),
+					'large'     => __( 'Large', 'zen-addons-for-siteorigin-page-builder' ),
+					'full'      => __( 'Full Size', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design'     => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'gap' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Gap Between Images', 'zaso' ),
+						'label'   => __( 'Gap Between Images', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '8px',
 					),
 					'border_radius' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Corner Radius', 'zaso' ),
+						'label'   => __( 'Corner Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '4px',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -96,9 +96,9 @@ class Zen_Addons_SiteOrigin_Image_Gallery_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-image-gallery',
-			__( 'Zen Addons - Image Gallery', 'zaso' ),
+			__( 'Zen Addons - Image Gallery', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display a responsive image gallery grid with an optional lightbox that opens full-size images in a pop-up overlay.', 'zaso' ),
+				'description'   => __( 'Display a responsive image gallery grid with an optional lightbox that opens full-size images in a pop-up overlay.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

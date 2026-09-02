@@ -61,7 +61,7 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_testimonial_slider_de
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?>
 	class="<?php echo esc_attr( $zaso_root_class ); ?>"
 	role="region"
-	aria-label="<?php esc_attr_e( 'Testimonials', 'zaso' ); ?>"
+	aria-label="<?php esc_attr_e( 'Testimonials', 'zen-addons-for-siteorigin-page-builder' ); ?>"
 	data-autoplay="<?php echo $autoplay ? '1' : '0'; ?>"
 	data-duration="<?php echo esc_attr( $autoplay_duration ); ?>"
 	data-count="<?php echo esc_attr( $count ); ?>"
@@ -73,10 +73,10 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_testimonial_slider_de
 				<div
 					class="zaso-testimonial-slider__slide"
 					role="group"
-					aria-roledescription="<?php esc_attr_e( 'slide', 'zaso' ); ?>"
+					aria-roledescription="<?php esc_attr_e( 'slide', 'zen-addons-for-siteorigin-page-builder' ); ?>"
 					aria-label="<?php echo esc_attr( sprintf(
 						/* translators: 1: current slide number, 2: total slides */
-						__( 'Testimonial %1$d of %2$d', 'zaso' ),
+						__( 'Testimonial %1$d of %2$d', 'zen-addons-for-siteorigin-page-builder' ),
 						$index + 1,
 						$count
 					) ); ?>"
@@ -103,7 +103,7 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_testimonial_slider_de
 							<div class="zaso-testimonial-slider__badge">
 								<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG markup from zaso_testimonial_slider_icon(). ?>
 								<?php echo zaso_testimonial_slider_icon( 'verified' ); ?>
-								<span><?php esc_html_e( 'Verified', 'zaso' ); ?></span>
+								<span><?php esc_html_e( 'Verified', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
 							</div>
 
 							<?php if ( '' !== $agg_rating ) : ?>
@@ -211,9 +211,9 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_testimonial_slider_de
 		<button
 			class="zaso-testimonial-slider__playpause"
 			type="button"
-			aria-label="<?php esc_attr_e( 'Pause testimonials', 'zaso' ); ?>"
-			data-label-pause="<?php esc_attr_e( 'Pause testimonials', 'zaso' ); ?>"
-			data-label-play="<?php esc_attr_e( 'Play testimonials', 'zaso' ); ?>"
+			aria-label="<?php esc_attr_e( 'Pause testimonials', 'zen-addons-for-siteorigin-page-builder' ); ?>"
+			data-label-pause="<?php esc_attr_e( 'Pause testimonials', 'zen-addons-for-siteorigin-page-builder' ); ?>"
+			data-label-play="<?php esc_attr_e( 'Play testimonials', 'zen-addons-for-siteorigin-page-builder' ); ?>"
 		>
 			<svg class="zaso-testimonial-slider__pp-icon zaso-testimonial-slider__pp-icon--pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
 			<svg class="zaso-testimonial-slider__pp-icon zaso-testimonial-slider__pp-icon--play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"></path></svg>
@@ -230,14 +230,14 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_testimonial_slider_de
 		<?php // Skinned footer: dots (left) + a slide counter + arrows (right), styled per design. ?>
 		<div class="zaso-testimonial-slider__footer">
 			<?php if ( $zaso_show_dots ) : ?>
-				<div class="zaso-testimonial-slider__dots" aria-label="<?php esc_attr_e( 'Testimonial slides', 'zaso' ); ?>">
+				<div class="zaso-testimonial-slider__dots" aria-label="<?php esc_attr_e( 'Testimonial slides', 'zen-addons-for-siteorigin-page-builder' ); ?>">
 					<?php foreach ( $testimonials as $index => $testimonial ) : ?>
 						<button
 							class="zaso-testimonial-slider__dot<?php echo 0 === $index ? ' zaso-testimonial-slider__dot--active' : ''; ?>"
 							type="button"
 							aria-label="<?php echo esc_attr( sprintf(
 								/* translators: testimonial number */
-								__( 'Go to testimonial %d', 'zaso' ),
+								__( 'Go to testimonial %d', 'zen-addons-for-siteorigin-page-builder' ),
 								$index + 1
 							) ); ?>"
 							<?php echo 0 === $index ? 'aria-current="true"' : ''; ?>
@@ -251,11 +251,11 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_testimonial_slider_de
 
 			<?php if ( $zaso_show_arrows ) : ?>
 				<div class="zaso-testimonial-slider__arrows" aria-hidden="true">
-					<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--prev" type="button" aria-label="<?php esc_attr_e( 'Previous testimonial', 'zaso' ); ?>" tabindex="-1">
+					<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--prev" type="button" aria-label="<?php esc_attr_e( 'Previous testimonial', 'zen-addons-for-siteorigin-page-builder' ); ?>" tabindex="-1">
 						<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG markup from zaso_testimonial_slider_icon(). ?>
 						<?php echo zaso_testimonial_slider_icon( 'chevron_left' ); ?>
 					</button>
-					<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next testimonial', 'zaso' ); ?>" tabindex="-1">
+					<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next testimonial', 'zen-addons-for-siteorigin-page-builder' ); ?>" tabindex="-1">
 						<?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG markup from zaso_testimonial_slider_icon(). ?>
 						<?php echo zaso_testimonial_slider_icon( 'chevron_right' ); ?>
 					</button>
@@ -268,24 +268,24 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_testimonial_slider_de
 		<?php // Original nav path (byte-identical for existing instances). ?>
 		<?php if ( $zaso_show_arrows ) : ?>
 			<div class="zaso-testimonial-slider__arrows" aria-hidden="true">
-				<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--prev" type="button" aria-label="<?php esc_attr_e( 'Previous testimonial', 'zaso' ); ?>" tabindex="-1">
+				<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--prev" type="button" aria-label="<?php esc_attr_e( 'Previous testimonial', 'zen-addons-for-siteorigin-page-builder' ); ?>" tabindex="-1">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="15 18 9 12 15 6"></polyline></svg>
 				</button>
-				<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next testimonial', 'zaso' ); ?>" tabindex="-1">
+				<button class="zaso-testimonial-slider__arrow zaso-testimonial-slider__arrow--next" type="button" aria-label="<?php esc_attr_e( 'Next testimonial', 'zen-addons-for-siteorigin-page-builder' ); ?>" tabindex="-1">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="9 18 15 12 9 6"></polyline></svg>
 				</button>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( $zaso_show_dots ) : ?>
-			<div class="zaso-testimonial-slider__dots" aria-label="<?php esc_attr_e( 'Testimonial slides', 'zaso' ); ?>">
+			<div class="zaso-testimonial-slider__dots" aria-label="<?php esc_attr_e( 'Testimonial slides', 'zen-addons-for-siteorigin-page-builder' ); ?>">
 				<?php foreach ( $testimonials as $index => $testimonial ) : ?>
 					<button
 						class="zaso-testimonial-slider__dot<?php echo 0 === $index ? ' zaso-testimonial-slider__dot--active' : ''; ?>"
 						type="button"
 						aria-label="<?php echo esc_attr( sprintf(
 							/* translators: testimonial number */
-							__( 'Go to testimonial %d', 'zaso' ),
+							__( 'Go to testimonial %d', 'zen-addons-for-siteorigin-page-builder' ),
 							$index + 1
 						) ); ?>"
 						<?php echo 0 === $index ? 'aria-current="true"' : ''; ?>

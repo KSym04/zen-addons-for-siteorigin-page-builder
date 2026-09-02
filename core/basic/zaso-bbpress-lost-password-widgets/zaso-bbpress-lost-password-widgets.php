@@ -19,13 +19,13 @@ class Zen_Addons_SiteOrigin_BbPress_Lost_Password_Widget extends SiteOrigin_Widg
 		$zaso_bbpress_lost_password_field_array = array(
 			'extra_id' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' )
+				'label' 	  => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'extra_class' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' )
+				'label' 	  => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' )
 			)
 		);
 
@@ -34,9 +34,9 @@ class Zen_Addons_SiteOrigin_BbPress_Lost_Password_Widget extends SiteOrigin_Widg
 
 		parent::__construct(
 			'zen-addons-siteorigin-bbpress-lost-password',
-			__( 'Zen Addons - bbPress Lost Password', 'zaso' ),
+			__( 'Zen Addons - bbPress Lost Password', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description' 	=> __( 'Display the bbPress password retrieval form.', 'zaso' ),
+				'description' 	=> __( 'Display the bbPress password retrieval form.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),

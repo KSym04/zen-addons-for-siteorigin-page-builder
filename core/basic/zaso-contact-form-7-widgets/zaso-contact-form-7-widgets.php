@@ -29,25 +29,25 @@ class Zen_Addons_SiteOrigin_Contact_Form_7_Widget extends SiteOrigin_Widget {
                 $all_cf7[$post->ID] = $post->post_title;
             }
         } else {
-            $all_cf7 = array( '' => __( 'No existing form.', 'zaso' ) );
+            $all_cf7 = array( '' => __( 'No existing form.', 'zen-addons-for-siteorigin-page-builder' ) );
         }
 
 		// ZASO field array
 		$zaso_cf7_field_array = array(
 			'cf7_id' => array(
                 'type' => 'select',
-                'label' => __( 'What CF7 form do you want to display?', 'zaso' ),
+                'label' => __( 'What CF7 form do you want to display?', 'zen-addons-for-siteorigin-page-builder' ),
                 'options' => $all_cf7
 			),
 			'extra_id' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' )
+				'label' 	  => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'extra_class' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' )
+				'label' 	  => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' )
 			)
 		);
 
@@ -56,9 +56,9 @@ class Zen_Addons_SiteOrigin_Contact_Form_7_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-contact-form-7',
-			__( 'Zen Addons - Contact Form 7', 'zaso' ),
+			__( 'Zen Addons - Contact Form 7', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description' 	=> __( 'Display CF7 form.', 'zaso' ),
+				'description' 	=> __( 'Display CF7 form.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),

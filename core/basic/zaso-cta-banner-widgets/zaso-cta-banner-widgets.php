@@ -25,13 +25,13 @@ if ( ! function_exists( 'zaso_cta_banner_design_options' ) ) :
 	 */
 	function zaso_cta_banner_design_options() {
 		$zaso_cta_banner_free_designs = array(
-			''                  => __( 'Default (classic banner)', 'zaso' ),
-			'solid-centered'    => __( 'Solid Centered (indigo)', 'zaso' ),
-			'horizontal-split'  => __( 'Horizontal Split (teal)', 'zaso' ),
-			'soft-tint'         => __( 'Soft Tint (blue)', 'zaso' ),
-			'gradient-centered' => __( 'Gradient Centered (violet)', 'zaso' ),
-			'outlined'          => __( 'Outlined (minimal)', 'zaso' ),
-			'dark'              => __( 'Dark', 'zaso' ),
+			''                  => __( 'Default (classic banner)', 'zen-addons-for-siteorigin-page-builder' ),
+			'solid-centered'    => __( 'Solid Centered (indigo)', 'zen-addons-for-siteorigin-page-builder' ),
+			'horizontal-split'  => __( 'Horizontal Split (teal)', 'zen-addons-for-siteorigin-page-builder' ),
+			'soft-tint'         => __( 'Soft Tint (blue)', 'zen-addons-for-siteorigin-page-builder' ),
+			'gradient-centered' => __( 'Gradient Centered (violet)', 'zen-addons-for-siteorigin-page-builder' ),
+			'outlined'          => __( 'Outlined (minimal)', 'zen-addons-for-siteorigin-page-builder' ),
+			'dark'              => __( 'Dark', 'zen-addons-for-siteorigin-page-builder' ),
 		);
 
 		return apply_filters( 'zaso_cta_designs', $zaso_cta_banner_free_designs );
@@ -55,10 +55,10 @@ if ( ! function_exists( 'zaso_cta_banner_design_description' ) ) :
 		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
 
 		if ( $white_label ) {
-			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic banner)" to build your own look with the Layout Structure and Design colour settings instead.', 'zaso' );
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic banner)" to build your own look with the Layout Structure and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
-		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic banner)" to build your own look with the Layout Structure and Design colour settings instead.', 'zaso' );
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic banner)" to build your own look with the Layout Structure and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 	}
 endif;
 
@@ -73,63 +73,63 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 		$zaso_cta_banner_field_array = array(
 			'heading' => array(
 				'type'  => 'text',
-				'label' => __( 'Heading', 'zaso' ),
+				'label' => __( 'Heading', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'subheading' => array(
 				'type'  => 'text',
-				'label' => __( 'Subheading', 'zaso' ),
+				'label' => __( 'Subheading', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'content' => array(
 				'type'  => 'tinymce',
-				'label' => __( 'Content', 'zaso' ),
+				'label' => __( 'Content', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'button_text' => array(
 				'type'    => 'text',
-				'label'   => __( 'Button Text', 'zaso' ),
-				'default' => __( 'Learn More', 'zaso' ),
+				'label'   => __( 'Button Text', 'zen-addons-for-siteorigin-page-builder' ),
+				'default' => __( 'Learn More', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'button_url' => array(
 				'type'  => 'link',
-				'label' => __( 'Button Destination URL', 'zaso' ),
+				'label' => __( 'Button Destination URL', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'button_new_tab' => array(
 				'type'    => 'checkbox',
 				'default' => false,
-				'label'   => __( 'Open button link in a new tab', 'zaso' ),
+				'label'   => __( 'Open button link in a new tab', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'button_nofollow' => array(
 				'type'    => 'checkbox',
 				'default' => false,
-				'label'   => __( 'Add rel="nofollow" to the button link', 'zaso' ),
+				'label'   => __( 'Add rel="nofollow" to the button link', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'layout' => array(
 				'type'    => 'select',
-				'label'   => __( 'Button Placement', 'zaso' ),
+				'label'   => __( 'Button Placement', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'stacked',
 				'options' => array(
-					'stacked' => __( 'Stacked (button below text)', 'zaso' ),
-					'inline'  => __( 'Inline (button beside text)', 'zaso' ),
+					'stacked' => __( 'Stacked (button below text)', 'zen-addons-for-siteorigin-page-builder' ),
+					'inline'  => __( 'Inline (button beside text)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'alignment' => array(
 				'type'    => 'select',
-				'label'   => __( 'Text Alignment', 'zaso' ),
+				'label'   => __( 'Text Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'center',
 				'options' => array(
-					'left'   => __( 'Left', 'zaso' ),
-					'center' => __( 'Center', 'zaso' ),
-					'right'  => __( 'Right', 'zaso' ),
+					'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+					'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
+					'right'  => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'extra_id' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' ),
+				'label'       => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label'       => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			/**
 			 * Structural layout dimension (orthogonal to the colour skin). The
@@ -142,14 +142,14 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 			 */
 			'block_layout' => array(
 				'type'        => 'select',
-				'label'       => __( 'Layout Structure', 'zaso' ),
+				'label'       => __( 'Layout Structure', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'default',
-				'description' => __( 'Structural shape of the banner. The Style skin below still controls colours; this controls the layout (card elevation, split divider, centered measure). Independent of the button placement and text alignment options above.', 'zaso' ),
+				'description' => __( 'Structural shape of the banner. The Style skin below still controls colours; this controls the layout (card elevation, split divider, centered measure). Independent of the button placement and text alignment options above.', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'default'  => __( 'Default (full-width band)', 'zaso' ),
-					'card'     => __( 'Card (elevated, rounded, shadow)', 'zaso' ),
-					'split'    => __( 'Split (content / action divided)', 'zaso' ),
-					'centered' => __( 'Centered (constrained spotlight)', 'zaso' ),
+					'default'  => __( 'Default (full-width band)', 'zen-addons-for-siteorigin-page-builder' ),
+					'card'     => __( 'Card (elevated, rounded, shadow)', 'zen-addons-for-siteorigin-page-builder' ),
+					'split'    => __( 'Split (content / action divided)', 'zen-addons-for-siteorigin-page-builder' ),
+					'centered' => __( 'Centered (constrained spotlight)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			/**
@@ -161,64 +161,64 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 			 */
 			'design_variant' => array(
 				'type'        => 'select',
-				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'label'       => __( 'Pre-made Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '',
 				'description' => zaso_cta_banner_design_description(),
 				'options'     => zaso_cta_banner_design_options(),
 			),
 			'design' => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'background' => array(
 						'type'   => 'section',
-						'label'  => __( 'Background', 'zaso' ),
+						'label'  => __( 'Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide'   => true,
 						'fields' => array(
 							'bg_type' => array(
 								'type'    => 'select',
-								'label'   => __( 'Background Type', 'zaso' ),
+								'label'   => __( 'Background Type', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => 'solid',
 								'options' => array(
-									'solid'    => __( 'Solid Color', 'zaso' ),
-									'gradient' => __( 'Gradient', 'zaso' ),
-									'image'    => __( 'Image', 'zaso' ),
+									'solid'    => __( 'Solid Color', 'zen-addons-for-siteorigin-page-builder' ),
+									'gradient' => __( 'Gradient', 'zen-addons-for-siteorigin-page-builder' ),
+									'image'    => __( 'Image', 'zen-addons-for-siteorigin-page-builder' ),
 								),
 							),
 							'bg_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Background Color', 'zaso' ),
+								'label'   => __( 'Background Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#1e293b',
 							),
 							'gradient_start' => array(
 								'type'    => 'color',
-								'label'   => __( 'Gradient Start Color', 'zaso' ),
+								'label'   => __( 'Gradient Start Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#4f46e5',
 							),
 							'gradient_end' => array(
 								'type'    => 'color',
-								'label'   => __( 'Gradient End Color', 'zaso' ),
+								'label'   => __( 'Gradient End Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#1e293b',
 							),
 							'gradient_angle' => array(
 								'type'    => 'number',
-								'label'   => __( 'Gradient Angle (degrees)', 'zaso' ),
+								'label'   => __( 'Gradient Angle (degrees)', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => 135,
 							),
 							'bg_image' => array(
 								'type'    => 'media',
-								'label'   => __( 'Background Image', 'zaso' ),
+								'label'   => __( 'Background Image', 'zen-addons-for-siteorigin-page-builder' ),
 								'library' => 'image',
 							),
 							'overlay_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Image Overlay Color', 'zaso' ),
+								'label'   => __( 'Image Overlay Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#0f172a',
 							),
 							'overlay_opacity' => array(
 								'type'    => 'slider',
-								'label'   => __( 'Image Overlay Opacity', 'zaso' ),
+								'label'   => __( 'Image Overlay Opacity', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => 60,
 								'min'     => 0,
 								'max'     => 100,
@@ -227,81 +227,81 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 					),
 					'typography' => array(
 						'type'   => 'section',
-						'label'  => __( 'Typography', 'zaso' ),
+						'label'  => __( 'Typography', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide'   => true,
 						'fields' => array(
 							'heading_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Heading Color', 'zaso' ),
+								'label'   => __( 'Heading Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#ffffff',
 							),
 							'heading_size' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Heading Size', 'zaso' ),
+								'label'   => __( 'Heading Size', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '2rem',
 							),
 							'subheading_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Subheading Color', 'zaso' ),
+								'label'   => __( 'Subheading Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#cbd5e1',
 							),
 							'subheading_size' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Subheading Size', 'zaso' ),
+								'label'   => __( 'Subheading Size', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '1.125rem',
 							),
 							'text_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Content Text Color', 'zaso' ),
+								'label'   => __( 'Content Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#e2e8f0',
 							),
 						),
 					),
 					'button' => array(
 						'type'   => 'section',
-						'label'  => __( 'Button', 'zaso' ),
+						'label'  => __( 'Button', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide'   => true,
 						'fields' => array(
 							'button_bg' => array(
 								'type'    => 'color',
-								'label'   => __( 'Button Background', 'zaso' ),
+								'label'   => __( 'Button Background', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#4f46e5',
 							),
 							'button_bg_hover' => array(
 								'type'    => 'color',
-								'label'   => __( 'Button Background (Hover)', 'zaso' ),
+								'label'   => __( 'Button Background (Hover)', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#4338ca',
 							),
 							'button_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Button Text Color', 'zaso' ),
+								'label'   => __( 'Button Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#ffffff',
 							),
 							'button_radius' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Button Border Radius', 'zaso' ),
+								'label'   => __( 'Button Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '6px',
 							),
 						),
 					),
 					'spacing' => array(
 						'type'   => 'section',
-						'label'  => __( 'Spacing', 'zaso' ),
+						'label'  => __( 'Spacing', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide'   => true,
 						'fields' => array(
 							'padding_y' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Vertical Padding', 'zaso' ),
+								'label'   => __( 'Vertical Padding', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '3rem',
 							),
 							'padding_x' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Horizontal Padding', 'zaso' ),
+								'label'   => __( 'Horizontal Padding', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '2rem',
 							),
 							'border_radius' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Banner Border Radius', 'zaso' ),
+								'label'   => __( 'Banner Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '0px',
 							),
 						),
@@ -315,9 +315,9 @@ class Zen_Addons_SiteOrigin_Cta_Banner_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-cta-banner',
-			__( 'Zen Addons - Call to Action', 'zaso' ),
+			__( 'Zen Addons - Call to Action', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'A call to action banner with a heading, text, and button.', 'zaso' ),
+				'description'   => __( 'A call to action banner with a heading, text, and button.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

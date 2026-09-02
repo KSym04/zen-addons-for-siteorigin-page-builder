@@ -32,11 +32,11 @@ $video_play_button = wp_get_attachment_image_src( $instance['video_play_button']
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-vimeo-lightbox <?php echo esc_attr( $instance['extra_class'] ); ?>">
     <div class="zaso-vimeo-lightbox__inner">
-        <a href="<?php echo esc_url( $build_url ); ?>" data-lity aria-label="<?php esc_attr_e( 'Play video', 'zaso' ); ?>">
+        <a href="<?php echo esc_url( $build_url ); ?>" data-lity aria-label="<?php esc_attr_e( 'Play video', 'zen-addons-for-siteorigin-page-builder' ); ?>">
             <?php if ( $video_thumb ) : ?>
                 <img src="<?php echo esc_url( $video_thumb ); ?>" alt="" />
             <?php else : ?>
-                <?php esc_html_e( 'Play video', 'zaso' ); ?>
+                <?php esc_html_e( 'Play video', 'zen-addons-for-siteorigin-page-builder' ); ?>
             <?php endif; ?>
 
             <?php if ( $video_play_button && $video_thumb ) : ?>

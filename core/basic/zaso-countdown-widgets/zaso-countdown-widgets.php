@@ -19,126 +19,126 @@ class Zen_Addons_SiteOrigin_Countdown_Widget extends SiteOrigin_Widget {
 		$zaso_countdown_field_array = array(
 			'target_date' => array(
 				'type'        => 'text',
-				'label'       => __( 'Target Date and Time', 'zaso' ),
-				'description' => __( 'Format: YYYY-MM-DD HH:MM (24-hour), in your site timezone. Example: 2026-12-31 23:59', 'zaso' ),
+				'label'       => __( 'Target Date and Time', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Format: YYYY-MM-DD HH:MM (24-hour), in your site timezone. Example: 2026-12-31 23:59', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'show_days' => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Days', 'zaso' ),
+				'label'   => __( 'Show Days', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'show_hours' => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Hours', 'zaso' ),
+				'label'   => __( 'Show Hours', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'show_minutes' => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Minutes', 'zaso' ),
+				'label'   => __( 'Show Minutes', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'show_seconds' => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Seconds', 'zaso' ),
+				'label'   => __( 'Show Seconds', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'label_days' => array(
 				'type'    => 'text',
-				'label'   => __( 'Days Label', 'zaso' ),
-				'default' => __( 'Days', 'zaso' ),
+				'label'   => __( 'Days Label', 'zen-addons-for-siteorigin-page-builder' ),
+				'default' => __( 'Days', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'label_hours' => array(
 				'type'    => 'text',
-				'label'   => __( 'Hours Label', 'zaso' ),
-				'default' => __( 'Hours', 'zaso' ),
+				'label'   => __( 'Hours Label', 'zen-addons-for-siteorigin-page-builder' ),
+				'default' => __( 'Hours', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'label_minutes' => array(
 				'type'    => 'text',
-				'label'   => __( 'Minutes Label', 'zaso' ),
-				'default' => __( 'Minutes', 'zaso' ),
+				'label'   => __( 'Minutes Label', 'zen-addons-for-siteorigin-page-builder' ),
+				'default' => __( 'Minutes', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'label_seconds' => array(
 				'type'    => 'text',
-				'label'   => __( 'Seconds Label', 'zaso' ),
-				'default' => __( 'Seconds', 'zaso' ),
+				'label'   => __( 'Seconds Label', 'zen-addons-for-siteorigin-page-builder' ),
+				'default' => __( 'Seconds', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'on_expire' => array(
 				'type'    => 'select',
-				'label'   => __( 'When the countdown ends', 'zaso' ),
+				'label'   => __( 'When the countdown ends', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'hide',
 				'options' => array(
-					'hide'    => __( 'Hide the timer', 'zaso' ),
-					'message' => __( 'Show a message', 'zaso' ),
+					'hide'    => __( 'Hide the timer', 'zen-addons-for-siteorigin-page-builder' ),
+					'message' => __( 'Show a message', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'expire_message' => array(
 				'type'        => 'tinymce',
-				'label'       => __( 'Expiry Message', 'zaso' ),
-				'description' => __( 'Shown when the countdown reaches zero (if "Show a message" is selected).', 'zaso' ),
+				'label'       => __( 'Expiry Message', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Shown when the countdown reaches zero (if "Show a message" is selected).', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_id' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' ),
+				'label'       => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label'       => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'design' => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'alignment' => array(
 						'type'    => 'select',
-						'label'   => __( 'Alignment', 'zaso' ),
+						'label'   => __( 'Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => 'center',
 						'options' => array(
-							'left'   => __( 'Left', 'zaso' ),
-							'center' => __( 'Center', 'zaso' ),
-							'right'  => __( 'Right', 'zaso' ),
+							'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+							'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
+							'right'  => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 						),
 					),
 					'number_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Number Color', 'zaso' ),
+						'label'   => __( 'Number Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'number_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Number Size', 'zaso' ),
+						'label'   => __( 'Number Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '2.5rem',
 					),
 					'label_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Label Color', 'zaso' ),
+						'label'   => __( 'Label Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#e2e8f0',
 					),
 					'label_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Label Size', 'zaso' ),
+						'label'   => __( 'Label Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '0.875rem',
 					),
 					'box_bg' => array(
 						'type'    => 'color',
-						'label'   => __( 'Unit Background', 'zaso' ),
+						'label'   => __( 'Unit Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#1e293b',
 					),
 					'box_padding' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Unit Padding', 'zaso' ),
+						'label'   => __( 'Unit Padding', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '1rem',
 					),
 					'box_radius' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Unit Border Radius', 'zaso' ),
+						'label'   => __( 'Unit Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '8px',
 					),
 					'gap' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Gap Between Units', 'zaso' ),
+						'label'   => __( 'Gap Between Units', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '0.75rem',
 					),
 				),
@@ -150,9 +150,9 @@ class Zen_Addons_SiteOrigin_Countdown_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-countdown',
-			__( 'Zen Addons - Countdown', 'zaso' ),
+			__( 'Zen Addons - Countdown', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'A countdown timer to a target date for launches and promotions.', 'zaso' ),
+				'description'   => __( 'A countdown timer to a target date for launches and promotions.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),
@@ -218,7 +218,7 @@ class Zen_Addons_SiteOrigin_Countdown_Widget extends SiteOrigin_Widget {
 		$aria_label = '';
 		if ( $deadline_ts > 0 ) {
 			/* translators: %s: formatted target date and time. */
-			$aria_label = sprintf( __( 'Countdown to %s', 'zaso' ), wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $deadline_ts ) );
+			$aria_label = sprintf( __( 'Countdown to %s', 'zen-addons-for-siteorigin-page-builder' ), wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $deadline_ts ) );
 		}
 
 		return apply_filters( 'zaso_countdown_template_variables', array(

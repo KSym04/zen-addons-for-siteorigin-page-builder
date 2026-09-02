@@ -26,7 +26,7 @@ if ( empty( $items ) ) {
 			$item_label = $item_text;
 			if ( '' === trim( $item_label ) && ! empty( $item_link ) ) {
 				$item_host  = wp_parse_url( $item_link, PHP_URL_HOST );
-				$item_label = $item_host ? $item_host : __( 'Open link', 'zaso' );
+				$item_label = $item_host ? $item_host : __( 'Open link', 'zen-addons-for-siteorigin-page-builder' );
 			}
 			?>
 			<li class="zaso-icon-list__item">

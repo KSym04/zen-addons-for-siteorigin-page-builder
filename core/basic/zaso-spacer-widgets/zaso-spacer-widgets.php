@@ -33,27 +33,27 @@ class Zen_Addons_SiteOrigin_Spacer_Widget extends SiteOrigin_Widget {
 			'height' => array(
 				'type'        => 'measurement',
 				'default'     => '20',
-				'label'       => esc_html__( 'Height', 'zaso' ),
-				'description' => esc_html__( 'Set empty space height.', 'zaso' ),
+				'label'       => esc_html__( 'Height', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => esc_html__( 'Set empty space height.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_id' => array(
 				'type'        => 'text',
-				'label'       => esc_html__( 'Extra ID', 'zaso' ),
-				'description' => esc_html__( 'Add an extra ID.', 'zaso' ),
+				'label'       => esc_html__( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => esc_html__( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'        => 'text',
-				'label'       => esc_html__( 'Extra Class', 'zaso' ),
-				'description' => esc_html__( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label'       => esc_html__( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => esc_html__( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'design' => array(
 				'type'   => 'section',
-				'label'  => esc_html__( 'Design', 'zaso' ),
+				'label'  => esc_html__( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'background_color' => array(
 						'type'    => 'color',
-						'label'   => esc_html__( 'Background Color', 'zaso' ),
+						'label'   => esc_html__( 'Background Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => ''
 					)
 				)
@@ -65,9 +65,9 @@ class Zen_Addons_SiteOrigin_Spacer_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-spacer',
-			esc_html__( 'Zen Addons - Spacer', 'zaso' ),
+			esc_html__( 'Zen Addons - Spacer', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => esc_html__( 'Create an empty space between elements.', 'zaso' ),
+				'description'   => esc_html__( 'Create an empty space between elements.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),

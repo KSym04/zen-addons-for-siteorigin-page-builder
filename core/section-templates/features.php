@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 return array(
-	'name'        => __( 'Features: Services Grid', 'zaso' ),
-	'description' => __( 'A clean three-column grid of features with icons, titles, and short descriptions.', 'zaso' ),
+	'name'        => __( 'Features: Services Grid', 'zen-addons-for-siteorigin-page-builder' ),
+	'description' => __( 'A clean three-column grid of features with icons, titles, and short descriptions.', 'zen-addons-for-siteorigin-page-builder' ),
 	'screenshot'  => plugins_url(
 		'assets/img/sections/features.png',
 		dirname( __FILE__, 3 ) . '/zen-addons-for-siteorigin-page-builder.php'
@@ -27,8 +27,8 @@ return array(
 				array(
 					'icon'         => 'fontawesome-bolt',
 					'image'        => '',
-					'title'        => __( 'Fast Setup', 'zaso' ),
-					'description'  => __( 'Install, drop in a section, and publish in minutes. No build tools and no code required.', 'zaso' ),
+					'title'        => __( 'Fast Setup', 'zen-addons-for-siteorigin-page-builder' ),
+					'description'  => __( 'Install, drop in a section, and publish in minutes. No build tools and no code required.', 'zen-addons-for-siteorigin-page-builder' ),
 					'link'         => '',
 					'link_text'    => '',
 					'link_new_tab' => false,
@@ -36,8 +36,8 @@ return array(
 				array(
 					'icon'         => 'fontawesome-shield',
 					'image'        => '',
-					'title'        => __( 'Secure by Default', 'zaso' ),
-					'description'  => __( 'Sanitized input and escaped output on every widget keep your pages safe out of the box.', 'zaso' ),
+					'title'        => __( 'Secure by Default', 'zen-addons-for-siteorigin-page-builder' ),
+					'description'  => __( 'Sanitized input and escaped output on every widget keep your pages safe out of the box.', 'zen-addons-for-siteorigin-page-builder' ),
 					'link'         => '',
 					'link_text'    => '',
 					'link_new_tab' => false,
@@ -45,8 +45,8 @@ return array(
 				array(
 					'icon'         => 'fontawesome-life-ring',
 					'image'        => '',
-					'title'        => __( 'Expert Support', 'zaso' ),
-					'description'  => __( 'Friendly help and clear documentation whenever you need a hand getting things just right.', 'zaso' ),
+					'title'        => __( 'Expert Support', 'zen-addons-for-siteorigin-page-builder' ),
+					'description'  => __( 'Friendly help and clear documentation whenever you need a hand getting things just right.', 'zen-addons-for-siteorigin-page-builder' ),
 					'link'         => '',
 					'link_text'    => '',
 					'link_new_tab' => false,

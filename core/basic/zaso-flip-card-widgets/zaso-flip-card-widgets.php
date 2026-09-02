@@ -18,113 +18,113 @@ class Zen_Addons_SiteOrigin_Flip_Card_Widget extends SiteOrigin_Widget {
 		$zaso_flip_card_field_array = array(
 			'flip_direction' => array(
 				'type'    => 'select',
-				'label'   => __( 'Flip Direction', 'zaso' ),
+				'label'   => __( 'Flip Direction', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'horizontal',
 				'options' => array(
-					'horizontal' => __( 'Horizontal', 'zaso' ),
-					'vertical'   => __( 'Vertical', 'zaso' ),
+					'horizontal' => __( 'Horizontal', 'zen-addons-for-siteorigin-page-builder' ),
+					'vertical'   => __( 'Vertical', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'card_height'    => array(
 				'type'        => 'measurement',
-				'label'       => __( 'Card Height', 'zaso' ),
+				'label'       => __( 'Card Height', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '320px',
-				'description' => __( 'Fixed height for both faces of the card.', 'zaso' ),
+				'description' => __( 'Fixed height for both faces of the card.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'front'          => array(
 				'type'   => 'section',
-				'label'  => __( 'Front', 'zaso' ),
+				'label'  => __( 'Front', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => false,
 				'fields' => array(
 					'image'    => array(
 						'type'     => 'media',
-						'label'    => __( 'Front Image', 'zaso' ),
+						'label'    => __( 'Front Image', 'zen-addons-for-siteorigin-page-builder' ),
 						'library'  => 'image',
 						'fallback' => true,
 					),
 					'title'    => array(
 						'type'  => 'text',
-						'label' => __( 'Front Title', 'zaso' ),
+						'label' => __( 'Front Title', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'subtitle' => array(
 						'type'  => 'text',
-						'label' => __( 'Front Subtitle', 'zaso' ),
+						'label' => __( 'Front Subtitle', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 				),
 			),
 			'back'           => array(
 				'type'   => 'section',
-				'label'  => __( 'Back', 'zaso' ),
+				'label'  => __( 'Back', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => false,
 				'fields' => array(
 					'heading'     => array(
 						'type'  => 'text',
-						'label' => __( 'Back Heading', 'zaso' ),
+						'label' => __( 'Back Heading', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'text'        => array(
 						'type'  => 'textarea',
-						'label' => __( 'Back Text', 'zaso' ),
+						'label' => __( 'Back Text', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'button_text' => array(
 						'type'  => 'text',
-						'label' => __( 'Button Text', 'zaso' ),
+						'label' => __( 'Button Text', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'button_url'  => array(
 						'type'    => 'link',
-						'label'   => __( 'Button URL', 'zaso' ),
+						'label'   => __( 'Button URL', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#',
 					),
 				),
 			),
 			'design'         => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'front_bg_color'    => array(
 						'type'    => 'color',
-						'label'   => __( 'Front Background Color', 'zaso' ),
+						'label'   => __( 'Front Background Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#01949a',
 					),
 					'front_text_color'  => array(
 						'type'    => 'color',
-						'label'   => __( 'Front Text Color', 'zaso' ),
+						'label'   => __( 'Front Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'back_bg_color'     => array(
 						'type'    => 'color',
-						'label'   => __( 'Back Background Color', 'zaso' ),
+						'label'   => __( 'Back Background Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#0f172a',
 					),
 					'back_text_color'   => array(
 						'type'    => 'color',
-						'label'   => __( 'Back Text Color', 'zaso' ),
+						'label'   => __( 'Back Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#e2e8f0',
 					),
 					'button_bg_color'   => array(
 						'type'    => 'color',
-						'label'   => __( 'Button Background Color', 'zaso' ),
+						'label'   => __( 'Button Background Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#00cdac',
 					),
 					'button_text_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Button Text Color', 'zaso' ),
+						'label'   => __( 'Button Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#0f172a',
 					),
 					'border_radius'     => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Border Radius', 'zaso' ),
+						'label'   => __( 'Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '12px',
 					),
 				),
 			),
 			'extra_id'       => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class'    => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -132,9 +132,9 @@ class Zen_Addons_SiteOrigin_Flip_Card_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-flip-card',
-			__( 'Zen Addons - Flip Card', 'zaso' ),
+			__( 'Zen Addons - Flip Card', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'A card that flips on hover or keyboard focus to reveal back-side content and a call-to-action.', 'zaso' ),
+				'description'   => __( 'A card that flips on hover or keyboard focus to reveal back-side content and a call-to-action.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

@@ -19,57 +19,57 @@ class Zen_Addons_SiteOrigin_Icon_Widget extends SiteOrigin_Widget {
 		$zaso_icon_field_array = array(
 			'icon' => array(
 				'type'  => 'icon',
-				'label' => __( 'Icon', 'zaso' )
+				'label' => __( 'Icon', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'image' => array(
 				'type'  => 'media',
-				'label' => __( 'Custom Icon', 'zaso' ),
-				'description' => __( 'Override "Icon", Upload your custom icon here.', 'zaso' ),
+				'label' => __( 'Custom Icon', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Override "Icon", Upload your custom icon here.', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true
 			),
 			'color' => array(
 				'type'  => 'color',
-				'label' => __( 'Icon Color', 'zaso' ),
+				'label' => __( 'Icon Color', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '#000000'
 			),
 			'size' => array(
 				'type'  => 'measurement',
-				'label' => __( 'Icon Size', 'zaso' ),
+				'label' => __( 'Icon Size', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '1rem'
 			),
 			'url' => array(
 				'type'  => 'link',
-				'label' => __( 'Icon Destination URL', 'zaso' ),
+				'label' => __( 'Icon Destination URL', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'new_window' => array(
 				'type'    => 'checkbox',
 				'default' => false,
-				'label'   => __( 'Open in a new window', 'zaso' ),
+				'label'   => __( 'Open in a new window', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'icon_text' => array(
 				'type'    => 'tinymce',
-				'label'   => __( 'Icon Text', 'zaso' ),
+				'label'   => __( 'Icon Text', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'icon_text_color' => array(
 				'type'  => 'color',
-				'label' => __( 'Icon Text Color', 'zaso' ),
+				'label' => __( 'Icon Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '#000000'
 			),
 			'icon_text_size' => array(
 				'type'  => 'measurement',
-				'label' => __( 'Icon Text Size', 'zaso' ),
+				'label' => __( 'Icon Text Size', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '1rem'
 			),
 			'extra_id' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' ),
+				'label' 	  => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label' 	  => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			)
 		);
 
@@ -78,9 +78,9 @@ class Zen_Addons_SiteOrigin_Icon_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-icon',
-			__( 'Zen Addons - Icon', 'zaso' ),
+			__( 'Zen Addons - Icon', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description' 	=> __( 'Set single icon on popular iconic font or upload your custom icon.', 'zaso' ),
+				'description' 	=> __( 'Set single icon on popular iconic font or upload your custom icon.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),

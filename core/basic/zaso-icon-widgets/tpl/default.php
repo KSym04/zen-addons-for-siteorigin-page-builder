@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 $zaso_icon_has_img_name = ( ! empty( $image ) && ! empty( $attributes['alt'] ) );
 $zaso_icon_link_label   = $zaso_icon_has_img_name
 	? ''
-	: ( ! empty( $icon_text ) ? wp_strip_all_tags( $icon_text ) : __( 'Open link', 'zaso' ) );
+	: ( ! empty( $icon_text ) ? wp_strip_all_tags( $icon_text ) : __( 'Open link', 'zen-addons-for-siteorigin-page-builder' ) );
 ?>
 
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- value is escaped with esc_attr() inside zaso_format_field_extra_id(). ?>

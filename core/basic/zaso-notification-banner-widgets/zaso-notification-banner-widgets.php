@@ -34,95 +34,95 @@ class Zen_Addons_SiteOrigin_Notification_Banner_Widget extends SiteOrigin_Widget
 		$zaso_notification_banner_field_array = array(
 			'banner_message' => array(
 				'type'        => 'tinymce',
-				'label'       => __( 'Message', 'zaso' ),
-				'description' => __( 'The announcement itself. Keep it to one short line for a sticky bar.', 'zaso' ),
+				'label'       => __( 'Message', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'The announcement itself. Keep it to one short line for a sticky bar.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'banner_link_text' => array(
 				'type'  => 'text',
-				'label' => __( 'Button Text', 'zaso' ),
+				'label' => __( 'Button Text', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'banner_link_url' => array(
 				'type'        => 'link',
-				'label'       => __( 'Button Link', 'zaso' ),
-				'description' => __( 'Leave the text or the link empty to show no button.', 'zaso' ),
+				'label'       => __( 'Button Link', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Leave the text or the link empty to show no button.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'banner_link_new_tab' => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Open Button Link In A New Tab', 'zaso' ),
+				'label'   => __( 'Open Button Link In A New Tab', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => false,
 			),
 			'banner_position' => array(
 				'type'    => 'select',
-				'label'   => __( 'Position', 'zaso' ),
+				'label'   => __( 'Position', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'inline',
 				'options' => array(
-					'inline' => __( 'Inline (in the page flow)', 'zaso' ),
-					'top'    => __( 'Stuck to the top of the screen', 'zaso' ),
-					'bottom' => __( 'Stuck to the bottom of the screen', 'zaso' ),
+					'inline' => __( 'Inline (in the page flow)', 'zen-addons-for-siteorigin-page-builder' ),
+					'top'    => __( 'Stuck to the top of the screen', 'zen-addons-for-siteorigin-page-builder' ),
+					'bottom' => __( 'Stuck to the bottom of the screen', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'banner_dismissible' => array(
 				'type'        => 'checkbox',
-				'label'       => __( 'Show A Dismiss Button', 'zaso' ),
+				'label'       => __( 'Show A Dismiss Button', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => true,
-				'description' => __( 'Always leave this on for a sticky banner, or visitors cannot get rid of it.', 'zaso' ),
+				'description' => __( 'Always leave this on for a sticky banner, or visitors cannot get rid of it.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'banner_remember' => array(
 				'type'        => 'select',
-				'label'       => __( 'Remember The Dismissal', 'zaso' ),
+				'label'       => __( 'Remember The Dismissal', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'forever',
 				'options'     => array(
-					'none'    => __( 'Not at all (shows again on the next page)', 'zaso' ),
-					'session' => __( 'Until the browser is closed', 'zaso' ),
-					'forever' => __( 'Until the message is edited', 'zaso' ),
+					'none'    => __( 'Not at all (shows again on the next page)', 'zen-addons-for-siteorigin-page-builder' ),
+					'session' => __( 'Until the browser is closed', 'zen-addons-for-siteorigin-page-builder' ),
+					'forever' => __( 'Until the message is edited', 'zen-addons-for-siteorigin-page-builder' ),
 				),
-				'description' => __( 'Stored in the visitor\'s own browser, so no cookie notice is needed. Editing the message shows it again to everyone.', 'zaso' ),
+				'description' => __( 'Stored in the visitor\'s own browser, so no cookie notice is needed. Editing the message shows it again to everyone.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'design' => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'background_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Background Color', 'zaso' ),
+						'label'   => __( 'Background Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#1e293b',
 					),
 					'font_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Text Color', 'zaso' ),
+						'label'   => __( 'Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'link_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Button Color', 'zaso' ),
+						'label'   => __( 'Button Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#2563eb',
 					),
 					'link_font_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Button Text Color', 'zaso' ),
+						'label'   => __( 'Button Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'align' => array(
 						'type'    => 'select',
-						'label'   => __( 'Alignment', 'zaso' ),
+						'label'   => __( 'Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => 'center',
 						'options' => array(
-							'left'   => __( 'Left', 'zaso' ),
-							'center' => __( 'Center', 'zaso' ),
+							'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+							'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
 						),
 					),
 				),
 			),
 			'extra_id' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' ),
+				'label'       => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label'       => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -131,9 +131,9 @@ class Zen_Addons_SiteOrigin_Notification_Banner_Widget extends SiteOrigin_Widget
 
 		parent::__construct(
 			'zen-addons-siteorigin-notification-banner',
-			__( 'Zen Addons - Notification Banner', 'zaso' ),
+			__( 'Zen Addons - Notification Banner', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Announcement bar with an optional sticky position and a remembered dismissal.', 'zaso' ),
+				'description'   => __( 'Announcement bar with an optional sticky position and a remembered dismissal.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

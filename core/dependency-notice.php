@@ -26,15 +26,15 @@ if ( ! function_exists( 'zaso_dependency_notice' ) ) :
 	function zaso_dependencies() {
 		return array(
 			'so-widgets-bundle' => array(
-				'name'     => __( 'SiteOrigin Widgets Bundle', 'zaso' ),
+				'name'     => __( 'SiteOrigin Widgets Bundle', 'zen-addons-for-siteorigin-page-builder' ),
 				'file'     => 'so-widgets-bundle/so-widgets-bundle.php',
-				'why'      => __( 'provides the framework every Zen widget is built on', 'zaso' ),
+				'why'      => __( 'provides the framework every Zen widget is built on', 'zen-addons-for-siteorigin-page-builder' ),
 				'required' => true,
 			),
 			'siteorigin-panels' => array(
-				'name'     => __( 'Page Builder by SiteOrigin', 'zaso' ),
+				'name'     => __( 'Page Builder by SiteOrigin', 'zen-addons-for-siteorigin-page-builder' ),
 				'file'     => 'siteorigin-panels/siteorigin-panels.php',
-				'why'      => __( 'places Zen widgets into your page layouts', 'zaso' ),
+				'why'      => __( 'places Zen widgets into your page layouts', 'zen-addons-for-siteorigin-page-builder' ),
 				'required' => false,
 			),
 		);
@@ -79,7 +79,7 @@ if ( ! function_exists( 'zaso_dependency_notice' ) ) :
 				self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $dep['file'] ) ),
 				'activate-plugin_' . $dep['file']
 			);
-			$label = __( 'Activate', 'zaso' );
+			$label = __( 'Activate', 'zen-addons-for-siteorigin-page-builder' );
 		} else {
 			if ( ! current_user_can( 'install_plugins' ) ) {
 				return '';
@@ -88,7 +88,7 @@ if ( ! function_exists( 'zaso_dependency_notice' ) ) :
 				self_admin_url( 'update.php?action=install-plugin&plugin=' . rawurlencode( $slug ) ),
 				'install-plugin_' . $slug
 			);
-			$label = __( 'Install', 'zaso' );
+			$label = __( 'Install', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
 		return '<a href="' . esc_url( $url ) . '" class="button button-primary" style="margin-left:8px;">'
@@ -129,13 +129,13 @@ if ( ! function_exists( 'zaso_dependency_notice' ) ) :
 
 		$class = $any_required ? 'notice notice-warning' : 'notice notice-info';
 		echo '<div class="' . esc_attr( $class ) . '">';
-		echo '<p><strong>' . esc_html__( 'Finish setting up Zen Addons', 'zaso' ) . '</strong></p>';
-		echo '<p>' . esc_html__( 'Zen Addons needs these free SiteOrigin plugins to work:', 'zaso' ) . '</p>';
+		echo '<p><strong>' . esc_html__( 'Finish setting up Zen Addons', 'zen-addons-for-siteorigin-page-builder' ) . '</strong></p>';
+		echo '<p>' . esc_html__( 'Zen Addons needs these free SiteOrigin plugins to work:', 'zen-addons-for-siteorigin-page-builder' ) . '</p>';
 		echo '<ul style="list-style:disc;margin-left:20px;">';
 		foreach ( $missing as $slug => $dep ) {
 			$tag = $dep['required']
-				? esc_html__( 'required', 'zaso' )
-				: esc_html__( 'recommended', 'zaso' );
+				? esc_html__( 'required', 'zen-addons-for-siteorigin-page-builder' )
+				: esc_html__( 'recommended', 'zen-addons-for-siteorigin-page-builder' );
 			echo '<li style="margin-bottom:8px;">';
 			echo '<strong>' . esc_html( $dep['name'] ) . '</strong> (' . esc_html( $tag ) . '): '
 				. esc_html( $dep['why'] );

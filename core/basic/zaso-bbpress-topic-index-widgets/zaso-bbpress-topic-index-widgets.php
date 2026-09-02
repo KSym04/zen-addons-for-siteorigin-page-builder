@@ -19,41 +19,41 @@ class Zen_Addons_SiteOrigin_BbPress_Topic_Index_Widget extends SiteOrigin_Widget
 		$zaso_bbpress_topic_index_field_array = array(
 			// 'bbpress_topic_index_theme' => array(
             //     'type' => 'select',
-			// 	'label' => __( 'Style Theme Preset', 'zaso' ),
+			// 	'label' => __( 'Style Theme Preset', 'zen-addons-for-siteorigin-page-builder' ),
 			// 	'default' => 'default',
 			// 	'options' => array(
-            //         'default'  => __( 'Inherit theme defaults', 'zaso' ),
-			// 		'dark'  => __( 'Dark Theme', 'zaso' ),
-			// 		'light'  => __( 'Light Theme', 'zaso' )
+            //         'default'  => __( 'Inherit theme defaults', 'zen-addons-for-siteorigin-page-builder' ),
+			// 		'dark'  => __( 'Dark Theme', 'zen-addons-for-siteorigin-page-builder' ),
+			// 		'light'  => __( 'Light Theme', 'zen-addons-for-siteorigin-page-builder' )
 			// 	)
 			// ),
 			'bbpress_topic_index_theme_pagination' => array(
                 'type' => 'select',
-				'label' => __( 'Show Pagination', 'zaso' ),
+				'label' => __( 'Show Pagination', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'block',
 				'options' => array(
-                    'block'  => __( 'Yes', 'zaso' ),
-					'none'  => __( 'No', 'zaso' )
+                    'block'  => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' ),
+					'none'  => __( 'No', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'bbpress_topic_index_theme_search' => array(
                 'type' => 'select',
-				'label' => __( 'Show Search', 'zaso' ),
+				'label' => __( 'Show Search', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'block',
 				'options' => array(
-                    'block'  => __( 'Yes', 'zaso' ),
-					'none'  => __( 'No', 'zaso' )
+                    'block'  => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' ),
+					'none'  => __( 'No', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'extra_id' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' )
+				'label' 	  => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'extra_class' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' )
+				'label' 	  => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' )
 			)
 		);
 
@@ -62,9 +62,9 @@ class Zen_Addons_SiteOrigin_BbPress_Topic_Index_Widget extends SiteOrigin_Widget
 
 		parent::__construct(
 			'zen-addons-siteorigin-bbpress-topic-index',
-			__( 'Zen Addons - bbPress Topic Index', 'zaso' ),
+			__( 'Zen Addons - bbPress Topic Index', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description' 	=> __( 'Display recent 15 topics across all forums with optional pagination and search.', 'zaso' ),
+				'description' 	=> __( 'Display recent 15 topics across all forums with optional pagination and search.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),

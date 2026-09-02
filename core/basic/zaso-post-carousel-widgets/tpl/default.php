@@ -99,15 +99,15 @@ if ( ! $zaso_q->have_posts() ) {
 		</div>
 	</div>
 	<?php if ( $show_arrows ) : ?>
-		<button type="button" class="zaso-post-carousel__arrow zaso-post-carousel__arrow--prev" aria-label="<?php esc_attr_e( 'Previous', 'zaso' ); ?>">
+		<button type="button" class="zaso-post-carousel__arrow zaso-post-carousel__arrow--prev" aria-label="<?php esc_attr_e( 'Previous', 'zen-addons-for-siteorigin-page-builder' ); ?>">
 			<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 		</button>
-		<button type="button" class="zaso-post-carousel__arrow zaso-post-carousel__arrow--next" aria-label="<?php esc_attr_e( 'Next', 'zaso' ); ?>">
+		<button type="button" class="zaso-post-carousel__arrow zaso-post-carousel__arrow--next" aria-label="<?php esc_attr_e( 'Next', 'zen-addons-for-siteorigin-page-builder' ); ?>">
 			<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 		</button>
 	<?php endif; ?>
 	<?php if ( $show_dots ) : ?>
-		<div class="zaso-post-carousel__dots" role="tablist" aria-label="<?php esc_attr_e( 'Carousel pagination', 'zaso' ); ?>"></div>
+		<div class="zaso-post-carousel__dots" role="tablist" aria-label="<?php esc_attr_e( 'Carousel pagination', 'zen-addons-for-siteorigin-page-builder' ); ?>"></div>
 	<?php endif; ?>
 </div>
 <?php

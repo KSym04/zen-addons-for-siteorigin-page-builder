@@ -355,14 +355,14 @@ if ( ! function_exists( 'zaso_cross_promo_state' ) ) :
 		?>
 		<div class="notice notice-info zaso-cross-promo-notice">
 			<p>
-				<strong><?php esc_html_e( 'Running a WooCommerce store?', 'zaso' ); ?></strong>
-				<?php esc_html_e( 'We also make FeedProof, a free plugin that checks your products against Google Merchant Center feed rules before Google does, and tells you exactly what to fix. Same team as Zen Addons.', 'zaso' ); ?>
+				<strong><?php esc_html_e( 'Running a WooCommerce store?', 'zen-addons-for-siteorigin-page-builder' ); ?></strong>
+				<?php esc_html_e( 'We also make FeedProof, a free plugin that checks your products against Google Merchant Center feed rules before Google does, and tells you exactly what to fix. Same team as Zen Addons.', 'zen-addons-for-siteorigin-page-builder' ); ?>
 			</p>
 			<p>
-				<a class="button button-primary thickbox open-plugin-details-modal" href="<?php echo esc_url( zaso_cross_promo_details_url() ); ?>"><?php esc_html_e( 'View FeedProof', 'zaso' ); ?></a>
-				<a class="button" href="<?php echo esc_url( zaso_cross_promo_action_url( 'later' ) ); ?>"><?php esc_html_e( 'Maybe later', 'zaso' ); ?></a>
-				<a class="button" href="<?php echo esc_url( zaso_cross_promo_action_url( 'dismiss' ) ); ?>"><?php esc_html_e( 'No thanks', 'zaso' ); ?></a>
-				<a style="margin-left:8px" href="<?php echo esc_url( zaso_cross_promo_info_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'See what it checks', 'zaso' ); ?></a>
+				<a class="button button-primary thickbox open-plugin-details-modal" href="<?php echo esc_url( zaso_cross_promo_details_url() ); ?>"><?php esc_html_e( 'View FeedProof', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a class="button" href="<?php echo esc_url( zaso_cross_promo_action_url( 'later' ) ); ?>"><?php esc_html_e( 'Maybe later', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a class="button" href="<?php echo esc_url( zaso_cross_promo_action_url( 'dismiss' ) ); ?>"><?php esc_html_e( 'No thanks', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a style="margin-left:8px" href="<?php echo esc_url( zaso_cross_promo_info_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'See what it checks', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
 			</p>
 		</div>
 		<?php

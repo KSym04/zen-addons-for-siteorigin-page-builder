@@ -1,0 +1,4652 @@
+# Copyright (C) 2026 DopeThemes
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Zen Addons for SiteOrigin Page Builder 1.10.19\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zen-addons-for-siteorigin-page-builder\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-02T00:27:34+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: zen-addons-for-siteorigin-page-builder\n"
+
+#. Plugin Name of the plugin
+#: zen-addons-siteorigin.php
+msgid "Zen Addons for SiteOrigin Page Builder"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: zen-addons-siteorigin.php
+msgid "https://www.dopethemes.com/downloads/zen-addons-siteorigin/"
+msgstr ""
+
+#. Description of the plugin
+#: zen-addons-siteorigin.php
+msgid "Zen Addons is a collection of helpful widget extensions for SiteOrigin Page Builder. It's simple, flexible, and useful."
+msgstr ""
+
+#. Author of the plugin
+#: zen-addons-siteorigin.php
+msgid "DopeThemes"
+msgstr ""
+
+#. Author URI of the plugin
+#: zen-addons-siteorigin.php
+msgid "https://www.dopethemes.com/"
+msgstr ""
+
+#: core/admin.php:68
+msgid "Layout & Content"
+msgstr ""
+
+#: core/admin.php:72
+msgid "Interactive"
+msgstr ""
+
+#: core/admin.php:76
+msgid "Media"
+msgstr ""
+
+#: core/admin.php:80
+msgid "Business & Marketing"
+msgstr ""
+
+#: core/admin.php:84
+msgid "Conversion & Engagement"
+msgstr ""
+
+#: core/admin.php:88
+msgid "People & Social Proof"
+msgstr ""
+
+#: core/admin.php:92
+msgid "Content Blocks"
+msgstr ""
+
+#: core/admin.php:96
+msgid "Community (bbPress)"
+msgstr ""
+
+#: core/admin.php:100
+msgid "Integrations"
+msgstr ""
+
+#: core/admin.php:172
+#: core/admin.php:173
+#: core/widget-design.php:693
+#: core/widgets.php:25
+msgid "Zen Addons"
+msgstr ""
+
+#: core/admin.php:204
+msgid "You do not have sufficient permissions to perform this action."
+msgstr ""
+
+#: core/admin/views/manage-page.php:42
+#: zen-addons-siteorigin.php:67
+msgid "Zen Addons for SiteOrigin"
+msgstr ""
+
+#: core/admin/views/manage-page.php:47
+msgid "Widget settings saved."
+msgstr ""
+
+#: core/admin/views/manage-page.php:53
+msgid "The SiteOrigin Widgets Bundle is not active. Install and activate it to use Zen Addons widgets."
+msgstr ""
+
+#. translators: 1: number of active widgets, 2: total number of widgets.
+#: core/admin/views/manage-page.php:61
+msgid "%1$d of %2$d widgets active. Turn on the widgets you need, then add them in Page Builder under the \"ZASO Widgets\" tab."
+msgstr ""
+
+#: core/admin/views/manage-page.php:103
+msgid "Save Changes"
+msgstr ""
+
+#: core/admin/views/manage-page.php:104
+msgid "Enable All"
+msgstr ""
+
+#: core/admin/views/manage-page.php:105
+msgid "Disable All"
+msgstr ""
+
+#: core/admin/views/manage-page.php:113
+msgid "Where to find your widgets"
+msgstr ""
+
+#: core/admin/views/manage-page.php:114
+msgid "Active widgets appear in the SiteOrigin Page Builder widget picker under the \"ZASO Widgets\" tab, and on the Plugins > SiteOrigin Widgets screen."
+msgstr ""
+
+#: core/admin/views/manage-page.php:118
+msgid "Zen Addons Pro"
+msgstr ""
+
+#: core/admin/views/manage-page.php:119
+msgid "Every widget you already use, with the full design library unlocked."
+msgstr ""
+
+#: core/admin/views/manage-page.php:121
+msgid "Ready-made designs for the widgets you build with most"
+msgstr ""
+
+#: core/admin/views/manage-page.php:122
+msgid "Popup and modal builder"
+msgstr ""
+
+#: core/admin/views/manage-page.php:123
+msgid "Portfolio grid with filtering"
+msgstr ""
+
+#: core/admin/views/manage-page.php:124
+msgid "Entrance animations on every widget"
+msgstr ""
+
+#: core/admin/views/manage-page.php:126
+msgid "See plans and pricing"
+msgstr ""
+
+#: core/admin/views/manage-page.php:131
+msgid "Reviews and support"
+msgstr ""
+
+#: core/admin/views/manage-page.php:132
+msgid "A review on WordPress.org helps other SiteOrigin users find the plugin. Stuck on something? The support forum is read by the developers."
+msgstr ""
+
+#: core/admin/views/manage-page.php:133
+#: core/review-prompt.php:198
+msgid "Leave a review"
+msgstr ""
+
+#: core/admin/views/manage-page.php:134
+msgid "Get support"
+msgstr ""
+
+#: core/admin/views/manage-page.php:138
+msgid "More from DopeThemes"
+msgstr ""
+
+#: core/admin/views/manage-page.php:139
+msgid "Tutorials, themes, and more widgets for the SiteOrigin builder."
+msgstr ""
+
+#: core/admin/views/manage-page.php:140
+msgid "Visit DopeThemes"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:18
+msgid "Information:"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:22
+msgid "Success:"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:26
+msgid "Warning:"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:30
+msgid "Error:"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:98
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:43
+#: core/design-picker.php:515
+msgid "Close"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/tpl/default.php:99
+msgid "&times;"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:26
+#: core/design-picker.php:645
+msgid "Default (classic box)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:27
+msgid "Left Accent (success)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:28
+msgid "Soft Tint (info)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:29
+msgid "Outlined (warning)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:30
+msgid "Icon Badge Card (error)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:31
+msgid "Top Bar (neutral)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:32
+msgid "Solid Fill (info)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:54
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. Leave on \"Default (classic box)\" to build your own look with the Layout, Style and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:57
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on \"Default (classic box)\" to build your own look with the Layout, Style and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:72
+msgid "Messages"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:76
+msgid "Alert Type"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:78
+msgid "Adds a leading icon and a screen-reader label so the alert type is not conveyed by colour alone."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:80
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:96
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:208
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:419
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:186
+msgid "None"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:81
+msgid "Info"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:82
+msgid "Success"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:83
+msgid "Warning"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:84
+msgid "Error"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:89
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:121
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:26
+msgid "Custom Icon"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:90
+msgid "Optional. Overrides the alert type / design icon."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:94
+msgid "Close Button"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:97
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:44
+msgid "Show"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:98
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:45
+msgid "Hide"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:103
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:44
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:32
+msgid "Width"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:105
+msgid "Full width fills the container; Content width shrinks to fit the message."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:107
+msgid "Full width"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:108
+msgid "Content width"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:113
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:47
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:49
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:22
+#: core/basic/zaso-bbpress-lost-password-widgets/zaso-bbpress-lost-password-widgets.php:22
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:22
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:50
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:73
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:44
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:81
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:128
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:126
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:84
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:123
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:460
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:93
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:66
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:87
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:135
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:48
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:99
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:119
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:155
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:129
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:331
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:112
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:61
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:231
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:72
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:193
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:41
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:187
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:341
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:50
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:69
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:39
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:61
+msgid "Extra ID"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:114
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:48
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:50
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:23
+#: core/basic/zaso-bbpress-lost-password-widgets/zaso-bbpress-lost-password-widgets.php:23
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:23
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:51
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:74
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:45
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:82
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:129
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:127
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:461
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:94
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:67
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:136
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:49
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:120
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:62
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:73
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:42
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:51
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:70
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:40
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:62
+msgid "Add an extra ID."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:118
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:52
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:54
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:27
+#: core/basic/zaso-bbpress-lost-password-widgets/zaso-bbpress-lost-password-widgets.php:27
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:27
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:55
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:78
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:49
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:86
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:133
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:131
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:88
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:127
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:465
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:98
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:71
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:91
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:140
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:53
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:103
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:124
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:159
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:133
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:335
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:116
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:66
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:235
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:77
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:197
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:46
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:191
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:345
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:55
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:74
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:44
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:66
+msgid "Extra Class"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:119
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:53
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:55
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:28
+#: core/basic/zaso-bbpress-lost-password-widgets/zaso-bbpress-lost-password-widgets.php:28
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:28
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:56
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:79
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:50
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:87
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:134
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:132
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:466
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:99
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:72
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:141
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:54
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:125
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:67
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:78
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:47
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:56
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:75
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:45
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:67
+msgid "Add an extra class for styling overrides."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:123
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:138
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:122
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:52
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:260
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:148
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:219
+msgid "Layout"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:125
+msgid "The structural shape of the alert: border, shadow, padding and icon placement. Layout sets the frame; Style (below) sets the colours."
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:127
+msgid "Default (bordered box)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:128
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:224
+msgid "Card (elevated, soft shadow)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:129
+msgid "Left Accent (flat bar)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:130
+msgid "Banner (horizontal band)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:135
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:150
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:164
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:83
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:272
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:160
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:231
+msgid "Pre-made Design"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:142
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:157
+msgid "Design (custom colours)"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:147
+#: core/widget-design.php:147
+msgid "Alert Box"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:152
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:67
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:190
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:191
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:88
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:92
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:199
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:56
+msgid "Background Color"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:157
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:77
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:195
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:102
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:204
+msgid "Font Color"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:162
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:200
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:209
+msgid "Font Size"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:167
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:129
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:205
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:77
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:138
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:214
+msgid "Margin"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:172
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:199
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:134
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:161
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:210
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:237
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:223
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:250
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:434
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:82
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:109
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:211
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:143
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:170
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:219
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:246
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:153
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:297
+msgid "Top"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:177
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:204
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:124
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:139
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:166
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:215
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:242
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:101
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:167
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:121
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:196
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:228
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:255
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:439
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:87
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:114
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:76
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:212
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:133
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:148
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:175
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:224
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:251
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:171
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:158
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:302
+msgid "Right"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:182
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:209
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:144
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:171
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:220
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:247
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:233
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:260
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:444
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:92
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:119
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:213
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:153
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:180
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:229
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:256
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:163
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:307
+msgid "Bottom"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:187
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:214
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:122
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:149
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:176
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:225
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:252
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:99
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:165
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:119
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:195
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:238
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:265
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:449
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:97
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:124
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:74
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:111
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:142
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:214
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:131
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:158
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:185
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:234
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:261
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:169
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:93
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:168
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:312
+msgid "Left"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:194
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:156
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:232
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:104
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:165
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:241
+msgid "Padding"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:221
+msgid "Border Settings"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:226
+msgid "Top Border Width"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:231
+msgid "Right Border Width"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:236
+msgid "Bottom Border Width"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:241
+msgid "Left Border Width"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:246
+msgid "Top Border Radius"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:251
+msgid "Right Border Radius"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:256
+msgid "Bottom Border Radius"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:261
+msgid "Left Border Radius"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:266
+msgid "Border Style"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:269
+msgid "none"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:270
+msgid "Hidden"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:271
+#: core/design-picker.php:202
+msgid "Dotted"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:272
+#: core/design-picker.php:192
+msgid "Dashed"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:273
+msgid "Solid"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:274
+msgid "Double"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:275
+msgid "Groove"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:276
+msgid "Ridge"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:277
+msgid "Inset"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:278
+msgid "Outset"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:283
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:67
+msgid "Border Color"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:299
+msgid "Zen Addons - Alert Box"
+msgstr ""
+
+#: core/basic/zaso-alert-box-widgets/zaso-alert-box-widgets.php:301
+msgid "Create contextual feedback and flexible alert messages."
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:22
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:113
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:32
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:96
+msgid "Title"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:26
+msgid "Tab List"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:27
+msgid "Single Tab"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:36
+msgid "Tab Title"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:40
+msgid "Tab Content"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:57
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:83
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:91
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:171
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:52
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:81
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:134
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:61
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:70
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:81
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:83
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:103
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:82
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:279
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:65
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:167
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:82
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:131
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:51
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:99
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:248
+msgid "Design"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:62
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:87
+msgid "Headings"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:72
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:97
+msgid "Background Hover Color"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:82
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:107
+msgid "Font Color Hover"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:87
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:112
+msgid "Font Weight"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:90
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:106
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:115
+msgid "100"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:91
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:107
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:116
+msgid "200"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:92
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:108
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:117
+msgid "300"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:93
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:109
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:118
+msgid "400 - Normal"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:94
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:110
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:119
+msgid "500"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:95
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:111
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:120
+msgid "600"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:96
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:112
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:121
+msgid "700 - Bold"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:97
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:113
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:122
+msgid "800"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:98
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:114
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:123
+msgid "900"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:103
+msgid "Font Weight Hover"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:119
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:128
+msgid "Text Align"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:123
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:100
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:166
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:120
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:197
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:75
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:112
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:143
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:132
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:170
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:94
+msgid "Center"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:185
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:194
+msgid "Panels"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:268
+msgid "Zen Addons - Basic Tabs"
+msgstr ""
+
+#: core/basic/zaso-basic-tabs-widgets/zaso-basic-tabs-widgets.php:270
+msgid "Create multiple panels contained in a single window."
+msgstr ""
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:22
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:32
+msgid "Show Pagination"
+msgstr ""
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:25
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:34
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:43
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:35
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:44
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:61
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:266
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:32
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:42
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:52
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:30
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:38
+msgid "Yes"
+msgstr ""
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:26
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:35
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:44
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:36
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:45
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:62
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:267
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:31
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:41
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:51
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:29
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:37
+msgid "No"
+msgstr ""
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:31
+msgid "Show Breadcrumbs"
+msgstr ""
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:40
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:41
+msgid "Show Search"
+msgstr ""
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:64
+msgid "Zen Addons - bbPress Forum Index"
+msgstr ""
+
+#: core/basic/zaso-bbpress-forum-index-widgets/zaso-bbpress-forum-index-widgets.php:66
+msgid "Display entire bbPress forum index."
+msgstr ""
+
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:37
+msgid "Zen Addons - bbPress Login"
+msgstr ""
+
+#: core/basic/zaso-bbpress-login-widgets/zaso-bbpress-login-widgets.php:39
+msgid "Display the bbPress login form."
+msgstr ""
+
+#: core/basic/zaso-bbpress-lost-password-widgets/zaso-bbpress-lost-password-widgets.php:37
+msgid "Zen Addons - bbPress Lost Password"
+msgstr ""
+
+#: core/basic/zaso-bbpress-lost-password-widgets/zaso-bbpress-lost-password-widgets.php:39
+msgid "Display the bbPress password retrieval form."
+msgstr ""
+
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:37
+msgid "Zen Addons - bbPress Registration"
+msgstr ""
+
+#: core/basic/zaso-bbpress-registration-widgets/zaso-bbpress-registration-widgets.php:39
+msgid "Display the bbPress registration form."
+msgstr ""
+
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:65
+msgid "Zen Addons - bbPress Topic Index"
+msgstr ""
+
+#: core/basic/zaso-bbpress-topic-index-widgets/zaso-bbpress-topic-index-widgets.php:67
+msgid "Display recent 15 topics across all forums with optional pagination and search."
+msgstr ""
+
+#. translators: 1: before label, 2: after label.
+#: core/basic/zaso-before-after-widgets/tpl/default.php:13
+msgid "Comparison slider. Drag or use the arrow keys to reveal the %1$s and %2$s images."
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/tpl/default.php:14
+msgid "before"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/tpl/default.php:15
+msgid "after"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/tpl/default.php:33
+msgid "Select a before and an after image to build the comparison slider."
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:22
+msgid "Before Image"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:27
+msgid "Before Image Alt Text"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:28
+msgid "Describes the before image for screen readers."
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:32
+msgid "Before Label"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:33
+msgid "Before"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:37
+msgid "After Image"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:42
+msgid "After Image Alt Text"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:43
+msgid "Describes the after image for screen readers."
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:47
+msgid "After Label"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:48
+msgid "After"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:52
+msgid "Start Position (%)"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:59
+msgid "Orientation"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:62
+msgid "Horizontal (slide left / right)"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:63
+msgid "Vertical (slide up / down)"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:68
+msgid "Show Labels"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:88
+msgid "Maximum Width"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:93
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:116
+msgid "Border Radius"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:98
+msgid "Handle Color"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:103
+msgid "Handle Size"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:108
+msgid "Divider Line Color"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:113
+msgid "Divider Line Width"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:118
+msgid "Label Background"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:123
+msgid "Label Text Color"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:135
+msgid "Zen Addons - Before / After"
+msgstr ""
+
+#: core/basic/zaso-before-after-widgets/zaso-before-after-widgets.php:137
+msgid "A draggable slider that compares a before and after image."
+msgstr ""
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:32
+msgid "No existing form."
+msgstr ""
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:39
+msgid "What CF7 form do you want to display?"
+msgstr ""
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:59
+msgid "Zen Addons - Contact Form 7"
+msgstr ""
+
+#: core/basic/zaso-contact-form-7-widgets/zaso-contact-form-7-widgets.php:61
+msgid "Display CF7 form."
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:22
+msgid "Target Date and Time"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:23
+msgid "Format: YYYY-MM-DD HH:MM (24-hour), in your site timezone. Example: 2026-12-31 23:59"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:27
+msgid "Show Days"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:32
+msgid "Show Hours"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:37
+msgid "Show Minutes"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:42
+msgid "Show Seconds"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:47
+msgid "Days Label"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:48
+msgid "Days"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:52
+msgid "Hours Label"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:53
+msgid "Hours"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:57
+msgid "Minutes Label"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:58
+msgid "Minutes"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:62
+msgid "Seconds Label"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:63
+msgid "Seconds"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:67
+msgid "When the countdown ends"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:70
+msgid "Hide the timer"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:71
+msgid "Show a message"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:76
+msgid "Expiry Message"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:77
+msgid "Shown when the countdown reaches zero (if \"Show a message\" is selected)."
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:96
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:162
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:71
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:108
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:139
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:166
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:90
+msgid "Alignment"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:106
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:172
+msgid "Number Color"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:111
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:177
+msgid "Number Size"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:116
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:70
+msgid "Label Color"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:121
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:75
+msgid "Label Size"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:126
+msgid "Unit Background"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:131
+msgid "Unit Padding"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:136
+msgid "Unit Border Radius"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:141
+msgid "Gap Between Units"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:153
+msgid "Zen Addons - Countdown"
+msgstr ""
+
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:155
+msgid "A countdown timer to a target date for launches and promotions."
+msgstr ""
+
+#. translators: %s: formatted target date and time.
+#: core/basic/zaso-countdown-widgets/zaso-countdown-widgets.php:221
+msgid "Countdown to %s"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:26
+#: core/design-picker.php:682
+msgid "Default (classic counter)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:27
+msgid "Icon Card (success)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:28
+msgid "Centered (info)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:29
+msgid "Icon Top (installs)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:30
+msgid "Badge (uptime)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:31
+msgid "Divider (neutral)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:32
+msgid "Underline (rating)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:54
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. Leave on \"Default (classic counter)\" to build your own look with the Layout, Style and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:57
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on \"Default (classic counter)\" to build your own look with the Layout, Style and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:72
+msgid "Start Value"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:77
+msgid "End Value"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:82
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:59
+msgid "Animation Duration (ms)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:84
+msgid "How long the count-up takes, in milliseconds."
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:88
+msgid "Decimal Places"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:93
+msgid "Thousands Separator"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:97
+msgid "Comma (1,000)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:98
+msgid "Space (1 000)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:103
+msgid "Prefix"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:104
+msgid "Shown before the number, e.g. $."
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:108
+#: core/design-picker.php:243
+msgid "Suffix"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:109
+msgid "Shown after the number, e.g. + or %."
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:117
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:36
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:22
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:85
+msgid "Icon"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:122
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:90
+msgid "Override \"Icon\" with your own uploaded image."
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:140
+msgid "The structural shape of the counter: stacked, boxed card, inline row or ringed circle. Layout sets the frame; Style (below) sets the colours."
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:142
+msgid "Default (stacked)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:143
+msgid "Card (boxed, soft shadow)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:144
+msgid "Inline (icon + number in a row)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:145
+msgid "Circle (number in a ring)"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:182
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:128
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:107
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:188
+msgid "Title Color"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:187
+msgid "Title Size"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:192
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:66
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:33
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:172
+msgid "Icon Color"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:197
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:71
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:38
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:177
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:176
+msgid "Icon Size"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:209
+msgid "Zen Addons - Counter"
+msgstr ""
+
+#: core/basic/zaso-counter-widgets/zaso-counter-widgets.php:211
+msgid "An animated number that counts up when scrolled into view."
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/tpl/default.php:37
+msgid "Call to action"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/tpl/default.php:89
+#: core/basic/zaso-logo-showcase-widgets/tpl/default.php:15
+#: core/basic/zaso-pricing-table-widgets/tpl/default.php:106
+#: core/basic/zaso-team-member-widgets/tpl/default.php:70
+msgid "(opens in new tab)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:28
+#: core/design-picker.php:719
+msgid "Default (classic banner)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:29
+msgid "Solid Centered (indigo)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:30
+msgid "Horizontal Split (teal)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:31
+msgid "Soft Tint (blue)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:32
+msgid "Gradient Centered (violet)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:33
+msgid "Outlined (minimal)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:34
+msgid "Dark"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:58
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. Leave on \"Default (classic banner)\" to build your own look with the Layout Structure and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:61
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on \"Default (classic banner)\" to build your own look with the Layout Structure and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:76
+msgid "Heading"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:80
+msgid "Subheading"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:84
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:27
+msgid "Content"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:88
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:70
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:42
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:223
+msgid "Button Text"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:89
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:105
+#: zen-addons-siteorigin.php:138
+msgid "Learn More"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:93
+msgid "Button Destination URL"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:98
+msgid "Open button link in a new tab"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:103
+msgid "Add rel=\"nofollow\" to the button link"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:107
+msgid "Button Placement"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:110
+msgid "Stacked (button below text)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:111
+msgid "Inline (button beside text)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:116
+msgid "Text Alignment"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:145
+msgid "Layout Structure"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:147
+msgid "Structural shape of the banner. The Style skin below still controls colours; this controls the layout (card elevation, split divider, centered measure). Independent of the button placement and text alignment options above."
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:149
+msgid "Default (full-width band)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:150
+msgid "Card (elevated, rounded, shadow)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:151
+msgid "Split (content / action divided)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:152
+msgid "Centered (constrained spotlight)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:176
+msgid "Background"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:181
+msgid "Background Type"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:184
+msgid "Solid Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:185
+#: core/design-picker.php:185
+msgid "Gradient"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:186
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:22
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:31
+msgid "Image"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:196
+msgid "Gradient Start Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:201
+msgid "Gradient End Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:206
+msgid "Gradient Angle (degrees)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:211
+msgid "Background Image"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:216
+msgid "Image Overlay Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:221
+msgid "Image Overlay Opacity"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:230
+msgid "Typography"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:235
+msgid "Heading Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:240
+msgid "Heading Size"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:245
+msgid "Subheading Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:250
+msgid "Subheading Size"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:255
+msgid "Content Text Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:262
+msgid "Button"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:267
+msgid "Button Background"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:272
+msgid "Button Background (Hover)"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:277
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:111
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:103
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:319
+msgid "Button Text Color"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:282
+msgid "Button Border Radius"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:289
+msgid "Spacing"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:294
+msgid "Vertical Padding"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:299
+msgid "Horizontal Padding"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:304
+msgid "Banner Border Radius"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:318
+msgid "Zen Addons - Call to Action"
+msgstr ""
+
+#: core/basic/zaso-cta-banner-widgets/zaso-cta-banner-widgets.php:320
+msgid "A call to action banner with a heading, text, and button."
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:21
+msgid "FAQ Items"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:22
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:23
+msgid "Item"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:31
+msgid "Question"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:35
+msgid "Answer"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:41
+msgid "Add FAQ Schema Markup"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:43
+msgid "Adds Schema.org FAQPage structured data for search engine rich results."
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:47
+msgid "Open First Item"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:57
+msgid "Question Color"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:62
+msgid "Answer Color"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:72
+msgid "Question Font Size"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:77
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:86
+msgid "Spacing Between Items"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:96
+msgid "Zen Addons - FAQ"
+msgstr ""
+
+#: core/basic/zaso-faq-widgets/zaso-faq-widgets.php:98
+msgid "Display a collapsible FAQ list with optional Schema.org FAQPage structured data for rich results in Google Search."
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:21
+msgid "Flip Direction"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:24
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:56
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:52
+msgid "Horizontal"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:25
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:55
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:53
+msgid "Vertical"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:30
+msgid "Card Height"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:32
+msgid "Fixed height for both faces of the card."
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:36
+msgid "Front"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:41
+msgid "Front Image"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:47
+msgid "Front Title"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:51
+msgid "Front Subtitle"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:57
+msgid "Back"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:62
+msgid "Back Heading"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:66
+msgid "Back Text"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:74
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:228
+msgid "Button URL"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:86
+msgid "Front Background Color"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:91
+msgid "Front Text Color"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:96
+msgid "Back Background Color"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:101
+msgid "Back Text Color"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:106
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:329
+msgid "Button Background Color"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:135
+msgid "Zen Addons - Flip Card"
+msgstr ""
+
+#: core/basic/zaso-flip-card-widgets/zaso-flip-card-widgets.php:137
+msgid "A card that flips on hover or keyboard focus to reveal back-side content and a call-to-action."
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:28
+#: core/design-picker.php:830
+msgid "Default (classic hover card)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:29
+msgid "Slide Up - Frosted (teal)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:30
+msgid "Slide Up - Dark (green)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:31
+msgid "Slide Up - Tinted (cyan)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:32
+msgid "Overlay - Dark Scrim (blue)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:33
+msgid "Overlay - Vivid Solid (blue)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:34
+msgid "Overlay - Gradient (blue)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:58
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. Leave on \"Default (classic hover card)\" to build your own look with the Layout and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:61
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on \"Default (classic hover card)\" to build your own look with the Layout and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:90
+msgid "Title Caption"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:94
+msgid "Text Content"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:98
+msgid "Featured Image"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:104
+msgid "Action Text"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:109
+msgid "Action URL"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:114
+msgid "Hover Animation"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:117
+msgid "Fade In"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:124
+msgid "Structural layout of the card. The Style skin below still controls colours; Layout controls how the image and caption are arranged and how the card reveals on hover."
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:126
+msgid "Default (caption overlay)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:127
+msgid "Caption Below (solid panel under image)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:128
+msgid "Slide Up (panel slides up on hover)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:129
+msgid "Zoom (image zooms, caption fixed)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:139
+#: core/widget-design.php:167
+msgid "Hover Card"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:144
+msgid "Caption Background Color"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:149
+msgid "Caption Background Opacity"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:166
+msgid "Caption Font Color"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:171
+msgid "Caption Font Size"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:176
+msgid "Caption Font Weight"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:192
+msgid "Caption Text Alignment"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:198
+msgid "Justify"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:199
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:212
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:423
+msgid "Initial"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:200
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:213
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:424
+msgid "Inherit"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:205
+msgid "Caption Text Transform"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:209
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:420
+msgid "Capitalize"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:210
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:421
+msgid "Uppercase"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:211
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:422
+msgid "Lowecase"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:218
+msgid "Caption Margin"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:245
+msgid "Caption Padding"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:272
+msgid "Card Box Shadow"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:277
+msgid "Horizontal Offset"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:282
+msgid "Vertical Offset"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:287
+msgid "Blur"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:292
+msgid "Spread"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:297
+msgid "Shadow Color"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:302
+msgid "Shadow Color Opacity"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:315
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:347
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:370
+msgid "(transparent)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:324
+msgid "Modal Button"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:334
+msgid "Button Background Opacity"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:352
+msgid "Button Background Color (Hover)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:357
+msgid "Button Background Opacity (Hover)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:375
+msgid "Button Border Color"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:380
+msgid "Button Border Color (hover)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:385
+msgid "Button Font Color"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:390
+msgid "Button Font Color (Hover)"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:395
+msgid "Button Font Size"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:400
+msgid "Button Font Weight"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:416
+msgid "Button Text Transform"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:429
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:181
+msgid "Button Padding"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:475
+msgid "Zen Addons - Hover Card"
+msgstr ""
+
+#: core/basic/zaso-hover-card-widgets/zaso-hover-card-widgets.php:477
+msgid "Display image box, title caption and learn more button with hover transition"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/tpl/default.php:29
+#: core/basic/zaso-icon-widgets/tpl/default.php:16
+#: core/basic/zaso-image-icon-group-widgets/tpl/default.php:36
+msgid "Open link"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:22
+msgid "List Items"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:32
+msgid "Text"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:37
+msgid "Leave empty to use the default icon below."
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:41
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:42
+msgid "Link"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:47
+msgid "Default Icon"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:48
+msgid "Used for any item that does not set its own icon."
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:76
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:93
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:294
+msgid "Text Color"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:81
+msgid "Text Size"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:108
+msgid "Zen Addons - Icon List"
+msgstr ""
+
+#: core/basic/zaso-icon-list-widgets/zaso-icon-list-widgets.php:110
+msgid "Display a list of items, each with an icon and text."
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:27
+msgid "Override \"Icon\", Upload your custom icon here."
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:43
+msgid "Icon Destination URL"
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:48
+msgid "Open in a new window"
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:52
+msgid "Icon Text"
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:56
+msgid "Icon Text Color"
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:61
+msgid "Icon Text Size"
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:81
+msgid "Zen Addons - Icon"
+msgstr ""
+
+#: core/basic/zaso-icon-widgets/zaso-icon-widgets.php:83
+msgid "Set single icon on popular iconic font or upload your custom icon."
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/tpl/default.php:16
+msgid "View image"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:21
+msgid "Images"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:37
+msgid "Caption"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:43
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:53
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:25
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:244
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:120
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:71
+msgid "Columns"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:46
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:56
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:29
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:123
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:74
+msgid "2 Columns"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:47
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:57
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:30
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:124
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:75
+msgid "3 Columns"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:48
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:58
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:31
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:125
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:76
+msgid "4 Columns"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:53
+msgid "Enable Lightbox"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:55
+msgid "Click an image to open it full-size in a pop-up overlay."
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:59
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:62
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:41
+msgid "Image Size"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:62
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:65
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:44
+msgid "Thumbnail"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:63
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:66
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:45
+msgid "Medium"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:64
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:68
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:47
+msgid "Large"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:65
+msgid "Full Size"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:75
+msgid "Gap Between Images"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:80
+msgid "Corner Radius"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:99
+msgid "Zen Addons - Image Gallery"
+msgstr ""
+
+#: core/basic/zaso-image-gallery-widgets/zaso-image-gallery-widgets.php:101
+msgid "Display a responsive image gallery grid with an optional lightbox that opens full-size images in a pop-up overlay."
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:22
+msgid "Image Icon Group"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:23
+msgid "Single Image Icon"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:36
+msgid "Image Icon"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:49
+msgid "Icon Group Layout"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:58
+msgid "Show Title"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:67
+msgid "Icon Spacings"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:72
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:51
+msgid "Settings"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:150
+msgid "Zen Addons - Image Icon Group"
+msgstr ""
+
+#: core/basic/zaso-image-icon-group-widgets/zaso-image-icon-group-widgets.php:152
+msgid "Set group of image icon."
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:22
+msgid "Info Title"
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:26
+msgid "Info Short Description"
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:30
+msgid "Info Featured Image"
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:36
+msgid "Info Featured Image Size"
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:40
+msgid "Info Button text"
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:44
+msgid "Info Button Url"
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:63
+msgid "Zen Addons - Info Box"
+msgstr ""
+
+#: core/basic/zaso-info-box-widgets/zaso-info-box-widgets.php:65
+msgid "Display information box - image, title, description and learn more button link"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:21
+msgid "Logos"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:22
+msgid "Logo"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:31
+msgid "Logo Image"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:37
+msgid "Alt Text"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:38
+msgid "Describe the logo for screen readers. Inherits the media library alt text if left empty."
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:42
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:104
+msgid "Link URL"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:46
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:113
+msgid "Open Link in New Tab"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:59
+msgid "5 Columns"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:60
+msgid "6 Columns"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:65
+msgid "Greyscale Logos"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:67
+msgid "Display logos in greyscale and switch to full colour on hover."
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:86
+msgid "Logo Height"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:88
+msgid "Maximum height for each logo image."
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:92
+msgid "Gap Between Logos"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:111
+msgid "Zen Addons - Logo Showcase"
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:113
+msgid "Display a responsive grid of client or partner logos with an optional greyscale-to-colour hover effect."
+msgstr ""
+
+#: core/basic/zaso-logo-showcase-widgets/zaso-logo-showcase-widgets.php:172
+msgid "Visit link"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/tpl/default.php:43
+msgid "Site announcement"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/tpl/default.php:58
+msgid "Dismiss this announcement"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:37
+msgid "Message"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:38
+msgid "The announcement itself. Keep it to one short line for a sticky bar."
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:46
+msgid "Button Link"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:47
+msgid "Leave the text or the link empty to show no button."
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:51
+msgid "Open Button Link In A New Tab"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:56
+msgid "Position"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:59
+msgid "Inline (in the page flow)"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:60
+msgid "Stuck to the top of the screen"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:61
+msgid "Stuck to the bottom of the screen"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:66
+msgid "Show A Dismiss Button"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:68
+msgid "Always leave this on for a sticky banner, or visitors cannot get rid of it."
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:72
+msgid "Remember The Dismissal"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:75
+msgid "Not at all (shows again on the next page)"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:76
+msgid "Until the browser is closed"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:77
+msgid "Until the message is edited"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:79
+msgid "Stored in the visitor's own browser, so no cookie notice is needed. Editing the message shows it again to everyone."
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:98
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:314
+msgid "Button Color"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:134
+msgid "Zen Addons - Notification Banner"
+msgstr ""
+
+#: core/basic/zaso-notification-banner-widgets/zaso-notification-banner-widgets.php:136
+msgid "Announcement bar with an optional sticky position and a remembered dismissal."
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/tpl/default.php:102
+msgid "Previous"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/tpl/default.php:105
+msgid "Next"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/tpl/default.php:110
+msgid "Carousel pagination"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:21
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:21
+msgid "Posts query"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:25
+msgid "Slides Visible"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:28
+msgid "1 Slide"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:29
+msgid "2 Slides"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:30
+msgid "3 Slides"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:31
+msgid "4 Slides"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:36
+msgid "Autoplay"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:41
+msgid "Autoplay Speed (ms)"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:43
+msgid "Time each slide stays before advancing, in milliseconds."
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:47
+msgid "Show Arrows"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:52
+msgid "Show Dots"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:57
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:36
+msgid "Show Featured Image"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:67
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:46
+msgid "Medium Large"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:73
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:52
+msgid "Show Date"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:78
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:57
+msgid "Show Author"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:83
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:62
+msgid "Show Excerpt"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:88
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:67
+msgid "Excerpt Word Count"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:93
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:72
+msgid "Show Read More Link"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:98
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:77
+msgid "Read More Text"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:99
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:237
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:78
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:203
+msgid "Read More"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:108
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:87
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:324
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:224
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:180
+msgid "Gap Between Cards"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:113
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:92
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:289
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:203
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:143
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:287
+msgid "Card Background"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:118
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:97
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:304
+msgid "Card Border"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:123
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:102
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:309
+msgid "Card Corner Radius"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:133
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:112
+msgid "Meta Color"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:138
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:117
+msgid "Accent Color"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:143
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:122
+msgid "Image Height"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:148
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:324
+msgid "Arrow Color"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:167
+msgid "Zen Addons - Post Carousel"
+msgstr ""
+
+#: core/basic/zaso-post-carousel-widgets/zaso-post-carousel-widgets.php:169
+msgid "Display posts in a responsive, swipeable carousel with autoplay, arrows, and dots."
+msgstr ""
+
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:28
+msgid "1 Column"
+msgstr ""
+
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:141
+msgid "Zen Addons - Post Grid"
+msgstr ""
+
+#: core/basic/zaso-post-grid-widgets/zaso-post-grid-widgets.php:143
+msgid "Display a responsive grid of posts with featured images, meta, excerpts, and read-more links."
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/tpl/default.php:66
+msgid "Featured plan"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:145
+#: core/design-picker.php:756
+msgid "Default (classic table)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:146
+msgid "Classic (Indigo)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:147
+msgid "Classic (Teal)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:148
+msgid "Accent Header (Indigo)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:149
+msgid "Accent Header (Rose)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:150
+msgid "Minimal Outline (Slate)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:151
+msgid "Minimal Outline (Violet)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:173
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. Leave on \"Default (classic table)\" to build your own look with the Layout, Columns and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:176
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on \"Default (classic table)\" to build your own look with the Layout, Columns and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:190
+msgid "Plans"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:191
+msgid "Plan"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:200
+msgid "Plan Name"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:204
+msgid "Price"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:205
+msgid "e.g. 29 or Free"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:209
+msgid "Billing Period"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:210
+msgid "e.g. /month"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:214
+msgid "Short Description"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:218
+msgid "Features"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:219
+msgid "One feature per line."
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:224
+#: core/section-templates/hero-cta.php:25
+#: core/widget-design.php:450
+msgid "Get Started"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:232
+msgid "Open in New Tab"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:237
+msgid "Featured / Highlighted"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:255
+msgid "Currency Symbol"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:262
+msgid "Structural layout of the table. The Style skin below still controls colours; Layout controls the shape (card border, shadow, radius, padding, density)."
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:264
+msgid "Default (bordered cards)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:265
+msgid "Bordered (flat connected columns)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:266
+msgid "Elevated (floating cards, soft shadow)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:267
+msgid "Compact (dense padding, smaller type)"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:284
+msgid "Featured Accent Color"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:299
+msgid "Muted Text Color"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:343
+msgid "Zen Addons - Pricing Table"
+msgstr ""
+
+#: core/basic/zaso-pricing-table-widgets/zaso-pricing-table-widgets.php:345
+msgid "Showcase your plans side-by-side with a features list, highlighted tier, and call-to-action button."
+msgstr ""
+
+#. translators: 1: bar label, 2: percentage
+#: core/basic/zaso-progress-bars-widgets/tpl/default.php:43
+msgid "%1$s: %2$d%%"
+msgstr ""
+
+#. translators: percentage
+#: core/basic/zaso-progress-bars-widgets/tpl/default.php:49
+msgid "%d%%"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:21
+msgid "Progress Bars"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:22
+msgid "Bar"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:31
+msgid "Label"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:35
+msgid "Percentage"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:37
+msgid "A value from 0 to 100."
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:41
+msgid "Bar Color"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:43
+msgid "Optional. Overrides the default fill color for this bar."
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:49
+msgid "Show Percentage"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:54
+msgid "Animate on Scroll"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:61
+msgid "How long each bar takes to fill, in milliseconds."
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:80
+msgid "Percentage Color"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:85
+msgid "Track Color"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:90
+msgid "Default Fill Color"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:95
+msgid "Bar Height"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:100
+msgid "Bar Corner Radius"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:105
+msgid "Spacing Between Bars"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:124
+msgid "Zen Addons - Progress Bars"
+msgstr ""
+
+#: core/basic/zaso-progress-bars-widgets/zaso-progress-bars-widgets.php:126
+msgid "Show a set of labeled progress or skill bars that fill when they scroll into view."
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:22
+msgid "Shape Style"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:25
+msgid "Waves"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:26
+msgid "Curve"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:27
+msgid "Tilt"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:28
+msgid "Triangle"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:33
+msgid "Shape Color"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:38
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:36
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:37
+msgid "Height"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:40
+msgid "The vertical height of the shape."
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:46
+msgid "The horizontal width of the shape."
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:50
+msgid "Flip Horizontally"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:55
+msgid "Flip Vertically"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:57
+msgid "Flip the shape to sit at the top of a section instead of the bottom."
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:76
+msgid "Zen Addons - Section Divider"
+msgstr ""
+
+#: core/basic/zaso-section-divider-widgets/zaso-section-divider-widgets.php:78
+msgid "Add an SVG shape divider to the top or bottom of a section."
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:28
+#: core/design-picker.php:867
+msgid "Default (grid card)"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:29
+msgid "Centered (icon tile top)"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:30
+msgid "Inline (icon left)"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:31
+msgid "Chip badge"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:32
+msgid "Borderless"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:33
+msgid "Icon top-right"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:34
+msgid "Icon over title"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:58
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. Leave on \"Default (grid card)\" to build your own look with the Layout and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:61
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on \"Default (grid card)\" to build your own look with the Layout and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:75
+msgid "Services"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:76
+msgid "Service"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:89
+msgid "Custom Icon Image"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:100
+msgid "Description"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:108
+msgid "Link Text"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:109
+msgid "e.g. Learn more. Leave empty to hide the link."
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:130
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:81
+msgid "Card Style"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:133
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:84
+msgid "Minimal"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:134
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:85
+msgid "Framed"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:150
+msgid "Structural layout of each service card. The Style skin below still controls colours; Layout controls the shape (icon placement, elevation, padding)."
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:152
+msgid "Default (icon top, stacked)"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:153
+msgid "Boxed (elevated card with lift)"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:154
+msgid "Icon Left (icon beside text)"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:155
+msgid "Centered (icon top, roomy padding)"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:182
+msgid "Icon Background"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:184
+msgid "Optional circle behind the icon. Leave empty for none."
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:193
+msgid "Description Color"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:198
+msgid "Link Color"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:208
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:148
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:292
+msgid "Card Padding"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:219
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:175
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:319
+msgid "Card Border Radius"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:243
+msgid "Zen Addons - Services Grid"
+msgstr ""
+
+#: core/basic/zaso-services-grid-widgets/zaso-services-grid-widgets.php:245
+msgid "Display a grid of services or features, each with an icon, title, description, and optional link."
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:22
+msgid "Accordion List"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:23
+msgid "Single Item"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:32
+msgid "Accordion Title"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:36
+msgid "Accordion Content"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:41
+msgid "Accordion Initial State"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:44
+msgid "Open"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:54
+msgid "Allow Multiple Open"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:55
+msgid "Single Open Only"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:60
+msgid "Collapsible Icon - Open"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:66
+msgid "Collapsible Icon - Close"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:277
+msgid "Zen Addons - Simple Accordion"
+msgstr ""
+
+#: core/basic/zaso-simple-accordion-widgets/zaso-simple-accordion-widgets.php:279
+msgid "Create a vertically stacked list of items or single panel."
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/tpl/default.php:27
+msgid "Share by email"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/tpl/default.php:28
+msgid "Copy link to clipboard"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/tpl/default.php:32
+msgid "Share this page"
+msgstr ""
+
+#. translators: %s: social network name.
+#: core/basic/zaso-social-share-widgets/tpl/default.php:38
+msgid "Share on %s"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:29
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:254
+msgid "Facebook"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:35
+msgid "X"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:41
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:253
+msgid "LinkedIn"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:47
+msgid "Pinterest"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:53
+msgid "Reddit"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:59
+msgid "WhatsApp"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:65
+msgid "Telegram"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:71
+msgid "Email"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:77
+msgid "Copy Link"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:101
+msgid "Networks"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:107
+msgid "Share Target"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:110
+msgid "Current Page"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:111
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:116
+msgid "Custom URL"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:117
+msgid "Used only when Share Target is set to Custom URL."
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:121
+msgid "Custom Title"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:122
+msgid "Optional. Overrides the auto-detected page title in the share text."
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:126
+msgid "Show Network Labels"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:136
+msgid "Button Shape"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:139
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:108
+msgid "Square"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:140
+msgid "Rounded"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:141
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:107
+msgid "Circle"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:146
+msgid "Color Mode"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:149
+msgid "Brand Colors"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:150
+msgid "Single Color"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:155
+msgid "Single Color: Button"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:157
+msgid "Used only when Color Mode is Single Color."
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:161
+msgid "Single Color: Icon"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:186
+msgid "Gap Between Buttons"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:205
+msgid "Zen Addons - Social Share Bar"
+msgstr ""
+
+#: core/basic/zaso-social-share-widgets/zaso-social-share-widgets.php:207
+msgid "A row of share buttons plus a copy-link button. Server-built share URLs, no third-party scripts."
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:37
+msgid "Set empty space height."
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:68
+msgid "Zen Addons - Spacer"
+msgstr ""
+
+#: core/basic/zaso-spacer-widgets/zaso-spacer-widgets.php:70
+msgid "Create an empty space between elements."
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:21
+msgid "Team Members"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:22
+msgid "Team Member"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:31
+msgid "Photo"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:37
+msgid "Name"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:41
+msgid "Role / Title"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:45
+msgid "Bio"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:49
+msgid "Twitter / X URL"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:53
+msgid "LinkedIn URL"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:57
+msgid "Facebook URL"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:61
+msgid "Instagram URL"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:65
+msgid "Website URL"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:104
+msgid "Photo Shape"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:113
+msgid "Photo Size"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:118
+msgid "Name Color"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:123
+msgid "Role Color"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:128
+msgid "Bio Color"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:133
+msgid "Social Icon Color"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:138
+msgid "Social Icon Hover Color"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:199
+msgid "Zen Addons - Team Member"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:201
+msgid "Display a grid of team members with photos, roles, bios, and social links."
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:252
+msgid "Twitter / X"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:255
+msgid "Instagram"
+msgstr ""
+
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:256
+msgid "Website"
+msgstr ""
+
+#. translators: 1: person name, 2: platform name
+#: core/basic/zaso-team-member-widgets/zaso-team-member-widgets.php:265
+msgid "%1$s on %2$s"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:64
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:149
+msgid "Testimonials"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:76
+msgid "slide"
+msgstr ""
+
+#. translators: 1: current slide number, 2: total slides
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:79
+msgid "Testimonial %1$d of %2$d"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:106
+msgid "Verified"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:214
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:215
+msgid "Pause testimonials"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:216
+msgid "Play testimonials"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:233
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:281
+msgid "Testimonial slides"
+msgstr ""
+
+#. translators: testimonial number
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:240
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:288
+msgid "Go to testimonial %d"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:254
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:271
+msgid "Previous testimonial"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:258
+#: core/basic/zaso-testimonial-slider-widgets/tpl/default.php:274
+msgid "Next testimonial"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:26
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:223
+#: core/design-picker.php:793
+msgid "Default (simple card)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:27
+msgid "Centered Quote (Indigo)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:28
+msgid "Centered Quote (Teal)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:29
+msgid "Avatar Left (Slate)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:30
+msgid "Avatar Left (Violet)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:31
+msgid "Big Quote Mark (Rose)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:32
+msgid "Big Quote Mark (Amber)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:54
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. Leave on \"Default (simple card)\" to build your own look with the Layout, Style and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:57
+msgid "One-click, fully styled looks. Click \"Browse designs\" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on \"Default (simple card)\" to build your own look with the Layout, Style and Design colour settings instead."
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:150
+msgid "Testimonial"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:159
+msgid "Quote"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:163
+msgid "Author Name"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:167
+msgid "Role / Company"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:168
+msgid "e.g. CEO at Acme Corp"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:172
+msgid "Company Name"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:173
+msgid "Optional. Shown with a logo mark by the \"Company logo\" designs; ignored by every other design."
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:177
+msgid "Author Photo"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:183
+msgid "Star Rating"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:198
+msgid "Auto-play"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:203
+msgid "Auto-play Duration (ms)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:205
+msgid "Time each slide is shown, in milliseconds."
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:209
+msgid "Show Navigation Arrows"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:214
+msgid "Show Dot Pagination"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:221
+msgid "Structural layout of each testimonial. The Style skin below still controls colours; Layout controls the shape (card elevation, decorative quote mark, minimal rule)."
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:225
+msgid "Quote (centered, decorative mark)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:226
+msgid "Minimal (no card, top rule)"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:238
+msgid "Aggregate Rating"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:239
+msgid "Optional. A headline score such as 4.9, shown by the \"Stat highlight\" designs; ignored by every other design."
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:243
+msgid "Aggregate Rating Label"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:244
+msgid "Optional. Sits under the score, e.g. from 1,200+ verified reviews."
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:253
+msgid "Quote Font Size"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:258
+msgid "Quote Color"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:263
+msgid "Quote Italic"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:272
+msgid "Author Name Color"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:277
+msgid "Author Title Color"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:282
+msgid "Star Color"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:329
+msgid "Dot Color"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:334
+msgid "Active Dot Color"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:353
+msgid "Zen Addons - Testimonial Slider"
+msgstr ""
+
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:355
+msgid "A sliding testimonial carousel with auto-play, swipe, and keyboard support."
+msgstr ""
+
+#. translators: 1: number of stars, 2: max stars
+#: core/basic/zaso-testimonial-slider-widgets/zaso-testimonial-slider-widgets.php:400
+msgid "%1$d out of %2$d stars"
+msgstr ""
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:22
+msgid "Video URL"
+msgstr ""
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:23
+msgid "Insert your video URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+msgstr ""
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:42
+msgid "Controls"
+msgstr ""
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:65
+msgid "Zen Addons - Video"
+msgstr ""
+
+#: core/basic/zaso-video-widgets/zaso-video-widgets.php:67
+msgid "Add video from YouTube, Vimeo or another provider."
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/tpl/default.php:35
+#: core/basic/zaso-vimeo-lightbox-widgets/tpl/default.php:39
+#: core/basic/zaso-youtube-lightbox-widgets/tpl/default.php:30
+#: core/basic/zaso-youtube-lightbox-widgets/tpl/default.php:34
+msgid "Play video"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:22
+msgid "Vimeo Video ID"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:23
+msgid "Insert Video ID, example: 12345678"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:27
+msgid "Loop"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:28
+msgid "Play the video again when it reaches the end, infinitely."
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:37
+msgid "Muted"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:38
+msgid "Set video to mute on load. Viewers can still adjust the volume preferences in the player."
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:47
+msgid "Do Not Track"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:48
+msgid "Setting this parameter to \"Yes\" will block the player from tracking any session data, including all cookies and stats."
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:57
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:43
+msgid "Video Play Button Image"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:63
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:55
+msgid "Video Thumbnail"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:84
+msgid "Zen Addons - Vimeo Lightbox"
+msgstr ""
+
+#: core/basic/zaso-vimeo-lightbox-widgets/zaso-vimeo-lightbox-widgets.php:86
+msgid "Pop-up lightbox for Viemo videos."
+msgstr ""
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:34
+msgid "Widget Sidebar"
+msgstr ""
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:54
+msgid "Zen Addons - Widgetized"
+msgstr ""
+
+#: core/basic/zaso-widgetized-widgets/zaso-widgetized-widgets.php:56
+msgid "Get existing widget sidebars to display on the main content."
+msgstr ""
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:22
+msgid "YouTube Video URL"
+msgstr ""
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:23
+msgid "Insert URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+msgstr ""
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:27
+msgid "Show Related Videos"
+msgstr ""
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:35
+msgid "Show Info"
+msgstr ""
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:49
+msgid "Video Play Button Image (Hover)"
+msgstr ""
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:76
+msgid "Zen Addons - YouTube Lightbox"
+msgstr ""
+
+#: core/basic/zaso-youtube-lightbox-widgets/zaso-youtube-lightbox-widgets.php:78
+msgid "Pop-up lightbox for YouTube videos."
+msgstr ""
+
+#: core/cross-promo.php:358
+msgid "Running a WooCommerce store?"
+msgstr ""
+
+#: core/cross-promo.php:359
+msgid "We also make FeedProof, a free plugin that checks your products against Google Merchant Center feed rules before Google does, and tells you exactly what to fix. Same team as Zen Addons."
+msgstr ""
+
+#: core/cross-promo.php:362
+msgid "View FeedProof"
+msgstr ""
+
+#: core/cross-promo.php:363
+#: core/review-prompt.php:199
+msgid "Maybe later"
+msgstr ""
+
+#: core/cross-promo.php:364
+#: core/review-prompt.php:200
+msgid "No thanks"
+msgstr ""
+
+#: core/cross-promo.php:365
+msgid "See what it checks"
+msgstr ""
+
+#: core/dependency-notice.php:29
+msgid "SiteOrigin Widgets Bundle"
+msgstr ""
+
+#: core/dependency-notice.php:31
+msgid "provides the framework every Zen widget is built on"
+msgstr ""
+
+#: core/dependency-notice.php:35
+msgid "Page Builder by SiteOrigin"
+msgstr ""
+
+#: core/dependency-notice.php:37
+msgid "places Zen widgets into your page layouts"
+msgstr ""
+
+#: core/dependency-notice.php:82
+msgid "Activate"
+msgstr ""
+
+#: core/dependency-notice.php:91
+msgid "Install"
+msgstr ""
+
+#: core/dependency-notice.php:132
+msgid "Finish setting up Zen Addons"
+msgstr ""
+
+#: core/dependency-notice.php:133
+msgid "Zen Addons needs these free SiteOrigin plugins to work:"
+msgstr ""
+
+#: core/dependency-notice.php:137
+msgid "required"
+msgstr ""
+
+#: core/dependency-notice.php:138
+msgid "recommended"
+msgstr ""
+
+#: core/design-picker.php:186
+msgid "Dark Mode"
+msgstr ""
+
+#: core/design-picker.php:187
+#: core/design-picker.php:230
+#: core/design-picker.php:433
+msgid "Split Panel"
+msgstr ""
+
+#: core/design-picker.php:188
+#: core/design-picker.php:233
+#: core/design-picker.php:275
+msgid "Glass"
+msgstr ""
+
+#: core/design-picker.php:189
+msgid "Toast"
+msgstr ""
+
+#: core/design-picker.php:190
+msgid "Big Icon"
+msgstr ""
+
+#: core/design-picker.php:191
+#: core/design-picker.php:239
+msgid "Pill"
+msgstr ""
+
+#: core/design-picker.php:193
+msgid "Double Border"
+msgstr ""
+
+#: core/design-picker.php:194
+#: core/design-picker.php:245
+msgid "Banner"
+msgstr ""
+
+#: core/design-picker.php:195
+msgid "Tag Label"
+msgstr ""
+
+#: core/design-picker.php:196
+msgid "Ghost Tint"
+msgstr ""
+
+#: core/design-picker.php:197
+msgid "Underline"
+msgstr ""
+
+#: core/design-picker.php:198
+msgid "Round Badge"
+msgstr ""
+
+#: core/design-picker.php:199
+#: core/design-picker.php:242
+msgid "Two-tone"
+msgstr ""
+
+#: core/design-picker.php:200
+msgid "Right Accent"
+msgstr ""
+
+#: core/design-picker.php:201
+msgid "Floating Icon"
+msgstr ""
+
+#: core/design-picker.php:203
+msgid "Deep Solid"
+msgstr ""
+
+#: core/design-picker.php:204
+msgid "Terminal"
+msgstr ""
+
+#: core/design-picker.php:205
+msgid "Title Bar"
+msgstr ""
+
+#: core/design-picker.php:206
+msgid "Action CTA"
+msgstr ""
+
+#: core/design-picker.php:207
+#: core/design-picker.php:247
+#: core/design-picker.php:288
+#: core/design-picker.php:448
+msgid "Gradient Ring"
+msgstr ""
+
+#: core/design-picker.php:208
+msgid "Centered"
+msgstr ""
+
+#: core/design-picker.php:225
+msgid "Gradient Text"
+msgstr ""
+
+#: core/design-picker.php:226
+msgid "Dark Card"
+msgstr ""
+
+#: core/design-picker.php:227
+msgid "Progress Ring"
+msgstr ""
+
+#: core/design-picker.php:228
+msgid "Trend"
+msgstr ""
+
+#: core/design-picker.php:229
+msgid "Solid Fill"
+msgstr ""
+
+#: core/design-picker.php:231
+#: core/design-picker.php:441
+msgid "Progress Bar"
+msgstr ""
+
+#: core/design-picker.php:232
+msgid "Sparkline"
+msgstr ""
+
+#: core/design-picker.php:234
+msgid "Currency"
+msgstr ""
+
+#: core/design-picker.php:235
+msgid "Ghost Outline"
+msgstr ""
+
+#: core/design-picker.php:236
+msgid "Centered Badge"
+msgstr ""
+
+#: core/design-picker.php:237
+msgid "Mono Metric"
+msgstr ""
+
+#: core/design-picker.php:238
+#: core/design-picker.php:445
+msgid "Watermark"
+msgstr ""
+
+#: core/design-picker.php:240
+#: core/design-picker.php:431
+msgid "Accent Bar"
+msgstr ""
+
+#: core/design-picker.php:241
+#: core/design-picker.php:270
+msgid "Eyebrow"
+msgstr ""
+
+#: core/design-picker.php:244
+msgid "Ring Icon"
+msgstr ""
+
+#: core/design-picker.php:246
+msgid "Footer Note"
+msgstr ""
+
+#: core/design-picker.php:248
+msgid "Centered Icon"
+msgstr ""
+
+#: core/design-picker.php:265
+msgid "Bold Gradient"
+msgstr ""
+
+#: core/design-picker.php:266
+#: core/design-picker.php:430
+msgid "Dark Glow"
+msgstr ""
+
+#: core/design-picker.php:267
+msgid "Image Scrim"
+msgstr ""
+
+#: core/design-picker.php:268
+msgid "Image Horizontal"
+msgstr ""
+
+#: core/design-picker.php:269
+msgid "Split Block"
+msgstr ""
+
+#: core/design-picker.php:271
+msgid "Icon Row"
+msgstr ""
+
+#: core/design-picker.php:272
+msgid "Pastel Pill"
+msgstr ""
+
+#: core/design-picker.php:273
+msgid "Dotted Gradient"
+msgstr ""
+
+#: core/design-picker.php:274
+msgid "Stacked Dark"
+msgstr ""
+
+#: core/design-picker.php:276
+msgid "Arrow Link"
+msgstr ""
+
+#: core/design-picker.php:277
+msgid "Big Type"
+msgstr ""
+
+#: core/design-picker.php:278
+msgid "Badge Tag"
+msgstr ""
+
+#: core/design-picker.php:279
+msgid "Stats"
+msgstr ""
+
+#: core/design-picker.php:280
+msgid "Gradient Heading"
+msgstr ""
+
+#: core/design-picker.php:281
+msgid "Image Bottom"
+msgstr ""
+
+#: core/design-picker.php:282
+msgid "Two Column"
+msgstr ""
+
+#: core/design-picker.php:283
+msgid "Pill Banner"
+msgstr ""
+
+#: core/design-picker.php:284
+msgid "Left Accent"
+msgstr ""
+
+#: core/design-picker.php:285
+msgid "Vibrant Mesh"
+msgstr ""
+
+#: core/design-picker.php:286
+msgid "Corporate"
+msgstr ""
+
+#: core/design-picker.php:287
+msgid "Bold Solid"
+msgstr ""
+
+#: core/design-picker.php:305
+msgid "Ribbon (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:306
+msgid "Ribbon (Dark)"
+msgstr ""
+
+#: core/design-picker.php:307
+msgid "Featured (Violet)"
+msgstr ""
+
+#: core/design-picker.php:308
+msgid "Featured (Teal)"
+msgstr ""
+
+#: core/design-picker.php:309
+msgid "Comparison (Light)"
+msgstr ""
+
+#: core/design-picker.php:310
+msgid "Comparison (Dark)"
+msgstr ""
+
+#: core/design-picker.php:311
+msgid "Gradient Header (Sunset)"
+msgstr ""
+
+#: core/design-picker.php:312
+msgid "Gradient Header (Blue)"
+msgstr ""
+
+#: core/design-picker.php:313
+msgid "Split Panel (Slate)"
+msgstr ""
+
+#: core/design-picker.php:314
+msgid "Split Panel (Emerald)"
+msgstr ""
+
+#: core/design-picker.php:315
+msgid "Dark Premium (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:316
+msgid "Dark Premium (Teal)"
+msgstr ""
+
+#: core/design-picker.php:317
+msgid "Two-tone (Amber)"
+msgstr ""
+
+#: core/design-picker.php:318
+msgid "Two-tone (Emerald)"
+msgstr ""
+
+#: core/design-picker.php:319
+msgid "Gradient Ring (Fuchsia)"
+msgstr ""
+
+#: core/design-picker.php:320
+msgid "Gradient Ring (Blue)"
+msgstr ""
+
+#: core/design-picker.php:321
+msgid "Icon Features (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:322
+msgid "Icon Features (Teal)"
+msgstr ""
+
+#: core/design-picker.php:323
+msgid "Compact (Slate)"
+msgstr ""
+
+#: core/design-picker.php:324
+msgid "Compact (Violet)"
+msgstr ""
+
+#: core/design-picker.php:325
+msgid "Stacked Badge (Rose)"
+msgstr ""
+
+#: core/design-picker.php:326
+msgid "Stacked Badge (Amber)"
+msgstr ""
+
+#: core/design-picker.php:327
+msgid "Mini Table (Light)"
+msgstr ""
+
+#: core/design-picker.php:328
+msgid "Mini Table (Dark)"
+msgstr ""
+
+#: core/design-picker.php:345
+msgid "Gradient Quote (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:346
+msgid "Gradient Quote (Sunset)"
+msgstr ""
+
+#: core/design-picker.php:347
+msgid "Dark (Sky Glow)"
+msgstr ""
+
+#: core/design-picker.php:348
+msgid "Dark (Violet Glow)"
+msgstr ""
+
+#: core/design-picker.php:349
+msgid "Arrows Footer (Teal)"
+msgstr ""
+
+#: core/design-picker.php:350
+msgid "Arrows Footer (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:351
+msgid "Soft Tint (Violet)"
+msgstr ""
+
+#: core/design-picker.php:352
+msgid "Soft Tint (Emerald)"
+msgstr ""
+
+#: core/design-picker.php:353
+msgid "Company Logo (Slate)"
+msgstr ""
+
+#: core/design-picker.php:354
+msgid "Company Logo (Blue)"
+msgstr ""
+
+#: core/design-picker.php:355
+msgid "Stat Highlight (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:356
+msgid "Stat Highlight (Rose)"
+msgstr ""
+
+#: core/design-picker.php:357
+msgid "Split Panel (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:358
+msgid "Split Panel (Teal)"
+msgstr ""
+
+#: core/design-picker.php:359
+msgid "Accent Top (Amber)"
+msgstr ""
+
+#: core/design-picker.php:360
+msgid "Accent Top (Cyan)"
+msgstr ""
+
+#: core/design-picker.php:361
+msgid "Verified (Emerald)"
+msgstr ""
+
+#: core/design-picker.php:362
+msgid "Verified (Indigo)"
+msgstr ""
+
+#: core/design-picker.php:363
+msgid "Minimal (Slate)"
+msgstr ""
+
+#: core/design-picker.php:364
+msgid "Minimal (Violet)"
+msgstr ""
+
+#: core/design-picker.php:365
+msgid "Quote Watermark (Fuchsia)"
+msgstr ""
+
+#: core/design-picker.php:366
+msgid "Quote Watermark (Blue)"
+msgstr ""
+
+#: core/design-picker.php:367
+msgid "Spotlight (Violet)"
+msgstr ""
+
+#: core/design-picker.php:368
+msgid "Spotlight (Sunset)"
+msgstr ""
+
+#: core/design-picker.php:385
+msgid "Side Panel White"
+msgstr ""
+
+#: core/design-picker.php:386
+msgid "Side Panel Dark"
+msgstr ""
+
+#: core/design-picker.php:387
+msgid "Side Panel Amber"
+msgstr ""
+
+#: core/design-picker.php:388
+msgid "Strips White"
+msgstr ""
+
+#: core/design-picker.php:389
+msgid "Strips Dark"
+msgstr ""
+
+#: core/design-picker.php:390
+msgid "Strips Accent"
+msgstr ""
+
+#: core/design-picker.php:391
+msgid "Corner White"
+msgstr ""
+
+#: core/design-picker.php:392
+msgid "Corner Dark"
+msgstr ""
+
+#: core/design-picker.php:393
+msgid "Corner Accent"
+msgstr ""
+
+#: core/design-picker.php:394
+msgid "Centered Light"
+msgstr ""
+
+#: core/design-picker.php:395
+msgid "Centered Dark"
+msgstr ""
+
+#: core/design-picker.php:396
+msgid "Centered Accent"
+msgstr ""
+
+#: core/design-picker.php:397
+msgid "Type Strip White"
+msgstr ""
+
+#: core/design-picker.php:398
+msgid "Type Strip Dark"
+msgstr ""
+
+#: core/design-picker.php:399
+msgid "Type Strip Tinted"
+msgstr ""
+
+#: core/design-picker.php:400
+msgid "Tint Blue"
+msgstr ""
+
+#: core/design-picker.php:401
+msgid "Tint Dark"
+msgstr ""
+
+#: core/design-picker.php:402
+msgid "Tint Amber"
+msgstr ""
+
+#: core/design-picker.php:403
+msgid "Glass Light"
+msgstr ""
+
+#: core/design-picker.php:404
+msgid "Glass Dark"
+msgstr ""
+
+#: core/design-picker.php:405
+msgid "Glass Frosted"
+msgstr ""
+
+#: core/design-picker.php:406
+msgid "Editorial White"
+msgstr ""
+
+#: core/design-picker.php:407
+msgid "Editorial Dark"
+msgstr ""
+
+#: core/design-picker.php:408
+msgid "Editorial Accent"
+msgstr ""
+
+#: core/design-picker.php:428
+msgid "Gradient Tile"
+msgstr ""
+
+#: core/design-picker.php:429
+msgid "Icon Ring"
+msgstr ""
+
+#: core/design-picker.php:432
+msgid "Tinted Background"
+msgstr ""
+
+#: core/design-picker.php:434
+msgid "Ghost Number"
+msgstr ""
+
+#: core/design-picker.php:435
+msgid "Stat Footer"
+msgstr ""
+
+#: core/design-picker.php:436
+msgid "Button Footer"
+msgstr ""
+
+#: core/design-picker.php:437
+msgid "Tag List"
+msgstr ""
+
+#: core/design-picker.php:438
+msgid "Corner Icon"
+msgstr ""
+
+#: core/design-picker.php:439
+msgid "Gradient Card"
+msgstr ""
+
+#: core/design-picker.php:440
+msgid "Banner Header"
+msgstr ""
+
+#: core/design-picker.php:442
+msgid "Dashed Ghost"
+msgstr ""
+
+#: core/design-picker.php:443
+msgid "Timeline Step"
+msgstr ""
+
+#: core/design-picker.php:444
+msgid "Diagonal Split"
+msgstr ""
+
+#: core/design-picker.php:446
+msgid "Price Tag"
+msgstr ""
+
+#: core/design-picker.php:447
+msgid "Checklist"
+msgstr ""
+
+#: core/design-picker.php:449
+msgid "Corner Ribbon"
+msgstr ""
+
+#: core/design-picker.php:450
+msgid "Team Stack"
+msgstr ""
+
+#: core/design-picker.php:451
+msgid "CTA Bar"
+msgstr ""
+
+#: core/design-picker.php:488
+msgid "Browse designs"
+msgstr ""
+
+#: core/design-picker.php:489
+msgid "Choose a pre-made design"
+msgstr ""
+
+#. translators: %s: widget noun, e.g. "alert" or "counter".
+#: core/design-picker.php:492
+msgid "A pre-made design styles the whole %s in one click. Pick one, then Apply."
+msgstr ""
+
+#: core/design-picker.php:495
+#: core/widget-design.php:758
+msgid "Free"
+msgstr ""
+
+#: core/design-picker.php:496
+#: core/widget-design.php:756
+msgid "Pro"
+msgstr ""
+
+#. translators: 1: number of Pro designs, 2: lowest Pro price including currency symbol.
+#: core/design-picker.php:499
+msgid "Part of Zen Addons Pro: %1$d designs across 7 widgets, from %2$s."
+msgstr ""
+
+#. translators: 1: number of Pro designs, 2: lowest Pro price including currency symbol.
+#: core/design-picker.php:505
+msgid "Get all %1$d Pro designs from %2$s, ready to use on every widget above."
+msgstr ""
+
+#. translators: 1: number of Pro designs, 2: lowest Pro price including currency symbol.
+#: core/design-picker.php:511
+msgid "Unlock %1$d designs from %2$s"
+msgstr ""
+
+#: core/design-picker.php:516
+msgid "Apply"
+msgstr ""
+
+#: core/design-picker.php:517
+msgid "Cancel"
+msgstr ""
+
+#: core/design-picker.php:644
+msgid "alert"
+msgstr ""
+
+#: core/design-picker.php:681
+msgid "counter"
+msgstr ""
+
+#: core/design-picker.php:718
+msgid "call to action"
+msgstr ""
+
+#: core/design-picker.php:755
+msgid "pricing table"
+msgstr ""
+
+#: core/design-picker.php:792
+msgid "testimonial slider"
+msgstr ""
+
+#: core/design-picker.php:829
+msgid "hover card"
+msgstr ""
+
+#: core/design-picker.php:866
+msgid "services grid"
+msgstr ""
+
+#: core/material-icons.php:39
+msgid "Material Symbols Rounded"
+msgstr ""
+
+#: core/review-prompt.php:194
+msgid "Enjoying Zen Addons for SiteOrigin?"
+msgstr ""
+
+#: core/review-prompt.php:195
+msgid "A short review on WordPress.org helps other SiteOrigin users find the plugin, and it genuinely keeps the project going."
+msgstr ""
+
+#: core/review-prompt.php:201
+msgid "Something not working? Tell us in the support forum."
+msgstr ""
+
+#: core/section-templates/features.php:18
+msgid "Features: Services Grid"
+msgstr ""
+
+#: core/section-templates/features.php:19
+msgid "A clean three-column grid of features with icons, titles, and short descriptions."
+msgstr ""
+
+#: core/section-templates/features.php:30
+msgid "Fast Setup"
+msgstr ""
+
+#: core/section-templates/features.php:31
+msgid "Install, drop in a section, and publish in minutes. No build tools and no code required."
+msgstr ""
+
+#: core/section-templates/features.php:39
+msgid "Secure by Default"
+msgstr ""
+
+#: core/section-templates/features.php:40
+msgid "Sanitized input and escaped output on every widget keep your pages safe out of the box."
+msgstr ""
+
+#: core/section-templates/features.php:48
+msgid "Expert Support"
+msgstr ""
+
+#: core/section-templates/features.php:49
+msgid "Friendly help and clear documentation whenever you need a hand getting things just right."
+msgstr ""
+
+#: core/section-templates/hero-cta.php:17
+msgid "Hero: Centered Call to Action"
+msgstr ""
+
+#: core/section-templates/hero-cta.php:18
+msgid "A bold centered hero with heading, subheading, and a button."
+msgstr ""
+
+#: core/section-templates/hero-cta.php:22
+msgid "Build beautiful pages, faster"
+msgstr ""
+
+#: core/section-templates/hero-cta.php:23
+msgid "Premium SiteOrigin widgets with zero bloat"
+msgstr ""
+
+#: core/section-templates/hero-cta.php:24
+msgid "Drop in conversion-ready sections and fine-tune every detail without touching code."
+msgstr ""
+
+#: core/section-templates/testimonials.php:21
+msgid "Testimonials: Customer Quotes"
+msgstr ""
+
+#: core/section-templates/testimonials.php:22
+msgid "A sliding row of customer testimonials with star ratings on clean cards."
+msgstr ""
+
+#: core/section-templates/testimonials.php:28
+msgid "Switching to Zen Addons cut our page-build time in half. The widgets just work, and the design controls are exactly what we needed."
+msgstr ""
+
+#: core/section-templates/testimonials.php:29
+msgid "Maria Delgado"
+msgstr ""
+
+#: core/section-templates/testimonials.php:30
+msgid "Marketing Lead at Brightpath"
+msgstr ""
+
+#: core/section-templates/testimonials.php:35
+msgid "The testimonial slider dropped straight into our SiteOrigin layout with zero fuss. Auto-play, swipe, and keyboard navigation were all handled."
+msgstr ""
+
+#: core/section-templates/testimonials.php:36
+msgid "James Okonkwo"
+msgstr ""
+
+#: core/section-templates/testimonials.php:37
+msgid "Founder, Studio North"
+msgstr ""
+
+#: core/section-templates/testimonials.php:42
+msgid "Clean markup, accessible by default, and the styling presets saved me an afternoon. Easily the best addon pack for SiteOrigin."
+msgstr ""
+
+#: core/section-templates/testimonials.php:43
+msgid "Priya Raman"
+msgstr ""
+
+#: core/section-templates/testimonials.php:44
+msgid "Freelance WordPress Developer"
+msgstr ""
+
+#: core/widget-design.php:151
+msgid "CTA Banner"
+msgstr ""
+
+#: core/widget-design.php:155
+msgid "Pricing Table"
+msgstr ""
+
+#: core/widget-design.php:159
+msgid "Testimonial Slider"
+msgstr ""
+
+#: core/widget-design.php:163
+msgid "Counter"
+msgstr ""
+
+#: core/widget-design.php:171
+msgid "Services Grid"
+msgstr ""
+
+#: core/widget-design.php:185
+#: core/widget-design.php:186
+#: core/widget-design.php:694
+#: core/widget-design.php:696
+msgid "Templates"
+msgstr ""
+
+#: core/widget-design.php:433
+msgid "Heads up"
+msgstr ""
+
+#: core/widget-design.php:434
+msgid "This is an alert message."
+msgstr ""
+
+#: core/widget-design.php:448
+msgid "Ready to start?"
+msgstr ""
+
+#: core/widget-design.php:449
+msgid "Join us today."
+msgstr ""
+
+#: core/widget-design.php:470
+msgid "Choose"
+msgstr ""
+
+#: core/widget-design.php:484
+msgid "Great product, highly recommend."
+msgstr ""
+
+#: core/widget-design.php:485
+msgid "Jane Doe"
+msgstr ""
+
+#: core/widget-design.php:496
+msgid "Happy clients"
+msgstr ""
+
+#: core/widget-design.php:510
+msgid "Project title"
+msgstr ""
+
+#: core/widget-design.php:511
+msgid "View"
+msgstr ""
+
+#: core/widget-design.php:530
+msgid "Our Service"
+msgstr ""
+
+#: core/widget-design.php:531
+msgid "A short description line."
+msgstr ""
+
+#: core/widget-design.php:697
+msgid "Ready-to-insert sections, designed with Zen Addons widgets."
+msgstr ""
+
+#: core/widget-design.php:701
+msgid "How to add a template"
+msgstr ""
+
+#. translators: %s: the page editor name (Page Builder).
+#: core/widget-design.php:708
+msgid "Edit a page with %s."
+msgstr ""
+
+#: core/widget-design.php:709
+msgid "Page Builder"
+msgstr ""
+
+#. translators: %s: the Page Builder browser tab name (Layouts).
+#: core/widget-design.php:718
+msgid "Open the %s tab."
+msgstr ""
+
+#: core/widget-design.php:719
+msgid "Layouts"
+msgstr ""
+
+#: core/widget-design.php:725
+msgid "Choose a <b>Zen Addons section</b> to insert it."
+msgstr ""
+
+#: core/widget-design.php:731
+msgid "Section templates"
+msgstr ""
+
+#. translators: 1: number of free templates, 2: number of Pro templates.
+#: core/widget-design.php:735
+msgid "%1$d free, %2$d Pro"
+msgstr ""
+
+#: core/widget-design.php:743
+msgid "No section templates are registered yet."
+msgstr ""
+
+#: core/widget-design.php:773
+msgid "Unlock the full Pro template library"
+msgstr ""
+
+#: core/widget-design.php:774
+msgid "Get premium sections built with Zen Addons widgets, plus every Pro widget and style."
+msgstr ""
+
+#: core/widget-design.php:775
+msgid "Get Zen Addons Pro"
+msgstr ""

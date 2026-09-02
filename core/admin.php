@@ -65,39 +65,39 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 		public function get_categories() {
 			return array(
 				'layout'       => array(
-					'label'   => esc_html__( 'Layout & Content', 'zaso' ),
+					'label'   => esc_html__( 'Layout & Content', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-spacer-widgets', 'zaso-alert-box-widgets', 'zaso-widgetized-widgets', 'zaso-section-divider-widgets' ),
 				),
 				'interactive'  => array(
-					'label'   => esc_html__( 'Interactive', 'zaso' ),
+					'label'   => esc_html__( 'Interactive', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-simple-accordion-widgets', 'zaso-basic-tabs-widgets' ),
 				),
 				'media'        => array(
-					'label'   => esc_html__( 'Media', 'zaso' ),
+					'label'   => esc_html__( 'Media', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-video-widgets', 'zaso-youtube-lightbox-widgets', 'zaso-vimeo-lightbox-widgets', 'zaso-image-gallery-widgets' ),
 				),
 				'business'     => array(
-					'label'   => esc_html__( 'Business & Marketing', 'zaso' ),
+					'label'   => esc_html__( 'Business & Marketing', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-info-box-widgets', 'zaso-hover-card-widgets', 'zaso-icon-widgets', 'zaso-image-icon-group-widgets', 'zaso-faq-widgets', 'zaso-pricing-table-widgets' ),
 				),
 				'engagement'   => array(
-					'label'   => esc_html__( 'Conversion & Engagement', 'zaso' ),
+					'label'   => esc_html__( 'Conversion & Engagement', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-cta-banner-widgets', 'zaso-counter-widgets', 'zaso-countdown-widgets', 'zaso-before-after-widgets', 'zaso-flip-card-widgets', 'zaso-social-share-widgets', 'zaso-notification-banner-widgets' ),
 				),
 				'people'       => array(
-					'label'   => esc_html__( 'People & Social Proof', 'zaso' ),
+					'label'   => esc_html__( 'People & Social Proof', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-team-member-widgets', 'zaso-testimonial-slider-widgets', 'zaso-logo-showcase-widgets' ),
 				),
 				'content'      => array(
-					'label'   => esc_html__( 'Content Blocks', 'zaso' ),
+					'label'   => esc_html__( 'Content Blocks', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-services-grid-widgets', 'zaso-progress-bars-widgets', 'zaso-post-grid-widgets', 'zaso-post-carousel-widgets', 'zaso-icon-list-widgets' ),
 				),
 				'community'    => array(
-					'label'   => esc_html__( 'Community (bbPress)', 'zaso' ),
+					'label'   => esc_html__( 'Community (bbPress)', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-bbpress-forum-index-widgets', 'zaso-bbpress-topic-index-widgets', 'zaso-bbpress-login-widgets', 'zaso-bbpress-registration-widgets', 'zaso-bbpress-lost-password-widgets' ),
 				),
 				'integrations' => array(
-					'label'   => esc_html__( 'Integrations', 'zaso' ),
+					'label'   => esc_html__( 'Integrations', 'zen-addons-for-siteorigin-page-builder' ),
 					'widgets' => array( 'zaso-contact-form-7-widgets' ),
 				),
 			);
@@ -169,8 +169,8 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 		 */
 		public function register_menu() {
 			add_menu_page(
-				esc_html__( 'Zen Addons', 'zaso' ),
-				esc_html__( 'Zen Addons', 'zaso' ),
+				esc_html__( 'Zen Addons', 'zen-addons-for-siteorigin-page-builder' ),
+				esc_html__( 'Zen Addons', 'zen-addons-for-siteorigin-page-builder' ),
 				'manage_options',
 				self::MENU_SLUG,
 				array( $this, 'render_page' ),
@@ -201,7 +201,7 @@ if ( ! class_exists( 'ZASO_Admin' ) ) :
 		 */
 		public function handle_save() {
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zaso' ) );
+				wp_die( esc_html__( 'You do not have sufficient permissions to perform this action.', 'zen-addons-for-siteorigin-page-builder' ) );
 			}
 
 			check_admin_referer( self::NONCE_ACTION );

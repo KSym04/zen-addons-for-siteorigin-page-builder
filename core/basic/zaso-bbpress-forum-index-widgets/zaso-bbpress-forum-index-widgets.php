@@ -19,40 +19,40 @@ class Zen_Addons_SiteOrigin_BbPress_Forum_Index_Widget extends SiteOrigin_Widget
 		$zaso_bbpress_forum_index_field_array = array(
 			'bbpress_forum_index_theme_pagination' => array(
                 'type' => 'select',
-				'label' => __( 'Show Pagination', 'zaso' ),
+				'label' => __( 'Show Pagination', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'block',
 				'options' => array(
-                    'block'  => __( 'Yes', 'zaso' ),
-					'none'  => __( 'No', 'zaso' )
+                    'block'  => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' ),
+					'none'  => __( 'No', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'bbpress_forum_index_theme_breadcrumbs' => array(
                 'type' => 'select',
-				'label' => __( 'Show Breadcrumbs', 'zaso' ),
+				'label' => __( 'Show Breadcrumbs', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'block',
 				'options' => array(
-                    'block'  => __( 'Yes', 'zaso' ),
-					'none'  => __( 'No', 'zaso' )
+                    'block'  => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' ),
+					'none'  => __( 'No', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'bbpress_forum_index_theme_search' => array(
                 'type' => 'select',
-				'label' => __( 'Show Search', 'zaso' ),
+				'label' => __( 'Show Search', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'block',
 				'options' => array(
-                    'block'  => __( 'Yes', 'zaso' ),
-					'none'  => __( 'No', 'zaso' )
+                    'block'  => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' ),
+					'none'  => __( 'No', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'extra_id' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' )
+				'label' 	  => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'extra_class' => array(
 				'type' 		  => 'text',
-				'label' 	  => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' )
+				'label' 	  => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' )
 			)
 		);
 
@@ -61,9 +61,9 @@ class Zen_Addons_SiteOrigin_BbPress_Forum_Index_Widget extends SiteOrigin_Widget
 
 		parent::__construct(
 			'zen-addons-siteorigin-bbpress-forum-index',
-			__( 'Zen Addons - bbPress Forum Index', 'zaso' ),
+			__( 'Zen Addons - bbPress Forum Index', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description' 	=> __( 'Display entire bbPress forum index.', 'zaso' ),
+				'description' 	=> __( 'Display entire bbPress forum index.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help' 			=> 'https://www.dopethemes.com/',
 				'panels_groups'	=> array( 'zaso-plugin-widgets' )
 			),

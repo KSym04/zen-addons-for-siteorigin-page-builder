@@ -18,8 +18,8 @@ class Zen_Addons_SiteOrigin_Progress_Bars_Widget extends SiteOrigin_Widget {
 		$zaso_progress_bars_field_array = array(
 			'bars' => array(
 				'type'       => 'repeater',
-				'label'      => __( 'Progress Bars', 'zaso' ),
-				'item_name'  => __( 'Bar', 'zaso' ),
+				'label'      => __( 'Progress Bars', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Bar', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[name*='[label]']",
 					'update_event' => 'change',
@@ -28,92 +28,92 @@ class Zen_Addons_SiteOrigin_Progress_Bars_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'label' => array(
 						'type'  => 'text',
-						'label' => __( 'Label', 'zaso' ),
+						'label' => __( 'Label', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'percentage' => array(
 						'type'        => 'number',
-						'label'       => __( 'Percentage', 'zaso' ),
+						'label'       => __( 'Percentage', 'zen-addons-for-siteorigin-page-builder' ),
 						'default'     => 75,
-						'description' => __( 'A value from 0 to 100.', 'zaso' ),
+						'description' => __( 'A value from 0 to 100.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'bar_color' => array(
 						'type'        => 'color',
-						'label'       => __( 'Bar Color', 'zaso' ),
+						'label'       => __( 'Bar Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default'     => '',
-						'description' => __( 'Optional. Overrides the default fill color for this bar.', 'zaso' ),
+						'description' => __( 'Optional. Overrides the default fill color for this bar.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 				),
 			),
 			'show_percentage'    => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Percentage', 'zaso' ),
+				'label'   => __( 'Show Percentage', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'animate'            => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Animate on Scroll', 'zaso' ),
+				'label'   => __( 'Animate on Scroll', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'animation_duration' => array(
 				'type'        => 'number',
-				'label'       => __( 'Animation Duration (ms)', 'zaso' ),
+				'label'       => __( 'Animation Duration (ms)', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 1200,
-				'description' => __( 'How long each bar takes to fill, in milliseconds.', 'zaso' ),
+				'description' => __( 'How long each bar takes to fill, in milliseconds.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'design'             => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'label_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Label Color', 'zaso' ),
+						'label'   => __( 'Label Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'label_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Label Size', 'zaso' ),
+						'label'   => __( 'Label Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '0.95rem',
 					),
 					'percentage_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Percentage Color', 'zaso' ),
+						'label'   => __( 'Percentage Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#64748b',
 					),
 					'track_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Track Color', 'zaso' ),
+						'label'   => __( 'Track Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#e5e7eb',
 					),
 					'fill_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Default Fill Color', 'zaso' ),
+						'label'   => __( 'Default Fill Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#4f46e5',
 					),
 					'bar_height' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Bar Height', 'zaso' ),
+						'label'   => __( 'Bar Height', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '10px',
 					),
 					'bar_radius' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Bar Corner Radius', 'zaso' ),
+						'label'   => __( 'Bar Corner Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '6px',
 					),
 					'bar_spacing' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Spacing Between Bars', 'zaso' ),
+						'label'   => __( 'Spacing Between Bars', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '20px',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -121,9 +121,9 @@ class Zen_Addons_SiteOrigin_Progress_Bars_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-progress-bars',
-			__( 'Zen Addons - Progress Bars', 'zaso' ),
+			__( 'Zen Addons - Progress Bars', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Show a set of labeled progress or skill bars that fill when they scroll into view.', 'zaso' ),
+				'description'   => __( 'Show a set of labeled progress or skill bars that fill when they scroll into view.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

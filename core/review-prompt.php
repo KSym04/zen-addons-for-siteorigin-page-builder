@@ -191,14 +191,14 @@ if ( ! function_exists( 'zaso_review_prompt_state' ) ) :
 		?>
 		<div class="notice notice-info zaso-review-notice">
 			<p>
-				<strong><?php esc_html_e( 'Enjoying Zen Addons for SiteOrigin?', 'zaso' ); ?></strong>
-				<?php esc_html_e( 'A short review on WordPress.org helps other SiteOrigin users find the plugin, and it genuinely keeps the project going.', 'zaso' ); ?>
+				<strong><?php esc_html_e( 'Enjoying Zen Addons for SiteOrigin?', 'zen-addons-for-siteorigin-page-builder' ); ?></strong>
+				<?php esc_html_e( 'A short review on WordPress.org helps other SiteOrigin users find the plugin, and it genuinely keeps the project going.', 'zen-addons-for-siteorigin-page-builder' ); ?>
 			</p>
 			<p>
-				<a class="button button-primary" href="<?php echo esc_url( zaso_review_prompt_action_url( 'reviewed' ) ); ?>"><?php esc_html_e( 'Leave a review', 'zaso' ); ?></a>
-				<a class="button" href="<?php echo esc_url( zaso_review_prompt_action_url( 'later' ) ); ?>"><?php esc_html_e( 'Maybe later', 'zaso' ); ?></a>
-				<a class="button" href="<?php echo esc_url( zaso_review_prompt_action_url( 'dismiss' ) ); ?>"><?php esc_html_e( 'No thanks', 'zaso' ); ?></a>
-				<a style="margin-left:8px" href="<?php echo esc_url( ZASO_SUPPORT_URL ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Something not working? Tell us in the support forum.', 'zaso' ); ?></a>
+				<a class="button button-primary" href="<?php echo esc_url( zaso_review_prompt_action_url( 'reviewed' ) ); ?>"><?php esc_html_e( 'Leave a review', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a class="button" href="<?php echo esc_url( zaso_review_prompt_action_url( 'later' ) ); ?>"><?php esc_html_e( 'Maybe later', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a class="button" href="<?php echo esc_url( zaso_review_prompt_action_url( 'dismiss' ) ); ?>"><?php esc_html_e( 'No thanks', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a style="margin-left:8px" href="<?php echo esc_url( ZASO_SUPPORT_URL ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Something not working? Tell us in the support forum.', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
 			</p>
 		</div>
 		<?php

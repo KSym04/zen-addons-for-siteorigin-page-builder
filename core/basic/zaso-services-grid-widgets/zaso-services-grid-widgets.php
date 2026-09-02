@@ -25,13 +25,13 @@ if ( ! function_exists( 'zaso_services_grid_design_options' ) ) :
 	 */
 	function zaso_services_grid_design_options() {
 		$zaso_services_grid_free_designs = array(
-			''               => __( 'Default (grid card)', 'zaso' ),
-			'centered'       => __( 'Centered (icon tile top)', 'zaso' ),
-			'inline'         => __( 'Inline (icon left)', 'zaso' ),
-			'chip-badge'     => __( 'Chip badge', 'zaso' ),
-			'borderless'     => __( 'Borderless', 'zaso' ),
-			'icon-top-right' => __( 'Icon top-right', 'zaso' ),
-			'icon-over-title' => __( 'Icon over title', 'zaso' ),
+			''               => __( 'Default (grid card)', 'zen-addons-for-siteorigin-page-builder' ),
+			'centered'       => __( 'Centered (icon tile top)', 'zen-addons-for-siteorigin-page-builder' ),
+			'inline'         => __( 'Inline (icon left)', 'zen-addons-for-siteorigin-page-builder' ),
+			'chip-badge'     => __( 'Chip badge', 'zen-addons-for-siteorigin-page-builder' ),
+			'borderless'     => __( 'Borderless', 'zen-addons-for-siteorigin-page-builder' ),
+			'icon-top-right' => __( 'Icon top-right', 'zen-addons-for-siteorigin-page-builder' ),
+			'icon-over-title' => __( 'Icon over title', 'zen-addons-for-siteorigin-page-builder' ),
 		);
 
 		return apply_filters( 'zaso_services_grid_designs', $zaso_services_grid_free_designs );
@@ -55,10 +55,10 @@ if ( ! function_exists( 'zaso_services_grid_design_description' ) ) :
 		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
 
 		if ( $white_label ) {
-			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (grid card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (grid card)" to build your own look with the Layout and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
-		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (grid card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (grid card)" to build your own look with the Layout and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 	}
 endif;
 
@@ -72,8 +72,8 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 		$zaso_services_grid_field_array = array(
 			'services' => array(
 				'type'       => 'repeater',
-				'label'      => __( 'Services', 'zaso' ),
-				'item_name'  => __( 'Service', 'zaso' ),
+				'label'      => __( 'Services', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Service', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[name*='[title]']",
 					'update_event' => 'change',
@@ -82,157 +82,157 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'icon' => array(
 						'type'  => 'icon',
-						'label' => __( 'Icon', 'zaso' ),
+						'label' => __( 'Icon', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'image' => array(
 						'type'        => 'media',
-						'label'       => __( 'Custom Icon Image', 'zaso' ),
-						'description' => __( 'Override "Icon" with your own uploaded image.', 'zaso' ),
+						'label'       => __( 'Custom Icon Image', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'Override "Icon" with your own uploaded image.', 'zen-addons-for-siteorigin-page-builder' ),
 						'library'     => 'image',
 						'fallback'    => true,
 					),
 					'title' => array(
 						'type'  => 'text',
-						'label' => __( 'Title', 'zaso' ),
+						'label' => __( 'Title', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'description' => array(
 						'type'  => 'textarea',
-						'label' => __( 'Description', 'zaso' ),
+						'label' => __( 'Description', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'link' => array(
 						'type'  => 'link',
-						'label' => __( 'Link URL', 'zaso' ),
+						'label' => __( 'Link URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'link_text' => array(
 						'type'        => 'text',
-						'label'       => __( 'Link Text', 'zaso' ),
-						'description' => __( 'e.g. Learn more. Leave empty to hide the link.', 'zaso' ),
+						'label'       => __( 'Link Text', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'e.g. Learn more. Leave empty to hide the link.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'link_new_tab' => array(
 						'type'    => 'checkbox',
-						'label'   => __( 'Open Link in New Tab', 'zaso' ),
+						'label'   => __( 'Open Link in New Tab', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => false,
 					),
 				),
 			),
 			'columns'    => array(
 				'type'    => 'select',
-				'label'   => __( 'Columns', 'zaso' ),
+				'label'   => __( 'Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '3',
 				'options' => array(
-					'2' => __( '2 Columns', 'zaso' ),
-					'3' => __( '3 Columns', 'zaso' ),
-					'4' => __( '4 Columns', 'zaso' ),
+					'2' => __( '2 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'3' => __( '3 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'4' => __( '4 Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'card_style' => array(
 				'type'    => 'select',
-				'label'   => __( 'Card Style', 'zaso' ),
+				'label'   => __( 'Card Style', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'framed',
 				'options' => array(
-					'minimal' => __( 'Minimal', 'zaso' ),
-					'framed'  => __( 'Framed', 'zaso' ),
+					'minimal' => __( 'Minimal', 'zen-addons-for-siteorigin-page-builder' ),
+					'framed'  => __( 'Framed', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'alignment'  => array(
 				'type'    => 'select',
-				'label'   => __( 'Alignment', 'zaso' ),
+				'label'   => __( 'Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'center',
 				'options' => array(
-					'left'   => __( 'Left', 'zaso' ),
-					'center' => __( 'Center', 'zaso' ),
+					'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+					'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'layout' => array(
 				'type'        => 'select',
-				'label'       => __( 'Layout', 'zaso' ),
+				'label'       => __( 'Layout', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'default',
-				'description' => __( 'Structural layout of each service card. The Style skin below still controls colours; Layout controls the shape (icon placement, elevation, padding).', 'zaso' ),
+				'description' => __( 'Structural layout of each service card. The Style skin below still controls colours; Layout controls the shape (icon placement, elevation, padding).', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'default'   => __( 'Default (icon top, stacked)', 'zaso' ),
-					'boxed'     => __( 'Boxed (elevated card with lift)', 'zaso' ),
-					'icon-left' => __( 'Icon Left (icon beside text)', 'zaso' ),
-					'centered'  => __( 'Centered (icon top, roomy padding)', 'zaso' ),
+					'default'   => __( 'Default (icon top, stacked)', 'zen-addons-for-siteorigin-page-builder' ),
+					'boxed'     => __( 'Boxed (elevated card with lift)', 'zen-addons-for-siteorigin-page-builder' ),
+					'icon-left' => __( 'Icon Left (icon beside text)', 'zen-addons-for-siteorigin-page-builder' ),
+					'centered'  => __( 'Centered (icon top, roomy padding)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design_variant' => array(
 				'type'        => 'select',
-				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'label'       => __( 'Pre-made Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '',
 				'description' => zaso_services_grid_design_description(),
 				'options'     => zaso_services_grid_design_options(),
 			),
 			'design'     => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'icon_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Icon Color', 'zaso' ),
+						'label'   => __( 'Icon Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#4f46e5',
 					),
 					'icon_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Icon Size', 'zaso' ),
+						'label'   => __( 'Icon Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '2.5rem',
 					),
 					'icon_bg' => array(
 						'type'    => 'color',
-						'label'   => __( 'Icon Background', 'zaso' ),
+						'label'   => __( 'Icon Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '',
-						'description' => __( 'Optional circle behind the icon. Leave empty for none.', 'zaso' ),
+						'description' => __( 'Optional circle behind the icon. Leave empty for none.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'title_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Title Color', 'zaso' ),
+						'label'   => __( 'Title Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'description_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Description Color', 'zaso' ),
+						'label'   => __( 'Description Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#444444',
 					),
 					'link_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Link Color', 'zaso' ),
+						'label'   => __( 'Link Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#4f46e5',
 					),
 					'card_background' => array(
 						'type'    => 'color',
-						'label'   => __( 'Card Background', 'zaso' ),
+						'label'   => __( 'Card Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'card_padding' => array(
 						'type'   => 'section',
-						'label'  => __( 'Card Padding', 'zaso' ),
+						'label'  => __( 'Card Padding', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide'   => true,
 						'fields' => array(
-							'top'    => array( 'type' => 'measurement', 'label' => __( 'Top', 'zaso' ),    'default' => '28px' ),
-							'right'  => array( 'type' => 'measurement', 'label' => __( 'Right', 'zaso' ),  'default' => '28px' ),
-							'bottom' => array( 'type' => 'measurement', 'label' => __( 'Bottom', 'zaso' ), 'default' => '28px' ),
-							'left'   => array( 'type' => 'measurement', 'label' => __( 'Left', 'zaso' ),   'default' => '28px' ),
+							'top'    => array( 'type' => 'measurement', 'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),    'default' => '28px' ),
+							'right'  => array( 'type' => 'measurement', 'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),  'default' => '28px' ),
+							'bottom' => array( 'type' => 'measurement', 'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ), 'default' => '28px' ),
+							'left'   => array( 'type' => 'measurement', 'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),   'default' => '28px' ),
 						),
 					),
 					'card_border_radius' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Card Border Radius', 'zaso' ),
+						'label'   => __( 'Card Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '10px',
 					),
 					'gap' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Gap Between Cards', 'zaso' ),
+						'label'   => __( 'Gap Between Cards', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '24px',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -240,9 +240,9 @@ class Zen_Addons_SiteOrigin_Services_Grid_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-services-grid',
-			__( 'Zen Addons - Services Grid', 'zaso' ),
+			__( 'Zen Addons - Services Grid', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display a grid of services or features, each with an icon, title, description, and optional link.', 'zaso' ),
+				'description'   => __( 'Display a grid of services or features, each with an icon, title, description, and optional link.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

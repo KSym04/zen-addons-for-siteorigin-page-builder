@@ -19,52 +19,52 @@ class Zen_Addons_SiteOrigin_Youtube_Lightbox_Widget extends SiteOrigin_Widget {
 		$zaso_youtube_lightbox_field_array = array(
 			'video_url' => array(
 				'type'  => 'text',
-				'label' => __( 'YouTube Video URL' , 'zaso' ),
-				'description' => __( 'Insert URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'zaso' ),
+				'label' => __( 'YouTube Video URL' , 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Insert URL, example: https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'video_rel' => array(
                 'type' => 'select',
-                'label' => __( 'Show Related Videos', 'zaso' ),
+                'label' => __( 'Show Related Videos', 'zen-addons-for-siteorigin-page-builder' ),
                 'options' => array(
-					'0' => __( 'No', 'zaso' ),
-					'1' => __( 'Yes', 'zaso' )
+					'0' => __( 'No', 'zen-addons-for-siteorigin-page-builder' ),
+					'1' => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'video_showinfo' => array(
                 'type' => 'select',
-                'label' => __( 'Show Info', 'zaso' ),
+                'label' => __( 'Show Info', 'zen-addons-for-siteorigin-page-builder' ),
                 'options' => array(
-					'0' => __( 'No', 'zaso' ),
-					'1' => __( 'Yes', 'zaso' )
+					'0' => __( 'No', 'zen-addons-for-siteorigin-page-builder' ),
+					'1' => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'video_play_button' => array(
 				'type'  => 'media',
-				'label' => __( 'Video Play Button Image', 'zaso' ),
+				'label' => __( 'Video Play Button Image', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true
 			),
 			'video_play_button_hover' => array(
 				'type'  => 'media',
-				'label' => __( 'Video Play Button Image (Hover)', 'zaso' ),
+				'label' => __( 'Video Play Button Image (Hover)', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true
 			),
 			'video_thumb' => array(
 				'type'  => 'media',
-				'label' => __( 'Video Thumbnail', 'zaso' ),
+				'label' => __( 'Video Thumbnail', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true
 			),
 			'extra_id' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
-				'description'	=> __( 'Add an extra ID.', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description'	=> __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -73,9 +73,9 @@ class Zen_Addons_SiteOrigin_Youtube_Lightbox_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-youtube-lightbox',
-			__( 'Zen Addons - YouTube Lightbox', 'zaso' ),
+			__( 'Zen Addons - YouTube Lightbox', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Pop-up lightbox for YouTube videos.', 'zaso' ),
+				'description'   => __( 'Pop-up lightbox for YouTube videos.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),

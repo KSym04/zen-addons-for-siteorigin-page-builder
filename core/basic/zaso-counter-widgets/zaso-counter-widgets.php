@@ -23,13 +23,13 @@ if ( ! function_exists( 'zaso_counter_design_options' ) ) :
 	 */
 	function zaso_counter_design_options() {
 		$zaso_counter_free_designs = array(
-			''          => __( 'Default (classic counter)', 'zaso' ),
-			'icon-card' => __( 'Icon Card (success)', 'zaso' ),
-			'centered'  => __( 'Centered (info)', 'zaso' ),
-			'icon-top'  => __( 'Icon Top (installs)', 'zaso' ),
-			'badge'     => __( 'Badge (uptime)', 'zaso' ),
-			'divider'   => __( 'Divider (neutral)', 'zaso' ),
-			'underline' => __( 'Underline (rating)', 'zaso' ),
+			''          => __( 'Default (classic counter)', 'zen-addons-for-siteorigin-page-builder' ),
+			'icon-card' => __( 'Icon Card (success)', 'zen-addons-for-siteorigin-page-builder' ),
+			'centered'  => __( 'Centered (info)', 'zen-addons-for-siteorigin-page-builder' ),
+			'icon-top'  => __( 'Icon Top (installs)', 'zen-addons-for-siteorigin-page-builder' ),
+			'badge'     => __( 'Badge (uptime)', 'zen-addons-for-siteorigin-page-builder' ),
+			'divider'   => __( 'Divider (neutral)', 'zen-addons-for-siteorigin-page-builder' ),
+			'underline' => __( 'Underline (rating)', 'zen-addons-for-siteorigin-page-builder' ),
 		);
 
 		return apply_filters( 'zaso_counter_designs', $zaso_counter_free_designs );
@@ -51,10 +51,10 @@ if ( ! function_exists( 'zaso_counter_design_description' ) ) :
 		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
 
 		if ( $white_label ) {
-			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic counter)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic counter)" to build your own look with the Layout, Style and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
-		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic counter)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic counter)" to build your own look with the Layout, Style and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 	}
 endif;
 
@@ -69,132 +69,132 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 		$zaso_counter_field_array = array(
 			'start' => array(
 				'type'    => 'number',
-				'label'   => __( 'Start Value', 'zaso' ),
+				'label'   => __( 'Start Value', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 0,
 			),
 			'end' => array(
 				'type'    => 'number',
-				'label'   => __( 'End Value', 'zaso' ),
+				'label'   => __( 'End Value', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 100,
 			),
 			'duration' => array(
 				'type'        => 'number',
-				'label'       => __( 'Animation Duration (ms)', 'zaso' ),
+				'label'       => __( 'Animation Duration (ms)', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 2000,
-				'description' => __( 'How long the count-up takes, in milliseconds.', 'zaso' ),
+				'description' => __( 'How long the count-up takes, in milliseconds.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'decimals' => array(
 				'type'    => 'number',
-				'label'   => __( 'Decimal Places', 'zaso' ),
+				'label'   => __( 'Decimal Places', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 0,
 			),
 			'separator' => array(
 				'type'    => 'select',
-				'label'   => __( 'Thousands Separator', 'zaso' ),
+				'label'   => __( 'Thousands Separator', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'none',
 				'options' => array(
-					'none'  => __( 'None', 'zaso' ),
-					'comma' => __( 'Comma (1,000)', 'zaso' ),
-					'space' => __( 'Space (1 000)', 'zaso' ),
+					'none'  => __( 'None', 'zen-addons-for-siteorigin-page-builder' ),
+					'comma' => __( 'Comma (1,000)', 'zen-addons-for-siteorigin-page-builder' ),
+					'space' => __( 'Space (1 000)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'prefix' => array(
 				'type'        => 'text',
-				'label'       => __( 'Prefix', 'zaso' ),
-				'description' => __( 'Shown before the number, e.g. $.', 'zaso' ),
+				'label'       => __( 'Prefix', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Shown before the number, e.g. $.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'suffix' => array(
 				'type'        => 'text',
-				'label'       => __( 'Suffix', 'zaso' ),
-				'description' => __( 'Shown after the number, e.g. + or %.', 'zaso' ),
+				'label'       => __( 'Suffix', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Shown after the number, e.g. + or %.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'title' => array(
 				'type'  => 'text',
-				'label' => __( 'Title', 'zaso' ),
+				'label' => __( 'Title', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'icon' => array(
 				'type'  => 'icon',
-				'label' => __( 'Icon', 'zaso' ),
+				'label' => __( 'Icon', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'image' => array(
 				'type'        => 'media',
-				'label'       => __( 'Custom Icon', 'zaso' ),
-				'description' => __( 'Override "Icon" with your own uploaded image.', 'zaso' ),
+				'label'       => __( 'Custom Icon', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Override "Icon" with your own uploaded image.', 'zen-addons-for-siteorigin-page-builder' ),
 				'library'     => 'image',
 				'fallback'    => true,
 			),
 			'extra_id' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' ),
+				'label'       => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label'       => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'layout' => array(
 				'type'        => 'select',
-				'label'       => __( 'Layout', 'zaso' ),
+				'label'       => __( 'Layout', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'default',
-				'description' => __( 'The structural shape of the counter: stacked, boxed card, inline row or ringed circle. Layout sets the frame; Style (below) sets the colours.', 'zaso' ),
+				'description' => __( 'The structural shape of the counter: stacked, boxed card, inline row or ringed circle. Layout sets the frame; Style (below) sets the colours.', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'default' => __( 'Default (stacked)', 'zaso' ),
-					'card'    => __( 'Card (boxed, soft shadow)', 'zaso' ),
-					'inline'  => __( 'Inline (icon + number in a row)', 'zaso' ),
-					'circle'  => __( 'Circle (number in a ring)', 'zaso' ),
+					'default' => __( 'Default (stacked)', 'zen-addons-for-siteorigin-page-builder' ),
+					'card'    => __( 'Card (boxed, soft shadow)', 'zen-addons-for-siteorigin-page-builder' ),
+					'inline'  => __( 'Inline (icon + number in a row)', 'zen-addons-for-siteorigin-page-builder' ),
+					'circle'  => __( 'Circle (number in a ring)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design_variant' => array(
 				'type'        => 'select',
-				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'label'       => __( 'Pre-made Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '',
 				'description' => zaso_counter_design_description(),
 				'options'     => zaso_counter_design_options(),
 			),
 			'design' => array(
 				'type'   => 'section',
-				'label'  => __( 'Design (custom colours)', 'zaso' ),
+				'label'  => __( 'Design (custom colours)', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'alignment' => array(
 						'type'    => 'select',
-						'label'   => __( 'Alignment', 'zaso' ),
+						'label'   => __( 'Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => 'center',
 						'options' => array(
-							'left'   => __( 'Left', 'zaso' ),
-							'center' => __( 'Center', 'zaso' ),
-							'right'  => __( 'Right', 'zaso' ),
+							'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+							'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
+							'right'  => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 						),
 					),
 					'number_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Number Color', 'zaso' ),
+						'label'   => __( 'Number Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#1e293b',
 					),
 					'number_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Number Size', 'zaso' ),
+						'label'   => __( 'Number Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '3rem',
 					),
 					'title_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Title Color', 'zaso' ),
+						'label'   => __( 'Title Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#64748b',
 					),
 					'title_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Title Size', 'zaso' ),
+						'label'   => __( 'Title Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '1rem',
 					),
 					'icon_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Icon Color', 'zaso' ),
+						'label'   => __( 'Icon Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#4f46e5',
 					),
 					'icon_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Icon Size', 'zaso' ),
+						'label'   => __( 'Icon Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '2.5rem',
 					),
 				),
@@ -206,9 +206,9 @@ class Zen_Addons_SiteOrigin_Counter_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-counter',
-			__( 'Zen Addons - Counter', 'zaso' ),
+			__( 'Zen Addons - Counter', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'An animated number that counts up when scrolled into view.', 'zaso' ),
+				'description'   => __( 'An animated number that counts up when scrolled into view.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

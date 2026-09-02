@@ -18,8 +18,8 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 		$zaso_team_member_field_array = array(
 			'members' => array(
 				'type'       => 'repeater',
-				'label'      => __( 'Team Members', 'zaso' ),
-				'item_name'  => __( 'Team Member', 'zaso' ),
+				'label'      => __( 'Team Members', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Team Member', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[name*='[name]']",
 					'update_event' => 'change',
@@ -28,167 +28,167 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'photo' => array(
 						'type'    => 'media',
-						'label'   => __( 'Photo', 'zaso' ),
+						'label'   => __( 'Photo', 'zen-addons-for-siteorigin-page-builder' ),
 						'library' => 'image',
 						'fallback' => true,
 					),
 					'name' => array(
 						'type'  => 'text',
-						'label' => __( 'Name', 'zaso' ),
+						'label' => __( 'Name', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'role' => array(
 						'type'  => 'text',
-						'label' => __( 'Role / Title', 'zaso' ),
+						'label' => __( 'Role / Title', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'bio' => array(
 						'type'  => 'textarea',
-						'label' => __( 'Bio', 'zaso' ),
+						'label' => __( 'Bio', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'social_twitter' => array(
 						'type'  => 'link',
-						'label' => __( 'Twitter / X URL', 'zaso' ),
+						'label' => __( 'Twitter / X URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'social_linkedin' => array(
 						'type'  => 'link',
-						'label' => __( 'LinkedIn URL', 'zaso' ),
+						'label' => __( 'LinkedIn URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'social_facebook' => array(
 						'type'  => 'link',
-						'label' => __( 'Facebook URL', 'zaso' ),
+						'label' => __( 'Facebook URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'social_instagram' => array(
 						'type'  => 'link',
-						'label' => __( 'Instagram URL', 'zaso' ),
+						'label' => __( 'Instagram URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'social_website' => array(
 						'type'  => 'link',
-						'label' => __( 'Website URL', 'zaso' ),
+						'label' => __( 'Website URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 				),
 			),
 			'columns'    => array(
 				'type'    => 'select',
-				'label'   => __( 'Columns', 'zaso' ),
+				'label'   => __( 'Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '3',
 				'options' => array(
-					'2' => __( '2 Columns', 'zaso' ),
-					'3' => __( '3 Columns', 'zaso' ),
-					'4' => __( '4 Columns', 'zaso' ),
+					'2' => __( '2 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'3' => __( '3 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'4' => __( '4 Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'card_style' => array(
 				'type'    => 'select',
-				'label'   => __( 'Card Style', 'zaso' ),
+				'label'   => __( 'Card Style', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'minimal',
 				'options' => array(
-					'minimal' => __( 'Minimal', 'zaso' ),
-					'framed'  => __( 'Framed', 'zaso' ),
+					'minimal' => __( 'Minimal', 'zen-addons-for-siteorigin-page-builder' ),
+					'framed'  => __( 'Framed', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'alignment'  => array(
 				'type'    => 'select',
-				'label'   => __( 'Alignment', 'zaso' ),
+				'label'   => __( 'Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'center',
 				'options' => array(
-					'left'   => __( 'Left', 'zaso' ),
-					'center' => __( 'Center', 'zaso' ),
+					'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+					'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design'     => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'photo_shape' => array(
 						'type'    => 'select',
-						'label'   => __( 'Photo Shape', 'zaso' ),
+						'label'   => __( 'Photo Shape', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => 'circle',
 						'options' => array(
-							'circle' => __( 'Circle', 'zaso' ),
-							'square' => __( 'Square', 'zaso' ),
+							'circle' => __( 'Circle', 'zen-addons-for-siteorigin-page-builder' ),
+							'square' => __( 'Square', 'zen-addons-for-siteorigin-page-builder' ),
 						),
 					),
 					'photo_size' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Photo Size', 'zaso' ),
+						'label'   => __( 'Photo Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '100px',
 					),
 					'name_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Name Color', 'zaso' ),
+						'label'   => __( 'Name Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'role_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Role Color', 'zaso' ),
+						'label'   => __( 'Role Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#6b6b6b',
 					),
 					'bio_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Bio Color', 'zaso' ),
+						'label'   => __( 'Bio Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#444444',
 					),
 					'social_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Social Icon Color', 'zaso' ),
+						'label'   => __( 'Social Icon Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#6b6b6b',
 					),
 					'social_color_hover' => array(
 						'type'    => 'color',
-						'label'   => __( 'Social Icon Hover Color', 'zaso' ),
+						'label'   => __( 'Social Icon Hover Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'card_background' => array(
 						'type'    => 'color',
-						'label'   => __( 'Card Background', 'zaso' ),
+						'label'   => __( 'Card Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'card_padding' => array(
 						'type'   => 'section',
-						'label'  => __( 'Card Padding', 'zaso' ),
+						'label'  => __( 'Card Padding', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide'   => true,
 						'fields' => array(
 							'top' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Top', 'zaso' ),
+								'label'   => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '24px',
 							),
 							'right' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Right', 'zaso' ),
+								'label'   => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '24px',
 							),
 							'bottom' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Bottom', 'zaso' ),
+								'label'   => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '24px',
 							),
 							'left' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Left', 'zaso' ),
+								'label'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '24px',
 							),
 						),
 					),
 					'card_border_radius' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Card Border Radius', 'zaso' ),
+						'label'   => __( 'Card Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '8px',
 					),
 					'gap' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Gap Between Cards', 'zaso' ),
+						'label'   => __( 'Gap Between Cards', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '24px',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -196,9 +196,9 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-team-member',
-			__( 'Zen Addons - Team Member', 'zaso' ),
+			__( 'Zen Addons - Team Member', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display a grid of team members with photos, roles, bios, and social links.', 'zaso' ),
+				'description'   => __( 'Display a grid of team members with photos, roles, bios, and social links.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),
@@ -249,11 +249,11 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 
 				$social_links = array();
 				$platforms = array(
-					'twitter'   => __( 'Twitter / X', 'zaso' ),
-					'linkedin'  => __( 'LinkedIn', 'zaso' ),
-					'facebook'  => __( 'Facebook', 'zaso' ),
-					'instagram' => __( 'Instagram', 'zaso' ),
-					'website'   => __( 'Website', 'zaso' ),
+					'twitter'   => __( 'Twitter / X', 'zen-addons-for-siteorigin-page-builder' ),
+					'linkedin'  => __( 'LinkedIn', 'zen-addons-for-siteorigin-page-builder' ),
+					'facebook'  => __( 'Facebook', 'zen-addons-for-siteorigin-page-builder' ),
+					'instagram' => __( 'Instagram', 'zen-addons-for-siteorigin-page-builder' ),
+					'website'   => __( 'Website', 'zen-addons-for-siteorigin-page-builder' ),
 				);
 				foreach ( $platforms as $key => $label ) {
 					$field = 'social_' . $key;
@@ -262,7 +262,7 @@ class Zen_Addons_SiteOrigin_Team_Member_Widget extends SiteOrigin_Widget {
 							'url'   => $raw[ $field ],
 							'label' => sprintf(
 								/* translators: 1: person name, 2: platform name */
-								__( '%1$s on %2$s', 'zaso' ),
+								__( '%1$s on %2$s', 'zen-addons-for-siteorigin-page-builder' ),
 								$name,
 								$label
 							),

@@ -14,15 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 return array(
-	'name'        => __( 'Hero: Centered Call to Action', 'zaso' ),
-	'description' => __( 'A bold centered hero with heading, subheading, and a button.', 'zaso' ),
+	'name'        => __( 'Hero: Centered Call to Action', 'zen-addons-for-siteorigin-page-builder' ),
+	'description' => __( 'A bold centered hero with heading, subheading, and a button.', 'zen-addons-for-siteorigin-page-builder' ),
 	'screenshot'  => '',
 	'widgets'     => array(
 		array(
-			'heading'        => __( 'Build beautiful pages, faster', 'zaso' ),
-			'subheading'     => __( 'Premium SiteOrigin widgets with zero bloat', 'zaso' ),
-			'content'        => '<p>' . esc_html__( 'Drop in conversion-ready sections and fine-tune every detail without touching code.', 'zaso' ) . '</p>',
-			'button_text'    => __( 'Get Started', 'zaso' ),
+			'heading'        => __( 'Build beautiful pages, faster', 'zen-addons-for-siteorigin-page-builder' ),
+			'subheading'     => __( 'Premium SiteOrigin widgets with zero bloat', 'zen-addons-for-siteorigin-page-builder' ),
+			'content'        => '<p>' . esc_html__( 'Drop in conversion-ready sections and fine-tune every detail without touching code.', 'zen-addons-for-siteorigin-page-builder' ) . '</p>',
+			'button_text'    => __( 'Get Started', 'zen-addons-for-siteorigin-page-builder' ),
 			'button_url'     => '#',
 			'button_new_tab' => false,
 			'layout'         => 'inline',

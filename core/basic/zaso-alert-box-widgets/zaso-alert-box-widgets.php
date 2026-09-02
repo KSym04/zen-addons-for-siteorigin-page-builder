@@ -23,13 +23,13 @@ if ( ! function_exists( 'zaso_alert_box_design_options' ) ) :
 	 */
 	function zaso_alert_box_design_options() {
 		$zaso_alert_box_free_designs = array(
-			''            => __( 'Default (classic box)', 'zaso' ),
-			'left-accent' => __( 'Left Accent (success)', 'zaso' ),
-			'soft-tint'   => __( 'Soft Tint (info)', 'zaso' ),
-			'outlined'    => __( 'Outlined (warning)', 'zaso' ),
-			'icon-badge'  => __( 'Icon Badge Card (error)', 'zaso' ),
-			'top-bar'     => __( 'Top Bar (neutral)', 'zaso' ),
-			'solid'       => __( 'Solid Fill (info)', 'zaso' ),
+			''            => __( 'Default (classic box)', 'zen-addons-for-siteorigin-page-builder' ),
+			'left-accent' => __( 'Left Accent (success)', 'zen-addons-for-siteorigin-page-builder' ),
+			'soft-tint'   => __( 'Soft Tint (info)', 'zen-addons-for-siteorigin-page-builder' ),
+			'outlined'    => __( 'Outlined (warning)', 'zen-addons-for-siteorigin-page-builder' ),
+			'icon-badge'  => __( 'Icon Badge Card (error)', 'zen-addons-for-siteorigin-page-builder' ),
+			'top-bar'     => __( 'Top Bar (neutral)', 'zen-addons-for-siteorigin-page-builder' ),
+			'solid'       => __( 'Solid Fill (info)', 'zen-addons-for-siteorigin-page-builder' ),
 		);
 
 		return apply_filters( 'zaso_alert_designs', $zaso_alert_box_free_designs );
@@ -51,10 +51,10 @@ if ( ! function_exists( 'zaso_alert_box_design_description' ) ) :
 		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
 
 		if ( $white_label ) {
-			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic box)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic box)" to build your own look with the Layout, Style and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
-		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic box)" to build your own look with the Layout, Style and Design colour settings instead.', 'zaso' );
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic box)" to build your own look with the Layout, Style and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 	}
 endif;
 
@@ -69,218 +69,218 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 		$zaso_alert_box_field_array = array(
 			'alert_message' => array(
 				'type'  => 'tinymce',
-				'label' => __( 'Messages' , 'zaso' )
+				'label' => __( 'Messages' , 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'alert_type' => array(
 				'type'        => 'select',
-				'label'       => __( 'Alert Type', 'zaso' ),
+				'label'       => __( 'Alert Type', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'none',
-				'description' => __( 'Adds a leading icon and a screen-reader label so the alert type is not conveyed by colour alone.', 'zaso' ),
+				'description' => __( 'Adds a leading icon and a screen-reader label so the alert type is not conveyed by colour alone.', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'none'    => __( 'None', 'zaso' ),
-					'info'    => __( 'Info', 'zaso' ),
-					'success' => __( 'Success', 'zaso' ),
-					'warning' => __( 'Warning', 'zaso' ),
-					'error'   => __( 'Error', 'zaso' ),
+					'none'    => __( 'None', 'zen-addons-for-siteorigin-page-builder' ),
+					'info'    => __( 'Info', 'zen-addons-for-siteorigin-page-builder' ),
+					'success' => __( 'Success', 'zen-addons-for-siteorigin-page-builder' ),
+					'warning' => __( 'Warning', 'zen-addons-for-siteorigin-page-builder' ),
+					'error'   => __( 'Error', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'custom_icon' => array(
 				'type'        => 'icon',
-				'label'       => __( 'Custom Icon', 'zaso' ),
-				'description' => __( 'Optional. Overrides the alert type / design icon.', 'zaso' ),
+				'label'       => __( 'Custom Icon', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Optional. Overrides the alert type / design icon.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'alert_closebtn' => array(
 				'type'    => 'select',
-				'label'   => __( 'Close Button', 'zaso' ),
+				'label'   => __( 'Close Button', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'show',
 				'options' => array(
-					'show'  => __( 'Show', 'zaso' ),
-					'hide' => __( 'Hide', 'zaso' ),
+					'show'  => __( 'Show', 'zen-addons-for-siteorigin-page-builder' ),
+					'hide' => __( 'Hide', 'zen-addons-for-siteorigin-page-builder' ),
 				)
 			),
 			'width' => array(
 				'type'        => 'select',
-				'label'       => __( 'Width', 'zaso' ),
+				'label'       => __( 'Width', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'full',
-				'description' => __( 'Full width fills the container; Content width shrinks to fit the message.', 'zaso' ),
+				'description' => __( 'Full width fills the container; Content width shrinks to fit the message.', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'full'    => __( 'Full width', 'zaso' ),
-					'content' => __( 'Content width', 'zaso' ),
+					'full'    => __( 'Full width', 'zen-addons-for-siteorigin-page-builder' ),
+					'content' => __( 'Content width', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'extra_id' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
-				'description'	=> __( 'Add an extra ID.', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description'	=> __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'layout' => array(
 				'type'        => 'select',
-				'label'       => __( 'Layout', 'zaso' ),
+				'label'       => __( 'Layout', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'default',
-				'description' => __( 'The structural shape of the alert: border, shadow, padding and icon placement. Layout sets the frame; Style (below) sets the colours.', 'zaso' ),
+				'description' => __( 'The structural shape of the alert: border, shadow, padding and icon placement. Layout sets the frame; Style (below) sets the colours.', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'default'     => __( 'Default (bordered box)', 'zaso' ),
-					'card'        => __( 'Card (elevated, soft shadow)', 'zaso' ),
-					'left-accent' => __( 'Left Accent (flat bar)', 'zaso' ),
-					'banner'      => __( 'Banner (horizontal band)', 'zaso' ),
+					'default'     => __( 'Default (bordered box)', 'zen-addons-for-siteorigin-page-builder' ),
+					'card'        => __( 'Card (elevated, soft shadow)', 'zen-addons-for-siteorigin-page-builder' ),
+					'left-accent' => __( 'Left Accent (flat bar)', 'zen-addons-for-siteorigin-page-builder' ),
+					'banner'      => __( 'Banner (horizontal band)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design_variant' => array(
 				'type'        => 'select',
-				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'label'       => __( 'Pre-made Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '',
 				'description' => zaso_alert_box_design_description(),
 				'options'     => zaso_alert_box_design_options(),
 			),
 			'design' => array(
 				'type' =>  'section',
-				'label' => __( 'Design (custom colours)', 'zaso' ),
+				'label' => __( 'Design (custom colours)', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide' => true,
 				'fields' => array(
 					'message_box' => array(
 						'type' => 'section',
-						'label' => __( 'Alert Box', 'zaso' ),
+						'label' => __( 'Alert Box', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide' => true,
 						'fields' => array(
 							'message_background_color' => array(
 								'type' => 'color',
-								'label' => __( 'Background Color',  'zaso' ),
+								'label' => __( 'Background Color',  'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#e7e8ea',
 							),
 							'message_font_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Font Color', 'zaso' ),
+								'label'   => __( 'Font Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#464a4e',
 							),
 							'message_font_size' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Font Size', 'zaso' ),
+								'label'   => __( 'Font Size', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '1rem',
 							),
 							'message_margin' => array(
 								'type' => 'section',
-								'label' => __( 'Margin', 'zaso' ),
+								'label' => __( 'Margin', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top', 'zaso' ),
+										'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right', 'zaso' ),
+										'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom', 'zaso' ),
+										'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left', 'zaso' ),
+										'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 								),
 							),
 							'message_padding' => array(
 								'type' => 'section',
-								'label' => __( 'Padding', 'zaso' ),
+								'label' => __( 'Padding', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top', 'zaso' ),
+										'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '1em'
 									),
 									'right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right', 'zaso' ),
+										'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '2.3em'
 									),
 									'bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom', 'zaso' ),
+										'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '1em'
 									),
 									'left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left', 'zaso' ),
+										'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '1.2em'
 									),
 								),
 							),
 							'message_border' => array(
 								'type' => 'section',
-								'label' => __( 'Border Settings', 'zaso' ),
+								'label' => __( 'Border Settings', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'bw_top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top Border Width', 'zaso' ),
+										'label' => __( 'Top Border Width', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '1px'
 									),
 									'bw_right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right Border Width', 'zaso' ),
+										'label' => __( 'Right Border Width', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '1px'
 									),
 									'bw_bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom Border Width', 'zaso' ),
+										'label' => __( 'Bottom Border Width', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '1px'
 									),
 									'bw_left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left Border Width', 'zaso' ),
+										'label' => __( 'Left Border Width', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '1px'
 									),
 									'br_top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top Border Radius', 'zaso' ),
+										'label' => __( 'Top Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'br_right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right Border Radius', 'zaso' ),
+										'label' => __( 'Right Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'br_bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom Border Radius', 'zaso' ),
+										'label' => __( 'Bottom Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'br_left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left Border Radius', 'zaso' ),
+										'label' => __( 'Left Border Radius', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'border_style' => array(
 										'type'    => 'select',
-										'label'   => __( 'Border Style', 'zaso' ),
+										'label'   => __( 'Border Style', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => 'solid',
 										'options' => array(
-											'none'  => __( 'none', 'zaso' ),
-											'hidden' => __( 'Hidden', 'zaso' ),
-											'dotted' => __( 'Dotted', 'zaso' ),
-											'dashed' => __( 'Dashed', 'zaso' ),
-											'solid'  => __( 'Solid', 'zaso' ),
-											'double' => __( 'Double', 'zaso' ),
-											'groove' => __( 'Groove', 'zaso' ),
-											'ridge'  => __( 'Ridge', 'zaso' ),
-											'inset'  => __( 'Inset', 'zaso' ),
-											'outset' => __( 'Outset', 'zaso' ),
+											'none'  => __( 'none', 'zen-addons-for-siteorigin-page-builder' ),
+											'hidden' => __( 'Hidden', 'zen-addons-for-siteorigin-page-builder' ),
+											'dotted' => __( 'Dotted', 'zen-addons-for-siteorigin-page-builder' ),
+											'dashed' => __( 'Dashed', 'zen-addons-for-siteorigin-page-builder' ),
+											'solid'  => __( 'Solid', 'zen-addons-for-siteorigin-page-builder' ),
+											'double' => __( 'Double', 'zen-addons-for-siteorigin-page-builder' ),
+											'groove' => __( 'Groove', 'zen-addons-for-siteorigin-page-builder' ),
+											'ridge'  => __( 'Ridge', 'zen-addons-for-siteorigin-page-builder' ),
+											'inset'  => __( 'Inset', 'zen-addons-for-siteorigin-page-builder' ),
+											'outset' => __( 'Outset', 'zen-addons-for-siteorigin-page-builder' ),
 										)
 									),
 									'border_color' => array(
 										'type' => 'color',
-										'label' => __( 'Border Color',  'zaso' ),
+										'label' => __( 'Border Color',  'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '#dddfe2',
 									),
 								),
@@ -296,9 +296,9 @@ class Zen_Addons_SiteOrigin_Alert_Box_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-alert-box',
-			__( 'Zen Addons - Alert Box', 'zaso' ),
+			__( 'Zen Addons - Alert Box', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Create contextual feedback and flexible alert messages.', 'zaso' ),
+				'description'   => __( 'Create contextual feedback and flexible alert messages.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),

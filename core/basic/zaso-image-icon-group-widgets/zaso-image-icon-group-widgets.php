@@ -19,8 +19,8 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
 		$zaso_image_icon_group_field_array = array(
 			'image_icon_group' => array(
 				'type' => 'repeater',
-				'label' => __( 'Image Icon Group' , 'zaso' ),
-				'item_name'  => __( 'Single Image Icon', 'zaso' ),
+				'label' => __( 'Image Icon Group' , 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Single Image Icon', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'      => "[name*='image_icon_group_title']",
 					'update_event'  => 'change',
@@ -29,99 +29,99 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'image_icon_group_title' => array(
 						'type'  => 'text',
-						'label' => __( 'Title' , 'zaso' )
+						'label' => __( 'Title' , 'zen-addons-for-siteorigin-page-builder' )
 					),
                     'image_icon_group_photo' => array(
                         'type'  => 'media',
-                        'label' => __( 'Image Icon', 'zaso' ),
+                        'label' => __( 'Image Icon', 'zen-addons-for-siteorigin-page-builder' ),
                         'library' => 'image',
                         'fallback' => true
                     ),
                     'image_icon_group_link' => array(
                         'type'  => 'link',
-                        'label' => __( 'Link', 'zaso' ),
+                        'label' => __( 'Link', 'zen-addons-for-siteorigin-page-builder' ),
                         'default' => '#'
                     ),
 				)
             ),
             'image_icon_group_orientation' => array(
 				'type'    => 'select',
-				'label'   => __( 'Icon Group Layout', 'zaso' ),
+				'label'   => __( 'Icon Group Layout', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'horizontal',
 				'options' => array(
-                    'horizontal'  => __( 'Horizontal', 'zaso' ),
-                    'vertical'  => __( 'Vertical', 'zaso' )
+                    'horizontal'  => __( 'Horizontal', 'zen-addons-for-siteorigin-page-builder' ),
+                    'vertical'  => __( 'Vertical', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'image_icon_group_text_display' => array(
 				'type' => 'select',
-				'label' => __( 'Show Title', 'zaso' ),
+				'label' => __( 'Show Title', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'none',
 				'options' => array(
-					'block'  => __( 'Yes', 'zaso' ),
-					'none'  => __( 'No', 'zaso' )
+					'block'  => __( 'Yes', 'zen-addons-for-siteorigin-page-builder' ),
+					'none'  => __( 'No', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'design' => array(
 				'type' =>  'section',
-				'label' => __( 'Icon Spacings', 'zaso' ),
+				'label' => __( 'Icon Spacings', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide' => true,
 				'fields' => array(
 					'spacings' => array(
 						'type' => 'section',
-						'label' => __( 'Settings', 'zaso' ),
+						'label' => __( 'Settings', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide' => true,
 						'fields' => array(
 							'single_icon_margin' => array(
 								'type' => 'section',
-								'label' => __( 'Margin', 'zaso' ),
+								'label' => __( 'Margin', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top', 'zaso' ),
+										'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right', 'zaso' ),
+										'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom', 'zaso' ),
+										'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left', 'zaso' ),
+										'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 								),
 							),
 							'single_icon_padding' => array(
 								'type' => 'section',
-								'label' => __( 'Padding', 'zaso' ),
+								'label' => __( 'Padding', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top', 'zaso' ),
+										'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right', 'zaso' ),
+										'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom', 'zaso' ),
+										'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left', 'zaso' ),
+										'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 								),
@@ -132,13 +132,13 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
 			),
 			'extra_id' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
-				'description'	=> __( 'Add an extra ID.', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description'	=> __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			)
 		);
 
@@ -147,9 +147,9 @@ class Zen_Addons_SiteOrigin_Image_Icon_Group_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-image-icon-group',
-			__( 'Zen Addons - Image Icon Group', 'zaso' ),
+			__( 'Zen Addons - Image Icon Group', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Set group of image icon.', 'zaso' ),
+				'description'   => __( 'Set group of image icon.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),

@@ -13,7 +13,7 @@ if ( empty( $images ) ) {
 		<li class="zaso-image-gallery__item">
 			<figure class="zaso-image-gallery__figure">
 				<?php if ( $lightbox ) : ?>
-					<a class="zaso-image-gallery__link" href="<?php echo esc_url( $image['full_src'] ); ?>" data-lity aria-label="<?php echo esc_attr( $image['alt'] ? $image['alt'] : __( 'View image', 'zaso' ) ); ?>">
+					<a class="zaso-image-gallery__link" href="<?php echo esc_url( $image['full_src'] ); ?>" data-lity aria-label="<?php echo esc_attr( $image['alt'] ? $image['alt'] : __( 'View image', 'zen-addons-for-siteorigin-page-builder' ) ); ?>">
 				<?php else : ?>
 					<span class="zaso-image-gallery__link">
 				<?php endif; ?>

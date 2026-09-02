@@ -18,119 +18,119 @@ class Zen_Addons_SiteOrigin_Post_Grid_Widget extends SiteOrigin_Widget {
 		$zaso_post_grid_field_array = array(
 			'posts'          => array(
 				'type'  => 'posts',
-				'label' => __( 'Posts query', 'zaso' ),
+				'label' => __( 'Posts query', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'columns'        => array(
 				'type'    => 'select',
-				'label'   => __( 'Columns', 'zaso' ),
+				'label'   => __( 'Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '3',
 				'options' => array(
-					'1' => __( '1 Column', 'zaso' ),
-					'2' => __( '2 Columns', 'zaso' ),
-					'3' => __( '3 Columns', 'zaso' ),
-					'4' => __( '4 Columns', 'zaso' ),
+					'1' => __( '1 Column', 'zen-addons-for-siteorigin-page-builder' ),
+					'2' => __( '2 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'3' => __( '3 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'4' => __( '4 Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'show_image'     => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Featured Image', 'zaso' ),
+				'label'   => __( 'Show Featured Image', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'image_size'     => array(
 				'type'    => 'select',
-				'label'   => __( 'Image Size', 'zaso' ),
+				'label'   => __( 'Image Size', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'medium_large',
 				'options' => array(
-					'thumbnail'    => __( 'Thumbnail', 'zaso' ),
-					'medium'       => __( 'Medium', 'zaso' ),
-					'medium_large' => __( 'Medium Large', 'zaso' ),
-					'large'        => __( 'Large', 'zaso' ),
+					'thumbnail'    => __( 'Thumbnail', 'zen-addons-for-siteorigin-page-builder' ),
+					'medium'       => __( 'Medium', 'zen-addons-for-siteorigin-page-builder' ),
+					'medium_large' => __( 'Medium Large', 'zen-addons-for-siteorigin-page-builder' ),
+					'large'        => __( 'Large', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'show_date'      => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Date', 'zaso' ),
+				'label'   => __( 'Show Date', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'show_author'    => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Author', 'zaso' ),
+				'label'   => __( 'Show Author', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => false,
 			),
 			'show_excerpt'   => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Excerpt', 'zaso' ),
+				'label'   => __( 'Show Excerpt', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'excerpt_length' => array(
 				'type'    => 'number',
-				'label'   => __( 'Excerpt Word Count', 'zaso' ),
+				'label'   => __( 'Excerpt Word Count', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 20,
 			),
 			'show_readmore'  => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Show Read More Link', 'zaso' ),
+				'label'   => __( 'Show Read More Link', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => true,
 			),
 			'readmore_text'  => array(
 				'type'    => 'text',
-				'label'   => __( 'Read More Text', 'zaso' ),
-				'default' => __( 'Read More', 'zaso' ),
+				'label'   => __( 'Read More Text', 'zen-addons-for-siteorigin-page-builder' ),
+				'default' => __( 'Read More', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'design'         => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'gap'          => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Gap Between Cards', 'zaso' ),
+						'label'   => __( 'Gap Between Cards', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '28px',
 					),
 					'card_bg'      => array(
 						'type'    => 'color',
-						'label'   => __( 'Card Background', 'zaso' ),
+						'label'   => __( 'Card Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'card_border'  => array(
 						'type'    => 'color',
-						'label'   => __( 'Card Border', 'zaso' ),
+						'label'   => __( 'Card Border', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#e5e7eb',
 					),
 					'card_radius'  => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Card Corner Radius', 'zaso' ),
+						'label'   => __( 'Card Corner Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '10px',
 					),
 					'title_color'  => array(
 						'type'    => 'color',
-						'label'   => __( 'Title Color', 'zaso' ),
+						'label'   => __( 'Title Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'meta_color'   => array(
 						'type'    => 'color',
-						'label'   => __( 'Meta Color', 'zaso' ),
+						'label'   => __( 'Meta Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#6b7280',
 					),
 					'accent_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Accent Color', 'zaso' ),
+						'label'   => __( 'Accent Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#4f46e5',
 					),
 					'image_height' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Image Height', 'zaso' ),
+						'label'   => __( 'Image Height', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '200px',
 					),
 				),
 			),
 			'extra_id'       => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class'    => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -138,9 +138,9 @@ class Zen_Addons_SiteOrigin_Post_Grid_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-post-grid',
-			__( 'Zen Addons - Post Grid', 'zaso' ),
+			__( 'Zen Addons - Post Grid', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display a responsive grid of posts with featured images, meta, excerpts, and read-more links.', 'zaso' ),
+				'description'   => __( 'Display a responsive grid of posts with featured images, meta, excerpts, and read-more links.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),
@@ -200,7 +200,7 @@ class Zen_Addons_SiteOrigin_Post_Grid_Widget extends SiteOrigin_Widget {
 			'show_excerpt'      => ! empty( $instance['show_excerpt'] ),
 			'excerpt_length'    => $excerpt_length,
 			'show_readmore'     => ! empty( $instance['show_readmore'] ),
-			'readmore_text'     => isset( $instance['readmore_text'] ) ? sanitize_text_field( $instance['readmore_text'] ) : __( 'Read More', 'zaso' ),
+			'readmore_text'     => isset( $instance['readmore_text'] ) ? sanitize_text_field( $instance['readmore_text'] ) : __( 'Read More', 'zen-addons-for-siteorigin-page-builder' ),
 			'container_classes' => implode( ' ', $container_classes ),
 		) );
 	}

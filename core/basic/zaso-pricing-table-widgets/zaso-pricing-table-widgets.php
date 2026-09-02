@@ -142,13 +142,13 @@ if ( ! function_exists( 'zaso_pricing_table_design_options' ) ) :
 	 */
 	function zaso_pricing_table_design_options() {
 		$zaso_pricing_table_free_designs = array(
-			''               => __( 'Default (classic table)', 'zaso' ),
-			'classic-indigo' => __( 'Classic (Indigo)', 'zaso' ),
-			'classic-teal'   => __( 'Classic (Teal)', 'zaso' ),
-			'accent-indigo'  => __( 'Accent Header (Indigo)', 'zaso' ),
-			'accent-rose'    => __( 'Accent Header (Rose)', 'zaso' ),
-			'minimal-slate'  => __( 'Minimal Outline (Slate)', 'zaso' ),
-			'minimal-violet' => __( 'Minimal Outline (Violet)', 'zaso' ),
+			''               => __( 'Default (classic table)', 'zen-addons-for-siteorigin-page-builder' ),
+			'classic-indigo' => __( 'Classic (Indigo)', 'zen-addons-for-siteorigin-page-builder' ),
+			'classic-teal'   => __( 'Classic (Teal)', 'zen-addons-for-siteorigin-page-builder' ),
+			'accent-indigo'  => __( 'Accent Header (Indigo)', 'zen-addons-for-siteorigin-page-builder' ),
+			'accent-rose'    => __( 'Accent Header (Rose)', 'zen-addons-for-siteorigin-page-builder' ),
+			'minimal-slate'  => __( 'Minimal Outline (Slate)', 'zen-addons-for-siteorigin-page-builder' ),
+			'minimal-violet' => __( 'Minimal Outline (Violet)', 'zen-addons-for-siteorigin-page-builder' ),
 		);
 
 		return apply_filters( 'zaso_pricing_table_designs', $zaso_pricing_table_free_designs );
@@ -170,10 +170,10 @@ if ( ! function_exists( 'zaso_pricing_table_design_description' ) ) :
 		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
 
 		if ( $white_label ) {
-			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic table)" to build your own look with the Layout, Columns and Design colour settings instead.', 'zaso' );
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic table)" to build your own look with the Layout, Columns and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
-		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic table)" to build your own look with the Layout, Columns and Design colour settings instead.', 'zaso' );
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic table)" to build your own look with the Layout, Columns and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 	}
 endif;
 
@@ -187,8 +187,8 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 		$zaso_pricing_table_field_array = array(
 			'plans'   => array(
 				'type'       => 'repeater',
-				'label'      => __( 'Plans', 'zaso' ),
-				'item_name'  => __( 'Plan', 'zaso' ),
+				'label'      => __( 'Plans', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Plan', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[name*='[name]']",
 					'update_event' => 'change',
@@ -197,51 +197,51 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'name'        => array(
 						'type'  => 'text',
-						'label' => __( 'Plan Name', 'zaso' ),
+						'label' => __( 'Plan Name', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'price'       => array(
 						'type'        => 'text',
-						'label'       => __( 'Price', 'zaso' ),
-						'description' => __( 'e.g. 29 or Free', 'zaso' ),
+						'label'       => __( 'Price', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'e.g. 29 or Free', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'period'      => array(
 						'type'        => 'text',
-						'label'       => __( 'Billing Period', 'zaso' ),
-						'description' => __( 'e.g. /month', 'zaso' ),
+						'label'       => __( 'Billing Period', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'e.g. /month', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'description' => array(
 						'type'  => 'text',
-						'label' => __( 'Short Description', 'zaso' ),
+						'label' => __( 'Short Description', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'features'    => array(
 						'type'        => 'textarea',
-						'label'       => __( 'Features', 'zaso' ),
-						'description' => __( 'One feature per line.', 'zaso' ),
+						'label'       => __( 'Features', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'One feature per line.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'cta_text'    => array(
 						'type'    => 'text',
-						'label'   => __( 'Button Text', 'zaso' ),
-						'default' => __( 'Get Started', 'zaso' ),
+						'label'   => __( 'Button Text', 'zen-addons-for-siteorigin-page-builder' ),
+						'default' => __( 'Get Started', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'cta_url'     => array(
 						'type'  => 'link',
-						'label' => __( 'Button URL', 'zaso' ),
+						'label' => __( 'Button URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'cta_new_tab' => array(
 						'type'    => 'checkbox',
-						'label'   => __( 'Open in New Tab', 'zaso' ),
+						'label'   => __( 'Open in New Tab', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => false,
 					),
 					'featured'    => array(
 						'type'    => 'checkbox',
-						'label'   => __( 'Featured / Highlighted', 'zaso' ),
+						'label'   => __( 'Featured / Highlighted', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => false,
 					),
 				),
 			),
 			'columns' => array(
 				'type'    => 'select',
-				'label'   => __( 'Columns', 'zaso' ),
+				'label'   => __( 'Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '3',
 				'options' => array(
 					'1' => '1',
@@ -252,87 +252,87 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 			),
 			'currency' => array(
 				'type'    => 'text',
-				'label'   => __( 'Currency Symbol', 'zaso' ),
+				'label'   => __( 'Currency Symbol', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '$',
 			),
 			'layout' => array(
 				'type'        => 'select',
-				'label'       => __( 'Layout', 'zaso' ),
+				'label'       => __( 'Layout', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'default',
-				'description' => __( 'Structural layout of the table. The Style skin below still controls colours; Layout controls the shape (card border, shadow, radius, padding, density).', 'zaso' ),
+				'description' => __( 'Structural layout of the table. The Style skin below still controls colours; Layout controls the shape (card border, shadow, radius, padding, density).', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'default'  => __( 'Default (bordered cards)', 'zaso' ),
-					'bordered' => __( 'Bordered (flat connected columns)', 'zaso' ),
-					'elevated' => __( 'Elevated (floating cards, soft shadow)', 'zaso' ),
-					'compact'  => __( 'Compact (dense padding, smaller type)', 'zaso' ),
+					'default'  => __( 'Default (bordered cards)', 'zen-addons-for-siteorigin-page-builder' ),
+					'bordered' => __( 'Bordered (flat connected columns)', 'zen-addons-for-siteorigin-page-builder' ),
+					'elevated' => __( 'Elevated (floating cards, soft shadow)', 'zen-addons-for-siteorigin-page-builder' ),
+					'compact'  => __( 'Compact (dense padding, smaller type)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design_variant' => array(
 				'type'        => 'select',
-				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'label'       => __( 'Pre-made Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '',
 				'description' => zaso_pricing_table_design_description(),
 				'options'     => zaso_pricing_table_design_options(),
 			),
 			'design'  => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'featured_color'    => array(
 						'type'    => 'color',
-						'label'   => __( 'Featured Accent Color', 'zaso' ),
+						'label'   => __( 'Featured Accent Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#4f46e5',
 					),
 					'card_bg'           => array(
 						'type'    => 'color',
-						'label'   => __( 'Card Background', 'zaso' ),
+						'label'   => __( 'Card Background', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'text_color'        => array(
 						'type'    => 'color',
-						'label'   => __( 'Text Color', 'zaso' ),
+						'label'   => __( 'Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'text_muted'        => array(
 						'type'    => 'color',
-						'label'   => __( 'Muted Text Color', 'zaso' ),
+						'label'   => __( 'Muted Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#6b7280',
 					),
 					'card_border'       => array(
 						'type'    => 'color',
-						'label'   => __( 'Card Border', 'zaso' ),
+						'label'   => __( 'Card Border', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#e5e7eb',
 					),
 					'card_radius'       => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Card Corner Radius', 'zaso' ),
+						'label'   => __( 'Card Corner Radius', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '12px',
 					),
 					'button_bg'         => array(
 						'type'    => 'color',
-						'label'   => __( 'Button Color', 'zaso' ),
+						'label'   => __( 'Button Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#4f46e5',
 					),
 					'button_text_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Button Text Color', 'zaso' ),
+						'label'   => __( 'Button Text Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#ffffff',
 					),
 					'gap'               => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Gap Between Cards', 'zaso' ),
+						'label'   => __( 'Gap Between Cards', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '24px',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -340,9 +340,9 @@ class Zen_Addons_SiteOrigin_Pricing_Table_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-pricing-table',
-			__( 'Zen Addons - Pricing Table', 'zaso' ),
+			__( 'Zen Addons - Pricing Table', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Showcase your plans side-by-side with a features list, highlighted tier, and call-to-action button.', 'zaso' ),
+				'description'   => __( 'Showcase your plans side-by-side with a features list, highlighted tier, and call-to-action button.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

@@ -25,13 +25,13 @@ if ( ! function_exists( 'zaso_hover_card_design_options' ) ) :
 	 */
 	function zaso_hover_card_design_options() {
 		$zaso_hover_card_free_designs = array(
-			''                 => __( 'Default (classic hover card)', 'zaso' ),
-			'slide-up-frosted' => __( 'Slide Up - Frosted (teal)', 'zaso' ),
-			'slide-up-dark'    => __( 'Slide Up - Dark (green)', 'zaso' ),
-			'slide-up-tinted'  => __( 'Slide Up - Tinted (cyan)', 'zaso' ),
-			'overlay-scrim'    => __( 'Overlay - Dark Scrim (blue)', 'zaso' ),
-			'overlay-solid'    => __( 'Overlay - Vivid Solid (blue)', 'zaso' ),
-			'overlay-gradient' => __( 'Overlay - Gradient (blue)', 'zaso' ),
+			''                 => __( 'Default (classic hover card)', 'zen-addons-for-siteorigin-page-builder' ),
+			'slide-up-frosted' => __( 'Slide Up - Frosted (teal)', 'zen-addons-for-siteorigin-page-builder' ),
+			'slide-up-dark'    => __( 'Slide Up - Dark (green)', 'zen-addons-for-siteorigin-page-builder' ),
+			'slide-up-tinted'  => __( 'Slide Up - Tinted (cyan)', 'zen-addons-for-siteorigin-page-builder' ),
+			'overlay-scrim'    => __( 'Overlay - Dark Scrim (blue)', 'zen-addons-for-siteorigin-page-builder' ),
+			'overlay-solid'    => __( 'Overlay - Vivid Solid (blue)', 'zen-addons-for-siteorigin-page-builder' ),
+			'overlay-gradient' => __( 'Overlay - Gradient (blue)', 'zen-addons-for-siteorigin-page-builder' ),
 		);
 
 		return apply_filters( 'zaso_hover_card_designs', $zaso_hover_card_free_designs );
@@ -55,10 +55,10 @@ if ( ! function_exists( 'zaso_hover_card_design_description' ) ) :
 		$white_label = class_exists( 'Zanp_Settings' ) && Zanp_Settings::is_white_label();
 
 		if ( $white_label ) {
-			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic hover card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+			return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. Leave on "Default (classic hover card)" to build your own look with the Layout and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 		}
 
-		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic hover card)" to build your own look with the Layout and Design colour settings instead.', 'zaso' );
+		return __( 'One-click, fully styled looks. Click "Browse designs" to preview every design and pick one visually. The free core ships six; Zen Addons Pro unlocks twenty-four more (license required). Leave on "Default (classic hover card)" to build your own look with the Layout and Design colour settings instead.', 'zen-addons-for-siteorigin-page-builder' );
 	}
 endif;
 
@@ -80,73 +80,73 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 			 */
 			'design_variant' => array(
 				'type'        => 'select',
-				'label'       => __( 'Pre-made Design', 'zaso' ),
+				'label'       => __( 'Pre-made Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '',
 				'description' => zaso_hover_card_design_description(),
 				'options'     => zaso_hover_card_design_options(),
 			),
 			'hover_card_title' => array(
 				'type'  => 'text',
-				'label' => __( 'Title Caption' , 'zaso' )
+				'label' => __( 'Title Caption' , 'zen-addons-for-siteorigin-page-builder' )
 			),
             'hover_card_text_content' => array(
 				'type'  => 'tinymce',
-				'label' => __( 'Text Content' , 'zaso' )
+				'label' => __( 'Text Content' , 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'hover_card_image' => array(
 				'type'  => 'media',
-				'label' => __( 'Featured Image', 'zaso' ),
+				'label' => __( 'Featured Image', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true
 			),
 			'hover_card_action_text' => array(
 				'type'  => 'text',
-				'label' => __( 'Action Text', 'zaso' ),
-				'default' => __( 'Learn More', 'zaso' )
+				'label' => __( 'Action Text', 'zen-addons-for-siteorigin-page-builder' ),
+				'default' => __( 'Learn More', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'hover_card_action_url' => array(
 				'type'  => 'link',
-				'label' => __( 'Action URL', 'zaso' ),
+				'label' => __( 'Action URL', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '#'
 			),
 			'hover_card_animation' => array(
 				'type'    => 'select',
-				'label'   => __( 'Hover Animation', 'zaso' ),
+				'label'   => __( 'Hover Animation', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'fadein',
 				'options' => array(
-					'fadein'  => __( 'Fade In', 'zaso' )
+					'fadein'  => __( 'Fade In', 'zen-addons-for-siteorigin-page-builder' )
 				)
 			),
 			'layout' => array(
 				'type'        => 'select',
-				'label'       => __( 'Layout', 'zaso' ),
+				'label'       => __( 'Layout', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => 'default',
-				'description' => __( 'Structural layout of the card. The Style skin below still controls colours; Layout controls how the image and caption are arranged and how the card reveals on hover.', 'zaso' ),
+				'description' => __( 'Structural layout of the card. The Style skin below still controls colours; Layout controls how the image and caption are arranged and how the card reveals on hover.', 'zen-addons-for-siteorigin-page-builder' ),
 				'options'     => array(
-					'default'       => __( 'Default (caption overlay)', 'zaso' ),
-					'caption-below' => __( 'Caption Below (solid panel under image)', 'zaso' ),
-					'slide-up'      => __( 'Slide Up (panel slides up on hover)', 'zaso' ),
-					'zoom'          => __( 'Zoom (image zooms, caption fixed)', 'zaso' ),
+					'default'       => __( 'Default (caption overlay)', 'zen-addons-for-siteorigin-page-builder' ),
+					'caption-below' => __( 'Caption Below (solid panel under image)', 'zen-addons-for-siteorigin-page-builder' ),
+					'slide-up'      => __( 'Slide Up (panel slides up on hover)', 'zen-addons-for-siteorigin-page-builder' ),
+					'zoom'          => __( 'Zoom (image zooms, caption fixed)', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design' => array(
 				'type' =>  'section',
-				'label' => __( 'Design', 'zaso' ),
+				'label' => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide' => true,
 				'fields' => array(
 					'hover_box' => array(
 						'type' => 'section',
-						'label' => __( 'Hover Card', 'zaso' ),
+						'label' => __( 'Hover Card', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide' => true,
 						'fields' => array(
 							'caption_background_color' => array(
 								'type' => 'color',
-								'label' => __( 'Caption Background Color',  'zaso' ),
+								'label' => __( 'Caption Background Color',  'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#000000',
 							),
 							'caption_background_opacity' => array(
 								'type'    => 'select',
-								'label'   => __( 'Caption Background Opacity', 'zaso' ),
+								'label'   => __( 'Caption Background Opacity', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '100',
 								'options' => array(
 									'100'  => '100%',
@@ -163,17 +163,17 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 							),
 							'caption_font_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Caption Font Color', 'zaso' ),
+								'label'   => __( 'Caption Font Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#ffffff',
 							),
 							'caption_font_size' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Caption Font Size', 'zaso' ),
+								'label'   => __( 'Caption Font Size', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '26px',
 							),
 							'caption_font_weight' => array(
 								'type'    => 'select',
-								'label'   => __( 'Caption Font Weight', 'zaso' ),
+								'label'   => __( 'Caption Font Weight', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '400',
 								'options' => array(
 									'100'  => 100,
@@ -189,117 +189,117 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 							),
 							'caption_font_alignment' => array(
 								'type'    => 'select',
-								'label'   => __( 'Caption Text Alignment', 'zaso' ),
+								'label'   => __( 'Caption Text Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => 'center',
 								'options' => array(
-									'left'  => __( 'Left', 'zaso' ),
-									'right'  => __( 'Right', 'zaso' ),
-									'center'  => __( 'Center', 'zaso' ),
-									'justify'  => __( 'Justify', 'zaso' ),
-									'initial'  => __( 'Initial', 'zaso' ),
-									'inherit'  => __( 'Inherit', 'zaso' )
+									'left'  => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+									'right'  => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
+									'center'  => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
+									'justify'  => __( 'Justify', 'zen-addons-for-siteorigin-page-builder' ),
+									'initial'  => __( 'Initial', 'zen-addons-for-siteorigin-page-builder' ),
+									'inherit'  => __( 'Inherit', 'zen-addons-for-siteorigin-page-builder' )
 								)
 							),
 							'caption_font_transform' => array(
 								'type'    => 'select',
-								'label'   => __( 'Caption Text Transform', 'zaso' ),
+								'label'   => __( 'Caption Text Transform', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => 'none',
 								'options' => array(
-									'none'  => __( 'None', 'zaso' ),
-									'capitalize'  => __( 'Capitalize', 'zaso' ),
-									'uppercase'  => __( 'Uppercase', 'zaso' ),
-									'lowercase'  => __( 'Lowecase', 'zaso' ),
-									'initial'  => __( 'Initial', 'zaso' ),
-									'inherit'  => __( 'Inherit', 'zaso' )
+									'none'  => __( 'None', 'zen-addons-for-siteorigin-page-builder' ),
+									'capitalize'  => __( 'Capitalize', 'zen-addons-for-siteorigin-page-builder' ),
+									'uppercase'  => __( 'Uppercase', 'zen-addons-for-siteorigin-page-builder' ),
+									'lowercase'  => __( 'Lowecase', 'zen-addons-for-siteorigin-page-builder' ),
+									'initial'  => __( 'Initial', 'zen-addons-for-siteorigin-page-builder' ),
+									'inherit'  => __( 'Inherit', 'zen-addons-for-siteorigin-page-builder' )
 								)
 							),
 							'caption_margin' => array(
 								'type' => 'section',
-								'label' => __( 'Caption Margin', 'zaso' ),
+								'label' => __( 'Caption Margin', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top', 'zaso' ),
+										'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right', 'zaso' ),
+										'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom', 'zaso' ),
+										'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left', 'zaso' ),
+										'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 								),
 							),
 							'caption_padding' => array(
 								'type' => 'section',
-								'label' => __( 'Caption Padding', 'zaso' ),
+								'label' => __( 'Caption Padding', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top', 'zaso' ),
+										'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '10px'
 									),
 									'right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right', 'zaso' ),
+										'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '10px'
 									),
 									'bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom', 'zaso' ),
+										'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '10px'
 									),
 									'left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left', 'zaso' ),
+										'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '10px'
 									),
 								),
 							),
 							'card_box_shadow' => array(
 								'type' => 'section',
-								'label' => __( 'Card Box Shadow', 'zaso' ),
+								'label' => __( 'Card Box Shadow', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'horizontal_offset' => array(
 										'type' => 'measurement',
-										'label' => __( 'Horizontal Offset', 'zaso' ),
+										'label' => __( 'Horizontal Offset', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '4px'
 									),
 									'vertical_offset' => array(
 										'type' => 'measurement',
-										'label' => __( 'Vertical Offset', 'zaso' ),
+										'label' => __( 'Vertical Offset', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '4px'
 									),
 									'blur' => array(
 										'type' => 'measurement',
-										'label' => __( 'Blur', 'zaso' ),
+										'label' => __( 'Blur', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '6px'
 									),
 									'spread' => array(
 										'type' => 'measurement',
-										'label' => __( 'Spread', 'zaso' ),
+										'label' => __( 'Spread', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '0px'
 									),
 									'shadow_color' => array(
 										'type' => 'color',
-										'label' => __( 'Shadow Color', 'zaso' ),
+										'label' => __( 'Shadow Color', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '#000000'
 									),
 									'shadow_color_opacity' => array(
 										'type'    => 'select',
-										'label'   => __( 'Shadow Color Opacity', 'zaso' ),
+										'label'   => __( 'Shadow Color Opacity', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '20',
 										'options' => array(
 											'100'  => '100%',
@@ -312,7 +312,7 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 											'30'  => '30%',
 											'20'  => '20%',
 											'10'  => '10%',
-											'0'	  => '0% ' . __( '(transparent)', 'zaso' )
+											'0'	  => '0% ' . __( '(transparent)', 'zen-addons-for-siteorigin-page-builder' )
 										)
 									),
 								),
@@ -321,17 +321,17 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 					),
 					'modal_button' => array(
 						'type' => 'section',
-						'label' => __( 'Modal Button', 'zaso' ),
+						'label' => __( 'Modal Button', 'zen-addons-for-siteorigin-page-builder' ),
 						'hide' => true,
 						'fields' => array(
 							'button_background_color' => array(
 								'type' => 'color',
-								'label' => __( 'Button Background Color',  'zaso' ),
+								'label' => __( 'Button Background Color',  'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#000000',
 							),
 							'button_background_color_opacity' => array(
 								'type'    => 'select',
-								'label'   => __( 'Button Background Opacity', 'zaso' ),
+								'label'   => __( 'Button Background Opacity', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '100',
 								'options' => array(
 									'100'  => '100%',
@@ -344,17 +344,17 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 									'30'  => '30%',
 									'20'  => '20%',
 									'10'  => '10%',
-									'0'	  => '0% ' . __( '(transparent)', 'zaso' )
+									'0'	  => '0% ' . __( '(transparent)', 'zen-addons-for-siteorigin-page-builder' )
 								)
 							),
 							'button_background_color_hover' => array(
 								'type' => 'color',
-								'label' => __( 'Button Background Color (Hover)',  'zaso' ),
+								'label' => __( 'Button Background Color (Hover)',  'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#e4e4e4',
 							),
 							'button_background_color_opacity_hover' => array(
 								'type'    => 'select',
-								'label'   => __( 'Button Background Opacity (Hover)', 'zaso' ),
+								'label'   => __( 'Button Background Opacity (Hover)', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '100',
 								'options' => array(
 									'100'  => '100%',
@@ -367,37 +367,37 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 									'30'  => '30%',
 									'20'  => '20%',
 									'10'  => '10%',
-									'0'	  => '0% ' . __( '(transparent)', 'zaso' )
+									'0'	  => '0% ' . __( '(transparent)', 'zen-addons-for-siteorigin-page-builder' )
 								)
 							),
 							'button_border_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Button Border Color', 'zaso' ),
+								'label'   => __( 'Button Border Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#ffffff',
 							),
 							'button_border_color_hover' => array(
 								'type'    => 'color',
-								'label'   => __( 'Button Border Color (hover)', 'zaso' ),
+								'label'   => __( 'Button Border Color (hover)', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#e4e4e4',
 							),
 							'button_font_color' => array(
 								'type'    => 'color',
-								'label'   => __( 'Button Font Color', 'zaso' ),
+								'label'   => __( 'Button Font Color', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#ffffff',
 							),
 							'button_font_color_hover' => array(
 								'type'    => 'color',
-								'label'   => __( 'Button Font Color (Hover)', 'zaso' ),
+								'label'   => __( 'Button Font Color (Hover)', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '#000000',
 							),
 							'button_font_size' => array(
 								'type'    => 'measurement',
-								'label'   => __( 'Button Font Size', 'zaso' ),
+								'label'   => __( 'Button Font Size', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '18px',
 							),
 							'button_font_weight' => array(
 								'type'    => 'select',
-								'label'   => __( 'Button Font Weight', 'zaso' ),
+								'label'   => __( 'Button Font Weight', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => '400',
 								'options' => array(
 									'100'  => 100,
@@ -413,40 +413,40 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 							),
 							'button_font_transform' => array(
 								'type'    => 'select',
-								'label'   => __( 'Button Text Transform', 'zaso' ),
+								'label'   => __( 'Button Text Transform', 'zen-addons-for-siteorigin-page-builder' ),
 								'default' => 'none',
 								'options' => array(
-									'none'  => __( 'None', 'zaso' ),
-									'capitalize'  => __( 'Capitalize', 'zaso' ),
-									'uppercase'  => __( 'Uppercase', 'zaso' ),
-									'lowercase'  => __( 'Lowecase', 'zaso' ),
-									'initial'  => __( 'Initial', 'zaso' ),
-									'inherit'  => __( 'Inherit', 'zaso' )
+									'none'  => __( 'None', 'zen-addons-for-siteorigin-page-builder' ),
+									'capitalize'  => __( 'Capitalize', 'zen-addons-for-siteorigin-page-builder' ),
+									'uppercase'  => __( 'Uppercase', 'zen-addons-for-siteorigin-page-builder' ),
+									'lowercase'  => __( 'Lowecase', 'zen-addons-for-siteorigin-page-builder' ),
+									'initial'  => __( 'Initial', 'zen-addons-for-siteorigin-page-builder' ),
+									'inherit'  => __( 'Inherit', 'zen-addons-for-siteorigin-page-builder' )
 								)
 							),
 							'button_padding' => array(
 								'type' => 'section',
-								'label' => __( 'Button Padding', 'zaso' ),
+								'label' => __( 'Button Padding', 'zen-addons-for-siteorigin-page-builder' ),
 								'hide' => true,
 								'fields' => array(
 									'top' => array(
 										'type' => 'measurement',
-										'label' => __( 'Top', 'zaso' ),
+										'label' => __( 'Top', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '11px'
 									),
 									'right' => array(
 										'type' => 'measurement',
-										'label' => __( 'Right', 'zaso' ),
+										'label' => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '21px'
 									),
 									'bottom' => array(
 										'type' => 'measurement',
-										'label' => __( 'Bottom', 'zaso' ),
+										'label' => __( 'Bottom', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '11px'
 									),
 									'left' => array(
 										'type' => 'measurement',
-										'label' => __( 'Left', 'zaso' ),
+										'label' => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
 										'default' => '21px'
 									),
 								),
@@ -457,13 +457,13 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 			),
 			'extra_id' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
-				'description'	=> __( 'Add an extra ID.', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description'	=> __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			)
 		);
 
@@ -472,9 +472,9 @@ class Zen_Addons_SiteOrigin_Hover_Card_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-hover-card',
-			__( 'Zen Addons - Hover Card', 'zaso' ),
+			__( 'Zen Addons - Hover Card', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display image box, title caption and learn more button with hover transition', 'zaso' ),
+				'description'   => __( 'Display image box, title caption and learn more button with hover transition', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),

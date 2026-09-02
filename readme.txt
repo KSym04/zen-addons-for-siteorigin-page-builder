@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.10.18
+Stable tag: 1.10.19
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -108,8 +108,8 @@ You can also manage every Zen Addons widget from one place under the **Zen Addon
 
 = Language support =
 
-* English (en_US)
-* English (Australia) (en_AU)
+* Every user-facing string is translation ready.
+* Translations are served through WordPress.org, so any language the community translates becomes available automatically. Help translate Zen Addons at https://translate.wordpress.org/projects/wp-plugins/zen-addons-for-siteorigin-page-builder/
 
 = Zen Addons Pro =
 
@@ -175,7 +175,7 @@ Only if you use those widgets. The bbPress widgets require bbPress, and the Cont
 
 = Can I translate Zen Addons? =
 
-Yes. All user-facing strings are translation ready, and the plugin ships with English (US) and English (Australia) language files.
+Yes. All user-facing strings are translation ready, and translations are served through WordPress.org, so any language the community has translated is picked up automatically. If you would like to help, you can translate Zen Addons at https://translate.wordpress.org/projects/wp-plugins/zen-addons-for-siteorigin-page-builder/
 
 = What happens to my data when I uninstall the plugin? =
 
@@ -207,6 +207,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 4. Pricing Table: thirty ready-made pricing designs (six free) - complete pricing tables with tier styling, billing toggles, comparison checkmarks and feature lists.
 
 == Upgrade Notice ==
+
+= 1.10.19 =
+Makes Zen Addons translatable. The plugin's text domain now matches its WordPress.org slug, so translations submitted by the community can finally load. No widget, design, setting or page content changes.
 
 = 1.10.18 =
 Adds a one-time notice, shown only to WooCommerce stores, about FeedProof, our free product feed auditor. It waits a week before appearing, never shows alongside the review prompt, and goes away for good when you dismiss it. Nothing changes on your existing pages.
@@ -296,6 +299,12 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.19 =
+* Fixed: the plugin's text domain did not match its WordPress.org slug, so translations submitted at translate.wordpress.org could never load, no matter who wrote them. The domain now matches the slug and Zen Addons can be translated into any language.
+* Removed: two bundled language files from 2020 that translated English into English and covered only a small part of the plugin. Nothing you see changes, and the download gets a little smaller.
+* Added: an up to date translation template covering every string in the plugin, so translators start from the current text.
+* No change to any widget, design, setting, or stored page data.
 
 = 1.10.18 =
 * Added: a one-time notice introducing FeedProof, our free WooCommerce product feed auditor, shown only on sites that run WooCommerce and do not already have it. It appears on the Plugins screen and the Zen Addons screens only, never across the dashboard, waits seven days before it can appear so no existing install is prompted on update day, never shows at the same time as the review prompt, and stays gone once dismissed. Its one stored setting is removed when the plugin is deleted.

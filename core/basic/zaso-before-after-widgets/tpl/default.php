@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 $has_images = ! empty( $before['src'] ) && ! empty( $after['src'] );
 $slider_label = sprintf(
 	/* translators: 1: before label, 2: after label. */
-	__( 'Comparison slider. Drag or use the arrow keys to reveal the %1$s and %2$s images.', 'zaso' ),
-	'' !== trim( (string) $instance['before_label'] ) ? $instance['before_label'] : __( 'before', 'zaso' ),
-	'' !== trim( (string) $instance['after_label'] ) ? $instance['after_label'] : __( 'after', 'zaso' )
+	__( 'Comparison slider. Drag or use the arrow keys to reveal the %1$s and %2$s images.', 'zen-addons-for-siteorigin-page-builder' ),
+	'' !== trim( (string) $instance['before_label'] ) ? $instance['before_label'] : __( 'before', 'zen-addons-for-siteorigin-page-builder' ),
+	'' !== trim( (string) $instance['after_label'] ) ? $instance['after_label'] : __( 'after', 'zen-addons-for-siteorigin-page-builder' )
 );
 
 // Initial clip and handle position (server-rendered; JS keeps them in sync).
@@ -30,7 +30,7 @@ if ( 'vertical' === $orientation ) {
 <div <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="zaso-before-after <?php echo esc_attr( $instance['extra_class'] ); ?>">
 
 	<?php if ( ! $has_images ) : ?>
-		<p class="zaso-before-after__placeholder"><?php esc_html_e( 'Select a before and an after image to build the comparison slider.', 'zaso' ); ?></p>
+		<p class="zaso-before-after__placeholder"><?php esc_html_e( 'Select a before and an after image to build the comparison slider.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
 	<?php else : ?>
 		<div class="zaso-before-after__container zaso-before-after__container--<?php echo esc_attr( $orientation ); ?>" data-orientation="<?php echo esc_attr( $orientation ); ?>">
 

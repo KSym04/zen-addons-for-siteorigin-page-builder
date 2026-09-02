@@ -40,13 +40,13 @@ if ( empty( $bars ) ) {
 		$aria_label = '' !== trim( $bar['label'] )
 			? sprintf(
 				/* translators: 1: bar label, 2: percentage */
-				__( '%1$s: %2$d%%', 'zaso' ),
+				__( '%1$s: %2$d%%', 'zen-addons-for-siteorigin-page-builder' ),
 				$bar['label'],
 				$bar['percentage']
 			)
 			: sprintf(
 				/* translators: percentage */
-				__( '%d%%', 'zaso' ),
+				__( '%d%%', 'zen-addons-for-siteorigin-page-builder' ),
 				$bar['percentage']
 			);
 		?>

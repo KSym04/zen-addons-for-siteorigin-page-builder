@@ -34,7 +34,7 @@ if ( '' !== $zaso_design_variant && function_exists( 'zaso_cta_banner_design_opt
 }
 
 // Use the heading as the region's accessible name; fall back to a generic label.
-$region_label = '' !== trim( (string) $instance['heading'] ) ? $instance['heading'] : __( 'Call to action', 'zaso' );
+$region_label = '' !== trim( (string) $instance['heading'] ) ? $instance['heading'] : __( 'Call to action', 'zen-addons-for-siteorigin-page-builder' );
 
 // Button rel/target attributes.
 $button_rel = array();
@@ -86,7 +86,7 @@ if ( 'image' === $bg_type && ! empty( $bg_image_url ) ) {
 					if ( ! empty( $button_rel ) ) {
 						echo ' rel="' . esc_attr( implode( ' ', $button_rel ) ) . '"';
 					}
-				?>><?php echo esc_html( $instance['button_text'] ); ?><?php if ( ! empty( $instance['button_new_tab'] ) ) : ?><span class="screen-reader-text"><?php esc_html_e( '(opens in new tab)', 'zaso' ); ?></span><?php endif; ?></a>
+				?>><?php echo esc_html( $instance['button_text'] ); ?><?php if ( ! empty( $instance['button_new_tab'] ) ) : ?><span class="screen-reader-text"><?php esc_html_e( '(opens in new tab)', 'zen-addons-for-siteorigin-page-builder' ); ?></span><?php endif; ?></a>
 			</div>
 		<?php endif; ?>
 

@@ -19,39 +19,39 @@ class Zen_Addons_SiteOrigin_Info_Box_Widget extends SiteOrigin_Widget {
 		$zaso_info_box_field_array = array(
 			'info_title' => array(
 				'type'  => 'text',
-				'label' => __( 'Info Title', 'zaso' )
+				'label' => __( 'Info Title', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'info_description' => array(
 				'type'  => 'tinymce',
-				'label' => __( 'Info Short Description' , 'zaso' )
+				'label' => __( 'Info Short Description' , 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'info_image' => array(
 				'type'  => 'media',
-				'label' => __( 'Info Featured Image', 'zaso' ),
+				'label' => __( 'Info Featured Image', 'zen-addons-for-siteorigin-page-builder' ),
 				'library' => 'image',
 				'fallback' => true,
             ),
 			'info_image_size' => array(
 				'type' => 'image-size',
-				'label' => __('Info Featured Image Size', 'zaso'),
+				'label' => __('Info Featured Image Size', 'zen-addons-for-siteorigin-page-builder'),
 			),
 			'info_button_text' => array(
 				'type'  => 'text',
-				'label' => __( 'Info Button text', 'zaso' )
+				'label' => __( 'Info Button text', 'zen-addons-for-siteorigin-page-builder' )
 			),
 			'info_button_url' => array(
 				'type'  => 'link',
-				'label' => __( 'Info Button Url', 'zaso' ),
+				'label' => __( 'Info Button Url', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_id' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
-				'description'	=> __( 'Add an extra ID.', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description'	=> __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			)
 		);
 
@@ -60,9 +60,9 @@ class Zen_Addons_SiteOrigin_Info_Box_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-info-box',
-			__( 'Zen Addons - Info Box', 'zaso' ),
+			__( 'Zen Addons - Info Box', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display information box - image, title, description and learn more button link', 'zaso' ),
+				'description'   => __( 'Display information box - image, title, description and learn more button link', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' )
 			),

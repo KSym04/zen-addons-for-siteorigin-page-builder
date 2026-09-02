@@ -18,8 +18,8 @@ class Zen_Addons_SiteOrigin_FAQ_Widget extends SiteOrigin_Widget {
 		$zaso_faq_field_array = array(
 			'items'      => array(
 				'type'       => 'repeater',
-				'label'      => __( 'FAQ Items', 'zaso' ),
-				'item_name'  => __( 'Item', 'zaso' ),
+				'label'      => __( 'FAQ Items', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Item', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[name*='[question]']",
 					'update_event' => 'change',
@@ -28,64 +28,64 @@ class Zen_Addons_SiteOrigin_FAQ_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'question' => array(
 						'type'  => 'text',
-						'label' => __( 'Question', 'zaso' ),
+						'label' => __( 'Question', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'answer'   => array(
 						'type'  => 'textarea',
-						'label' => __( 'Answer', 'zaso' ),
+						'label' => __( 'Answer', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 				),
 			),
 			'schema'     => array(
 				'type'        => 'checkbox',
-				'label'       => __( 'Add FAQ Schema Markup', 'zaso' ),
+				'label'       => __( 'Add FAQ Schema Markup', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => true,
-				'description' => __( 'Adds Schema.org FAQPage structured data for search engine rich results.', 'zaso' ),
+				'description' => __( 'Adds Schema.org FAQPage structured data for search engine rich results.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'open_first' => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Open First Item', 'zaso' ),
+				'label'   => __( 'Open First Item', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => false,
 			),
 			'design'     => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'question_color' => array(
 						'type'    => 'color',
-						'label'   => __( 'Question Color', 'zaso' ),
+						'label'   => __( 'Question Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#111111',
 					),
 					'answer_color'   => array(
 						'type'    => 'color',
-						'label'   => __( 'Answer Color', 'zaso' ),
+						'label'   => __( 'Answer Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#444444',
 					),
 					'border_color'   => array(
 						'type'    => 'color',
-						'label'   => __( 'Border Color', 'zaso' ),
+						'label'   => __( 'Border Color', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '#e5e7eb',
 					),
 					'question_size'  => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Question Font Size', 'zaso' ),
+						'label'   => __( 'Question Font Size', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '1rem',
 					),
 					'item_spacing'   => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Spacing Between Items', 'zaso' ),
+						'label'   => __( 'Spacing Between Items', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '0px',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -93,9 +93,9 @@ class Zen_Addons_SiteOrigin_FAQ_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-faq',
-			__( 'Zen Addons - FAQ', 'zaso' ),
+			__( 'Zen Addons - FAQ', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display a collapsible FAQ list with optional Schema.org FAQPage structured data for rich results in Google Search.', 'zaso' ),
+				'description'   => __( 'Display a collapsible FAQ list with optional Schema.org FAQPage structured data for rich results in Google Search.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

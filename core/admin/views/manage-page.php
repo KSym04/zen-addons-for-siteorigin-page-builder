@@ -39,18 +39,18 @@ $zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen
 <div class="wrap zaso-admin">
 	<h1 class="zaso-admin__title">
 		<img class="zaso-admin__logo" src="<?php echo esc_url( ZASO_BASE_DIR . 'assets/img/zaso-logo.png' ); ?>" alt="" width="36" height="36" />
-		<span><?php esc_html_e( 'Zen Addons for SiteOrigin', 'zaso' ); ?></span>
+		<span><?php esc_html_e( 'Zen Addons for SiteOrigin', 'zen-addons-for-siteorigin-page-builder' ); ?></span>
 	</h1>
 
 	<?php if ( isset( $_GET['updated'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display-only flag set by our own nonce-verified redirect. ?>
 		<div class="notice notice-success is-dismissible">
-			<p><?php esc_html_e( 'Widget settings saved.', 'zaso' ); ?></p>
+			<p><?php esc_html_e( 'Widget settings saved.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
 		</div>
 	<?php endif; ?>
 
 	<?php if ( ! $zaso_bundle_ok ) : ?>
 		<div class="notice notice-warning">
-			<p><?php esc_html_e( 'The SiteOrigin Widgets Bundle is not active. Install and activate it to use Zen Addons widgets.', 'zaso' ); ?></p>
+			<p><?php esc_html_e( 'The SiteOrigin Widgets Bundle is not active. Install and activate it to use Zen Addons widgets.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
 		</div>
 	<?php endif; ?>
 
@@ -58,7 +58,7 @@ $zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen
 		<?php
 		printf(
 			/* translators: 1: number of active widgets, 2: total number of widgets. */
-			esc_html__( '%1$d of %2$d widgets active. Turn on the widgets you need, then add them in Page Builder under the "ZASO Widgets" tab.', 'zaso' ),
+			esc_html__( '%1$d of %2$d widgets active. Turn on the widgets you need, then add them in Page Builder under the "ZASO Widgets" tab.', 'zen-addons-for-siteorigin-page-builder' ),
 			(int) $zaso_active_ct,
 			(int) $zaso_total
 		);
@@ -100,9 +100,9 @@ $zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen
 
 				<?php if ( $zaso_bundle_ok ) : ?>
 					<p class="submit zaso-admin__actions">
-						<button type="submit" class="button button-primary"><?php esc_html_e( 'Save Changes', 'zaso' ); ?></button>
-						<button type="submit" name="bulk" value="enable_all" class="button"><?php esc_html_e( 'Enable All', 'zaso' ); ?></button>
-						<button type="submit" name="bulk" value="disable_all" class="button"><?php esc_html_e( 'Disable All', 'zaso' ); ?></button>
+						<button type="submit" class="button button-primary"><?php esc_html_e( 'Save Changes', 'zen-addons-for-siteorigin-page-builder' ); ?></button>
+						<button type="submit" name="bulk" value="enable_all" class="button"><?php esc_html_e( 'Enable All', 'zen-addons-for-siteorigin-page-builder' ); ?></button>
+						<button type="submit" name="bulk" value="disable_all" class="button"><?php esc_html_e( 'Disable All', 'zen-addons-for-siteorigin-page-builder' ); ?></button>
 					</p>
 				<?php endif; ?>
 			</form>
@@ -110,34 +110,34 @@ $zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen
 
 		<div class="zaso-admin__aside">
 			<div class="zaso-admin__box">
-				<h2><?php esc_html_e( 'Where to find your widgets', 'zaso' ); ?></h2>
-				<p><?php esc_html_e( 'Active widgets appear in the SiteOrigin Page Builder widget picker under the "ZASO Widgets" tab, and on the Plugins > SiteOrigin Widgets screen.', 'zaso' ); ?></p>
+				<h2><?php esc_html_e( 'Where to find your widgets', 'zen-addons-for-siteorigin-page-builder' ); ?></h2>
+				<p><?php esc_html_e( 'Active widgets appear in the SiteOrigin Page Builder widget picker under the "ZASO Widgets" tab, and on the Plugins > SiteOrigin Widgets screen.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
 			</div>
 			<?php if ( $zaso_show_pro ) : ?>
 				<div class="zaso-admin__box zaso-admin__box--pro">
-					<h2><?php esc_html_e( 'Zen Addons Pro', 'zaso' ); ?></h2>
-					<p><?php esc_html_e( 'Every widget you already use, with the full design library unlocked.', 'zaso' ); ?></p>
+					<h2><?php esc_html_e( 'Zen Addons Pro', 'zen-addons-for-siteorigin-page-builder' ); ?></h2>
+					<p><?php esc_html_e( 'Every widget you already use, with the full design library unlocked.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
 					<ul class="zaso-admin__pro-list">
-						<li><?php esc_html_e( 'Ready-made designs for the widgets you build with most', 'zaso' ); ?></li>
-						<li><?php esc_html_e( 'Popup and modal builder', 'zaso' ); ?></li>
-						<li><?php esc_html_e( 'Portfolio grid with filtering', 'zaso' ); ?></li>
-						<li><?php esc_html_e( 'Entrance animations on every widget', 'zaso' ); ?></li>
+						<li><?php esc_html_e( 'Ready-made designs for the widgets you build with most', 'zen-addons-for-siteorigin-page-builder' ); ?></li>
+						<li><?php esc_html_e( 'Popup and modal builder', 'zen-addons-for-siteorigin-page-builder' ); ?></li>
+						<li><?php esc_html_e( 'Portfolio grid with filtering', 'zen-addons-for-siteorigin-page-builder' ); ?></li>
+						<li><?php esc_html_e( 'Entrance animations on every widget', 'zen-addons-for-siteorigin-page-builder' ); ?></li>
 					</ul>
-					<a class="button button-primary" href="<?php echo esc_url( $zaso_pro_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'See plans and pricing', 'zaso' ); ?></a>
+					<a class="button button-primary" href="<?php echo esc_url( $zaso_pro_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'See plans and pricing', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
 				</div>
 			<?php endif; ?>
 
 			<div class="zaso-admin__box">
-				<h2><?php esc_html_e( 'Reviews and support', 'zaso' ); ?></h2>
-				<p><?php esc_html_e( 'A review on WordPress.org helps other SiteOrigin users find the plugin. Stuck on something? The support forum is read by the developers.', 'zaso' ); ?></p>
-				<a class="button" href="https://wordpress.org/support/plugin/zen-addons-for-siteorigin-page-builder/reviews/#new-post" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Leave a review', 'zaso' ); ?></a>
-				<a class="button" href="https://wordpress.org/support/plugin/zen-addons-for-siteorigin-page-builder/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get support', 'zaso' ); ?></a>
+				<h2><?php esc_html_e( 'Reviews and support', 'zen-addons-for-siteorigin-page-builder' ); ?></h2>
+				<p><?php esc_html_e( 'A review on WordPress.org helps other SiteOrigin users find the plugin. Stuck on something? The support forum is read by the developers.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
+				<a class="button" href="https://wordpress.org/support/plugin/zen-addons-for-siteorigin-page-builder/reviews/#new-post" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Leave a review', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a class="button" href="https://wordpress.org/support/plugin/zen-addons-for-siteorigin-page-builder/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get support', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
 			</div>
 
 			<div class="zaso-admin__box zaso-admin__more">
-				<h2><?php esc_html_e( 'More from DopeThemes', 'zaso' ); ?></h2>
-				<p><?php esc_html_e( 'Tutorials, themes, and more widgets for the SiteOrigin builder.', 'zaso' ); ?></p>
-				<a class="button" href="https://www.dopethemes.com/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Visit DopeThemes', 'zaso' ); ?></a>
+				<h2><?php esc_html_e( 'More from DopeThemes', 'zen-addons-for-siteorigin-page-builder' ); ?></h2>
+				<p><?php esc_html_e( 'Tutorials, themes, and more widgets for the SiteOrigin builder.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
+				<a class="button" href="https://www.dopethemes.com/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Visit DopeThemes', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
 			</div>
 		</div>
 	</div>

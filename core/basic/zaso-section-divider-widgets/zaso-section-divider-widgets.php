@@ -19,52 +19,52 @@ class Zen_Addons_SiteOrigin_Section_Divider_Widget extends SiteOrigin_Widget {
 		$zaso_section_divider_field_array = array(
 			'style'  => array(
 				'type'    => 'select',
-				'label'   => __( 'Shape Style', 'zaso' ),
+				'label'   => __( 'Shape Style', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'waves',
 				'options' => array(
-					'waves'    => __( 'Waves', 'zaso' ),
-					'curve'    => __( 'Curve', 'zaso' ),
-					'tilt'     => __( 'Tilt', 'zaso' ),
-					'triangle' => __( 'Triangle', 'zaso' ),
+					'waves'    => __( 'Waves', 'zen-addons-for-siteorigin-page-builder' ),
+					'curve'    => __( 'Curve', 'zen-addons-for-siteorigin-page-builder' ),
+					'tilt'     => __( 'Tilt', 'zen-addons-for-siteorigin-page-builder' ),
+					'triangle' => __( 'Triangle', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'color'  => array(
 				'type'    => 'color',
-				'label'   => __( 'Shape Color', 'zaso' ),
+				'label'   => __( 'Shape Color', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '#4f46e5',
 			),
 			'height' => array(
 				'type'        => 'measurement',
-				'label'       => __( 'Height', 'zaso' ),
+				'label'       => __( 'Height', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '100px',
-				'description' => __( 'The vertical height of the shape.', 'zaso' ),
+				'description' => __( 'The vertical height of the shape.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'width'  => array(
 				'type'        => 'measurement',
-				'label'       => __( 'Width', 'zaso' ),
+				'label'       => __( 'Width', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => '100%',
-				'description' => __( 'The horizontal width of the shape.', 'zaso' ),
+				'description' => __( 'The horizontal width of the shape.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'flip_horizontal' => array(
 				'type'    => 'checkbox',
-				'label'   => __( 'Flip Horizontally', 'zaso' ),
+				'label'   => __( 'Flip Horizontally', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => false,
 			),
 			'flip_vertical'   => array(
 				'type'        => 'checkbox',
-				'label'       => __( 'Flip Vertically', 'zaso' ),
+				'label'       => __( 'Flip Vertically', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => false,
-				'description' => __( 'Flip the shape to sit at the top of a section instead of the bottom.', 'zaso' ),
+				'description' => __( 'Flip the shape to sit at the top of a section instead of the bottom.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_id'    => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra ID', 'zaso' ),
-				'description' => __( 'Add an extra ID.', 'zaso' ),
+				'label'       => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra ID.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'        => 'text',
-				'label'       => __( 'Extra Class', 'zaso' ),
-				'description' => __( 'Add an extra class for styling overrides.', 'zaso' ),
+				'label'       => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
+				'description' => __( 'Add an extra class for styling overrides.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -73,9 +73,9 @@ class Zen_Addons_SiteOrigin_Section_Divider_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-section-divider',
-			__( 'Zen Addons - Section Divider', 'zaso' ),
+			__( 'Zen Addons - Section Divider', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Add an SVG shape divider to the top or bottom of a section.', 'zaso' ),
+				'description'   => __( 'Add an SVG shape divider to the top or bottom of a section.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),

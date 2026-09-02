@@ -18,8 +18,8 @@ class Zen_Addons_SiteOrigin_Logo_Showcase_Widget extends SiteOrigin_Widget {
 		$zaso_logo_showcase_field_array = array(
 			'logos' => array(
 				'type'       => 'repeater',
-				'label'      => __( 'Logos', 'zaso' ),
-				'item_name'  => __( 'Logo', 'zaso' ),
+				'label'      => __( 'Logos', 'zen-addons-for-siteorigin-page-builder' ),
+				'item_name'  => __( 'Logo', 'zen-addons-for-siteorigin-page-builder' ),
 				'item_label' => array(
 					'selector'     => "[name*='[alt]']",
 					'update_event' => 'change',
@@ -28,79 +28,79 @@ class Zen_Addons_SiteOrigin_Logo_Showcase_Widget extends SiteOrigin_Widget {
 				'fields' => array(
 					'image' => array(
 						'type'     => 'media',
-						'label'    => __( 'Logo Image', 'zaso' ),
+						'label'    => __( 'Logo Image', 'zen-addons-for-siteorigin-page-builder' ),
 						'library'  => 'image',
 						'fallback' => true,
 					),
 					'alt' => array(
 						'type'        => 'text',
-						'label'       => __( 'Alt Text', 'zaso' ),
-						'description' => __( 'Describe the logo for screen readers. Inherits the media library alt text if left empty.', 'zaso' ),
+						'label'       => __( 'Alt Text', 'zen-addons-for-siteorigin-page-builder' ),
+						'description' => __( 'Describe the logo for screen readers. Inherits the media library alt text if left empty.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'link' => array(
 						'type'  => 'link',
-						'label' => __( 'Link URL', 'zaso' ),
+						'label' => __( 'Link URL', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'link_new_tab' => array(
 						'type'    => 'checkbox',
-						'label'   => __( 'Open Link in New Tab', 'zaso' ),
+						'label'   => __( 'Open Link in New Tab', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => false,
 					),
 				),
 			),
 			'columns'   => array(
 				'type'    => 'select',
-				'label'   => __( 'Columns', 'zaso' ),
+				'label'   => __( 'Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => '5',
 				'options' => array(
-					'2' => __( '2 Columns', 'zaso' ),
-					'3' => __( '3 Columns', 'zaso' ),
-					'4' => __( '4 Columns', 'zaso' ),
-					'5' => __( '5 Columns', 'zaso' ),
-					'6' => __( '6 Columns', 'zaso' ),
+					'2' => __( '2 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'3' => __( '3 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'4' => __( '4 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'5' => __( '5 Columns', 'zen-addons-for-siteorigin-page-builder' ),
+					'6' => __( '6 Columns', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'grayscale' => array(
 				'type'        => 'checkbox',
-				'label'       => __( 'Greyscale Logos', 'zaso' ),
+				'label'       => __( 'Greyscale Logos', 'zen-addons-for-siteorigin-page-builder' ),
 				'default'     => true,
-				'description' => __( 'Display logos in greyscale and switch to full colour on hover.', 'zaso' ),
+				'description' => __( 'Display logos in greyscale and switch to full colour on hover.', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'alignment' => array(
 				'type'    => 'select',
-				'label'   => __( 'Alignment', 'zaso' ),
+				'label'   => __( 'Alignment', 'zen-addons-for-siteorigin-page-builder' ),
 				'default' => 'center',
 				'options' => array(
-					'left'   => __( 'Left', 'zaso' ),
-					'center' => __( 'Center', 'zaso' ),
-					'right'  => __( 'Right', 'zaso' ),
+					'left'   => __( 'Left', 'zen-addons-for-siteorigin-page-builder' ),
+					'center' => __( 'Center', 'zen-addons-for-siteorigin-page-builder' ),
+					'right'  => __( 'Right', 'zen-addons-for-siteorigin-page-builder' ),
 				),
 			),
 			'design'    => array(
 				'type'   => 'section',
-				'label'  => __( 'Design', 'zaso' ),
+				'label'  => __( 'Design', 'zen-addons-for-siteorigin-page-builder' ),
 				'hide'   => true,
 				'fields' => array(
 					'logo_height' => array(
 						'type'        => 'measurement',
-						'label'       => __( 'Logo Height', 'zaso' ),
+						'label'       => __( 'Logo Height', 'zen-addons-for-siteorigin-page-builder' ),
 						'default'     => '60px',
-						'description' => __( 'Maximum height for each logo image.', 'zaso' ),
+						'description' => __( 'Maximum height for each logo image.', 'zen-addons-for-siteorigin-page-builder' ),
 					),
 					'gap' => array(
 						'type'    => 'measurement',
-						'label'   => __( 'Gap Between Logos', 'zaso' ),
+						'label'   => __( 'Gap Between Logos', 'zen-addons-for-siteorigin-page-builder' ),
 						'default' => '40px',
 					),
 				),
 			),
 			'extra_id'   => array(
 				'type'  => 'text',
-				'label' => __( 'Extra ID', 'zaso' ),
+				'label' => __( 'Extra ID', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 			'extra_class' => array(
 				'type'  => 'text',
-				'label' => __( 'Extra Class', 'zaso' ),
+				'label' => __( 'Extra Class', 'zen-addons-for-siteorigin-page-builder' ),
 			),
 		);
 
@@ -108,9 +108,9 @@ class Zen_Addons_SiteOrigin_Logo_Showcase_Widget extends SiteOrigin_Widget {
 
 		parent::__construct(
 			'zen-addons-siteorigin-logo-showcase',
-			__( 'Zen Addons - Logo Showcase', 'zaso' ),
+			__( 'Zen Addons - Logo Showcase', 'zen-addons-for-siteorigin-page-builder' ),
 			array(
-				'description'   => __( 'Display a responsive grid of client or partner logos with an optional greyscale-to-colour hover effect.', 'zaso' ),
+				'description'   => __( 'Display a responsive grid of client or partner logos with an optional greyscale-to-colour hover effect.', 'zen-addons-for-siteorigin-page-builder' ),
 				'help'          => 'https://www.dopethemes.com/',
 				'panels_groups' => array( 'zaso-plugin-widgets' ),
 			),
@@ -169,7 +169,7 @@ class Zen_Addons_SiteOrigin_Logo_Showcase_Widget extends SiteOrigin_Widget {
 				$link_label = $img['alt'];
 				if ( '' === (string) $link_label && '' !== (string) $link_url ) {
 					$host       = wp_parse_url( $link_url, PHP_URL_HOST );
-					$link_label = $host ? $host : __( 'Visit link', 'zaso' );
+					$link_label = $host ? $host : __( 'Visit link', 'zen-addons-for-siteorigin-page-builder' );
 				}
 				$logos[] = array(
 					'img'          => $img,

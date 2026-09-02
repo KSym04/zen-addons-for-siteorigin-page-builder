@@ -24,18 +24,18 @@ if ( empty( $items ) ) {
 
 // Per-network accessible labels. Falls back to "Share on %s".
 $zaso_share_aria = array(
-	'email' => __( 'Share by email', 'zaso' ),
-	'copy'  => __( 'Copy link to clipboard', 'zaso' ),
+	'email' => __( 'Share by email', 'zen-addons-for-siteorigin-page-builder' ),
+	'copy'  => __( 'Copy link to clipboard', 'zen-addons-for-siteorigin-page-builder' ),
 );
 ?>
 <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- zaso_format_field_extra_id() returns a safe id="" attribute string. ?>
-<nav <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="<?php echo esc_attr( $classes ); ?>" aria-label="<?php esc_attr_e( 'Share this page', 'zaso' ); ?>">
+<nav <?php echo zaso_format_field_extra_id( $instance['extra_id'] ); ?> class="<?php echo esc_attr( $classes ); ?>" aria-label="<?php esc_attr_e( 'Share this page', 'zen-addons-for-siteorigin-page-builder' ); ?>">
 	<?php
 	foreach ( $items as $item ) :
 		$aria = isset( $zaso_share_aria[ $item['key'] ] )
 			? $zaso_share_aria[ $item['key'] ]
 			/* translators: %s: social network name. */
-			: sprintf( __( 'Share on %s', 'zaso' ), $item['label'] );
+			: sprintf( __( 'Share on %s', 'zen-addons-for-siteorigin-page-builder' ), $item['label'] );
 
 		// Brand mode paints each button its network colour inline; mono mode is handled in CSS.
 		$style = ( 'brand' === $color_mode ) ? ' style="background-color:' . esc_attr( $item['color'] ) . ';"' : '';
