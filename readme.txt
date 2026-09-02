@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.10.19
+Stable tag: 1.10.20
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -208,6 +208,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.20 =
+Tested with WordPress 7.1. Fixes a PHP notice on PHP 8.2 and newer that would have stopped the plugin loading on a future PHP version. No widget, design or setting changes.
+
 = 1.10.19 =
 Makes Zen Addons translatable. The plugin's text domain now matches its WordPress.org slug, so translations submitted by the community can finally load. No widget, design, setting or page content changes.
 
@@ -299,6 +302,11 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.20 =
+* Tested with WordPress 7.1.
+* Fixed: a PHP notice on PHP 8.2 and newer, caused by a plugin property being created on the fly instead of being declared. On a future PHP 9 this would have stopped the plugin from loading.
+* No change to any widget, design, setting, or stored page data.
 
 = 1.10.19 =
 * Fixed: the plugin's text domain did not match its WordPress.org slug, so translations submitted at translate.wordpress.org could never load, no matter who wrote them. The domain now matches the slug and Zen Addons can be translated into any language.
