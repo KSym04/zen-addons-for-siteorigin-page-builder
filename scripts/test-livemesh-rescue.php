@@ -112,11 +112,18 @@ $zaso_fixture_panels = array(
 // If foreign data is present, the "no orphans" assertions will fail correctly,
 // so we skip them to avoid false negatives when Task 4 runs its setup.
 $zaso_has_foreign_lsow = false;
-$zaso_foreign_check = $wpdb->get_var(
-	"SELECT meta_id FROM {$wpdb->postmeta} pm
-	WHERE pm.meta_value LIKE '%LSOW_%'
-	AND pm.meta_value NOT LIKE '%Fixture accordion%'
-	LIMIT 1"
+// esc_like() is essential here too: an unescaped '%LSOW_%' also matches the
+// LSOWX near-miss, which would falsely register as foreign Livemesh data.
+$zaso_foreign_needle  = '%' . $wpdb->esc_like( 'LSOW_' ) . '%';
+$zaso_foreign_exclude = '%' . $wpdb->esc_like( 'Fixture accordion' ) . '%';
+$zaso_foreign_check   = $wpdb->get_var(
+	$wpdb->prepare(
+		"SELECT meta_id FROM {$wpdb->postmeta} pm
+		WHERE pm.meta_value LIKE %s AND pm.meta_value NOT LIKE %s
+		LIMIT 1",
+		$zaso_foreign_needle,
+		$zaso_foreign_exclude
+	)
 );
 if ( ! empty( $zaso_foreign_check ) ) {
 	$zaso_has_foreign_lsow = true;
