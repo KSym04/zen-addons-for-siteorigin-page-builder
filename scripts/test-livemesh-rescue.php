@@ -6,7 +6,8 @@
  *   app/public/wp-content/plugins/zen-addons-for-siteorigin-page-builder/scripts/test-livemesh-rescue.php
  *
  * Mutates one option, one transient and one scratch post, and restores all of
- * them, then asserts the restore succeeded. Nothing else on the site is touched.
+ * them, then asserts the restore succeeded. Self-heals by removing orphaned
+ * postmeta from aborted previous runs, scoped strictly to this test's fixture.
  *
  * @package Zen Addons for SiteOrigin Page Builder
  */
@@ -59,11 +60,17 @@ foreach ( $stale_ids as $post_id ) {
 }
 
 // Delete orphaned postmeta rows from incomplete previous runs (meta exists but post is gone).
-// Scope strictly: only rows with LSOW_ data and no corresponding post.
+// Scope strictly: only meta containing this test's fixture marker 'Fixture accordion'.
+// Never match on LSOW_ alone — that would delete real user data or Task 4's pages.
+$needle = '%' . $wpdb->esc_like( 'Fixture accordion' ) . '%';
 $orphaned = $wpdb->get_col(
-	"SELECT pm.meta_id FROM {$wpdb->postmeta} pm
-	LEFT JOIN {$wpdb->posts} p ON pm.post_id = p.ID
-	WHERE p.ID IS NULL AND pm.meta_value LIKE '%LSOW_%'"
+	$wpdb->prepare(
+		"SELECT pm.meta_id FROM {$wpdb->postmeta} pm
+		LEFT JOIN {$wpdb->posts} p ON pm.post_id = p.ID
+		WHERE p.ID IS NULL AND pm.meta_key = %s AND pm.meta_value LIKE %s",
+		'panels_data',
+		$needle
+	)
 );
 foreach ( $orphaned as $meta_id ) {
 	delete_metadata_by_mid( 'post', (int) $meta_id );
