@@ -224,6 +224,22 @@ if ( null === $zaso_backup_promo )  { delete_option( 'zaso_cross_promo' );  } el
 zaso_t( 'review prompt option restored byte-exact', get_option( 'zaso_review_prompt', null ) == $zaso_backup_review );
 zaso_t( 'cross-promo option restored byte-exact', get_option( 'zaso_cross_promo', null ) == $zaso_backup_promo );
 
+echo "\n=== Task 3: link and render ===\n";
+
+$zaso_guide = zaso_livemesh_guide_url();
+zaso_t( 'guide URL carries utm_source=zen-addons', false !== strpos( $zaso_guide, 'utm_source=zen-addons' ) );
+zaso_t( 'guide URL carries utm_medium=plugin', false !== strpos( $zaso_guide, 'utm_medium=plugin' ) );
+zaso_t( 'guide URL carries utm_campaign=livemesh-rescue', false !== strpos( $zaso_guide, 'utm_campaign=livemesh-rescue' ) );
+zaso_t( 'guide URL does NOT reuse the cross-promo campaign', false === strpos( $zaso_guide, 'cross-promo' ) );
+zaso_t( 'guide URL does NOT reuse the pro-upsell campaign', false === strpos( $zaso_guide, 'pro-upsell' ) );
+zaso_t( 'action URL is nonce protected', false !== strpos( zaso_livemesh_action_url( 'dismiss' ), '_wpnonce' ) );
+
+ob_start();
+zaso_livemesh_render();
+$zaso_out = ob_get_clean();
+zaso_t( 'renders nothing when should_show is false', '' === trim( $zaso_out ) );
+zaso_t( 'notice markup contains no em dash', false === strpos( $zaso_out, "\xe2\x80\x94" ) );
+
 // --- Restore. ---
 // Explicitly delete all postmeta for the fixture to prevent orphaned rows.
 $wpdb->delete( $wpdb->postmeta, array( 'post_id' => (int) $zaso_fixture_id ), array( '%d' ) );

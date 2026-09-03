@@ -209,4 +209,105 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 		return true;
 	}
 
+	/**
+	 * Migration guide URL, tagged so the click can be measured in the server log.
+	 *
+	 * The campaign is deliberately distinct from pro-upsell and cross-promo so
+	 * the three funnels never merge in a log read.
+	 *
+	 * @since 1.10.22
+	 *
+	 * @return string
+	 */
+	function zaso_livemesh_guide_url() {
+		return add_query_arg(
+			array(
+				'utm_source'   => 'zen-addons',
+				'utm_medium'   => 'plugin',
+				'utm_campaign' => 'livemesh-rescue',
+				'utm_content'  => zaso_livemesh_screen_key(),
+			),
+			ZASO_LIVEMESH_GUIDE_URL
+		);
+	}
+
+	/**
+	 * Build a nonce-protected, self-returning dismiss URL.
+	 *
+	 * @since 1.10.22
+	 *
+	 * @param string $action Action key, currently only 'dismiss'.
+	 * @return string
+	 */
+	function zaso_livemesh_action_url( $action ) {
+		return wp_nonce_url(
+			add_query_arg( 'zaso_livemesh_action', rawurlencode( $action ) ),
+			'zaso_livemesh'
+		);
+	}
+
+	/**
+	 * Handle the dismiss link.
+	 *
+	 * Runs on admin_init so the redirect happens before any output. Requires the
+	 * capability and a valid nonce; an unrecognised action is ignored rather
+	 * than falling through to a dismiss.
+	 *
+	 * @since 1.10.22
+	 *
+	 * @return void
+	 */
+	function zaso_livemesh_handle_action() {
+		if ( ! isset( $_GET['zaso_livemesh_action'] ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		check_admin_referer( 'zaso_livemesh' );
+
+		$action = sanitize_key( wp_unslash( $_GET['zaso_livemesh_action'] ) );
+
+		if ( 'dismiss' !== $action ) {
+			return;
+		}
+
+		$state          = zaso_livemesh_state();
+		$state['state'] = 'dismissed';
+
+		update_option( ZASO_LIVEMESH_OPTION, $state, false );
+
+		wp_safe_redirect( remove_query_arg( array( 'zaso_livemesh_action', '_wpnonce' ) ) );
+		exit;
+	}
+	add_action( 'admin_init', 'zaso_livemesh_handle_action' );
+
+	/**
+	 * Render the notice.
+	 *
+	 * @since 1.10.22
+	 *
+	 * @return void
+	 */
+	function zaso_livemesh_render() {
+		if ( ! zaso_livemesh_should_show() ) {
+			return;
+		}
+		?>
+		<div class="notice notice-warning zaso-livemesh-notice">
+			<p>
+				<strong><?php esc_html_e( 'Some widgets on this site are missing', 'zen-addons-for-siteorigin-page-builder' ); ?></strong>
+				<?php esc_html_e( 'This site has page content built with Livemesh SiteOrigin Widgets, which was removed from WordPress.org in May 2026 and is no longer receiving security updates. Any page using those widgets will render empty once the plugin is gone. Zen Addons includes equivalents for most of them, and our guide shows which is which.', 'zen-addons-for-siteorigin-page-builder' ); ?>
+			</p>
+			<p>
+				<a class="button button-primary" href="<?php echo esc_url( zaso_livemesh_guide_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Read the migration guide', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+				<a class="button" href="<?php echo esc_url( zaso_livemesh_action_url( 'dismiss' ) ); ?>"><?php esc_html_e( 'Dismiss', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
+			</p>
+		</div>
+		<?php
+	}
+	add_action( 'admin_notices', 'zaso_livemesh_render' );
+
 endif;
