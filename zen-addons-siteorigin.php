@@ -119,6 +119,7 @@ class zen_addons_siteorigin {
 			include( 'core/dependency-notice.php' );
 			include( 'core/review-prompt.php' );
 			include( 'core/cross-promo.php' );
+			include( 'core/livemesh-rescue.php' );
 		}
 
 		// Plugin action links.
