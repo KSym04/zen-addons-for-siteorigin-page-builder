@@ -44,6 +44,31 @@ function zaso_t( $label, $cond ) {
 // --- Back up everything we touch. ---
 $zaso_backup_livemesh = get_option( 'zaso_livemesh_rescue', null );
 
+// --- Self-healing: clean stale fixtures and orphaned meta from aborted previous runs. ---
+global $wpdb;
+
+// Delete any leftover fixture posts (shouldn't exist if cleanup was perfect).
+$stale_ids = $wpdb->get_col(
+	$wpdb->prepare(
+		"SELECT ID FROM {$wpdb->posts} WHERE post_title = %s",
+		'ZASO livemesh fixture'
+	)
+);
+foreach ( $stale_ids as $post_id ) {
+	wp_delete_post( (int) $post_id, true );
+}
+
+// Delete orphaned postmeta rows from incomplete previous runs (meta exists but post is gone).
+// Scope strictly: only rows with LSOW_ data and no corresponding post.
+$orphaned = $wpdb->get_col(
+	"SELECT pm.meta_id FROM {$wpdb->postmeta} pm
+	LEFT JOIN {$wpdb->posts} p ON pm.post_id = p.ID
+	WHERE p.ID IS NULL AND pm.meta_value LIKE '%LSOW_%'"
+);
+foreach ( $orphaned as $meta_id ) {
+	delete_metadata_by_mid( 'post', (int) $meta_id );
+}
+
 // --- Scratch post carrying fake orphaned Livemesh panels_data. ---
 // Hand-built fixture. NEVER copied from a real customer site.
 $zaso_fixture_id = wp_insert_post(
@@ -149,6 +174,9 @@ zaso_t( 'review prompt option restored byte-exact', get_option( 'zaso_review_pro
 zaso_t( 'cross-promo option restored byte-exact', get_option( 'zaso_cross_promo', null ) == $zaso_backup_promo );
 
 // --- Restore. ---
+// Explicitly delete all postmeta for the fixture to prevent orphaned rows.
+$wpdb->delete( $wpdb->postmeta, array( 'post_id' => (int) $zaso_fixture_id ), array( '%d' ) );
+// Then delete the post itself.
 wp_delete_post( $zaso_fixture_id, true );
 delete_transient( ZASO_LIVEMESH_TRANSIENT );
 
