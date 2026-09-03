@@ -62,10 +62,15 @@ $zaso_backup_livemesh = get_option( 'zaso_livemesh_rescue', null );
 global $wpdb;
 
 // Delete any leftover fixture posts (shouldn't exist if cleanup was perfect).
+// Covers all three fixture titles this file creates: the main live fixture,
+// the synthetic revision used to prove revisions are excluded, and the ghost
+// fixture used to prove a deleted post's leftover meta is excluded.
 $stale_ids = $wpdb->get_col(
 	$wpdb->prepare(
-		"SELECT ID FROM {$wpdb->posts} WHERE post_title = %s",
-		'ZASO livemesh fixture'
+		"SELECT ID FROM {$wpdb->posts} WHERE post_title IN ( %s, %s, %s )",
+		'ZASO livemesh fixture',
+		'ZASO livemesh fixture revision',
+		'ZASO livemesh ghost fixture'
 	)
 );
 foreach ( $stale_ids as $post_id ) {
@@ -88,6 +93,20 @@ $orphaned = $wpdb->get_col(
 foreach ( $orphaned as $meta_id ) {
 	delete_metadata_by_mid( 'post', (int) $meta_id );
 }
+
+// --- Identity: an administrator is required for current_user_can( 'manage_options' ),
+// the FIRST gate zaso_livemesh_should_show() checks. Without this, every
+// assertion below that calls should_show() (directly or via render()) would
+// pass at that gate alone, without ever reaching the behaviour it is named
+// for, including the notice's only coverage of the dismissal gate.
+require_once ABSPATH . 'wp-admin/includes/screen.php';
+
+$zaso_admins = get_users( array( 'role' => 'administrator', 'number' => 1, 'fields' => 'ID' ) );
+if ( empty( $zaso_admins ) ) {
+	echo "No administrator on this site; cannot run.\n";
+	exit( 1 );
+}
+wp_set_current_user( (int) $zaso_admins[0] );
 
 // --- Scratch post carrying fake orphaned Livemesh panels_data. ---
 // Hand-built fixture. NEVER copied from a real customer site.
@@ -167,6 +186,67 @@ delete_transient( ZASO_LIVEMESH_TRANSIENT );
 
 zaso_t( 'livemesh reported inactive in this sandbox', false === zaso_livemesh_is_active() );
 
+// --- Revisions must NOT trigger detection: this is the actual bug being fixed. ---
+// SiteOrigin copies panels_data onto every revision (including autosaves), so
+// a site that removed every live Livemesh widget could still carry the trail
+// in its revision history forever under the old bare meta scan. Simulate a
+// revision-only orphan by clearing the fixture's own live panels_data and
+// attaching the same panels_data to a synthetic revision row instead.
+delete_post_meta( $zaso_fixture_id, 'panels_data' );
+$zaso_revision_id = wp_insert_post(
+	array(
+		'post_title'  => 'ZASO livemesh fixture revision',
+		'post_type'   => 'revision',
+		'post_status' => 'inherit',
+		'post_parent' => $zaso_fixture_id,
+	)
+);
+// update_post_meta() would silently redirect this write onto the PARENT
+// post: wp_is_post_revision() checks inside update_post_meta()/
+// add_post_meta()/delete_post_meta() exist specifically to "make sure meta
+// is updated for the post, not for a revision" (wp-includes/post.php). Use
+// the low-level meta API directly instead, exactly the way SiteOrigin's own
+// inc/revisions.php does it, so the meta genuinely lands on the revision's
+// own post ID and this fixture matches what a real site's revision table
+// looks like.
+add_metadata( 'post', $zaso_revision_id, 'panels_data', $zaso_fixture_panels );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+if ( ! $zaso_has_foreign_lsow ) {
+	zaso_t( 'LSOW_ data stored on a revision is NOT treated as a live orphan', false === zaso_livemesh_has_orphans() );
+} else {
+	zaso_skip( 'LSOW_ data stored on a revision is NOT treated as a live orphan', 'foreign Livemesh data present' );
+}
+wp_delete_post( $zaso_revision_id, true );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+
+// --- Orphaned meta whose post no longer exists must ALSO not trigger detection. ---
+// Deliberate consequence of the fix: if the post is gone there is nothing left
+// for the user to fix. Delete the post row directly (bypassing wp_delete_post,
+// which would cascade-delete its postmeta too) so the meta survives as a true
+// orphan with no matching post row, the way a hard-deleted page leaves things.
+$zaso_ghost_id = wp_insert_post(
+	array(
+		'post_title'  => 'ZASO livemesh ghost fixture',
+		'post_status' => 'draft',
+		'post_type'   => 'page',
+	)
+);
+update_post_meta( $zaso_ghost_id, 'panels_data', $zaso_fixture_panels );
+$wpdb->delete( $wpdb->posts, array( 'ID' => (int) $zaso_ghost_id ), array( '%d' ) );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+if ( ! $zaso_has_foreign_lsow ) {
+	zaso_t( 'orphaned meta whose post no longer exists is NOT detected (nothing left to fix)', false === zaso_livemesh_has_orphans() );
+} else {
+	zaso_skip( 'orphaned meta whose post no longer exists is NOT detected (nothing left to fix)', 'foreign Livemesh data present' );
+}
+// No post row exists to cascade this; delete the true-orphan meta directly.
+$wpdb->delete( $wpdb->postmeta, array( 'post_id' => (int) $zaso_ghost_id, 'meta_key' => 'panels_data' ) );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+
+// Put the real fixture's own panels_data back before Task 2 needs it.
+update_post_meta( $zaso_fixture_id, 'panels_data', $zaso_fixture_panels );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+
 // --- Task 1 cleanup (not fixture deletion, since Task 2 needs it). ---
 delete_transient( ZASO_LIVEMESH_TRANSIENT );
 if ( null === $zaso_backup_livemesh ) {
@@ -190,12 +270,20 @@ delete_option( ZASO_LIVEMESH_OPTION );
 
 zaso_t( 'state defaults to empty', '' === zaso_livemesh_state()['state'] );
 
-// No screen in a wp-cli context, so should_show must be false for that reason alone.
+// No screen has been set yet in this wp-cli context (an administrator is
+// current, so this genuinely exercises the screen gate rather than being
+// masked by the capability gate).
 zaso_t( 'does not show without an admin screen', false === zaso_livemesh_should_show() );
 
-// Dismissal is respected.
+// Dismissal is respected. This needs a qualifying screen to actually reach
+// the dismissal check rather than being satisfied earlier at the screen gate,
+// so set one just for this assertion, then revert immediately: later
+// assertions in this file (the render-output checks in Task 3) rely on "no
+// qualifying screen" meaning what it says.
+set_current_screen( 'plugins' );
 update_option( ZASO_LIVEMESH_OPTION, array( 'state' => 'dismissed' ), false );
 zaso_t( 'does not show once dismissed', false === zaso_livemesh_should_show() );
+set_current_screen( 'dashboard' );
 
 // Yield chain. NOTE: a runtime assertion here would be dead — under wp-cli there is
 // no screen, so should_show() already returns false at the screen gate and every branch
@@ -238,7 +326,17 @@ ob_start();
 zaso_livemesh_render();
 $zaso_out = ob_get_clean();
 zaso_t( 'renders nothing when should_show is false', '' === trim( $zaso_out ) );
-zaso_t( 'notice markup contains no em dash', false === strpos( $zaso_out, "\xe2\x80\x94" ) );
+
+// render() still short-circuits here (no qualifying screen is set at this
+// point in the run), so $zaso_out is always empty and checking it for an em
+// dash would be vacuously true no matter what the notice actually says.
+// Assert on the notice's own SOURCE instead, using the same function-body
+// extraction technique as the yield-chain check above, so this can actually
+// fail if a future edit reintroduces one.
+$zaso_render_fn = strstr( $zaso_src, 'function zaso_livemesh_render()' );
+$zaso_render_fn = ( false !== $zaso_render_fn ) ? substr( $zaso_render_fn, 0, strpos( $zaso_render_fn, "\n\t}" ) ) : '';
+zaso_t( 'notice source was located', '' !== $zaso_render_fn );
+zaso_t( 'notice markup contains no em dash', '' !== $zaso_render_fn && false === strpos( $zaso_render_fn, "\xe2\x80\x94" ) );
 
 echo "\n=== Task 4: uninstall cleanup ===\n";
 
@@ -261,5 +359,25 @@ if ( null === $zaso_backup_livemesh ) {
 
 zaso_t( 'livemesh option restored byte-exact', get_option( 'zaso_livemesh_rescue', null ) == $zaso_backup_livemesh );
 zaso_t( 'fixture post removed', null === get_post( $zaso_fixture_id ) );
+
+echo "\n=== Task 5: L3 invariant, Livemesh active means completely silent ===\n";
+
+/*
+ * Positive proof, deliberately last. Livemesh is not installed in this
+ * sandbox, so this is the only way to exercise the "Livemesh is active"
+ * branch: define its own marker constant ourselves. define() cannot be
+ * undone within a PHP request, so once LSOW_PLUGIN_HELP_URL exists,
+ * zaso_livemesh_is_active() reports true for the rest of this process and no
+ * assertion above this point could be trusted afterward. Everything else in
+ * this file, including all cleanup and restoration, MUST run before this.
+ *
+ * A qualifying screen is set so should_show() actually reaches the
+ * is_active() gate rather than being satisfied earlier at the screen gate,
+ * which would make the second assertion pass for the wrong reason.
+ */
+set_current_screen( 'plugins' );
+define( 'LSOW_PLUGIN_HELP_URL', 'x' );
+zaso_t( 'is_active() reports true once a Livemesh marker constant is defined', true === zaso_livemesh_is_active() );
+zaso_t( 'should_show() is silent once Livemesh is active (L3 invariant)', false === zaso_livemesh_should_show() );
 
 echo "\n{$GLOBALS['zaso_pass']} passed, {$GLOBALS['zaso_fail']} failed, {$GLOBALS['zaso_skip']} skipped (of " . ( $GLOBALS['zaso_pass'] + $GLOBALS['zaso_fail'] + $GLOBALS['zaso_skip'] ) . ")\n";

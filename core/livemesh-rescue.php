@@ -63,30 +63,64 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 	 * Whether Livemesh is still active on this site.
 	 *
 	 * When it is, its widgets render normally and there is nothing to rescue,
-	 * so we stay silent. Checking a class rather than the active-plugins list
-	 * means we also stay silent for a copy loaded by unusual means.
+	 * so we stay silent. This is the invariant protecting every site still
+	 * running Livemesh: a false positive here is unacceptable.
+	 *
+	 * Three independent signals are ORed together. class_exists() and the
+	 * LSOW_PLUGIN_HELP_URL constant both depend on Livemesh's code having
+	 * loaded, which in turn depends on which individual widgets the site
+	 * owner enabled. The active_plugins option is timing-independent: it is
+	 * populated the moment the plugin is activated, regardless of which
+	 * widget classes it ever defines.
 	 *
 	 * @since 1.10.22
 	 *
 	 * @return bool True when Livemesh appears to be running.
 	 */
 	function zaso_livemesh_is_active() {
-		return class_exists( 'LSOW_Accordion_Widget' ) || defined( 'LSOW_PLUGIN_HELP_URL' );
+		if ( class_exists( 'LSOW_Accordion_Widget' ) || defined( 'LSOW_PLUGIN_HELP_URL' ) ) {
+			return true;
+		}
+
+		// Defensive (array) cast: if the option is missing or somehow not an
+		// array, treat it as an empty list rather than fatal on foreach.
+		$active_plugins = (array) get_option( 'active_plugins', array() );
+
+		foreach ( $active_plugins as $plugin ) {
+			if ( 0 === strpos( (string) $plugin, 'livemesh-' ) ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**
-	 * Whether this site has orphaned Livemesh widget data.
+	 * Whether this site has orphaned Livemesh widget data on a real, current post.
 	 *
 	 * SiteOrigin Page Builder records widget identity as a PHP class name inside
-	 * panels_data, so a single LIKE over that meta key is enough to tell whether
-	 * any Livemesh widget was ever placed. We only need existence, not a count.
+	 * panels_data, so a LIKE over that meta key tells us a Livemesh widget was
+	 * placed somewhere. But SiteOrigin also copies panels_data onto every post
+	 * revision (including autosaves), so a bare meta scan keeps matching long
+	 * after the last Livemesh widget was removed from every live page: the
+	 * trail just moves into revision history and the notice would never clear.
+	 * We join to the posts table and require a real, current post: post_type
+	 * 'revision' excludes ordinary revisions and autosaves (autosaves ARE type
+	 * 'revision'), and post_status 'inherit' is the belt-and-suspenders second
+	 * check, since 'inherit' is the status used by revisions and attachments
+	 * rather than real content. The notice now fires only when a live page or
+	 * post actually contains an LSOW_ widget today.
+	 *
+	 * A side effect is deliberate: postmeta left behind by a deleted post can
+	 * never match, because the INNER JOIN requires the post row to still
+	 * exist. That is correct, since there is nothing left for the user to fix.
 	 *
 	 * Any database problem is treated as "no orphans" so a failure can never
 	 * surface a notice or break an admin screen.
 	 *
 	 * @since 1.10.22
 	 *
-	 * @return bool True when at least one LSOW_ widget is stored.
+	 * @return bool True when at least one LSOW_ widget is stored on a live post.
 	 */
 	function zaso_livemesh_has_orphans() {
 		$cached = get_transient( ZASO_LIVEMESH_TRANSIENT );
@@ -104,7 +138,13 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 
 		$found = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT meta_id FROM {$wpdb->postmeta} WHERE meta_key = %s AND meta_value LIKE %s LIMIT 1",
+				"SELECT pm.meta_id FROM {$wpdb->postmeta} pm
+				INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+				WHERE pm.meta_key = %s
+				AND pm.meta_value LIKE %s
+				AND p.post_type != 'revision'
+				AND p.post_status != 'inherit'
+				LIMIT 1",
 				'panels_data',
 				$needle
 			)
@@ -298,8 +338,8 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 		?>
 		<div class="notice notice-warning zaso-livemesh-notice">
 			<p>
-				<strong><?php esc_html_e( 'Some widgets on this site are missing', 'zen-addons-for-siteorigin-page-builder' ); ?></strong>
-				<?php esc_html_e( 'This site has page content built with Livemesh SiteOrigin Widgets, which was removed from WordPress.org in May 2026 and is no longer receiving security updates. Any page using those widgets will render empty once the plugin is gone. Zen Addons includes equivalents for most of them, and our guide shows which is which.', 'zen-addons-for-siteorigin-page-builder' ); ?>
+				<strong><?php esc_html_e( 'This site uses widgets from a discontinued plugin', 'zen-addons-for-siteorigin-page-builder' ); ?></strong>
+				<?php esc_html_e( 'This site has page content built with widgets from Livemesh SiteOrigin Widgets. That plugin was removed from WordPress.org in May 2026 and no longer receives updates. If it is no longer active, pages using those widgets can render empty. Zen Addons covers many of the same widget types, and our guide shows which is which.', 'zen-addons-for-siteorigin-page-builder' ); ?>
 			</p>
 			<p>
 				<a class="button button-primary" href="<?php echo esc_url( zaso_livemesh_guide_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Read the migration guide', 'zen-addons-for-siteorigin-page-builder' ); ?></a>
