@@ -29,3 +29,7 @@ delete_option( 'zaso_review_prompt' );
 
 // Remove the FeedProof cross-promotion notice state.
 delete_option( 'zaso_cross_promo' );
+
+// Livemesh rescue notice state and its detection cache.
+delete_option( 'zaso_livemesh_rescue' );
+delete_transient( 'zaso_livemesh_orphans' );

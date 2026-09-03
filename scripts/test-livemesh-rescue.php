@@ -240,6 +240,12 @@ $zaso_out = ob_get_clean();
 zaso_t( 'renders nothing when should_show is false', '' === trim( $zaso_out ) );
 zaso_t( 'notice markup contains no em dash', false === strpos( $zaso_out, "\xe2\x80\x94" ) );
 
+echo "\n=== Task 4: uninstall cleanup ===\n";
+
+$zaso_uninstall = file_get_contents( dirname( __DIR__ ) . '/uninstall.php' );
+zaso_t( 'uninstall.php deletes the livemesh option', false !== strpos( $zaso_uninstall, 'zaso_livemesh_rescue' ) );
+zaso_t( 'uninstall.php deletes the livemesh transient', false !== strpos( $zaso_uninstall, 'zaso_livemesh_orphans' ) );
+
 // --- Restore. ---
 // Explicitly delete all postmeta for the fixture to prevent orphaned rows.
 $wpdb->delete( $wpdb->postmeta, array( 'post_id' => (int) $zaso_fixture_id ), array( '%d' ) );
