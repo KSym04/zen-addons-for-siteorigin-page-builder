@@ -121,4 +121,92 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 		return $has;
 	}
 
+	/**
+	 * Read the stored notice state.
+	 *
+	 * @since 1.10.22
+	 *
+	 * @return array{state:string} Stored state, defaulted.
+	 */
+	function zaso_livemesh_state() {
+		$defaults = array( 'state' => '' );
+
+		$state = get_option( ZASO_LIVEMESH_OPTION, array() );
+
+		return is_array( $state ) ? array_merge( $defaults, $state ) : $defaults;
+	}
+
+	/**
+	 * Which qualifying admin screen we are on, if any.
+	 *
+	 * @since 1.10.22
+	 *
+	 * @return string 'plugins_screen', 'zen_screen', or ''.
+	 */
+	function zaso_livemesh_screen_key() {
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return '';
+		}
+
+		$screen = get_current_screen();
+
+		if ( ! $screen ) {
+			return '';
+		}
+
+		if ( 'plugins' === $screen->id ) {
+			return 'plugins_screen';
+		}
+
+		if ( false !== strpos( $screen->id, 'zen-addons' ) ) {
+			return 'zen_screen';
+		}
+
+		return '';
+	}
+
+	/**
+	 * Whether the notice should render for this user on this screen.
+	 *
+	 * Gate order matters. The cheap identity gates run first, and the two yields
+	 * run LAST so the review prompt and cross-promo clocks keep advancing
+	 * independently of this notice.
+	 *
+	 * @since 1.10.22
+	 *
+	 * @return bool
+	 */
+	function zaso_livemesh_should_show() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return false;
+		}
+
+		if ( '' === zaso_livemesh_screen_key() ) {
+			return false;
+		}
+
+		if ( zaso_livemesh_is_active() ) {
+			return false;
+		}
+
+		if ( 'dismissed' === zaso_livemesh_state()['state'] ) {
+			return false;
+		}
+
+		if ( ! zaso_livemesh_has_orphans() ) {
+			return false;
+		}
+
+		// One DopeThemes notice at a time. These run last so the other clocks advance.
+		if ( function_exists( 'zaso_review_prompt_should_show' ) && zaso_review_prompt_should_show() ) {
+			return false;
+		}
+
+		if ( function_exists( 'zaso_cross_promo_should_show' ) && zaso_cross_promo_should_show() ) {
+			return false;
+		}
+
+		return true;
+	}
+
 endif;

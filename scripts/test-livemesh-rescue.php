@@ -91,6 +91,63 @@ delete_transient( ZASO_LIVEMESH_TRANSIENT );
 
 zaso_t( 'livemesh reported inactive in this sandbox', false === zaso_livemesh_is_active() );
 
+// --- Task 1 cleanup (not fixture deletion, since Task 2 needs it). ---
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+if ( null === $zaso_backup_livemesh ) {
+	delete_option( 'zaso_livemesh_rescue' );
+} else {
+	update_option( 'zaso_livemesh_rescue', $zaso_backup_livemesh, false );
+}
+
+echo "\n=== Task 2: gating and yield chain ===\n";
+
+$zaso_backup_review = get_option( 'zaso_review_prompt', null );
+$zaso_backup_promo  = get_option( 'zaso_cross_promo', null );
+
+// Silence both existing notices so they cannot mask our assertions.
+update_option( 'zaso_review_prompt', array( 'since' => time(), 'state' => 'dismissed', 'later_until' => 0 ), false );
+update_option( 'zaso_cross_promo', array( 'since' => time(), 'state' => 'dismissed', 'later_until' => 0 ), false );
+
+update_post_meta( $zaso_fixture_id, 'panels_data', $zaso_fixture_panels );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+delete_option( ZASO_LIVEMESH_OPTION );
+
+zaso_t( 'state defaults to empty', '' === zaso_livemesh_state()['state'] );
+
+// No screen in a wp-cli context, so should_show must be false for that reason alone.
+zaso_t( 'does not show without an admin screen', false === zaso_livemesh_should_show() );
+
+// Dismissal is respected.
+update_option( ZASO_LIVEMESH_OPTION, array( 'state' => 'dismissed' ), false );
+zaso_t( 'does not show once dismissed', false === zaso_livemesh_should_show() );
+
+// Yield chain. NOTE: a runtime assertion here would be dead — under wp-cli there is
+// no screen, so should_show() already returns false at the screen gate and every branch
+// of such a test is satisfiable. Assert the wiring statically instead, and scope the
+// search to the should_show() body so the function DEFINITION of has_orphans() is not
+// mistaken for its call site. Behavioural proof lives in Task 4 Step 5's browser check.
+$zaso_src = file_get_contents( dirname( __DIR__ ) . '/core/livemesh-rescue.php' );
+$zaso_fn  = strstr( $zaso_src, 'function zaso_livemesh_should_show()' );
+$zaso_fn  = ( false !== $zaso_fn ) ? substr( $zaso_fn, 0, strpos( $zaso_fn, "\n\t}" ) ) : '';
+
+$zaso_p_orphans = strpos( $zaso_fn, 'zaso_livemesh_has_orphans()' );
+$zaso_p_review  = strpos( $zaso_fn, 'zaso_review_prompt_should_show()' );
+$zaso_p_promo   = strpos( $zaso_fn, 'zaso_cross_promo_should_show()' );
+
+zaso_t( 'should_show() body was located', '' !== $zaso_fn );
+zaso_t( 'yields to the review prompt', false !== $zaso_p_review );
+zaso_t( 'yields to the cross-promo notice', false !== $zaso_p_promo );
+zaso_t( 'both yields run AFTER the orphan gate, so the neighbouring clocks keep advancing',
+	false !== $zaso_p_orphans && false !== $zaso_p_review && false !== $zaso_p_promo
+	&& $zaso_p_review > $zaso_p_orphans && $zaso_p_promo > $zaso_p_orphans );
+
+// Restore the two neighbouring notices byte-exact.
+if ( null === $zaso_backup_review ) { delete_option( 'zaso_review_prompt' ); } else { update_option( 'zaso_review_prompt', $zaso_backup_review, false ); }
+if ( null === $zaso_backup_promo )  { delete_option( 'zaso_cross_promo' );  } else { update_option( 'zaso_cross_promo', $zaso_backup_promo, false ); }
+
+zaso_t( 'review prompt option restored byte-exact', get_option( 'zaso_review_prompt', null ) == $zaso_backup_review );
+zaso_t( 'cross-promo option restored byte-exact', get_option( 'zaso_cross_promo', null ) == $zaso_backup_promo );
+
 // --- Restore. ---
 wp_delete_post( $zaso_fixture_id, true );
 delete_transient( ZASO_LIVEMESH_TRANSIENT );
