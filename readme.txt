@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.10.21
+Stable tag: 1.10.22
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -208,6 +208,9 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.22 =
+Points sites with orphaned Livemesh SiteOrigin Widgets data to a migration guide. No widget, design or setting changes.
+
 = 1.10.21 =
 Removes a WordPress 7.1 "translation loading was triggered too early" notice that appeared on sites with debugging enabled. No widget, design or setting changes.
 
@@ -305,6 +308,10 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.22 =
+* New: if your site still has page content built with Livemesh SiteOrigin Widgets, which was removed from WordPress.org in May 2026, Zen Addons now points you to a migration guide. The notice appears once, can be dismissed for good, and changes nothing on your pages.
+* No change to any widget, design, setting, or stored page data.
 
 = 1.10.21 =
 * Fixed: WordPress 6.7 and newer logged a "translation loading was triggered too early" notice for this plugin on sites with debugging enabled. The plugin name was being translated while the plugin loaded, before WordPress is ready to serve translations.
