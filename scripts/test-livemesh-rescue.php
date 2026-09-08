@@ -243,6 +243,77 @@ if ( ! $zaso_has_foreign_lsow ) {
 $wpdb->delete( $wpdb->postmeta, array( 'post_id' => (int) $zaso_ghost_id, 'meta_key' => 'panels_data' ) );
 delete_transient( ZASO_LIVEMESH_TRANSIENT );
 
+// --- Block editor storage mode MUST be detected. ---
+// SiteOrigin has two separate stores. A layout built in the block editor lives
+// entirely in the panelsData attribute of a siteorigin-panels/layout-block in
+// post_content and writes NO panels_data postmeta, so a postmeta-only scan is
+// blind to every block-editor site. This fixture carries no postmeta at all,
+// which is exactly what makes it discriminating: it can only pass if the
+// post_content branch runs.
+$zaso_block_content = '<!-- wp:siteorigin-panels/layout-block {"panelsData":{"widgets":[{"panels_info":{"class":"LSOW_Accordion_Widget","raw":false}}]}} -->' . "\n"
+	. '<div class="so-panel widget"></div>' . "\n"
+	. '<!-- /wp:siteorigin-panels/layout-block -->';
+$zaso_block_id = wp_insert_post(
+	array(
+		'post_title'   => 'ZASO livemesh layout-block fixture',
+		'post_status'  => 'publish',
+		'post_type'    => 'page',
+		'post_content' => $zaso_block_content,
+	)
+);
+zaso_t(
+	'layout-block fixture genuinely has NO panels_data meta (so this test can only pass via post_content)',
+	'' === (string) get_post_meta( $zaso_block_id, 'panels_data', true )
+);
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+zaso_t( 'LSOW_ widget inside a block-editor layout block IS detected', true === zaso_livemesh_has_orphans() );
+wp_delete_post( $zaso_block_id, true );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+
+// --- Prose mentioning LSOW_ must NOT trigger the notice. ---
+// The post_content branch requires the literal block name alongside the class
+// prefix precisely so that an article about Livemesh cannot fire the notice.
+$zaso_prose_id = wp_insert_post(
+	array(
+		'post_title'   => 'ZASO livemesh prose fixture',
+		'post_status'  => 'publish',
+		'post_type'    => 'post',
+		'post_content' => 'A note about migrating away from LSOW_Accordion_Widget and friends.',
+	)
+);
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+if ( ! $zaso_has_foreign_lsow ) {
+	zaso_t( 'prose containing LSOW_ but no layout block is NOT detected', false === zaso_livemesh_has_orphans() );
+} else {
+	zaso_skip( 'prose containing LSOW_ but no layout block is NOT detected', 'foreign Livemesh data present' );
+}
+wp_delete_post( $zaso_prose_id, true );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+
+// --- Trashed posts must NOT trigger the notice. ---
+// Same class of defect as the revision bug: the user already deleted this
+// page, so there is nothing left for them to fix and the notice would be
+// unactionable and permanent.
+$zaso_trash_id = wp_insert_post(
+	array(
+		'post_title'  => 'ZASO livemesh trashed fixture',
+		'post_status' => 'publish',
+		'post_type'   => 'page',
+	)
+);
+update_post_meta( $zaso_trash_id, 'panels_data', $zaso_fixture_panels );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+zaso_t( 'control: the same fixture IS detected while published', true === zaso_livemesh_has_orphans() );
+wp_trash_post( $zaso_trash_id );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+if ( ! $zaso_has_foreign_lsow ) {
+	zaso_t( 'LSOW_ data on a TRASHED post is NOT treated as a live orphan', false === zaso_livemesh_has_orphans() );
+} else {
+	zaso_skip( 'LSOW_ data on a TRASHED post is NOT treated as a live orphan', 'foreign Livemesh data present' );
+}
+wp_delete_post( $zaso_trash_id, true );
+delete_transient( ZASO_LIVEMESH_TRANSIENT );
+
 // Put the real fixture's own panels_data back before Task 2 needs it.
 update_post_meta( $zaso_fixture_id, 'panels_data', $zaso_fixture_panels );
 delete_transient( ZASO_LIVEMESH_TRANSIENT );

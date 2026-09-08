@@ -111,16 +111,25 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 	 * rather than real content. The notice now fires only when a live page or
 	 * post actually contains an LSOW_ widget today.
 	 *
+	 * Both SiteOrigin storage modes are checked, because they are separate
+	 * stores and a site can use either: the classic metabox writes a
+	 * 'panels_data' postmeta row, while the block editor keeps the layout in
+	 * the panelsData attribute of a 'siteorigin-panels/layout-block' inside
+	 * post_content and writes no postmeta at all.
+	 *
 	 * A side effect is deliberate: postmeta left behind by a deleted post can
 	 * never match, because the INNER JOIN requires the post row to still
 	 * exist. That is correct, since there is nothing left for the user to fix.
+	 * For the same reason trashed and auto-draft posts are excluded, alongside
+	 * revisions, which SiteOrigin also writes panels_data to.
 	 *
 	 * Any database problem is treated as "no orphans" so a failure can never
 	 * surface a notice or break an admin screen.
 	 *
 	 * @since 1.10.22
 	 *
-	 * @return bool True when at least one LSOW_ widget is stored on a live post.
+	 * @return bool True when at least one LSOW_ widget is stored on a post the
+	 *              user can still act on, in either storage mode.
 	 */
 	function zaso_livemesh_has_orphans() {
 		$cached = get_transient( ZASO_LIVEMESH_TRANSIENT );
@@ -136,6 +145,18 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 		// or LSOW9. Escaping it keeps the match to the literal class prefix.
 		$needle = '%' . $wpdb->esc_like( 'LSOW_' ) . '%';
 
+		// Statuses that cannot represent content the user still needs to fix.
+		// 'inherit' and the revision post_type both exclude revisions, which
+		// SiteOrigin writes panels_data to; 'trash' and 'auto-draft' exclude
+		// content the user has already deleted or never started. These are
+		// passed as bound parameters rather than interpolated into the SQL, so
+		// nothing but a placeholder ever reaches the query string.
+		$status_inherit = 'inherit';
+		$status_trash   = 'trash';
+		$status_auto    = 'auto-draft';
+
+		// Storage mode 1, the classic Page Builder metabox: the layout lives in
+		// the 'panels_data' postmeta row.
 		$found = $wpdb->get_var(
 			$wpdb->prepare(
 				"SELECT pm.meta_id FROM {$wpdb->postmeta} pm
@@ -143,12 +164,43 @@ if ( ! function_exists( 'zaso_livemesh_has_orphans' ) ) :
 				WHERE pm.meta_key = %s
 				AND pm.meta_value LIKE %s
 				AND p.post_type != 'revision'
-				AND p.post_status != 'inherit'
+				AND p.post_status != %s
+				AND p.post_status != %s
+				AND p.post_status != %s
 				LIMIT 1",
 				'panels_data',
-				$needle
+				$needle,
+				$status_inherit,
+				$status_trash,
+				$status_auto
 			)
 		);
+
+		// Storage mode 2, the block editor: a Page Builder layout inside a
+		// 'siteorigin-panels/layout-block' keeps its widgets in the block's
+		// panelsData attribute in post_content and writes NO postmeta at all,
+		// so mode 1 alone is blind to every block-editor site. Both conditions
+		// are required together: the bare LSOW_ prefix could appear in ordinary
+		// prose, but not alongside the literal block name.
+		if ( empty( $found ) ) {
+			$found = $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT p.ID FROM {$wpdb->posts} p
+					WHERE p.post_content LIKE %s
+					AND p.post_content LIKE %s
+					AND p.post_type != 'revision'
+					AND p.post_status != %s
+					AND p.post_status != %s
+					AND p.post_status != %s
+					LIMIT 1",
+					'%' . $wpdb->esc_like( 'siteorigin-panels/layout-block' ) . '%',
+					$needle,
+					$status_inherit,
+					$status_trash,
+					$status_auto
+				)
+			);
+		}
 
 		$has = ( ! empty( $found ) );
 
