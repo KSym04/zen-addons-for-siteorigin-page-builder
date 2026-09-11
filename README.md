@@ -22,7 +22,7 @@ SiteOrigin Page Builder widget picker and under **Plugins → SiteOrigin Widgets
 
 ## Architecture
 
-A flat, hand-written WordPress plugin — no build step required at runtime, no autoloader.
+A flat, hand-written WordPress plugin, no build step required at runtime, no autoloader.
 
 ```
 zen-addons-for-siteorigin-page-builder/
