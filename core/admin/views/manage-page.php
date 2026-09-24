@@ -58,7 +58,7 @@ $zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen
 		<?php
 		printf(
 			/* translators: 1: number of active widgets, 2: total number of widgets. */
-			esc_html__( '%1$d of %2$d widgets active. Turn on the widgets you need, then add them in Page Builder under the "ZASO Widgets" tab.', 'zen-addons-for-siteorigin-page-builder' ),
+			esc_html__( '%1$d of %2$d widgets active. Turn on the widgets you need, then add them in Page Builder under the "Zen Addons" tab.', 'zen-addons-for-siteorigin-page-builder' ),
 			(int) $zaso_active_ct,
 			(int) $zaso_total
 		);
@@ -111,7 +111,7 @@ $zaso_pro_url     = $zaso_show_pro ? ZASO_Widget_Design::pro_url( 'manage_screen
 		<div class="zaso-admin__aside">
 			<div class="zaso-admin__box">
 				<h2><?php esc_html_e( 'Where to find your widgets', 'zen-addons-for-siteorigin-page-builder' ); ?></h2>
-				<p><?php esc_html_e( 'Active widgets appear in the SiteOrigin Page Builder widget picker under the "ZASO Widgets" tab, and on the Plugins > SiteOrigin Widgets screen.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
+				<p><?php esc_html_e( 'Active widgets appear in the SiteOrigin Page Builder widget picker under the "Zen Addons" tab, and on the Plugins > SiteOrigin Widgets screen.', 'zen-addons-for-siteorigin-page-builder' ); ?></p>
 			</div>
 			<?php if ( $zaso_show_pro ) : ?>
 				<div class="zaso-admin__box zaso-admin__box--pro">

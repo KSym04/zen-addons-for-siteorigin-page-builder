@@ -58,19 +58,35 @@ function zaso_skip( $label, $reason ) {
 // --- Back up everything we touch. ---
 $zaso_backup_livemesh = get_option( 'zaso_livemesh_rescue', null );
 
+// The orphan-scan transient is the site's own cached answer, and nearly every
+// detection assertion below clears it. Keep its value and its expiry so the
+// Restore section can put the entry back exactly as it was found, instead of
+// leaving the site with no cached answer. get_transient() returns false for a
+// missing or already expired entry, and both mean "nothing to restore".
+$zaso_backup_transient         = get_transient( ZASO_LIVEMESH_TRANSIENT );
+$zaso_backup_transient_timeout = (int) get_option( '_transient_timeout_' . ZASO_LIVEMESH_TRANSIENT, 0 );
+
 // --- Self-healing: clean stale fixtures and orphaned meta from aborted previous runs. ---
 global $wpdb;
 
 // Delete any leftover fixture posts (shouldn't exist if cleanup was perfect).
-// Covers all three fixture titles this file creates: the main live fixture,
-// the synthetic revision used to prove revisions are excluded, and the ghost
-// fixture used to prove a deleted post's leftover meta is excluded.
+// Covers all six fixture titles this file creates: the main live fixture, the
+// synthetic revision used to prove revisions are excluded, the ghost fixture
+// used to prove a deleted post's leftover meta is excluded, and the three
+// storage-mode fixtures (layout block, prose, trashed). A leftover published
+// layout-block or trashed-fixture post from an aborted run would otherwise be
+// detected as a live orphan and fail every "not detected" assertion below.
+// Match exact titles only (BINARY defeats the case-insensitive collation) and only
+// the post types the fixtures are created as, so a real post can never match.
 $stale_ids = $wpdb->get_col(
 	$wpdb->prepare(
-		"SELECT ID FROM {$wpdb->posts} WHERE post_title IN ( %s, %s, %s )",
+		"SELECT ID FROM {$wpdb->posts} WHERE post_type IN ( 'page', 'post', 'revision' ) AND BINARY post_title IN ( %s, %s, %s, %s, %s, %s )",
 		'ZASO livemesh fixture',
 		'ZASO livemesh fixture revision',
-		'ZASO livemesh ghost fixture'
+		'ZASO livemesh ghost fixture',
+		'ZASO livemesh layout-block fixture',
+		'ZASO livemesh prose fixture',
+		'ZASO livemesh trashed fixture'
 	)
 );
 foreach ( $stale_ids as $post_id ) {
@@ -92,6 +108,14 @@ $orphaned = $wpdb->get_col(
 );
 foreach ( $orphaned as $meta_id ) {
 	delete_metadata_by_mid( 'post', (int) $meta_id );
+}
+
+// A leftover fixture from an aborted run may have made the orphan scan cache "yes".
+// Restoring that backup would bring back a notice with nothing behind it, so when
+// stale fixtures were removed, drop the backup and let the site recompute the answer.
+if ( ! empty( $stale_ids ) || ! empty( $orphaned ) ) {
+	$zaso_backup_transient         = false;
+	$zaso_backup_transient_timeout = 0;
 }
 
 // --- Identity: an administrator is required for current_user_can( 'manage_options' ),
@@ -250,7 +274,12 @@ delete_transient( ZASO_LIVEMESH_TRANSIENT );
 // blind to every block-editor site. This fixture carries no postmeta at all,
 // which is exactly what makes it discriminating: it can only pass if the
 // post_content branch runs.
-$zaso_block_content = '<!-- wp:siteorigin-panels/layout-block {"panelsData":{"widgets":[{"panels_info":{"class":"LSOW_Accordion_Widget","raw":false}}]}} -->' . "\n"
+//
+// The layout is structurally complete (one row with one cell, and the widget
+// placed in it) because SiteOrigin validates every layout block on save. A
+// widget with no grid/cell and a layout with no grids makes that validation log
+// three PHP warnings on every run, which would bury real warnings in the log.
+$zaso_block_content = '<!-- wp:siteorigin-panels/layout-block {"panelsData":{"grids":[{"cells":1}],"grid_cells":[{"grid":0,"weight":1}],"widgets":[{"panels_info":{"class":"LSOW_Accordion_Widget","grid":0,"cell":0,"raw":false}}]}} -->' . "\n"
 	. '<div class="so-panel widget"></div>' . "\n"
 	. '<!-- /wp:siteorigin-panels/layout-block -->';
 $zaso_block_id = wp_insert_post(
@@ -421,6 +450,25 @@ $wpdb->delete( $wpdb->postmeta, array( 'post_id' => (int) $zaso_fixture_id ), ar
 // Then delete the post itself.
 wp_delete_post( $zaso_fixture_id, true );
 delete_transient( ZASO_LIVEMESH_TRANSIENT );
+
+// Put the site's cached orphan-scan answer back as it was before the run.
+if ( false === $zaso_backup_transient ) {
+	delete_transient( ZASO_LIVEMESH_TRANSIENT );
+} else {
+	// Remaining lifetime of the original entry. With no stored expiry (an
+	// external object cache keeps none in the options table) fall back to the
+	// plugin's own cache lifetime.
+	$zaso_transient_ttl = ( $zaso_backup_transient_timeout > time() )
+		? $zaso_backup_transient_timeout - time()
+		: ZASO_LIVEMESH_CACHE_DAYS * DAY_IN_SECONDS;
+	set_transient( ZASO_LIVEMESH_TRANSIENT, $zaso_backup_transient, $zaso_transient_ttl );
+
+	// set_transient() recomputes the expiry from the current second, so write
+	// the original expiry back to keep the entry identical to what was there.
+	if ( $zaso_backup_transient_timeout > 0 && ! wp_using_ext_object_cache() ) {
+		update_option( '_transient_timeout_' . ZASO_LIVEMESH_TRANSIENT, $zaso_backup_transient_timeout, false );
+	}
+}
 
 if ( null === $zaso_backup_livemesh ) {
 	delete_option( 'zaso_livemesh_rescue' );

@@ -14,10 +14,10 @@ for use with [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorig
 
 ## Widgets
 
-Layout & content (Spacer, Alert Box, Widgetized), interactive (Simple Accordion, Basic Tabs),
-media (Video, YouTube Lightbox, Vimeo Lightbox), business (Info Box, Hover Card, Icon,
-Image Icon Group), bbPress (Forum Index, Topic Index, Login, Registration, Lost Password),
-and integrations (Contact Form 7). All widgets appear under the **ZASO Widgets** tab in the
+37 widgets in nine groups: layout and content, interactive, media, business and marketing,
+conversion and engagement, people and social proof, content blocks, community (bbPress) and
+integrations. The full, current list with a short description of each
+widget is in the "Widgets included" section of `readme.txt`. All widgets appear under the **Zen Addons** tab in the
 SiteOrigin Page Builder widget picker and under **Plugins → SiteOrigin Widgets**.
 
 ## Architecture
@@ -37,7 +37,7 @@ zen-addons-for-siteorigin-page-builder/
 │   └── basic/<slug>/           # one folder per widget: <slug>.php, tpl/, styles/, js/
 ├── assets/
 │   └── vendor/lity/            # bundled lightbox library (no CDN)
-└── lang/                       # translations (text domain: zaso)
+└── lang/                       # translations (text domain: zen-addons-for-siteorigin-page-builder)
 ```
 
 Widgets auto-register through SiteOrigin's `siteorigin_widgets_widget_folders` filter; the
@@ -57,7 +57,8 @@ php -l path/to/file.php
 
 Conventions: WordPress Coding Standards, tabs for indentation, Yoda conditions, PHPDoc on
 all functions, an `ABSPATH` guard at the top of every PHP file, all output escaped, all
-input sanitized, and AJAX actions gated by nonce + capability checks. Text domain is `zaso`.
+input sanitized, and AJAX actions gated by nonce + capability checks. Text domain is
+`zen-addons-for-siteorigin-page-builder` (it must equal the plugin slug).
 
 ## Releases
 

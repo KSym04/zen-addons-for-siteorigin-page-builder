@@ -4,7 +4,7 @@ Tags: siteorigin, page builder, widgets, siteorigin widgets, addons
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.10.22
+Stable tag: 1.10.23
 License: GPLv3
 License URI: https://www.dopethemes.com/gplv3/
 
@@ -18,7 +18,7 @@ Every widget is designed to be clean, accessible, and easy to style. Widgets ren
 
 = Built for the SiteOrigin workflow =
 
-Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Widgets Bundle. All Zen Addons widgets are grouped under their own "ZASO Widgets" tab in the widget picker, so they are easy to find and never get lost among the core widgets. You can enable only the widgets you use and leave the rest off.
+Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Widgets Bundle. All Zen Addons widgets are grouped under their own "Zen Addons" tab in the widget picker, so they are easy to find and never get lost among the core widgets. You can enable only the widgets you use and leave the rest off.
 
 = Widgets included =
 
@@ -27,6 +27,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 * Spacer: add adjustable vertical spacing between rows and widgets.
 * Alert Box: show a styled info, success, warning, or error message, with thirty ready-made designs (six free).
 * Widgetized: place an existing widget sidebar inside your page content.
+* Section Divider: add a wave, curve, tilt, or triangle shape divider to the top or bottom of a section, with your own color, height, and width, and flip it horizontally or vertically.
 
 **Interactive**
 
@@ -71,6 +72,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 * Progress Bars: show labeled progress or skill bars that fill as they scroll into view.
 * Post Grid: display a responsive grid of posts with featured images, meta, excerpts, and read-more links.
 * Post Carousel: display posts in a swipeable carousel with autoplay, arrows, and dots.
+* Icon List: show a vertical or horizontal list of items, each with an icon, text, and an optional link.
 
 **Community (bbPress)**
 
@@ -88,7 +90,7 @@ Zen Addons plugs directly into Page Builder by SiteOrigin and the SiteOrigin Wid
 
 Zen Addons widgets are SiteOrigin widgets, so they appear in two places:
 
-1. Inside **Page Builder**, click **Add Widget** and open the **ZASO Widgets** tab.
+1. Inside **Page Builder**, click **Add Widget** and open the **Zen Addons** tab.
 2. Under **Plugins > SiteOrigin Widgets**, where you can turn individual widgets on or off.
 
 You can also manage every Zen Addons widget from one place under the **Zen Addons** menu in your WordPress admin sidebar. The widgets are not listed under Appearance > Widgets, because they are built specifically for the SiteOrigin builder.
@@ -113,7 +115,7 @@ You can also manage every Zen Addons widget from one place under the **Zen Addon
 
 = Zen Addons Pro =
 
-Zen Addons Pro is available now. It adds the Popup and Portfolio widgets (the Portfolio Grid ships with thirty ready-made card designs of its own), a site-wide Display Layer (visibility conditions by login, role, and date, device targeting, scroll animations, and a custom CSS class on every widget), Pricing Table Pro, and twenty-four extra designs each for the Alert Box, Counter, Call to Action, Pricing Table, Testimonial Slider, Hover Card, and Services Grid, all chosen visually from the Browse designs gallery.
+Zen Addons Pro is available now. It adds the Popup / Modal and Portfolio Grid widgets (the Portfolio Grid ships with thirty ready-made card designs of its own), a site-wide Display Layer (visibility conditions by login, role, and date, device targeting, scroll animations, and a custom CSS class on every widget), Pricing Table Pro, and twenty-four extra designs each for the Alert Box, Counter, Call to Action, Pricing Table, Testimonial Slider, Hover Card, and Services Grid, all chosen visually from the Browse designs gallery.
 
 Learn more and compare plans at https://www.dopethemes.com/downloads/zen-addons-siteorigin/ .
 
@@ -130,7 +132,7 @@ This service is provided by DopeThemes. Terms of service: https://www.dopethemes
 1. In your WordPress admin, go to **Plugins > Add New** and search for **Zen Addons for SiteOrigin Page Builder**.
 2. Click **Install Now**, then **Activate**.
 3. Install and activate **Page Builder by SiteOrigin** and the **SiteOrigin Widgets Bundle** (both free). Zen Addons needs the Widgets Bundle and will prompt you to install it if it is missing.
-4. Edit any page with Page Builder, click **Add Widget**, and open the **ZASO Widgets** tab to add Zen Addons widgets.
+4. Edit any page with Page Builder, click **Add Widget**, and open the **Zen Addons** tab to add Zen Addons widgets.
 5. Visit **Plugins > SiteOrigin Widgets**, or the **Zen Addons** menu in your admin sidebar, to turn individual widgets on or off.
 
 = Manual installation =
@@ -147,11 +149,11 @@ Yes. Zen Addons extends the SiteOrigin Widgets Bundle, which provides the widget
 
 = Where do the widgets show up after I activate the plugin? =
 
-Zen Addons widgets appear in the SiteOrigin Page Builder widget picker under the **ZASO Widgets** tab, and in the manage screen at **Plugins > SiteOrigin Widgets**. You can also activate or deactivate them from the **Zen Addons** menu in your WordPress admin sidebar. They are not listed under Appearance > Widgets, because they are SiteOrigin widgets.
+Zen Addons widgets appear in the SiteOrigin Page Builder widget picker under the **Zen Addons** tab, and in the manage screen at **Plugins > SiteOrigin Widgets**. You can also activate or deactivate them from the **Zen Addons** menu in your WordPress admin sidebar. They are not listed under Appearance > Widgets, because they are SiteOrigin widgets.
 
 = How do I enable or disable individual widgets? =
 
-Go to the **Zen Addons** menu in your WordPress admin sidebar, or to **Plugins > SiteOrigin Widgets**. Each Zen Addons widget (prefixed with "ZASO -") can be turned on or off from either place. Activating only the widgets you use keeps things tidy.
+Go to the **Zen Addons** menu in your WordPress admin sidebar, or to **Plugins > SiteOrigin Widgets**. Each Zen Addons widget (prefixed with "Zen Addons -") can be turned on or off from either place. Activating only the widgets you use keeps things tidy.
 
 = Will Zen Addons slow down my site? =
 
@@ -208,11 +210,14 @@ Zen Addons bundles a self-hosted, curated subset of Material Symbols Rounded for
 
 == Upgrade Notice ==
 
+= 1.10.23 =
+Tested with WordPress 7.1.2, SiteOrigin Page Builder 2.36.1 and SiteOrigin Widgets Bundle 1.74.3. Corrects the widget list, the widget picker tab name, and a few FAQ answers. No widget, design or setting changes.
+
 = 1.10.22 =
 Points sites with orphaned Livemesh SiteOrigin Widgets data to a migration guide. No widget, design or setting changes.
 
 = 1.10.21 =
-Removes a WordPress 7.1 "translation loading was triggered too early" notice that appeared on sites with debugging enabled. No widget, design or setting changes.
+Removes a "translation loading was triggered too early" notice that WordPress 6.7 and newer logged on sites with debugging enabled. No widget, design or setting changes.
 
 = 1.10.20 =
 Tested with WordPress 7.1. Fixes a PHP notice on PHP 8.2 and newer that would have stopped the plugin loading on a future PHP version. No widget, design or setting changes.
@@ -308,6 +313,12 @@ Compatibility update for WordPress 7.0, plus security hardening and performance 
 This update includes minor improvements and bug fixes.
 
 == Changelog ==
+
+= 1.10.23 =
+* Tested with WordPress 7.1.2, SiteOrigin Page Builder 2.36.1 and SiteOrigin Widgets Bundle 1.74.3.
+* Corrected the widget list and a few answers in the plugin description and FAQ.
+* Fixed: the Zen Addons screen and the plugin description now name the widget picker tab correctly. The tab has been called "Zen Addons" since 1.10.1, but the text still said "ZASO Widgets".
+* No change to any widget, design, setting, or stored page data.
 
 = 1.10.22 =
 * New: if your site still has page content built with Livemesh SiteOrigin Widgets, which was removed from WordPress.org in May 2026, Zen Addons now points you to a migration guide. The notice appears once, can be dismissed for good, and changes nothing on your pages.
